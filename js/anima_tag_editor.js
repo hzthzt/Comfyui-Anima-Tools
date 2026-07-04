@@ -234,6 +234,57 @@ function applyIncomingTags(field, incomingTags, mode, source) {
     field.tags = uniqueTags([...incoming, ...disabledPrevious]);
 }
 
+function mergeSelectorManagerTags(field, incomingTags, source) {
+    const incoming = uniqueTags(incomingTags.map(text => ({
+        text,
+        enabled: true,
+        source,
+    })));
+    const suppressedKeys = new Set([
+        ...field.tags
+            .filter(tag => tag?.enabled === false)
+            .map(tag => normalizeTagKey(tagText(tag))),
+        ...field.history.map(item => normalizeTagKey(item.text)),
+    ].filter(Boolean));
+    const incomingKeys = new Set(incoming.map(tag => normalizeTagKey(tag.text)));
+    const result = incoming.filter(tag => !suppressedKeys.has(normalizeTagKey(tag.text)));
+    for (const tag of field.tags) {
+        const key = normalizeTagKey(tagText(tag));
+        if (!key) continue;
+        if (tag?.enabled === false) {
+            result.push({ ...tag });
+            continue;
+        }
+        if (incomingKeys.has(key)) continue;
+        if (tag.source === "manual" || tag.source === "history") {
+            result.push({ ...tag });
+        }
+    }
+    field.tags = uniqueTags(result);
+}
+
+function appendSelectorManagerTags(field, incomingTags, source) {
+    const incoming = uniqueTags(incomingTags.map(text => ({
+        text,
+        enabled: true,
+        source,
+    })));
+    const suppressedKeys = new Set([
+        ...field.tags
+            .filter(tag => tag?.enabled === false)
+            .map(tag => normalizeTagKey(tagText(tag))),
+        ...field.history.map(item => normalizeTagKey(item.text)),
+    ].filter(Boolean));
+    const byKey = new Map(field.tags.map(tag => [normalizeTagKey(tagText(tag)), { ...tag }]));
+    for (const tag of incoming) {
+        const key = normalizeTagKey(tag.text);
+        if (!key || suppressedKeys.has(key)) continue;
+        const existing = byKey.get(key);
+        byKey.set(key, existing ? { ...existing, text: existing.text || tag.text, enabled: true, source } : tag);
+    }
+    field.tags = uniqueTags(Array.from(byKey.values()));
+}
+
 function syncFieldFromWidget(node, fieldName, widget) {
     if (!node || !widget || widget.__animaTagSyncingText) return;
     const field = getTagFieldState(node, fieldName, widget);
@@ -283,6 +334,26 @@ export function writeTagsToWidget(node, widgetOrName, value, options = {}) {
     } else {
         setPlainWidgetText(node, widgetOrName, value, options);
     }
+}
+
+export function writeSelectorTagsToWidget(node, widgetOrName, value, options = {}) {
+    if (!isTaggedAnimaNode(node)) {
+        setPlainWidgetText(node, widgetOrName, value, options);
+        return;
+    }
+
+    const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
+    if (!node || !widget) return;
+    const fieldName = options.fieldName || widget.name;
+    const field = getTagFieldState(node, fieldName, widget);
+    const mode = options.mode || field.applyMode || DEFAULT_APPLY_MODE;
+    const source = options.source || "selector";
+    if (mode === "append") {
+        appendSelectorManagerTags(field, splitTagText(value), source);
+    } else {
+        mergeSelectorManagerTags(field, splitTagText(value), source);
+    }
+    syncField(node, fieldName, widget, { notify: false });
 }
 
 export function setTagApplyMode(node, fieldName, mode) {

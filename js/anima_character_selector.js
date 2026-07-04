@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
+import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeSelectorTagsToWidget } from "./anima_tag_editor.js";
 import "./character_data.js";
 
 const CHARACTER_SELECTOR_NODES = new Set([
@@ -1909,7 +1909,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         if (resultString) {
             resultString += ", ";
         }
-        writeTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
+        writeSelectorTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
         
         node.triggerSlot?(0):null;
         closeModal();
