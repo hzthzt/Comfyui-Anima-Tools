@@ -180,6 +180,7 @@ function syncField(node, fieldName, widget, options = {}) {
     const field = getTagFieldState(node, fieldName, widget);
     setWidgetText(widget, enabledText(field), options);
     refreshEditor(node, fieldName);
+    refreshSelectorManagers(node, fieldName);
     refreshNode(node);
 }
 
@@ -187,6 +188,12 @@ function refreshEditor(node, fieldName) {
     const editors = node?._animaTagEditors;
     const editor = editors?.[fieldName];
     editor?.render?.();
+}
+
+function refreshSelectorManagers(node, fieldName) {
+    const managers = node?._animaSelectorTagManagers?.[fieldName];
+    if (!Array.isArray(managers)) return;
+    managers.forEach(manager => manager?.render?.());
 }
 
 function addToHistory(field, text) {
@@ -279,6 +286,7 @@ export function setTagApplyMode(node, fieldName, mode) {
     const field = getTagFieldState(node, fieldName, getWidget(node, fieldName));
     field.applyMode = mode === "append" ? "append" : DEFAULT_APPLY_MODE;
     refreshEditor(node, fieldName);
+    refreshSelectorManagers(node, fieldName);
 }
 
 function getEditorHeight(field, width = 340) {
@@ -458,7 +466,7 @@ function iconButton(label, title, color = "#d1d5db") {
     return button;
 }
 
-function createChip(node, widget, fieldName, tag, disabled = false) {
+function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}) {
     const chip = document.createElement("span");
     chip.title = disabled ? t("Double-click to enable tag") : t("Double-click to disable tag");
     chip.style.cssText = `
@@ -486,14 +494,14 @@ function createChip(node, widget, fieldName, tag, disabled = false) {
         if (event.target?.closest?.("button")) return;
         stopNodeDrag(event);
         tag.enabled = tag.enabled === false;
-        syncField(node, fieldName, widget);
+        syncField(node, fieldName, widget, syncOptions);
     });
 
     const toggle = iconButton(disabled ? "+" : "-", disabled ? t("Enable Tag") : t("Disable Tag"), disabled ? "#86efac" : "#fbbf24");
     toggle.addEventListener("click", event => {
         stopNodeDrag(event);
         tag.enabled = disabled;
-        syncField(node, fieldName, widget);
+        syncField(node, fieldName, widget, syncOptions);
     });
     chip.appendChild(toggle);
 
@@ -504,7 +512,7 @@ function createChip(node, widget, fieldName, tag, disabled = false) {
         const key = normalizeTagKey(tagText(tag));
         field.tags = field.tags.filter(item => normalizeTagKey(tagText(item)) !== key);
         addToHistory(field, tagText(tag));
-        syncField(node, fieldName, widget);
+        syncField(node, fieldName, widget, syncOptions);
     });
     chip.appendChild(remove);
 
@@ -668,4 +676,164 @@ export function createSelectorApplyModeControl(node, widgetOrName) {
     control.title = t("Selector Apply Mode");
     control.style.cssText += "align-items:center;";
     return control;
+}
+
+export function createSelectorTagManager(node, widgetOrName, config = {}) {
+    const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
+    const fieldName = config.fieldName || widget?.name || String(widgetOrName || "");
+    const element = document.createElement("div");
+    element.className = "anima-selector-tag-manager";
+    element.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        min-width: 0;
+        color: #e5e7eb;
+        font: 12px/1.3 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        pointer-events: auto;
+    `;
+
+    const manager = {
+        element,
+        render: () => renderSelectorTagManager(node, widget, fieldName, element, config),
+    };
+
+    if (node && fieldName) {
+        node._animaSelectorTagManagers = node._animaSelectorTagManagers || {};
+        node._animaSelectorTagManagers[fieldName] = node._animaSelectorTagManagers[fieldName] || [];
+        if (!node._animaSelectorTagManagers[fieldName].includes(manager)) {
+            node._animaSelectorTagManagers[fieldName].push(manager);
+        }
+    }
+
+    getTagFieldState(node, fieldName, widget);
+    attachWidgetTextSync(node, fieldName, widget);
+    manager.render();
+    return manager;
+}
+
+function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
+    const field = getTagFieldState(node, fieldName, widget);
+    root.innerHTML = "";
+
+    const header = document.createElement("div");
+    header.style.cssText = "display:flex;align-items:center;gap:8px;min-width:0;";
+
+    const title = document.createElement("div");
+    title.textContent = config.label || t("Selected Tags");
+    title.style.cssText = "flex:1 1 auto;min-width:0;color:#f3f4f6;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
+    header.appendChild(title);
+    header.appendChild(createApplyModeControl(node, fieldName));
+    root.appendChild(header);
+
+    const chips = document.createElement("div");
+    chips.style.cssText = "display:flex;flex-wrap:wrap;gap:6px;min-height:26px;";
+    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, { notify: false })));
+    if (field.tags.length === 0) {
+        const empty = document.createElement("span");
+        empty.textContent = t("No tags yet");
+        empty.style.cssText = "color:#6b7280;font-size:11px;padding:5px 0;";
+        chips.appendChild(empty);
+    }
+    root.appendChild(chips);
+
+    const inputRow = document.createElement("div");
+    inputRow.style.cssText = "display:flex;gap:6px;min-width:0;";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = t("Add tag...");
+    input.style.cssText = `
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 26px;
+        border-radius: 7px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(0,0,0,0.2);
+        color: #f9fafb;
+        padding: 0 8px;
+        outline: none;
+        box-sizing: border-box;
+    `;
+    input.addEventListener("pointerdown", event => event.stopPropagation());
+    input.addEventListener("mousedown", event => event.stopPropagation());
+    input.addEventListener("keydown", event => {
+        if (event.key !== "Enter") return;
+        event.preventDefault();
+        applyTagsToWidget(node, widget, input.value, { mode: "append", source: "manual" });
+        input.value = "";
+    });
+
+    const addButton = document.createElement("button");
+    addButton.type = "button";
+    addButton.textContent = t("Add");
+    addButton.style.cssText = buttonStyle(false);
+    addButton.addEventListener("pointerdown", stopNodeDrag);
+    addButton.addEventListener("mousedown", stopNodeDrag);
+    addButton.addEventListener("click", event => {
+        stopNodeDrag(event);
+        applyTagsToWidget(node, widget, input.value, { mode: "append", source: "manual" });
+        input.value = "";
+    });
+
+    inputRow.appendChild(input);
+    inputRow.appendChild(addButton);
+    root.appendChild(inputRow);
+
+    if (field.history.length === 0) return;
+
+    const historyHeader = document.createElement("div");
+    historyHeader.style.cssText = "display:flex;align-items:center;gap:6px;min-width:0;";
+
+    const historyTitle = document.createElement("div");
+    historyTitle.textContent = `${t("History")} (${field.history.length}/${field.historyLimit})`;
+    historyTitle.style.cssText = "flex:1 1 auto;min-width:0;color:#9ca3af;font-size:11px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
+
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.textContent = t("Clear History");
+    clear.style.cssText = buttonStyle(false);
+    clear.addEventListener("pointerdown", stopNodeDrag);
+    clear.addEventListener("mousedown", stopNodeDrag);
+    clear.addEventListener("click", event => {
+        stopNodeDrag(event);
+        field.history = [];
+        syncField(node, fieldName, widget);
+    });
+
+    historyHeader.appendChild(historyTitle);
+    historyHeader.appendChild(clear);
+    root.appendChild(historyHeader);
+
+    const history = document.createElement("div");
+    history.style.cssText = "display:flex;flex-wrap:wrap;gap:5px;min-width:0;";
+    field.history.forEach(item => {
+        const restore = document.createElement("button");
+        restore.type = "button";
+        restore.textContent = item.text;
+        restore.title = t("Restore Tag");
+        restore.style.cssText = `
+            max-width: 100%;
+            height: 22px;
+            border-radius: 6px;
+            border: 1px solid rgba(156,163,175,0.18);
+            background: rgba(255,255,255,0.035);
+            color: #9ca3af;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 11px;
+        `;
+        restore.addEventListener("pointerdown", stopNodeDrag);
+        restore.addEventListener("mousedown", stopNodeDrag);
+        restore.addEventListener("click", event => {
+            stopNodeDrag(event);
+            field.history = field.history.filter(historyItem => historyItem !== item);
+            applyIncomingTags(field, [item.text], "append", "history");
+            syncField(node, fieldName, widget);
+        });
+        history.appendChild(restore);
+    });
+    root.appendChild(history);
 }
