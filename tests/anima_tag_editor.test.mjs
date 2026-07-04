@@ -2,7 +2,113 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { JSDOM } from "jsdom";
 
-test("test harness loads jsdom", () => {
-  const dom = new JSDOM("<!doctype html><body></body>");
-  assert.equal(dom.window.document.body.children.length, 0);
+function installDom() {
+  const dom = new JSDOM("<!doctype html><body></body>", {
+    url: "http://localhost/",
+    pretendToBeVisual: true,
+  });
+  globalThis.window = dom.window;
+  globalThis.document = dom.window.document;
+  globalThis.Event = dom.window.Event;
+  globalThis.requestAnimationFrame = callback => callback();
+  return dom;
+}
+
+function createNodeAndWidget(value = "alpha, beta, ") {
+  const widget = {
+    name: "artist_tags",
+    value,
+    callback(value) {
+      this.lastCallbackValue = value;
+    },
+  };
+  const node = {
+    __animaNodeClass: "AnimaArtistTagSelectorTagged",
+    properties: {},
+    widgets: [widget],
+    setDirtyCanvasCalled: 0,
+    setDirtyCanvas() {
+      this.setDirtyCanvasCalled += 1;
+    },
+    graph: {
+      setDirtyCanvas() {},
+    },
+  };
+  return { node, widget };
+}
+
+test("createSelectorTagManager renders current tags and updates widget when a tag is disabled", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=disable");
+  const { node, widget } = createNodeAndWidget();
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  assert.match(manager.element.textContent, /Selected Tags/);
+  assert.match(manager.element.textContent, /alpha/);
+  assert.match(manager.element.textContent, /beta/);
+
+  const disableButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Disable tag");
+  assert.ok(disableButton);
+  disableButton.click();
+
+  assert.equal(widget.value, "beta, ");
+  assert.equal(widget.lastCallbackValue, undefined);
+  assert.ok(node.setDirtyCanvasCalled > 0);
+});
+
+test("createSelectorTagManager moves deleted tags to history and restores them", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=history");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const deleteButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Delete tag");
+  assert.ok(deleteButton);
+  deleteButton.click();
+
+  assert.equal(widget.value, "");
+  assert.match(manager.element.textContent, /History/);
+
+  const restoreButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Restore tag");
+  assert.ok(restoreButton);
+  restoreButton.click();
+
+  assert.equal(widget.value, "alpha, ");
+});
+
+test("createSelectorTagManager appends manual input as a tag", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=manual");
+  const { node, widget } = createNodeAndWidget("");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const input = manager.element.querySelector("input");
+  input.value = "gamma";
+  const addButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Add");
+  assert.ok(addButton);
+  addButton.click();
+
+  assert.equal(widget.value, "gamma, ");
+  assert.match(manager.element.textContent, /gamma/);
+});
+
+test("createSelectorTagManager can switch selector apply mode", async () => {
+  installDom();
+  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=mode");
+  const { node, widget } = createNodeAndWidget("");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const appendButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Append");
+  assert.ok(appendButton);
+  appendButton.click();
+
+  assert.equal(getTagFieldState(node, "artist_tags", widget).applyMode, "append");
 });
