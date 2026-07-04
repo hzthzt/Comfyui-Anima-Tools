@@ -1,6 +1,61 @@
 def _anima_selector_tags_result(tags, text):
+    import json
+
     payload = tags if isinstance(tags, dict) else {}
+    payload = {
+        key: value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
+        for key, value in payload.items()
+    }
     return {"ui": {"anima_selector_tags": [payload]}, "result": (text,)}
+
+def _anima_tag_widget_tokens(value):
+    import json
+
+    def from_state(payload):
+        if not isinstance(payload, dict):
+            return None
+        if isinstance(payload.get("tags"), list):
+            items = payload.get("tags")
+        elif isinstance(payload.get("fields"), dict):
+            items = []
+            for field in payload.get("fields").values():
+                if isinstance(field, dict) and isinstance(field.get("tags"), list):
+                    items.extend(field.get("tags"))
+        else:
+            return None
+
+        tokens = []
+        for item in items:
+            if isinstance(item, dict):
+                if item.get("enabled") is False:
+                    continue
+                text = item.get("text")
+                if text is None:
+                    text = item.get("tag", item.get("value", item.get("name", "")))
+            else:
+                text = item
+            text = str(text or "").strip()
+            if text:
+                tokens.append(text)
+        return tokens
+
+    if isinstance(value, dict):
+        tokens = from_state(value)
+        if tokens is not None:
+            return tokens
+
+    text = str(value or "")
+    stripped = text.strip()
+    if stripped.startswith("{"):
+        try:
+            tokens = from_state(json.loads(stripped))
+            if tokens is not None:
+                return tokens
+        except Exception:
+            pass
+
+    normalized = text.replace("\r", ",").replace("\n", ",")
+    return [part.strip() for part in normalized.split(",") if part.strip()]
 
 class AnimaArtistTagSelector:
     @classmethod
@@ -20,7 +75,7 @@ class AnimaArtistTagSelector:
     FUNCTION = "process_tags"
     CATEGORY = "AnimaArt"
     def process_tags(self, artist_tags, mode, opt_prompt=""):
-        tags_list = [t.strip() for t in artist_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(artist_tags)
         processed_tags = []
         for tag in tags_list:
             if tag.startswith("_raw_:"):
@@ -79,7 +134,7 @@ class AnimaArtistTagSelectorPlus:
 
     def process_tags(self, artist_tags, extra_text, separator=", "):
         # 1. 过滤并处理画师 tags
-        tags_list = [t.strip() for t in artist_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(artist_tags)
         processed_tags = []
         
         for tag in tags_list:
@@ -138,7 +193,7 @@ class AnimaCharacterTagSelector:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, character_tags, mode, opt_prompt=""):
-        tags_list = [t.strip() for t in character_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(character_tags)
         processed_tags = []
         
         for tag in tags_list:
@@ -195,7 +250,7 @@ class AnimaCharacterTagSelectorPlus:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, character_tags, extra_text, separator=", "):
-        tags_list = [t.strip() for t in character_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(character_tags)
         processed_tags = []
         
         for tag in tags_list:
@@ -247,7 +302,7 @@ class AnimaClothingTagSelector:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, clothing_tags, mode, opt_prompt=""):
-        tags_list = [t.strip() for t in clothing_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(clothing_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -299,7 +354,7 @@ class AnimaClothingTagSelectorPlus:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, clothing_tags, extra_text, separator=", "):
-        tags_list = [t.strip() for t in clothing_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(clothing_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -347,7 +402,7 @@ class AnimaBackgroundTagSelector:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, background_tags, mode, opt_prompt=""):
-        tags_list = [t.strip() for t in background_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(background_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -399,7 +454,7 @@ class AnimaBackgroundTagSelectorPlus:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, background_tags, extra_text, separator=", "):
-        tags_list = [t.strip() for t in background_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(background_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -447,7 +502,7 @@ class AnimaPoseTagSelector:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, pose_tags, mode, opt_prompt=""):
-        tags_list = [t.strip() for t in pose_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(pose_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -499,7 +554,7 @@ class AnimaPoseTagSelectorPlus:
     CATEGORY = "AnimaArt"
 
     def process_tags(self, pose_tags, extra_text, separator=", "):
-        tags_list = [t.strip() for t in pose_tags.split(",") if t.strip()]
+        tags_list = _anima_tag_widget_tokens(pose_tags)
         processed_tags = []
 
         for tag in tags_list:
@@ -550,10 +605,9 @@ class AnimaPromptPlus:
     CATEGORY = "AnimaArt"
 
     def _split_prompt_tokens(self, value):
-        normalized = str(value or "").replace("\r", ",").replace("\n", ",")
         return [
             part.replace("_raw_:", "", 1).strip()
-            for part in normalized.split(",")
+            for part in _anima_tag_widget_tokens(value)
             if part.replace("_raw_:", "", 1).strip()
         ]
 
@@ -608,6 +662,7 @@ class AnimaPromptPlus:
 class AnimaPromptComposer:
     SELECTION_PROPERTY = "anima_prompt_composer_selection"
     SELECTION_SECTIONS = ("artist", "character", "clothing", "background", "pose")
+    TAGGED_PROMPT_STATE = False
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -944,6 +999,8 @@ class AnimaPromptComposer:
         workflow_node = self._find_workflow_node(workflow, unique_id_text)
         if workflow_node:
             self._set_workflow_widget_value(workflow_node, "resolved_prompt", resolved_prompt)
+            if getattr(self, "TAGGED_PROMPT_STATE", False):
+                _set_selector_tag_state_from_random(workflow_node, "resolved_prompt", resolved_prompt)
             properties = workflow_node.get("properties")
             if not isinstance(properties, dict):
                 properties = {}
@@ -1027,8 +1084,12 @@ class AnimaPromptComposer:
         payload = self._parse_selection_payload(text)
         if not payload:
             return text
-        if isinstance(payload, dict) and isinstance(payload.get("_resolved_prompt"), str):
-            return payload.get("_resolved_prompt") or ""
+        if isinstance(payload, dict):
+            if isinstance(payload.get("_resolved_prompt"), str):
+                return payload.get("_resolved_prompt") or ""
+            if isinstance(payload.get("tags"), list) or isinstance(payload.get("fields"), dict):
+                parts = _anima_tag_widget_tokens(payload)
+                return f"{', '.join(parts)}, " if parts else ""
         return text
 
     def compose_prompt(
@@ -1146,35 +1207,107 @@ class AnimaMultiLoraLoader:
         return (current_model,)
 
 
+class AnimaArtistTagSelectorTagged(AnimaArtistTagSelector):
+    pass
+
+
+class AnimaArtistTagSelectorPlusTagged(AnimaArtistTagSelectorPlus):
+    pass
+
+
+class AnimaCharacterTagSelectorTagged(AnimaCharacterTagSelector):
+    pass
+
+
+class AnimaCharacterTagSelectorPlusTagged(AnimaCharacterTagSelectorPlus):
+    pass
+
+
+class AnimaClothingTagSelectorTagged(AnimaClothingTagSelector):
+    pass
+
+
+class AnimaClothingTagSelectorPlusTagged(AnimaClothingTagSelectorPlus):
+    pass
+
+
+class AnimaBackgroundTagSelectorTagged(AnimaBackgroundTagSelector):
+    pass
+
+
+class AnimaBackgroundTagSelectorPlusTagged(AnimaBackgroundTagSelectorPlus):
+    pass
+
+
+class AnimaPoseTagSelectorTagged(AnimaPoseTagSelector):
+    pass
+
+
+class AnimaPoseTagSelectorPlusTagged(AnimaPoseTagSelectorPlus):
+    pass
+
+
+class AnimaPromptPlusTagged(AnimaPromptPlus):
+    pass
+
+
+class AnimaPromptComposerTagged(AnimaPromptComposer):
+    TAGGED_PROMPT_STATE = True
+
+
 NODE_CLASS_MAPPINGS = {
     "AnimaArtistTagSelector": AnimaArtistTagSelector,
     "AnimaArtistTagSelectorPlus": AnimaArtistTagSelectorPlus,
+    "AnimaArtistTagSelectorTagged": AnimaArtistTagSelectorTagged,
+    "AnimaArtistTagSelectorPlusTagged": AnimaArtistTagSelectorPlusTagged,
     "AnimaCharacterTagSelector": AnimaCharacterTagSelector,
     "AnimaCharacterTagSelectorPlus": AnimaCharacterTagSelectorPlus,
+    "AnimaCharacterTagSelectorTagged": AnimaCharacterTagSelectorTagged,
+    "AnimaCharacterTagSelectorPlusTagged": AnimaCharacterTagSelectorPlusTagged,
     "AnimaClothingTagSelector": AnimaClothingTagSelector,
     "AnimaClothingTagSelectorPlus": AnimaClothingTagSelectorPlus,
+    "AnimaClothingTagSelectorTagged": AnimaClothingTagSelectorTagged,
+    "AnimaClothingTagSelectorPlusTagged": AnimaClothingTagSelectorPlusTagged,
     "AnimaBackgroundTagSelector": AnimaBackgroundTagSelector,
     "AnimaBackgroundTagSelectorPlus": AnimaBackgroundTagSelectorPlus,
+    "AnimaBackgroundTagSelectorTagged": AnimaBackgroundTagSelectorTagged,
+    "AnimaBackgroundTagSelectorPlusTagged": AnimaBackgroundTagSelectorPlusTagged,
     "AnimaPoseTagSelector": AnimaPoseTagSelector,
     "AnimaPoseTagSelectorPlus": AnimaPoseTagSelectorPlus,
+    "AnimaPoseTagSelectorTagged": AnimaPoseTagSelectorTagged,
+    "AnimaPoseTagSelectorPlusTagged": AnimaPoseTagSelectorPlusTagged,
     "AnimaPromptPlus": AnimaPromptPlus,
+    "AnimaPromptPlusTagged": AnimaPromptPlusTagged,
     "AnimaPromptComposer": AnimaPromptComposer,
+    "AnimaPromptComposerTagged": AnimaPromptComposerTagged,
     "AnimaMultiLoraLoader": AnimaMultiLoraLoader
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "AnimaArtistTagSelector": "Anima Artist Tag Selector",
     "AnimaArtistTagSelectorPlus": "Anima Artist Tag Selector+",
+    "AnimaArtistTagSelectorTagged": "Anima Artist Tag Selector (Tagged)",
+    "AnimaArtistTagSelectorPlusTagged": "Anima Artist Tag Selector+ (Tagged)",
     "AnimaCharacterTagSelector": "Anima Character Tag Selector",
     "AnimaCharacterTagSelectorPlus": "Anima Character Tag Selector+",
+    "AnimaCharacterTagSelectorTagged": "Anima Character Tag Selector (Tagged)",
+    "AnimaCharacterTagSelectorPlusTagged": "Anima Character Tag Selector+ (Tagged)",
     "AnimaClothingTagSelector": "Anima Clothing Tag Selector",
     "AnimaClothingTagSelectorPlus": "Anima Clothing Tag Selector+",
+    "AnimaClothingTagSelectorTagged": "Anima Clothing Tag Selector (Tagged)",
+    "AnimaClothingTagSelectorPlusTagged": "Anima Clothing Tag Selector+ (Tagged)",
     "AnimaBackgroundTagSelector": "Anima Background Tag Selector",
     "AnimaBackgroundTagSelectorPlus": "Anima Background Tag Selector+",
+    "AnimaBackgroundTagSelectorTagged": "Anima Background Tag Selector (Tagged)",
+    "AnimaBackgroundTagSelectorPlusTagged": "Anima Background Tag Selector+ (Tagged)",
     "AnimaPoseTagSelector": "Anima Pose Tag Selector",
     "AnimaPoseTagSelectorPlus": "Anima Pose Tag Selector+",
+    "AnimaPoseTagSelectorTagged": "Anima Pose Tag Selector (Tagged)",
+    "AnimaPoseTagSelectorPlusTagged": "Anima Pose Tag Selector+ (Tagged)",
     "AnimaPromptPlus": "Anima Prompt Plus",
+    "AnimaPromptPlusTagged": "Anima Prompt Plus (Tagged)",
     "AnimaPromptComposer": "Anima Prompt Random Draw",
+    "AnimaPromptComposerTagged": "Anima Prompt Random Draw (Tagged)",
     "AnimaMultiLoraLoader": "Anima Multi LoRA Loader"
 }
 
@@ -1197,19 +1330,40 @@ except ImportError:
     Image = None
 
 SELECTOR_RANDOM_PROPERTY = "anima_selector_random"
+TAG_STATE_PROPERTY = "anima_prompt_tag_state"
+
+def _is_tagged_node_class(class_type):
+    return str(class_type or "").endswith("Tagged")
 
 SELECTOR_RANDOM_INPUTS = {
     "AnimaArtistTagSelector": {"artist": "artist_tags"},
     "AnimaArtistTagSelectorPlus": {"artist": "artist_tags"},
+    "AnimaArtistTagSelectorTagged": {"artist": "artist_tags"},
+    "AnimaArtistTagSelectorPlusTagged": {"artist": "artist_tags"},
     "AnimaCharacterTagSelector": {"character": "character_tags"},
     "AnimaCharacterTagSelectorPlus": {"character": "character_tags"},
+    "AnimaCharacterTagSelectorTagged": {"character": "character_tags"},
+    "AnimaCharacterTagSelectorPlusTagged": {"character": "character_tags"},
     "AnimaClothingTagSelector": {"clothing": "clothing_tags"},
     "AnimaClothingTagSelectorPlus": {"clothing": "clothing_tags"},
+    "AnimaClothingTagSelectorTagged": {"clothing": "clothing_tags"},
+    "AnimaClothingTagSelectorPlusTagged": {"clothing": "clothing_tags"},
     "AnimaBackgroundTagSelector": {"background": "background_tags"},
     "AnimaBackgroundTagSelectorPlus": {"background": "background_tags"},
+    "AnimaBackgroundTagSelectorTagged": {"background": "background_tags"},
+    "AnimaBackgroundTagSelectorPlusTagged": {"background": "background_tags"},
     "AnimaPoseTagSelector": {"pose": "pose_tags"},
     "AnimaPoseTagSelectorPlus": {"pose": "pose_tags"},
+    "AnimaPoseTagSelectorTagged": {"pose": "pose_tags"},
+    "AnimaPoseTagSelectorPlusTagged": {"pose": "pose_tags"},
     "AnimaPromptPlus": {
+        "artist": "artist_tags",
+        "character": "character_tags",
+        "clothing": "clothing_tags",
+        "pose": "pose_tags",
+        "background": "background_tags",
+    },
+    "AnimaPromptPlusTagged": {
         "artist": "artist_tags",
         "character": "character_tags",
         "clothing": "clothing_tags",
@@ -1221,15 +1375,35 @@ SELECTOR_RANDOM_INPUTS = {
 SELECTOR_WIDGET_ORDERS = {
     "AnimaArtistTagSelector": ["artist_tags", "mode"],
     "AnimaArtistTagSelectorPlus": ["artist_tags", "extra_text", "separator"],
+    "AnimaArtistTagSelectorTagged": ["artist_tags", "mode"],
+    "AnimaArtistTagSelectorPlusTagged": ["artist_tags", "extra_text", "separator"],
     "AnimaCharacterTagSelector": ["character_tags", "mode"],
     "AnimaCharacterTagSelectorPlus": ["character_tags", "extra_text", "separator"],
+    "AnimaCharacterTagSelectorTagged": ["character_tags", "mode"],
+    "AnimaCharacterTagSelectorPlusTagged": ["character_tags", "extra_text", "separator"],
     "AnimaClothingTagSelector": ["clothing_tags", "mode"],
     "AnimaClothingTagSelectorPlus": ["clothing_tags", "extra_text", "separator"],
+    "AnimaClothingTagSelectorTagged": ["clothing_tags", "mode"],
+    "AnimaClothingTagSelectorPlusTagged": ["clothing_tags", "extra_text", "separator"],
     "AnimaBackgroundTagSelector": ["background_tags", "mode"],
     "AnimaBackgroundTagSelectorPlus": ["background_tags", "extra_text", "separator"],
+    "AnimaBackgroundTagSelectorTagged": ["background_tags", "mode"],
+    "AnimaBackgroundTagSelectorPlusTagged": ["background_tags", "extra_text", "separator"],
     "AnimaPoseTagSelector": ["pose_tags", "mode"],
     "AnimaPoseTagSelectorPlus": ["pose_tags", "extra_text", "separator"],
+    "AnimaPoseTagSelectorTagged": ["pose_tags", "mode"],
+    "AnimaPoseTagSelectorPlusTagged": ["pose_tags", "extra_text", "separator"],
     "AnimaPromptPlus": [
+        "quality_prompt",
+        "artist_tags",
+        "character_tags",
+        "clothing_tags",
+        "pose_tags",
+        "background_tags",
+        "extra_prompt",
+        "separator",
+    ],
+    "AnimaPromptPlusTagged": [
         "quality_prompt",
         "artist_tags",
         "character_tags",
@@ -1275,6 +1449,64 @@ def _set_selector_workflow_widget_value(workflow_node, class_type, input_name, v
     while len(widgets_values) <= index:
         widgets_values.append("")
     widgets_values[index] = value
+
+def _split_selector_text(value):
+    return _anima_tag_widget_tokens(value)
+
+def _normalize_tag_key(value):
+    return str(value or "").replace("_raw_:", "", 1).strip().lower()
+
+def _selector_tag_field_state(workflow_node, input_name):
+    if not isinstance(workflow_node, dict):
+        return None
+    properties = workflow_node.get("properties")
+    if not isinstance(properties, dict):
+        properties = {}
+        workflow_node["properties"] = properties
+    state = properties.get(TAG_STATE_PROPERTY)
+    if not isinstance(state, dict):
+        state = {"version": 1, "fields": {}}
+        properties[TAG_STATE_PROPERTY] = state
+    fields = state.get("fields")
+    if not isinstance(fields, dict):
+        fields = {}
+        state["fields"] = fields
+    field = fields.get(input_name)
+    if not isinstance(field, dict):
+        field = {}
+        fields[input_name] = field
+    field.setdefault("tags", [])
+    field.setdefault("history", [])
+    field.setdefault("applyMode", "replace")
+    field.setdefault("historyLimit", 20)
+    return field
+
+def _set_selector_tag_state_from_random(workflow_node, input_name, text):
+    field = _selector_tag_field_state(workflow_node, input_name)
+    if field is None:
+        return
+    incoming = []
+    seen = set()
+    for tag in _split_selector_text(text):
+        key = _normalize_tag_key(tag)
+        if key and key not in seen:
+            seen.add(key)
+            incoming.append({"text": tag, "enabled": True, "source": "random"})
+
+    incoming_keys = {_normalize_tag_key(tag.get("text")) for tag in incoming}
+    previous = field.get("tags") if isinstance(field.get("tags"), list) else []
+    disabled = []
+    seen_disabled = set(incoming_keys)
+    for tag in previous:
+        if not isinstance(tag, dict):
+            continue
+        text = str(tag.get("text") or tag.get("tag") or tag.get("value") or tag.get("name") or "").strip()
+        key = _normalize_tag_key(text)
+        if not key or key in seen_disabled:
+            continue
+        seen_disabled.add(key)
+        disabled.append({"text": text, "enabled": False, "source": tag.get("source") or "random"})
+    field["tags"] = incoming + disabled
 
 def _selector_random_text(composer, section):
     selected, text = composer._resolve_prompt_data(
@@ -1333,6 +1565,8 @@ def _resolve_anima_selector_random_nodes(prompt, extra_pnginfo, composer):
                 continue
             inputs[input_name] = text
             _set_selector_workflow_widget_value(workflow_node, class_type, input_name, text)
+            if _is_tagged_node_class(class_type):
+                _set_selector_tag_state_from_random(workflow_node, input_name, text)
             _record_selector_random(extra_pnginfo, node_id, class_type, section, input_name, text, selected)
 
 def _install_anima_prompt_composer_queue_resolver():
@@ -1357,13 +1591,15 @@ def _install_anima_prompt_composer_queue_resolver():
             _resolve_anima_selector_random_nodes(prompt, extra_pnginfo, composer)
 
             for node_id, node in list(prompt.items()):
-                if not isinstance(node, dict) or node.get("class_type") != "AnimaPromptComposer":
+                if not isinstance(node, dict) or node.get("class_type") not in ("AnimaPromptComposer", "AnimaPromptComposerTagged"):
                     continue
                 inputs = node.setdefault("inputs", {})
                 if not isinstance(inputs, dict):
                     continue
 
-                selected, resolved_prompt = composer._resolve_prompt_data(
+                node_composer = AnimaPromptComposerTagged() if node.get("class_type") == "AnimaPromptComposerTagged" else composer
+
+                selected, resolved_prompt = node_composer._resolve_prompt_data(
                     inputs.get("enable_artist", True),
                     inputs.get("enable_character", True),
                     inputs.get("enable_clothing", True),
@@ -1374,7 +1610,7 @@ def _install_anima_prompt_composer_queue_resolver():
                     inputs.get("artist_count", 1),
                 )
                 inputs["resolved_prompt"] = resolved_prompt
-                composer._record_resolved_prompt(
+                node_composer._record_resolved_prompt(
                     prompt,
                     extra_pnginfo,
                     node_id,

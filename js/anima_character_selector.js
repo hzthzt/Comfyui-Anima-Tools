@@ -3,7 +3,17 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { createSelectorApplyModeControl, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
 import "./character_data.js";
+
+const CHARACTER_SELECTOR_NODES = new Set([
+    "AnimaCharacterTagSelector",
+    "AnimaCharacterTagSelectorPlus",
+    "AnimaCharacterTagSelectorTagged",
+    "AnimaCharacterTagSelectorPlusTagged",
+    "AnimaPromptPlus",
+    "AnimaPromptPlusTagged",
+]);
 
 let characterOfficialDataPromise = null;
 
@@ -34,7 +44,8 @@ app.registerExtension({
     name: "AnimaCharacterTagSelector.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        if (nodeData.name === "AnimaCharacterTagSelector" || nodeData.name === "AnimaCharacterTagSelectorPlus" || nodeData.name === "AnimaPromptPlus") {
+        if (CHARACTER_SELECTOR_NODES.has(nodeData.name)) {
+            nodeType.prototype.__animaNodeClass = nodeData.name;
             installSelectorExecutionSync(nodeType);
             const origOnCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
@@ -43,6 +54,7 @@ app.registerExtension({
                 // 找到 character_tags widget
                 const characterTagsWidget = this.widgets.find(w => w.name === "character_tags");
                 if (!characterTagsWidget) return;
+                if (isTaggedAnimaNode(this)) ensureTagEditor(this, characterTagsWidget, { label: t("Character Tags") });
                 
                 addSelectorActionRow(this, {
                     section: "character",
@@ -58,6 +70,14 @@ app.registerExtension({
                         await openCharacterSelectorModal(this, characterTagsWidget);
                     },
                 });
+            };
+
+            const origOnConfigure = nodeType.prototype.onConfigure;
+            nodeType.prototype.onConfigure = function () {
+                const result = origOnConfigure?.apply(this, arguments);
+                const characterTagsWidget = this.widgets?.find(w => w.name === "character_tags");
+                if (characterTagsWidget && isTaggedAnimaNode(this)) ensureTagEditor(this, characterTagsWidget, { label: t("Character Tags") });
+                return result;
             };
         }
     }
@@ -1889,21 +1909,13 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         if (resultString) {
             resultString += ", ";
         }
-        tagsWidget.value = resultString;
-        
-        if (tagsWidget.inputEl) {
-            tagsWidget.inputEl.value = resultString;
-            tagsWidget.inputEl.dispatchEvent(new Event("input"));
-        }
-        
-        if (tagsWidget.callback) {
-            tagsWidget.callback(resultString);
-        }
+        writeTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
         
         node.triggerSlot?(0):null;
         closeModal();
     }
 
+    if (isTaggedAnimaNode(node)) footerButtons.appendChild(createSelectorApplyModeControl(node, tagsWidget));
     footerButtons.appendChild(cancelBtn);
     footerButtons.appendChild(applyTriggerBtn);
     footerButtons.appendChild(applyTriggerTagsBtn);

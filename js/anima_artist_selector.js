@@ -3,12 +3,23 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { createSelectorApplyModeControl, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
+
+const ARTIST_SELECTOR_NODES = new Set([
+    "AnimaArtistTagSelector",
+    "AnimaArtistTagSelectorPlus",
+    "AnimaArtistTagSelectorTagged",
+    "AnimaArtistTagSelectorPlusTagged",
+    "AnimaPromptPlus",
+    "AnimaPromptPlusTagged",
+]);
 
 app.registerExtension({
     name: "AnimaArtistTagSelector.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
-        if (nodeData.name === "AnimaArtistTagSelector" || nodeData.name === "AnimaArtistTagSelectorPlus" || nodeData.name === "AnimaPromptPlus") {
+        if (ARTIST_SELECTOR_NODES.has(nodeData.name)) {
+            nodeType.prototype.__animaNodeClass = nodeData.name;
             installSelectorExecutionSync(nodeType);
             const origOnCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
@@ -17,6 +28,7 @@ app.registerExtension({
                 // 找到 artist_tags widget
                 const artistTagsWidget = this.widgets.find(w => w.name === "artist_tags");
                 if (!artistTagsWidget) return;
+                if (isTaggedAnimaNode(this)) ensureTagEditor(this, artistTagsWidget, { label: t("Artist Tags") });
                 
                 addSelectorActionRow(this, {
                     section: "artist",
@@ -31,6 +43,14 @@ app.registerExtension({
                         await openArtistSelectorModal(this, artistTagsWidget);
                     },
                 });
+            };
+
+            const origOnConfigure = nodeType.prototype.onConfigure;
+            nodeType.prototype.onConfigure = function () {
+                const result = origOnConfigure?.apply(this, arguments);
+                const artistTagsWidget = this.widgets?.find(w => w.name === "artist_tags");
+                if (artistTagsWidget && isTaggedAnimaNode(this)) ensureTagEditor(this, artistTagsWidget, { label: t("Artist Tags") });
+                return result;
             };
         }
     }
@@ -1342,21 +1362,13 @@ async function openArtistSelectorModal(node, tagsWidget) {
         if (resultString) {
             resultString += ", ";
         }
-        tagsWidget.value = resultString;
-        
-        if (tagsWidget.inputEl) {
-            tagsWidget.inputEl.value = resultString;
-            tagsWidget.inputEl.dispatchEvent(new Event("input"));
-        }
-        
-        if (tagsWidget.callback) {
-            tagsWidget.callback(resultString);
-        }
+        writeTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
         
         node.triggerSlot?(0):null;
         closeModal();
     }
 
+    if (isTaggedAnimaNode(node)) footerButtons.appendChild(createSelectorApplyModeControl(node, tagsWidget));
     footerButtons.appendChild(cancelBtn);
     footerButtons.appendChild(applyBtn);
     footer.appendChild(countLabel);

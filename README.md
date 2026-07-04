@@ -98,12 +98,17 @@
 
 ### 🎲 5. 随机提示词整合节点 (Anima Prompt Composer)
 *   **运行时自动随机：** 工作流运行到节点时自动从全量画师、角色与服装数据中随机选择内容，不包含用户自定义项。
-*   **统一字符串输出：** 输出顺序固定为 **画师 -> 角色 -> 服装**，可单独禁用任意类别；角色支持 `trigger` 或 `trigger + tags` 两种输出模式。
+*   **统一字符串输出：** 输出顺序固定为 **画师 -> 角色 -> 服装 -> 背景 -> 姿势**，可单独禁用任意类别；角色支持 `trigger` 或 `trigger + tags` 两种输出模式。
+*   **双 UI 版本：** 原始 `Anima Prompt Random Draw` 保留普通 STRING 文本框；`Anima Prompt Random Draw (Tagged)` 额外显示标签管理面板，同时仍保留 `resolved_prompt` 文本框。
+*   **标签化管理：** Tagged 版本的随机结果会以 Tag chip 形式显示，可临时禁用、恢复、删除或手动新增标签；禁用标签保留在节点中但不会参与最终输出。
+*   **历史记录区：** Tagged 版本删除的标签进入当前节点独立的历史区，默认保留最近 20 个，可随时恢复或清空。
 *   **节点内可折叠预览：** 节点上直接显示随机结果的文字提示词与 3:4 图片预览，并支持折叠隐藏预览区域。
 
 ### ⚙️ 6. 智能 Python 后端拼接 (Selector Plus Nodes)
 *   **双版本节点组合：** 提供基础版 (Selector) 与 Plus 版 (Selector+)。
 *   **智能防冲突拼接：** Plus 节点支持自定义 `extra_text`（额外文本）与 `separator`（分隔符）。当两段文本拼合时，系统会自动进行去污与去重，**避免产生双逗号或首尾多余空格**的排版问题，保证工作流稳定。
+*   **原始节点保持纯文本：** 画师、角色、服装、背景、姿势选择器以及 Prompt Plus 的原始节点继续显示普通 STRING 文本框，不显示 Tag chip 管理区。
+*   **Tagged 变体统一 Tag 编辑器：** 带 `(Tagged)` 后缀的新节点在保留 STRING 文本框的同时额外显示统一标签管理面板；选择器应用时可选择“覆盖”或“新增”，运行时随机会用新随机结果覆盖当前启用标签，并把旧标签保留为禁用状态。
 
 ### 🌐 7. 原生多语言跟随 (Native i18n)
 *   支持中英双语，自动识别并实时跟随 ComfyUI 原生的多语言设置（`Comfy.Locale`），无需手动配置。
@@ -136,47 +141,59 @@
 
 ## 📖 节点参数说明 (Nodes Reference)
 
-本套件共提供 8 个核心节点，放置于 `AnimaArt` 分类目录下：
+本套件提供原始文本框节点和对应的 `(Tagged)` 标签管理变体，均放置于 `AnimaArt` 分类目录下：
 
 ### 1. 🎨 Anima Artist Tag Selector & Selector+ (画师选择器)
 *   **基础版 (Selector):**
-    *   `artist_tags` (String): 前端交互界面自动填入的画师列表。
+    *   `artist_tags` (String): 前端交互界面自动填入的普通 STRING 画师列表；原始节点保留文本框体验，不显示标签管理面板。
     *   `mode` (Combo: `append` / `override`): 在提供可选输入 `opt_prompt` 时，画师名是**追加**到已有提示词后面还是直接**覆盖**输出。
     *   `opt_prompt` (String, 可选输入): 外部传入的已有提示词。
 *   **增强版 (Selector+):**
-    *   `artist_tags` (String): 自动生成的以 `@` 开头的画师标签。
+    *   `artist_tags` (String): 自动生成的以 `@` 开头的画师标签，原始节点仍以普通文本框管理。
     *   `extra_text` (String): 用户自定义写入的额外 Prompts / Tag 文本。
     *   `separator` (String, 默认 `, `): 连接画师与额外提示词的分隔符，具有智能排版防错机制。
+*   **Tagged 变体:** `Anima Artist Tag Selector (Tagged)` 和 `Anima Artist Tag Selector+ (Tagged)` 会在保留 `artist_tags` 文本框的同时增加 Tag chip 管理区，可禁用、恢复、删除、新增标签并同步启用标签回文本框。
 
 ### 2. 🎭 Anima Character Tag Selector & Selector+ (角色选择器)
 *   **基础版 (Selector):**
-    *   `character_tags` (String): 前端交互选择填入的动漫角色 Tag 列表。
+    *   `character_tags` (String): 前端交互选择填入的普通 STRING 动漫角色 Tag 列表；原始节点不显示标签管理面板。
     *   `mode` (Combo: `append` / `override`): 外部 Prompt 拼接模式。
     *   `opt_prompt` (String, 可选输入): 外部传入的已有提示词。
 *   **增强版 (Selector+):**
-    *   `character_tags` (String): 选择的角色提示词（去污处理后）。
+    *   `character_tags` (String): 选择的角色提示词（去污处理后），原始节点仍以普通文本框管理。
     *   `extra_text` (String): 追加的自定义提示词。
     *   `separator` (String): 智能防错连接符。
+*   **Tagged 变体:** `Anima Character Tag Selector (Tagged)` 和 `Anima Character Tag Selector+ (Tagged)` 会在保留 `character_tags` 文本框的同时增加 Tag chip 管理区。
 
 ### 3. 👗 Anima Clothing Tag Selector & Selector+ (服装选择器)
 *   **基础版 (Selector):**
-    *   `clothing_tags` (String): 前端交互选择填入的服装 Prompt Tags。
+    *   `clothing_tags` (String): 前端交互选择填入的普通 STRING 服装 Prompt Tags；原始节点不显示标签管理面板。
     *   `mode` (Combo: `append` / `override`): 外部 Prompt 拼接模式。
     *   `opt_prompt` (String, 可选输入): 外部传入的已有提示词。
 *   **增强版 (Selector+):**
-    *   `clothing_tags` (String): 选择的服装提示词（去污处理后）。
+    *   `clothing_tags` (String): 选择的服装提示词（去污处理后），原始节点仍以普通文本框管理。
     *   `extra_text` (String): 追加的自定义提示词。
     *   `separator` (String): 智能防错连接符。
+*   **Tagged 变体:** `Anima Clothing Tag Selector (Tagged)` 和 `Anima Clothing Tag Selector+ (Tagged)` 会在保留 `clothing_tags` 文本框的同时增加 Tag chip 管理区。
 
-### 4. 🎲 Anima Prompt Composer (随机提示词整合器)
-*   `enable_artist` / `enable_character` / `enable_clothing` (Boolean): 控制画师、角色、服装三个类别是否参与输出。
+### 4. 🖼️ Anima Background / Pose Tag Selector & Selector+
+*   **背景与姿势选择器:** `background_tags`、`pose_tags` 都是由可视化选择器填入的普通 STRING 文本框；原始节点不显示标签管理面板。
+*   **Selector+ 增强版:** 背景与姿势的 Plus 节点同样支持 `extra_text` 与 `separator`，用于把选择结果和自定义提示词稳定拼接。
+*   **Tagged 变体:** `Anima Background Tag Selector (Tagged)`、`Anima Background Tag Selector+ (Tagged)`、`Anima Pose Tag Selector (Tagged)` 和 `Anima Pose Tag Selector+ (Tagged)` 会保留对应文本框，并额外提供 Tag chip 管理区。
+
+### 5. 🎲 Anima Prompt Plus / Prompt Composer
+*   **Anima Prompt Plus:** 原始节点保留 `quality_prompt`、五个 tag 字段、`extra_prompt` 和 `separator` 的普通文本框；`Anima Prompt Plus (Tagged)` 会在五个 tag 字段旁增加标签管理面板，但 `quality_prompt`、`extra_prompt` 不纳入标签管理。
+*   **Prompt Composer 原始节点:** `resolved_prompt` 是普通 STRING 文本框，运行后写入最近一次随机结果。
+*   **Prompt Composer Tagged:** `Anima Prompt Random Draw (Tagged)` 保留 `resolved_prompt` 文本框，并额外提供可禁用、删除、新增和历史恢复的 Tag chip 管理区。
+*   `enable_artist` / `enable_character` / `enable_clothing` / `enable_background` / `enable_pose` (Boolean): 控制对应类别是否参与输出。
 *   `character_detail` (Combo: `trigger` / `trigger_tags`): 控制角色输出仅使用触发词，或使用触发词加完整特征。
 *   `seed` (Int): `-1` 表示每次运行自动随机；固定数值可获得可复现结果。
-*   `artist_count` (Int): 控制随机画师数量；角色与服装固定各随机 1 个。
+*   `artist_count` (Int): 控制随机画师数量；角色、服装、背景与姿势固定各随机 1 个。
 *   `preview_collapsed` (Boolean): 控制节点上的随机结果预览是否折叠。
-*   输出为单个 `STRING`，顺序固定为 **画师 -> 角色 -> 服装**。
+*   `resolved_prompt` (String): 保存最近一次随机结果文本；Tagged 变体会把启用标签同步回该文本框。
+*   输出为单个 `STRING`，顺序固定为 **画师 -> 角色 -> 服装 -> 背景 -> 姿势**。
 
-### 5. 🧩 Anima Multi LoRA Loader (多 LoRA 加载器)
+### 6. 🧩 Anima Multi LoRA Loader (多 LoRA 加载器)
 *   `model`: ComfyUI 标准模型输入。
 *   `lora_list_json` (String): 前端 LoRA 选择器维护的 LoRA 列表，包含文件名、启用状态与模型强度。
 *   前端面板支持本地 LoRA 预览、Civitai 搜索、下载进度、收藏、持久缩略图缓存与快速二次打开。

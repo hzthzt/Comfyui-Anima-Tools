@@ -5,7 +5,8 @@ app.registerExtension({
     name: "AnimaPromptPlus.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
-        if (nodeData.name !== "AnimaPromptPlus") return;
+        if (nodeData.name !== "AnimaPromptPlus" && nodeData.name !== "AnimaPromptPlusTagged") return;
+        nodeType.prototype.__animaNodeClass = nodeData.name;
 
         const origOnCreated = nodeType.prototype.onNodeCreated;
         nodeType.prototype.onNodeCreated = function () {

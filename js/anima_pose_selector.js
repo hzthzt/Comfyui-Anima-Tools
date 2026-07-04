@@ -3,7 +3,17 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { createSelectorApplyModeControl, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
 import "./pose_data.js";
+
+const POSE_SELECTOR_NODES = new Set([
+    "AnimaPoseTagSelector",
+    "AnimaPoseTagSelectorPlus",
+    "AnimaPoseTagSelectorTagged",
+    "AnimaPoseTagSelectorPlusTagged",
+    "AnimaPromptPlus",
+    "AnimaPromptPlusTagged",
+]);
 
 const THEME = {
     accent: "#db2777",
@@ -100,7 +110,8 @@ app.registerExtension({
     name: "AnimaPoseTagSelector.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
-        if (nodeData.name === "AnimaPoseTagSelector" || nodeData.name === "AnimaPoseTagSelectorPlus" || nodeData.name === "AnimaPromptPlus") {
+        if (POSE_SELECTOR_NODES.has(nodeData.name)) {
+            nodeType.prototype.__animaNodeClass = nodeData.name;
             installSelectorExecutionSync(nodeType);
             const origOnCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
@@ -108,6 +119,7 @@ app.registerExtension({
 
                 const poseTagsWidget = this.widgets.find(w => w.name === "pose_tags");
                 if (!poseTagsWidget) return;
+                if (isTaggedAnimaNode(this)) ensureTagEditor(this, poseTagsWidget, { label: t("Pose Tags") });
                 addSelectorActionRow(this, {
                     section: "pose",
                     label: t("Open Pose Selector"),
@@ -121,6 +133,14 @@ app.registerExtension({
                         await openPoseSelectorModal(this, poseTagsWidget);
                     },
                 });
+            };
+
+            const origOnConfigure = nodeType.prototype.onConfigure;
+            nodeType.prototype.onConfigure = function () {
+                const result = origOnConfigure?.apply(this, arguments);
+                const poseTagsWidget = this.widgets?.find(w => w.name === "pose_tags");
+                if (poseTagsWidget && isTaggedAnimaNode(this)) ensureTagEditor(this, poseTagsWidget, { label: t("Pose Tags") });
+                return result;
             };
         }
     }
@@ -1183,6 +1203,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     const applyBtn = createEl("button", "anima-pose-btn primary", t("Confirm & Apply"));
     applyBtn.onclick = () => applySelectionAndClose();
 
+    if (isTaggedAnimaNode(node)) footerBtns.appendChild(createSelectorApplyModeControl(node, tagsWidget));
     footerBtns.appendChild(cancelFooterBtn);
     footerBtns.appendChild(applyBtn);
     footer.appendChild(countLabel);
@@ -2018,12 +2039,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     function applySelectionAndClose() {
         const resultString = buildSelectedText();
         if (tagsWidget) {
-            tagsWidget.value = resultString;
-            if (tagsWidget.inputEl) {
-                tagsWidget.inputEl.value = resultString;
-                tagsWidget.inputEl.dispatchEvent(new Event("input"));
-            }
-            tagsWidget.callback?.(resultString);
+            writeTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
         }
         node.triggerSlot?.(0);
         closeModal();

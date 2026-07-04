@@ -1,4 +1,5 @@
 import { t } from "./i18n.js";
+import { writeTagsToWidget } from "./anima_tag_editor.js";
 
 export const SELECTOR_RANDOM_PROPERTY = "anima_selector_random";
 
@@ -78,7 +79,7 @@ function syncSelectorTagsFromExecution(node, message) {
     const payload = extractSelectorTagsPayload(message);
     if (!payload) return;
     for (const [name, value] of Object.entries(payload)) {
-        setWidgetValue(node, name, value);
+        writeTagsToWidget(node, name, value, { mode: "replace", source: "random" });
     }
     refreshNode(node);
 }

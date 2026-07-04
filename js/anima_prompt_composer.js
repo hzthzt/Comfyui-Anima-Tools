@@ -1,5 +1,6 @@
 import { app } from "../../scripts/app.js";
 import { t } from "./i18n.js";
+import { ensureTagEditor, isTaggedAnimaNode, splitTagText, writeTagsToWidget } from "./anima_tag_editor.js";
 
 const SECTIONS = ["artist", "character", "clothing", "background", "pose"];
 const SECTION_META = {
@@ -19,7 +20,8 @@ app.registerExtension({
     name: "AnimaPromptComposer.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
-        if (nodeData.name !== "AnimaPromptComposer") return;
+        if (nodeData.name !== "AnimaPromptComposer" && nodeData.name !== "AnimaPromptComposerTagged") return;
+        nodeType.prototype.__animaNodeClass = nodeData.name;
 
         const origOnCreated = nodeType.prototype.onNodeCreated;
         nodeType.prototype.onNodeCreated = function () {
@@ -43,7 +45,7 @@ app.registerExtension({
                 this._animaComposerHasRun = true;
                 const resolvedPrompt = extractResolvedPrompt(message, payload);
                 if (resolvedPrompt !== null) {
-                    setWidgetValue(this, "resolved_prompt", resolvedPrompt);
+                    writeTagsToWidget(this, "resolved_prompt", resolvedPrompt, { mode: "replace", source: "random" });
                 }
                 updateComposerLayout(this);
             }
@@ -70,6 +72,7 @@ function setupComposerNode(node) {
     node._animaComposerImages = node._animaComposerImages || new Map();
     hydrateComposerResolvedState(node);
     hideInternalWidgets(node);
+    if (isTaggedAnimaNode(node)) ensureTagEditor(node, "resolved_prompt", { label: t("Resolved Prompt") });
     ensureComposerControls(node);
     removePreviewWidget(node);
     updateComposerLayout(node);
@@ -315,6 +318,8 @@ function extractPromptText(value) {
     const text = String(value || "");
     const trimmed = text.trim();
     if (!trimmed.startsWith("{")) return text;
+    const enabledTags = splitTagText(trimmed);
+    if (enabledTags.length) return `${enabledTags.join(", ")}, `;
     try {
         const payload = JSON.parse(trimmed);
         if (payload && typeof payload === "object" && typeof payload._resolved_prompt === "string") {
@@ -377,7 +382,7 @@ function getWidgetBottom(node) {
     if (!node?.widgets?.length) return 0;
     let bottom = 0;
     for (const widget of node.widgets) {
-        if (!widget || widget.name === "preview_collapsed" || widget.__animaComposerPreview || widget.__animaComposerDomPreview) continue;
+        if (!widget || widget.name === "preview_collapsed" || widget.__animaComposerPreview || widget.__animaComposerDomPreview || widget.__animaTagOriginal) continue;
         const y = Number.isFinite(widget.last_y) ? widget.last_y : widget.y;
         const h = Number.isFinite(widget.computedHeight) ? widget.computedHeight : 24;
         if (Number.isFinite(y) && y > -1000) bottom = Math.max(bottom, y + h);
@@ -420,6 +425,7 @@ function hideInternalWidgets(node) {
 function fixResolvedPromptWidget(node) {
     const widget = getWidget(node, "resolved_prompt");
     if (!widget) return;
+    if (widget.__animaTagOriginal) return;
     widget.computeSize = (width) => [width, RESOLVED_PROMPT_WIDGET_HEIGHT];
     widget.computedHeight = RESOLVED_PROMPT_WIDGET_HEIGHT;
     [widget.element, widget.inputEl, widget.el, widget.container].forEach(el => {

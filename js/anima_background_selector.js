@@ -3,7 +3,17 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { createSelectorApplyModeControl, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
 import "./background_data.js";
+
+const BACKGROUND_SELECTOR_NODES = new Set([
+    "AnimaBackgroundTagSelector",
+    "AnimaBackgroundTagSelectorPlus",
+    "AnimaBackgroundTagSelectorTagged",
+    "AnimaBackgroundTagSelectorPlusTagged",
+    "AnimaPromptPlus",
+    "AnimaPromptPlusTagged",
+]);
 
 const THEME = {
     accent: "#db2777",
@@ -76,7 +86,8 @@ app.registerExtension({
     name: "AnimaBackgroundTagSelector.extension",
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
-        if (nodeData.name === "AnimaBackgroundTagSelector" || nodeData.name === "AnimaBackgroundTagSelectorPlus" || nodeData.name === "AnimaPromptPlus") {
+        if (BACKGROUND_SELECTOR_NODES.has(nodeData.name)) {
+            nodeType.prototype.__animaNodeClass = nodeData.name;
             installSelectorExecutionSync(nodeType);
             const origOnCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
@@ -84,6 +95,7 @@ app.registerExtension({
 
                 const backgroundTagsWidget = this.widgets.find(w => w.name === "background_tags");
                 if (!backgroundTagsWidget) return;
+                if (isTaggedAnimaNode(this)) ensureTagEditor(this, backgroundTagsWidget, { label: t("Background Tags") });
                 addSelectorActionRow(this, {
                     section: "background",
                     label: t("Open Background Selector"),
@@ -97,6 +109,14 @@ app.registerExtension({
                         await openBackgroundSelectorModal(this, backgroundTagsWidget);
                     },
                 });
+            };
+
+            const origOnConfigure = nodeType.prototype.onConfigure;
+            nodeType.prototype.onConfigure = function () {
+                const result = origOnConfigure?.apply(this, arguments);
+                const backgroundTagsWidget = this.widgets?.find(w => w.name === "background_tags");
+                if (backgroundTagsWidget && isTaggedAnimaNode(this)) ensureTagEditor(this, backgroundTagsWidget, { label: t("Background Tags") });
+                return result;
             };
         }
     }
@@ -1159,6 +1179,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     const applyBtn = createEl("button", "anima-background-btn primary", t("Confirm & Apply"));
     applyBtn.onclick = () => applySelectionAndClose();
 
+    if (isTaggedAnimaNode(node)) footerBtns.appendChild(createSelectorApplyModeControl(node, tagsWidget));
     footerBtns.appendChild(cancelFooterBtn);
     footerBtns.appendChild(applyBtn);
     footer.appendChild(countLabel);
@@ -1986,12 +2007,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     function applySelectionAndClose() {
         const resultString = buildSelectedText();
         if (tagsWidget) {
-            tagsWidget.value = resultString;
-            if (tagsWidget.inputEl) {
-                tagsWidget.inputEl.value = resultString;
-                tagsWidget.inputEl.dispatchEvent(new Event("input"));
-            }
-            tagsWidget.callback?.(resultString);
+            writeTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
         }
         node.triggerSlot?.(0);
         closeModal();
