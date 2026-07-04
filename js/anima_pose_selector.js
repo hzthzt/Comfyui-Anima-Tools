@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { createSelectorApplyModeControl, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
+import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeTagsToWidget } from "./anima_tag_editor.js";
 import "./pose_data.js";
 
 const POSE_SELECTOR_NODES = new Set([
@@ -1203,7 +1203,12 @@ async function openPoseSelectorModal(node, tagsWidget) {
     const applyBtn = createEl("button", "anima-pose-btn primary", t("Confirm & Apply"));
     applyBtn.onclick = () => applySelectionAndClose();
 
-    if (isTaggedAnimaNode(node)) footerBtns.appendChild(createSelectorApplyModeControl(node, tagsWidget));
+    if (isTaggedAnimaNode(node)) {
+        footerBtns.insertBefore(
+            createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element,
+            footerBtns.firstChild
+        );
+    }
     footerBtns.appendChild(cancelFooterBtn);
     footerBtns.appendChild(applyBtn);
     footer.appendChild(countLabel);
