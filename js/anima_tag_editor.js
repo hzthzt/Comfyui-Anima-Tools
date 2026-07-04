@@ -193,7 +193,9 @@ function refreshEditor(node, fieldName) {
 function refreshSelectorManagers(node, fieldName) {
     const managers = node?._animaSelectorTagManagers?.[fieldName];
     if (!Array.isArray(managers)) return;
-    managers.forEach(manager => manager?.render?.());
+    const activeManagers = managers.filter(manager => manager?.element?.isConnected !== false);
+    node._animaSelectorTagManagers[fieldName] = activeManagers;
+    activeManagers.forEach(manager => manager?.render?.());
 }
 
 function addToHistory(field, text) {
@@ -237,6 +239,7 @@ function syncFieldFromWidget(node, fieldName, widget) {
     const field = getTagFieldState(node, fieldName, widget);
     applyIncomingTags(field, splitTagText(widget.value), "replace", "text");
     refreshEditor(node, fieldName);
+    refreshSelectorManagers(node, fieldName);
     refreshNode(node);
 }
 
