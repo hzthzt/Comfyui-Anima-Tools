@@ -100,7 +100,7 @@ test("createSelectorTagManager appends manual input as a tag", async () => {
 
 test("createSelectorTagManager can switch selector apply mode", async () => {
   installDom();
-  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=mode");
+  const { createSelectorTagManager, getTagFieldState, writeTagsToWidget } = await import("../js/anima_tag_editor.js?case=mode");
   const { node, widget } = createNodeAndWidget("alpha, ");
 
   const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
@@ -112,11 +112,7 @@ test("createSelectorTagManager can switch selector apply mode", async () => {
 
   assert.equal(getTagFieldState(node, "artist_tags", widget).applyMode, "append");
 
-  const input = manager.element.querySelector("input");
-  input.value = "beta";
-  const addButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Add");
-  assert.ok(addButton);
-  addButton.click();
+  writeTagsToWidget(node, widget, "beta, ", { source: "selector" });
 
   assert.equal(widget.value, "alpha, beta, ");
 });
