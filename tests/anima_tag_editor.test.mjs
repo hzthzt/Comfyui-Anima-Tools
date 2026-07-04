@@ -37,6 +37,11 @@ function createNodeAndWidget(value = "alpha, beta, ") {
   return { node, widget };
 }
 
+function findButtonByTitle(element, titles) {
+  const acceptedTitles = new Set(Array.isArray(titles) ? titles : [titles]);
+  return Array.from(element.querySelectorAll("button")).find(button => acceptedTitles.has(button.title));
+}
+
 test("createSelectorTagManager renders current tags and updates widget when a tag is disabled", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=disable");
@@ -49,7 +54,7 @@ test("createSelectorTagManager renders current tags and updates widget when a ta
   assert.match(manager.element.textContent, /alpha/);
   assert.match(manager.element.textContent, /beta/);
 
-  const disableButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Disable tag");
+  const disableButton = findButtonByTitle(manager.element, ["Disable tag", "Disable Tag"]);
   assert.ok(disableButton);
   disableButton.click();
 
@@ -66,14 +71,14 @@ test("createSelectorTagManager moves deleted tags to history and restores them",
   const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
   document.body.appendChild(manager.element);
 
-  const deleteButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Delete tag");
+  const deleteButton = findButtonByTitle(manager.element, ["Delete tag", "Delete Tag"]);
   assert.ok(deleteButton);
   deleteButton.click();
 
   assert.equal(widget.value, "");
   assert.match(manager.element.textContent, /History/);
 
-  const restoreButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.title === "Restore tag");
+  const restoreButton = findButtonByTitle(manager.element, ["Restore tag", "Restore Tag"]);
   assert.ok(restoreButton);
   restoreButton.click();
 
@@ -89,6 +94,7 @@ test("createSelectorTagManager appends manual input as a tag", async () => {
   document.body.appendChild(manager.element);
 
   const input = manager.element.querySelector("input");
+  assert.ok(input);
   input.value = "gamma";
   const addButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Add");
   assert.ok(addButton);
