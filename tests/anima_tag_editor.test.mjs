@@ -122,3 +122,41 @@ test("createSelectorTagManager can switch selector apply mode", async () => {
 
   assert.equal(widget.value, "alpha, beta, ");
 });
+
+test("writeSelectorTagsToWidget preserves disabled selector manager tags on confirm", async () => {
+  installDom();
+  const { createSelectorTagManager, writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-disabled");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const disableButton = findButtonByTitle(manager.element, ["Disable tag", "Disable Tag"]);
+  assert.ok(disableButton);
+  disableButton.click();
+  assert.equal(widget.value, "");
+
+  writeSelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
+
+  assert.equal(widget.value, "");
+});
+
+test("writeSelectorTagsToWidget keeps manual selector manager tags on confirm", async () => {
+  installDom();
+  const { createSelectorTagManager, writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-manual");
+  const { node, widget } = createNodeAndWidget("");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const input = manager.element.querySelector("input");
+  assert.ok(input);
+  input.value = "manual";
+  const addButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Add");
+  assert.ok(addButton);
+  addButton.click();
+
+  writeSelectorTagsToWidget(node, widget, "card, ", { source: "selector" });
+
+  assert.equal(widget.value, "card, manual, ");
+});
