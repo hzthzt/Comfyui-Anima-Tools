@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# JavaScript/Node dependencies
+node_modules/
+
 # IDE & Editor configs
 .vscode/
 .idea/
