@@ -1340,7 +1340,9 @@ async function openArtistSelectorModal(node, tagsWidget) {
             node.triggerSlot?.(0);
             showTemporaryToast(t("Applied: {text}", { text: tag }));
         },
-        getCreateTagDefaultText: () => getActiveSelectorTagText(node, tagsWidget),
+        requestTextInput: ({ title, placeholder, defaultValue, onSubmit }) => {
+            openTextInputModal(title, placeholder, defaultValue || "", onSubmit);
+        },
         onTagFilterChange: filter => {
             activeTagFilter = filter;
             renderSidebar();
@@ -1610,6 +1612,9 @@ async function openArtistSelectorModal(node, tagsWidget) {
             tagFavorites,
             activeGroupId: activeTagFilter.type === "group" ? activeTagFilter.groupId : "all",
             t,
+            requestTextInput: ({ title, placeholder, defaultValue, onSubmit }) => {
+                openTextInputModal(title, placeholder, defaultValue || "", onSubmit);
+            },
             onSave: saveFavorites,
             onFilterChange: filter => {
                 activeTagFilter = filter;

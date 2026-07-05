@@ -355,6 +355,21 @@ export function renameSelectorTagGroup(tagFavorites, groupId, name) {
     return group;
 }
 
+export function setSelectorTagFavoriteGroups(tagFavorites, tag, groupIds = []) {
+    const favorites = ensureSelectorTagFavorites(tagFavorites);
+    const item = getSelectorTagFavorite(favorites, tag);
+    if (!item) return null;
+    const nextIds = Array.from(new Set((groupIds || [])
+        .map(id => String(id || "").trim())
+        .filter(Boolean)));
+    item.groupIds = nextIds;
+    if (!item.groupIds.length) {
+        favorites.tagItems = favorites.tagItems.filter(existing => tagFavoriteKey(existing.tag) !== tagFavoriteKey(tag));
+        return null;
+    }
+    return item;
+}
+
 export function createTagGroupSidebarSection(options = {}) {
     const t = options.t || (value => value);
     const favorites = ensureSelectorTagFavorites(options.tagFavorites || {});
@@ -383,11 +398,18 @@ export function createTagGroupSidebarSection(options = {}) {
     };
     add.onclick = async event => {
         event.stopPropagation();
-        const name = window.prompt?.(t("Enter tag group name..."));
-        const group = createSelectorTagGroup(favorites, name);
-        if (!group) return;
-        await options.onSave?.();
-        options.onFilterChange?.({ type: "group", groupId: group.id });
+        requestTextInput(options, {
+            title: t("Create New Group"),
+            placeholder: t("Enter group name..."),
+            defaultValue: "",
+            onSubmit: async name => {
+                const group = createSelectorTagGroup(favorites, name);
+                if (!group) return false;
+                await options.onSave?.();
+                options.onFilterChange?.({ type: "group", groupId: group.id });
+                return true;
+            },
+        });
     };
     header.appendChild(title);
     header.appendChild(add);
@@ -431,10 +453,17 @@ export function createTagGroupSidebarSection(options = {}) {
             };
             rename.onclick = async event => {
                 event.stopPropagation();
-                const name = window.prompt?.(t("Enter new tag group name..."), group.name);
-                if (!renameSelectorTagGroup(favorites, group.id, name)) return;
-                await options.onSave?.();
-                options.onFilterChange?.({ type: "group", groupId: group.id });
+                requestTextInput(options, {
+                    title: t("Rename Group"),
+                    placeholder: t("Enter new group name..."),
+                    defaultValue: group.name,
+                    onSubmit: async name => {
+                        if (!renameSelectorTagGroup(favorites, group.id, name)) return false;
+                        await options.onSave?.();
+                        options.onFilterChange?.({ type: "group", groupId: group.id });
+                        return true;
+                    },
+                });
             };
             remove.onclick = async event => {
                 event.stopPropagation();
@@ -599,11 +628,6 @@ export function createSelectorTagView(options) {
         return state.filterType === "group" && state.groupId !== "all" ? state.groupId : "default";
     }
 
-    function createTagDefaultText() {
-        const value = options.getCreateTagDefaultText?.();
-        return splitSelectorTagText(value)[0] || String(value || "").trim();
-    }
-
     function renderControls() {
         currentGroup();
     }
@@ -689,10 +713,41 @@ export function createSelectorTagView(options) {
             toggleSelectorTagFavorite(favorites, item, targetGroupId());
             await save();
             render();
+            options.onTagFavoritesChanged?.();
         };
 
+        const groupButton = document.createElement("span");
+        groupButton.textContent = "▣";
+        groupButton.title = t("Manage Tag Groups");
+        groupButton.dataset.tagGroupAction = "assign";
+        groupButton.style.cssText = "font-size:15px;color:#cbd5e1;flex:0 0 auto;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,0.06);";
+        groupButton.style.display = favoriteInfo ? "inline-flex" : "none";
+        groupButton.onclick = async event => {
+            event.stopPropagation();
+            const info = getSelectorTagFavorite(favorites, item.tag);
+            if (!info) return;
+            const rect = groupButton.getBoundingClientRect();
+            openSelectorTagGroupSelectPopover({
+                x: rect.left + rect.width / 2,
+                y: rect.bottom,
+                tagItem: info,
+                tagFavorites: favorites,
+                t,
+                onChange: async () => {
+                    await save();
+                    render();
+                    options.onTagFavoritesChanged?.();
+                },
+            });
+        };
+
+        const actions = document.createElement("span");
+        actions.style.cssText = "display:flex;align-items:center;gap:6px;flex:0 0 auto;";
+        actions.appendChild(groupButton);
+        actions.appendChild(favorite);
+
         row.appendChild(text);
-        row.appendChild(favorite);
+        row.appendChild(actions);
         row.onclick = () => options.applyTag?.(item.tag);
         return row;
     }
@@ -703,17 +758,24 @@ export function createSelectorTagView(options) {
         render();
     };
     createTagBtn.onclick = async () => {
-        const tagText = window.prompt?.(t("Enter favorite tag..."), createTagDefaultText());
-        if (!tagText || !tagText.trim()) return;
-        const target = targetGroupId();
-        const created = createSelectorTagFavoriteFromText(tagFavorites(), catalog(), tagText, target);
-        if (!created) return;
-        state.filterType = "group";
-        state.groupId = target;
-        state.categoryId = "all";
-        await save();
-        render();
-        options.onTagFilterChange?.({ type: "group", groupId: target });
+        requestTextInput(options, {
+            title: t("Create Favorite Tag"),
+            placeholder: t("Enter favorite tag..."),
+            defaultValue: "",
+            onSubmit: async tagText => {
+                const target = targetGroupId();
+                const created = createSelectorTagFavoriteFromText(tagFavorites(), catalog(), tagText, target);
+                if (!created) return false;
+                state.filterType = "group";
+                state.groupId = target;
+                state.categoryId = "all";
+                await save();
+                render();
+                options.onTagFilterChange?.({ type: "group", groupId: target });
+                options.onTagFavoritesChanged?.();
+                return true;
+            },
+        });
     };
     prev.onclick = () => {
         state.page -= 1;
@@ -782,6 +844,82 @@ function escapeSidebarHtml(value) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
+}
+
+function requestTextInput(options = {}, request = {}) {
+    const submit = async value => {
+        const clean = String(value || "").trim();
+        if (!clean) return false;
+        return await request.onSubmit?.(clean);
+    };
+    if (options.requestTextInput) {
+        options.requestTextInput({
+            title: request.title,
+            placeholder: request.placeholder,
+            defaultValue: request.defaultValue || "",
+            onSubmit: submit,
+        });
+    }
+}
+
+function openSelectorTagGroupSelectPopover(options = {}) {
+    const existing = document.getElementById("anima-selector-tag-group-popover");
+    if (existing) existing.remove();
+    const t = options.t || (value => value);
+    const favorites = ensureSelectorTagFavorites(options.tagFavorites || {});
+    const tagItem = options.tagItem;
+    if (!tagItem) return;
+
+    const popover = document.createElement("div");
+    popover.id = "anima-selector-tag-group-popover";
+    popover.style.cssText = `
+        position: fixed !important;
+        top: ${Number(options.y || 0)}px !important;
+        left: ${Number(options.x || 0)}px !important;
+        transform: translateX(-50%) !important;
+        background: #1c1c1e !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+        border-radius: 12px !important;
+        padding: 12px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+        z-index: 1000000 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        min-width: 160px !important;
+        max-height: 250px !important;
+        overflow-y: auto !important;
+    `;
+
+    favorites.tagGroups.forEach(group => {
+        const label = document.createElement("label");
+        label.style.cssText = "display:flex;align-items:center;gap:8px;color:#e2e8f0;font-size:13px;padding:6px;border-radius:8px;cursor:pointer;";
+        label.onmouseover = () => label.style.background = "rgba(255,255,255,0.06)";
+        label.onmouseout = () => label.style.background = "transparent";
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = (tagItem.groupIds || []).includes(group.id);
+        checkbox.style.accentColor = "#0b8ce9";
+        checkbox.onchange = async () => {
+            const groupIds = new Set(tagItem.groupIds || []);
+            if (checkbox.checked) groupIds.add(group.id);
+            else groupIds.delete(group.id);
+            setSelectorTagFavoriteGroups(favorites, tagItem.tag, Array.from(groupIds));
+            await options.onChange?.();
+        };
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(formatSelectorTagGroupLabel(group, t)));
+        popover.appendChild(label);
+    });
+
+    const closeHandler = event => {
+        if (!popover.contains(event.target)) {
+            popover.remove();
+            document.removeEventListener("mousedown", closeHandler);
+        }
+    };
+    setTimeout(() => document.addEventListener("mousedown", closeHandler), 40);
+    document.body.appendChild(popover);
 }
 
 function controlStyle() {

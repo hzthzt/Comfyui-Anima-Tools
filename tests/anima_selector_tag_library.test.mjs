@@ -417,7 +417,6 @@ test("createSelectorTagView can be filtered from the selector sidebar", async ()
 
 test("createSelectorTagView can create and render a custom favorite tag in the active group", async () => {
   installDom();
-  window.prompt = () => "sparkle aura";
   const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-create-custom");
   const tagFavorites = {
     tagGroups: [
@@ -428,11 +427,15 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   };
   let saveCount = 0;
   const applied = [];
+  let request = null;
   const view = createSelectorTagView({
     section: "character",
     tagFavorites,
     catalogProvider: () => [{ tag: "blue eyes", labelZh: "蓝色眼睛" }],
     applyTag: tag => applied.push(tag),
+    requestTextInput: nextRequest => {
+      request = nextRequest;
+    },
     saveTagFavorites: async () => {
       saveCount += 1;
     },
@@ -444,6 +447,10 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   const createButton = Array.from(view.element.querySelectorAll("button")).find(button => button.title === "Create Favorite Tag");
   assert.ok(createButton);
   createButton.click();
+  assert.equal(request.title, "Create Favorite Tag");
+  assert.equal(request.placeholder, "Enter favorite tag...");
+  assert.equal(request.defaultValue, "");
+  await request.onSubmit("sparkle aura");
   await new Promise(resolve => setTimeout(resolve, 0));
 
   assert.equal(saveCount, 1);
@@ -459,39 +466,47 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   assert.deepEqual(applied, ["sparkle aura"]);
 });
 
-test("createSelectorTagView defaults custom favorite text from the active tag manager tag", async () => {
+test("createSelectorTagView manages favorite tag groups with a checkbox popover", async () => {
   installDom();
-  let promptDefault = "";
-  window.prompt = (_message, defaultValue) => {
-    promptDefault = defaultValue;
-    return defaultValue;
-  };
-  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-create-default");
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-group-assign");
   const tagFavorites = {
-    tagGroups: [{ id: "default", name: "Default Tags", isSystem: true }],
-    tagItems: [],
+    tagGroups: [
+      { id: "default", name: "Default Tags", isSystem: true },
+      { id: "tag_group_mood", name: "Mood", isSystem: false },
+    ],
+    tagItems: [{ tag: "blue eyes", labelZh: "蓝色眼睛", groupIds: ["default"] }],
   };
+  let saveCount = 0;
   const view = createSelectorTagView({
     section: "character",
     tagFavorites,
-    catalogProvider: () => [],
-    getCreateTagDefaultText: () => "alpha, beta, ",
-    saveTagFavorites: async () => {},
+    catalogProvider: () => [{ tag: "blue eyes", labelZh: "蓝色眼睛" }],
+    saveTagFavorites: async () => {
+      saveCount += 1;
+    },
     t: value => value,
   });
 
   document.body.appendChild(view.element);
-  const createButton = Array.from(view.element.querySelectorAll("button")).find(button => button.title === "Create Favorite Tag");
-  assert.ok(createButton);
-  createButton.click();
+  view.setFilter({ type: "group", groupId: "default" });
+  const row = view.element.querySelector('[data-selector-tag="blue eyes"]');
+  assert.ok(row);
+  const assign = row.querySelector("[data-tag-group-action='assign']");
+  assert.ok(assign);
+  assert.notEqual(assign.style.display, "none");
+  assign.click();
   await new Promise(resolve => setTimeout(resolve, 0));
 
-  assert.equal(promptDefault, "alpha");
-  assert.deepEqual(tagFavorites.tagItems, [{
-    tag: "alpha",
-    groupIds: ["default"],
-    isCustom: true,
-  }]);
+  const popover = document.getElementById("anima-selector-tag-group-popover");
+  assert.ok(popover);
+  const checkboxes = Array.from(popover.querySelectorAll("input[type='checkbox']"));
+  assert.equal(checkboxes.length, 2);
+  checkboxes[1].checked = true;
+  checkboxes[1].dispatchEvent(new window.Event("change"));
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  assert.deepEqual(tagFavorites.tagItems[0].groupIds, ["default", "tag_group_mood"]);
+  assert.equal(saveCount, 1);
 });
 
 test("createTagGroupSidebarSection manages tag groups with card-style actions", async () => {
@@ -506,13 +521,17 @@ test("createTagGroupSidebarSection manages tag groups with card-style actions", 
   };
   const filters = [];
   let saveCount = 0;
-  window.prompt = (_message, defaultValue) => defaultValue ? "Mood Renamed" : "New Group";
+  let requestCount = 0;
   window.confirm = () => true;
 
   const section = createTagGroupSidebarSection({
     tagFavorites,
     activeGroupId: "tag_group_mood",
     t: value => value,
+    requestTextInput: async request => {
+      requestCount += 1;
+      await request.onSubmit(request.defaultValue ? "Mood Renamed" : "New Group");
+    },
     onSave: async () => {
       saveCount += 1;
     },
@@ -543,6 +562,7 @@ test("createTagGroupSidebarSection manages tag groups with card-style actions", 
   assert.deepEqual(tagFavorites.tagItems[0].groupIds, []);
   assert.equal(filters.at(-1).groupId, "all");
   assert.equal(saveCount, 3);
+  assert.equal(requestCount, 2);
 });
 
 function createDefaultFavoritesForTest() {
