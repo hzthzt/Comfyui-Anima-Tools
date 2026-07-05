@@ -53,6 +53,10 @@ export function shouldApplyCardCategoryFilters(filters = {}) {
     return filters.collection === "all" && filters.categories instanceof Set && filters.categories.size > 0;
 }
 
+export function shouldShowCustomItemCreateCard(collectionId) {
+    return Boolean(collectionId && collectionId !== "all");
+}
+
 export function normalizeCategorizedCardFilters(filters = {}) {
     const collection = filters.collection || "all";
     const categories = filters.categories instanceof Set

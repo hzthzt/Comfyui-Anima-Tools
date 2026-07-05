@@ -6,7 +6,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
-import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters } from "./anima_card_filter_helpers.js";
+import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
 import "./pose_data.js";
 
 const POSE_SELECTOR_NODES = new Set([
@@ -1494,9 +1494,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
         listContainer.style.display = "grid";
         pagination.style.display = "";
         listContainer.innerHTML = "";
-        const isCustomGroup = activeFilters.collection !== "all" && activeFilters.collection !== "default";
+        const shouldShowCreateCard = shouldShowCustomItemCreateCard(activeFilters.collection);
 
-        if (filteredData.length === 0 && !isCustomGroup) {
+        if (filteredData.length === 0 && !shouldShowCreateCard) {
             const empty = createEl("div");
             empty.style.cssText = "grid-column:1/-1; padding:70px 20px; text-align:center; color:#a1a1aa;";
             empty.innerHTML = `
@@ -1510,7 +1510,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
         const fragment = document.createDocumentFragment();
         const pageItems = filteredData.slice((currentPage - 1) * 48, currentPage * 48);
-        if (isCustomGroup && currentPage === 1) {
+        if (shouldShowCreateCard && currentPage === 1) {
             fragment.appendChild(createCustomPlaceholderCard());
         }
         pageItems.forEach(item => fragment.appendChild(createCard(item)));

@@ -55,3 +55,12 @@ test("card category filters only apply to all collections", async () => {
   assert.equal(restored.collection, "default");
   assert.deepEqual(Array.from(restored.categories), []);
 });
+
+test("custom item create card appears in favorite collections but not all", async () => {
+  const { shouldShowCustomItemCreateCard } = await import("../js/anima_card_filter_helpers.js?case=custom-create-card");
+
+  assert.equal(shouldShowCustomItemCreateCard("default"), true);
+  assert.equal(shouldShowCustomItemCreateCard("group_custom"), true);
+  assert.equal(shouldShowCustomItemCreateCard("all"), false);
+  assert.equal(shouldShowCustomItemCreateCard(null), false);
+});

@@ -6,7 +6,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
-import { getOrderedCardCollectionGroups } from "./anima_card_filter_helpers.js";
+import { getOrderedCardCollectionGroups, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
     "AnimaArtistTagSelector",
@@ -1630,9 +1630,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
     function switchCategory(category) {
         activeCategory = category;
         localStorage.setItem(SIDEBAR_STORAGE_KEY, category);
-        
-        const isCustomGroup = category !== "all" && category !== "default";
-        
+
         currentPage = 1;
         localStorage.setItem(PAGE_STORAGE_KEY, 1);
         lastScrollTop = 0;
@@ -1836,10 +1834,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
         listContainer.style.display = "grid";
         paginationBar.style.display = "";
         listContainer.innerHTML = "";
-        
-        const isCustomGroup = !showSelectedOnly && activeCategory !== "all" && activeCategory !== "default";
-        
-        if (filteredData.length === 0 && !isCustomGroup) {
+
+        const shouldShowCreateCard = !showSelectedOnly && shouldShowCustomItemCreateCard(activeCategory);
+
+        if (filteredData.length === 0 && !shouldShowCreateCard) {
             const noResult = document.createElement("div");
             noResult.style.cssText = "grid-column: 1 / -1; padding: 60px; text-align: center; color: #9ca3af; font-size: 16px; font-weight: 500;";
             noResult.innerText = t("No matching artist styles found");
@@ -1850,8 +1848,8 @@ async function openArtistSelectorModal(node, tagsWidget) {
         const currentPageData = filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
         const fragment = document.createDocumentFragment();
         
-        // 如果是自定义分组，且当前在第一页，在最前面添加“新建自定义项”虚线卡片
-        if (isCustomGroup && currentPage === 1) {
+        // 如果是收藏分组，且当前在第一页，在最前面添加“新建自定义项”虚线卡片
+        if (shouldShowCreateCard && currentPage === 1) {
             const createCard = document.createElement("div");
             createCard.style.cssText = `
                 background: rgba(22, 22, 32, 0.4) !important;
