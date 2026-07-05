@@ -3,6 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./pose_data.js";
 
@@ -252,6 +253,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
             items: [],
         };
     }
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.pose, t("Default Tags"));
 
     let groups = Array.isArray(favoritesConfig.pose.groups) && favoritesConfig.pose.groups.length
         ? favoritesConfig.pose.groups
@@ -282,9 +284,11 @@ async function openPoseSelectorModal(node, tagsWidget) {
     const DISPLAY_LANG_STORAGE_KEY = "anima-pose-selector-display-lang";
     const FILTER_STORAGE_KEY = "anima-pose-selector-filters";
     const COLLECTIONS_COLLAPSE_STORAGE_KEY = "anima-pose-selector-collections-collapsed";
+    const VIEW_STORAGE_KEY = "anima-pose-selector-active-view";
 
     let activeSort = localStorage.getItem(SORT_STORAGE_KEY) || "id-asc";
     let displayLang = localStorage.getItem(DISPLAY_LANG_STORAGE_KEY) || "bilingual";
+    let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     let currentPage = parseInt(localStorage.getItem(PAGE_STORAGE_KEY), 10) || 1;
     let showSelectedOnly = false;
     let filteredData = [];
@@ -326,6 +330,8 @@ async function openPoseSelectorModal(node, tagsWidget) {
         favoriteItems = nextItems;
         favoritesConfig.pose.groups = groups;
         favoritesConfig.pose.items = favoriteItems;
+        favoritesConfig.pose.tagGroups = tagFavorites.tagGroups;
+        favoritesConfig.pose.tagItems = tagFavorites.tagItems;
 
         try {
             const response = await fetch("/anima-tools/favorites", {
@@ -1051,12 +1057,24 @@ async function openPoseSelectorModal(node, tagsWidget) {
     langSelect.onchange = () => {
         displayLang = langSelect.value;
         localStorage.setItem(DISPLAY_LANG_STORAGE_KEY, displayLang);
+        tagCatalog = null;
         renderSidebar();
         renderCurrentPage();
     };
 
     filterControls.appendChild(sortSelect);
     filterControls.appendChild(langSelect);
+
+    const viewToggle = createEl("div");
+    viewToggle.style.cssText = "display:flex;align-items:center;gap:6px;margin:0 0 14px 0;";
+    const cardsViewBtn = createEl("button", "anima-pose-btn", t("Cards"));
+    const tagsViewBtn = createEl("button", "anima-pose-btn", t("Tags"));
+    cardsViewBtn.style.flex = "1";
+    tagsViewBtn.style.flex = "1";
+    cardsViewBtn.onclick = () => switchView("cards");
+    tagsViewBtn.onclick = () => switchView("tags");
+    viewToggle.appendChild(cardsViewBtn);
+    viewToggle.appendChild(tagsViewBtn);
 
     const actionControls = createEl("div");
     actionControls.style.cssText = "display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end;";
@@ -1110,6 +1128,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
         box-sizing: border-box;
     `;
     sidebar.onscroll = () => localStorage.setItem(SIDEBAR_SCROLL_STORAGE_KEY, sidebar.scrollTop);
+    sidebar.appendChild(viewToggle);
 
     const gridArea = createEl("div");
     gridArea.style.cssText = "flex: 1; display: flex; flex-direction: column; min-width: 0; min-height: 0;";
@@ -1176,8 +1195,31 @@ async function openPoseSelectorModal(node, tagsWidget) {
     pagination.appendChild(pageStats);
     pagination.appendChild(pageControls);
 
+    const selectorTagView = createSelectorTagView({
+        section: "pose",
+        tagFavorites,
+        catalogProvider: getTagCatalog,
+        saveTagFavorites: async () => {
+            await saveFavorites();
+            renderSidebar();
+        },
+        applyTag: tag => {
+            applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector", mode: "append" });
+            node.triggerSlot?.(0);
+            showToast(t("Applied: {text}", { text: tag }));
+        },
+        onTagFilterChange: filter => {
+            activeTagFilter = filter;
+            renderSidebar();
+        },
+        t,
+    });
+    selectorTagView.element.style.padding = "24px 28px";
+    selectorTagView.element.style.boxSizing = "border-box";
+
     gridArea.appendChild(listContainer);
     gridArea.appendChild(pagination);
+    gridArea.appendChild(selectorTagView.element);
     main.appendChild(sidebar);
     main.appendChild(gridArea);
     container.appendChild(main);
@@ -1208,12 +1250,50 @@ async function openPoseSelectorModal(node, tagsWidget) {
     document.body.appendChild(overlay);
 
     searchInput.addEventListener("input", debounce(() => {
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            return;
+        }
         currentPage = 1;
         triggerFilter();
     }, 140));
 
+    let tagCatalog = null;
+    let activeTagFilter = { type: "group", groupId: "all" };
+    function getTagCatalog() {
+        if (!tagCatalog) {
+            tagCatalog = buildSelectorTagCatalog(poseData);
+        }
+        return tagCatalog;
+    }
+
+    function switchView(view) {
+        activeView = view === "tags" ? "tags" : "cards";
+        localStorage.setItem(VIEW_STORAGE_KEY, activeView);
+        currentPage = 1;
+        updateViewToggle();
+        renderSidebar();
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            selectorTagView.setFilter(activeTagFilter);
+            renderCurrentPage();
+            return;
+        }
+        triggerFilter();
+    }
+
+    function updateViewToggle() {
+        cardsViewBtn.classList.toggle("active", activeView === "cards");
+        tagsViewBtn.classList.toggle("active", activeView === "tags");
+    }
+
     function renderSidebar() {
         sidebar.innerHTML = "";
+        sidebar.appendChild(viewToggle);
+        if (activeView === "tags") {
+            renderTagSidebar();
+            return;
+        }
         const clearFiltersBtn = createEl("button", "anima-pose-clear-filters-btn");
         clearFiltersBtn.type = "button";
         clearFiltersBtn.innerHTML = `
@@ -1385,6 +1465,36 @@ async function openPoseSelectorModal(node, tagsWidget) {
         row.appendChild(nameSpan);
         row.appendChild(countSpan);
         return row;
+    }
+
+    function renderTagSidebar() {
+        const entries = buildSelectorTagSidebarEntries(getTagCatalog(), tagFavorites, { t });
+        const appendHeader = label => sidebar.appendChild(sectionTitle(label));
+        const appendEntry = entry => {
+            const row = sidebarItem(entry.label, isTagSidebarEntryActive(entry), entry.count);
+            row.onclick = () => switchTagSidebarEntry(entry);
+            sidebar.appendChild(row);
+        };
+        appendEntry(entries.find(entry => entry.type === "all"));
+        appendHeader(t("Tag Groups"));
+        entries.filter(entry => entry.type === "group").forEach(appendEntry);
+        appendHeader(t("Tag Categories"));
+        entries.filter(entry => entry.type === "category").forEach(appendEntry);
+    }
+
+    function isTagSidebarEntryActive(entry) {
+        if (entry.type === "all") return activeTagFilter.type === "group" && activeTagFilter.groupId === "all";
+        if (entry.type === "group") return activeTagFilter.type === "group" && activeTagFilter.groupId === entry.groupId;
+        if (entry.type === "category") return activeTagFilter.type === "category" && activeTagFilter.categoryId === entry.categoryId;
+        return false;
+    }
+
+    function switchTagSidebarEntry(entry) {
+        activeTagFilter = entry.type === "category"
+            ? { type: "category", categoryId: entry.categoryId }
+            : { type: "group", groupId: entry.groupId || "all" };
+        selectorTagView.setFilter(activeTagFilter);
+        renderSidebar();
     }
 
     function switchCollection(collection) {
@@ -1565,6 +1675,16 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
     function renderCurrentPage() {
         imageObserver.disconnect();
+        if (activeView === "tags") {
+            listContainer.style.display = "none";
+            pagination.style.display = "none";
+            selectorTagView.setVisible(true);
+            updateCountLabel();
+            return;
+        }
+        selectorTagView.setVisible(false);
+        listContainer.style.display = "grid";
+        pagination.style.display = "";
         listContainer.innerHTML = "";
         const isCustomGroup = !showSelectedOnly && activeFilters.collection !== "all" && activeFilters.collection !== "default";
 
@@ -1773,7 +1893,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
             pill.title = displayTag;
             pill.onclick = (event) => {
                 event.stopPropagation();
-                applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector" });
+                applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector", mode: "append" });
                 node.triggerSlot?.(0);
                 showToast(t("Applied: {text}", { text: tag }));
             };
@@ -2109,6 +2229,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     }
 
     renderSidebar();
+    updateViewToggle();
     triggerFilter();
     updateCountLabel();
     searchInput.focus();

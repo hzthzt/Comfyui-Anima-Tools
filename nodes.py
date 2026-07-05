@@ -1639,31 +1639,46 @@ def get_favorites_path():
 
 FAVORITE_SECTIONS = ["artist", "character", "lora", "clothing", "background", "pose"]
 
+def get_default_tag_groups():
+    return [{"id": "default", "name": "默认 Tag", "isSystem": True}]
+
 def get_default_favorites_data():
     return {
         "artist": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         },
         "character": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         },
         "lora": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         },
         "clothing": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         },
         "background": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         },
         "pose": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": []
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
         }
     }
 
@@ -1684,7 +1699,20 @@ def normalize_favorites_data(data):
         items = section.get("items")
         if not isinstance(items, list):
             items = []
-        normalized[key] = {"groups": groups, "items": items}
+        tag_groups = section.get("tagGroups")
+        if not isinstance(tag_groups, list):
+            tag_groups = default_data[key]["tagGroups"].copy()
+        elif not any(isinstance(g, dict) and g.get("id") == "default" for g in tag_groups):
+            tag_groups = [default_data[key]["tagGroups"][0], *tag_groups]
+        tag_items = section.get("tagItems")
+        if not isinstance(tag_items, list):
+            tag_items = []
+        normalized[key] = {
+            "groups": groups,
+            "items": items,
+            "tagGroups": tag_groups,
+            "tagItems": tag_items,
+        }
     return normalized
 
 def load_favorites_data():
@@ -1710,7 +1738,10 @@ def merge_favorites_data(existing, incoming):
             section = incoming.get(key)
             if not isinstance(section, dict):
                 raise ValueError(f"Favorites section '{key}' must be an object")
-            merged[key] = normalize_favorites_data({key: section})[key]
+            normalized_section = normalize_favorites_data({key: section})[key]
+            for field in ("groups", "items", "tagGroups", "tagItems"):
+                if field in section:
+                    merged[key][field] = normalized_section[field]
     return merged
 
 @PromptServer.instance.routes.get("/anima-tools/favorites")

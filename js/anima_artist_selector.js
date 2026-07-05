@@ -3,6 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
@@ -94,6 +95,13 @@ async function openArtistSelectorModal(node, tagsWidget) {
     } catch (e) {
         console.error("Failed to load favorites", e);
     }
+    if (!favoritesConfig.artist) {
+        favoritesConfig.artist = {
+            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
+            items: []
+        };
+    }
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.artist, t("Default Tags"));
     
     let groups = favoritesConfig.artist.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
     let favoriteItems = favoritesConfig.artist.items || [];
@@ -144,6 +152,8 @@ async function openArtistSelectorModal(node, tagsWidget) {
         favoriteItems = nextItems;
         favoritesConfig.artist.groups = groups;
         favoritesConfig.artist.items = favoriteItems;
+        favoritesConfig.artist.tagGroups = tagFavorites.tagGroups;
+        favoritesConfig.artist.tagItems = tagFavorites.tagItems;
         
         try {
             const response = await fetch("/anima-tools/favorites", {
@@ -546,9 +556,11 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     const SIDEBAR_STORAGE_KEY = "anima-artist-active-sidebar-category";
     const SIDEBAR_SCROLL_STORAGE_KEY = "anima-artist-sidebar-scroll";
+    const VIEW_STORAGE_KEY = "anima-artist-selector-active-view";
 
     let activeSort = localStorage.getItem(SORT_STORAGE_KEY) || "works-desc";
     let activeCategory = localStorage.getItem(SIDEBAR_STORAGE_KEY) || "all";
+    let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     
     // 如果之前 activeCategory 是 favorites，转换为 default 分组
     if (activeCategory === "favorites") {
@@ -985,6 +997,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
     clearSearchBtn.onclick = () => {
         searchInput.value = "";
         clearSearchBtn.style.display = "none";
+        if (activeView === "tags") {
+            selectorTagView.setQuery("");
+            return;
+        }
         currentPage = 1;
         localStorage.setItem(PAGE_STORAGE_KEY, 1);
         lastScrollTop = 0;
@@ -994,6 +1010,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     searchInput.oninput = () => {
         clearSearchBtn.style.display = searchInput.value ? "block" : "none";
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            return;
+        }
         currentPage = 1; 
         localStorage.setItem(PAGE_STORAGE_KEY, 1);
         lastScrollTop = 0;
@@ -1039,6 +1059,21 @@ async function openArtistSelectorModal(node, tagsWidget) {
         triggerFilter();
     };
     filterControls.appendChild(sortSelect);
+
+    const viewToggle = document.createElement("div");
+    viewToggle.style.cssText = "display:flex;align-items:center;gap:6px;margin:0 0 14px 0;";
+    const cardsViewBtn = document.createElement("button");
+    cardsViewBtn.className = "anima-btn";
+    cardsViewBtn.innerHTML = t("Cards");
+    cardsViewBtn.style.flex = "1";
+    const tagsViewBtn = document.createElement("button");
+    tagsViewBtn.className = "anima-btn";
+    tagsViewBtn.innerHTML = t("Tags");
+    tagsViewBtn.style.flex = "1";
+    cardsViewBtn.onclick = () => switchView("cards");
+    tagsViewBtn.onclick = () => switchView("tags");
+    viewToggle.appendChild(cardsViewBtn);
+    viewToggle.appendChild(tagsViewBtn);
 
     // 镜像源切换下拉菜单
     const cdnSelect = document.createElement("select");
@@ -1181,6 +1216,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
     `;
     sidebarTitle.style.cssText = "font-size: 12px; font-weight: 800; color: #71717a; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-left: 8px;";
     sidebar.appendChild(sidebarTitle);
+    sidebar.appendChild(viewToggle);
 
     const sidebarList = document.createElement("div");
     sidebarList.style.cssText = "display: flex; flex-direction: column;";
@@ -1287,7 +1323,31 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     paginationBar.appendChild(pageStats);
     paginationBar.appendChild(pageControls);
+
+    const selectorTagView = createSelectorTagView({
+        section: "artist",
+        tagFavorites,
+        catalogProvider: getArtistTagCatalog,
+        saveTagFavorites: async () => {
+            await saveFavorites();
+            renderSidebar();
+        },
+        applyTag: tag => {
+            applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector", mode: "append" });
+            node.triggerSlot?.(0);
+            showTemporaryToast(t("Applied: {text}", { text: tag }));
+        },
+        onTagFilterChange: filter => {
+            activeTagFilter = filter;
+            renderSidebar();
+        },
+        t,
+    });
+    selectorTagView.element.style.padding = "24px 28px";
+    selectorTagView.element.style.boxSizing = "border-box";
+
     gridArea.appendChild(paginationBar);
+    gridArea.appendChild(selectorTagView.element);
 
     mainSection.appendChild(gridArea);
     modalContainer.appendChild(mainSection);
@@ -1325,6 +1385,56 @@ async function openArtistSelectorModal(node, tagsWidget) {
     }
     updateCountLabel();
 
+    let tagCatalog = null;
+    function getArtistTagCatalog() {
+        if (!tagCatalog) {
+            tagCatalog = buildSelectorTagCatalog(window.galleryData || [], {
+                getTags: item => item?.name ? `@${item.name}` : "",
+                getZhTags: () => "",
+                getSourceLabel: item => item?.name || "",
+                getCategories: item => getArtistTagCategories(item),
+            }).map(item => {
+                const artistName = item.tag.replace(/^@/, "");
+                const source = (window.galleryData || []).find(data => data.name === artistName);
+                return {
+                    ...item,
+                    sourceCount: Number(source?.post_count || item.sourceCount || 1),
+                };
+            }).sort((a, b) => Number(b.sourceCount || 0) - Number(a.sourceCount || 0) || String(a.tag || "").localeCompare(String(b.tag || "")));
+        }
+        return tagCatalog;
+    }
+
+    function getArtistTagCategories(item) {
+        const postCount = Number(item?.post_count || 0);
+        if (postCount >= 50000) return "Iconic Artists";
+        if (postCount >= 10000) return "Popular Artists";
+        if (postCount >= 1000) return "Known Artists";
+        return "Niche Artists";
+    }
+
+    let activeTagFilter = { type: "group", groupId: "all" };
+
+    function switchView(view) {
+        activeView = view === "tags" ? "tags" : "cards";
+        localStorage.setItem(VIEW_STORAGE_KEY, activeView);
+        currentPage = 1;
+        updateViewToggle();
+        renderSidebar();
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            selectorTagView.setFilter(activeTagFilter);
+            renderCurrentPage();
+            return;
+        }
+        triggerFilter();
+    }
+
+    function updateViewToggle() {
+        cardsViewBtn.classList.toggle("anima-btn-active", activeView === "cards");
+        tagsViewBtn.classList.toggle("anima-btn-active", activeView === "tags");
+    }
+
     const footerButtons = createSelectorTagManagerFooter(12);
 
     if (isTaggedAnimaNode(node)) {
@@ -1347,6 +1457,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
     // 渲染侧边栏菜单
     function renderSidebar() {
         sidebarList.innerHTML = "";
+        if (activeView === "tags") {
+            renderTagSidebar();
+            return;
+        }
 
         // 1. 全部画师
         const allItem = document.createElement("div");
@@ -1487,6 +1601,49 @@ async function openArtistSelectorModal(node, tagsWidget) {
             
             sidebarList.appendChild(item);
         });
+    }
+
+    function renderTagSidebar() {
+        const entries = buildSelectorTagSidebarEntries(getArtistTagCatalog(), tagFavorites, { t });
+        const addHeader = label => {
+            const header = document.createElement("div");
+            header.style.cssText = "font-size: 11px; font-weight: 700; color: #6b7280; padding: 16px 10px 8px 10px; text-transform: uppercase; letter-spacing: 0.05em;";
+            header.textContent = label;
+            sidebarList.appendChild(header);
+        };
+        const appendEntry = entry => {
+            const item = document.createElement("div");
+            item.className = `sidebar-item ${isTagSidebarEntryActive(entry) ? "active" : ""}`;
+            item.innerHTML = `
+                <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                    <span style="font-size:14px;">${entry.type === "category" ? "#" : "★"}</span>
+                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.label}</span>
+                </div>
+                <span style="font-size:11px;opacity:0.8;background:rgba(255,255,255,0.06);color:#9ca3af;padding:2px 6px;border-radius:20px;font-weight:700;">${entry.count}</span>
+            `;
+            item.onclick = () => switchTagSidebarEntry(entry);
+            sidebarList.appendChild(item);
+        };
+        appendEntry(entries.find(entry => entry.type === "all"));
+        addHeader(t("Tag Groups"));
+        entries.filter(entry => entry.type === "group").forEach(appendEntry);
+        addHeader(t("Tag Categories"));
+        entries.filter(entry => entry.type === "category").forEach(appendEntry);
+    }
+
+    function isTagSidebarEntryActive(entry) {
+        if (entry.type === "all") return activeTagFilter.type === "group" && activeTagFilter.groupId === "all";
+        if (entry.type === "group") return activeTagFilter.type === "group" && activeTagFilter.groupId === entry.groupId;
+        if (entry.type === "category") return activeTagFilter.type === "category" && activeTagFilter.categoryId === entry.categoryId;
+        return false;
+    }
+
+    function switchTagSidebarEntry(entry) {
+        activeTagFilter = entry.type === "category"
+            ? { type: "category", categoryId: entry.categoryId }
+            : { type: "group", groupId: entry.groupId || "all" };
+        selectorTagView.setFilter(activeTagFilter);
+        renderSidebar();
     }
 
     // 切换分类侧边栏
@@ -1687,6 +1844,17 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     // 渲染当前页的画师卡片
     function renderCurrentPage() {
+        if (activeView === "tags") {
+            artistImageObserver.disconnect();
+            listContainer.style.display = "none";
+            paginationBar.style.display = "none";
+            selectorTagView.setVisible(true);
+            updateCountLabel();
+            return;
+        }
+        selectorTagView.setVisible(false);
+        listContainer.style.display = "grid";
+        paginationBar.style.display = "";
         listContainer.innerHTML = "";
         
         const isCustomGroup = !showSelectedOnly && activeCategory !== "all" && activeCategory !== "default";
@@ -2322,6 +2490,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     // 首次初始化渲染侧边栏和数据流
     renderSidebar();
+    updateViewToggle();
     triggerFilter();
 
     // 恢复侧边栏滚动高度

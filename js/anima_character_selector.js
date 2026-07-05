@@ -3,6 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
+import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./character_data.js";
 
@@ -186,6 +187,13 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     } catch (e) {
         console.error("Failed to load favorites", e);
     }
+    if (!favoritesConfig.character) {
+        favoritesConfig.character = {
+            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
+            items: []
+        };
+    }
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.character, t("Default Tags"));
     
     let groups = favoritesConfig.character.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
     let favoriteItems = favoritesConfig.character.items || [];
@@ -203,8 +211,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     const SCROLL_STORAGE_KEY = "anima-char-selector-active-scroll";
     const SIDEBAR_STORAGE_KEY = "anima-char-selector-active-sidebar-category";
     const SIDEBAR_SCROLL_STORAGE_KEY = "anima-char-selector-sidebar-scroll";
+    const VIEW_STORAGE_KEY = "anima-char-selector-active-view";
 
     let activeSort = localStorage.getItem(SORT_STORAGE_KEY) || "works-desc";
+    let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     
     // 多维联合分类过滤器对象，存储各个维度的当前选中值
     let activeFilters = {
@@ -260,6 +270,8 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         favoriteItems = nextItems;
         favoritesConfig.character.groups = groups;
         favoritesConfig.character.items = favoriteItems;
+        favoritesConfig.character.tagGroups = tagFavorites.tagGroups;
+        favoritesConfig.character.tagItems = tagFavorites.tagItems;
         
         try {
             const response = await fetch("/anima-tools/favorites", {
@@ -848,7 +860,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                 chip.title = tagText;
                 chip.onclick = (event) => {
                     event.stopPropagation();
-                    applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
+                    applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector", mode: "append" });
                     node.triggerSlot?.(0);
                     showCharacterTagToast(t("Applied: {text}", { text: tagText }));
                 };
@@ -1488,6 +1500,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     clearSearchBtn.onclick = () => {
         searchInput.value = "";
         clearSearchBtn.style.display = "none";
+        if (activeView === "tags") {
+            selectorTagView.setQuery("");
+            return;
+        }
         currentPage = 1;
         localStorage.setItem(PAGE_STORAGE_KEY, 1);
         lastScrollTop = 0;
@@ -1497,6 +1513,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
 
     searchInput.oninput = () => {
         clearSearchBtn.style.display = searchInput.value ? "block" : "none";
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            return;
+        }
         currentPage = 1; 
         localStorage.setItem(PAGE_STORAGE_KEY, 1);
         lastScrollTop = 0;
@@ -1542,7 +1562,20 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     };
     filterControls.appendChild(sortSelect);
 
-    filterControls.appendChild(sortSelect);
+    const viewToggle = document.createElement("div");
+    viewToggle.style.cssText = "display:flex;align-items:center;gap:6px;margin:0 0 14px 0;";
+    const cardsViewBtn = document.createElement("button");
+    cardsViewBtn.className = "anima-btn";
+    cardsViewBtn.innerHTML = t("Cards");
+    cardsViewBtn.style.flex = "1";
+    const tagsViewBtn = document.createElement("button");
+    tagsViewBtn.className = "anima-btn";
+    tagsViewBtn.innerHTML = t("Tags");
+    tagsViewBtn.style.flex = "1";
+    cardsViewBtn.onclick = () => switchView("cards");
+    tagsViewBtn.onclick = () => switchView("tags");
+    viewToggle.appendChild(cardsViewBtn);
+    viewToggle.appendChild(tagsViewBtn);
 
     toolbar.appendChild(filterControls);
     modalContainer.appendChild(toolbar);
@@ -1582,6 +1615,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     `;
     sidebarTitle.style.cssText = "font-size: 12px; font-weight: 800; color: #71717a; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-left: 8px;";
     sidebar.appendChild(sidebarTitle);
+    sidebar.appendChild(viewToggle);
 
     // 侧边栏列表容器
     const sidebarList = document.createElement("div");
@@ -1690,7 +1724,30 @@ async function openCharacterSelectorModal(node, tagsWidget) {
 
     paginationBar.appendChild(pageStats);
     paginationBar.appendChild(pageControls);
+
+    const selectorTagView = createSelectorTagView({
+        section: "character",
+        tagFavorites,
+        catalogProvider: getCharacterTagCatalog,
+        saveTagFavorites: async () => {
+            await saveFavorites();
+            renderSidebar();
+        },
+        applyTag: tag => {
+            applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector", mode: "append" });
+            node.triggerSlot?.(0);
+            showCharacterTagToast(t("Applied: {text}", { text: tag }));
+        },
+        onTagFilterChange: filter => {
+            activeTagFilter = filter;
+            renderSidebar();
+        },
+        t,
+    });
+    selectorTagView.element.style.padding = "24px 28px";
+    selectorTagView.element.style.boxSizing = "border-box";
     gridArea.appendChild(paginationBar);
+    gridArea.appendChild(selectorTagView.element);
 
     mainSection.appendChild(gridArea);
     modalContainer.appendChild(mainSection);
@@ -1727,6 +1784,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     // 渲染侧边栏菜单 (包含性别、发色、瞳色、热门系列等多维特征过滤)
     function renderSidebar() {
         sidebarList.innerHTML = "";
+        if (activeView === "tags") {
+            renderTagSidebar();
+            return;
+        }
 
         const clearFiltersBtn = document.createElement("button");
         clearFiltersBtn.type = "button";
@@ -2396,8 +2457,102 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         listContainer.scrollTop = 0; 
     }
 
+    let tagCatalog = null;
+    let activeTagFilter = { type: "group", groupId: "all" };
+    function getCharacterTagCatalog() {
+        if (!tagCatalog) {
+            tagCatalog = buildSelectorTagCatalog(window.characterData || [], {
+                getTags: item => getCharacterOverlayTags(item),
+                getZhTags: () => "",
+                getSourceLabel: item => formatCharacterDisplayName(item),
+                getCategories: item => getCharacterTagCategories(item),
+            });
+        }
+        return tagCatalog;
+    }
+
+    function getCharacterTagCategories(item) {
+        return [
+            item?.gender ? `Gender: ${item.gender}` : "Gender: Unknown",
+            item?.hair ? `Hair: ${item.hair}` : "Hair: Unknown",
+        ];
+    }
+
+    function switchView(view) {
+        activeView = view === "tags" ? "tags" : "cards";
+        localStorage.setItem(VIEW_STORAGE_KEY, activeView);
+        currentPage = 1;
+        updateViewToggle();
+        renderSidebar();
+        if (activeView === "tags") {
+            selectorTagView.setQuery(searchInput.value);
+            selectorTagView.setFilter(activeTagFilter);
+            renderCurrentPage();
+            return;
+        }
+        triggerFilter();
+    }
+
+    function updateViewToggle() {
+        cardsViewBtn.classList.toggle("anima-btn-active", activeView === "cards");
+        tagsViewBtn.classList.toggle("anima-btn-active", activeView === "tags");
+    }
+
+    function renderTagSidebar() {
+        const entries = buildSelectorTagSidebarEntries(getCharacterTagCatalog(), tagFavorites, { t });
+        const addHeader = label => {
+            const header = document.createElement("div");
+            header.style.cssText = "font-size: 11px; font-weight: 700; color: #6b7280; padding: 16px 10px 8px 10px; text-transform: uppercase; letter-spacing: 0.05em;";
+            header.textContent = label;
+            sidebarList.appendChild(header);
+        };
+        const appendEntry = entry => {
+            const item = document.createElement("div");
+            item.className = `sidebar-item ${isTagSidebarEntryActive(entry) ? "active" : ""}`;
+            item.innerHTML = `
+                <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+                    <span style="font-size:14px;">${entry.type === "category" ? "#" : "★"}</span>
+                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.label}</span>
+                </div>
+                <span style="font-size:11px;opacity:0.8;background:rgba(255,255,255,0.06);color:#9ca3af;padding:2px 6px;border-radius:20px;font-weight:700;">${entry.count}</span>
+            `;
+            item.onclick = () => switchTagSidebarEntry(entry);
+            sidebarList.appendChild(item);
+        };
+        appendEntry(entries.find(entry => entry.type === "all"));
+        addHeader(t("Tag Groups"));
+        entries.filter(entry => entry.type === "group").forEach(appendEntry);
+        addHeader(t("Tag Categories"));
+        entries.filter(entry => entry.type === "category").forEach(appendEntry);
+    }
+
+    function isTagSidebarEntryActive(entry) {
+        if (entry.type === "all") return activeTagFilter.type === "group" && activeTagFilter.groupId === "all";
+        if (entry.type === "group") return activeTagFilter.type === "group" && activeTagFilter.groupId === entry.groupId;
+        if (entry.type === "category") return activeTagFilter.type === "category" && activeTagFilter.categoryId === entry.categoryId;
+        return false;
+    }
+
+    function switchTagSidebarEntry(entry) {
+        activeTagFilter = entry.type === "category"
+            ? { type: "category", categoryId: entry.categoryId }
+            : { type: "group", groupId: entry.groupId || "all" };
+        selectorTagView.setFilter(activeTagFilter);
+        renderSidebar();
+    }
+
     function renderCurrentPage() {
         hideCharacterTagsTooltip();
+        if (activeView === "tags") {
+            charImageObserver.disconnect();
+            listContainer.style.display = "none";
+            paginationBar.style.display = "none";
+            selectorTagView.setVisible(true);
+            return;
+        }
+        selectorTagView.setVisible(false);
+        listContainer.style.display = "grid";
+        paginationBar.style.display = "";
         listContainer.innerHTML = "";
         
         const isCustomGroup = activeFilters.type !== "all" && activeFilters.type !== "default";
@@ -2934,6 +3089,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
 
     // 初始化渲染侧边栏和数据流
     renderSidebar();
+    updateViewToggle();
     triggerFilter();
     
     // 恢复侧边栏滚动高度
