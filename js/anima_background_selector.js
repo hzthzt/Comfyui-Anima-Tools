@@ -5,7 +5,7 @@ import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
-import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters } from "./anima_card_filter_helpers.js";
 import "./background_data.js";
 
@@ -1521,6 +1521,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         card.appendChild(content);
         card.onclick = event => {
             event.stopPropagation();
+            const defaultContent = getActiveSelectorTagText(node, tagsWidget);
             openCustomItemCreateModal(async (titleValue, contentValue) => {
                 const item = {
                     name: `custom_${Date.now()}`,
@@ -1537,7 +1538,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
                 renderSidebar();
                 triggerFilter();
                 return true;
-            });
+            }, defaultContent);
         };
         return card;
     }
@@ -1836,7 +1837,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         };
     }
 
-    function openCustomItemCreateModal(callback) {
+    function openCustomItemCreateModal(callback, defaultContent = "") {
         const dialog = createModalShell(460);
         const content = dialog.firstChild;
         const titleNode = createEl("div", null, t("Create Custom Item"));
@@ -1846,6 +1847,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         titleInput.placeholder = t("Item Title (e.g. My Style A)...");
         const contentInput = createEl("textarea", "anima-background-input");
         contentInput.placeholder = t("Enter prompt tags (e.g. masterpiece, highly detailed)...");
+        contentInput.value = defaultContent || "";
         contentInput.rows = 4;
         contentInput.style.cssText += "resize:vertical;font-family:monospace;";
         const buttons = modalButtons(dialog, async () => {

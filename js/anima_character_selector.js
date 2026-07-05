@@ -5,7 +5,7 @@ import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
-import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups } from "./anima_card_filter_helpers.js";
 import "./character_data.js";
 
@@ -206,6 +206,112 @@ function formatCharacterDisplayName(item) {
         .split(" ")
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
+}
+
+export function createCharacterCustomItemModal({ defaultContent = "", onSubmit } = {}) {
+    const dialog = document.createElement("div");
+    dialog.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    const content = document.createElement("div");
+    content.style.cssText = `
+        background: #1c1c1e;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 24px;
+        width: 90%;
+        max-width: 450px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        animation: animaFadeIn 0.2s ease-out;
+    `;
+
+    const title = document.createElement("div");
+    title.innerText = t("Create Custom Item");
+    title.style.cssText = "font-size: 16px; font-weight: 700; color: #ffffff;";
+
+    const titleInput = document.createElement("input");
+    titleInput.type = "text";
+    titleInput.placeholder = t("Item Title (e.g. My Style A)...");
+    titleInput.style.cssText = `
+        background: #2c2c2e;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 8px;
+        padding: 10px 12px;
+        color: #ffffff;
+        font-size: 14px;
+        outline: none;
+    `;
+
+    const contentInput = document.createElement("textarea");
+    contentInput.placeholder = t("Enter prompt tags (e.g. masterpiece, highly detailed)...");
+    contentInput.value = defaultContent || "";
+    contentInput.rows = 4;
+    contentInput.style.cssText = `
+        background: #2c2c2e;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 8px;
+        padding: 10px 12px;
+        color: #ffffff;
+        font-size: 14px;
+        outline: none;
+        resize: vertical;
+        font-family: monospace;
+    `;
+
+    const btnRow = document.createElement("div");
+    btnRow.style.cssText = "display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px;";
+
+    const cancel = document.createElement("button");
+    cancel.innerText = t("Cancel");
+    cancel.style.cssText = "background: transparent; border: none; color: #9ca3af; padding: 8px 16px; cursor: pointer; font-size: 14px;";
+    cancel.onclick = () => dialog.remove();
+
+    const confirm = document.createElement("button");
+    confirm.innerText = t("Create");
+    confirm.style.cssText = "background: #db2777; border: none; color: #ffffff; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;";
+    confirm.onclick = async () => {
+        const titleVal = titleInput.value.trim();
+        const contentVal = contentInput.value.trim();
+        if (titleVal && contentVal) {
+            const prevText = confirm.innerText;
+            confirm.disabled = true;
+            cancel.disabled = true;
+            confirm.innerText = t("Saving...");
+            const shouldClose = await onSubmit?.(titleVal, contentVal);
+            if (shouldClose !== false) {
+                dialog.remove();
+            } else {
+                confirm.disabled = false;
+                cancel.disabled = false;
+                confirm.innerText = prevText;
+            }
+        } else {
+            alert(t("Title and Content cannot be empty!"));
+        }
+    };
+
+    btnRow.appendChild(cancel);
+    btnRow.appendChild(confirm);
+    content.appendChild(title);
+    content.appendChild(titleInput);
+    content.appendChild(contentInput);
+    content.appendChild(btnRow);
+    dialog.appendChild(content);
+    return dialog;
 }
 
 async function openCharacterSelectorModal(node, tagsWidget) {
@@ -603,111 +709,13 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         input.focus();
     }
 
-    function openCustomItemCreateModal(callback) {
-        const dialog = document.createElement("div");
-        dialog.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            z-index: 100000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-        
-        const content = document.createElement("div");
-        content.style.cssText = `
-            background: #1c1c1e;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 24px;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            animation: animaFadeIn 0.2s ease-out;
-        `;
-        
-        const title = document.createElement("div");
-        title.innerText = t("Create Custom Item");
-        title.style.cssText = "font-size: 16px; font-weight: 700; color: #ffffff;";
-        
-        const titleInput = document.createElement("input");
-        titleInput.type = "text";
-        titleInput.placeholder = t("Item Title (e.g. My Style A)...");
-        titleInput.style.cssText = `
-            background: #2c2c2e;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 10px 12px;
-            color: #ffffff;
-            font-size: 14px;
-            outline: none;
-        `;
-        
-        const contentInput = document.createElement("textarea");
-        contentInput.placeholder = t("Enter prompt tags (e.g. masterpiece, highly detailed)...");
-        contentInput.rows = 4;
-        contentInput.style.cssText = `
-            background: #2c2c2e;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 10px 12px;
-            color: #ffffff;
-            font-size: 14px;
-            outline: none;
-            resize: vertical;
-            font-family: monospace;
-        `;
-        
-        const btnRow = document.createElement("div");
-        btnRow.style.cssText = "display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px;";
-        
-        const cancel = document.createElement("button");
-        cancel.innerText = t("Cancel");
-        cancel.style.cssText = "background: transparent; border: none; color: #9ca3af; padding: 8px 16px; cursor: pointer; font-size: 14px;";
-        cancel.onclick = () => dialog.remove();
-        
-        const confirm = document.createElement("button");
-        confirm.innerText = t("Create");
-        confirm.style.cssText = "background: #db2777; border: none; color: #ffffff; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;";
-        confirm.onclick = async () => {
-            const titleVal = titleInput.value.trim();
-            const contentVal = contentInput.value.trim();
-            if (titleVal && contentVal) {
-                const prevText = confirm.innerText;
-                confirm.disabled = true;
-                cancel.disabled = true;
-                confirm.innerText = t("Saving...");
-                const shouldClose = await callback(titleVal, contentVal);
-                if (shouldClose !== false) {
-                    dialog.remove();
-                } else {
-                    confirm.disabled = false;
-                    cancel.disabled = false;
-                    confirm.innerText = prevText;
-                }
-            } else {
-                alert(t("Title and Content cannot be empty!"));
-            }
-        };
-        
-        btnRow.appendChild(cancel);
-        btnRow.appendChild(confirm);
-        content.appendChild(title);
-        content.appendChild(titleInput);
-        content.appendChild(contentInput);
-        content.appendChild(btnRow);
-        dialog.appendChild(content);
-        
+    function openCustomItemCreateModal(callback, defaultContent = "") {
+        const dialog = createCharacterCustomItemModal({
+            defaultContent,
+            onSubmit: callback,
+        });
         document.body.appendChild(dialog);
-        titleInput.focus();
+        dialog.querySelector("input")?.focus();
     }
 
     let lastScrollTop = parseInt(localStorage.getItem(SCROLL_STORAGE_KEY)) || 0;
@@ -2613,6 +2621,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             
             createCard.onclick = (e) => {
                 e.stopPropagation();
+                const defaultContent = getActiveSelectorTagText(node, tagsWidget);
                 openCustomItemCreateModal(async (title, content) => {
                     const newItem = {
                         id: "custom_" + Date.now(),
@@ -2629,7 +2638,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                     }
                     triggerFilter();
                     renderSidebar();
-                });
+                }, defaultContent);
             };
             
             fragment.appendChild(createCard);

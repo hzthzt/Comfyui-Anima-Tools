@@ -302,3 +302,38 @@ test("writeSelectorTagsToWidget falls back to plain text for non Tagged nodes", 
   assert.equal(widget.value, "beta, ");
   assert.equal(widget.lastCallbackValue, "beta, ");
 });
+
+test("getActiveSelectorTagText returns enabled tag manager tags in widget text format", async () => {
+  installDom();
+  const {
+    createSelectorTagManager,
+    getActiveSelectorTagText,
+    getTagFieldState,
+  } = await import("../js/anima_tag_editor.js?case=active-tags");
+  const { node, widget } = createNodeAndWidget("alpha, beta, gamma, ");
+
+  createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  const field = getTagFieldState(node, "artist_tags", widget);
+  field.tags[1].enabled = false;
+  field.history.push({ text: "history-only", removedAt: Date.now() });
+
+  assert.equal(getActiveSelectorTagText(node, widget), "alpha, gamma, ");
+});
+
+test("getActiveSelectorTagText returns empty text when there are no active tags", async () => {
+  installDom();
+  const {
+    createSelectorTagManager,
+    getActiveSelectorTagText,
+    getTagFieldState,
+  } = await import("../js/anima_tag_editor.js?case=active-tags-empty");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+
+  createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  const field = getTagFieldState(node, "artist_tags", widget);
+  field.tags[0].enabled = false;
+  field.history.push({ text: "history-only", removedAt: Date.now() });
+
+  assert.equal(getActiveSelectorTagText(node, widget), "");
+  assert.equal(getActiveSelectorTagText(null, widget), "");
+});

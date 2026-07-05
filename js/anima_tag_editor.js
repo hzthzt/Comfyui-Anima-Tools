@@ -802,6 +802,20 @@ export function createSelectorApplyModeControl(node, widgetOrName) {
     return control;
 }
 
+export function getActiveSelectorTagText(node, widgetOrName) {
+    if (!node || !widgetOrName) return "";
+    const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
+    const fieldName = widget?.name || String(widgetOrName || "");
+    if (!fieldName) return "";
+
+    const field = getTagFieldState(node, fieldName, widget);
+    const parts = field.tags
+        .filter(tag => tag?.enabled !== false)
+        .map(tag => tagText(tag))
+        .filter(Boolean);
+    return parts.length ? `${parts.join(", ")}, ` : "";
+}
+
 export function createSelectorTagManagerFooter(gap = 12) {
     const row = document.createElement("div");
     row.style.cssText = `

@@ -5,7 +5,7 @@ import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
-import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups } from "./anima_card_filter_helpers.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
@@ -449,7 +449,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
         input.focus();
     }
 
-    function openCustomItemCreateModal(callback) {
+    function openCustomItemCreateModal(callback, defaultContent = "") {
         const dialog = document.createElement("div");
         dialog.style.cssText = `
             position: fixed;
@@ -499,6 +499,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
         
         const contentInput = document.createElement("textarea");
         contentInput.placeholder = t("Enter prompt tags (e.g. masterpiece, highly detailed)...");
+        contentInput.value = defaultContent || "";
         contentInput.rows = 4;
         contentInput.style.cssText = `
             background: #2c2c2e;
@@ -1910,6 +1911,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
             
             createCard.onclick = (e) => {
                 e.stopPropagation();
+                const defaultContent = getActiveSelectorTagText(node, tagsWidget);
                 openCustomItemCreateModal(async (title, content) => {
                     const newItem = {
                         id: "custom_" + Date.now(),
@@ -1926,7 +1928,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
                     }
                     triggerFilter();
                     renderSidebar();
-                });
+                }, defaultContent);
             };
             
             fragment.appendChild(createCard);

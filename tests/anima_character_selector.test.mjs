@@ -112,3 +112,18 @@ test("getNextCharacterCardFilters switches categories directly without toggling 
   });
   assert.equal(mod.shouldApplyCharacterCardTypeFilters(categoryFilters), true);
 });
+
+test("createCharacterCustomItemModal prefills custom content textarea", async () => {
+  installDom();
+  const { createCharacterCustomItemModal } = await import("../js/anima_character_selector.js?case=custom-prefill");
+
+  const dialog = createCharacterCustomItemModal({
+    defaultContent: "alpha, beta, ",
+    onSubmit: async () => true,
+  });
+  document.body.appendChild(dialog);
+
+  const textarea = dialog.querySelector("textarea");
+  assert.ok(textarea);
+  assert.equal(textarea.value, "alpha, beta, ");
+});
