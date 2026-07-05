@@ -3,7 +3,8 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./clothing_data.js";
 
@@ -1222,13 +1223,11 @@ async function openClothingSelectorModal(node, tagsWidget) {
         triggerFilter();
     }, 140));
 
-    let tagCatalog = null;
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("clothing"));
     let activeTagFilter = { type: "group", groupId: "all" };
+
     function getTagCatalog() {
-        if (!tagCatalog) {
-            tagCatalog = buildSelectorTagCatalog(clothingData);
-        }
-        return tagCatalog;
+        return tagCatalogProvider.get();
     }
 
     function switchView(view) {
@@ -1435,7 +1434,8 @@ async function openClothingSelectorModal(node, tagsWidget) {
         const entries = buildSelectorTagSidebarEntries(getTagCatalog(), tagFavorites, { t });
         const appendHeader = label => sidebar.appendChild(sectionTitle(label));
         const appendEntry = entry => {
-            const row = sidebarItem(entry.label, isTagSidebarEntryActive(entry), entry.count);
+            if (!entry) return;
+            const row = sidebarItem(entry.displayLabel || entry.label, isTagSidebarEntryActive(entry));
             row.onclick = () => switchTagSidebarEntry(entry);
             sidebar.appendChild(row);
         };

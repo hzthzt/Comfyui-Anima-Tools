@@ -71,16 +71,62 @@ test("buildSelectorTagCatalog preserves source categories for tag sidebar filter
   assert.deepEqual(
     entries.map(entry => [entry.type, entry.id, entry.label, entry.count]),
     [
-      ["all", "all", "All Tags", 3],
-      ["group", "group:default", "Saved Tags", 0],
-      ["category", "category:auto:nature-outdoors", "Nature & Outdoors", 2],
-      ["category", "category:auto:urban-daily", "Urban & Daily", 2],
+      ["all", "all", "All Tags", undefined],
+      ["group", "group:default", "Saved Tags", undefined],
+      ["category", "category:auto:nature-outdoors", "Nature & Outdoors", undefined],
+      ["category", "category:auto:urban-daily", "Urban & Daily", undefined],
     ],
   );
   assert.deepEqual(filterSelectorTagCatalog(catalog, tagFavorites, {
     filterType: "category",
     categoryId: "auto:nature-outdoors",
   }).map(item => item.tag), ["sky", "beach"]);
+});
+
+test("buildConfiguredSelectorTagCatalog uses only configured tags and bilingual metadata", async () => {
+  const {
+    buildConfiguredSelectorTagCatalog,
+    buildSelectorTagSidebarEntries,
+    createDefaultTagFavorites,
+    filterSelectorTagCatalog,
+  } = await import("../js/anima_selector_tag_library.js?case=configured-catalog");
+
+  const configured = buildConfiguredSelectorTagCatalog({
+    categories: [
+      { id: "eyes", label: { en: "Eyes", zh: "眼睛" }, booruType: "general" },
+    ],
+    tags: [
+      {
+        tag: "blue eyes",
+        label: { en: "blue eyes", zh: "蓝色眼睛" },
+        meaning: { en: "iris color", zh: "虹膜颜色" },
+        categoryIds: ["eyes"],
+        booruType: "general",
+        aliases: ["aqua eyes"],
+      },
+    ],
+  });
+
+  assert.deepEqual(configured.map(item => item.tag), ["blue eyes"]);
+  assert.deepEqual(configured[0].categories, [
+    { id: "eyes", label: "Eyes", labelZh: "眼睛", booruType: "general" },
+  ]);
+  assert.equal(configured[0].labelZh, "蓝色眼睛");
+  assert.deepEqual(configured[0].meaning, { en: "iris color", zh: "虹膜颜色" });
+  assert.deepEqual(configured[0].aliases, ["aqua eyes"]);
+
+  const favorites = createDefaultTagFavorites("Saved Tags");
+  assert.deepEqual(
+    buildSelectorTagSidebarEntries(configured, favorites).map(entry => [entry.type, entry.id, entry.label, entry.count]),
+    [
+      ["all", "all", "All Tags", undefined],
+      ["group", "group:default", "Saved Tags", undefined],
+      ["category", "category:eyes", "Eyes", undefined],
+    ],
+  );
+
+  assert.deepEqual(filterSelectorTagCatalog(configured, favorites, { query: "虹膜" }).map(item => item.tag), ["blue eyes"]);
+  assert.deepEqual(filterSelectorTagCatalog(configured, favorites, { query: "aqua" }).map(item => item.tag), ["blue eyes"]);
 });
 
 test("filterSelectorTagCatalog filters independent tag groups without touching card groups", async () => {
@@ -173,6 +219,103 @@ test("createSelectorTagView applies one tag immediately when a tag row is clicke
   row.click();
 
   assert.deepEqual(applied, ["beach"]);
+});
+
+test("createSelectorTagView renders bilingual meaning without source usage counts", async () => {
+  installDom();
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-no-counts");
+  const view = createSelectorTagView({
+    section: "character",
+    tagFavorites: createDefaultFavoritesForTest(),
+    catalogProvider: () => [{
+      tag: "blue eyes",
+      labelZh: "蓝色眼睛",
+      meaning: { en: "blue eyes", zh: "蓝色眼睛" },
+      sourceCount: 99,
+    }],
+    applyTag: () => {},
+    t: (value, params = {}) => Object.entries(params).reduce((text, [key, val]) => text.replace(`{${key}}`, String(val)), value),
+  });
+
+  document.body.appendChild(view.element);
+  view.render();
+
+  assert.match(view.element.textContent, /blue eyes/);
+  assert.match(view.element.textContent, /蓝色眼睛/);
+  assert.doesNotMatch(view.element.textContent, /Used by/);
+  assert.doesNotMatch(view.element.textContent, /99/);
+});
+
+test("createSelectorTagView keeps Chinese off the tag title and uses fixed tag row size", async () => {
+  installDom();
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-title-size");
+  const view = createSelectorTagView({
+    section: "character",
+    tagFavorites: createDefaultFavoritesForTest(),
+    catalogProvider: () => [{
+      tag: "blue eyes",
+      labelZh: "蓝色眼睛",
+      meaning: { en: "iris color", zh: "虹膜颜色" },
+    }],
+    applyTag: () => {},
+    t: value => value,
+  });
+
+  document.body.appendChild(view.element);
+  view.render();
+
+  const row = view.element.querySelector("[data-selector-tag='blue eyes']");
+  const title = row.querySelector(".anima-selector-tag-main");
+  assert.equal(title.textContent, "blue eyes");
+  assert.doesNotMatch(title.textContent, /蓝色眼睛/);
+  assert.match(row.style.cssText, /height:\s*64px/i);
+  assert.match(row.style.cssText, /min-height:\s*64px/i);
+  assert.match(row.style.cssText, /max-height:\s*64px/i);
+  const list = view.element.querySelector(".anima-selector-tag-list");
+  assert.match(list.style.cssText, /grid-auto-rows:\s*64px/i);
+  assert.match(list.style.cssText, /row-gap:\s*10px/i);
+});
+
+test("buildSelectorTagSidebarEntries exposes bilingual category labels for sidebar rendering", async () => {
+  const {
+    buildConfiguredSelectorTagCatalog,
+    buildSelectorTagSidebarEntries,
+    createDefaultTagFavorites,
+  } = await import("../js/anima_selector_tag_library.js?case=sidebar-bilingual");
+
+  const catalog = buildConfiguredSelectorTagCatalog({
+    categories: [{ id: "eyes", label: { en: "Eyes", zh: "眼睛" }, booruType: "general" }],
+    tags: [{ tag: "blue eyes", categoryIds: ["eyes"] }],
+  });
+  const entries = buildSelectorTagSidebarEntries(catalog, createDefaultTagFavorites("Saved Tags"));
+
+  assert.deepEqual(
+    entries.filter(entry => entry.type === "category").map(entry => [entry.label, entry.labelZh, entry.displayLabel]),
+    [["Eyes", "眼睛", "眼睛 / Eyes"]],
+  );
+});
+
+test("buildSelectorTagSidebarEntries displays the legacy default tag group as favorites", async () => {
+  const { buildSelectorTagSidebarEntries } = await import("../js/anima_selector_tag_library.js?case=sidebar-favorites");
+  const tagFavorites = {
+    tagGroups: [
+      { id: "default", name: "Default Tags", isSystem: true },
+      { id: "tag_group_mood", name: "Mood Tags", isSystem: false },
+    ],
+    tagItems: [],
+  };
+
+  const entries = buildSelectorTagSidebarEntries([], tagFavorites, {
+    t: value => ({ "Favorite Tags": "收藏" })[value] || value,
+  });
+
+  assert.deepEqual(
+    entries.filter(entry => entry.type === "group").map(entry => [entry.groupId, entry.label, entry.displayLabel]),
+    [
+      ["default", "Default Tags", "收藏"],
+      ["tag_group_mood", "Mood Tags", "Mood Tags"],
+    ],
+  );
 });
 
 test("createSelectorTagView can sync an external selector search query", async () => {

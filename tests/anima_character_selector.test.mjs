@@ -34,3 +34,13 @@ test("getCharacterOverlayTags puts the character trigger first and dedupes tags"
     "red eyes",
   ]);
 });
+
+test("classifyCharacterTag places common character tags into configured categories", async () => {
+  installDom();
+  const { classifyCharacterTag } = await import("../js/anima_selector_tag_catalog_config.js?case=character-classify");
+
+  assert.equal(classifyCharacterTag("blue eyes"), "eyes");
+  assert.equal(classifyCharacterTag("long hair"), "hair");
+  assert.equal(classifyCharacterTag("hair bow"), "decoration");
+  assert.equal(classifyCharacterTag("hatsune miku"), "character-name");
+});

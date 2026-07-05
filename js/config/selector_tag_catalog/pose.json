@@ -1,0 +1,8296 @@
+{
+  "version": 1,
+  "section": "pose",
+  "categories": [
+    {
+      "id": "gestures-arms",
+      "label": {
+        "en": "Gestures & Arms",
+        "zh": "手势与手臂"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "standing-dynamic",
+      "label": {
+        "en": "Standing & Dynamic",
+        "zh": "站立与动态"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "sitting-poses",
+      "label": {
+        "en": "Sitting Poses",
+        "zh": "坐姿"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "lying-prone",
+      "label": {
+        "en": "Lying & Prone",
+        "zh": "卧姿与趴姿"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "adjusting-dressing",
+      "label": {
+        "en": "Adjusting & Dressing",
+        "zh": "整理服饰与发型"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "props-holding",
+      "label": {
+        "en": "Props & Holding",
+        "zh": "道具与携物"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "duo-interaction",
+      "label": {
+        "en": "Duo & Interaction",
+        "zh": "双人与互动"
+      },
+      "booruType": "general"
+    },
+    {
+      "id": "daily-miscellaneous",
+      "label": {
+        "en": "Daily & Miscellaneous",
+        "zh": "日常与其它"
+      },
+      "booruType": "general"
+    }
+  ],
+  "tags": [
+    {
+      "tag": "\\||/",
+      "label": {
+        "en": "\\||/",
+        "zh": "手掌贴墙"
+      },
+      "meaning": {
+        "en": "\\||/",
+        "zh": "手掌贴墙"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "\\m/",
+      "label": {
+        "en": "\\m/",
+        "zh": "6+1 手势"
+      },
+      "meaning": {
+        "en": "\\m/",
+        "zh": "6+1 手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "\\n/",
+      "label": {
+        "en": "\\n/",
+        "zh": "摇滚手势"
+      },
+      "meaning": {
+        "en": "\\n/",
+        "zh": "摇滚手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting eyewear",
+      "label": {
+        "en": "adjusting eyewear",
+        "zh": "扶眼镜"
+      },
+      "meaning": {
+        "en": "adjusting eyewear",
+        "zh": "扶眼镜"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting glasses",
+      "label": {
+        "en": "adjusting glasses",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "adjusting glasses",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting hair",
+      "label": {
+        "en": "adjusting hair",
+        "zh": "理头发"
+      },
+      "meaning": {
+        "en": "adjusting hair",
+        "zh": "理头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting legwear",
+      "label": {
+        "en": "adjusting legwear",
+        "zh": "整理裤袜"
+      },
+      "meaning": {
+        "en": "adjusting legwear",
+        "zh": "整理裤袜"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting panties",
+      "label": {
+        "en": "adjusting panties",
+        "zh": "拨内裤"
+      },
+      "meaning": {
+        "en": "adjusting panties",
+        "zh": "拨内裤"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting pantyhose",
+      "label": {
+        "en": "adjusting pantyhose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "adjusting pantyhose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting sunglasses",
+      "label": {
+        "en": "adjusting sunglasses",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "adjusting sunglasses",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting thighhigh",
+      "label": {
+        "en": "adjusting thighhigh",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "adjusting thighhigh",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "adjusting thighhighs",
+      "label": {
+        "en": "adjusting thighhighs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "adjusting thighhighs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "agura",
+      "label": {
+        "en": "agura",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "agura",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "air guitar",
+      "label": {
+        "en": "air guitar",
+        "zh": "空气吉他"
+      },
+      "meaning": {
+        "en": "air guitar",
+        "zh": "空气吉他"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "air punch",
+      "label": {
+        "en": "air punch",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "air punch",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "air quotes",
+      "label": {
+        "en": "air quotes",
+        "zh": "引号手势"
+      },
+      "meaning": {
+        "en": "air quotes",
+        "zh": "引号手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "akanbe",
+      "label": {
+        "en": "akanbe",
+        "zh": "拉下眼睑的鬼脸"
+      },
+      "meaning": {
+        "en": "akanbe",
+        "zh": "拉下眼睑的鬼脸"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "akimbo",
+      "label": {
+        "en": "akimbo",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "akimbo",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "all fours",
+      "label": {
+        "en": "all fours",
+        "zh": "四肢趴地"
+      },
+      "meaning": {
+        "en": "all fours",
+        "zh": "四肢趴地"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "all-fours",
+      "label": {
+        "en": "all-fours",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "all-fours",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arched back",
+      "label": {
+        "en": "arched back",
+        "zh": "弓身体"
+      },
+      "meaning": {
+        "en": "arched back",
+        "zh": "弓身体"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm around neck",
+      "label": {
+        "en": "arm around neck",
+        "zh": "手臂环绕脖子"
+      },
+      "meaning": {
+        "en": "arm around neck",
+        "zh": "手臂环绕脖子"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm grab",
+      "label": {
+        "en": "arm grab",
+        "zh": "抓住手臂"
+      },
+      "meaning": {
+        "en": "arm grab",
+        "zh": "抓住手臂"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm held back",
+      "label": {
+        "en": "arm held back",
+        "zh": "手臂往后拉"
+      },
+      "meaning": {
+        "en": "arm held back",
+        "zh": "手臂往后拉"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm hold",
+      "label": {
+        "en": "arm hold",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arm hold",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm hug",
+      "label": {
+        "en": "arm hug",
+        "zh": "挽手"
+      },
+      "meaning": {
+        "en": "arm hug",
+        "zh": "挽手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm raised",
+      "label": {
+        "en": "arm raised",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arm raised",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm support",
+      "label": {
+        "en": "arm support",
+        "zh": "用手支撑住"
+      },
+      "meaning": {
+        "en": "arm support",
+        "zh": "用手支撑住"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arm up",
+      "label": {
+        "en": "arm up",
+        "zh": "单抬臂"
+      },
+      "meaning": {
+        "en": "arm up",
+        "zh": "单抬臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "armpit",
+      "label": {
+        "en": "armpit",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "armpit",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "armpit peek",
+      "label": {
+        "en": "armpit peek",
+        "zh": "微微露出腋窝"
+      },
+      "meaning": {
+        "en": "armpit peek",
+        "zh": "微微露出腋窝"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "armpits",
+      "label": {
+        "en": "armpits",
+        "zh": "举手露腋"
+      },
+      "meaning": {
+        "en": "armpits",
+        "zh": "举手露腋"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms above",
+      "label": {
+        "en": "arms above",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arms above",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms above head",
+      "label": {
+        "en": "arms above head",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arms above head",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms around neck",
+      "label": {
+        "en": "arms around neck",
+        "zh": "双手搂着脖子"
+      },
+      "meaning": {
+        "en": "arms around neck",
+        "zh": "双手搂着脖子"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms at sides",
+      "label": {
+        "en": "arms at sides",
+        "zh": "双手垂放"
+      },
+      "meaning": {
+        "en": "arms at sides",
+        "zh": "双手垂放"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms behind",
+      "label": {
+        "en": "arms behind",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arms behind",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms behind back",
+      "label": {
+        "en": "arms behind back",
+        "zh": "手放在身后"
+      },
+      "meaning": {
+        "en": "arms behind back",
+        "zh": "手放在身后"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms behind head",
+      "label": {
+        "en": "arms behind head",
+        "zh": "手臂放头后"
+      },
+      "meaning": {
+        "en": "arms behind head",
+        "zh": "手臂放头后"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms crossed",
+      "label": {
+        "en": "arms crossed",
+        "zh": "手交叉于胸前"
+      },
+      "meaning": {
+        "en": "arms crossed",
+        "zh": "手交叉于胸前"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms folded",
+      "label": {
+        "en": "arms folded",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arms folded",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms raised",
+      "label": {
+        "en": "arms raised",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "arms raised",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "arms up",
+      "label": {
+        "en": "arms up",
+        "zh": "双抬臂"
+      },
+      "meaning": {
+        "en": "arms up",
+        "zh": "双抬臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ass-up head-down",
+      "label": {
+        "en": "ass-up head-down",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "ass-up head-down",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "back-to-back",
+      "label": {
+        "en": "back-to-back",
+        "zh": "背靠背"
+      },
+      "meaning": {
+        "en": "back-to-back",
+        "zh": "背靠背"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "balance",
+      "label": {
+        "en": "balance",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "balance",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "balancing",
+      "label": {
+        "en": "balancing",
+        "zh": "(保持)平衡的姿势"
+      },
+      "meaning": {
+        "en": "balancing",
+        "zh": "(保持)平衡的姿势"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ball caress",
+      "label": {
+        "en": "ball caress",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "ball caress",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "battle stance",
+      "label": {
+        "en": "battle stance",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "battle stance",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "battoujutsu stance",
+      "label": {
+        "en": "battoujutsu stance",
+        "zh": "拔刀起手式"
+      },
+      "meaning": {
+        "en": "battoujutsu stance",
+        "zh": "拔刀起手式"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "beckon",
+      "label": {
+        "en": "beckon",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "beckon",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "beckoning",
+      "label": {
+        "en": "beckoning",
+        "zh": "招手"
+      },
+      "meaning": {
+        "en": "beckoning",
+        "zh": "招手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "belly grab",
+      "label": {
+        "en": "belly grab",
+        "zh": "捏着肚子"
+      },
+      "meaning": {
+        "en": "belly grab",
+        "zh": "捏着肚子"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bend over",
+      "label": {
+        "en": "bend over",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "bend over",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bending over",
+      "label": {
+        "en": "bending over",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "bending over",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bent over",
+      "label": {
+        "en": "bent over",
+        "zh": "翘臀姿势"
+      },
+      "meaning": {
+        "en": "bent over",
+        "zh": "翘臀姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bent-over",
+      "label": {
+        "en": "bent-over",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "bent-over",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bikini down",
+      "label": {
+        "en": "bikini down",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "bikini down",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bikini pull",
+      "label": {
+        "en": "bikini pull",
+        "zh": "扯着比基尼"
+      },
+      "meaning": {
+        "en": "bikini pull",
+        "zh": "扯着比基尼"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bowing",
+      "label": {
+        "en": "bowing",
+        "zh": "鞠躬"
+      },
+      "meaning": {
+        "en": "bowing",
+        "zh": "鞠躬"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bridal carry",
+      "label": {
+        "en": "bridal carry",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "bridal carry",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "brofist",
+      "label": {
+        "en": "brofist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "brofist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bunching hair",
+      "label": {
+        "en": "bunching hair",
+        "zh": "手持辫子"
+      },
+      "meaning": {
+        "en": "bunching hair",
+        "zh": "手持辫子"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "bunny pose",
+      "label": {
+        "en": "bunny pose",
+        "zh": "兔耳 pose"
+      },
+      "meaning": {
+        "en": "bunny pose",
+        "zh": "兔耳 pose"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "butterfly pose",
+      "label": {
+        "en": "butterfly pose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "butterfly pose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "butterfly sitting",
+      "label": {
+        "en": "butterfly sitting",
+        "zh": "蝴蝶坐"
+      },
+      "meaning": {
+        "en": "butterfly sitting",
+        "zh": "蝴蝶坐"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "caramel dansen",
+      "label": {
+        "en": "caramel dansen",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "caramel dansen",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "caramelldansen",
+      "label": {
+        "en": "caramelldansen",
+        "zh": "焦糖舞"
+      },
+      "meaning": {
+        "en": "caramelldansen",
+        "zh": "焦糖舞"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "caressing testicles",
+      "label": {
+        "en": "caressing testicles",
+        "zh": "爱抚睾丸"
+      },
+      "meaning": {
+        "en": "caressing testicles",
+        "zh": "爱抚睾丸"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "carry me",
+      "label": {
+        "en": "carry me",
+        "zh": "抱着我手势"
+      },
+      "meaning": {
+        "en": "carry me",
+        "zh": "抱着我手势"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "carrying over shoulder",
+      "label": {
+        "en": "carrying over shoulder",
+        "zh": "肩扛"
+      },
+      "meaning": {
+        "en": "carrying over shoulder",
+        "zh": "肩扛"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "carrying under arm",
+      "label": {
+        "en": "carrying under arm",
+        "zh": "夹在腋下"
+      },
+      "meaning": {
+        "en": "carrying under arm",
+        "zh": "夹在腋下"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cat pose",
+      "label": {
+        "en": "cat pose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "cat pose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "chest stand",
+      "label": {
+        "en": "chest stand",
+        "zh": "用胸支撑身体"
+      },
+      "meaning": {
+        "en": "chest stand",
+        "zh": "用胸支撑身体"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "chin rest",
+      "label": {
+        "en": "chin rest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "chin rest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "chin stroking",
+      "label": {
+        "en": "chin stroking",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "chin stroking",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clasped hands",
+      "label": {
+        "en": "clasped hands",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "clasped hands",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "claw pose",
+      "label": {
+        "en": "claw pose",
+        "zh": "举爪姿势"
+      },
+      "meaning": {
+        "en": "claw pose",
+        "zh": "举爪姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clenched fist",
+      "label": {
+        "en": "clenched fist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "clenched fist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clenched fists",
+      "label": {
+        "en": "clenched fists",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "clenched fists",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clenched hand",
+      "label": {
+        "en": "clenched hand",
+        "zh": "握紧的手"
+      },
+      "meaning": {
+        "en": "clenched hand",
+        "zh": "握紧的手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clenched hands",
+      "label": {
+        "en": "clenched hands",
+        "zh": "紧握的双手"
+      },
+      "meaning": {
+        "en": "clenched hands",
+        "zh": "紧握的双手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "closed fist",
+      "label": {
+        "en": "closed fist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "closed fist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "closed fists",
+      "label": {
+        "en": "closed fists",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "closed fists",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clothes lift",
+      "label": {
+        "en": "clothes lift",
+        "zh": "掀起衣物"
+      },
+      "meaning": {
+        "en": "clothes lift",
+        "zh": "掀起衣物"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "clothes pull",
+      "label": {
+        "en": "clothes pull",
+        "zh": "拉开衣物"
+      },
+      "meaning": {
+        "en": "clothes pull",
+        "zh": "拉开衣物"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "convenient arm",
+      "label": {
+        "en": "convenient arm",
+        "zh": "遮住关键部位的手臂"
+      },
+      "meaning": {
+        "en": "convenient arm",
+        "zh": "遮住关键部位的手臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "convenient head",
+      "label": {
+        "en": "convenient head",
+        "zh": "挡住关键部位的头"
+      },
+      "meaning": {
+        "en": "convenient head",
+        "zh": "挡住关键部位的头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "convenient leg",
+      "label": {
+        "en": "convenient leg",
+        "zh": "挡住关键部位的腿"
+      },
+      "meaning": {
+        "en": "convenient leg",
+        "zh": "挡住关键部位的腿"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cowering",
+      "label": {
+        "en": "cowering",
+        "zh": "抱头"
+      },
+      "meaning": {
+        "en": "cowering",
+        "zh": "抱头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crawling",
+      "label": {
+        "en": "crawling",
+        "zh": "爬行"
+      },
+      "meaning": {
+        "en": "crawling",
+        "zh": "爬行"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed ankles",
+      "label": {
+        "en": "crossed ankles",
+        "zh": "交叉脚踝"
+      },
+      "meaning": {
+        "en": "crossed ankles",
+        "zh": "交叉脚踝"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed arms",
+      "label": {
+        "en": "crossed arms",
+        "zh": "交叉双臂"
+      },
+      "meaning": {
+        "en": "crossed arms",
+        "zh": "交叉双臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed fingers",
+      "label": {
+        "en": "crossed fingers",
+        "zh": "手指交错"
+      },
+      "meaning": {
+        "en": "crossed fingers",
+        "zh": "手指交错"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed legs",
+      "label": {
+        "en": "crossed legs",
+        "zh": "二郎腿"
+      },
+      "meaning": {
+        "en": "crossed legs",
+        "zh": "二郎腿"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed legs (lying)",
+      "label": {
+        "en": "crossed legs (lying)",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crossed legs (lying)",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed legs (sitting)",
+      "label": {
+        "en": "crossed legs (sitting)",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crossed legs (sitting)",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crossed legs (standing)",
+      "label": {
+        "en": "crossed legs (standing)",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crossed legs (standing)",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crouch",
+      "label": {
+        "en": "crouch",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crouch",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crouched",
+      "label": {
+        "en": "crouched",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crouched",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crouching",
+      "label": {
+        "en": "crouching",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "crouching",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "crucifixion",
+      "label": {
+        "en": "crucifixion",
+        "zh": "磔"
+      },
+      "meaning": {
+        "en": "crucifixion",
+        "zh": "磔"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cuddle",
+      "label": {
+        "en": "cuddle",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "cuddle",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cuddling",
+      "label": {
+        "en": "cuddling",
+        "zh": "拥抱"
+      },
+      "meaning": {
+        "en": "cuddling",
+        "zh": "拥抱"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cunnilingus gesture",
+      "label": {
+        "en": "cunnilingus gesture",
+        "zh": "舔阴手势"
+      },
+      "meaning": {
+        "en": "cunnilingus gesture",
+        "zh": "舔阴手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cupped hands",
+      "label": {
+        "en": "cupped hands",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "cupped hands",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cupping hands",
+      "label": {
+        "en": "cupping hands",
+        "zh": "用手比作杯子"
+      },
+      "meaning": {
+        "en": "cupping hands",
+        "zh": "用手比作杯子"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "curtsey",
+      "label": {
+        "en": "curtsey",
+        "zh": "(女子的)屈膝礼"
+      },
+      "meaning": {
+        "en": "curtsey",
+        "zh": "(女子的)屈膝礼"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "curtsie",
+      "label": {
+        "en": "curtsie",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "curtsie",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "curtsy",
+      "label": {
+        "en": "curtsy",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "curtsy",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "cutthroat gesture",
+      "label": {
+        "en": "cutthroat gesture",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "cutthroat gesture",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "disco pose",
+      "label": {
+        "en": "disco pose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "disco pose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dog pose",
+      "label": {
+        "en": "dog pose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "dog pose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "double peace",
+      "label": {
+        "en": "double peace",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "double peace",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "double v",
+      "label": {
+        "en": "double v",
+        "zh": "双手比 V"
+      },
+      "meaning": {
+        "en": "double v",
+        "zh": "双手比 V"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "double wield",
+      "label": {
+        "en": "double wield",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "double wield",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dress lift",
+      "label": {
+        "en": "dress lift",
+        "zh": "掀起裙子"
+      },
+      "meaning": {
+        "en": "dress lift",
+        "zh": "掀起裙子"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dress pull",
+      "label": {
+        "en": "dress pull",
+        "zh": "剥下裙子露出胸口"
+      },
+      "meaning": {
+        "en": "dress pull",
+        "zh": "剥下裙子露出胸口"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dress removed",
+      "label": {
+        "en": "dress removed",
+        "zh": "脱下裙子"
+      },
+      "meaning": {
+        "en": "dress removed",
+        "zh": "脱下裙子"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dress tug",
+      "label": {
+        "en": "dress tug",
+        "zh": "拉下连衣裙下摆"
+      },
+      "meaning": {
+        "en": "dress tug",
+        "zh": "拉下连衣裙下摆"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "drying hair",
+      "label": {
+        "en": "drying hair",
+        "zh": "弄干头发"
+      },
+      "meaning": {
+        "en": "drying hair",
+        "zh": "弄干头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dual wield",
+      "label": {
+        "en": "dual wield",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "dual wield",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dual wielding",
+      "label": {
+        "en": "dual wielding",
+        "zh": "双持"
+      },
+      "meaning": {
+        "en": "dual wielding",
+        "zh": "双持"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "dulya",
+      "label": {
+        "en": "dulya",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "dulya",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ear cleaner",
+      "label": {
+        "en": "ear cleaner",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "ear cleaner",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "extended pinky",
+      "label": {
+        "en": "extended pinky",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "extended pinky",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "eye rub",
+      "label": {
+        "en": "eye rub",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "eye rub",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "eyelid pull",
+      "label": {
+        "en": "eyelid pull",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "eyelid pull",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "face down ass up",
+      "label": {
+        "en": "face down ass up",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "face down ass up",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "faceplant",
+      "label": {
+        "en": "faceplant",
+        "zh": "脸贴地面"
+      },
+      "meaning": {
+        "en": "faceplant",
+        "zh": "脸贴地面"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "feeding",
+      "label": {
+        "en": "feeding",
+        "zh": "喂食"
+      },
+      "meaning": {
+        "en": "feeding",
+        "zh": "喂食"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fellatio gesture",
+      "label": {
+        "en": "fellatio gesture",
+        "zh": "口交手势"
+      },
+      "meaning": {
+        "en": "fellatio gesture",
+        "zh": "口交手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fetal position",
+      "label": {
+        "en": "fetal position",
+        "zh": "曲腿至胸"
+      },
+      "meaning": {
+        "en": "fetal position",
+        "zh": "曲腿至胸"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fidget",
+      "label": {
+        "en": "fidget",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fidget",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fidgeting",
+      "label": {
+        "en": "fidgeting",
+        "zh": "紧张手势"
+      },
+      "meaning": {
+        "en": "fidgeting",
+        "zh": "紧张手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fig gesture",
+      "label": {
+        "en": "fig gesture",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fig gesture",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fig sign",
+      "label": {
+        "en": "fig sign",
+        "zh": "Fig 手势"
+      },
+      "meaning": {
+        "en": "fig sign",
+        "zh": "Fig 手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fighting stance",
+      "label": {
+        "en": "fighting stance",
+        "zh": "战斗姿态"
+      },
+      "meaning": {
+        "en": "fighting stance",
+        "zh": "战斗姿态"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "figure four sitting",
+      "label": {
+        "en": "figure four sitting",
+        "zh": "二郎腿"
+      },
+      "meaning": {
+        "en": "figure four sitting",
+        "zh": "二郎腿"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger camera",
+      "label": {
+        "en": "finger camera",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "finger camera",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger counting",
+      "label": {
+        "en": "finger counting",
+        "zh": "用手指比数字"
+      },
+      "meaning": {
+        "en": "finger counting",
+        "zh": "用手指比数字"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger frame",
+      "label": {
+        "en": "finger frame",
+        "zh": "用手指作相框"
+      },
+      "meaning": {
+        "en": "finger frame",
+        "zh": "用手指作相框"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger gun",
+      "label": {
+        "en": "finger gun",
+        "zh": "手枪手势"
+      },
+      "meaning": {
+        "en": "finger gun",
+        "zh": "手枪手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger heart",
+      "label": {
+        "en": "finger heart",
+        "zh": "双指比心"
+      },
+      "meaning": {
+        "en": "finger heart",
+        "zh": "双指比心"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger in panties",
+      "label": {
+        "en": "finger in panties",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "finger in panties",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger quotes",
+      "label": {
+        "en": "finger quotes",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "finger quotes",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger raised",
+      "label": {
+        "en": "finger raised",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "finger raised",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "finger to another's chin",
+      "label": {
+        "en": "finger to another's chin",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "finger to another's chin",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fingering through clothes",
+      "label": {
+        "en": "fingering through clothes",
+        "zh": "手指隔着衣物摸来摸去"
+      },
+      "meaning": {
+        "en": "fingering through clothes",
+        "zh": "手指隔着衣物摸来摸去"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fist",
+      "label": {
+        "en": "fist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fist bump",
+      "label": {
+        "en": "fist bump",
+        "zh": "碰拳"
+      },
+      "meaning": {
+        "en": "fist bump",
+        "zh": "碰拳"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fist in hand",
+      "label": {
+        "en": "fist in hand",
+        "zh": "抱拳"
+      },
+      "meaning": {
+        "en": "fist in hand",
+        "zh": "抱拳"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fistbump",
+      "label": {
+        "en": "fistbump",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fistbump",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fists",
+      "label": {
+        "en": "fists",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fists",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "flapping",
+      "label": {
+        "en": "flapping",
+        "zh": "拍打动作"
+      },
+      "meaning": {
+        "en": "flapping",
+        "zh": "拍打动作"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "flipping off",
+      "label": {
+        "en": "flipping off",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "flipping off",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "folded",
+      "label": {
+        "en": "folded",
+        "zh": "抬腿露阴"
+      },
+      "meaning": {
+        "en": "folded",
+        "zh": "抬腿露阴"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "folded arms",
+      "label": {
+        "en": "folded arms",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "folded arms",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fondling testicles",
+      "label": {
+        "en": "fondling testicles",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fondling testicles",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fox hand sign",
+      "label": {
+        "en": "fox hand sign",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "fox hand sign",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "fox shadow puppet",
+      "label": {
+        "en": "fox shadow puppet",
+        "zh": "狐狸手势"
+      },
+      "meaning": {
+        "en": "fox shadow puppet",
+        "zh": "狐狸手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "full scorpion",
+      "label": {
+        "en": "full scorpion",
+        "zh": "头扑倒在地"
+      },
+      "meaning": {
+        "en": "full scorpion",
+        "zh": "头扑倒在地"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "girls are praying",
+      "label": {
+        "en": "girls are praying",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "girls are praying",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "glomp",
+      "label": {
+        "en": "glomp",
+        "zh": "热情的拥抱/扑上来抱住"
+      },
+      "meaning": {
+        "en": "glomp",
+        "zh": "热情的拥抱/扑上来抱住"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "grab",
+      "label": {
+        "en": "grab",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "grab",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "grabbing",
+      "label": {
+        "en": "grabbing",
+        "zh": "抓住/抓着"
+      },
+      "meaning": {
+        "en": "grabbing",
+        "zh": "抓住/抓着"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "grabbing another's hair",
+      "label": {
+        "en": "grabbing another's hair",
+        "zh": "抓着对方的头发"
+      },
+      "meaning": {
+        "en": "grabbing another's hair",
+        "zh": "抓着对方的头发"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "grabbing arm",
+      "label": {
+        "en": "grabbing arm",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "grabbing arm",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "grabbing sheet",
+      "label": {
+        "en": "grabbing sheet",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "grabbing sheet",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "guided breast grab",
+      "label": {
+        "en": "guided breast grab",
+        "zh": "把对方的手抓过来摸自己的胸"
+      },
+      "meaning": {
+        "en": "guided breast grab",
+        "zh": "把对方的手抓过来摸自己的胸"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hair flip",
+      "label": {
+        "en": "hair flip",
+        "zh": "拨头发"
+      },
+      "meaning": {
+        "en": "hair flip",
+        "zh": "拨头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hair pull",
+      "label": {
+        "en": "hair pull",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hair pull",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hair tucking",
+      "label": {
+        "en": "hair tucking",
+        "zh": "撩头发"
+      },
+      "meaning": {
+        "en": "hair tucking",
+        "zh": "撩头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hair twirl",
+      "label": {
+        "en": "hair twirl",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hair twirl",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hair twirling",
+      "label": {
+        "en": "hair twirling",
+        "zh": "手指卷着头发"
+      },
+      "meaning": {
+        "en": "hair twirling",
+        "zh": "手指卷着头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand between legs",
+      "label": {
+        "en": "hand between legs",
+        "zh": "手放在两腿之间"
+      },
+      "meaning": {
+        "en": "hand between legs",
+        "zh": "手放在两腿之间"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand fig",
+      "label": {
+        "en": "hand fig",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand fig",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand glasses",
+      "label": {
+        "en": "hand glasses",
+        "zh": "用手比作眼镜"
+      },
+      "meaning": {
+        "en": "hand glasses",
+        "zh": "用手比作眼镜"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand holding",
+      "label": {
+        "en": "hand holding",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand holding",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand in hair",
+      "label": {
+        "en": "hand in hair",
+        "zh": "手埋在头发里"
+      },
+      "meaning": {
+        "en": "hand in hair",
+        "zh": "手埋在头发里"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand in panties",
+      "label": {
+        "en": "hand in panties",
+        "zh": "手伸进内裤里"
+      },
+      "meaning": {
+        "en": "hand in panties",
+        "zh": "手伸进内裤里"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand in pocket",
+      "label": {
+        "en": "hand in pocket",
+        "zh": "手插在口袋里"
+      },
+      "meaning": {
+        "en": "hand in pocket",
+        "zh": "手插在口袋里"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's",
+      "label": {
+        "en": "hand on another's",
+        "zh": "手接触到对方的脸"
+      },
+      "meaning": {
+        "en": "hand on another's",
+        "zh": "手接触到对方的脸"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's cheek",
+      "label": {
+        "en": "hand on another's cheek",
+        "zh": "手摸着对方的脸颊"
+      },
+      "meaning": {
+        "en": "hand on another's cheek",
+        "zh": "手摸着对方的脸颊"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's chest",
+      "label": {
+        "en": "hand on another's chest",
+        "zh": "手放在对方的胸前"
+      },
+      "meaning": {
+        "en": "hand on another's chest",
+        "zh": "手放在对方的胸前"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's chin",
+      "label": {
+        "en": "hand on another's chin",
+        "zh": "手托着对方的下巴"
+      },
+      "meaning": {
+        "en": "hand on another's chin",
+        "zh": "手托着对方的下巴"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's face",
+      "label": {
+        "en": "hand on another's face",
+        "zh": "手接触到对方的脸"
+      },
+      "meaning": {
+        "en": "hand on another's face",
+        "zh": "手接触到对方的脸"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's hand",
+      "label": {
+        "en": "hand on another's hand",
+        "zh": "手放在对方的手上"
+      },
+      "meaning": {
+        "en": "hand on another's hand",
+        "zh": "手放在对方的手上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's head",
+      "label": {
+        "en": "hand on another's head",
+        "zh": "手放在对方的头上"
+      },
+      "meaning": {
+        "en": "hand on another's head",
+        "zh": "手放在对方的头上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's neck",
+      "label": {
+        "en": "hand on another's neck",
+        "zh": "手放在他人的脖子上"
+      },
+      "meaning": {
+        "en": "hand on another's neck",
+        "zh": "手放在他人的脖子上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's shoulder",
+      "label": {
+        "en": "hand on another's shoulder",
+        "zh": "手放在对方的肩上"
+      },
+      "meaning": {
+        "en": "hand on another's shoulder",
+        "zh": "手放在对方的肩上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on another's stomach",
+      "label": {
+        "en": "hand on another's stomach",
+        "zh": "手放在对方的肚子上"
+      },
+      "meaning": {
+        "en": "hand on another's stomach",
+        "zh": "手放在对方的肚子上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on ass",
+      "label": {
+        "en": "hand on ass",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on ass",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on belly",
+      "label": {
+        "en": "hand on belly",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on belly",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on cheek",
+      "label": {
+        "en": "hand on cheek",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on cheek",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on chest",
+      "label": {
+        "en": "hand on chest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on chest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on ear",
+      "label": {
+        "en": "hand on ear",
+        "zh": "手放在耳朵上"
+      },
+      "meaning": {
+        "en": "hand on ear",
+        "zh": "手放在耳朵上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on face",
+      "label": {
+        "en": "hand on face",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on face",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on hat",
+      "label": {
+        "en": "hand on hat",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on hat",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on headwear",
+      "label": {
+        "en": "hand on headwear",
+        "zh": "手触碰帽子"
+      },
+      "meaning": {
+        "en": "hand on headwear",
+        "zh": "手触碰帽子"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on hip",
+      "label": {
+        "en": "hand on hip",
+        "zh": "单手插腰"
+      },
+      "meaning": {
+        "en": "hand on hip",
+        "zh": "单手插腰"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on knee",
+      "label": {
+        "en": "hand on knee",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on knee",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on lips",
+      "label": {
+        "en": "hand on lips",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on lips",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own ass",
+      "label": {
+        "en": "hand on own ass",
+        "zh": "把手放在自己的臀部"
+      },
+      "meaning": {
+        "en": "hand on own ass",
+        "zh": "把手放在自己的臀部"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own belly",
+      "label": {
+        "en": "hand on own belly",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on own belly",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own cheek",
+      "label": {
+        "en": "hand on own cheek",
+        "zh": "把手放在自己的脸颊上"
+      },
+      "meaning": {
+        "en": "hand on own cheek",
+        "zh": "把手放在自己的脸颊上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own chest",
+      "label": {
+        "en": "hand on own chest",
+        "zh": "把手放在自己的胸口"
+      },
+      "meaning": {
+        "en": "hand on own chest",
+        "zh": "把手放在自己的胸口"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own face",
+      "label": {
+        "en": "hand on own face",
+        "zh": "把手放在自己脸上"
+      },
+      "meaning": {
+        "en": "hand on own face",
+        "zh": "把手放在自己脸上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own forehead",
+      "label": {
+        "en": "hand on own forehead",
+        "zh": "手放在自己前额"
+      },
+      "meaning": {
+        "en": "hand on own forehead",
+        "zh": "手放在自己前额"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own head",
+      "label": {
+        "en": "hand on own head",
+        "zh": "手放在自己头上"
+      },
+      "meaning": {
+        "en": "hand on own head",
+        "zh": "手放在自己头上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own knee",
+      "label": {
+        "en": "hand on own knee",
+        "zh": "手放在自己的膝盖上"
+      },
+      "meaning": {
+        "en": "hand on own knee",
+        "zh": "手放在自己的膝盖上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own neck",
+      "label": {
+        "en": "hand on own neck",
+        "zh": "把手放在自己的脖子上"
+      },
+      "meaning": {
+        "en": "hand on own neck",
+        "zh": "把手放在自己的脖子上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own shoulder",
+      "label": {
+        "en": "hand on own shoulder",
+        "zh": "手放在自己的肩上"
+      },
+      "meaning": {
+        "en": "hand on own shoulder",
+        "zh": "手放在自己的肩上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on own stomach",
+      "label": {
+        "en": "hand on own stomach",
+        "zh": "把手放在自己的肚子上"
+      },
+      "meaning": {
+        "en": "hand on own stomach",
+        "zh": "把手放在自己的肚子上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on stomach",
+      "label": {
+        "en": "hand on stomach",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on stomach",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand on waist",
+      "label": {
+        "en": "hand on waist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand on waist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand seal",
+      "label": {
+        "en": "hand seal",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand seal",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to cheek",
+      "label": {
+        "en": "hand to cheek",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to cheek",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to chest",
+      "label": {
+        "en": "hand to chest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to chest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to face",
+      "label": {
+        "en": "hand to face",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to face",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to lip",
+      "label": {
+        "en": "hand to lip",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to lip",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to mouth",
+      "label": {
+        "en": "hand to mouth",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to mouth",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to own chest",
+      "label": {
+        "en": "hand to own chest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hand to own chest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hand to own mouth",
+      "label": {
+        "en": "hand to own mouth",
+        "zh": "手朝向自己嘴"
+      },
+      "meaning": {
+        "en": "hand to own mouth",
+        "zh": "手朝向自己嘴"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "handholding",
+      "label": {
+        "en": "handholding",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "handholding",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "handjob gesture",
+      "label": {
+        "en": "handjob gesture",
+        "zh": "手冲手势"
+      },
+      "meaning": {
+        "en": "handjob gesture",
+        "zh": "手冲手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands above head",
+      "label": {
+        "en": "hands above head",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands above head",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands and knees",
+      "label": {
+        "en": "hands and knees",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands and knees",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands behind back",
+      "label": {
+        "en": "hands behind back",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands behind back",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands behind head",
+      "label": {
+        "en": "hands behind head",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands behind head",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands between legs",
+      "label": {
+        "en": "hands between legs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands between legs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands clasped",
+      "label": {
+        "en": "hands clasped",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands clasped",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands in pockets",
+      "label": {
+        "en": "hands in pockets",
+        "zh": "双手插在兜里"
+      },
+      "meaning": {
+        "en": "hands in pockets",
+        "zh": "双手插在兜里"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on another's breast",
+      "label": {
+        "en": "hands on another's breast",
+        "zh": "手放在另一人的胸前"
+      },
+      "meaning": {
+        "en": "hands on another's breast",
+        "zh": "手放在另一人的胸前"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on another's face",
+      "label": {
+        "en": "hands on another's face",
+        "zh": "双手放在别人的脸上"
+      },
+      "meaning": {
+        "en": "hands on another's face",
+        "zh": "双手放在别人的脸上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on ass",
+      "label": {
+        "en": "hands on ass",
+        "zh": "双手放在屁股上"
+      },
+      "meaning": {
+        "en": "hands on ass",
+        "zh": "双手放在屁股上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on face",
+      "label": {
+        "en": "hands on face",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands on face",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on feet",
+      "label": {
+        "en": "hands on feet",
+        "zh": "双手放在脚上"
+      },
+      "meaning": {
+        "en": "hands on feet",
+        "zh": "双手放在脚上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on hips",
+      "label": {
+        "en": "hands on hips",
+        "zh": "双手叉腰"
+      },
+      "meaning": {
+        "en": "hands on hips",
+        "zh": "双手叉腰"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on knees",
+      "label": {
+        "en": "hands on knees",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands on knees",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on own face",
+      "label": {
+        "en": "hands on own face",
+        "zh": "双手放在自己的脸上"
+      },
+      "meaning": {
+        "en": "hands on own face",
+        "zh": "双手放在自己的脸上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on own knees",
+      "label": {
+        "en": "hands on own knees",
+        "zh": "双手放在自己的膝盖上"
+      },
+      "meaning": {
+        "en": "hands on own knees",
+        "zh": "双手放在自己的膝盖上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands on waist",
+      "label": {
+        "en": "hands on waist",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands on waist",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands outstretched",
+      "label": {
+        "en": "hands outstretched",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands outstretched",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands to face",
+      "label": {
+        "en": "hands to face",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands to face",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands to mouth",
+      "label": {
+        "en": "hands to mouth",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands to mouth",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands to own mouth",
+      "label": {
+        "en": "hands to own mouth",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands to own mouth",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hands together",
+      "label": {
+        "en": "hands together",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hands together",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "handstand",
+      "label": {
+        "en": "handstand",
+        "zh": "用手倒立"
+      },
+      "meaning": {
+        "en": "handstand",
+        "zh": "用手倒立"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hat tip",
+      "label": {
+        "en": "hat tip",
+        "zh": "捏着帽檐"
+      },
+      "meaning": {
+        "en": "hat tip",
+        "zh": "捏着帽檐"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "head back",
+      "label": {
+        "en": "head back",
+        "zh": "弓背高潮"
+      },
+      "meaning": {
+        "en": "head back",
+        "zh": "弓背高潮"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "head down",
+      "label": {
+        "en": "head down",
+        "zh": "低着头"
+      },
+      "meaning": {
+        "en": "head down",
+        "zh": "低着头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "head rest",
+      "label": {
+        "en": "head rest",
+        "zh": "枕着头/托着头"
+      },
+      "meaning": {
+        "en": "head rest",
+        "zh": "枕着头/托着头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "head tilt",
+      "label": {
+        "en": "head tilt",
+        "zh": "歪着头"
+      },
+      "meaning": {
+        "en": "head tilt",
+        "zh": "歪着头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "headstand",
+      "label": {
+        "en": "headstand",
+        "zh": "用头倒立"
+      },
+      "meaning": {
+        "en": "headstand",
+        "zh": "用头倒立"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart arms",
+      "label": {
+        "en": "heart arms",
+        "zh": "手臂摆出心的姿势"
+      },
+      "meaning": {
+        "en": "heart arms",
+        "zh": "手臂摆出心的姿势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart hands",
+      "label": {
+        "en": "heart hands",
+        "zh": "双手比心"
+      },
+      "meaning": {
+        "en": "heart hands",
+        "zh": "双手比心"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart hands duo",
+      "label": {
+        "en": "heart hands duo",
+        "zh": "两个人一起用手比心"
+      },
+      "meaning": {
+        "en": "heart hands duo",
+        "zh": "两个人一起用手比心"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart hands trio",
+      "label": {
+        "en": "heart hands trio",
+        "zh": "三个人用手比心"
+      },
+      "meaning": {
+        "en": "heart hands trio",
+        "zh": "三个人用手比心"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart tail",
+      "label": {
+        "en": "heart tail",
+        "zh": "心形尾巴/心形尾尖/尾巴摆出心形"
+      },
+      "meaning": {
+        "en": "heart tail",
+        "zh": "心形尾巴/心形尾尖/尾巴摆出心形"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart tail duo",
+      "label": {
+        "en": "heart tail duo",
+        "zh": "两人尾巴摆出心形"
+      },
+      "meaning": {
+        "en": "heart tail duo",
+        "zh": "两人尾巴摆出心形"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "heart tails",
+      "label": {
+        "en": "heart tails",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "heart tails",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "high five",
+      "label": {
+        "en": "high five",
+        "zh": "击掌庆祝"
+      },
+      "meaning": {
+        "en": "high five",
+        "zh": "击掌庆祝"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "highfive",
+      "label": {
+        "en": "highfive",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "highfive",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hold",
+      "label": {
+        "en": "hold",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hold",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding",
+      "label": {
+        "en": "holding",
+        "zh": "拿着"
+      },
+      "meaning": {
+        "en": "holding",
+        "zh": "拿着"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding another's hand",
+      "label": {
+        "en": "holding another's hand",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "holding another's hand",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding arrow",
+      "label": {
+        "en": "holding arrow",
+        "zh": "拉着弓"
+      },
+      "meaning": {
+        "en": "holding arrow",
+        "zh": "拉着弓"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding condom",
+      "label": {
+        "en": "holding condom",
+        "zh": "拿着避孕套"
+      },
+      "meaning": {
+        "en": "holding condom",
+        "zh": "拿着避孕套"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding eyewear",
+      "label": {
+        "en": "holding eyewear",
+        "zh": "拿着眼镜/正在摘眼镜"
+      },
+      "meaning": {
+        "en": "holding eyewear",
+        "zh": "拿着眼镜/正在摘眼镜"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding flower",
+      "label": {
+        "en": "holding flower",
+        "zh": "拿着花"
+      },
+      "meaning": {
+        "en": "holding flower",
+        "zh": "拿着花"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding glasses",
+      "label": {
+        "en": "holding glasses",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "holding glasses",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding hands",
+      "label": {
+        "en": "holding hands",
+        "zh": "牵手"
+      },
+      "meaning": {
+        "en": "holding hands",
+        "zh": "牵手"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding object",
+      "label": {
+        "en": "holding object",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "holding object",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding panties",
+      "label": {
+        "en": "holding panties",
+        "zh": "拿着内裤"
+      },
+      "meaning": {
+        "en": "holding panties",
+        "zh": "拿着内裤"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding strap",
+      "label": {
+        "en": "holding strap",
+        "zh": "手拉着吊带"
+      },
+      "meaning": {
+        "en": "holding strap",
+        "zh": "手拉着吊带"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding sunglasses",
+      "label": {
+        "en": "holding sunglasses",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "holding sunglasses",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding syringe",
+      "label": {
+        "en": "holding syringe",
+        "zh": "手持注射器"
+      },
+      "meaning": {
+        "en": "holding syringe",
+        "zh": "手持注射器"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding underwear",
+      "label": {
+        "en": "holding underwear",
+        "zh": "手持内衣"
+      },
+      "meaning": {
+        "en": "holding underwear",
+        "zh": "手持内衣"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "holding whip",
+      "label": {
+        "en": "holding whip",
+        "zh": "握着鞭子"
+      },
+      "meaning": {
+        "en": "holding whip",
+        "zh": "握着鞭子"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "horn pose",
+      "label": {
+        "en": "horn pose",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "horn pose",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "horns pose",
+      "label": {
+        "en": "horns pose",
+        "zh": "用手比作角"
+      },
+      "meaning": {
+        "en": "horns pose",
+        "zh": "用手比作角"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hugging arm",
+      "label": {
+        "en": "hugging arm",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hugging arm",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hugging knees",
+      "label": {
+        "en": "hugging knees",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hugging knees",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hugging legs",
+      "label": {
+        "en": "hugging legs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "hugging legs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "hugging own legs",
+      "label": {
+        "en": "hugging own legs",
+        "zh": "抱腿"
+      },
+      "meaning": {
+        "en": "hugging own legs",
+        "zh": "抱腿"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "humpbacked",
+      "label": {
+        "en": "humpbacked",
+        "zh": "驼背"
+      },
+      "meaning": {
+        "en": "humpbacked",
+        "zh": "驼背"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "in the name of the moon",
+      "label": {
+        "en": "in the name of the moon",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "in the name of the moon",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "index finger raised",
+      "label": {
+        "en": "index finger raised",
+        "zh": "食指抬起"
+      },
+      "meaning": {
+        "en": "index finger raised",
+        "zh": "食指抬起"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "indian style",
+      "label": {
+        "en": "indian style",
+        "zh": "盘腿"
+      },
+      "meaning": {
+        "en": "indian style",
+        "zh": "盘腿"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "inward v",
+      "label": {
+        "en": "inward v",
+        "zh": "反向比 V"
+      },
+      "meaning": {
+        "en": "inward v",
+        "zh": "反向比 V"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "jump",
+      "label": {
+        "en": "jump",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "jump",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "jumping",
+      "label": {
+        "en": "jumping",
+        "zh": "跳跃"
+      },
+      "meaning": {
+        "en": "jumping",
+        "zh": "跳跃"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kamina pose",
+      "label": {
+        "en": "kamina pose",
+        "zh": "抬高手臂向上指"
+      },
+      "meaning": {
+        "en": "kamina pose",
+        "zh": "抬高手臂向上指"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kimono lift",
+      "label": {
+        "en": "kimono lift",
+        "zh": "掀起和服"
+      },
+      "meaning": {
+        "en": "kimono lift",
+        "zh": "掀起和服"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kimono pull",
+      "label": {
+        "en": "kimono pull",
+        "zh": "剥开和服"
+      },
+      "meaning": {
+        "en": "kimono pull",
+        "zh": "剥开和服"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kissing neck",
+      "label": {
+        "en": "kissing neck",
+        "zh": "亲吻脖子"
+      },
+      "meaning": {
+        "en": "kissing neck",
+        "zh": "亲吻脖子"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "knee hug",
+      "label": {
+        "en": "knee hug",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "knee hug",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kneeling",
+      "label": {
+        "en": "kneeling",
+        "zh": "下跪"
+      },
+      "meaning": {
+        "en": "kneeling",
+        "zh": "下跪"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kneeling on one leg",
+      "label": {
+        "en": "kneeling on one leg",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "kneeling on one leg",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "knees on chest",
+      "label": {
+        "en": "knees on chest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "knees on chest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "knees to chest",
+      "label": {
+        "en": "knees to chest",
+        "zh": "膝盖顶到胸部"
+      },
+      "meaning": {
+        "en": "knees to chest",
+        "zh": "膝盖顶到胸部"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "knees-on-chest",
+      "label": {
+        "en": "knees-on-chest",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "knees-on-chest",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "kuji-in",
+      "label": {
+        "en": "kuji-in",
+        "zh": "九字印"
+      },
+      "meaning": {
+        "en": "kuji-in",
+        "zh": "九字印"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "laying",
+      "label": {
+        "en": "laying",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "laying",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "laying down",
+      "label": {
+        "en": "laying down",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "laying down",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leaning",
+      "label": {
+        "en": "leaning",
+        "zh": "倚靠/身体倾斜"
+      },
+      "meaning": {
+        "en": "leaning",
+        "zh": "倚靠/身体倾斜"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leaning back",
+      "label": {
+        "en": "leaning back",
+        "zh": "身体往后靠"
+      },
+      "meaning": {
+        "en": "leaning back",
+        "zh": "身体往后靠"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leaning forward",
+      "label": {
+        "en": "leaning forward",
+        "zh": "身体前驱"
+      },
+      "meaning": {
+        "en": "leaning forward",
+        "zh": "身体前驱"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leaning to the side",
+      "label": {
+        "en": "leaning to the side",
+        "zh": "向一侧倾斜身体"
+      },
+      "meaning": {
+        "en": "leaning to the side",
+        "zh": "向一侧倾斜身体"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leg hug",
+      "label": {
+        "en": "leg hug",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "leg hug",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leg lift",
+      "label": {
+        "en": "leg lift",
+        "zh": "抬一只脚"
+      },
+      "meaning": {
+        "en": "leg lift",
+        "zh": "抬一只脚"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leg raise",
+      "label": {
+        "en": "leg raise",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "leg raise",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leg raised",
+      "label": {
+        "en": "leg raised",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "leg raised",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "leg up",
+      "label": {
+        "en": "leg up",
+        "zh": "抬起腿"
+      },
+      "meaning": {
+        "en": "leg up",
+        "zh": "抬起腿"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "legs apart",
+      "label": {
+        "en": "legs apart",
+        "zh": "两腿分开"
+      },
+      "meaning": {
+        "en": "legs apart",
+        "zh": "两腿分开"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "legs over head",
+      "label": {
+        "en": "legs over head",
+        "zh": "双腿抬过头"
+      },
+      "meaning": {
+        "en": "legs over head",
+        "zh": "双腿抬过头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "legs up",
+      "label": {
+        "en": "legs up",
+        "zh": "抬两只脚"
+      },
+      "meaning": {
+        "en": "legs up",
+        "zh": "抬两只脚"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lifted by another",
+      "label": {
+        "en": "lifted by another",
+        "zh": "被对方掀起衣物"
+      },
+      "meaning": {
+        "en": "lifted by another",
+        "zh": "被对方掀起衣物"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lifted by self",
+      "label": {
+        "en": "lifted by self",
+        "zh": "掀起自己的衣物"
+      },
+      "meaning": {
+        "en": "lifted by self",
+        "zh": "掀起自己的衣物"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lifting skirt",
+      "label": {
+        "en": "lifting skirt",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "lifting skirt",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lotus position",
+      "label": {
+        "en": "lotus position",
+        "zh": "结跏趺坐"
+      },
+      "meaning": {
+        "en": "lotus position",
+        "zh": "结跏趺坐"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lying",
+      "label": {
+        "en": "lying",
+        "zh": "躺着"
+      },
+      "meaning": {
+        "en": "lying",
+        "zh": "躺着"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lying down",
+      "label": {
+        "en": "lying down",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "lying down",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lying on back",
+      "label": {
+        "en": "lying on back",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "lying on back",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lying on side",
+      "label": {
+        "en": "lying on side",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "lying on side",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "lying on stomach",
+      "label": {
+        "en": "lying on stomach",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "lying on stomach",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "mano fico",
+      "label": {
+        "en": "mano fico",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "mano fico",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "middle finger",
+      "label": {
+        "en": "middle finger",
+        "zh": "比出中指"
+      },
+      "meaning": {
+        "en": "middle finger",
+        "zh": "比出中指"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "middle w",
+      "label": {
+        "en": "middle w",
+        "zh": "3 手势"
+      },
+      "meaning": {
+        "en": "middle w",
+        "zh": "3 手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "mimikaki",
+      "label": {
+        "en": "mimikaki",
+        "zh": "采耳"
+      },
+      "meaning": {
+        "en": "mimikaki",
+        "zh": "采耳"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "money gesture",
+      "label": {
+        "en": "money gesture",
+        "zh": "金钱手势"
+      },
+      "meaning": {
+        "en": "money gesture",
+        "zh": "金钱手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "mouth to mouth feeding",
+      "label": {
+        "en": "mouth to mouth feeding",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "mouth to mouth feeding",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "mouth-to-mouth feeding",
+      "label": {
+        "en": "mouth-to-mouth feeding",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "mouth-to-mouth feeding",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "nazi salute",
+      "label": {
+        "en": "nazi salute",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "nazi salute",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "neck bite",
+      "label": {
+        "en": "neck bite",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "neck bite",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "neck biting",
+      "label": {
+        "en": "neck biting",
+        "zh": "咬脖子"
+      },
+      "meaning": {
+        "en": "neck biting",
+        "zh": "咬脖子"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "neck hug",
+      "label": {
+        "en": "neck hug",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "neck hug",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "necking",
+      "label": {
+        "en": "necking",
+        "zh": "缩颈"
+      },
+      "meaning": {
+        "en": "necking",
+        "zh": "缩颈"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "necktie grab",
+      "label": {
+        "en": "necktie grab",
+        "zh": "抓着领带"
+      },
+      "meaning": {
+        "en": "necktie grab",
+        "zh": "抓着领带"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "necktie pull",
+      "label": {
+        "en": "necktie pull",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "necktie pull",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "noogie",
+      "label": {
+        "en": "noogie",
+        "zh": "双拳挤头"
+      },
+      "meaning": {
+        "en": "noogie",
+        "zh": "双拳挤头"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ohikaenasutte",
+      "label": {
+        "en": "ohikaenasutte",
+        "zh": "要求自我介绍"
+      },
+      "meaning": {
+        "en": "ohikaenasutte",
+        "zh": "要求自我介绍"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ok",
+      "label": {
+        "en": "ok",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "ok",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "ok sign",
+      "label": {
+        "en": "ok sign",
+        "zh": "OK手势"
+      },
+      "meaning": {
+        "en": "ok sign",
+        "zh": "OK手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on all fours",
+      "label": {
+        "en": "on all fours",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on all fours",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on back",
+      "label": {
+        "en": "on back",
+        "zh": "仰躺"
+      },
+      "meaning": {
+        "en": "on back",
+        "zh": "仰躺"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on belly",
+      "label": {
+        "en": "on belly",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on belly",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on front",
+      "label": {
+        "en": "on front",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on front",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on knees",
+      "label": {
+        "en": "on knees",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on knees",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on one foot",
+      "label": {
+        "en": "on one foot",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on one foot",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on one leg",
+      "label": {
+        "en": "on one leg",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on one leg",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on phone",
+      "label": {
+        "en": "on phone",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "on phone",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on side",
+      "label": {
+        "en": "on side",
+        "zh": "侧卧"
+      },
+      "meaning": {
+        "en": "on side",
+        "zh": "侧卧"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "on stomach",
+      "label": {
+        "en": "on stomach",
+        "zh": "趴着"
+      },
+      "meaning": {
+        "en": "on stomach",
+        "zh": "趴着"
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "one arm up",
+      "label": {
+        "en": "one arm up",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "one arm up",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "one knee",
+      "label": {
+        "en": "one knee",
+        "zh": "单膝跪"
+      },
+      "meaning": {
+        "en": "one knee",
+        "zh": "单膝跪"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "one leg raised",
+      "label": {
+        "en": "one leg raised",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "one leg raised",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "open \\m/",
+      "label": {
+        "en": "open \\m/",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "open \\m/",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "open dress",
+      "label": {
+        "en": "open dress",
+        "zh": "分开裙子"
+      },
+      "meaning": {
+        "en": "open dress",
+        "zh": "分开裙子"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "open hand",
+      "label": {
+        "en": "open hand",
+        "zh": "张开的手"
+      },
+      "meaning": {
+        "en": "open hand",
+        "zh": "张开的手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "open legs",
+      "label": {
+        "en": "open legs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "open legs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "orchid fingers",
+      "label": {
+        "en": "orchid fingers",
+        "zh": "兰花指"
+      },
+      "meaning": {
+        "en": "orchid fingers",
+        "zh": "兰花指"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "orz",
+      "label": {
+        "en": "orz",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "orz",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "outstretched arm",
+      "label": {
+        "en": "outstretched arm",
+        "zh": "伸出单臂"
+      },
+      "meaning": {
+        "en": "outstretched arm",
+        "zh": "伸出单臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "outstretched arms",
+      "label": {
+        "en": "outstretched arms",
+        "zh": "伸出双臂"
+      },
+      "meaning": {
+        "en": "outstretched arms",
+        "zh": "伸出双臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "outstretched hand",
+      "label": {
+        "en": "outstretched hand",
+        "zh": "伸出手"
+      },
+      "meaning": {
+        "en": "outstretched hand",
+        "zh": "伸出手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "outstretched hands",
+      "label": {
+        "en": "outstretched hands",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "outstretched hands",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "outstretched leg",
+      "label": {
+        "en": "outstretched leg",
+        "zh": "腿部伸展"
+      },
+      "meaning": {
+        "en": "outstretched leg",
+        "zh": "腿部伸展"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "own hands clasped",
+      "label": {
+        "en": "own hands clasped",
+        "zh": "握住自己的双手"
+      },
+      "meaning": {
+        "en": "own hands clasped",
+        "zh": "握住自己的双手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "own hands together",
+      "label": {
+        "en": "own hands together",
+        "zh": "双手合十"
+      },
+      "meaning": {
+        "en": "own hands together",
+        "zh": "双手合十"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "palm",
+      "label": {
+        "en": "palm",
+        "zh": "以手掩面"
+      },
+      "meaning": {
+        "en": "palm",
+        "zh": "以手掩面"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "palm-fist greeting",
+      "label": {
+        "en": "palm-fist greeting",
+        "zh": "拱手礼"
+      },
+      "meaning": {
+        "en": "palm-fist greeting",
+        "zh": "拱手礼"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "palm-fist tap",
+      "label": {
+        "en": "palm-fist tap",
+        "zh": "拳头拍手掌/有主意了"
+      },
+      "meaning": {
+        "en": "palm-fist tap",
+        "zh": "拳头拍手掌/有主意了"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "paw pose",
+      "label": {
+        "en": "paw pose",
+        "zh": "爪子姿势"
+      },
+      "meaning": {
+        "en": "paw pose",
+        "zh": "爪子姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "peace sign",
+      "label": {
+        "en": "peace sign",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "peace sign",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "penetration gesture",
+      "label": {
+        "en": "penetration gesture",
+        "zh": "插入手势/做爱示意"
+      },
+      "meaning": {
+        "en": "penetration gesture",
+        "zh": "插入手势/做爱示意"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pick me up",
+      "label": {
+        "en": "pick me up",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "pick me up",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pigeon pose",
+      "label": {
+        "en": "pigeon pose",
+        "zh": "鸽子姿势"
+      },
+      "meaning": {
+        "en": "pigeon pose",
+        "zh": "鸽子姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pinky out",
+      "label": {
+        "en": "pinky out",
+        "zh": "伸出小拇指"
+      },
+      "meaning": {
+        "en": "pinky out",
+        "zh": "伸出小拇指"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pinky swear",
+      "label": {
+        "en": "pinky swear",
+        "zh": "勾指起誓"
+      },
+      "meaning": {
+        "en": "pinky swear",
+        "zh": "勾指起誓"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing",
+      "label": {
+        "en": "pointing",
+        "zh": "用手指着"
+      },
+      "meaning": {
+        "en": "pointing",
+        "zh": "用手指着"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing at self",
+      "label": {
+        "en": "pointing at self",
+        "zh": "指着自己"
+      },
+      "meaning": {
+        "en": "pointing at self",
+        "zh": "指着自己"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing at viewer",
+      "label": {
+        "en": "pointing at viewer",
+        "zh": "指向看图的人"
+      },
+      "meaning": {
+        "en": "pointing at viewer",
+        "zh": "指向看图的人"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing down",
+      "label": {
+        "en": "pointing down",
+        "zh": "指向下方"
+      },
+      "meaning": {
+        "en": "pointing down",
+        "zh": "指向下方"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing forward",
+      "label": {
+        "en": "pointing forward",
+        "zh": "指向前方"
+      },
+      "meaning": {
+        "en": "pointing forward",
+        "zh": "指向前方"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing skyward",
+      "label": {
+        "en": "pointing skyward",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "pointing skyward",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing to the sky",
+      "label": {
+        "en": "pointing to the sky",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "pointing to the sky",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pointing up",
+      "label": {
+        "en": "pointing up",
+        "zh": "向上指"
+      },
+      "meaning": {
+        "en": "pointing up",
+        "zh": "向上指"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pov pointing",
+      "label": {
+        "en": "pov pointing",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "pov pointing",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "power fist",
+      "label": {
+        "en": "power fist",
+        "zh": "力量手套"
+      },
+      "meaning": {
+        "en": "power fist",
+        "zh": "力量手套"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "presenting armpit",
+      "label": {
+        "en": "presenting armpit",
+        "zh": "展示腋窝"
+      },
+      "meaning": {
+        "en": "presenting armpit",
+        "zh": "展示腋窝"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "presenting panties",
+      "label": {
+        "en": "presenting panties",
+        "zh": "展示内裤"
+      },
+      "meaning": {
+        "en": "presenting panties",
+        "zh": "展示内裤"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "princess carry",
+      "label": {
+        "en": "princess carry",
+        "zh": "公主抱"
+      },
+      "meaning": {
+        "en": "princess carry",
+        "zh": "公主抱"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "prone",
+      "label": {
+        "en": "prone",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "prone",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "prostration",
+      "label": {
+        "en": "prostration",
+        "zh": "失意体前屈/Orz"
+      },
+      "meaning": {
+        "en": "prostration",
+        "zh": "失意体前屈/Orz"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "pulling another's hair",
+      "label": {
+        "en": "pulling another's hair",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "pulling another's hair",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised arm",
+      "label": {
+        "en": "raised arm",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "raised arm",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised arms",
+      "label": {
+        "en": "raised arms",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "raised arms",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised finger",
+      "label": {
+        "en": "raised finger",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "raised finger",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised fist",
+      "label": {
+        "en": "raised fist",
+        "zh": "举起的拳头"
+      },
+      "meaning": {
+        "en": "raised fist",
+        "zh": "举起的拳头"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised leg",
+      "label": {
+        "en": "raised leg",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "raised leg",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "raised pinky",
+      "label": {
+        "en": "raised pinky",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "raised pinky",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "reach",
+      "label": {
+        "en": "reach",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "reach",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "reaching",
+      "label": {
+        "en": "reaching",
+        "zh": "伸手触及"
+      },
+      "meaning": {
+        "en": "reaching",
+        "zh": "伸手触及"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "recline",
+      "label": {
+        "en": "recline",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "recline",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "reclining",
+      "label": {
+        "en": "reclining",
+        "zh": "斜倒斜躺姿势"
+      },
+      "meaning": {
+        "en": "reclining",
+        "zh": "斜倒斜躺姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "roman salute",
+      "label": {
+        "en": "roman salute",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "roman salute",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "rubbing eye",
+      "label": {
+        "en": "rubbing eye",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "rubbing eye",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "rubbing eyes",
+      "label": {
+        "en": "rubbing eyes",
+        "zh": "揉眼睛"
+      },
+      "meaning": {
+        "en": "rubbing eyes",
+        "zh": "揉眼睛"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "run",
+      "label": {
+        "en": "run",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "run",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "running",
+      "label": {
+        "en": "running",
+        "zh": "奔跑"
+      },
+      "meaning": {
+        "en": "running",
+        "zh": "奔跑"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "salute",
+      "label": {
+        "en": "salute",
+        "zh": "敬礼"
+      },
+      "meaning": {
+        "en": "salute",
+        "zh": "敬礼"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "saturday night fever",
+      "label": {
+        "en": "saturday night fever",
+        "zh": "叉腰向上指 (舞蹈)"
+      },
+      "meaning": {
+        "en": "saturday night fever",
+        "zh": "叉腰向上指 (舞蹈)"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "scorpion pose",
+      "label": {
+        "en": "scorpion pose",
+        "zh": "蝎子姿势"
+      },
+      "meaning": {
+        "en": "scorpion pose",
+        "zh": "蝎子姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "seiza",
+      "label": {
+        "en": "seiza",
+        "zh": "正坐"
+      },
+      "meaning": {
+        "en": "seiza",
+        "zh": "正坐"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shading eyes",
+      "label": {
+        "en": "shading eyes",
+        "zh": "遮阳手势"
+      },
+      "meaning": {
+        "en": "shading eyes",
+        "zh": "遮阳手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shadow puppet",
+      "label": {
+        "en": "shadow puppet",
+        "zh": "用手模仿其他物件/皮影戏"
+      },
+      "meaning": {
+        "en": "shadow puppet",
+        "zh": "用手模仿其他物件/皮影戏"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shaka sign",
+      "label": {
+        "en": "shaka sign",
+        "zh": "沙卡手势"
+      },
+      "meaning": {
+        "en": "shaka sign",
+        "zh": "沙卡手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shared food",
+      "label": {
+        "en": "shared food",
+        "zh": "共享食物/用嘴递食物"
+      },
+      "meaning": {
+        "en": "shared food",
+        "zh": "共享食物/用嘴递食物"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sheet grab",
+      "label": {
+        "en": "sheet grab",
+        "zh": "抓着床单"
+      },
+      "meaning": {
+        "en": "sheet grab",
+        "zh": "抓着床单"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shh",
+      "label": {
+        "en": "shh",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "shh",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shocker (gesture)",
+      "label": {
+        "en": "shocker (gesture)",
+        "zh": "爽歪歪 (手势)"
+      },
+      "meaning": {
+        "en": "shocker (gesture)",
+        "zh": "爽歪歪 (手势)"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shoujo kitou-chuu",
+      "label": {
+        "en": "shoujo kitou-chuu",
+        "zh": "少女祈祷中"
+      },
+      "meaning": {
+        "en": "shoujo kitou-chuu",
+        "zh": "少女祈祷中"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shrugging",
+      "label": {
+        "en": "shrugging",
+        "zh": "耸肩"
+      },
+      "meaning": {
+        "en": "shrugging",
+        "zh": "耸肩"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shush",
+      "label": {
+        "en": "shush",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "shush",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "shushing",
+      "label": {
+        "en": "shushing",
+        "zh": "嘘手势"
+      },
+      "meaning": {
+        "en": "shushing",
+        "zh": "嘘手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sit",
+      "label": {
+        "en": "sit",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "sit",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting",
+      "label": {
+        "en": "sitting",
+        "zh": "坐着"
+      },
+      "meaning": {
+        "en": "sitting",
+        "zh": "坐着"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting down",
+      "label": {
+        "en": "sitting down",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "sitting down",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting in lap",
+      "label": {
+        "en": "sitting in lap",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "sitting in lap",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting on",
+      "label": {
+        "en": "sitting on",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "sitting on",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting on knees",
+      "label": {
+        "en": "sitting on knees",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "sitting on knees",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting on lap",
+      "label": {
+        "en": "sitting on lap",
+        "zh": "坐在大腿上"
+      },
+      "meaning": {
+        "en": "sitting on lap",
+        "zh": "坐在大腿上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "sitting on person",
+      "label": {
+        "en": "sitting on person",
+        "zh": "坐在人身上"
+      },
+      "meaning": {
+        "en": "sitting on person",
+        "zh": "坐在人身上"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "skirt lift",
+      "label": {
+        "en": "skirt lift",
+        "zh": "掀起裙子"
+      },
+      "meaning": {
+        "en": "skirt lift",
+        "zh": "掀起裙子"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "skirt pull",
+      "label": {
+        "en": "skirt pull",
+        "zh": "拉开裙子"
+      },
+      "meaning": {
+        "en": "skirt pull",
+        "zh": "拉开裙子"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "skirt up",
+      "label": {
+        "en": "skirt up",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "skirt up",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "skirtlift",
+      "label": {
+        "en": "skirtlift",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "skirtlift",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "slit throat (gesture)",
+      "label": {
+        "en": "slit throat (gesture)",
+        "zh": "割喉手势"
+      },
+      "meaning": {
+        "en": "slit throat (gesture)",
+        "zh": "割喉手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "slouching",
+      "label": {
+        "en": "slouching",
+        "zh": "伛"
+      },
+      "meaning": {
+        "en": "slouching",
+        "zh": "伛"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "smelling flower",
+      "label": {
+        "en": "smelling flower",
+        "zh": "闻花"
+      },
+      "meaning": {
+        "en": "smelling flower",
+        "zh": "闻花"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "snuggle",
+      "label": {
+        "en": "snuggle",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "snuggle",
+        "zh": ""
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "split",
+      "label": {
+        "en": "split",
+        "zh": "分开"
+      },
+      "meaning": {
+        "en": "split",
+        "zh": "分开"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "splits",
+      "label": {
+        "en": "splits",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "splits",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "spread arms",
+      "label": {
+        "en": "spread arms",
+        "zh": "张开双臂"
+      },
+      "meaning": {
+        "en": "spread arms",
+        "zh": "张开双臂"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "spread fingers",
+      "label": {
+        "en": "spread fingers",
+        "zh": "张开手指"
+      },
+      "meaning": {
+        "en": "spread fingers",
+        "zh": "张开手指"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "spread leg",
+      "label": {
+        "en": "spread leg",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "spread leg",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "spread legs",
+      "label": {
+        "en": "spread legs",
+        "zh": "张腿"
+      },
+      "meaning": {
+        "en": "spread legs",
+        "zh": "张腿"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "squat",
+      "label": {
+        "en": "squat",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "squat",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "squatting",
+      "label": {
+        "en": "squatting",
+        "zh": "蹲下"
+      },
+      "meaning": {
+        "en": "squatting",
+        "zh": "蹲下"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "standing",
+      "label": {
+        "en": "standing",
+        "zh": "站立的"
+      },
+      "meaning": {
+        "en": "standing",
+        "zh": "站立的"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "standing on hands",
+      "label": {
+        "en": "standing on hands",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "standing on hands",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "standing on one foot",
+      "label": {
+        "en": "standing on one foot",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "standing on one foot",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "standing on one leg",
+      "label": {
+        "en": "standing on one leg",
+        "zh": "单腿站立"
+      },
+      "meaning": {
+        "en": "standing on one leg",
+        "zh": "单腿站立"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "standing split",
+      "label": {
+        "en": "standing split",
+        "zh": "站立劈叉/站立高抬腿"
+      },
+      "meaning": {
+        "en": "standing split",
+        "zh": "站立劈叉/站立高抬腿"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "steepled fingers",
+      "label": {
+        "en": "steepled fingers",
+        "zh": "指尖抵着指间"
+      },
+      "meaning": {
+        "en": "steepled fingers",
+        "zh": "指尖抵着指间"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "straddle",
+      "label": {
+        "en": "straddle",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "straddle",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "straddling",
+      "label": {
+        "en": "straddling",
+        "zh": "跨坐"
+      },
+      "meaning": {
+        "en": "straddling",
+        "zh": "跨坐"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "straight-arm salute",
+      "label": {
+        "en": "straight-arm salute",
+        "zh": "直臂敬礼/纳粹式敬礼"
+      },
+      "meaning": {
+        "en": "straight-arm salute",
+        "zh": "直臂敬礼/纳粹式敬礼"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "stretch",
+      "label": {
+        "en": "stretch",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "stretch",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "stretching",
+      "label": {
+        "en": "stretching",
+        "zh": "伸懒腰"
+      },
+      "meaning": {
+        "en": "stretching",
+        "zh": "伸懒腰"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "strip",
+      "label": {
+        "en": "strip",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "strip",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "stripping",
+      "label": {
+        "en": "stripping",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "stripping",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "stroking chin",
+      "label": {
+        "en": "stroking chin",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "stroking chin",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "stroking own chin",
+      "label": {
+        "en": "stroking own chin",
+        "zh": "扶颏冥想"
+      },
+      "meaning": {
+        "en": "stroking own chin",
+        "zh": "扶颏冥想"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "superhero landing",
+      "label": {
+        "en": "superhero landing",
+        "zh": "三点着地"
+      },
+      "meaning": {
+        "en": "superhero landing",
+        "zh": "三点着地"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "supine",
+      "label": {
+        "en": "supine",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "supine",
+        "zh": ""
+      },
+      "categoryIds": [
+        "lying-prone"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "talking on phone",
+      "label": {
+        "en": "talking on phone",
+        "zh": "打电话"
+      },
+      "meaning": {
+        "en": "talking on phone",
+        "zh": "打电话"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "the finger",
+      "label": {
+        "en": "the finger",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "the finger",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "the pose",
+      "label": {
+        "en": "the pose",
+        "zh": "趴在地上并翘起脚"
+      },
+      "meaning": {
+        "en": "the pose",
+        "zh": "趴在地上并翘起脚"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "thigh straddle",
+      "label": {
+        "en": "thigh straddle",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "thigh straddle",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "thigh straddling",
+      "label": {
+        "en": "thigh straddling",
+        "zh": "大腿跨骑"
+      },
+      "meaning": {
+        "en": "thigh straddling",
+        "zh": "大腿跨骑"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "three-point landing",
+      "label": {
+        "en": "three-point landing",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "three-point landing",
+        "zh": ""
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "throat-slitting gesture",
+      "label": {
+        "en": "throat-slitting gesture",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "throat-slitting gesture",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "through clothes",
+      "label": {
+        "en": "through clothes",
+        "zh": "隔着衣物爱抚"
+      },
+      "meaning": {
+        "en": "through clothes",
+        "zh": "隔着衣物爱抚"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "thumbs down",
+      "label": {
+        "en": "thumbs down",
+        "zh": "大拇指向下"
+      },
+      "meaning": {
+        "en": "thumbs down",
+        "zh": "大拇指向下"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "thumbs up",
+      "label": {
+        "en": "thumbs up",
+        "zh": "翘大拇指"
+      },
+      "meaning": {
+        "en": "thumbs up",
+        "zh": "翘大拇指"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tie grab",
+      "label": {
+        "en": "tie grab",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "tie grab",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tiegrab",
+      "label": {
+        "en": "tiegrab",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "tiegrab",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "toe-point",
+      "label": {
+        "en": "toe-point",
+        "zh": "趾尖/脚尖"
+      },
+      "meaning": {
+        "en": "toe-point",
+        "zh": "趾尖/脚尖"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "top-down bottom-up",
+      "label": {
+        "en": "top-down bottom-up",
+        "zh": "趴着翘臀"
+      },
+      "meaning": {
+        "en": "top-down bottom-up",
+        "zh": "趴着翘臀"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tsuki ni kawatte oshioki yo",
+      "label": {
+        "en": "tsuki ni kawatte oshioki yo",
+        "zh": "代表月亮消灭你"
+      },
+      "meaning": {
+        "en": "tsuki ni kawatte oshioki yo",
+        "zh": "代表月亮消灭你"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tummy grab",
+      "label": {
+        "en": "tummy grab",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "tummy grab",
+        "zh": ""
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "twisted torso",
+      "label": {
+        "en": "twisted torso",
+        "zh": "躯干夸张地扭曲"
+      },
+      "meaning": {
+        "en": "twisted torso",
+        "zh": "躯干夸张地扭曲"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "two-finger salute",
+      "label": {
+        "en": "two-finger salute",
+        "zh": "二指敬禮"
+      },
+      "meaning": {
+        "en": "two-finger salute",
+        "zh": "二指敬禮"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tying",
+      "label": {
+        "en": "tying",
+        "zh": "打结(动作)"
+      },
+      "meaning": {
+        "en": "tying",
+        "zh": "打结(动作)"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "tying hair",
+      "label": {
+        "en": "tying hair",
+        "zh": "扎头发"
+      },
+      "meaning": {
+        "en": "tying hair",
+        "zh": "扎头发"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "undress",
+      "label": {
+        "en": "undress",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "undress",
+        "zh": ""
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "undressing",
+      "label": {
+        "en": "undressing",
+        "zh": "脱衣服中"
+      },
+      "meaning": {
+        "en": "undressing",
+        "zh": "脱衣服中"
+      },
+      "categoryIds": [
+        "adjusting-dressing"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "upright straddle",
+      "label": {
+        "en": "upright straddle",
+        "zh": "对坐体位"
+      },
+      "meaning": {
+        "en": "upright straddle",
+        "zh": "对坐体位"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "v",
+      "label": {
+        "en": "v",
+        "zh": "胜利手势"
+      },
+      "meaning": {
+        "en": "v",
+        "zh": "胜利手势"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "v over eye",
+      "label": {
+        "en": "v over eye",
+        "zh": "在眼边比剪刀手"
+      },
+      "meaning": {
+        "en": "v over eye",
+        "zh": "在眼边比剪刀手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "v over mouth",
+      "label": {
+        "en": "v over mouth",
+        "zh": "手指比 V 放在手上"
+      },
+      "meaning": {
+        "en": "v over mouth",
+        "zh": "手指比 V 放在手上"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "v sign",
+      "label": {
+        "en": "v sign",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "v sign",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "victory pose",
+      "label": {
+        "en": "victory pose",
+        "zh": "胜利手势"
+      },
+      "meaning": {
+        "en": "victory pose",
+        "zh": "胜利手势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "vulcan salute",
+      "label": {
+        "en": "vulcan salute",
+        "zh": "瓦肯举手礼"
+      },
+      "meaning": {
+        "en": "vulcan salute",
+        "zh": "瓦肯举手礼"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "w",
+      "label": {
+        "en": "w",
+        "zh": "手指比 W"
+      },
+      "meaning": {
+        "en": "w",
+        "zh": "手指比 W"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "w legs",
+      "label": {
+        "en": "w legs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "w legs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "w sitting",
+      "label": {
+        "en": "w sitting",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "w sitting",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "w-legs",
+      "label": {
+        "en": "w-legs",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "w-legs",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "w-sitting",
+      "label": {
+        "en": "w-sitting",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "w-sitting",
+        "zh": ""
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "walking",
+      "label": {
+        "en": "walking",
+        "zh": "走路"
+      },
+      "meaning": {
+        "en": "walking",
+        "zh": "走路"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "wallwalking",
+      "label": {
+        "en": "wallwalking",
+        "zh": "走在墙顶上"
+      },
+      "meaning": {
+        "en": "wallwalking",
+        "zh": "走在墙顶上"
+      },
+      "categoryIds": [
+        "standing-dynamic"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "wariza",
+      "label": {
+        "en": "wariza",
+        "zh": "割坐"
+      },
+      "meaning": {
+        "en": "wariza",
+        "zh": "割坐"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "watson cross",
+      "label": {
+        "en": "watson cross",
+        "zh": "双腿交叉站姿"
+      },
+      "meaning": {
+        "en": "watson cross",
+        "zh": "双腿交叉站姿"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "wave",
+      "label": {
+        "en": "wave",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "wave",
+        "zh": ""
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "waving",
+      "label": {
+        "en": "waving",
+        "zh": "招手"
+      },
+      "meaning": {
+        "en": "waving",
+        "zh": "招手"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "wiping eyes",
+      "label": {
+        "en": "wiping eyes",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "wiping eyes",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "yawn",
+      "label": {
+        "en": "yawn",
+        "zh": ""
+      },
+      "meaning": {
+        "en": "yawn",
+        "zh": ""
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "yawning",
+      "label": {
+        "en": "yawning",
+        "zh": "打哈欠"
+      },
+      "meaning": {
+        "en": "yawning",
+        "zh": "打哈欠"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "yoga",
+      "label": {
+        "en": "yoga",
+        "zh": "瑜伽"
+      },
+      "meaning": {
+        "en": "yoga",
+        "zh": "瑜伽"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "yokozuwari",
+      "label": {
+        "en": "yokozuwari",
+        "zh": "侧身坐"
+      },
+      "meaning": {
+        "en": "yokozuwari",
+        "zh": "侧身坐"
+      },
+      "categoryIds": [
+        "sitting-poses"
+      ],
+      "booruType": "general",
+      "aliases": []
+    },
+    {
+      "tag": "zombie pose",
+      "label": {
+        "en": "zombie pose",
+        "zh": "僵尸姿势"
+      },
+      "meaning": {
+        "en": "zombie pose",
+        "zh": "僵尸姿势"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": []
+    }
+  ]
+}

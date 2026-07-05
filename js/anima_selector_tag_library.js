@@ -53,6 +53,25 @@ export function normalizeSelectorCategoryLabel(value) {
     return (english?.[1] || text).trim();
 }
 
+export function normalizeSelectorCategory(value) {
+    if (value && typeof value === "object") {
+        const label = value.label && typeof value.label === "object"
+            ? value.label.en || value.label.zh || value.id
+            : value.label || value.name || value.id;
+        const labelZh = value.label && typeof value.label === "object" ? value.label.zh || "" : value.labelZh || "";
+        return {
+            id: String(value.id || normalizeSelectorCategoryId(label)).trim(),
+            label: normalizeSelectorCategoryLabel(label),
+            labelZh,
+            booruType: value.booruType || "general",
+        };
+    }
+    return {
+        id: normalizeSelectorCategoryId(value),
+        label: normalizeSelectorCategoryLabel(value),
+    };
+}
+
 export function ensureSelectorTagFavorites(sectionConfig, defaultName = "默认 Tag") {
     const defaults = createDefaultTagFavorites(defaultName);
     if (!sectionConfig || typeof sectionConfig !== "object") return defaults;
@@ -76,12 +95,11 @@ export function buildSelectorTagCatalog(items, options = {}) {
     (items || []).forEach(item => {
         const tags = splitSelectorTagText(getTags(item));
         const zhTags = splitSelectorTagText(getZhTags(item));
-        const sourceCategories = splitSelectorTagText(getCategories(item));
-        const categories = (sourceCategories.length ? sourceCategories : [""])
-            .map(category => ({
-                id: normalizeSelectorCategoryId(category),
-                label: normalizeSelectorCategoryLabel(category),
-            }));
+        const rawCategories = getCategories(item);
+        const sourceCategories = Array.isArray(rawCategories) && rawCategories.some(category => category && typeof category === "object")
+            ? rawCategories
+            : splitSelectorTagText(rawCategories);
+        const categories = (sourceCategories.length ? sourceCategories : [""]).map(normalizeSelectorCategory);
         const seenInItem = new Set();
         tags.forEach((tag, index) => {
             const key = normalizeSelectorTagKey(tag);
@@ -115,6 +133,62 @@ export function buildSelectorTagCatalog(items, options = {}) {
     });
 }
 
+export function buildConfiguredSelectorTagCatalog(sectionConfig) {
+    if (!sectionConfig || typeof sectionConfig !== "object" || !Array.isArray(sectionConfig.tags)) {
+        return [];
+    }
+    const categoriesById = new Map();
+    (Array.isArray(sectionConfig.categories) ? sectionConfig.categories : [])
+        .map(normalizeSelectorCategory)
+        .filter(category => category.id)
+        .forEach(category => categoriesById.set(category.id, category));
+    const seen = new Set();
+    const catalog = [];
+
+    sectionConfig.tags.forEach(rawItem => {
+        if (!rawItem || typeof rawItem !== "object") return;
+        const tag = String(rawItem.tag || rawItem.name || "").trim();
+        const key = normalizeSelectorTagKey(tag);
+        if (!key || seen.has(key)) return;
+        seen.add(key);
+        const label = normalizeLocalizedText(rawItem.label, tag);
+        const meaning = normalizeLocalizedText(rawItem.meaning, "");
+        const categoryIds = Array.isArray(rawItem.categoryIds) ? rawItem.categoryIds : [];
+        const categories = categoryIds
+            .map(id => categoriesById.get(String(id || "").trim()))
+            .filter(Boolean);
+        if (!categories.length) {
+            categories.push(categoriesById.get("uncategorized") || normalizeSelectorCategory("Uncategorized"));
+        }
+        catalog.push({
+            tag,
+            label: label.en || tag,
+            labelZh: label.zh || "",
+            meaning,
+            aliases: splitSelectorTagText(rawItem.aliases || []),
+            categories,
+            booruType: rawItem.booruType || categories[0]?.booruType || "general",
+            sourceCount: Number(rawItem.sourceCount || 0),
+            sources: Array.isArray(rawItem.sources) ? rawItem.sources.slice(0, 3) : [],
+        });
+    });
+
+    return catalog.sort((a, b) => String(a.tag || "").localeCompare(String(b.tag || "")));
+}
+
+export function normalizeLocalizedText(value, fallback = "") {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+        return {
+            en: String(value.en || fallback || "").trim(),
+            zh: String(value.zh || "").trim(),
+        };
+    }
+    return {
+        en: String(value || fallback || "").trim(),
+        zh: "",
+    };
+}
+
 export function buildSelectorTagSidebarEntries(catalog, tagFavorites, options = {}) {
     const t = options.t || (value => value);
     const favorites = ensureSelectorTagFavorites(tagFavorites || {});
@@ -122,16 +196,16 @@ export function buildSelectorTagSidebarEntries(catalog, tagFavorites, options = 
         type: "all",
         id: "all",
         label: t("All Tags"),
-        count: (catalog || []).length,
     }];
 
     favorites.tagGroups.forEach(group => {
+        const label = String(group?.name || "").trim();
         entries.push({
             type: "group",
             id: `group:${group.id}`,
             groupId: group.id,
-            label: group.name,
-            count: favorites.tagItems.filter(item => item.groupIds?.includes(group.id)).length,
+            label,
+            displayLabel: formatSelectorTagGroupLabel(group, t),
             group,
         });
     });
@@ -144,16 +218,16 @@ export function buildSelectorTagSidebarEntries(catalog, tagFavorites, options = 
                 id: `category:${category.id}`,
                 categoryId: category.id,
                 label: category.label || category.id,
-                count: 0,
+                labelZh: category.labelZh || "",
+                displayLabel: formatSelectorCategoryLabel(category),
+                booruType: category.booruType || "general",
             };
-            entry.count += 1;
             categories.set(category.id, entry);
         });
     });
 
     entries.push(...Array.from(categories.values()).sort((a, b) => {
-        return Number(b.count || 0) - Number(a.count || 0)
-            || String(a.label || "").localeCompare(String(b.label || ""));
+        return String(a.label || "").localeCompare(String(b.label || ""));
     }));
     return entries;
 }
@@ -177,7 +251,6 @@ export function toggleSelectorTagFavorite(tagFavorites, catalogItem, groupId = "
             tag: catalogItem.tag,
             labelZh: catalogItem.labelZh || "",
             groupIds: [],
-            sourceCount: catalogItem.sourceCount || 0,
         };
         tagFavorites.tagItems.push(item);
     }
@@ -221,9 +294,13 @@ export function filterSelectorTagCatalog(catalog, tagFavorites, filters = {}) {
         }
         const haystack = [
             item.tag,
+            item.label,
             item.labelZh,
+            item.meaning?.en,
+            item.meaning?.zh,
+            ...(Array.isArray(item.aliases) ? item.aliases : []),
             ...(Array.isArray(item.sources) ? item.sources : []),
-            ...(Array.isArray(item.categories) ? item.categories.map(category => category.label) : []),
+            ...(Array.isArray(item.categories) ? item.categories.flatMap(category => [category.label, category.labelZh]) : []),
         ].join(" ").toLowerCase();
         if (!haystack.includes(query)) return false;
         if (filterType === "category") {
@@ -302,8 +379,9 @@ export function createSelectorTagView(options) {
         overflow: auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        grid-auto-rows: minmax(58px, auto);
-        gap: 10px;
+        grid-auto-rows: 64px;
+        row-gap: 10px;
+        column-gap: 10px;
         padding: 2px 2px 10px;
         box-sizing: border-box;
     `;
@@ -405,6 +483,9 @@ export function createSelectorTagView(options) {
             color: #f8fafc;
             border-radius: 10px;
             padding: 10px 12px;
+            height: 64px;
+            min-height: 64px;
+            max-height: 64px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -415,14 +496,15 @@ export function createSelectorTagView(options) {
         const text = document.createElement("span");
         text.style.cssText = "min-width:0;display:flex;flex-direction:column;gap:3px;";
         const main = document.createElement("span");
-        main.textContent = item.labelZh ? `${item.tag} (${item.labelZh})` : item.tag;
+        main.className = "anima-selector-tag-main";
+        main.textContent = item.tag;
         main.title = main.textContent;
         main.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:800;";
         const sub = document.createElement("span");
-        sub.textContent = t("Used by {count} cards", { count: item.sourceCount || 0 });
+        sub.textContent = formatSelectorTagMeaning(item);
         sub.style.cssText = "color:#94a3b8;font-size:11px;";
         text.appendChild(main);
-        text.appendChild(sub);
+        if (sub.textContent) text.appendChild(sub);
 
         const favoriteInfo = getSelectorTagFavorite(favorites, item.tag);
         const targetGroupId = state.filterType === "group" && state.groupId !== "all" ? state.groupId : "default";
@@ -519,6 +601,28 @@ export function createSelectorTagView(options) {
             if (visible) render();
         },
     };
+}
+
+function formatSelectorTagMeaning(item) {
+    const meaningEn = String(item?.meaning?.en || "").trim();
+    const meaningZh = String(item?.meaning?.zh || "").trim();
+    if (meaningEn && meaningZh && meaningZh !== item.labelZh) return `${meaningEn} / ${meaningZh}`;
+    if (meaningZh) return meaningZh;
+    if (meaningEn && meaningEn !== item.tag) return meaningEn;
+    return item.labelZh || "";
+}
+
+function formatSelectorCategoryLabel(category) {
+    const label = String(category?.label || category?.id || "").trim();
+    const labelZh = String(category?.labelZh || "").trim();
+    if (label && labelZh && label !== labelZh) return `${labelZh} / ${label}`;
+    return labelZh || label;
+}
+
+function formatSelectorTagGroupLabel(group, t) {
+    const label = String(group?.name || "").trim();
+    if (group?.id === "default") return t("Favorite Tags");
+    return label;
 }
 
 function controlStyle() {

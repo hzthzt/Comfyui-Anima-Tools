@@ -3,7 +3,8 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./character_data.js";
 
@@ -2457,25 +2458,11 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         listContainer.scrollTop = 0; 
     }
 
-    let tagCatalog = null;
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("character"));
     let activeTagFilter = { type: "group", groupId: "all" };
-    function getCharacterTagCatalog() {
-        if (!tagCatalog) {
-            tagCatalog = buildSelectorTagCatalog(window.characterData || [], {
-                getTags: item => getCharacterOverlayTags(item),
-                getZhTags: () => "",
-                getSourceLabel: item => formatCharacterDisplayName(item),
-                getCategories: item => getCharacterTagCategories(item),
-            });
-        }
-        return tagCatalog;
-    }
 
-    function getCharacterTagCategories(item) {
-        return [
-            item?.gender ? `Gender: ${item.gender}` : "Gender: Unknown",
-            item?.hair ? `Hair: ${item.hair}` : "Hair: Unknown",
-        ];
+    function getCharacterTagCatalog() {
+        return tagCatalogProvider.get();
     }
 
     function switchView(view) {
@@ -2507,14 +2494,14 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             sidebarList.appendChild(header);
         };
         const appendEntry = entry => {
+            if (!entry) return;
             const item = document.createElement("div");
             item.className = `sidebar-item ${isTagSidebarEntryActive(entry) ? "active" : ""}`;
             item.innerHTML = `
                 <div style="display:flex;align-items:center;gap:10px;min-width:0;">
                     <span style="font-size:14px;">${entry.type === "category" ? "#" : "★"}</span>
-                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.label}</span>
+                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.displayLabel || entry.label}</span>
                 </div>
-                <span style="font-size:11px;opacity:0.8;background:rgba(255,255,255,0.06);color:#9ca3af;padding:2px 6px;border-radius:20px;font-weight:700;">${entry.count}</span>
             `;
             item.onclick = () => switchTagSidebarEntry(entry);
             sidebarList.appendChild(item);

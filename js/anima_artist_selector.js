@@ -3,7 +3,8 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { buildSelectorTagCatalog, buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
@@ -1385,32 +1386,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
     }
     updateCountLabel();
 
-    let tagCatalog = null;
-    function getArtistTagCatalog() {
-        if (!tagCatalog) {
-            tagCatalog = buildSelectorTagCatalog(window.galleryData || [], {
-                getTags: item => item?.name ? `@${item.name}` : "",
-                getZhTags: () => "",
-                getSourceLabel: item => item?.name || "",
-                getCategories: item => getArtistTagCategories(item),
-            }).map(item => {
-                const artistName = item.tag.replace(/^@/, "");
-                const source = (window.galleryData || []).find(data => data.name === artistName);
-                return {
-                    ...item,
-                    sourceCount: Number(source?.post_count || item.sourceCount || 1),
-                };
-            }).sort((a, b) => Number(b.sourceCount || 0) - Number(a.sourceCount || 0) || String(a.tag || "").localeCompare(String(b.tag || "")));
-        }
-        return tagCatalog;
-    }
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("artist"));
 
-    function getArtistTagCategories(item) {
-        const postCount = Number(item?.post_count || 0);
-        if (postCount >= 50000) return "Iconic Artists";
-        if (postCount >= 10000) return "Popular Artists";
-        if (postCount >= 1000) return "Known Artists";
-        return "Niche Artists";
+    function getArtistTagCatalog() {
+        return tagCatalogProvider.get();
     }
 
     let activeTagFilter = { type: "group", groupId: "all" };
@@ -1612,14 +1591,14 @@ async function openArtistSelectorModal(node, tagsWidget) {
             sidebarList.appendChild(header);
         };
         const appendEntry = entry => {
+            if (!entry) return;
             const item = document.createElement("div");
             item.className = `sidebar-item ${isTagSidebarEntryActive(entry) ? "active" : ""}`;
             item.innerHTML = `
                 <div style="display:flex;align-items:center;gap:10px;min-width:0;">
                     <span style="font-size:14px;">${entry.type === "category" ? "#" : "★"}</span>
-                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.label}</span>
+                    <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${entry.displayLabel || entry.label}</span>
                 </div>
-                <span style="font-size:11px;opacity:0.8;background:rgba(255,255,255,0.06);color:#9ca3af;padding:2px 6px;border-radius:20px;font-weight:700;">${entry.count}</span>
             `;
             item.onclick = () => switchTagSidebarEntry(entry);
             sidebarList.appendChild(item);
