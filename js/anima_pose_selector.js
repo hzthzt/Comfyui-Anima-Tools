@@ -6,6 +6,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters } from "./anima_card_filter_helpers.js";
 import "./pose_data.js";
 
 const POSE_SELECTOR_NODES = new Set([
@@ -214,6 +215,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
         const saved = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || "{}");
         if (Array.isArray(saved.categories)) saved.categories.forEach(v => activeFilters.categories.add(v));
         if (saved.collection) activeFilters.collection = saved.collection;
+        const normalized = normalizeCategorizedCardFilters(activeFilters);
+        activeFilters.collection = normalized.collection;
+        activeFilters.categories = normalized.categories;
     } catch (e) {
         console.warn("[Anima Tools] Failed to restore pose filters", e);
     }
@@ -1148,62 +1152,59 @@ async function openPoseSelectorModal(node, tagsWidget) {
         const collectionsContent = createEl("div");
         collectionsContent.style.cssText = collectionsCollapsed ? "display: none;" : "display: flex; flex-direction: column;";
         if (!collectionsCollapsed) {
-            const allItem = sidebarItem(t("All Poses"), activeFilters.collection === "all", poseData.length);
-            allItem.onclick = () => switchCollection("all");
-            collectionsContent.appendChild(allItem);
-
-            const defaultCount = favoriteItems.filter(item => item.groupIds?.includes("default")).length;
-            const defaultItem = sidebarItem(t("My Favorites"), activeFilters.collection === "default", defaultCount);
-            defaultItem.onclick = () => switchCollection("default");
-            collectionsContent.appendChild(defaultItem);
-
-            groups.filter(group => group.id !== "default").forEach(group => {
+            getOrderedCardCollectionGroups(groups).forEach(group => {
                 const groupCount = favoriteItems.filter(item => item.groupIds?.includes(group.id)).length;
-                const row = sidebarItem(group.name, activeFilters.collection === group.id, groupCount);
+                const row = sidebarItem(group.id === "default" ? t("My Favorites") : group.name, activeFilters.collection === group.id, groupCount);
                 row.onclick = () => switchCollection(group.id);
-                const tools = createEl("span");
-                tools.style.cssText = "display: inline-flex; gap: 5px;";
-                const rename = createEl("button");
-                rename.title = t("Rename Group");
-                rename.innerHTML = editIcon();
-                rename.style.cssText = miniToolStyle();
-                rename.onclick = (event) => {
-                    event.stopPropagation();
-                    openTextInputModal(t("Rename Group"), t("Enter new group name..."), group.name, async value => {
-                        group.name = value;
+                if (group.id !== "default") {
+                    const tools = createEl("span");
+                    tools.style.cssText = "display: inline-flex; gap: 5px;";
+                    const rename = createEl("button");
+                    rename.title = t("Rename Group");
+                    rename.innerHTML = editIcon();
+                    rename.style.cssText = miniToolStyle();
+                    rename.onclick = (event) => {
+                        event.stopPropagation();
+                        openTextInputModal(t("Rename Group"), t("Enter new group name..."), group.name, async value => {
+                            group.name = value;
+                            await saveFavorites();
+                            renderSidebar();
+                            return true;
+                        });
+                    };
+                    const del = createEl("button");
+                    del.title = t("Delete Group");
+                    del.innerHTML = trashIcon(12);
+                    del.style.cssText = miniToolStyle("#fca5a5");
+                    del.onclick = async (event) => {
+                        event.stopPropagation();
+                        if (!confirm(t("Are you sure you want to delete this group? Items inside won't be deleted."))) return;
+                        groups = groups.filter(g => g.id !== group.id);
+                        favoriteItems.forEach(item => {
+                            item.groupIds = (item.groupIds || []).filter(id => id !== group.id);
+                        });
+                        favoriteMap.forEach(item => {
+                            item.groupIds = (item.groupIds || []).filter(id => id !== group.id);
+                            if (!item.groupIds.length) favoriteSet.delete(String(item.id || item.name || ""));
+                        });
+                        if (activeFilters.collection === group.id) activeFilters.collection = "all";
+                        persistFilters();
                         await saveFavorites();
                         renderSidebar();
-                        return true;
-                    });
-                };
-                const del = createEl("button");
-                del.title = t("Delete Group");
-                del.innerHTML = trashIcon(12);
-                del.style.cssText = miniToolStyle("#fca5a5");
-                del.onclick = async (event) => {
-                    event.stopPropagation();
-                    if (!confirm(t("Are you sure you want to delete this group? Items inside won't be deleted."))) return;
-                    groups = groups.filter(g => g.id !== group.id);
-                    favoriteItems.forEach(item => {
-                        item.groupIds = (item.groupIds || []).filter(id => id !== group.id);
-                    });
-                    favoriteMap.forEach(item => {
-                        item.groupIds = (item.groupIds || []).filter(id => id !== group.id);
-                        if (!item.groupIds.length) favoriteSet.delete(String(item.id || item.name || ""));
-                    });
-                    if (activeFilters.collection === group.id) activeFilters.collection = "all";
-                    persistFilters();
-                    await saveFavorites();
-                    renderSidebar();
-                    triggerFilter();
-                };
-                tools.appendChild(rename);
-                tools.appendChild(del);
-                row.appendChild(tools);
+                        triggerFilter();
+                    };
+                    tools.appendChild(rename);
+                    tools.appendChild(del);
+                    row.appendChild(tools);
+                }
                 collectionsContent.appendChild(row);
             });
         }
         sidebar.appendChild(collectionsContent);
+
+        const allItem = sidebarItem(t("All Poses"), activeFilters.collection === "all", poseData.length);
+        allItem.onclick = () => switchCollection("all");
+        sidebar.appendChild(allItem);
 
         sidebar.appendChild(sectionTitle(t("Categories")));
         CATEGORY_LIST.forEach(category => {
@@ -1213,8 +1214,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
                 <span>${escapeHtml(getCategoryLabel(category, displayLang))}</span>
             `;
             row.onclick = () => {
-                activeFilters.categories.clear();
-                activeFilters.categories.add(category);
+                const nextFilters = getNextCategorizedCardFilters(activeFilters, category);
+                activeFilters.collection = nextFilters.collection;
+                activeFilters.categories = nextFilters.categories;
                 currentPage = 1;
                 persistFilters();
                 renderSidebar();
@@ -1315,7 +1317,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
     }
 
     function switchCollection(collection) {
-        activeFilters.collection = collection;
+        const nextFilters = getNextCategorizedCardFilters(activeFilters, null, { collection });
+        activeFilters.collection = nextFilters.collection;
+        activeFilters.categories = nextFilters.categories;
         currentPage = 1;
         listContainer.scrollTop = 0;
         persistFilters();
@@ -1405,7 +1409,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
                 if (!queryList.some(q => haystack.includes(q))) return false;
             }
 
-            if (activeFilters.categories.size > 0) {
+            if (shouldApplyCardCategoryFilters(activeFilters)) {
                 const categories = Array.isArray(item.categories) ? item.categories : [];
                 if (!categories.some(category => activeFilters.categories.has(category))) return false;
             }

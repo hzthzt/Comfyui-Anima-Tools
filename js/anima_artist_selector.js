@@ -6,6 +6,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { getOrderedCardCollectionGroups } from "./anima_card_filter_helpers.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
     "AnimaArtistTagSelector",
@@ -1441,20 +1442,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
             return;
         }
 
-        // 1. 全部画师
-        const allItem = document.createElement("div");
-        allItem.className = `sidebar-item ${activeCategory === "all" ? "active" : ""}`;
-        allItem.innerHTML = `
-            <div style="display:flex;align-items:center;gap:10px;">
-                <span style="font-size:15px;">✦</span>
-                <span>${t("All Artists")}</span>
-            </div>
-            <span style="font-size:11px;opacity:0.6;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:20px;">${(window.galleryData || []).length}</span>
-        `;
-        allItem.onclick = () => switchCategory("all");
-        sidebarList.appendChild(allItem);
-
-        // 2. 我的收藏标题
+        // 1. 我的收藏标题
         const collectionsHeader = document.createElement("div");
         collectionsHeader.style.cssText = "font-size: 11px; font-weight: 700; color: #6b7280; padding: 16px 10px 8px 10px; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: space-between;";
         collectionsHeader.innerHTML = `
@@ -1489,8 +1477,8 @@ async function openArtistSelectorModal(node, tagsWidget) {
             };
         }
 
-        // 3. 循环渲染分组列表
-        groups.forEach(g => {
+        // 2. 循环渲染分组列表
+        getOrderedCardCollectionGroups(groups).forEach(g => {
             const count = favoriteItems.filter(fi => fi.groupIds && fi.groupIds.includes(g.id)).length;
             const item = document.createElement("div");
             item.className = `sidebar-item ${activeCategory === g.id ? "active" : ""}`;
@@ -1580,6 +1568,18 @@ async function openArtistSelectorModal(node, tagsWidget) {
             
             sidebarList.appendChild(item);
         });
+
+        const allItem = document.createElement("div");
+        allItem.className = `sidebar-item ${activeCategory === "all" ? "active" : ""}`;
+        allItem.innerHTML = `
+            <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:15px;">✦</span>
+                <span>${t("All Artists")}</span>
+            </div>
+            <span style="font-size:11px;opacity:0.6;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:20px;">${(window.galleryData || []).length}</span>
+        `;
+        allItem.onclick = () => switchCategory("all");
+        sidebarList.appendChild(allItem);
     }
 
     function renderTagSidebar() {

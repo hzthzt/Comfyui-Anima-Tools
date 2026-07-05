@@ -50,6 +50,7 @@ test("getNextCharacterCardFilters switches categories directly without toggling 
   const mod = await import("../js/anima_character_selector.js?case=card-filter-switch");
 
   assert.equal(typeof mod.getNextCharacterCardFilters, "function");
+  assert.equal(typeof mod.shouldApplyCharacterCardTypeFilters, "function");
 
   assert.deepEqual(
     mod.getNextCharacterCardFilters({
@@ -84,4 +85,30 @@ test("getNextCharacterCardFilters switches categories directly without toggling 
       series: null,
     },
   );
+
+  const collectionFilters = mod.getNextCharacterCardFilters({
+    type: "all",
+    gender: "1girl",
+    hair: "blue",
+    eye: "red",
+    series: "touhou",
+  }, "group_favorites");
+  assert.deepEqual(collectionFilters, {
+    type: "group_favorites",
+    gender: null,
+    hair: null,
+    eye: null,
+    series: null,
+  });
+  assert.equal(mod.shouldApplyCharacterCardTypeFilters(collectionFilters), false);
+
+  const categoryFilters = mod.getNextCharacterCardFilters(collectionFilters, "hair:blue");
+  assert.deepEqual(categoryFilters, {
+    type: "all",
+    gender: null,
+    hair: "blue",
+    eye: null,
+    series: null,
+  });
+  assert.equal(mod.shouldApplyCharacterCardTypeFilters(categoryFilters), true);
 });

@@ -6,6 +6,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { getOrderedCardCollectionGroups } from "./anima_card_filter_helpers.js";
 import "./character_data.js";
 
 const CHARACTER_SELECTOR_NODES = new Set([
@@ -182,6 +183,10 @@ export function getNextCharacterCardFilters(currentFilters, category) {
         return { ...base, type: "all", gender: null, hair: null, eye: category.split(":")[1], series: null };
     }
     return { ...base, type: "all", gender: null, hair: null, eye: null, series: category };
+}
+
+export function shouldApplyCharacterCardTypeFilters(filters = {}) {
+    return filters.type === "all";
 }
 
 function getCharacterPromptParts(item, includeTags = false) {
@@ -1893,25 +1898,12 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             if (item.eye) counts[`eye:${item.eye}`]++;
         });
 
-        // 1. 全部角色与我的收藏 (General)
+        // 1. 我的收藏与自定义分支 (General)
         const isAllActive = activeFilters.type === "all" && 
                             !activeFilters.gender && 
                             !activeFilters.hair && 
                             !activeFilters.eye && 
                             !activeFilters.series;
-        const isFavActive = activeFilters.type === "favorites";
-
-        const allItem = document.createElement("div");
-        allItem.className = `sidebar-item ${isAllActive ? "active" : ""}`;
-        allItem.innerHTML = `
-            <div style="display:flex;align-items:center;gap:10px;">
-                <span style="font-size:15px;">✦</span>
-                <span>${t("All Characters")}</span>
-            </div>
-            <span style="font-size:11px;opacity:0.6;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:20px;">${(window.characterData || []).length}</span>
-        `;
-        allItem.onclick = () => switchCategory("all");
-        sidebarList.appendChild(allItem);
 
         // 2. 我的收藏标题与新建按钮
         const collectionsHeader = document.createElement("div");
@@ -1947,7 +1939,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         };
 
         // 3. 循环渲染分组列表 (粉色主题)
-        groups.forEach(g => {
+        getOrderedCardCollectionGroups(groups).forEach(g => {
             const count = favoriteItems.filter(fi => fi.groupIds && fi.groupIds.includes(g.id)).length;
             const item = document.createElement("div");
             
@@ -2044,6 +2036,18 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             
             sidebarList.appendChild(item);
         });
+
+        const allItem = document.createElement("div");
+        allItem.className = `sidebar-item ${isAllActive ? "active" : ""}`;
+        allItem.innerHTML = `
+            <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:15px;">✦</span>
+                <span>${t("All Characters")}</span>
+            </div>
+            <span style="font-size:11px;opacity:0.6;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:20px;">${(window.characterData || []).length}</span>
+        `;
+        allItem.onclick = () => switchCategory("all");
+        sidebarList.appendChild(allItem);
 
         // 多维分类配置列表 (Gender, Hair Color, Eye Color)
         const sectionsConfig = [
@@ -2320,19 +2324,19 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             items = [...customItems, ...items];
         }
 
-        if (activeFilters.gender) {
+        if (shouldApplyCharacterCardTypeFilters(activeFilters) && activeFilters.gender) {
             const val = activeFilters.gender;
             items = items.filter(item => item.gender === val);
         }
-        if (activeFilters.hair) {
+        if (shouldApplyCharacterCardTypeFilters(activeFilters) && activeFilters.hair) {
             const val = activeFilters.hair;
             items = items.filter(item => item.hair === val);
         }
-        if (activeFilters.eye) {
+        if (shouldApplyCharacterCardTypeFilters(activeFilters) && activeFilters.eye) {
             const val = activeFilters.eye;
             items = items.filter(item => item.eye === val);
         }
-        if (activeFilters.series) {
+        if (shouldApplyCharacterCardTypeFilters(activeFilters) && activeFilters.series) {
             items = items.filter(item => item.copyright === activeFilters.series);
         }
 
