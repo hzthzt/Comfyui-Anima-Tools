@@ -160,3 +160,34 @@ test("writeSelectorTagsToWidget keeps manual selector manager tags on confirm", 
 
   assert.equal(widget.value, "card, manual, ");
 });
+
+test("writeSelectorTagsToWidget restores a history tag when it is selected again", async () => {
+  installDom();
+  const { createSelectorTagManager, writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-history-reselect");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const deleteButton = findButtonByTitle(manager.element, ["Delete tag", "Delete Tag"]);
+  assert.ok(deleteButton);
+  deleteButton.click();
+  assert.equal(widget.value, "");
+  assert.match(manager.element.textContent, /History/);
+
+  writeSelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
+
+  assert.equal(widget.value, "alpha, ");
+});
+
+test("writeSelectorTagsToWidget falls back to plain text for non Tagged nodes", async () => {
+  installDom();
+  const { writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-plain");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+  node.__animaNodeClass = "AnimaArtistTagSelector";
+
+  writeSelectorTagsToWidget(node, widget, "beta, ", { source: "selector" });
+
+  assert.equal(widget.value, "beta, ");
+  assert.equal(widget.lastCallbackValue, "beta, ");
+});

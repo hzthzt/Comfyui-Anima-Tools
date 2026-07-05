@@ -207,6 +207,11 @@ function addToHistory(field, text) {
     pruneHistory(field);
 }
 
+function removeHistoryKeys(field, keys) {
+    if (!keys?.size || !Array.isArray(field.history)) return;
+    field.history = field.history.filter(item => !keys.has(normalizeTagKey(item.text)));
+}
+
 function applyIncomingTags(field, incomingTags, mode, source) {
     const incoming = uniqueTags(incomingTags.map(text => ({
         text,
@@ -244,9 +249,9 @@ function mergeSelectorManagerTags(field, incomingTags, source) {
         ...field.tags
             .filter(tag => tag?.enabled === false)
             .map(tag => normalizeTagKey(tagText(tag))),
-        ...field.history.map(item => normalizeTagKey(item.text)),
     ].filter(Boolean));
     const incomingKeys = new Set(incoming.map(tag => normalizeTagKey(tag.text)));
+    removeHistoryKeys(field, incomingKeys);
     const result = incoming.filter(tag => !suppressedKeys.has(normalizeTagKey(tag.text)));
     for (const tag of field.tags) {
         const key = normalizeTagKey(tagText(tag));
@@ -273,8 +278,9 @@ function appendSelectorManagerTags(field, incomingTags, source) {
         ...field.tags
             .filter(tag => tag?.enabled === false)
             .map(tag => normalizeTagKey(tagText(tag))),
-        ...field.history.map(item => normalizeTagKey(item.text)),
     ].filter(Boolean));
+    const incomingKeys = new Set(incoming.map(tag => normalizeTagKey(tag.text)));
+    removeHistoryKeys(field, incomingKeys);
     const byKey = new Map(field.tags.map(tag => [normalizeTagKey(tagText(tag)), { ...tag }]));
     for (const tag of incoming) {
         const key = normalizeTagKey(tag.text);
