@@ -44,3 +44,44 @@ test("classifyCharacterTag places common character tags into configured categori
   assert.equal(classifyCharacterTag("hair bow"), "decoration");
   assert.equal(classifyCharacterTag("hatsune miku"), "character-name");
 });
+
+test("getNextCharacterCardFilters switches categories directly without toggling them off", async () => {
+  installDom();
+  const mod = await import("../js/anima_character_selector.js?case=card-filter-switch");
+
+  assert.equal(typeof mod.getNextCharacterCardFilters, "function");
+
+  assert.deepEqual(
+    mod.getNextCharacterCardFilters({
+      type: "group_favorites",
+      gender: null,
+      hair: null,
+      eye: null,
+      series: null,
+    }, "group_favorites"),
+    {
+      type: "group_favorites",
+      gender: null,
+      hair: null,
+      eye: null,
+      series: null,
+    },
+  );
+
+  assert.deepEqual(
+    mod.getNextCharacterCardFilters({
+      type: "all",
+      gender: "1girl",
+      hair: "blue",
+      eye: "red",
+      series: "touhou",
+    }, "gender:1girl"),
+    {
+      type: "all",
+      gender: "1girl",
+      hair: null,
+      eye: null,
+      series: null,
+    },
+  );
+});

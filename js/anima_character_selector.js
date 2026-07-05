@@ -153,6 +153,37 @@ export function getCharacterOverlayTags(item) {
     return tags;
 }
 
+export function getNextCharacterCardFilters(currentFilters, category) {
+    const base = {
+        type: "all",
+        gender: null,
+        hair: null,
+        eye: null,
+        series: null,
+        ...currentFilters,
+    };
+
+    if (category === "all") {
+        return { ...base, type: "all", gender: null, hair: null, eye: null, series: null };
+    }
+    if (category === "favorites") {
+        return { ...base, type: "default", gender: null, hair: null, eye: null, series: null };
+    }
+    if (category === "default" || category.startsWith("group_")) {
+        return { ...base, type: category, gender: null, hair: null, eye: null, series: null };
+    }
+    if (category.startsWith("gender:")) {
+        return { ...base, type: "all", gender: category.split(":")[1], hair: null, eye: null, series: null };
+    }
+    if (category.startsWith("hair:")) {
+        return { ...base, type: "all", gender: null, hair: category.split(":")[1], eye: null, series: null };
+    }
+    if (category.startsWith("eye:")) {
+        return { ...base, type: "all", gender: null, hair: null, eye: category.split(":")[1], series: null };
+    }
+    return { ...base, type: "all", gender: null, hair: null, eye: null, series: category };
+}
+
 function getCharacterPromptParts(item, includeTags = false) {
     const parts = [];
     const seen = new Set();
@@ -2256,47 +2287,9 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         listContainer.scrollTop = 0;
     }
 
-    // 切换分类侧边栏 (支持联合多维过滤)
+    // 切换分类侧边栏
     function switchCategory(category) {
-        if (category === "all") {
-            activeFilters = {
-                type: "all",
-                gender: null,
-                hair: null,
-                eye: null,
-                series: null
-            };
-        } else if (category === "favorites") {
-            activeFilters.type = activeFilters.type === "default" ? "all" : "default";
-            activeFilters.gender = null;
-            activeFilters.hair = null;
-            activeFilters.eye = null;
-            activeFilters.series = null;
-        } else if (category === "default" || category.startsWith("group_")) {
-            activeFilters.type = activeFilters.type === category ? "all" : category;
-            activeFilters.gender = null;
-            activeFilters.hair = null;
-            activeFilters.eye = null;
-            activeFilters.series = null;
-        } else if (category.startsWith("gender:")) {
-            const val = category.split(":")[1];
-            activeFilters.gender = activeFilters.gender === val ? null : val;
-            activeFilters.type = "all";
-        } else if (category.startsWith("hair:")) {
-            const val = category.split(":")[1];
-            activeFilters.hair = activeFilters.hair === val ? null : val;
-            activeFilters.type = "all";
-        } else if (category.startsWith("eye:")) {
-            const val = category.split(":")[1];
-            activeFilters.eye = activeFilters.eye === val ? null : val;
-            activeFilters.type = "all";
-        } else {
-            activeFilters.series = activeFilters.series === category ? null : category;
-            activeFilters.type = "all";
-        }
-
-
-
+        activeFilters = getNextCharacterCardFilters(activeFilters, category);
         localStorage.setItem(SIDEBAR_STORAGE_KEY, JSON.stringify(activeFilters));
         
         currentPage = 1;

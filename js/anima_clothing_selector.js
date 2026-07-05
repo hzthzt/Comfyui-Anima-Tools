@@ -33,34 +33,6 @@ const CATEGORY_LIST = [
     "性感/暴露 (Revealing)",
 ];
 
-const TRAITS_TRANSLATION = {
-    "apron": "围裙",
-    "backless": "露背",
-    "bare legs": "光腿",
-    "boots": "靴子",
-    "collar": "衣领",
-    "garter belt": "吊袜带",
-    "glasses": "眼镜",
-    "gloves": "手套",
-    "halterneck": "吊颈式设计",
-    "high heels": "高跟鞋",
-    "kneehighs": "及膝袜",
-    "lace": "蕾丝",
-    "latex": "乳胶",
-    "leather": "皮革",
-    "miniskirt": "超短裙",
-    "off-shoulder": "露肩/一字领",
-    "pantyhose": "连裤袜",
-    "ribbon": "丝带/蝴蝶结",
-    "short shorts": "超短裤",
-    "side slit": "侧开叉",
-    "silk": "丝绸",
-    "sleeveless": "无袖",
-    "thighhighs": "大腿袜",
-    "tie": "领带/系带",
-    "translucent": "半透明",
-};
-
 app.registerExtension({
     name: "AnimaClothingTagSelector.extension",
 
@@ -108,10 +80,6 @@ function splitPromptTokens(value) {
         .filter(Boolean);
 }
 
-function normalizePromptToken(value) {
-    return String(value || "").replace(/^_raw_:/, "").trim().toLowerCase();
-}
-
 function getItemKey(item) {
     return item?.isCustom ? `custom:${item.name}` : String(item?.id || item?.name || "");
 }
@@ -128,18 +96,6 @@ function getCategoryLabel(category, displayLang) {
         return category.match(/\(([^)]+)\)/)?.[1] || category;
     }
     return category;
-}
-
-function getTraitZh(trait, data) {
-    const key = String(trait || "").toLowerCase().trim();
-    if (TRAITS_TRANSLATION[key]) return TRAITS_TRANSLATION[key];
-    for (const item of data || []) {
-        const enList = splitPromptTokens(item.tags).map(normalizePromptToken);
-        const zhList = splitPromptTokens(item.tags_zh);
-        const idx = enList.indexOf(key);
-        if (idx !== -1 && zhList[idx]) return zhList[idx];
-    }
-    return trait;
 }
 
 function escapeHtml(value) {
@@ -181,16 +137,6 @@ function copyText(text, callback) {
 
 async function openClothingSelectorModal(node, tagsWidget) {
     const clothingData = Array.isArray(window.clothingData) ? window.clothingData : [];
-    const dataById = new Map(clothingData.map(item => [String(item.id), item]));
-    const currentTokens = new Set(splitPromptTokens(tagsWidget?.value || "").map(normalizePromptToken));
-    const selectedClothing = new Set();
-
-    clothingData.forEach(item => {
-        const tokens = splitPromptTokens(item.tags).map(normalizePromptToken);
-        if (tokens.length > 0 && tokens.every(token => currentTokens.has(token))) {
-            selectedClothing.add(getItemKey(item));
-        }
-    });
 
     let favoritesConfig = {
         clothing: {
@@ -229,10 +175,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
     favoriteItems.forEach(item => {
         if (item.isCustom) {
-            const customTokens = splitPromptTokens(item.customContent).map(normalizePromptToken);
-            if (customTokens.length > 0 && customTokens.every(token => currentTokens.has(token))) {
-                selectedClothing.add(getItemKey(item));
-            }
             return;
         }
         const key = String(item.id || item.name || "");
@@ -255,7 +197,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
     let displayLang = localStorage.getItem(DISPLAY_LANG_STORAGE_KEY) || "bilingual";
     let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     let currentPage = parseInt(localStorage.getItem(PAGE_STORAGE_KEY), 10) || 1;
-    let showSelectedOnly = false;
     let filteredData = [];
     let totalPages = 1;
     let lastScrollTop = parseInt(localStorage.getItem(SCROLL_STORAGE_KEY), 10) || 0;
@@ -264,27 +205,16 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
     const activeFilters = {
         categories: new Set(),
-        traits: new Set(),
         collection: "all",
     };
 
     try {
         const saved = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || "{}");
         if (Array.isArray(saved.categories)) saved.categories.forEach(v => activeFilters.categories.add(v));
-        if (Array.isArray(saved.traits)) saved.traits.forEach(v => activeFilters.traits.add(v));
         if (saved.collection) activeFilters.collection = saved.collection;
     } catch (e) {
         console.warn("[Anima Tools] Failed to restore clothing filters", e);
     }
-
-    const allTraits = Array.from(clothingData.reduce((map, item) => {
-        (Array.isArray(item.traits) ? item.traits : []).forEach(trait => {
-            map.set(trait, (map.get(trait) || 0) + 1);
-        });
-        return map;
-    }, new Map()).entries())
-        .map(([name, count]) => ({ name, count }))
-        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
     async function saveFavorites() {
         const nextItems = favoriteItems.filter(item => item.isCustom);
@@ -316,7 +246,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
     function persistFilters() {
         localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify({
             categories: Array.from(activeFilters.categories),
-            traits: Array.from(activeFilters.traits),
             collection: activeFilters.collection,
         }));
     }
@@ -603,7 +532,8 @@ async function openClothingSelectorModal(node, tagsWidget) {
         .anima-clothing-check-row {
             display: flex;
             gap: 9px;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
             color: #cbd5e1;
             font-size: 12.5px;
             font-weight: 600;
@@ -614,7 +544,10 @@ async function openClothingSelectorModal(node, tagsWidget) {
             transition: background 0.15s ease;
         }
         .anima-clothing-check-row:hover { background: rgba(255,255,255,0.045); }
-        .anima-clothing-check-row input { margin-top: 2px; accent-color: #db2777; }
+        .anima-clothing-check-row.active {
+            color: #fff;
+            background: rgba(219,39,119,0.14);
+        }
         .anima-clothing-card {
             position: relative;
             width: 100%;
@@ -634,10 +567,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
         .anima-clothing-card:hover {
             border-color: rgba(219,39,119,0.82);
             box-shadow: 0 12px 30px rgba(0,0,0,0.38), 0 0 18px rgba(219,39,119,0.14);
-        }
-        .anima-clothing-card.selected {
-            border-color: #db2777;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.36), 0 0 24px rgba(219,39,119,0.24);
         }
         .anima-clothing-card-clip {
             position: absolute;
@@ -873,26 +802,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
             background: rgba(10,10,15,0.72);
             color: #f9a8d4;
         }
-        .anima-clothing-selected-mark {
-            position: absolute;
-            top: 9px;
-            left: 9px;
-            z-index: 7;
-            width: 24px;
-            height: 24px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(10,10,15,0.52);
-            border: 1px solid rgba(255,255,255,0.28);
-            color: #fff;
-            transition: all 0.15s ease;
-        }
-        .anima-clothing-card.selected .anima-clothing-selected-mark {
-            background: #db2777;
-            border-color: #db2777;
-        }
         .anima-clothing-popover {
             position: fixed;
             z-index: 1000000;
@@ -1041,42 +950,7 @@ async function openClothingSelectorModal(node, tagsWidget) {
     viewToggle.appendChild(cardsViewBtn);
     viewToggle.appendChild(tagsViewBtn);
 
-    const actionControls = createEl("div");
-    actionControls.style.cssText = "display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end;";
-
-    const copySelectedBtn = createEl("button", "anima-clothing-btn");
-    copySelectedBtn.innerHTML = `${copyIcon()} ${t("Copy Selected")}`;
-    copySelectedBtn.onclick = () => {
-        const text = buildSelectedText();
-        if (!text) {
-            alert(t("Please select at least one clothing item first."));
-            return;
-        }
-        copyText(text, () => showToast(t("Copied Successfully")));
-    };
-
-    const showSelectedOnlyBtn = createEl("button", "anima-clothing-btn", t("Show Selected"));
-    showSelectedOnlyBtn.onclick = () => {
-        showSelectedOnly = !showSelectedOnly;
-        showSelectedOnlyBtn.classList.toggle("active", showSelectedOnly);
-        currentPage = 1;
-        triggerFilter();
-    };
-
-    const clearSelectedBtn = createEl("button", "anima-clothing-btn danger");
-    clearSelectedBtn.innerHTML = `${trashIcon()} ${t("Clear Selected")}`;
-    clearSelectedBtn.onclick = () => {
-        if (selectedClothing.size === 0) return;
-        selectedClothing.clear();
-        updateCountLabel();
-        renderCurrentPage();
-    };
-
-    actionControls.appendChild(copySelectedBtn);
-    actionControls.appendChild(showSelectedOnlyBtn);
-    actionControls.appendChild(clearSelectedBtn);
     toolbar.appendChild(filterControls);
-    toolbar.appendChild(actionControls);
     container.appendChild(toolbar);
 
     const main = createEl("div");
@@ -1199,9 +1073,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
         justify-content: space-between;
         gap: 14px;
     `;
-
-    const countLabel = createEl("button", "anima-clothing-btn active");
-    countLabel.onclick = () => showSelectedOnlyBtn.click();
 
     const footerBtns = createSelectorTagManagerFooter(10);
 
@@ -1334,37 +1205,17 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
         sidebar.appendChild(sectionTitle(t("Categories")));
         CATEGORY_LIST.forEach(category => {
-            const row = createEl("label", "anima-clothing-check-row");
+            const isActive = activeFilters.categories.has(category);
+            const row = createEl("div", `anima-clothing-check-row${isActive ? " active" : ""}`);
             row.innerHTML = `
-                <input type="checkbox" ${activeFilters.categories.has(category) ? "checked" : ""}>
                 <span>${escapeHtml(getCategoryLabel(category, displayLang))}</span>
             `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.categories.add(category);
-                else activeFilters.categories.delete(category);
+            row.onclick = () => {
+                activeFilters.categories.clear();
+                activeFilters.categories.add(category);
                 currentPage = 1;
                 persistFilters();
-                updateClearFiltersButtonState();
-                triggerFilter();
-            };
-            sidebar.appendChild(row);
-        });
-
-        sidebar.appendChild(sectionTitle(t("Traits")));
-        allTraits.forEach(trait => {
-            const zh = getTraitZh(trait.name, clothingData);
-            const label = displayLang === "bilingual" && zh ? `${trait.name} (${zh})` : trait.name;
-            const row = createEl("label", "anima-clothing-check-row");
-            row.innerHTML = `
-                <input type="checkbox" ${activeFilters.traits.has(trait.name) ? "checked" : ""}>
-                <span style="min-width:0;">${escapeHtml(label)} <span style="color:#71717a;">${trait.count}</span></span>
-            `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.traits.add(trait.name);
-                else activeFilters.traits.delete(trait.name);
-                currentPage = 1;
-                persistFilters();
-                updateClearFiltersButtonState();
+                renderSidebar();
                 triggerFilter();
             };
             sidebar.appendChild(row);
@@ -1472,8 +1323,7 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
     function hasActiveSidebarFilters() {
         return activeFilters.collection !== "all" ||
-            activeFilters.categories.size > 0 ||
-            activeFilters.traits.size > 0;
+            activeFilters.categories.size > 0;
     }
 
     function updateClearFiltersButtonState() {
@@ -1487,7 +1337,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
         if (!hasActiveSidebarFilters()) return;
         activeFilters.collection = "all";
         activeFilters.categories.clear();
-        activeFilters.traits.clear();
         currentPage = 1;
         listContainer.scrollTop = 0;
         persistFilters();
@@ -1512,60 +1361,50 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
         let items = [];
         let customItems = [];
-        if (showSelectedOnly) {
-            customItems = favoriteItems.filter(item => item.isCustom && selectedClothing.has(getItemKey(item)));
-            items = clothingData.filter(item => selectedClothing.has(getItemKey(item)));
-        } else {
-            const groupIds = new Set();
-            if (activeFilters.collection !== "all") {
-                favoriteItems.forEach(item => {
-                    if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
-                        groupIds.add(String(item.id || item.name || ""));
-                    }
-                });
-            }
-
-            items = clothingData.filter(item => {
-                if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
-
-                if (queryList.length > 0) {
-                    const haystack = [
-                        item.id,
-                        item.name,
-                        item.name_zh,
-                        item.tags,
-                        item.tags_zh,
-                        ...(Array.isArray(item.categories) ? item.categories : []),
-                        ...(Array.isArray(item.traits) ? item.traits : []),
-                    ].join(" ").toLowerCase();
-                    if (!queryList.some(q => haystack.includes(q))) return false;
+        const groupIds = new Set();
+        if (activeFilters.collection !== "all") {
+            favoriteItems.forEach(item => {
+                if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
+                    groupIds.add(String(item.id || item.name || ""));
                 }
-
-                if (activeFilters.categories.size > 0) {
-                    const categories = Array.isArray(item.categories) ? item.categories : [];
-                    if (!categories.some(category => activeFilters.categories.has(category))) return false;
-                }
-
-                if (activeFilters.traits.size > 0) {
-                    const traits = Array.isArray(item.traits) ? item.traits : [];
-                    if (!Array.from(activeFilters.traits).every(trait => traits.includes(trait))) return false;
-                }
-
-                return true;
             });
+        }
 
-            if (activeFilters.collection !== "all") {
-                customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
-            } else {
-                customItems = favoriteItems.filter(item => item.isCustom);
-            }
+        items = clothingData.filter(item => {
+            if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
 
             if (queryList.length > 0) {
-                customItems = customItems.filter(item => {
-                    const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
-                    return queryList.some(q => haystack.includes(q));
-                });
+                const haystack = [
+                    item.id,
+                    item.name,
+                    item.name_zh,
+                    item.tags,
+                    item.tags_zh,
+                    ...(Array.isArray(item.categories) ? item.categories : []),
+                    ...(Array.isArray(item.traits) ? item.traits : []),
+                ].join(" ").toLowerCase();
+                if (!queryList.some(q => haystack.includes(q))) return false;
             }
+
+            if (activeFilters.categories.size > 0) {
+                const categories = Array.isArray(item.categories) ? item.categories : [];
+                if (!categories.some(category => activeFilters.categories.has(category))) return false;
+            }
+
+            return true;
+        });
+
+        if (activeFilters.collection !== "all") {
+            customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
+        } else {
+            customItems = favoriteItems.filter(item => item.isCustom);
+        }
+
+        if (queryList.length > 0) {
+            customItems = customItems.filter(item => {
+                const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
+                return queryList.some(q => haystack.includes(q));
+            });
         }
 
         if (activeSort === "id-desc") {
@@ -1626,14 +1465,13 @@ async function openClothingSelectorModal(node, tagsWidget) {
             listContainer.style.display = "none";
             pagination.style.display = "none";
             selectorTagView.setVisible(true);
-            updateCountLabel();
             return;
         }
         selectorTagView.setVisible(false);
         listContainer.style.display = "grid";
         pagination.style.display = "";
         listContainer.innerHTML = "";
-        const isCustomGroup = !showSelectedOnly && activeFilters.collection !== "all" && activeFilters.collection !== "default";
+        const isCustomGroup = activeFilters.collection !== "all" && activeFilters.collection !== "default";
 
         if (filteredData.length === 0 && !isCustomGroup) {
             const empty = createEl("div");
@@ -1644,7 +1482,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
                 <div style="font-size:13px;margin-top:8px;">${escapeHtml(t("Try another search or clear filters."))}</div>
             `;
             listContainer.appendChild(empty);
-            updateCountLabel();
             return;
         }
 
@@ -1661,7 +1498,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
             setTimeout(() => listContainer.scrollTop = lastScrollTop, 50);
             lastScrollTop = 0;
         }
-        updateCountLabel();
     }
 
     function createCustomPlaceholderCard() {
@@ -1697,12 +1533,11 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
     function createCard(item) {
         const key = getItemKey(item);
-        const isSelected = selectedClothing.has(key);
         const isFavorite = !item.isCustom && favoriteSet.has(String(item.id));
         const favInfo = item.isCustom ? item : favoriteMap.get(String(item.id));
         const nickname = favInfo?.nickname || "";
 
-        const card = createEl("article", `anima-clothing-card${isSelected ? " selected" : ""}`);
+        const card = createEl("article", "anima-clothing-card");
         card.dataset.key = key;
 
         const clip = createEl("div", "anima-clothing-card-clip");
@@ -1751,17 +1586,12 @@ async function openClothingSelectorModal(node, tagsWidget) {
             imageObserver.observe(img);
         }
 
-        const selectedMark = createEl("div", "anima-clothing-selected-mark");
-        selectedMark.innerHTML = isSelected ? checkIcon() : "";
-        card.appendChild(selectedMark);
-
         if (item.isCustom) {
             const deleteBtn = iconButton(9, trashIcon(14), t("Delete Custom Item"));
             deleteBtn.onclick = async (event) => {
                 event.stopPropagation();
                 if (!confirm(t("Are you sure you want to delete this custom item?"))) return;
                 favoriteItems = favoriteItems.filter(existing => existing.name !== item.name);
-                selectedClothing.delete(key);
                 await saveFavorites();
                 renderSidebar();
                 triggerFilter();
@@ -1881,19 +1711,9 @@ async function openClothingSelectorModal(node, tagsWidget) {
             applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
             node.triggerSlot?.(0);
             if (tagText) showToast(t("Applied: {text}", { text: displayName }));
-            if (selectedClothing.has(key)) selectedClothing.delete(key);
-            else selectedClothing.add(key);
-            updateCardSelection(card, selectedClothing.has(key));
-            updateCountLabel();
         };
 
         return card;
-    }
-
-    function updateCardSelection(card, selected) {
-        card.classList.toggle("selected", selected);
-        const mark = card.querySelector(".anima-clothing-selected-mark");
-        if (mark) mark.innerHTML = selected ? checkIcon() : "";
     }
 
     function badge(text) {
@@ -2089,24 +1909,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
         return row;
     }
 
-    function buildSelectedText() {
-        const tags = [];
-        selectedClothing.forEach(key => {
-            if (key.startsWith("custom:")) {
-                const item = favoriteItems.find(fav => fav.isCustom && getItemKey(fav) === key);
-                splitPromptTokens(item?.customContent || "").forEach(tag => tags.push(tag));
-                return;
-            }
-            const item = dataById.get(key);
-            splitPromptTokens(item?.tags || "").forEach(tag => tags.push(tag));
-        });
-        return tags.length ? `${tags.join(", ")}, ` : "";
-    }
-
-    function updateCountLabel() {
-        countLabel.innerHTML = `${checkIcon()} <span>${t("Selected: {count} clothing items", { count: selectedClothing.size })}</span>`;
-    }
-
     function closeModal() {
         imageObserver.disconnect();
         document.getElementById("anima-clothing-group-popover")?.remove();
@@ -2171,13 +1973,8 @@ async function openClothingSelectorModal(node, tagsWidget) {
         return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
     }
 
-    function copyIcon(size = 14) {
-        return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-    }
-
     renderSidebar();
     updateViewToggle();
     triggerFilter();
-    updateCountLabel();
     searchInput.focus();
 }

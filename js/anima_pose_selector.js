@@ -35,79 +35,6 @@ const CATEGORY_LIST = [
     "日常与其它 (Daily & Miscellaneous)",
 ];
 
-const TRAITS_TRANSLATION = {
-    "adjusting": "整理",
-    "akimbo": "叉腰",
-    "arm": "手臂",
-    "arms": "双臂",
-    "armpit": "腋下",
-    "armpits": "腋下",
-    "back": "背后",
-    "balance": "平衡",
-    "balancing": "保持平衡",
-    "battle": "战斗",
-    "bending": "弯腰",
-    "bent": "弯曲",
-    "bowing": "鞠躬",
-    "carry": "携带",
-    "carrying": "携带",
-    "cheek": "脸颊",
-    "chest": "胸前",
-    "chin": "下巴",
-    "clenched": "握紧",
-    "closed": "闭合",
-    "clothes": "衣物",
-    "crawling": "爬行",
-    "crossed": "交叉",
-    "crouching": "蹲姿",
-    "cuddle": "拥抱",
-    "cuddling": "拥抱",
-    "dress": "裙装",
-    "ear": "耳朵",
-    "eye": "眼睛",
-    "eyes": "双眼",
-    "face": "脸部",
-    "feeding": "喂食",
-    "feet": "脚",
-    "fidgeting": "摆弄",
-    "fighting": "战斗",
-    "finger": "手指",
-    "fingers": "手指",
-    "fist": "拳头",
-    "fists": "拳头",
-    "hair": "头发",
-    "hand": "手",
-    "hands": "双手",
-    "head": "头部",
-    "holding": "持物",
-    "hug": "拥抱",
-    "hugging": "拥抱",
-    "kneeling": "跪姿",
-    "knees": "膝盖",
-    "leaning": "倚靠",
-    "legs": "双腿",
-    "lying": "躺姿",
-    "mouth": "嘴",
-    "one": "单手/单侧",
-    "open": "张开",
-    "outstretched": "伸出",
-    "peace": "胜利手势",
-    "pointing": "指向",
-    "pose": "姿势",
-    "prone": "趴姿",
-    "raised": "举起",
-    "reaching": "伸手",
-    "salute": "敬礼",
-    "sitting": "坐姿",
-    "spread": "张开",
-    "squatting": "蹲姿",
-    "standing": "站姿",
-    "support": "支撑",
-    "touching": "触碰",
-    "up": "向上",
-    "waving": "挥手",
-};
-
 app.registerExtension({
     name: "AnimaPoseTagSelector.extension",
 
@@ -155,10 +82,6 @@ function splitPromptTokens(value) {
         .filter(Boolean);
 }
 
-function normalizePromptToken(value) {
-    return String(value || "").replace(/^_raw_:/, "").trim().toLowerCase();
-}
-
 function getItemKey(item) {
     return item?.isCustom ? `custom:${item.name}` : String(item?.id || item?.name || "");
 }
@@ -175,18 +98,6 @@ function getCategoryLabel(category, displayLang) {
         return category.match(/\(([^)]+)\)/)?.[1] || category;
     }
     return category;
-}
-
-function getTraitZh(trait, data) {
-    const key = String(trait || "").toLowerCase().trim();
-    if (TRAITS_TRANSLATION[key]) return TRAITS_TRANSLATION[key];
-    for (const item of data || []) {
-        const enList = splitPromptTokens(item.tags).map(normalizePromptToken);
-        const zhList = splitPromptTokens(item.tags_zh);
-        const idx = enList.indexOf(key);
-        if (idx !== -1 && zhList[idx]) return zhList[idx];
-    }
-    return trait;
 }
 
 function escapeHtml(value) {
@@ -228,9 +139,6 @@ function copyText(text, callback) {
 
 async function openPoseSelectorModal(node, tagsWidget) {
     const poseData = Array.isArray(window.poseData) ? window.poseData : [];
-    const dataById = new Map(poseData.map(item => [String(item.id), item]));
-    // Keep selection one-way: existing node text should not auto-check cards in the modal.
-    const selectedPose = new Set();
 
     let favoritesConfig = {
         pose: {
@@ -291,7 +199,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
     let displayLang = localStorage.getItem(DISPLAY_LANG_STORAGE_KEY) || "bilingual";
     let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     let currentPage = parseInt(localStorage.getItem(PAGE_STORAGE_KEY), 10) || 1;
-    let showSelectedOnly = false;
     let filteredData = [];
     let totalPages = 1;
     let lastScrollTop = parseInt(localStorage.getItem(SCROLL_STORAGE_KEY), 10) || 0;
@@ -300,27 +207,16 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
     const activeFilters = {
         categories: new Set(),
-        traits: new Set(),
         collection: "all",
     };
 
     try {
         const saved = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || "{}");
         if (Array.isArray(saved.categories)) saved.categories.forEach(v => activeFilters.categories.add(v));
-        if (Array.isArray(saved.traits)) saved.traits.forEach(v => activeFilters.traits.add(v));
         if (saved.collection) activeFilters.collection = saved.collection;
     } catch (e) {
         console.warn("[Anima Tools] Failed to restore pose filters", e);
     }
-
-    const allTraits = Array.from(poseData.reduce((map, item) => {
-        (Array.isArray(item.traits) ? item.traits : []).forEach(trait => {
-            map.set(trait, (map.get(trait) || 0) + 1);
-        });
-        return map;
-    }, new Map()).entries())
-        .map(([name, count]) => ({ name, count }))
-        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
     async function saveFavorites() {
         const nextItems = favoriteItems.filter(item => item.isCustom);
@@ -352,7 +248,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
     function persistFilters() {
         localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify({
             categories: Array.from(activeFilters.categories),
-            traits: Array.from(activeFilters.traits),
             collection: activeFilters.collection,
         }));
     }
@@ -639,7 +534,8 @@ async function openPoseSelectorModal(node, tagsWidget) {
         .anima-pose-check-row {
             display: flex;
             gap: 9px;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
             color: #cbd5e1;
             font-size: 12.5px;
             font-weight: 600;
@@ -650,7 +546,10 @@ async function openPoseSelectorModal(node, tagsWidget) {
             transition: background 0.15s ease;
         }
         .anima-pose-check-row:hover { background: rgba(255,255,255,0.045); }
-        .anima-pose-check-row input { margin-top: 2px; accent-color: #db2777; }
+        .anima-pose-check-row.active {
+            color: #fff;
+            background: rgba(219,39,119,0.14);
+        }
         .anima-pose-card {
             position: relative;
             width: 100%;
@@ -670,10 +569,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
         .anima-pose-card:hover {
             border-color: rgba(219,39,119,0.82);
             box-shadow: 0 12px 30px rgba(0,0,0,0.38), 0 0 18px rgba(219,39,119,0.14);
-        }
-        .anima-pose-card.selected {
-            border-color: #db2777;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.36), 0 0 24px rgba(219,39,119,0.24);
         }
         .anima-pose-card-clip {
             position: absolute;
@@ -909,26 +804,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
             background: rgba(10,10,15,0.72);
             color: #f9a8d4;
         }
-        .anima-pose-selected-mark {
-            position: absolute;
-            top: 9px;
-            left: 9px;
-            z-index: 7;
-            width: 24px;
-            height: 24px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(10,10,15,0.52);
-            border: 1px solid rgba(255,255,255,0.28);
-            color: #fff;
-            transition: all 0.15s ease;
-        }
-        .anima-pose-card.selected .anima-pose-selected-mark {
-            background: #db2777;
-            border-color: #db2777;
-        }
         .anima-pose-popover {
             position: fixed;
             z-index: 1000000;
@@ -1077,42 +952,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     viewToggle.appendChild(cardsViewBtn);
     viewToggle.appendChild(tagsViewBtn);
 
-    const actionControls = createEl("div");
-    actionControls.style.cssText = "display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end;";
-
-    const copySelectedBtn = createEl("button", "anima-pose-btn");
-    copySelectedBtn.innerHTML = `${copyIcon()} ${t("Copy Selected")}`;
-    copySelectedBtn.onclick = () => {
-        const text = buildSelectedText();
-        if (!text) {
-            alert(t("Please select at least one pose first."));
-            return;
-        }
-        copyText(text, () => showToast(t("Copied Successfully")));
-    };
-
-    const showSelectedOnlyBtn = createEl("button", "anima-pose-btn", t("Show Selected"));
-    showSelectedOnlyBtn.onclick = () => {
-        showSelectedOnly = !showSelectedOnly;
-        showSelectedOnlyBtn.classList.toggle("active", showSelectedOnly);
-        currentPage = 1;
-        triggerFilter();
-    };
-
-    const clearSelectedBtn = createEl("button", "anima-pose-btn danger");
-    clearSelectedBtn.innerHTML = `${trashIcon()} ${t("Clear Selected")}`;
-    clearSelectedBtn.onclick = () => {
-        if (selectedPose.size === 0) return;
-        selectedPose.clear();
-        updateCountLabel();
-        renderCurrentPage();
-    };
-
-    actionControls.appendChild(copySelectedBtn);
-    actionControls.appendChild(showSelectedOnlyBtn);
-    actionControls.appendChild(clearSelectedBtn);
     toolbar.appendChild(filterControls);
-    toolbar.appendChild(actionControls);
     container.appendChild(toolbar);
 
     const main = createEl("div");
@@ -1235,9 +1075,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
         justify-content: space-between;
         gap: 14px;
     `;
-
-    const countLabel = createEl("button", "anima-pose-btn active");
-    countLabel.onclick = () => showSelectedOnlyBtn.click();
 
     const footerBtns = createSelectorTagManagerFooter(10);
 
@@ -1370,37 +1207,17 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
         sidebar.appendChild(sectionTitle(t("Categories")));
         CATEGORY_LIST.forEach(category => {
-            const row = createEl("label", "anima-pose-check-row");
+            const isActive = activeFilters.categories.has(category);
+            const row = createEl("div", `anima-pose-check-row${isActive ? " active" : ""}`);
             row.innerHTML = `
-                <input type="checkbox" ${activeFilters.categories.has(category) ? "checked" : ""}>
                 <span>${escapeHtml(getCategoryLabel(category, displayLang))}</span>
             `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.categories.add(category);
-                else activeFilters.categories.delete(category);
+            row.onclick = () => {
+                activeFilters.categories.clear();
+                activeFilters.categories.add(category);
                 currentPage = 1;
                 persistFilters();
-                updateClearFiltersButtonState();
-                triggerFilter();
-            };
-            sidebar.appendChild(row);
-        });
-
-        sidebar.appendChild(sectionTitle(t("Traits")));
-        allTraits.forEach(trait => {
-            const zh = getTraitZh(trait.name, poseData);
-            const label = displayLang === "bilingual" && zh ? `${trait.name} (${zh})` : trait.name;
-            const row = createEl("label", "anima-pose-check-row");
-            row.innerHTML = `
-                <input type="checkbox" ${activeFilters.traits.has(trait.name) ? "checked" : ""}>
-                <span style="min-width:0;">${escapeHtml(label)} <span style="color:#71717a;">${trait.count}</span></span>
-            `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.traits.add(trait.name);
-                else activeFilters.traits.delete(trait.name);
-                currentPage = 1;
-                persistFilters();
-                updateClearFiltersButtonState();
+                renderSidebar();
                 triggerFilter();
             };
             sidebar.appendChild(row);
@@ -1508,8 +1325,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
     function hasActiveSidebarFilters() {
         return activeFilters.collection !== "all" ||
-            activeFilters.categories.size > 0 ||
-            activeFilters.traits.size > 0;
+            activeFilters.categories.size > 0;
     }
 
     function updateClearFiltersButtonState() {
@@ -1523,7 +1339,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
         if (!hasActiveSidebarFilters()) return;
         activeFilters.collection = "all";
         activeFilters.categories.clear();
-        activeFilters.traits.clear();
         currentPage = 1;
         listContainer.scrollTop = 0;
         persistFilters();
@@ -1565,60 +1380,50 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
         let items = [];
         let customItems = [];
-        if (showSelectedOnly) {
-            customItems = favoriteItems.filter(item => item.isCustom && selectedPose.has(getItemKey(item)));
-            items = poseData.filter(item => selectedPose.has(getItemKey(item)));
-        } else {
-            const groupIds = new Set();
-            if (activeFilters.collection !== "all") {
-                favoriteItems.forEach(item => {
-                    if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
-                        groupIds.add(String(item.id || item.name || ""));
-                    }
-                });
-            }
-
-            items = poseData.filter(item => {
-                if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
-
-                if (queryList.length > 0) {
-                    const haystack = [
-                        item.id,
-                        item.name,
-                        item.name_zh,
-                        item.tags,
-                        item.tags_zh,
-                        ...(Array.isArray(item.categories) ? item.categories : []),
-                        ...(Array.isArray(item.traits) ? item.traits : []),
-                    ].join(" ").toLowerCase();
-                    if (!queryList.some(q => haystack.includes(q))) return false;
+        const groupIds = new Set();
+        if (activeFilters.collection !== "all") {
+            favoriteItems.forEach(item => {
+                if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
+                    groupIds.add(String(item.id || item.name || ""));
                 }
-
-                if (activeFilters.categories.size > 0) {
-                    const categories = Array.isArray(item.categories) ? item.categories : [];
-                    if (!categories.some(category => activeFilters.categories.has(category))) return false;
-                }
-
-                if (activeFilters.traits.size > 0) {
-                    const traits = Array.isArray(item.traits) ? item.traits : [];
-                    if (!Array.from(activeFilters.traits).every(trait => traits.includes(trait))) return false;
-                }
-
-                return true;
             });
+        }
 
-            if (activeFilters.collection !== "all") {
-                customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
-            } else {
-                customItems = favoriteItems.filter(item => item.isCustom);
-            }
+        items = poseData.filter(item => {
+            if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
 
             if (queryList.length > 0) {
-                customItems = customItems.filter(item => {
-                    const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
-                    return queryList.some(q => haystack.includes(q));
-                });
+                const haystack = [
+                    item.id,
+                    item.name,
+                    item.name_zh,
+                    item.tags,
+                    item.tags_zh,
+                    ...(Array.isArray(item.categories) ? item.categories : []),
+                    ...(Array.isArray(item.traits) ? item.traits : []),
+                ].join(" ").toLowerCase();
+                if (!queryList.some(q => haystack.includes(q))) return false;
             }
+
+            if (activeFilters.categories.size > 0) {
+                const categories = Array.isArray(item.categories) ? item.categories : [];
+                if (!categories.some(category => activeFilters.categories.has(category))) return false;
+            }
+
+            return true;
+        });
+
+        if (activeFilters.collection !== "all") {
+            customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
+        } else {
+            customItems = favoriteItems.filter(item => item.isCustom);
+        }
+
+        if (queryList.length > 0) {
+            customItems = customItems.filter(item => {
+                const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
+                return queryList.some(q => haystack.includes(q));
+            });
         }
 
         if (activeSort === "id-desc") {
@@ -1679,14 +1484,13 @@ async function openPoseSelectorModal(node, tagsWidget) {
             listContainer.style.display = "none";
             pagination.style.display = "none";
             selectorTagView.setVisible(true);
-            updateCountLabel();
             return;
         }
         selectorTagView.setVisible(false);
         listContainer.style.display = "grid";
         pagination.style.display = "";
         listContainer.innerHTML = "";
-        const isCustomGroup = !showSelectedOnly && activeFilters.collection !== "all" && activeFilters.collection !== "default";
+        const isCustomGroup = activeFilters.collection !== "all" && activeFilters.collection !== "default";
 
         if (filteredData.length === 0 && !isCustomGroup) {
             const empty = createEl("div");
@@ -1697,7 +1501,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
                 <div style="font-size:13px;margin-top:8px;">${escapeHtml(t("Try another search or clear filters."))}</div>
             `;
             listContainer.appendChild(empty);
-            updateCountLabel();
             return;
         }
 
@@ -1714,7 +1517,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
             setTimeout(() => listContainer.scrollTop = lastScrollTop, 50);
             lastScrollTop = 0;
         }
-        updateCountLabel();
     }
 
     function createCustomPlaceholderCard() {
@@ -1750,12 +1552,11 @@ async function openPoseSelectorModal(node, tagsWidget) {
 
     function createCard(item) {
         const key = getItemKey(item);
-        const isSelected = selectedPose.has(key);
         const isFavorite = !item.isCustom && favoriteSet.has(String(item.id));
         const favInfo = item.isCustom ? item : favoriteMap.get(String(item.id));
         const nickname = favInfo?.nickname || "";
 
-        const card = createEl("article", `anima-pose-card${isSelected ? " selected" : ""}`);
+        const card = createEl("article", "anima-pose-card");
         card.dataset.key = key;
 
         const clip = createEl("div", "anima-pose-card-clip");
@@ -1804,17 +1605,12 @@ async function openPoseSelectorModal(node, tagsWidget) {
             imageObserver.observe(img);
         }
 
-        const selectedMark = createEl("div", "anima-pose-selected-mark");
-        selectedMark.innerHTML = isSelected ? checkIcon() : "";
-        card.appendChild(selectedMark);
-
         if (item.isCustom) {
             const deleteBtn = iconButton(9, trashIcon(14), t("Delete Custom Item"));
             deleteBtn.onclick = async (event) => {
                 event.stopPropagation();
                 if (!confirm(t("Are you sure you want to delete this custom item?"))) return;
                 favoriteItems = favoriteItems.filter(existing => existing.name !== item.name);
-                selectedPose.delete(key);
                 await saveFavorites();
                 renderSidebar();
                 triggerFilter();
@@ -1934,19 +1730,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
             applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
             node.triggerSlot?.(0);
             if (tagText) showToast(t("Applied: {text}", { text: displayName }));
-            if (selectedPose.has(key)) selectedPose.delete(key);
-            else selectedPose.add(key);
-            updateCardSelection(card, selectedPose.has(key));
-            updateCountLabel();
         };
 
         return card;
-    }
-
-    function updateCardSelection(card, selected) {
-        card.classList.toggle("selected", selected);
-        const mark = card.querySelector(".anima-pose-selected-mark");
-        if (mark) mark.innerHTML = selected ? checkIcon() : "";
     }
 
     function badge(text) {
@@ -2142,24 +1928,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
         return row;
     }
 
-    function buildSelectedText() {
-        const tags = [];
-        selectedPose.forEach(key => {
-            if (key.startsWith("custom:")) {
-                const item = favoriteItems.find(fav => fav.isCustom && getItemKey(fav) === key);
-                splitPromptTokens(item?.customContent || "").forEach(tag => tags.push(tag));
-                return;
-            }
-            const item = dataById.get(key);
-            splitPromptTokens(item?.tags || "").forEach(tag => tags.push(tag));
-        });
-        return tags.length ? `${tags.join(", ")}, ` : "";
-    }
-
-    function updateCountLabel() {
-        countLabel.innerHTML = `${checkIcon()} <span>${t("Selected: {count} poses", { count: selectedPose.size })}</span>`;
-    }
-
     function closeModal() {
         imageObserver.disconnect();
         document.getElementById("anima-pose-group-popover")?.remove();
@@ -2224,14 +1992,9 @@ async function openPoseSelectorModal(node, tagsWidget) {
         return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
     }
 
-    function copyIcon(size = 14) {
-        return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-    }
-
     renderSidebar();
     updateViewToggle();
     triggerFilter();
-    updateCountLabel();
     searchInput.focus();
 }
 

@@ -31,59 +31,6 @@ const CATEGORY_LIST = [
     "极简与纯色 (Minimalist & Abstract)",
 ];
 
-const TRAITS_TRANSLATION = {
-    "abstract": "抽象",
-    "artistic": "艺术感",
-    "city": "城市",
-    "classroom": "教室",
-    "cool colors": "冷色调",
-    "cozy": "舒适",
-    "cyber": "赛博",
-    "dark": "昏暗",
-    "day": "白天",
-    "fantasy": "幻想",
-    "fire": "火焰",
-    "flower": "花朵",
-    "fog": "雾",
-    "foggy": "雾气",
-    "forest": "森林",
-    "glow": "发光",
-    "greenery": "绿植",
-    "home": "居家",
-    "horror": "恐怖",
-    "indoor": "室内",
-    "japanese": "日式",
-    "light rays": "光束",
-    "magic": "魔法",
-    "minimalism": "极简主义",
-    "minimalist": "极简",
-    "monster": "怪物",
-    "moonlight": "月光",
-    "nature": "自然",
-    "neon": "霓虹",
-    "night": "夜晚",
-    "outdoor": "室外",
-    "rainy": "雨天",
-    "ruins": "废墟",
-    "scifi": "科幻",
-    "sea": "海",
-    "shadow": "阴影",
-    "sky": "天空",
-    "snowy": "雪景",
-    "space": "太空",
-    "sparkles": "闪光",
-    "stars": "星空",
-    "stormy": "暴风雨",
-    "street": "街道",
-    "sunlight": "阳光",
-    "sunrise": "日出",
-    "sunset": "日落",
-    "surreal": "超现实",
-    "water": "水",
-    "white": "白色",
-    "winter": "冬季",
-};
-
 app.registerExtension({
     name: "AnimaBackgroundTagSelector.extension",
 
@@ -131,10 +78,6 @@ function splitPromptTokens(value) {
         .filter(Boolean);
 }
 
-function normalizePromptToken(value) {
-    return String(value || "").replace(/^_raw_:/, "").trim().toLowerCase();
-}
-
 function getItemKey(item) {
     return item?.isCustom ? `custom:${item.name}` : String(item?.id || item?.name || "");
 }
@@ -151,18 +94,6 @@ function getCategoryLabel(category, displayLang) {
         return category.match(/\(([^)]+)\)/)?.[1] || category;
     }
     return category;
-}
-
-function getTraitZh(trait, data) {
-    const key = String(trait || "").toLowerCase().trim();
-    if (TRAITS_TRANSLATION[key]) return TRAITS_TRANSLATION[key];
-    for (const item of data || []) {
-        const enList = splitPromptTokens(item.tags).map(normalizePromptToken);
-        const zhList = splitPromptTokens(item.tags_zh);
-        const idx = enList.indexOf(key);
-        if (idx !== -1 && zhList[idx]) return zhList[idx];
-    }
-    return trait;
 }
 
 function escapeHtml(value) {
@@ -204,9 +135,6 @@ function copyText(text, callback) {
 
 async function openBackgroundSelectorModal(node, tagsWidget) {
     const backgroundData = Array.isArray(window.backgroundData) ? window.backgroundData : [];
-    const dataById = new Map(backgroundData.map(item => [String(item.id), item]));
-    // Keep selection one-way: existing node text should not auto-check cards in the modal.
-    const selectedBackground = new Set();
 
     let favoritesConfig = {
         background: {
@@ -267,7 +195,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     let displayLang = localStorage.getItem(DISPLAY_LANG_STORAGE_KEY) || "bilingual";
     let activeView = localStorage.getItem(VIEW_STORAGE_KEY) === "tags" ? "tags" : "cards";
     let currentPage = parseInt(localStorage.getItem(PAGE_STORAGE_KEY), 10) || 1;
-    let showSelectedOnly = false;
     let filteredData = [];
     let totalPages = 1;
     let lastScrollTop = parseInt(localStorage.getItem(SCROLL_STORAGE_KEY), 10) || 0;
@@ -276,27 +203,16 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
 
     const activeFilters = {
         categories: new Set(),
-        traits: new Set(),
         collection: "all",
     };
 
     try {
         const saved = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || "{}");
         if (Array.isArray(saved.categories)) saved.categories.forEach(v => activeFilters.categories.add(v));
-        if (Array.isArray(saved.traits)) saved.traits.forEach(v => activeFilters.traits.add(v));
         if (saved.collection) activeFilters.collection = saved.collection;
     } catch (e) {
         console.warn("[Anima Tools] Failed to restore background filters", e);
     }
-
-    const allTraits = Array.from(backgroundData.reduce((map, item) => {
-        (Array.isArray(item.traits) ? item.traits : []).forEach(trait => {
-            map.set(trait, (map.get(trait) || 0) + 1);
-        });
-        return map;
-    }, new Map()).entries())
-        .map(([name, count]) => ({ name, count }))
-        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
     async function saveFavorites() {
         const nextItems = favoriteItems.filter(item => item.isCustom);
@@ -328,7 +244,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     function persistFilters() {
         localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify({
             categories: Array.from(activeFilters.categories),
-            traits: Array.from(activeFilters.traits),
             collection: activeFilters.collection,
         }));
     }
@@ -615,7 +530,8 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         .anima-background-check-row {
             display: flex;
             gap: 9px;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
             color: #cbd5e1;
             font-size: 12.5px;
             font-weight: 600;
@@ -626,7 +542,10 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             transition: background 0.15s ease;
         }
         .anima-background-check-row:hover { background: rgba(255,255,255,0.045); }
-        .anima-background-check-row input { margin-top: 2px; accent-color: #db2777; }
+        .anima-background-check-row.active {
+            color: #fff;
+            background: rgba(219,39,119,0.14);
+        }
         .anima-background-card {
             position: relative;
             width: 100%;
@@ -646,10 +565,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         .anima-background-card:hover {
             border-color: rgba(219,39,119,0.82);
             box-shadow: 0 12px 30px rgba(0,0,0,0.38), 0 0 18px rgba(219,39,119,0.14);
-        }
-        .anima-background-card.selected {
-            border-color: #db2777;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.36), 0 0 24px rgba(219,39,119,0.24);
         }
         .anima-background-card-clip {
             position: absolute;
@@ -885,26 +800,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             background: rgba(10,10,15,0.72);
             color: #f9a8d4;
         }
-        .anima-background-selected-mark {
-            position: absolute;
-            top: 9px;
-            left: 9px;
-            z-index: 7;
-            width: 24px;
-            height: 24px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(10,10,15,0.52);
-            border: 1px solid rgba(255,255,255,0.28);
-            color: #fff;
-            transition: all 0.15s ease;
-        }
-        .anima-background-card.selected .anima-background-selected-mark {
-            background: #db2777;
-            border-color: #db2777;
-        }
         .anima-background-popover {
             position: fixed;
             z-index: 1000000;
@@ -1053,42 +948,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     viewToggle.appendChild(cardsViewBtn);
     viewToggle.appendChild(tagsViewBtn);
 
-    const actionControls = createEl("div");
-    actionControls.style.cssText = "display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end;";
-
-    const copySelectedBtn = createEl("button", "anima-background-btn");
-    copySelectedBtn.innerHTML = `${copyIcon()} ${t("Copy Selected")}`;
-    copySelectedBtn.onclick = () => {
-        const text = buildSelectedText();
-        if (!text) {
-            alert(t("Please select at least one background scene first."));
-            return;
-        }
-        copyText(text, () => showToast(t("Copied Successfully")));
-    };
-
-    const showSelectedOnlyBtn = createEl("button", "anima-background-btn", t("Show Selected"));
-    showSelectedOnlyBtn.onclick = () => {
-        showSelectedOnly = !showSelectedOnly;
-        showSelectedOnlyBtn.classList.toggle("active", showSelectedOnly);
-        currentPage = 1;
-        triggerFilter();
-    };
-
-    const clearSelectedBtn = createEl("button", "anima-background-btn danger");
-    clearSelectedBtn.innerHTML = `${trashIcon()} ${t("Clear Selected")}`;
-    clearSelectedBtn.onclick = () => {
-        if (selectedBackground.size === 0) return;
-        selectedBackground.clear();
-        updateCountLabel();
-        renderCurrentPage();
-    };
-
-    actionControls.appendChild(copySelectedBtn);
-    actionControls.appendChild(showSelectedOnlyBtn);
-    actionControls.appendChild(clearSelectedBtn);
     toolbar.appendChild(filterControls);
-    toolbar.appendChild(actionControls);
     container.appendChild(toolbar);
 
     const main = createEl("div");
@@ -1211,9 +1071,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         justify-content: space-between;
         gap: 14px;
     `;
-
-    const countLabel = createEl("button", "anima-background-btn active");
-    countLabel.onclick = () => showSelectedOnlyBtn.click();
 
     const footerBtns = createSelectorTagManagerFooter(10);
 
@@ -1346,37 +1203,17 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
 
         sidebar.appendChild(sectionTitle(t("Categories")));
         CATEGORY_LIST.forEach(category => {
-            const row = createEl("label", "anima-background-check-row");
+            const isActive = activeFilters.categories.has(category);
+            const row = createEl("div", `anima-background-check-row${isActive ? " active" : ""}`);
             row.innerHTML = `
-                <input type="checkbox" ${activeFilters.categories.has(category) ? "checked" : ""}>
                 <span>${escapeHtml(getCategoryLabel(category, displayLang))}</span>
             `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.categories.add(category);
-                else activeFilters.categories.delete(category);
+            row.onclick = () => {
+                activeFilters.categories.clear();
+                activeFilters.categories.add(category);
                 currentPage = 1;
                 persistFilters();
-                updateClearFiltersButtonState();
-                triggerFilter();
-            };
-            sidebar.appendChild(row);
-        });
-
-        sidebar.appendChild(sectionTitle(t("Traits")));
-        allTraits.forEach(trait => {
-            const zh = getTraitZh(trait.name, backgroundData);
-            const label = displayLang === "bilingual" && zh ? `${trait.name} (${zh})` : trait.name;
-            const row = createEl("label", "anima-background-check-row");
-            row.innerHTML = `
-                <input type="checkbox" ${activeFilters.traits.has(trait.name) ? "checked" : ""}>
-                <span style="min-width:0;">${escapeHtml(label)} <span style="color:#71717a;">${trait.count}</span></span>
-            `;
-            row.querySelector("input").onchange = (event) => {
-                if (event.target.checked) activeFilters.traits.add(trait.name);
-                else activeFilters.traits.delete(trait.name);
-                currentPage = 1;
-                persistFilters();
-                updateClearFiltersButtonState();
+                renderSidebar();
                 triggerFilter();
             };
             sidebar.appendChild(row);
@@ -1484,8 +1321,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
 
     function hasActiveSidebarFilters() {
         return activeFilters.collection !== "all" ||
-            activeFilters.categories.size > 0 ||
-            activeFilters.traits.size > 0;
+            activeFilters.categories.size > 0;
     }
 
     function updateClearFiltersButtonState() {
@@ -1499,7 +1335,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         if (!hasActiveSidebarFilters()) return;
         activeFilters.collection = "all";
         activeFilters.categories.clear();
-        activeFilters.traits.clear();
         currentPage = 1;
         listContainer.scrollTop = 0;
         persistFilters();
@@ -1533,60 +1368,50 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
 
         let items = [];
         let customItems = [];
-        if (showSelectedOnly) {
-            customItems = favoriteItems.filter(item => item.isCustom && selectedBackground.has(getItemKey(item)));
-            items = backgroundData.filter(item => selectedBackground.has(getItemKey(item)));
-        } else {
-            const groupIds = new Set();
-            if (activeFilters.collection !== "all") {
-                favoriteItems.forEach(item => {
-                    if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
-                        groupIds.add(String(item.id || item.name || ""));
-                    }
-                });
-            }
-
-            items = backgroundData.filter(item => {
-                if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
-
-                if (queryList.length > 0) {
-                    const haystack = [
-                        item.id,
-                        item.name,
-                        item.name_zh,
-                        item.tags,
-                        item.tags_zh,
-                        ...(Array.isArray(item.categories) ? item.categories : []),
-                        ...(Array.isArray(item.traits) ? item.traits : []),
-                    ].join(" ").toLowerCase();
-                    if (!queryList.some(q => haystack.includes(q))) return false;
+        const groupIds = new Set();
+        if (activeFilters.collection !== "all") {
+            favoriteItems.forEach(item => {
+                if (item.groupIds?.includes(activeFilters.collection) && !item.isCustom) {
+                    groupIds.add(String(item.id || item.name || ""));
                 }
-
-                if (activeFilters.categories.size > 0) {
-                    const categories = Array.isArray(item.categories) ? item.categories : [];
-                    if (!categories.some(category => activeFilters.categories.has(category))) return false;
-                }
-
-                if (activeFilters.traits.size > 0) {
-                    const traits = Array.isArray(item.traits) ? item.traits : [];
-                    if (!Array.from(activeFilters.traits).every(trait => traits.includes(trait))) return false;
-                }
-
-                return true;
             });
+        }
 
-            if (activeFilters.collection !== "all") {
-                customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
-            } else {
-                customItems = favoriteItems.filter(item => item.isCustom);
-            }
+        items = backgroundData.filter(item => {
+            if (activeFilters.collection !== "all" && !groupIds.has(String(item.id))) return false;
 
             if (queryList.length > 0) {
-                customItems = customItems.filter(item => {
-                    const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
-                    return queryList.some(q => haystack.includes(q));
-                });
+                const haystack = [
+                    item.id,
+                    item.name,
+                    item.name_zh,
+                    item.tags,
+                    item.tags_zh,
+                    ...(Array.isArray(item.categories) ? item.categories : []),
+                    ...(Array.isArray(item.traits) ? item.traits : []),
+                ].join(" ").toLowerCase();
+                if (!queryList.some(q => haystack.includes(q))) return false;
             }
+
+            if (activeFilters.categories.size > 0) {
+                const categories = Array.isArray(item.categories) ? item.categories : [];
+                if (!categories.some(category => activeFilters.categories.has(category))) return false;
+            }
+
+            return true;
+        });
+
+        if (activeFilters.collection !== "all") {
+            customItems = favoriteItems.filter(item => item.isCustom && item.groupIds?.includes(activeFilters.collection));
+        } else {
+            customItems = favoriteItems.filter(item => item.isCustom);
+        }
+
+        if (queryList.length > 0) {
+            customItems = customItems.filter(item => {
+                const haystack = [item.nickname, item.name, item.customContent].join(" ").toLowerCase();
+                return queryList.some(q => haystack.includes(q));
+            });
         }
 
         if (activeSort === "id-desc") {
@@ -1647,14 +1472,13 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             listContainer.style.display = "none";
             pagination.style.display = "none";
             selectorTagView.setVisible(true);
-            updateCountLabel();
             return;
         }
         selectorTagView.setVisible(false);
         listContainer.style.display = "grid";
         pagination.style.display = "";
         listContainer.innerHTML = "";
-        const isCustomGroup = !showSelectedOnly && activeFilters.collection !== "all" && activeFilters.collection !== "default";
+        const isCustomGroup = activeFilters.collection !== "all" && activeFilters.collection !== "default";
 
         if (filteredData.length === 0 && !isCustomGroup) {
             const empty = createEl("div");
@@ -1665,7 +1489,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
                 <div style="font-size:13px;margin-top:8px;">${escapeHtml(t("Try another search or clear filters."))}</div>
             `;
             listContainer.appendChild(empty);
-            updateCountLabel();
             return;
         }
 
@@ -1682,7 +1505,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             setTimeout(() => listContainer.scrollTop = lastScrollTop, 50);
             lastScrollTop = 0;
         }
-        updateCountLabel();
     }
 
     function createCustomPlaceholderCard() {
@@ -1718,12 +1540,11 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
 
     function createCard(item) {
         const key = getItemKey(item);
-        const isSelected = selectedBackground.has(key);
         const isFavorite = !item.isCustom && favoriteSet.has(String(item.id));
         const favInfo = item.isCustom ? item : favoriteMap.get(String(item.id));
         const nickname = favInfo?.nickname || "";
 
-        const card = createEl("article", `anima-background-card${isSelected ? " selected" : ""}`);
+        const card = createEl("article", "anima-background-card");
         card.dataset.key = key;
 
         const clip = createEl("div", "anima-background-card-clip");
@@ -1772,17 +1593,12 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             imageObserver.observe(img);
         }
 
-        const selectedMark = createEl("div", "anima-background-selected-mark");
-        selectedMark.innerHTML = isSelected ? checkIcon() : "";
-        card.appendChild(selectedMark);
-
         if (item.isCustom) {
             const deleteBtn = iconButton(9, trashIcon(14), t("Delete Custom Item"));
             deleteBtn.onclick = async (event) => {
                 event.stopPropagation();
                 if (!confirm(t("Are you sure you want to delete this custom item?"))) return;
                 favoriteItems = favoriteItems.filter(existing => existing.name !== item.name);
-                selectedBackground.delete(key);
                 await saveFavorites();
                 renderSidebar();
                 triggerFilter();
@@ -1902,19 +1718,9 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
             node.triggerSlot?.(0);
             if (tagText) showToast(t("Applied: {text}", { text: displayName }));
-            if (selectedBackground.has(key)) selectedBackground.delete(key);
-            else selectedBackground.add(key);
-            updateCardSelection(card, selectedBackground.has(key));
-            updateCountLabel();
         };
 
         return card;
-    }
-
-    function updateCardSelection(card, selected) {
-        card.classList.toggle("selected", selected);
-        const mark = card.querySelector(".anima-background-selected-mark");
-        if (mark) mark.innerHTML = selected ? checkIcon() : "";
     }
 
     function badge(text) {
@@ -2110,24 +1916,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         return row;
     }
 
-    function buildSelectedText() {
-        const tags = [];
-        selectedBackground.forEach(key => {
-            if (key.startsWith("custom:")) {
-                const item = favoriteItems.find(fav => fav.isCustom && getItemKey(fav) === key);
-                splitPromptTokens(item?.customContent || "").forEach(tag => tags.push(tag));
-                return;
-            }
-            const item = dataById.get(key);
-            splitPromptTokens(item?.tags || "").forEach(tag => tags.push(tag));
-        });
-        return tags.length ? `${tags.join(", ")}, ` : "";
-    }
-
-    function updateCountLabel() {
-        countLabel.innerHTML = `${checkIcon()} <span>${t("Selected: {count} background scenes", { count: selectedBackground.size })}</span>`;
-    }
-
     function closeModal() {
         imageObserver.disconnect();
         document.getElementById("anima-background-group-popover")?.remove();
@@ -2192,13 +1980,8 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
     }
 
-    function copyIcon(size = 14) {
-        return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-    }
-
     renderSidebar();
     updateViewToggle();
     triggerFilter();
-    updateCountLabel();
     searchInput.focus();
 }
