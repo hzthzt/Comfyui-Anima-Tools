@@ -42,7 +42,13 @@ function findButtonByTitle(element, titles) {
   return Array.from(element.querySelectorAll("button")).find(button => acceptedTitles.has(button.title));
 }
 
-test("createSelectorTagManager renders current tags and updates widget when a tag is disabled", async () => {
+function clickLikeBrowser(element) {
+  for (const type of ["pointerdown", "mousedown", "mouseup", "click"]) {
+    element.dispatchEvent(new window.MouseEvent(type, { bubbles: true, cancelable: true }));
+  }
+}
+
+test("createSelectorTagManager supports double-click enable disable without buttons", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=disable");
   const { node, widget } = createNodeAndWidget();
@@ -55,12 +61,52 @@ test("createSelectorTagManager renders current tags and updates widget when a ta
   assert.match(manager.element.textContent, /beta/);
 
   const disableButton = findButtonByTitle(manager.element, ["Disable tag", "Disable Tag"]);
-  assert.ok(disableButton);
-  disableButton.click();
+  const enableButton = findButtonByTitle(manager.element, ["Enable tag", "Enable Tag"]);
+  assert.equal(disableButton, undefined);
+  assert.equal(enableButton, undefined);
+  assert.equal(widget.value, "alpha, beta, ");
+
+  const alphaChip = Array.from(manager.element.querySelectorAll("span"))
+    .find(element => element.textContent?.includes("alpha") && element.querySelector("button"));
+  assert.ok(alphaChip);
+  alphaChip.dispatchEvent(new window.MouseEvent("dblclick", { bubbles: true, cancelable: true }));
 
   assert.equal(widget.value, "beta, ");
-  assert.equal(widget.lastCallbackValue, undefined);
-  assert.ok(node.setDirtyCanvasCalled > 0);
+
+  const disabledAlphaChip = Array.from(manager.element.querySelectorAll("span"))
+    .find(element => element.textContent?.includes("alpha") && element.querySelector("button"));
+  assert.ok(disabledAlphaChip);
+  disabledAlphaChip.dispatchEvent(new window.MouseEvent("dblclick", { bubbles: true, cancelable: true }));
+
+  assert.equal(widget.value, "alpha, beta, ");
+});
+
+test("createSelectorTagManager keeps full width when empty", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=empty-width");
+  const { node, widget } = createNodeAndWidget("");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  assert.match(manager.element.textContent, /No tags yet/);
+  assert.equal(manager.element.style.width, "100%");
+  assert.equal(manager.element.style.flexGrow, "1");
+  assert.equal(manager.element.style.boxSizing, "border-box");
+});
+
+test("createSelectorTagManagerFooter keeps selector manager row at dialog width", async () => {
+  installDom();
+  const { createSelectorTagManagerFooter } = await import("../js/anima_tag_editor.js?case=footer-width");
+
+  const footerRow = createSelectorTagManagerFooter();
+
+  assert.equal(footerRow.style.display, "flex");
+  assert.equal(footerRow.style.width, "100%");
+  assert.equal(footerRow.style.flexGrow, "1");
+  assert.equal(footerRow.style.minWidth, "0");
+  assert.equal(footerRow.style.boxSizing, "border-box");
+  assert.equal(footerRow.style.alignItems, "stretch");
 });
 
 test("createSelectorTagManager moves deleted tags to history and restores them", async () => {
@@ -114,7 +160,7 @@ test("createSelectorTagManager can switch selector apply mode", async () => {
 
   const appendButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Append");
   assert.ok(appendButton);
-  appendButton.click();
+  clickLikeBrowser(appendButton);
 
   assert.equal(getTagFieldState(node, "artist_tags", widget).applyMode, "append");
 
@@ -123,22 +169,34 @@ test("createSelectorTagManager can switch selector apply mode", async () => {
   assert.equal(widget.value, "alpha, beta, ");
 });
 
-test("writeSelectorTagsToWidget preserves disabled selector manager tags on confirm", async () => {
+test("createSelectorTagManager clears selected tags without clearing history", async () => {
   installDom();
-  const { createSelectorTagManager, writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-disabled");
+  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=clear-tags");
   const { node, widget } = createNodeAndWidget("alpha, ");
 
   const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
   document.body.appendChild(manager.element);
 
-  const disableButton = findButtonByTitle(manager.element, ["Disable tag", "Disable Tag"]);
-  assert.ok(disableButton);
-  disableButton.click();
-  assert.equal(widget.value, "");
+  const deleteButton = findButtonByTitle(manager.element, ["Delete tag", "Delete Tag"]);
+  assert.ok(deleteButton);
+  deleteButton.click();
+  assert.match(manager.element.textContent, /History/);
 
-  writeSelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
+  const input = manager.element.querySelector("input");
+  assert.ok(input);
+  input.value = "beta";
+  const addButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Add");
+  assert.ok(addButton);
+  addButton.click();
+  assert.equal(widget.value, "beta, ");
+
+  const clearTagsButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Clear Tags");
+  assert.ok(clearTagsButton);
+  clearTagsButton.click();
 
   assert.equal(widget.value, "");
+  assert.equal(getTagFieldState(node, "artist_tags", widget).history.length, 1);
+  assert.match(manager.element.textContent, /History/);
 });
 
 test("writeSelectorTagsToWidget keeps manual selector manager tags on confirm", async () => {
@@ -178,6 +236,59 @@ test("writeSelectorTagsToWidget restores a history tag when it is selected again
   writeSelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
 
   assert.equal(widget.value, "alpha, ");
+});
+
+test("applySelectorTagsToWidget replaces tags in replace mode", async () => {
+  installDom();
+  const { createSelectorTagManager, applySelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=selector-tag-click");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  applySelectorTagsToWidget(node, widget, "beta, gamma, ", { source: "selector" });
+
+  assert.equal(widget.value, "beta, gamma, ");
+  assert.doesNotMatch(manager.element.textContent, /alpha/);
+  assert.match(manager.element.textContent, /gamma/);
+});
+
+test("applySelectorTagsToWidget appends tags in append mode", async () => {
+  installDom();
+  const { createSelectorTagManager, applySelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=selector-tag-click-append");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const appendButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Append");
+  assert.ok(appendButton);
+  clickLikeBrowser(appendButton);
+
+  applySelectorTagsToWidget(node, widget, "beta, gamma, ", { source: "selector" });
+
+  assert.equal(widget.value, "alpha, beta, gamma, ");
+  assert.match(manager.element.textContent, /gamma/);
+});
+
+test("applySelectorTagsToWidget restores a history tag selected directly", async () => {
+  installDom();
+  const { createSelectorTagManager, applySelectorTagsToWidget, getTagFieldState } = await import("../js/anima_tag_editor.js?case=selector-tag-click-history");
+  const { node, widget } = createNodeAndWidget("alpha, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const deleteButton = findButtonByTitle(manager.element, ["Delete tag", "Delete Tag"]);
+  assert.ok(deleteButton);
+  deleteButton.click();
+  assert.equal(widget.value, "");
+  assert.match(manager.element.textContent, /History/);
+
+  applySelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
+
+  assert.equal(widget.value, "alpha, ");
+  assert.equal(getTagFieldState(node, "artist_tags", widget).history.length, 0);
 });
 
 test("writeSelectorTagsToWidget falls back to plain text for non Tagged nodes", async () => {

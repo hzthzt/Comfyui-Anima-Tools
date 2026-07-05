@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeSelectorTagsToWidget } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./clothing_data.js";
 
 const CLOTHING_SELECTOR_NODES = new Set([
@@ -933,7 +933,7 @@ async function openClothingSelectorModal(node, tagsWidget) {
     `;
 
     overlay.onclick = (event) => {
-        if (event.target === overlay) applySelectionAndClose();
+        if (event.target === overlay) closeModal();
     };
 
     const header = createEl("div");
@@ -1160,24 +1160,13 @@ async function openClothingSelectorModal(node, tagsWidget) {
     const countLabel = createEl("button", "anima-clothing-btn active");
     countLabel.onclick = () => showSelectedOnlyBtn.click();
 
-    const footerBtns = createEl("div");
-    footerBtns.style.cssText = "display: flex; align-items: center; gap: 10px;";
-    const cancelFooterBtn = createEl("button", "anima-clothing-btn", t("Cancel"));
-    cancelFooterBtn.onclick = () => closeModal();
-    const applyBtn = createEl("button", "anima-clothing-btn primary", t("Confirm & Apply"));
-    applyBtn.onclick = () => applySelectionAndClose();
+    const footerBtns = createSelectorTagManagerFooter(10);
 
     if (isTaggedAnimaNode(node)) {
-        footerBtns.insertBefore(
-            createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element,
-            footerBtns.firstChild
-        );
+        footerBtns.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        footer.appendChild(footerBtns);
+        container.appendChild(footer);
     }
-    footerBtns.appendChild(cancelFooterBtn);
-    footerBtns.appendChild(applyBtn);
-    footer.appendChild(countLabel);
-    footer.appendChild(footerBtns);
-    container.appendChild(footer);
 
     overlay.appendChild(container);
     document.body.appendChild(overlay);
@@ -1731,7 +1720,9 @@ async function openClothingSelectorModal(node, tagsWidget) {
             pill.title = displayTag;
             pill.onclick = (event) => {
                 event.stopPropagation();
-                copyText(tag, () => showToast(t("Copied: {text}", { text: tag })));
+                applySelectorTagsToWidget(node, tagsWidget, tag, { source: "selector" });
+                node.triggerSlot?.(0);
+                showToast(t("Applied: {text}", { text: tag }));
             };
             tagsList.appendChild(pill);
         });
@@ -1766,6 +1757,10 @@ async function openClothingSelectorModal(node, tagsWidget) {
         clip.appendChild(info);
 
         card.onclick = () => {
+            const tagText = promptTags.length ? `${promptTags.join(", ")}, ` : "";
+            applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
+            node.triggerSlot?.(0);
+            if (tagText) showToast(t("Applied: {text}", { text: displayName }));
             if (selectedClothing.has(key)) selectedClothing.delete(key);
             else selectedClothing.add(key);
             updateCardSelection(card, selectedClothing.has(key));
@@ -1986,15 +1981,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
             splitPromptTokens(item?.tags || "").forEach(tag => tags.push(tag));
         });
         return tags.length ? `${tags.join(", ")}, ` : "";
-    }
-
-    function applySelectionAndClose() {
-        const resultString = buildSelectedText();
-        if (tagsWidget) {
-            writeSelectorTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
-        }
-        node.triggerSlot?.(0);
-        closeModal();
     }
 
     function updateCountLabel() {

@@ -1,5 +1,6 @@
 const comfyuiAppModuleUrl = `data:text/javascript,${encodeURIComponent(`
 export const app = {
+  registerExtension() {},
   ui: {
     settings: {
       getSettingValue() {
@@ -11,10 +12,7 @@ export const app = {
 `)}`;
 
 export async function resolve(specifier, context, nextResolve) {
-  const parentPath = context.parentURL ? new URL(context.parentURL).pathname : "";
-  const isI18nImport = parentPath.replace(/\\/g, "/").endsWith("/js/i18n.js");
-
-  if (specifier === "../../scripts/app.js" && isI18nImport) {
+  if (specifier === "../../scripts/app.js") {
     return {
       shortCircuit: true,
       url: comfyuiAppModuleUrl,

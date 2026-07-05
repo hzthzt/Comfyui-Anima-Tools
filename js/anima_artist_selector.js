@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeSelectorTagsToWidget } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
     "AnimaArtistTagSelector",
@@ -605,10 +605,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
         animation: animaFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     `;
 
-    // 点击弹窗遮罩层（弹窗外侧）执行“确认应用并关闭”
+    // 点击弹窗遮罩层（弹窗外侧）关闭弹窗
     modalOverlay.onclick = (e) => {
         if (e.target === modalOverlay) {
-            applySelectionAndClose();
+            closeModal();
         }
     };
 
@@ -1325,60 +1325,13 @@ async function openArtistSelectorModal(node, tagsWidget) {
     }
     updateCountLabel();
 
-    const footerButtons = document.createElement("div");
-    footerButtons.style.cssText = "display: flex; gap: 12px;";
-
-    const cancelBtn = document.createElement("button");
-    cancelBtn.className = "anima-btn";
-    cancelBtn.innerText = t("Cancel");
-    cancelBtn.onclick = () => closeModal();
-
-    const applyBtn = document.createElement("button");
-    applyBtn.className = "anima-btn anima-btn-primary";
-    applyBtn.innerText = t("Confirm & Apply");
-    applyBtn.onclick = () => {
-        applySelectionAndClose();
-    };
-
-    // 确认应用并关闭弹窗
-    function applySelectionAndClose() {
-        let resultTags = [];
-        selectedArtists.forEach(selName => {
-            const custItem = favoriteItems.find(fi => fi.isCustom && fi.name === selName);
-            if (custItem) {
-                const subTags = custItem.customContent.split(",");
-                subTags.forEach(st => {
-                    const stClean = st.strip ? st.strip() : st.trim();
-                    if (stClean) {
-                        resultTags.push(`_raw_:${stClean}`);
-                    }
-                });
-            } else {
-                resultTags.push(`@${selName}`);
-            }
-        });
-        
-        let resultString = resultTags.join(", ");
-        if (resultString) {
-            resultString += ", ";
-        }
-        writeSelectorTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
-        
-        node.triggerSlot?(0):null;
-        closeModal();
-    }
+    const footerButtons = createSelectorTagManagerFooter(12);
 
     if (isTaggedAnimaNode(node)) {
-        footerButtons.insertBefore(
-            createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element,
-            footerButtons.firstChild
-        );
+        footerButtons.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        footer.appendChild(footerButtons);
+        modalContainer.appendChild(footer);
     }
-    footerButtons.appendChild(cancelBtn);
-    footerButtons.appendChild(applyBtn);
-    footer.appendChild(countLabel);
-    footer.appendChild(footerButtons);
-    modalContainer.appendChild(footer);
 
     modalOverlay.appendChild(modalContainer);
     document.body.appendChild(modalOverlay);
@@ -2293,6 +2246,10 @@ async function openArtistSelectorModal(node, tagsWidget) {
             // 点击卡片选择
             card.onclick = () => {
                 const name = card.dataset.name;
+                const applyText = item.isCustom ? (item.customContent || "") : `@${name}`;
+                applySelectorTagsToWidget(node, tagsWidget, applyText, { source: "selector" });
+                node.triggerSlot?.(0);
+                showTemporaryToast(t("Applied: {text}", { text: applyText }));
                 if (selectedArtists.has(name)) {
                     selectedArtists.delete(name);
                     card.style.borderColor = "rgba(255, 255, 255, 0.04)";

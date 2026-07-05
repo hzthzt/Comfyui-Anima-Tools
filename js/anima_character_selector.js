@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { createSelectorTagManager, ensureTagEditor, isTaggedAnimaNode, writeSelectorTagsToWidget } from "./anima_tag_editor.js";
+import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import "./character_data.js";
 
 const CHARACTER_SELECTOR_NODES = new Set([
@@ -143,6 +143,14 @@ function getCharacterTags(item) {
     return tags;
 }
 
+export function getCharacterOverlayTags(item) {
+    const tags = [];
+    const seen = new Set();
+    pushUniquePromptTokens(tags, seen, getCharacterTrigger(item));
+    getCharacterTags(item).forEach(tag => pushUniquePromptTokens(tags, seen, tag));
+    return tags;
+}
+
 function getCharacterPromptParts(item, includeTags = false) {
     const parts = [];
     const seen = new Set();
@@ -163,10 +171,6 @@ function formatCharacterDisplayName(item) {
 }
 
 async function openCharacterSelectorModal(node, tagsWidget) {
-    // Selection is intentionally one-way: only clicks inside this selector mark cards as selected.
-    // Existing node text is not reverse-synced into checked cards.
-    const selectedCharacters = new Set();
-
     // 加载后端持久化配置
     let favoritesConfig = {
         character: {
@@ -781,31 +785,6 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         }, 1500);
     }
 
-    function fallbackCopyCharacterText(text, callback) {
-        const textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.position = "fixed";
-        textArea.style.opacity = "0";
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand("copy");
-            callback?.();
-        } catch (err) {
-            console.error("Fallback copy failed", err);
-        }
-        textArea.remove();
-    }
-
-    function copyCharacterText(text, callback) {
-        if (!text) return;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(() => callback?.()).catch(() => fallbackCopyCharacterText(text, callback));
-        } else {
-            fallbackCopyCharacterText(text, callback);
-        }
-    }
-
     function createCharacterTagsOverlay(item) {
         const overlay = document.createElement("div");
         overlay.className = "anima-character-card-tags";
@@ -821,25 +800,27 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         const headerEl = overlay.querySelector(".anima-character-card-tags-header");
         const chipsEl = overlay.querySelector(".anima-character-card-tags-chips");
         const explicitTags = getExplicitCharacterTags(item);
-        const tags = explicitTags.length > 0 || state === "error" ? getCharacterTags(item) : [];
+        const tags = explicitTags.length > 0 || state === "error" ? getCharacterOverlayTags(item) : [];
 
-        const renderHeader = (labelText, copyTags = []) => {
+        const renderHeader = (labelText, applyTags = []) => {
             headerEl.innerHTML = "";
             headerEl.onclick = null;
 
             const label = document.createElement("span");
             label.className = "anima-character-card-tags-label";
-            label.innerText = labelText;
+            label.innerText = applyTags.length > 0 ? t("Apply Character Tags") : labelText;
             headerEl.appendChild(label);
 
-            if (copyTags.length > 0) {
-                const copy = document.createElement("span");
-                copy.className = "anima-character-card-tags-copy";
-                copy.innerText = t("Copy");
-                headerEl.appendChild(copy);
+            if (applyTags.length > 0) {
+                const action = document.createElement("span");
+                action.className = "anima-character-card-tags-copy";
+                action.innerText = `${applyTags.length}`;
+                headerEl.appendChild(action);
                 headerEl.onclick = (event) => {
                     event.stopPropagation();
-                    copyCharacterText(`${copyTags.join(", ")}, `, () => showCharacterTagToast(t("Copied Successfully")));
+                    applySelectorTagsToWidget(node, tagsWidget, `${applyTags.join(", ")}, `, { source: "selector" });
+                    node.triggerSlot?.(0);
+                    showCharacterTagToast(t("Applied: {text}", { text: formatCharacterDisplayName(item) }));
                 };
             }
         };
@@ -867,7 +848,9 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                 chip.title = tagText;
                 chip.onclick = (event) => {
                     event.stopPropagation();
-                    copyCharacterText(tagText, () => showCharacterTagToast(t("Copied: {text}", { text: tagText })));
+                    applySelectorTagsToWidget(node, tagsWidget, tagText, { source: "selector" });
+                    node.triggerSlot?.(0);
+                    showCharacterTagToast(t("Applied: {text}", { text: tagText }));
                 };
                 chipsEl.appendChild(chip);
             });
@@ -920,10 +903,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         animation: animaFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     `;
 
-    // 点击弹窗遮罩层（弹窗外侧）执行“确认应用并关闭”
+    // 点击弹窗遮罩层（弹窗外侧）关闭弹窗
     modalOverlay.onclick = (e) => {
         if (e.target === modalOverlay) {
-            applySelectionAndClose();
+            closeModal();
         }
     };
 
@@ -1561,121 +1544,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
 
     filterControls.appendChild(sortSelect);
 
-    // 右侧：功能按钮
-    const actionControls = document.createElement("div");
-    actionControls.style.cssText = "display: flex; gap: 12px; align-items: center;";
-
-    const copySelectedBtn = document.createElement("button");
-    copySelectedBtn.className = "anima-btn";
-    copySelectedBtn.innerHTML = `
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-        ${t("Copy Selected")}
-    `;
-    copySelectedBtn.onclick = () => {
-        if (selectedCharacters.size === 0) {
-            alert(t("Please select at least one character first."));
-            return;
-        }
-        const textToCopy = Array.from(selectedCharacters).join(", ") + ", ";
-        
-        const performCopy = () => {
-            const toast = document.createElement("div");
-            toast.style.cssText = `
-                position: fixed !important;
-                bottom: 30px !important;
-                right: 30px !important;
-                background: rgba(16, 16, 24, 0.92) !important;
-                border: 1px solid rgba(219, 39, 119, 0.45) !important;
-                color: #ffffff !important;
-                padding: 10px 20px !important;
-                border-radius: 12px !important;
-                font-size: 13px !important;
-                z-index: 100000 !important;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.6) !important;
-                backdrop-filter: blur(10px) !important;
-                -webkit-backdrop-filter: blur(10px) !important;
-                pointer-events: none !important;
-                animation: animaFadeIn 0.2s ease forwards !important;
-            `;
-            toast.innerText = t("Copied Successfully");
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.3s ease";
-                toast.style.opacity = "0";
-                setTimeout(() => toast.remove(), 300);
-            }, 1500);
-        };
-        
-        const fallbackCopyChar = (text, cb) => {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed"; 
-            textArea.style.opacity = "0";
-            document.body.appendChild(textArea);
-            textArea.select();
-            try {
-                document.execCommand("copy");
-                cb();
-            } catch (err) {
-                console.error("Fallback copy failed", err);
-            }
-            textArea.remove();
-        };
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(textToCopy).then(performCopy).catch(() => {
-                fallbackCopyChar(textToCopy, performCopy);
-            });
-        } else {
-            fallbackCopyChar(textToCopy, performCopy);
-        }
-    };
-    actionControls.appendChild(copySelectedBtn);
-
-    const showSelectedOnlyBtn = document.createElement("button");
-    showSelectedOnlyBtn.className = "anima-btn";
-    showSelectedOnlyBtn.innerHTML = t("Show Selected");
-    let showSelectedOnly = false;
-    showSelectedOnlyBtn.onclick = () => {
-        showSelectedOnly = !showSelectedOnly;
-        if (showSelectedOnly) {
-            showSelectedOnlyBtn.classList.add("anima-btn-active");
-            showSelectedOnlyBtn.style.cssText += `
-                background: rgba(219, 39, 119, 0.2) !important;
-                border-color: rgba(219, 39, 119, 0.4) !important;
-                color: #f472b6 !important;
-            `;
-        } else {
-            showSelectedOnlyBtn.classList.remove("anima-btn-active");
-            showSelectedOnlyBtn.style.cssText = "";
-        }
-        currentPage = 1;
-        triggerFilter();
-    };
-    actionControls.appendChild(showSelectedOnlyBtn);
-
-    const clearAllBtn = document.createElement("button");
-    clearAllBtn.className = "anima-btn anima-btn-danger";
-    clearAllBtn.innerHTML = `
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-        </svg>
-        ${t("Clear Selected")}
-    `;
-    clearAllBtn.onclick = () => {
-        if (selectedCharacters.size === 0) return;
-        selectedCharacters.clear();
-        updateCountLabel();
-        renderCurrentPage();
-    };
-    actionControls.appendChild(clearAllBtn);
-
     toolbar.appendChild(filterControls);
-    toolbar.appendChild(actionControls);
     modalContainer.appendChild(toolbar);
 
     // 7. 构建主展示区：水平分栏 (左侧侧边栏 + 右侧卡片网格与分页)
@@ -1837,96 +1706,13 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         background: rgba(18, 18, 24, 0.6);
     `;
 
-    const countLabel = document.createElement("div");
-    countLabel.style.cssText = "font-size: 14.5px; color: #f472b6; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; transition: opacity 0.2s ease;";
-    countLabel.onmouseenter = () => {
-        countLabel.style.opacity = "0.75";
-    };
-    countLabel.onmouseleave = () => {
-        countLabel.style.opacity = "1";
-    };
-    countLabel.onclick = () => {
-        showSelectedOnlyBtn.click();
-    };
-    
-    function updateCountLabel() {
-        countLabel.innerHTML = `
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#db2777;">
-                <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span>${t("Selected: {count} characters", { count: selectedCharacters.size })}</span>
-        `;
-    }
-    updateCountLabel();
-
-    const footerButtons = document.createElement("div");
-    footerButtons.style.cssText = "display: flex; gap: 12px;";
-
-    const cancelBtn = document.createElement("button");
-    cancelBtn.className = "anima-btn";
-    cancelBtn.innerText = t("Cancel");
-    cancelBtn.onclick = () => closeModal();
-
-    const applyTriggerBtn = document.createElement("button");
-    applyTriggerBtn.className = "anima-btn";
-    applyTriggerBtn.innerText = t("Apply Trigger");
-    applyTriggerBtn.onclick = async () => {
-        await applySelectionAndClose(false);
-    };
-
-    const applyTriggerTagsBtn = document.createElement("button");
-    applyTriggerTagsBtn.className = "anima-btn anima-btn-primary";
-    applyTriggerTagsBtn.innerText = t("Apply Trigger + Tags");
-    applyTriggerTagsBtn.onclick = async () => {
-        await applySelectionAndClose(true);
-    };
-
-    // 确认应用并关闭弹窗
-    async function applySelectionAndClose(includeTags = false) {
-        const characterMap = new Map((window.characterData || []).map(item => [item.name, item]));
-        const selectedItems = Array.from(selectedCharacters).map(selName => {
-            const custItem = favoriteItems.find(fi => fi.isCustom && fi.name === selName);
-            return custItem || characterMap.get(selName) || { name: selName };
-        });
-
-        applyTriggerBtn.disabled = true;
-        applyTriggerTagsBtn.disabled = true;
-        if (includeTags) {
-            applyTriggerTagsBtn.innerText = t("Loading official tags...");
-        } else {
-            applyTriggerBtn.innerText = t("Loading official tags...");
-        }
-
-        await Promise.all(selectedItems.map(item => fetchOfficialCharacterData(item)));
-
-        const resultTags = [];
-        const seen = new Set();
-        selectedItems.forEach(item => {
-            getCharacterPromptParts(item, includeTags).forEach(tag => pushUniquePromptTokens(resultTags, seen, tag));
-        });
-        
-        let resultString = resultTags.join(", ");
-        if (resultString) {
-            resultString += ", ";
-        }
-        writeSelectorTagsToWidget(node, tagsWidget, resultString, { source: "selector" });
-        
-        node.triggerSlot?(0):null;
-        closeModal();
-    }
+    const footerButtons = createSelectorTagManagerFooter(12);
 
     if (isTaggedAnimaNode(node)) {
-        footerButtons.insertBefore(
-            createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element,
-            footerButtons.firstChild
-        );
+        footerButtons.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        footer.appendChild(footerButtons);
+        modalContainer.appendChild(footer);
     }
-    footerButtons.appendChild(cancelBtn);
-    footerButtons.appendChild(applyTriggerBtn);
-    footerButtons.appendChild(applyTriggerTagsBtn);
-    footer.appendChild(countLabel);
-    footer.appendChild(footerButtons);
-    modalContainer.appendChild(footer);
 
     modalOverlay.appendChild(modalContainer);
     document.body.appendChild(modalOverlay);
@@ -2466,51 +2252,43 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         const query = searchInput.value.toLowerCase().trim();
         const sortVal = sortSelect.value;
 
-        // A. 联合多维分类过滤；“已选择”视图直接使用全量已选，不与当前筛选条件取交集
-        let items = [];
-        if (showSelectedOnly) {
-            const customItems = favoriteItems.filter(fi => fi.isCustom && selectedCharacters.has(fi.name));
-            const normalItems = (window.characterData || []).filter(item => selectedCharacters.has(item.name));
-            items = [...customItems, ...normalItems];
-        } else {
-            items = window.characterData || [];
-            const isGroup = activeFilters.type === "default" || activeFilters.type.startsWith("group_");
-            
-            if (isGroup) {
-                const groupItemNames = new Set(
-                    favoriteItems.filter(fi => !fi.isCustom && fi.groupIds && fi.groupIds.includes(activeFilters.type)).map(fi => fi.name)
-                );
-                items = items.filter(item => groupItemNames.has(item.name));
-                
-                const customItems = favoriteItems.filter(fi => fi.isCustom && fi.groupIds && fi.groupIds.includes(activeFilters.type));
-                items = [...customItems, ...items];
-            }
+        let items = window.characterData || [];
+        const isGroup = activeFilters.type === "default" || activeFilters.type.startsWith("group_");
 
-            if (activeFilters.gender) {
-                const val = activeFilters.gender;
-                items = items.filter(item => item.gender === val);
-            }
-            if (activeFilters.hair) {
-                const val = activeFilters.hair;
-                items = items.filter(item => item.hair === val);
-            }
-            if (activeFilters.eye) {
-                const val = activeFilters.eye;
-                items = items.filter(item => item.eye === val);
-            }
-            if (activeFilters.series) {
-                items = items.filter(item => item.copyright === activeFilters.series);
-            }
+        if (isGroup) {
+            const groupItemNames = new Set(
+                favoriteItems.filter(fi => !fi.isCustom && fi.groupIds && fi.groupIds.includes(activeFilters.type)).map(fi => fi.name)
+            );
+            items = items.filter(item => groupItemNames.has(item.name));
 
-            // B. 搜索关键词过滤
-            if (query) {
-                items = items.filter(item => {
-                    const name = item.isCustom ? (item.nickname || item.name) : item.name;
-                    const copyright = item.isCustom ? "" : (item.copyright || "");
-                    return (name && name.toLowerCase().includes(query)) || 
-                           (copyright && copyright.toLowerCase().includes(query));
-                });
-            }
+            const customItems = favoriteItems.filter(fi => fi.isCustom && fi.groupIds && fi.groupIds.includes(activeFilters.type));
+            items = [...customItems, ...items];
+        }
+
+        if (activeFilters.gender) {
+            const val = activeFilters.gender;
+            items = items.filter(item => item.gender === val);
+        }
+        if (activeFilters.hair) {
+            const val = activeFilters.hair;
+            items = items.filter(item => item.hair === val);
+        }
+        if (activeFilters.eye) {
+            const val = activeFilters.eye;
+            items = items.filter(item => item.eye === val);
+        }
+        if (activeFilters.series) {
+            items = items.filter(item => item.copyright === activeFilters.series);
+        }
+
+        // B. 搜索关键词过滤
+        if (query) {
+            items = items.filter(item => {
+                const name = item.isCustom ? (item.nickname || item.name) : item.name;
+                const copyright = item.isCustom ? "" : (item.copyright || "");
+                return (name && name.toLowerCase().includes(query)) ||
+                       (copyright && copyright.toLowerCase().includes(query));
+            });
         }
 
         // C. 排序数据 (自定义项目置顶)
@@ -2622,7 +2400,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         hideCharacterTagsTooltip();
         listContainer.innerHTML = "";
         
-        const isCustomGroup = !showSelectedOnly && activeFilters.type !== "all" && activeFilters.type !== "default";
+        const isCustomGroup = activeFilters.type !== "all" && activeFilters.type !== "default";
         
         if (filteredData.length === 0 && !isCustomGroup) {
             const noResult = document.createElement("div");
@@ -2719,11 +2497,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         }
         
         currentPageData.forEach(item => {
-            const isSelected = selectedCharacters.has(item.name);
             const isFavorite = item.isCustom ? true : favoriteSet.has(item.name);
             
             const card = document.createElement("div");
-            card.className = `anima-character-card${isSelected ? " selected" : ""}`;
+            card.className = "anima-character-card";
             card.dataset.name = item.name;
             
             card.style.cssText = `
@@ -2752,30 +2529,6 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                 }
             });
             card.addEventListener("mouseleave", hideCharacterTagsTooltip);
-            
-            const checkbox = document.createElement("div");
-            checkbox.style.cssText = `
-                position: absolute;
-                top: 12px;
-                left: 12px;
-                width: 22px;
-                height: 22px;
-                border-radius: 50%;
-                background: ${isSelected ? '#db2777' : 'rgba(10, 10, 15, 0.5)'};
-                border: 1.5px solid ${isSelected ? '#db2777' : 'rgba(255, 255, 255, 0.35)'};
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s ease;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-            `;
-            checkbox.innerHTML = isSelected ? `
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            ` : '';
-            card.appendChild(checkbox);
 
             const favIcon = document.createElement("div");
             favIcon.style.cssText = `
@@ -2817,7 +2570,6 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                     e.stopPropagation();
                     if (confirm(t("Are you sure you want to delete this custom item?"))) {
                         favoriteItems = favoriteItems.filter(fi => fi.name !== item.name);
-                        selectedCharacters.delete(item.name);
                         saveFavorites();
                         triggerFilter();
                         renderSidebar();
@@ -3148,24 +2900,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             cardClip.appendChild(infoPanel);
 
             card.onclick = () => {
-                if (selectedCharacters.has(item.name)) {
-                    selectedCharacters.delete(item.name);
-                    card.classList.remove("selected");
-                    checkbox.style.background = "rgba(10, 10, 15, 0.5)";
-                    checkbox.style.borderColor = "rgba(255, 255, 255, 0.35)";
-                    checkbox.innerHTML = "";
-                } else {
-                    selectedCharacters.add(item.name);
-                    card.classList.add("selected");
-                    checkbox.style.background = "#db2777";
-                    checkbox.style.borderColor = "#db2777";
-                    checkbox.innerHTML = `
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    `;
-                }
-                updateCountLabel();
+                const applyTags = getCharacterOverlayTags(item);
+                applySelectorTagsToWidget(node, tagsWidget, `${applyTags.join(", ")}, `, { source: "selector" });
+                node.triggerSlot?.(0);
+                showCharacterTagToast(t("Applied: {text}", { text: formatCharacterDisplayName(item) }));
             };
 
             fragment.appendChild(card);

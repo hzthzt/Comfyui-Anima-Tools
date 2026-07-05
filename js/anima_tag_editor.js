@@ -184,6 +184,12 @@ function syncField(node, fieldName, widget, options = {}) {
     refreshNode(node);
 }
 
+function clearFieldTags(node, fieldName, widget, syncOptions = {}) {
+    const field = getTagFieldState(node, fieldName, widget);
+    field.tags = [];
+    syncField(node, fieldName, widget, syncOptions);
+}
+
 function refreshEditor(node, fieldName) {
     const editors = node?._animaTagEditors;
     const editor = editors?.[fieldName];
@@ -362,6 +368,43 @@ export function writeSelectorTagsToWidget(node, widgetOrName, value, options = {
     syncField(node, fieldName, widget, { notify: false });
 }
 
+export function applySelectorTagsToWidget(node, widgetOrName, value, options = {}) {
+    if (!isTaggedAnimaNode(node)) {
+        const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
+        const existing = splitTagText(widget?.value || "");
+        const incoming = splitTagText(value);
+        const seen = new Set();
+        const merged = [];
+        [...existing, ...incoming].forEach(text => {
+            const key = normalizeTagKey(text);
+            if (!key || seen.has(key)) return;
+            seen.add(key);
+            merged.push(text);
+        });
+        setPlainWidgetText(node, widget, merged.length ? `${merged.join(", ")}, ` : "", options);
+        return;
+    }
+
+    const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
+    if (!node || !widget) return;
+    const fieldName = options.fieldName || widget.name;
+    const field = getTagFieldState(node, fieldName, widget);
+    const incomingTags = splitTagText(value);
+    removeHistoryKeys(field, new Set(incomingTags.map(text => normalizeTagKey(text)).filter(Boolean)));
+    const mode = options.mode || field.applyMode || DEFAULT_APPLY_MODE;
+    const source = options.source || "selector";
+    if (mode === "append") {
+        applyIncomingTags(field, incomingTags, "append", source);
+    } else {
+        field.tags = uniqueTags(incomingTags.map(text => ({
+            text,
+            enabled: true,
+            source,
+        })));
+    }
+    syncField(node, fieldName, widget, { notify: false });
+}
+
 export function setTagApplyMode(node, fieldName, mode) {
     const field = getTagFieldState(node, fieldName, getWidget(node, fieldName));
     field.applyMode = mode === "append" ? "append" : DEFAULT_APPLY_MODE;
@@ -508,7 +551,6 @@ export function ensureTagEditor(node, widgetOrName, config = {}) {
 }
 
 function stopNodeDrag(event) {
-    event.preventDefault();
     event.stopPropagation();
 }
 
@@ -548,7 +590,6 @@ function iconButton(label, title, color = "#d1d5db") {
 
 function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}) {
     const chip = document.createElement("span");
-    chip.title = disabled ? t("Double-click to enable tag") : t("Double-click to disable tag");
     chip.style.cssText = `
         display: inline-flex;
         align-items: center;
@@ -577,14 +618,6 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         syncField(node, fieldName, widget, syncOptions);
     });
 
-    const toggle = iconButton(disabled ? "+" : "-", disabled ? t("Enable Tag") : t("Disable Tag"), disabled ? "#86efac" : "#fbbf24");
-    toggle.addEventListener("click", event => {
-        stopNodeDrag(event);
-        tag.enabled = disabled;
-        syncField(node, fieldName, widget, syncOptions);
-    });
-    chip.appendChild(toggle);
-
     const remove = iconButton("x", t("Delete Tag"), "#fca5a5");
     remove.addEventListener("click", event => {
         stopNodeDrag(event);
@@ -611,6 +644,17 @@ function renderTagEditor(node, widget, fieldName, root, config) {
     title.style.cssText = "flex:1;min-width:0;color:#f3f4f6;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
     header.appendChild(title);
     header.appendChild(createApplyModeControl(node, fieldName));
+    const clearTags = document.createElement("button");
+    clearTags.type = "button";
+    clearTags.textContent = t("Clear Tags");
+    clearTags.style.cssText = buttonStyle(false);
+    clearTags.addEventListener("pointerdown", stopNodeDrag);
+    clearTags.addEventListener("mousedown", stopNodeDrag);
+    clearTags.addEventListener("click", event => {
+        stopNodeDrag(event);
+        clearFieldTags(node, fieldName, widget);
+    });
+    header.appendChild(clearTags);
     root.appendChild(header);
 
     const chips = document.createElement("div");
@@ -758,6 +802,20 @@ export function createSelectorApplyModeControl(node, widgetOrName) {
     return control;
 }
 
+export function createSelectorTagManagerFooter(gap = 12) {
+    const row = document.createElement("div");
+    row.style.cssText = `
+        display: flex;
+        align-items: stretch;
+        gap: ${gap}px;
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    `;
+    return row;
+}
+
 export function createSelectorTagManager(node, widgetOrName, config = {}) {
     const widget = typeof widgetOrName === "string" ? getWidget(node, widgetOrName) : widgetOrName;
     const fieldName = config.fieldName || widget?.name || String(widgetOrName || "");
@@ -766,6 +824,9 @@ export function createSelectorTagManager(node, widgetOrName, config = {}) {
     element.style.cssText = `
         display: flex;
         flex-direction: column;
+        flex: 1 1 auto;
+        width: 100%;
+        box-sizing: border-box;
         gap: 7px;
         min-width: 0;
         color: #e5e7eb;
@@ -797,17 +858,28 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     root.innerHTML = "";
 
     const header = document.createElement("div");
-    header.style.cssText = "display:flex;align-items:center;gap:8px;min-width:0;";
+    header.style.cssText = "display:flex;align-items:center;gap:8px;min-width:0;width:100%;box-sizing:border-box;";
 
     const title = document.createElement("div");
     title.textContent = config.label || t("Selected Tags");
     title.style.cssText = "flex:1 1 auto;min-width:0;color:#f3f4f6;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
     header.appendChild(title);
     header.appendChild(createApplyModeControl(node, fieldName));
+    const clearTags = document.createElement("button");
+    clearTags.type = "button";
+    clearTags.textContent = t("Clear Tags");
+    clearTags.style.cssText = buttonStyle(false);
+    clearTags.addEventListener("pointerdown", stopNodeDrag);
+    clearTags.addEventListener("mousedown", stopNodeDrag);
+    clearTags.addEventListener("click", event => {
+        stopNodeDrag(event);
+        clearFieldTags(node, fieldName, widget, { notify: false });
+    });
+    header.appendChild(clearTags);
     root.appendChild(header);
 
     const chips = document.createElement("div");
-    chips.style.cssText = "display:flex;flex-wrap:wrap;gap:6px;min-height:26px;";
+    chips.style.cssText = "display:flex;flex-wrap:wrap;gap:6px;min-height:26px;width:100%;box-sizing:border-box;";
     field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, { notify: false })));
     if (field.tags.length === 0) {
         const empty = document.createElement("span");
@@ -818,7 +890,7 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     root.appendChild(chips);
 
     const inputRow = document.createElement("div");
-    inputRow.style.cssText = "display:flex;gap:6px;min-width:0;";
+    inputRow.style.cssText = "display:flex;gap:6px;min-width:0;width:100%;box-sizing:border-box;";
 
     const input = document.createElement("input");
     input.type = "text";
@@ -863,7 +935,7 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     if (field.history.length === 0) return;
 
     const historyHeader = document.createElement("div");
-    historyHeader.style.cssText = "display:flex;align-items:center;gap:6px;min-width:0;";
+    historyHeader.style.cssText = "display:flex;align-items:center;gap:6px;min-width:0;width:100%;box-sizing:border-box;";
 
     const historyTitle = document.createElement("div");
     historyTitle.textContent = `${t("History")} (${field.history.length}/${field.historyLimit})`;
@@ -886,7 +958,7 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     root.appendChild(historyHeader);
 
     const history = document.createElement("div");
-    history.style.cssText = "display:flex;flex-wrap:wrap;gap:5px;min-width:0;";
+    history.style.cssText = "display:flex;flex-wrap:wrap;gap:5px;min-width:0;width:100%;box-sizing:border-box;";
     field.history.forEach(item => {
         const restore = document.createElement("button");
         restore.type = "button";
