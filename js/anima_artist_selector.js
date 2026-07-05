@@ -3,7 +3,7 @@ import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
-import { buildSelectorTagSidebarEntries, createSelectorTagView, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
+import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSidebarSection, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
@@ -1340,6 +1340,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
             node.triggerSlot?.(0);
             showTemporaryToast(t("Applied: {text}", { text: tag }));
         },
+        getCreateTagDefaultText: () => getActiveSelectorTagText(node, tagsWidget),
         onTagFilterChange: filter => {
             activeTagFilter = filter;
             renderSidebar();
@@ -1605,8 +1606,17 @@ async function openArtistSelectorModal(node, tagsWidget) {
             sidebarList.appendChild(item);
         };
         appendEntry(entries.find(entry => entry.type === "all"));
-        addHeader(t("Tag Groups"));
-        entries.filter(entry => entry.type === "group").forEach(appendEntry);
+        sidebarList.appendChild(createTagGroupSidebarSection({
+            tagFavorites,
+            activeGroupId: activeTagFilter.type === "group" ? activeTagFilter.groupId : "all",
+            t,
+            onSave: saveFavorites,
+            onFilterChange: filter => {
+                activeTagFilter = filter;
+                selectorTagView.setFilter(filter);
+                renderSidebar();
+            },
+        }));
         addHeader(t("Tag Categories"));
         entries.filter(entry => entry.type === "category").forEach(appendEntry);
     }

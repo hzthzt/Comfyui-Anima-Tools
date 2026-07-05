@@ -267,12 +267,188 @@ export function toggleSelectorTagFavorite(tagFavorites, catalogItem, groupId = "
     return item;
 }
 
+export function createSelectorTagFavoriteFromText(tagFavorites, catalog = [], text, groupId = "default") {
+    ensureSelectorTagFavorites(tagFavorites);
+    const clean = String(text || "").trim();
+    const key = tagFavoriteKey(clean);
+    if (!key) return null;
+
+    const catalogItem = (catalog || []).find(item => tagFavoriteKey(item?.tag) === key);
+    let item = getSelectorTagFavorite(tagFavorites, catalogItem?.tag || clean);
+    if (!item) {
+        item = catalogItem
+            ? {
+                tag: catalogItem.tag,
+                labelZh: catalogItem.labelZh || "",
+                groupIds: [],
+            }
+            : {
+                tag: clean,
+                groupIds: [],
+                isCustom: true,
+            };
+        tagFavorites.tagItems.push(item);
+    } else if (catalogItem && item.isCustom) {
+        item.tag = catalogItem.tag;
+        item.labelZh = catalogItem.labelZh || item.labelZh || "";
+        delete item.isCustom;
+    }
+
+    item.groupIds = Array.isArray(item.groupIds) ? item.groupIds : [];
+    if (!item.groupIds.includes(groupId)) item.groupIds.push(groupId);
+    return item;
+}
+
+export function getSelectorTagFavoriteGroupItems(catalog = [], tagFavorites, groupId = "default") {
+    const favorites = ensureSelectorTagFavorites(tagFavorites || {});
+    const catalogByKey = new Map((catalog || []).map(item => [tagFavoriteKey(item?.tag), item]));
+    const seen = new Set();
+    const result = [];
+
+    (favorites.tagItems || [])
+        .filter(item => groupId === "all" || item.groupIds?.includes(groupId))
+        .forEach(item => {
+            const key = tagFavoriteKey(item?.tag);
+            if (!key || seen.has(key)) return;
+            seen.add(key);
+            const catalogItem = catalogByKey.get(key);
+            if (catalogItem) {
+                result.push(catalogItem);
+                return;
+            }
+            if (item.isCustom) {
+                result.push({
+                    tag: item.tag,
+                    labelZh: item.labelZh || "",
+                    isCustom: true,
+                });
+            }
+        });
+
+    return result;
+}
+
 export function removeSelectorTagGroup(tagFavorites, groupId) {
     ensureSelectorTagFavorites(tagFavorites);
     tagFavorites.tagGroups = tagFavorites.tagGroups.filter(group => group.id !== groupId || group.id === "default");
     tagFavorites.tagItems.forEach(item => {
         item.groupIds = (item.groupIds || []).filter(id => id !== groupId);
     });
+}
+
+export function createSelectorTagGroup(tagFavorites, name) {
+    const favorites = ensureSelectorTagFavorites(tagFavorites);
+    const clean = String(name || "").trim();
+    if (!clean) return null;
+    const group = { id: `tag_group_${Date.now()}`, name: clean, isSystem: false };
+    favorites.tagGroups.push(group);
+    return group;
+}
+
+export function renameSelectorTagGroup(tagFavorites, groupId, name) {
+    const favorites = ensureSelectorTagFavorites(tagFavorites);
+    if (!groupId || groupId === "default") return null;
+    const group = favorites.tagGroups.find(item => item.id === groupId);
+    const clean = String(name || "").trim();
+    if (!group || !clean) return null;
+    group.name = clean;
+    return group;
+}
+
+export function createTagGroupSidebarSection(options = {}) {
+    const t = options.t || (value => value);
+    const favorites = ensureSelectorTagFavorites(options.tagFavorites || {});
+    const activeGroupId = options.activeGroupId || "all";
+    const container = document.createElement("div");
+    container.className = "anima-selector-tag-group-sidebar-section";
+
+    const header = document.createElement("div");
+    header.style.cssText = "font-size:11px;font-weight:700;color:#6b7280;padding:16px 10px 8px;text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;justify-content:space-between;";
+    const title = document.createElement("span");
+    title.textContent = t("Tag Groups");
+    const add = document.createElement("span");
+    add.dataset.tagGroupAction = "create";
+    add.textContent = "+";
+    add.title = t("Create Tag Group");
+    add.style.cssText = "cursor:pointer;font-size:16px;font-weight:bold;color:#0b8ce9;opacity:0.8;border-radius:4px;background:rgba(11,140,233,0.1);display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;line-height:1;padding:0;box-sizing:border-box;transition:all 0.2s ease;";
+    add.onmouseenter = () => {
+        add.style.opacity = "1";
+        add.style.background = "rgba(11,140,233,0.2)";
+        add.style.transform = "scale(1.1)";
+    };
+    add.onmouseleave = () => {
+        add.style.opacity = "0.8";
+        add.style.background = "rgba(11,140,233,0.1)";
+        add.style.transform = "scale(1)";
+    };
+    add.onclick = async event => {
+        event.stopPropagation();
+        const name = window.prompt?.(t("Enter tag group name..."));
+        const group = createSelectorTagGroup(favorites, name);
+        if (!group) return;
+        await options.onSave?.();
+        options.onFilterChange?.({ type: "group", groupId: group.id });
+    };
+    header.appendChild(title);
+    header.appendChild(add);
+    container.appendChild(header);
+
+    favorites.tagGroups.forEach(group => {
+        const item = document.createElement("div");
+        item.className = `sidebar-item ${activeGroupId === group.id ? "active" : ""}`;
+        item.dataset.tagGroupId = group.id;
+        item.style.cssText = "position:relative;";
+        const isDefault = group.id === "default";
+        item.innerHTML = `
+            <div style="display:flex;align-items:center;gap:10px;min-width:0;max-width:65%;overflow:hidden;">
+                <span style="font-size:14px;">${isDefault ? "★" : "📁"}</span>
+                <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeSidebarHtml(formatSelectorTagGroupLabel(group, t))}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+                ${!isDefault ? `
+                    <div class="tag-group-actions" style="display:flex;gap:6px;align-items:center;overflow:hidden;max-width:0;opacity:0;transform:translateX(10px);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);">
+                        <span data-tag-group-action="rename" style="cursor:pointer;opacity:0.6;color:#e2e8f0;transition:opacity 0.2s;display:flex;align-items:center;" title="${escapeSidebarHtml(t("Rename"))}">✎</span>
+                        <span data-tag-group-action="delete" style="cursor:pointer;opacity:0.6;color:#ef4444;transition:opacity 0.2s;display:flex;align-items:center;" title="${escapeSidebarHtml(t("Delete"))}">×</span>
+                    </div>
+                ` : ""}
+            </div>
+        `;
+        item.onclick = () => options.onFilterChange?.({ type: "group", groupId: group.id });
+
+        if (!isDefault) {
+            const actions = item.querySelector(".tag-group-actions");
+            const rename = item.querySelector("[data-tag-group-action='rename']");
+            const remove = item.querySelector("[data-tag-group-action='delete']");
+            item.onmouseenter = () => {
+                actions.style.maxWidth = "48px";
+                actions.style.opacity = "1";
+                actions.style.transform = "translateX(0)";
+            };
+            item.onmouseleave = () => {
+                actions.style.maxWidth = "0";
+                actions.style.opacity = "0";
+                actions.style.transform = "translateX(10px)";
+            };
+            rename.onclick = async event => {
+                event.stopPropagation();
+                const name = window.prompt?.(t("Enter new tag group name..."), group.name);
+                if (!renameSelectorTagGroup(favorites, group.id, name)) return;
+                await options.onSave?.();
+                options.onFilterChange?.({ type: "group", groupId: group.id });
+            };
+            remove.onclick = async event => {
+                event.stopPropagation();
+                if (!window.confirm?.(t("Are you sure you want to delete this tag group? Tags inside won't be deleted."))) return;
+                removeSelectorTagGroup(favorites, group.id);
+                await options.onSave?.();
+                options.onFilterChange?.({ type: "group", groupId: "all" });
+            };
+        }
+
+        container.appendChild(item);
+    });
+
+    return container;
 }
 
 export function filterSelectorTagCatalog(catalog, tagFavorites, filters = {}) {
@@ -284,7 +460,11 @@ export function filterSelectorTagCatalog(catalog, tagFavorites, filters = {}) {
         .filter(item => groupId === "all" || item.groupIds?.includes(groupId))
         .map(item => tagFavoriteKey(item.tag)));
 
-    return (catalog || []).filter(item => {
+    const sourceItems = filterType === "group" && groupId !== "all" && !query
+        ? getSelectorTagFavoriteGroupItems(catalog, tagFavorites, groupId)
+        : (catalog || []);
+
+    return sourceItems.filter(item => {
         const key = tagFavoriteKey(item.tag);
         if (!query) {
             if (filterType === "category") {
@@ -350,26 +530,14 @@ export function createSelectorTagView(options) {
     searchInput.placeholder = t("Search tags...");
     searchInput.style.cssText = `${controlStyle()} flex: 1; min-width: 180px;`;
 
-    const addGroupBtn = document.createElement("button");
-    addGroupBtn.type = "button";
-    addGroupBtn.textContent = "+";
-    addGroupBtn.title = t("Create Tag Group");
-    addGroupBtn.style.cssText = buttonStyle();
-
-    const renameGroupBtn = document.createElement("button");
-    renameGroupBtn.type = "button";
-    renameGroupBtn.textContent = t("Rename");
-    renameGroupBtn.style.cssText = buttonStyle();
-
-    const deleteGroupBtn = document.createElement("button");
-    deleteGroupBtn.type = "button";
-    deleteGroupBtn.textContent = t("Delete");
-    deleteGroupBtn.style.cssText = buttonStyle("#fca5a5");
+    const createTagBtn = document.createElement("button");
+    createTagBtn.type = "button";
+    createTagBtn.textContent = t("+ Tag");
+    createTagBtn.title = t("Create Favorite Tag");
+    createTagBtn.style.cssText = buttonStyle();
 
     toolbar.appendChild(searchInput);
-    toolbar.appendChild(addGroupBtn);
-    toolbar.appendChild(renameGroupBtn);
-    toolbar.appendChild(deleteGroupBtn);
+    toolbar.appendChild(createTagBtn);
 
     const list = document.createElement("div");
     list.className = "anima-selector-tag-list";
@@ -427,12 +595,17 @@ export function createSelectorTagView(options) {
         return favorites.tagGroups.find(group => group.id === state.groupId);
     }
 
+    function targetGroupId() {
+        return state.filterType === "group" && state.groupId !== "all" ? state.groupId : "default";
+    }
+
+    function createTagDefaultText() {
+        const value = options.getCreateTagDefaultText?.();
+        return splitSelectorTagText(value)[0] || String(value || "").trim();
+    }
+
     function renderControls() {
-        const group = currentGroup();
-        const isCustomGroup = state.filterType === "group" && group && state.groupId !== "default";
-        addGroupBtn.style.display = state.filterType === "category" ? "none" : "";
-        renameGroupBtn.style.display = isCustomGroup ? "" : "none";
-        deleteGroupBtn.style.display = isCustomGroup ? "" : "none";
+        currentGroup();
     }
 
     function render() {
@@ -507,14 +680,13 @@ export function createSelectorTagView(options) {
         if (sub.textContent) text.appendChild(sub);
 
         const favoriteInfo = getSelectorTagFavorite(favorites, item.tag);
-        const targetGroupId = state.filterType === "group" && state.groupId !== "all" ? state.groupId : "default";
         const favorite = document.createElement("span");
-        favorite.textContent = favoriteInfo?.groupIds?.includes(targetGroupId) ? "★" : "☆";
+        favorite.textContent = favoriteInfo?.groupIds?.includes(targetGroupId()) ? "★" : "☆";
         favorite.title = t("Add to Tag Group");
         favorite.style.cssText = "font-size:16px;color:#facc15;flex:0 0 auto;";
         favorite.onclick = async event => {
             event.stopPropagation();
-            toggleSelectorTagFavorite(favorites, item, targetGroupId);
+            toggleSelectorTagFavorite(favorites, item, targetGroupId());
             await save();
             render();
         };
@@ -530,40 +702,18 @@ export function createSelectorTagView(options) {
         state.page = 1;
         render();
     };
-    addGroupBtn.onclick = async () => {
-        const name = window.prompt?.(t("Enter tag group name..."));
-        if (!name || !name.trim()) return;
-        const favorites = tagFavorites();
-        const id = `tag_group_${Date.now()}`;
-        favorites.tagGroups.push({ id, name: name.trim(), isSystem: false });
+    createTagBtn.onclick = async () => {
+        const tagText = window.prompt?.(t("Enter favorite tag..."), createTagDefaultText());
+        if (!tagText || !tagText.trim()) return;
+        const target = targetGroupId();
+        const created = createSelectorTagFavoriteFromText(tagFavorites(), catalog(), tagText, target);
+        if (!created) return;
         state.filterType = "group";
-        state.groupId = id;
+        state.groupId = target;
         state.categoryId = "all";
         await save();
         render();
-        options.onTagFilterChange?.({ type: "group", groupId: id });
-    };
-    renameGroupBtn.onclick = async () => {
-        if (state.filterType !== "group" || state.groupId === "all" || state.groupId === "default") return;
-        const favorites = tagFavorites();
-        const group = favorites.tagGroups.find(item => item.id === state.groupId);
-        if (!group) return;
-        const name = window.prompt?.(t("Enter new tag group name..."), group.name);
-        if (!name || !name.trim()) return;
-        group.name = name.trim();
-        await save();
-        render();
-    };
-    deleteGroupBtn.onclick = async () => {
-        if (state.filterType !== "group" || state.groupId === "all" || state.groupId === "default") return;
-        if (!window.confirm?.(t("Are you sure you want to delete this tag group? Tags inside won't be deleted."))) return;
-        removeSelectorTagGroup(tagFavorites(), state.groupId);
-        state.filterType = "group";
-        state.groupId = "all";
-        state.categoryId = "all";
-        await save();
-        render();
-        options.onTagFilterChange?.({ type: "group", groupId: "all" });
+        options.onTagFilterChange?.({ type: "group", groupId: target });
     };
     prev.onclick = () => {
         state.page -= 1;
@@ -623,6 +773,15 @@ function formatSelectorTagGroupLabel(group, t) {
     const label = String(group?.name || "").trim();
     if (group?.id === "default") return t("Favorite Tags");
     return label;
+}
+
+function escapeSidebarHtml(value) {
+    return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }
 
 function controlStyle() {

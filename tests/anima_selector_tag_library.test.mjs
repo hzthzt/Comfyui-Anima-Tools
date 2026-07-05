@@ -175,6 +175,60 @@ test("filterSelectorTagCatalog lets grouped searches find unassigned tags for cl
   }).map(item => item.tag), ["moon"]);
 });
 
+test("createSelectorTagFavoriteFromText uses catalog metadata when tag exists", async () => {
+  const {
+    createDefaultTagFavorites,
+    createSelectorTagFavoriteFromText,
+  } = await import("../js/anima_selector_tag_library.js?case=create-catalog-favorite");
+  const tagFavorites = createDefaultTagFavorites("默认 Tag");
+  const catalog = [{ tag: "blue eyes", labelZh: "蓝色眼睛", meaning: { zh: "蓝色虹膜" } }];
+
+  const item = createSelectorTagFavoriteFromText(tagFavorites, catalog, "Blue Eyes", "default");
+
+  assert.equal(item.tag, "blue eyes");
+  assert.equal(item.labelZh, "蓝色眼睛");
+  assert.equal(item.isCustom, undefined);
+  assert.deepEqual(item.groupIds, ["default"]);
+  assert.equal(tagFavorites.tagItems.length, 1);
+});
+
+test("createSelectorTagFavoriteFromText creates custom favorite when tag is absent from catalog", async () => {
+  const {
+    createDefaultTagFavorites,
+    createSelectorTagFavoriteFromText,
+  } = await import("../js/anima_selector_tag_library.js?case=create-custom-favorite");
+  const tagFavorites = createDefaultTagFavorites("默认 Tag");
+
+  const item = createSelectorTagFavoriteFromText(tagFavorites, [], "sparkle aura", "tag_group_mood");
+
+  assert.deepEqual(item, {
+    tag: "sparkle aura",
+    groupIds: ["tag_group_mood"],
+    isCustom: true,
+  });
+});
+
+test("group filtering includes custom favorites while all and categories stay catalog-only", async () => {
+  const {
+    createDefaultTagFavorites,
+    createSelectorTagFavoriteFromText,
+    filterSelectorTagCatalog,
+  } = await import("../js/anima_selector_tag_library.js?case=custom-group-filter");
+  const catalog = [
+    { tag: "blue eyes", labelZh: "蓝色眼睛", categories: [{ id: "eyes", label: "Eyes" }] },
+  ];
+  const tagFavorites = createDefaultTagFavorites("默认 Tag");
+  createSelectorTagFavoriteFromText(tagFavorites, catalog, "blue eyes", "default");
+  createSelectorTagFavoriteFromText(tagFavorites, catalog, "sparkle aura", "default");
+
+  assert.deepEqual(filterSelectorTagCatalog(catalog, tagFavorites, { groupId: "default" }).map(item => [item.tag, item.isCustom]), [
+    ["blue eyes", undefined],
+    ["sparkle aura", true],
+  ]);
+  assert.deepEqual(filterSelectorTagCatalog(catalog, tagFavorites, { groupId: "all" }).map(item => item.tag), ["blue eyes"]);
+  assert.deepEqual(filterSelectorTagCatalog(catalog, tagFavorites, { filterType: "category", categoryId: "eyes" }).map(item => item.tag), ["blue eyes"]);
+});
+
 test("removeSelectorTagGroup preserves tag items while removing only the deleted group id", async () => {
   const { removeSelectorTagGroup } = await import("../js/anima_selector_tag_library.js?case=remove-group");
   const tagFavorites = {
@@ -359,6 +413,136 @@ test("createSelectorTagView can be filtered from the selector sidebar", async ()
 
   assert.equal(view.element.querySelector("[data-selector-tag='beach']"), null);
   assert.ok(view.element.querySelector("[data-selector-tag='train']"));
+});
+
+test("createSelectorTagView can create and render a custom favorite tag in the active group", async () => {
+  installDom();
+  window.prompt = () => "sparkle aura";
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-create-custom");
+  const tagFavorites = {
+    tagGroups: [
+      { id: "default", name: "Default Tags", isSystem: true },
+      { id: "tag_group_mood", name: "Mood", isSystem: false },
+    ],
+    tagItems: [],
+  };
+  let saveCount = 0;
+  const applied = [];
+  const view = createSelectorTagView({
+    section: "character",
+    tagFavorites,
+    catalogProvider: () => [{ tag: "blue eyes", labelZh: "蓝色眼睛" }],
+    applyTag: tag => applied.push(tag),
+    saveTagFavorites: async () => {
+      saveCount += 1;
+    },
+    t: value => value,
+  });
+
+  document.body.appendChild(view.element);
+  view.setFilter({ type: "group", groupId: "tag_group_mood" });
+  const createButton = Array.from(view.element.querySelectorAll("button")).find(button => button.title === "Create Favorite Tag");
+  assert.ok(createButton);
+  createButton.click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  assert.equal(saveCount, 1);
+  assert.deepEqual(tagFavorites.tagItems, [{
+    tag: "sparkle aura",
+    groupIds: ["tag_group_mood"],
+    isCustom: true,
+  }]);
+
+  const row = view.element.querySelector('[data-selector-tag="sparkle aura"]');
+  assert.ok(row);
+  row.click();
+  assert.deepEqual(applied, ["sparkle aura"]);
+});
+
+test("createSelectorTagView defaults custom favorite text from the active tag manager tag", async () => {
+  installDom();
+  let promptDefault = "";
+  window.prompt = (_message, defaultValue) => {
+    promptDefault = defaultValue;
+    return defaultValue;
+  };
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-create-default");
+  const tagFavorites = {
+    tagGroups: [{ id: "default", name: "Default Tags", isSystem: true }],
+    tagItems: [],
+  };
+  const view = createSelectorTagView({
+    section: "character",
+    tagFavorites,
+    catalogProvider: () => [],
+    getCreateTagDefaultText: () => "alpha, beta, ",
+    saveTagFavorites: async () => {},
+    t: value => value,
+  });
+
+  document.body.appendChild(view.element);
+  const createButton = Array.from(view.element.querySelectorAll("button")).find(button => button.title === "Create Favorite Tag");
+  assert.ok(createButton);
+  createButton.click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  assert.equal(promptDefault, "alpha");
+  assert.deepEqual(tagFavorites.tagItems, [{
+    tag: "alpha",
+    groupIds: ["default"],
+    isCustom: true,
+  }]);
+});
+
+test("createTagGroupSidebarSection manages tag groups with card-style actions", async () => {
+  installDom();
+  const { createTagGroupSidebarSection } = await import("../js/anima_selector_tag_library.js?case=tag-sidebar-groups");
+  const tagFavorites = {
+    tagGroups: [
+      { id: "default", name: "Default Tags", isSystem: true },
+      { id: "tag_group_mood", name: "Mood", isSystem: false },
+    ],
+    tagItems: [{ tag: "sparkle aura", groupIds: ["tag_group_mood"], isCustom: true }],
+  };
+  const filters = [];
+  let saveCount = 0;
+  window.prompt = (_message, defaultValue) => defaultValue ? "Mood Renamed" : "New Group";
+  window.confirm = () => true;
+
+  const section = createTagGroupSidebarSection({
+    tagFavorites,
+    activeGroupId: "tag_group_mood",
+    t: value => value,
+    onSave: async () => {
+      saveCount += 1;
+    },
+    onFilterChange: filter => filters.push(filter),
+  });
+  document.body.appendChild(section);
+
+  const add = section.querySelector("[data-tag-group-action='create']");
+  assert.ok(add);
+  add.click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(tagFavorites.tagGroups.at(-1).name, "New Group");
+  assert.equal(filters.at(-1).groupId, tagFavorites.tagGroups.at(-1).id);
+
+  const mood = section.querySelector("[data-tag-group-id='tag_group_mood']");
+  assert.ok(mood);
+  const rename = mood.querySelector("[data-tag-group-action='rename']");
+  assert.ok(rename);
+  rename.click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(tagFavorites.tagGroups.find(group => group.id === "tag_group_mood").name, "Mood Renamed");
+
+  const remove = mood.querySelector("[data-tag-group-action='delete']");
+  assert.ok(remove);
+  remove.click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(tagFavorites.tagGroups.some(group => group.id === "tag_group_mood"), false);
+  assert.deepEqual(tagFavorites.tagItems[0].groupIds, []);
+  assert.equal(filters.at(-1).groupId, "all");
+  assert.equal(saveCount, 3);
 });
 
 function createDefaultFavoritesForTest() {
