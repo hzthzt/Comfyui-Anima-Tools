@@ -187,6 +187,7 @@ function syncField(node, fieldName, widget, options = {}) {
 function clearFieldTags(node, fieldName, widget, syncOptions = {}) {
     const field = getTagFieldState(node, fieldName, widget);
     field.tags = [];
+    setWidgetText(widget, "", { ...syncOptions, notify: false });
     syncField(node, fieldName, widget, syncOptions);
 }
 

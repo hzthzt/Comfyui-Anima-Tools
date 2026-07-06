@@ -131,6 +131,53 @@ test("createSelectorTagManager moves deleted tags to history and restores them",
   assert.equal(widget.value, "alpha, ");
 });
 
+test("createSelectorTagManager clears selected tags when history is empty", async () => {
+  installDom();
+  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=clear-empty-history");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const clearTagsButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Clear Tags");
+  assert.ok(clearTagsButton);
+  clearTagsButton.click();
+
+  assert.equal(widget.value, "");
+  assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags, []);
+  assert.match(manager.element.textContent, /No tags yet/);
+});
+
+test("ensureTagEditor clears selected tags when history is empty", async () => {
+  installDom();
+  const { ensureTagEditor, getTagFieldState } = await import("../js/anima_tag_editor.js?case=node-clear-empty-history");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+  let editorRoot = null;
+  node.addDOMWidget = function (_name, _type, element, options = {}) {
+    editorRoot = element;
+    const domWidget = {
+      element,
+      inputEl: element,
+      container: element,
+      ...options,
+    };
+    this.widgets.push(domWidget);
+    return domWidget;
+  };
+
+  ensureTagEditor(node, widget, { label: "Prompt Tags" });
+  assert.ok(editorRoot);
+  document.body.appendChild(editorRoot);
+
+  const clearTagsButton = Array.from(editorRoot.querySelectorAll("button")).find(button => button.textContent === "Clear Tags");
+  assert.ok(clearTagsButton);
+  clearTagsButton.click();
+
+  assert.equal(widget.value, "");
+  assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags, []);
+  assert.match(editorRoot.textContent, /No tags yet/);
+});
+
 test("createSelectorTagManager appends manual input as a tag", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=manual");
