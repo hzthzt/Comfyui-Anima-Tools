@@ -103,7 +103,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
             items: []
         };
     }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.artist, t("Default Tags"));
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.artist, t("Favorite Tags"));
     
     let groups = favoritesConfig.artist.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
     let favoriteItems = favoritesConfig.artist.items || [];

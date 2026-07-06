@@ -18,6 +18,16 @@ const CHARACTER_SELECTOR_NODES = new Set([
     "AnimaPromptPlusTagged",
 ]);
 
+export const CHARACTER_VIEW_TOGGLE_ACTIVE_CLASS = "anima-btn-active";
+export const CHARACTER_VIEW_TOGGLE_ACTIVE_STYLE = `
+        .anima-btn-active {
+            background: rgba(219, 39, 119, 0.18) !important;
+            border-color: rgba(219, 39, 119, 0.42) !important;
+            color: #f9a8d4 !important;
+            font-weight: 700 !important;
+        }
+`;
+
 let characterOfficialDataPromise = null;
 
 async function ensureCharacterOfficialData() {
@@ -336,7 +346,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             items: []
         };
     }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.character, t("Default Tags"));
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.character, t("Favorite Tags"));
     
     let groups = favoritesConfig.character.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
     let favoriteItems = favoritesConfig.character.items || [];
@@ -1124,6 +1134,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             border-color: rgba(239, 68, 68, 0.35);
             color: #fee2e2;
         }
+        ${CHARACTER_VIEW_TOGGLE_ACTIVE_STYLE}
         
         /* 侧边栏按钮高级样式 */
         .sidebar-item {

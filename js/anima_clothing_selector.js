@@ -5,6 +5,7 @@ import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
 import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSidebarSection, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
+import { createPromptTagsHeaderAction } from "./anima_selector_card_overlay.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
 import "./clothing_data.js";
@@ -116,26 +117,6 @@ function createEl(tag, className, text) {
     return el;
 }
 
-function fallbackCopy(text, callback) {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    ta.remove();
-    callback?.();
-}
-
-function copyText(text, callback) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => callback?.()).catch(() => fallbackCopy(text, callback));
-    } else {
-        fallbackCopy(text, callback);
-    }
-}
-
 async function openClothingSelectorModal(node, tagsWidget) {
     const clothingData = Array.isArray(window.clothingData) ? window.clothingData : [];
 
@@ -161,7 +142,7 @@ async function openClothingSelectorModal(node, tagsWidget) {
             items: [],
         };
     }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.clothing, t("Default Tags"));
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.clothing, t("Favorite Tags"));
 
     let groups = Array.isArray(favoritesConfig.clothing.groups) && favoritesConfig.clothing.groups.length
         ? favoritesConfig.clothing.groups
@@ -1670,16 +1651,21 @@ async function openClothingSelectorModal(node, tagsWidget) {
         const tagsOverlay = createEl("div", "anima-clothing-tags-overlay");
         const promptTags = splitPromptTokens(item.isCustom ? item.customContent : item.tags);
         const promptTagsZh = splitPromptTokens(item.tags_zh);
+        const displayName = formatDisplayName(item, displayLang);
+        const headerAction = createPromptTagsHeaderAction({
+            promptTags,
+            displayName,
+            applyTags: text => applySelectorTagsToWidget(node, tagsWidget, text, { source: "selector" }),
+            triggerSlot: () => node.triggerSlot?.(0),
+            showToast,
+            t,
+        });
         const titleBtn = createEl("button", "anima-clothing-tags-title");
         titleBtn.innerHTML = `
             <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(t("Prompt Tags"))} · ${promptTags.length}</span>
-            <span style="font-size:10px;color:#f9a8d4;flex:0 0 auto;">${escapeHtml(t("Copy"))}</span>
+            <span style="font-size:10px;color:#f9a8d4;flex:0 0 auto;">${escapeHtml(t(headerAction.label))}</span>
         `;
-        titleBtn.onclick = (event) => {
-            event.stopPropagation();
-            const text = promptTags.length ? `${promptTags.join(", ")}, ` : "";
-            if (text) copyText(text, () => showToast(t("Copied Successfully")));
-        };
+        titleBtn.onclick = event => headerAction.run(event);
         tagsOverlay.appendChild(titleBtn);
 
         const tagsList = createEl("div", "anima-clothing-tags-list");
@@ -1701,7 +1687,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
 
         const info = createEl("div", "anima-clothing-card-info");
         const titleEl = createEl("div", "anima-clothing-card-title");
-        const displayName = formatDisplayName(item, displayLang);
         titleEl.innerText = displayName;
         titleEl.title = item.isCustom ? item.customContent || "" : `${item.name_zh || ""}${item.name_zh ? " / " : ""}${item.name || ""}`;
         const subEl = createEl("div", "anima-clothing-card-sub");

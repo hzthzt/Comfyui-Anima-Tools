@@ -168,6 +168,7 @@ const TRANSLATIONS = {
     "Custom": "Custom",
     "Prompt Tags": "Prompt Tags",
     "Copy": "Copy",
+    "Apply All": "Apply All",
     "Open Background Selector": "Open Background Selector",
     "Background": "Background",
     "Anima Background Tag Selector": "Anima Background Tag Selector",
@@ -257,7 +258,7 @@ const TRANSLATIONS = {
     "Browse Categories": "分类浏览",
     "All Characters": "全部角色",
     "My Favorites": "我的收藏",
-    "Favorite Tags": "收藏",
+    "Favorite Tags": "收藏标签",
     "Hot Series": "热门作品系列",
     "Gender": "角色性别",
     "Hair Color": "角色发色",
@@ -289,7 +290,7 @@ const TRANSLATIONS = {
     "Please select at least one character first.": "请先选择至少一位角色！",
     "All Artists": "全部画师",
     "Random": "随机排序",
-    "My Collections": "我的自定义分组",
+    "My Collections": "收藏分组",
     "Create Group": "新建分组",
     "Create New Group": "创建新分组",
     "Enter group name...": "请输入分组名称...",
@@ -370,6 +371,7 @@ const TRANSLATIONS = {
     "Custom": "自定义",
     "Prompt Tags": "Prompt Tags",
     "Copy": "复制",
+    "Apply All": "应用全部",
     "Open Background Selector": "打开背景选择器",
     "Background": "背景",
     "Anima Background Tag Selector": "Anima 背景 Tag 选择器",
@@ -421,7 +423,11 @@ function getLanguage() {
 }
 
 export function t(key, values = {}) {
-  let s = TRANSLATIONS[getLanguage()]?.[key] || TRANSLATIONS.en[key] || key;
+  return translateForLanguage(getLanguage(), key, values);
+}
+
+export function translateForLanguage(language, key, values = {}) {
+  let s = TRANSLATIONS[language]?.[key] || TRANSLATIONS.en[key] || key;
   for (const [k, v] of Object.entries(values)) {
     s = s.replace(`{${k}}`, String(v));
   }

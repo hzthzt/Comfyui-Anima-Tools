@@ -29,7 +29,7 @@ export function normalizeSelectorTagKey(value) {
     return String(value || "").replace(/^_raw_:/, "").trim().toLowerCase();
 }
 
-export function createDefaultTagFavorites(defaultName = "默认 Tag") {
+export function createDefaultTagFavorites(defaultName = "Favorite Tags") {
     return {
         tagGroups: [{ id: "default", name: defaultName, isSystem: true }],
         tagItems: [],
@@ -72,7 +72,7 @@ export function normalizeSelectorCategory(value) {
     };
 }
 
-export function ensureSelectorTagFavorites(sectionConfig, defaultName = "默认 Tag") {
+export function ensureSelectorTagFavorites(sectionConfig, defaultName = "Favorite Tags") {
     const defaults = createDefaultTagFavorites(defaultName);
     if (!sectionConfig || typeof sectionConfig !== "object") return defaults;
     sectionConfig.tagGroups = Array.isArray(sectionConfig.tagGroups) && sectionConfig.tagGroups.length
