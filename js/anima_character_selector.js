@@ -5,6 +5,7 @@ import { createPromoLinks } from "./anima_promo_links.js";
 import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_selector_random.js";
 import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSidebarSection, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
+import { createPromptTagsHeaderAction } from "./anima_selector_card_overlay.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
 import "./character_data.js";
@@ -867,7 +868,10 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         const headerEl = overlay.querySelector(".anima-character-card-tags-header");
         const chipsEl = overlay.querySelector(".anima-character-card-tags-chips");
         const explicitTags = getExplicitCharacterTags(item);
-        const tags = explicitTags.length > 0 || state === "error" ? getCharacterOverlayTags(item) : [];
+        const promptTags = splitPromptTokens(item?.isCustom ? item.customContent : item?.tags);
+        const tags = item?.isCustom
+            ? promptTags
+            : (explicitTags.length > 0 || state === "error" ? getCharacterOverlayTags(item) : []);
 
         const renderHeader = (labelText, applyTags = []) => {
             headerEl.innerHTML = "";
@@ -879,16 +883,19 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             headerEl.appendChild(label);
 
             if (applyTags.length > 0) {
+                const headerAction = createPromptTagsHeaderAction({
+                    promptTags: applyTags,
+                    displayName: formatCharacterDisplayName(item),
+                    applyTags: text => applySelectorTagsToWidget(node, tagsWidget, text, { source: "selector" }),
+                    triggerSlot: () => node.triggerSlot?.(0),
+                    showToast: showCharacterTagToast,
+                    t,
+                });
                 const action = document.createElement("span");
                 action.className = "anima-character-card-tags-copy";
                 action.innerText = `${applyTags.length}`;
                 headerEl.appendChild(action);
-                headerEl.onclick = (event) => {
-                    event.stopPropagation();
-                    applySelectorTagsToWidget(node, tagsWidget, `${applyTags.join(", ")}, `, { source: "selector" });
-                    node.triggerSlot?.(0);
-                    showCharacterTagToast(t("Applied: {text}", { text: formatCharacterDisplayName(item) }));
-                };
+                headerEl.onclick = event => headerAction.run(event);
             }
         };
 
@@ -2649,21 +2656,21 @@ async function openCharacterSelectorModal(node, tagsWidget) {
                 e.stopPropagation();
                 const defaultContent = getActiveSelectorTagText(node, tagsWidget);
                 openCustomItemCreateModal(async (title, content) => {
-                    const newItem = {
-                        id: "custom_" + Date.now(),
-                        name: title,
+                    const item = {
+                        name: `custom_${Date.now()}`,
                         nickname: title,
+                        customContent: content,
                         groupIds: [activeFilters.type],
                         isCustom: true,
-                        customContent: content
                     };
-                    favoriteItems.push(newItem);
+                    favoriteItems.push(item);
                     if (!(await saveFavorites())) {
-                        favoriteItems = favoriteItems.filter(fi => fi.id !== newItem.id);
+                        favoriteItems = favoriteItems.filter(existing => existing.name !== item.name);
                         return false;
                     }
-                    triggerFilter();
                     renderSidebar();
+                    triggerFilter();
+                    return true;
                 }, defaultContent);
             };
             

@@ -127,3 +127,17 @@ test("createCharacterCustomItemModal prefills custom content textarea", async ()
   assert.ok(textarea);
   assert.equal(textarea.value, "alpha, beta, ");
 });
+
+test("getCharacterOverlayTags uses custom prompt content as card tags", async () => {
+  installDom();
+  const { getCharacterOverlayTags } = await import("../js/anima_character_selector.js?case=custom-tags");
+
+  const tags = getCharacterOverlayTags({
+    name: "custom_123",
+    nickname: "My Character Set",
+    isCustom: true,
+    customContent: "alpha, beta, alpha, gamma",
+  });
+
+  assert.deepEqual(tags, ["alpha", "beta", "gamma"]);
+});
