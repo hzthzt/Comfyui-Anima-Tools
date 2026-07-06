@@ -583,6 +583,106 @@ class AnimaPoseTagSelectorPlus:
 
         return _anima_selector_tags_result({"pose_tags": pose_tags}, final_text)
 
+class AnimaPromptTagSelector:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "prompt_tags": ("STRING", {"multiline": True, "default": ""}),
+                "mode": (["append", "override"], {"default": "append"}),
+            },
+            "optional": {
+                "opt_prompt": ("STRING", {"forceInput": True}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    FUNCTION = "process_tags"
+    CATEGORY = "AnimaArt"
+
+    def process_tags(self, prompt_tags, mode, opt_prompt=""):
+        tags_list = _anima_tag_widget_tokens(prompt_tags)
+        processed_tags = []
+
+        for tag in tags_list:
+            if tag.startswith("_raw_:"):
+                processed_tags.append(tag[6:])
+                continue
+            if tag:
+                processed_tags.append(tag)
+
+        joined_prompt = ", ".join(processed_tags)
+
+        if opt_prompt and opt_prompt.strip():
+            opt_prompt = opt_prompt.strip()
+            if mode == "append":
+                if joined_prompt:
+                    if opt_prompt.endswith(","):
+                        final_text = f"{joined_prompt}, {opt_prompt}"
+                    else:
+                        final_text = f"{joined_prompt}, {opt_prompt}, "
+                else:
+                    final_text = opt_prompt
+            else:
+                if joined_prompt:
+                    final_text = f"{joined_prompt}, "
+                else:
+                    final_text = opt_prompt
+        else:
+            if joined_prompt:
+                final_text = f"{joined_prompt}, "
+            else:
+                final_text = ""
+
+        return _anima_selector_tags_result({"prompt_tags": prompt_tags}, final_text)
+
+class AnimaPromptTagSelectorPlus:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "prompt_tags": ("STRING", {"multiline": True, "default": ""}),
+                "extra_text": ("STRING", {"multiline": True, "default": ""}),
+                "separator": ("STRING", {"default": ", "}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    FUNCTION = "process_tags"
+    CATEGORY = "AnimaArt"
+
+    def process_tags(self, prompt_tags, extra_text, separator=", "):
+        tags_list = _anima_tag_widget_tokens(prompt_tags)
+        processed_tags = []
+
+        for tag in tags_list:
+            if tag.startswith("_raw_:"):
+                processed_tags.append(tag[6:])
+                continue
+            if tag:
+                processed_tags.append(tag)
+
+        joined_prompt = ", ".join(processed_tags)
+        if joined_prompt:
+            joined_prompt += ", "
+
+        extra_text_clean = extra_text.strip() if extra_text else ""
+
+        if extra_text_clean and joined_prompt:
+            sep = separator if separator is not None else ", "
+            if sep.strip() == "," or sep.strip() == "":
+                final_text = f"{joined_prompt}{extra_text_clean}"
+            else:
+                final_text = f"{joined_prompt.rstrip(', ')}{sep}{extra_text_clean}"
+        elif extra_text_clean:
+            final_text = extra_text_clean
+        else:
+            final_text = joined_prompt
+
+        return _anima_selector_tags_result({"prompt_tags": prompt_tags}, final_text)
+
 class AnimaPromptPlus:
     @classmethod
     def INPUT_TYPES(cls):
@@ -596,6 +696,7 @@ class AnimaPromptPlus:
                 "background_tags": ("STRING", {"multiline": True, "default": ""}),
                 "extra_prompt": ("STRING", {"multiline": True, "default": ""}),
                 "separator": ("STRING", {"default": ", "}),
+                "prompt_tags": ("STRING", {"multiline": True, "default": ""}),
             }
         }
 
@@ -634,8 +735,10 @@ class AnimaPromptPlus:
         background_tags,
         extra_prompt,
         separator=", ",
+        prompt_tags="",
     ):
         selector_tags = {
+            "prompt_tags": prompt_tags,
             "artist_tags": artist_tags,
             "character_tags": character_tags,
             "clothing_tags": clothing_tags,
@@ -644,6 +747,7 @@ class AnimaPromptPlus:
         }
         parts = []
         parts.extend(self._split_prompt_tokens(quality_prompt))
+        parts.extend(self._split_prompt_tokens(prompt_tags))
         parts.extend(self._artist_tokens(artist_tags))
         parts.extend(self._split_prompt_tokens(character_tags))
         parts.extend(self._split_prompt_tokens(clothing_tags))
@@ -1247,6 +1351,14 @@ class AnimaPoseTagSelectorPlusTagged(AnimaPoseTagSelectorPlus):
     pass
 
 
+class AnimaPromptTagSelectorTagged(AnimaPromptTagSelector):
+    pass
+
+
+class AnimaPromptTagSelectorPlusTagged(AnimaPromptTagSelectorPlus):
+    pass
+
+
 class AnimaPromptPlusTagged(AnimaPromptPlus):
     pass
 
@@ -1276,6 +1388,10 @@ NODE_CLASS_MAPPINGS = {
     "AnimaPoseTagSelectorPlus": AnimaPoseTagSelectorPlus,
     "AnimaPoseTagSelectorTagged": AnimaPoseTagSelectorTagged,
     "AnimaPoseTagSelectorPlusTagged": AnimaPoseTagSelectorPlusTagged,
+    "AnimaPromptTagSelector": AnimaPromptTagSelector,
+    "AnimaPromptTagSelectorPlus": AnimaPromptTagSelectorPlus,
+    "AnimaPromptTagSelectorTagged": AnimaPromptTagSelectorTagged,
+    "AnimaPromptTagSelectorPlusTagged": AnimaPromptTagSelectorPlusTagged,
     "AnimaPromptPlus": AnimaPromptPlus,
     "AnimaPromptPlusTagged": AnimaPromptPlusTagged,
     "AnimaPromptComposer": AnimaPromptComposer,
@@ -1304,6 +1420,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AnimaPoseTagSelectorPlus": "Anima Pose Tag Selector+",
     "AnimaPoseTagSelectorTagged": "Anima Pose Tag Selector (Tagged)",
     "AnimaPoseTagSelectorPlusTagged": "Anima Pose Tag Selector+ (Tagged)",
+    "AnimaPromptTagSelector": "Anima Prompt Tag Selector",
+    "AnimaPromptTagSelectorPlus": "Anima Prompt Tag Selector+",
+    "AnimaPromptTagSelectorTagged": "Anima Prompt Tag Selector (Tagged)",
+    "AnimaPromptTagSelectorPlusTagged": "Anima Prompt Tag Selector+ (Tagged)",
     "AnimaPromptPlus": "Anima Prompt Plus",
     "AnimaPromptPlusTagged": "Anima Prompt Plus (Tagged)",
     "AnimaPromptComposer": "Anima Prompt Random Draw",
@@ -1356,7 +1476,12 @@ SELECTOR_RANDOM_INPUTS = {
     "AnimaPoseTagSelectorPlus": {"pose": "pose_tags"},
     "AnimaPoseTagSelectorTagged": {"pose": "pose_tags"},
     "AnimaPoseTagSelectorPlusTagged": {"pose": "pose_tags"},
+    "AnimaPromptTagSelector": {"prompt": "prompt_tags"},
+    "AnimaPromptTagSelectorPlus": {"prompt": "prompt_tags"},
+    "AnimaPromptTagSelectorTagged": {"prompt": "prompt_tags"},
+    "AnimaPromptTagSelectorPlusTagged": {"prompt": "prompt_tags"},
     "AnimaPromptPlus": {
+        "prompt": "prompt_tags",
         "artist": "artist_tags",
         "character": "character_tags",
         "clothing": "clothing_tags",
@@ -1364,6 +1489,7 @@ SELECTOR_RANDOM_INPUTS = {
         "background": "background_tags",
     },
     "AnimaPromptPlusTagged": {
+        "prompt": "prompt_tags",
         "artist": "artist_tags",
         "character": "character_tags",
         "clothing": "clothing_tags",
@@ -1393,6 +1519,10 @@ SELECTOR_WIDGET_ORDERS = {
     "AnimaPoseTagSelectorPlus": ["pose_tags", "extra_text", "separator"],
     "AnimaPoseTagSelectorTagged": ["pose_tags", "mode"],
     "AnimaPoseTagSelectorPlusTagged": ["pose_tags", "extra_text", "separator"],
+    "AnimaPromptTagSelector": ["prompt_tags", "mode"],
+    "AnimaPromptTagSelectorPlus": ["prompt_tags", "extra_text", "separator"],
+    "AnimaPromptTagSelectorTagged": ["prompt_tags", "mode"],
+    "AnimaPromptTagSelectorPlusTagged": ["prompt_tags", "extra_text", "separator"],
     "AnimaPromptPlus": [
         "quality_prompt",
         "artist_tags",
@@ -1402,6 +1532,7 @@ SELECTOR_WIDGET_ORDERS = {
         "background_tags",
         "extra_prompt",
         "separator",
+        "prompt_tags",
     ],
     "AnimaPromptPlusTagged": [
         "quality_prompt",
@@ -1412,6 +1543,7 @@ SELECTOR_WIDGET_ORDERS = {
         "background_tags",
         "extra_prompt",
         "separator",
+        "prompt_tags",
     ],
 }
 
@@ -1508,7 +1640,41 @@ def _set_selector_tag_state_from_random(workflow_node, input_name, text):
         disabled.append({"text": text, "enabled": False, "source": tag.get("source") or "random"})
     field["tags"] = incoming + disabled
 
+def _prompt_catalog_random_text():
+    import json
+    import os
+    import random
+
+    path = os.path.join(os.path.dirname(__file__), "js", "config", "selector_tag_catalog", "prompt.json")
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            catalog = json.load(handle)
+    except Exception:
+        return "", []
+
+    tags = []
+    for item in catalog.get("tags", []):
+        if not isinstance(item, dict):
+            continue
+        tag = str(item.get("tag") or "").strip()
+        if not tag:
+            continue
+        tags.append({
+            "title": tag,
+            "tags": tag,
+            "section": "prompt",
+            "category": (item.get("categoryIds") or ["prompt"])[0],
+        })
+
+    if not tags:
+        return "", []
+    selected = [random.SystemRandom().choice(tags)]
+    return f"{selected[0]['tags']}, ", selected
+
 def _selector_random_text(composer, section):
+    if section == "prompt":
+        return _prompt_catalog_random_text()
+
     selected, text = composer._resolve_prompt_data(
         section == "artist",
         section == "character",

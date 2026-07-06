@@ -129,6 +129,7 @@ test("selectors initialize tag favorites with the unified label key", async () =
     "js/anima_pose_selector.js",
     "js/anima_background_selector.js",
     "js/anima_clothing_selector.js",
+    "js/anima_prompt_tag_selector.js",
   ];
 
   for (const file of selectorFiles) {
@@ -136,4 +137,72 @@ test("selectors initialize tag favorites with the unified label key", async () =
     assert.doesNotMatch(source, /t\("Default Tags"\)/, `${file} should not initialize new tag groups as Default Tags`);
     assert.match(source, /t\("Favorite Tags"\)/, `${file} should initialize new tag groups as Favorite Tags`);
   }
+});
+
+test("prompt tag selector uses the shared tag library without image card data", async () => {
+  const source = await readFile(new URL("../js/anima_prompt_tag_selector.js", import.meta.url), "utf8");
+
+  assert.match(source, /AnimaPromptTagSelector/);
+  assert.match(source, /prompt_tags/);
+  assert.match(source, /createSelectorTagView/);
+  assert.match(source, /resolveSelectorTagCatalog\("prompt"/);
+  assert.doesNotMatch(source, /showRandom:\s*false/);
+  assert.doesNotMatch(source, /markImageLoaded|isImageLoaded|createPromptTagsHeaderAction/);
+});
+
+test("prompt selector action row uses the shared random toggle layout", async () => {
+  installDom();
+  const { addSelectorActionRow } = await import("../js/anima_selector_random.js?case=prompt-random");
+  const node = {
+    widgets: [],
+    addDOMWidget(name, type, element) {
+      const widget = { name, type, element };
+      this.widgets.push(widget);
+      return widget;
+    },
+    setDirtyCanvas() {},
+  };
+
+  const rowWidget = addSelectorActionRow(node, {
+    section: "prompt",
+    label: "Open Prompt Tag Selector",
+    onOpen: () => {},
+  });
+
+  const buttons = rowWidget.element.querySelectorAll("button");
+  assert.equal(buttons.length, 2);
+  assert.equal(buttons[0].textContent, "Open Prompt Tag Selector");
+  assert.match(buttons[1].textContent, /Random: Off|Random: On|Random Off|Random On/);
+  assert.equal(rowWidget.__animaSelectorActionSection, "prompt");
+  assert.equal(node._animaSelectorActionRows.prompt, rowWidget);
+});
+
+test("selector action rows keep random toggle fixed while open button flexes", async () => {
+  installDom();
+  const { addSelectorActionRow } = await import("../js/anima_selector_random.js?case=random-button-width");
+  const container = document.createElement("div");
+  const el = document.createElement("div");
+  const node = {
+    widgets: [],
+    properties: {},
+    addDOMWidget(name, type, element) {
+      const widget = { name, type, element, container, el };
+      this.widgets.push(widget);
+      return widget;
+    },
+    setDirtyCanvas() {},
+  };
+
+  const rowWidget = addSelectorActionRow(node, {
+    section: "pose",
+    label: "Open Pose Selector",
+    onOpen: () => {},
+  });
+
+  rowWidget.computeSize(520);
+  const buttons = rowWidget.element.querySelectorAll("button");
+  assert.equal(buttons.length, 2);
+  assert.equal(buttons[0].style.width, "");
+  assert.equal(buttons[1].style.width, "");
+  assert.match(buttons[1].style.cssText, /flex:\s*0 0 92px/);
 });

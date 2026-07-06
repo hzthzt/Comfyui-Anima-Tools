@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 
 test("resolveSelectorTagCatalog loads only the requested selector section file", async () => {
   const {
@@ -45,4 +46,23 @@ test("resolveSelectorTagCatalog returns an empty catalog when a section file is 
   });
 
   assert.deepEqual(catalog, []);
+});
+
+test("prompt tag catalog keeps converted composition and restricted categories", async () => {
+  const config = JSON.parse(await readFile(
+    new URL("../js/config/selector_tag_catalog/prompt.json", import.meta.url),
+    "utf8",
+  ));
+
+  const categoryIds = new Set(config.categories.map(category => category.id));
+  const tags = new Set(config.tags.map(item => item.tag));
+
+  assert.equal(config.section, "prompt");
+  assert.ok(categoryIds.has("composition"));
+  assert.ok(categoryIds.has("perspective"));
+  assert.ok(categoryIds.has("r18-t1"));
+  assert.ok(categoryIds.has("r18-t2"));
+  assert.ok(config.tags.length > 500);
+  assert.ok(tags.has("dutch angle"));
+  assert.ok(tags.has("rating explicit"));
 });

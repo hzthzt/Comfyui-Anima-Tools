@@ -217,6 +217,8 @@ export function addSelectorActionRow(node, config) {
         await onOpen();
     });
 
+    row.appendChild(openButton);
+
     const toggleButton = document.createElement("button");
     toggleButton.type = "button";
     const updateToggle = () => styleToggle(toggleButton, isRandomEnabled(node, section));
@@ -229,7 +231,6 @@ export function addSelectorActionRow(node, config) {
         updateToggle();
     });
 
-    row.appendChild(openButton);
     row.appendChild(toggleButton);
 
     const widget = node.addDOMWidget(`anima_${section}_selector_actions`, "div", row, {

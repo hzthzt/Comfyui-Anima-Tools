@@ -499,13 +499,117 @@
       }
     }
   },
+  "AnimaPromptTagSelector": {
+    "display_name": "Anima Prompt Tag Selector",
+    "description": "Select general prompt tags for camera, composition, color, quality, style, format, censorship, and restricted categories through a text tag catalog.",
+    "inputs": {
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "Plain STRING prompt text filled by the tag catalog selector. Use the Tagged variant for chip management."
+      },
+      "mode": {
+        "name": "Concatenation Mode",
+        "tooltip": "Append selected tags to optional input prompt, or override it completely.",
+        "values": {
+          "append": "Append",
+          "override": "Override"
+        }
+      },
+      "opt_prompt": {
+        "name": "Optional Prompt",
+        "tooltip": "An optional input prompt text slot to merge with selected prompt tags."
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "text"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorTagged": {
+    "display_name": "Anima Prompt Tag Selector (Tagged)",
+    "description": "Select general prompt tags for camera, composition, color, quality, style, format, censorship, and restricted categories through a text tag catalog. This Tagged variant keeps the STRING text box visible and adds chip-style tag management.",
+    "inputs": {
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "The STRING text box remains visible. The tag panel manages enabled, disabled, deleted, and historical tags, and syncs enabled tags into this field."
+      },
+      "mode": {
+        "name": "Concatenation Mode",
+        "tooltip": "Append selected tags to optional input prompt, or override it completely.",
+        "values": {
+          "append": "Append",
+          "override": "Override"
+        }
+      },
+      "opt_prompt": {
+        "name": "Optional Prompt",
+        "tooltip": "An optional input prompt text slot to merge with selected prompt tags."
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "text"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorPlus": {
+    "display_name": "Anima Prompt Tag Selector+",
+    "description": "Enhanced Prompt Tag Selector, automatically concatenating prompt tags and extra custom text via a custom separator.",
+    "inputs": {
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "Plain STRING prompt text filled by the tag catalog selector. Use the Tagged variant for chip management."
+      },
+      "extra_text": {
+        "name": "Custom Text",
+        "tooltip": "A custom prompt text input below the prompt tags."
+      },
+      "separator": {
+        "name": "Separator",
+        "tooltip": "The delimiter used to join both sections, defaults to ', '."
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "text"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorPlusTagged": {
+    "display_name": "Anima Prompt Tag Selector+ (Tagged)",
+    "description": "Enhanced Prompt Tag Selector, automatically concatenating prompt tags and extra custom text via a custom separator. This Tagged variant keeps the STRING text box visible and adds chip-style tag management.",
+    "inputs": {
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "The STRING text box remains visible. The tag panel manages enabled, disabled, deleted, and historical tags, and syncs enabled tags into this field."
+      },
+      "extra_text": {
+        "name": "Custom Text",
+        "tooltip": "A custom prompt text input below the prompt tags."
+      },
+      "separator": {
+        "name": "Separator",
+        "tooltip": "The delimiter used to join both sections, defaults to ', '."
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "text"
+      }
+    }
+  },
   "AnimaPromptPlus": {
     "display_name": "Anima Prompt Plus",
-    "description": "Build a complete prompt from editable quality, artist, character, clothing, pose, background, and extra prompt sections, with visual selector buttons for each tag section.",
+    "description": "Build a complete prompt from editable quality, general prompt tags, artist, character, clothing, pose, background, and extra prompt sections, with selector buttons for each tag section.",
     "inputs": {
       "quality_prompt": {
         "name": "Quality Prompt",
         "tooltip": "Leading quality and style prompt text. This is placed before all selected tag sections."
+      },
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "General prompt tags for camera, composition, color, quality, style, format, censorship, and restricted categories."
       },
       "artist_tags": {
         "name": "Artist Tags",
@@ -544,11 +648,15 @@
   },
   "AnimaPromptPlusTagged": {
     "display_name": "Anima Prompt Plus (Tagged)",
-    "description": "Build a complete prompt from editable quality, artist, character, clothing, pose, background, and extra prompt sections, with visual selector buttons for each tag section. This Tagged variant keeps the STRING text box visible and adds chip-style tag management.",
+    "description": "Build a complete prompt from editable quality, general prompt tags, artist, character, clothing, pose, background, and extra prompt sections, with selector buttons for each tag section. This Tagged variant keeps the STRING text box visible and adds chip-style tag management.",
     "inputs": {
       "quality_prompt": {
         "name": "Quality Prompt",
         "tooltip": "Leading quality and style prompt text. This is placed before all selected tag sections."
+      },
+      "prompt_tags": {
+        "name": "Prompt Tags",
+        "tooltip": "The STRING text box remains visible. The tag panel manages enabled, disabled, deleted, and historical tags, and syncs enabled tags into this field."
       },
       "artist_tags": {
         "name": "Artist Tags",

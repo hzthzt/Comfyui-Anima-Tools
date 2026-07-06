@@ -27,18 +27,20 @@ function reorderSelectorButtons(node) {
     if (!node?.widgets?.length) return;
 
     const sectionOrder = new Map([
-        ["artist", 0],
-        ["character", 1],
-        ["clothing", 2],
-        ["pose", 3],
-        ["background", 4],
+        ["prompt", 0],
+        ["artist", 1],
+        ["character", 2],
+        ["clothing", 3],
+        ["pose", 4],
+        ["background", 5],
     ]);
     const labelOrder = new Map([
-        [t("Open Artist Selector"), 0],
-        [t("Open Character Selector"), 1],
-        [t("Open Clothing Selector"), 2],
-        [t("Open Pose Selector"), 3],
-        [t("Open Background Selector"), 4],
+        [t("Open Prompt Tag Selector"), 0],
+        [t("Open Artist Selector"), 1],
+        [t("Open Character Selector"), 2],
+        [t("Open Clothing Selector"), 3],
+        [t("Open Pose Selector"), 4],
+        [t("Open Background Selector"), 5],
     ]);
 
     const indexed = node.widgets

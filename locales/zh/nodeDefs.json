@@ -499,13 +499,117 @@
       }
     }
   },
+  "AnimaPromptTagSelector": {
+    "display_name": "Anima 通用 Prompt Tag 选择器",
+    "description": "通过文本标签词库选择并输出镜头、构图、视角、色彩、光影、质量、风格、画幅、审查与限制级等通用 Prompt Tag。",
+    "inputs": {
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "由标签词库选择器填入的普通 STRING 提示词文本。原始节点不显示标签管理面板；需要 chip 管理请使用 Tagged 变体。"
+      },
+      "mode": {
+        "name": "拼接模式",
+        "tooltip": "选择追加（Append）到外部 Prompt 后面，或是完全覆盖（Override）。",
+        "values": {
+          "append": "拼接",
+          "override": "覆盖"
+        }
+      },
+      "opt_prompt": {
+        "name": "可选输入 Prompt",
+        "tooltip": "一个可选的外部输入 Prompt 文本插槽，以便与选择的通用 Prompt Tag 合并输出。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "文本"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorTagged": {
+    "display_name": "Anima 通用 Prompt Tag 选择器 (Tagged)",
+    "description": "通过文本标签词库选择并输出镜头、构图、视角、色彩、光影、质量、风格、画幅、审查与限制级等通用 Prompt Tag。 Tagged 变体保留 STRING 文本框，并额外提供 chip 标签管理面板。",
+    "inputs": {
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "STRING 文本框仍会显示。标签面板负责启用、禁用、删除与历史恢复，并把启用标签同步回这个文本框。"
+      },
+      "mode": {
+        "name": "拼接模式",
+        "tooltip": "选择追加（Append）到外部 Prompt 后面，或是完全覆盖（Override）。",
+        "values": {
+          "append": "拼接",
+          "override": "覆盖"
+        }
+      },
+      "opt_prompt": {
+        "name": "可选输入 Prompt",
+        "tooltip": "一个可选的外部输入 Prompt 文本插槽，以便与选择的通用 Prompt Tag 合并输出。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "文本"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorPlus": {
+    "display_name": "Anima 通用 Prompt Tag 选择器+",
+    "description": "通用 Prompt Tag 选择器增强版，支持将通用 Prompt Tag 与下方的自定义提示词文本，通过指定的分隔符自动拼接输出。",
+    "inputs": {
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "由标签词库选择器填入的普通 STRING 提示词文本。原始节点不显示标签管理面板；需要 chip 管理请使用 Tagged 变体。"
+      },
+      "extra_text": {
+        "name": "自定义文本",
+        "tooltip": "在通用 Prompt Tag 输入框下面的自定义提示词或文本内容。"
+      },
+      "separator": {
+        "name": "分隔符",
+        "tooltip": "自动拼接两段文本时的分隔符，默认为 ', '。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "文本"
+      }
+    }
+  },
+  "AnimaPromptTagSelectorPlusTagged": {
+    "display_name": "Anima 通用 Prompt Tag 选择器+ (Tagged)",
+    "description": "通用 Prompt Tag 选择器增强版，支持将通用 Prompt Tag 与下方的自定义提示词文本，通过指定的分隔符自动拼接输出。 Tagged 变体保留 STRING 文本框，并额外提供 chip 标签管理面板。",
+    "inputs": {
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "STRING 文本框仍会显示。标签面板负责启用、禁用、删除与历史恢复，并把启用标签同步回这个文本框。"
+      },
+      "extra_text": {
+        "name": "自定义文本",
+        "tooltip": "在通用 Prompt Tag 输入框下面的自定义提示词或文本内容。"
+      },
+      "separator": {
+        "name": "分隔符",
+        "tooltip": "自动拼接两段文本时的分隔符，默认为 ', '。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "文本"
+      }
+    }
+  },
   "AnimaPromptPlus": {
     "display_name": "Anima 提示词+",
-    "description": "将质量提示词、画师、角色、服装、姿势、背景和额外提示词分区编辑并统一拼接输出，每个 Tag 分区都可通过对应选择器按钮填充。",
+    "description": "将质量提示词、通用 Prompt Tag、画师、角色、服装、姿势、背景和额外提示词分区编辑并统一拼接输出，每个 Tag 分区都可通过对应选择器按钮填充。",
     "inputs": {
       "quality_prompt": {
         "name": "质量提示词",
         "tooltip": "放在最前面的质量、风格或基础提示词。"
+      },
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "用于镜头、构图、视角、色彩、光影、质量、风格、画幅、审查与限制级等通用提示词。"
       },
       "artist_tags": {
         "name": "画师 Tags",
@@ -544,11 +648,15 @@
   },
   "AnimaPromptPlusTagged": {
     "display_name": "Anima 提示词+ (Tagged)",
-    "description": "将质量提示词、画师、角色、服装、姿势、背景和额外提示词分区编辑并统一拼接输出，每个 Tag 分区都可通过对应选择器按钮填充。 Tagged 变体保留 STRING 文本框，并额外提供 chip 标签管理面板。",
+    "description": "将质量提示词、通用 Prompt Tag、画师、角色、服装、姿势、背景和额外提示词分区编辑并统一拼接输出，每个 Tag 分区都可通过对应选择器按钮填充。 Tagged 变体保留 STRING 文本框，并额外提供 chip 标签管理面板。",
     "inputs": {
       "quality_prompt": {
         "name": "质量提示词",
         "tooltip": "放在最前面的质量、风格或基础提示词。"
+      },
+      "prompt_tags": {
+        "name": "通用 Prompt Tags",
+        "tooltip": "STRING 文本框仍会显示。标签面板负责启用、禁用、删除与历史恢复，并把启用标签同步回这个文本框。"
       },
       "artist_tags": {
         "name": "画师 Tags",
