@@ -777,7 +777,11 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "album",
+        "cd cover",
+        "disc cover"
+      ]
     },
     {
       "tag": "alcohol",
@@ -1388,7 +1392,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "apples"
+      ]
     },
     {
       "tag": "apple fruit",
@@ -2249,7 +2255,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "backlit"
+      ]
     },
     {
       "tag": "backpack",
@@ -2265,7 +2273,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ranset",
+        "back pack"
+      ]
     },
     {
       "tag": "backrooms aesthetic",
@@ -2345,7 +2356,11 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eye circles",
+        "eyebags",
+        "dark circles"
+      ]
     },
     {
       "tag": "bakery",
@@ -2474,7 +2489,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bananas"
+      ]
     },
     {
       "tag": "bandage",
@@ -2506,7 +2523,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bandage"
+      ]
     },
     {
       "tag": "banquet",
@@ -2847,7 +2866,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bath tub"
+      ]
     },
     {
       "tag": "battery icon",
@@ -3218,7 +3239,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bells"
+      ]
     },
     {
       "tag": "bellflower",
@@ -4269,7 +4292,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "black rose (flower)"
+      ]
     },
     {
       "tag": "black roses",
@@ -5257,7 +5282,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bloodshot eye"
+      ]
     },
     {
       "tag": "bloodstains",
@@ -5831,7 +5858,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "blueberries",
+        "blue berry"
+      ]
     },
     {
       "tag": "blurred appliance",
@@ -5927,7 +5957,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "blurred"
+      ]
     },
     {
       "tag": "blurry background",
@@ -6279,7 +6311,11 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bordered",
+        "windowboxed",
+        "windowbox"
+      ]
     },
     {
       "tag": "bottle",
@@ -6329,7 +6365,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bottom less"
+      ]
     },
     {
       "tag": "bouquet",
@@ -6347,7 +6385,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bouquets"
+      ]
     },
     {
       "tag": "bowl",
@@ -7335,7 +7375,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tapioca challenge"
+      ]
     },
     {
       "tag": "bubble tea on breast",
@@ -7483,7 +7525,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "buildings"
+      ]
     },
     {
       "tag": "building background",
@@ -7855,7 +7899,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "butterfly pose"
+      ]
     },
     {
       "tag": "butterfly swarm",
@@ -8033,7 +8079,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "coffee shop"
+      ]
     },
     {
       "tag": "cage",
@@ -8084,7 +8132,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "slice of cake"
+      ]
     },
     {
       "tag": "calendar",
@@ -8327,7 +8377,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "candies"
+      ]
     },
     {
       "tag": "candy displays",
@@ -8375,7 +8427,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "walking stick"
+      ]
     },
     {
       "tag": "canoe",
@@ -8555,7 +8609,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "merry-go-round",
+        "merry go round"
+      ]
     },
     {
       "tag": "carp",
@@ -8861,7 +8918,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "caustic lighting"
+      ]
     },
     {
       "tag": "caution tape",
@@ -8894,7 +8953,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "caves"
+      ]
     },
     {
       "tag": "cave painting",
@@ -9362,7 +9423,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chairs"
+      ]
     },
     {
       "tag": "chalice",
@@ -9843,7 +9906,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cherries"
+      ]
     },
     {
       "tag": "cherry blossom",
@@ -9893,7 +9958,11 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sakura blossoms",
+        "cherry trees",
+        "cherry blossom"
+      ]
     },
     {
       "tag": "chess",
@@ -9989,7 +10058,11 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gum",
+        "bubblegum",
+        "bubble gum"
+      ]
     },
     {
       "tag": "chiaroscuro",
@@ -10262,7 +10335,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chopstick"
+      ]
     },
     {
       "tag": "christianity",
@@ -10295,7 +10370,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "xmas"
+      ]
     },
     {
       "tag": "christmas ornaments",
@@ -10476,7 +10553,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cigarettes"
+      ]
     },
     {
       "tag": "cinematic angle",
@@ -10918,7 +10997,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "class room"
+      ]
     },
     {
       "tag": "claw mark",
@@ -11353,7 +11434,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "clouds"
+      ]
     },
     {
       "tag": "cloud focus",
@@ -13551,7 +13634,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "crabs"
+      ]
     },
     {
       "tag": "crack",
@@ -14049,7 +14134,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "zebra crossing",
+        "pedestrian crossing"
+      ]
     },
     {
       "tag": "crowd",
@@ -14516,7 +14604,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cup noodles"
+      ]
     },
     {
       "tag": "cupcake",
@@ -14532,7 +14622,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cupcakes"
+      ]
     },
     {
       "tag": "current",
@@ -14918,7 +15010,11 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "daisies",
+        "aster (flower)",
+        "daisy (flower)"
+      ]
     },
     {
       "tag": "damaged",
@@ -16260,7 +16356,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "focus blur"
+      ]
     },
     {
       "tag": "desaturated",
@@ -19923,7 +20021,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eyeballs"
+      ]
     },
     {
       "tag": "eyeball inside black thick liquid",
@@ -20116,7 +20216,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fading borders"
+      ]
     },
     {
       "tag": "faint moonlight",
@@ -20701,7 +20803,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "noise (visual)",
+        "grainy"
+      ]
     },
     {
       "tag": "film lighting",
@@ -21304,7 +21409,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flat colors"
+      ]
     },
     {
       "tag": "flat colors",
@@ -21723,7 +21830,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "space hair",
+        "hair blowing"
+      ]
     },
     {
       "tag": "floating in air",
@@ -22226,7 +22336,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "floral pattern",
+        "flower print"
+      ]
     },
     {
       "tag": "flow",
@@ -22261,7 +22374,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flowers"
+      ]
     },
     {
       "tag": "flower and plants",
@@ -23118,7 +23233,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "woods"
+      ]
     },
     {
       "tag": "forest setting",
@@ -23262,7 +23379,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "4th wall"
+      ]
     },
     {
       "tag": "fractal",
@@ -23406,7 +23525,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "frame"
+      ]
     },
     {
       "tag": "framed family photos",
@@ -23551,7 +23672,11 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "view from above",
+        "viewed from above",
+        "aerial view"
+      ]
     },
     {
       "tag": "from car facial",
@@ -25017,7 +25142,11 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "megane",
+        "meganekko",
+        "meganeko"
+      ]
     },
     {
       "tag": "glinting stars",
@@ -26457,7 +26586,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "goth"
+      ]
     },
     {
       "tag": "gothic church",
@@ -26591,7 +26722,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "grape"
+      ]
     },
     {
       "tag": "graph",
@@ -26800,7 +26933,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cemetery"
+      ]
     },
     {
       "tag": "graveyard at night",
@@ -27268,7 +27403,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gray theme"
+      ]
     },
     {
       "tag": "grey theme street",
@@ -27301,7 +27438,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "black and white",
+        "grayscale"
+      ]
     },
     {
       "tag": "grid paper background",
@@ -27526,7 +27666,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gymnasium"
+      ]
     },
     {
       "tag": "gym setting",
@@ -27558,7 +27700,11 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flower hair ornament",
+        "flower in hair",
+        "hair flowers"
+      ]
     },
     {
       "tag": "half monster",
@@ -27848,7 +27994,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand gun",
+        "pistol"
+      ]
     },
     {
       "tag": "handheld game console",
@@ -28299,7 +28448,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chin rest"
+      ]
     },
     {
       "tag": "head tilt",
@@ -29260,7 +29411,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "houses"
+      ]
     },
     {
       "tag": "houseplant",
@@ -29501,7 +29654,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hydrangeas",
+        "hortensia (flower)"
+      ]
     },
     {
       "tag": "hydraulic piping",
@@ -30179,7 +30335,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nurse office",
+        "nurse's office"
+      ]
     },
     {
       "tag": "infographic",
@@ -31713,7 +31872,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "scenary"
+      ]
     },
     {
       "tag": "lantern",
@@ -32314,7 +32475,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lensflare"
+      ]
     },
     {
       "tag": "leviathan",
@@ -32923,7 +33086,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "suzuran"
+      ]
     },
     {
       "tag": "lily pad",
@@ -32939,7 +33104,11 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "water lily",
+        "lilypads",
+        "lilypad"
+      ]
     },
     {
       "tag": "liminal horror",
@@ -32990,7 +33159,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "restricted palette"
+      ]
     },
     {
       "tag": "line art buildings",
@@ -33038,7 +33209,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "line-up",
+        "line up"
+      ]
     },
     {
       "tag": "linoleum floor",
@@ -33806,7 +33980,11 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying down",
+        "laying down",
+        "laying"
+      ]
     },
     {
       "tag": "lying on water",
@@ -34047,7 +34225,11 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "magical circle",
+        "magic circles",
+        "magical circles"
+      ]
     },
     {
       "tag": "magic construct",
@@ -34351,7 +34533,12 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tangerine",
+        "clementine",
+        "mikan",
+        "mandarin"
+      ]
     },
     {
       "tag": "manga book",
@@ -34735,7 +34922,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "marketplace"
+      ]
     },
     {
       "tag": "market scale",
@@ -35539,7 +35728,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mic"
+      ]
     },
     {
       "tag": "microphone stand",
@@ -36218,7 +36409,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "monochromatic"
+      ]
     },
     {
       "tag": "monochrome background pattern",
@@ -36315,7 +36508,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "monsters"
+      ]
     },
     {
       "tag": "monsters behind",
@@ -36743,7 +36938,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mountains"
+      ]
     },
     {
       "tag": "mountain backdrop",
@@ -37180,7 +37377,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mushrooms"
+      ]
     },
     {
       "tag": "mushroom runes",
@@ -37730,7 +37929,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "neck bite"
+      ]
     },
     {
       "tag": "necklace",
@@ -38301,7 +38502,10 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "no line-art",
+        "lineless"
+      ]
     },
     {
       "tag": "no signal tv",
@@ -38381,7 +38585,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "noodle"
+      ]
     },
     {
       "tag": "noontime",
@@ -38543,7 +38749,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sea"
+      ]
     },
     {
       "tag": "ocean background",
@@ -38849,7 +39057,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying on back",
+        "supine"
+      ]
     },
     {
       "tag": "on bed",
@@ -38978,7 +39189,11 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hotspring",
+        "hot spring",
+        "hot springs"
+      ]
     },
     {
       "tag": "oozing",
@@ -39578,7 +39793,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "outside",
+        "outdoor"
+      ]
     },
     {
       "tag": "outer space",
@@ -39611,7 +39829,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "outlines",
+        "outlined"
+      ]
     },
     {
       "tag": "outside",
@@ -39643,7 +39864,11 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "outside of border",
+        "out of border",
+        "cropped background"
+      ]
     },
     {
       "tag": "outside corner of the wall",
@@ -40194,7 +40419,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pale colors"
+      ]
     },
     {
       "tag": "palette",
@@ -40376,7 +40603,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "paper cut-out"
+      ]
     },
     {
       "tag": "paper lantern",
@@ -40394,7 +40623,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chinese lantern"
+      ]
     },
     {
       "tag": "paper lantern strings",
@@ -40668,7 +40899,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "partially monochrome"
+      ]
     },
     {
       "tag": "partially immersed",
@@ -41235,7 +41468,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flower petals",
+        "petal"
+      ]
     },
     {
       "tag": "petals floating all over the sky",
@@ -41268,7 +41504,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "petals on water",
+        "rose petal bath"
+      ]
     },
     {
       "tag": "petals turning into butterflies",
@@ -41348,7 +41587,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "phonebooth",
+        "telephone booth"
+      ]
     },
     {
       "tag": "phone screen",
@@ -41478,7 +41720,12 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "manual piano",
+        "acoustic piano",
+        "analog piano",
+        "electric piano"
+      ]
     },
     {
       "tag": "piano bench",
@@ -41737,7 +41984,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pillarbox"
+      ]
     },
     {
       "tag": "pillow",
@@ -42336,7 +42585,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "plants"
+      ]
     },
     {
       "tag": "plant background",
@@ -42563,7 +42814,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "plum blossom"
+      ]
     },
     {
       "tag": "plush carpet",
@@ -42757,7 +43010,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "swimming pool"
+      ]
     },
     {
       "tag": "pool balls on table",
@@ -42997,7 +43252,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "potato chip"
+      ]
     },
     {
       "tag": "potted ferns",
@@ -43029,7 +43286,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "potted plants"
+      ]
     },
     {
       "tag": "potted plants",
@@ -43094,7 +43353,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "male pov"
+      ]
     },
     {
       "tag": "pov doorway",
@@ -43192,7 +43453,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "jail"
+      ]
     },
     {
       "tag": "privacy screen",
@@ -43792,7 +44055,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "railway crossing",
+        "train crossing"
+      ]
     },
     {
       "tag": "railway",
@@ -43842,7 +44108,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "raining"
+      ]
     },
     {
       "tag": "rain droplets",
@@ -43923,7 +44191,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "rainbows"
+      ]
     },
     {
       "tag": "rainbow background",
@@ -45104,7 +45374,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "character sheet"
+      ]
     },
     {
       "tag": "reference sketches",
@@ -45688,7 +45960,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ribbons"
+      ]
     },
     {
       "tag": "ribbons",
@@ -45768,7 +46042,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "rice field"
+      ]
     },
     {
       "tag": "rim light",
@@ -46287,7 +46563,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "roof"
+      ]
     },
     {
       "tag": "rooftop edge",
@@ -46384,7 +46662,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ropes"
+      ]
     },
     {
       "tag": "rose",
@@ -46401,7 +46681,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "roses"
+      ]
     },
     {
       "tag": "rose bouquet",
@@ -46788,7 +47070,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ruin"
+      ]
     },
     {
       "tag": "rule of half",
@@ -47030,7 +47314,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "drool",
+        "spit"
+      ]
     },
     {
       "tag": "sand",
@@ -47593,7 +47880,12 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "seifuku",
+        "school uniforms",
+        "schoolgirl",
+        "school girl"
+      ]
     },
     {
       "tag": "schools of fish",
@@ -48319,7 +48611,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shackle",
+        "manacles"
+      ]
     },
     {
       "tag": "shade",
@@ -49257,7 +49552,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shooting stars"
+      ]
     },
     {
       "tag": "shooting stars",
@@ -49289,7 +49586,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shops",
+        "store"
+      ]
     },
     {
       "tag": "shopping",
@@ -49337,7 +49637,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "coast",
+        "shoreline"
+      ]
     },
     {
       "tag": "shoreline",
@@ -49402,7 +49705,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "jinja"
+      ]
     },
     {
       "tag": "shrine bell",
@@ -49905,7 +50210,10 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "rough sketch",
+        "rough"
+      ]
     },
     {
       "tag": "ski lift in distance",
@@ -50068,7 +50376,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "city skyline"
+      ]
     },
     {
       "tag": "skyscraper",
@@ -50801,7 +51111,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pop can"
+      ]
     },
     {
       "tag": "sofa",
@@ -51514,7 +51826,10 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sparkles",
+        "sparkling"
+      ]
     },
     {
       "tag": "sparkler",
@@ -51659,7 +51974,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "higanbana"
+      ]
     },
     {
       "tag": "spider web",
@@ -52127,7 +52444,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "spot colors"
+      ]
     },
     {
       "tag": "spot light",
@@ -52923,7 +53242,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "star sky"
+      ]
     },
     {
       "tag": "starry sky above",
@@ -54051,7 +54372,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "strawberries"
+      ]
     },
     {
       "tag": "strawberry shortcake",
@@ -54084,7 +54407,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "creek"
+      ]
     },
     {
       "tag": "street",
@@ -54763,7 +55088,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sugar cubes",
+        "sugar cube (object)"
+      ]
     },
     {
       "tag": "suitcase",
@@ -54992,7 +55320,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sunflowers"
+      ]
     },
     {
       "tag": "sunflower field",
@@ -55480,7 +55810,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "yams",
+        "yam"
+      ]
     },
     {
       "tag": "swim ring",
@@ -55721,7 +56054,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "swords"
+      ]
     },
     {
       "tag": "symbiotic organism",
@@ -55754,7 +56089,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "symmetrical"
+      ]
     },
     {
       "tag": "synthwave",
@@ -56111,7 +56448,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "teacups",
+        "tea cup"
+      ]
     },
     {
       "tag": "teal",
@@ -56177,7 +56517,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tear"
+      ]
     },
     {
       "tag": "technical background",
@@ -56242,7 +56584,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bared teeth"
+      ]
     },
     {
       "tag": "telegraph pole",
@@ -57221,7 +57565,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "restroom stall"
+      ]
     },
     {
       "tag": "tokyo dome",
@@ -57382,7 +57728,11 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ripped clothing",
+        "torn clothing",
+        "ripped clothes"
+      ]
     },
     {
       "tag": "torrential rain",
@@ -58435,7 +58785,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tulips"
+      ]
     },
     {
       "tag": "tumbleweed",
@@ -58956,7 +59308,9 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "undergarments"
+      ]
     },
     {
       "tag": "uneven ground",
@@ -61459,7 +61813,9 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "watermelons"
+      ]
     },
     {
       "tag": "wave",
@@ -61800,7 +62156,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "swamp",
+        "marsh"
+      ]
     },
     {
       "tag": "whale",
@@ -63252,7 +63611,9 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "wing"
+      ]
     },
     {
       "tag": "winter",
@@ -64415,7 +64776,9 @@
         "minimalist-abstract"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "zoomlayer"
+      ]
     }
   ]
 }

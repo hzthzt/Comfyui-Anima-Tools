@@ -26,3 +26,4 @@ Desktop.ini
 # Antigravity CLI temporary workspace files
 .antigravitycli/
 .gemini/
+.tmp-user/

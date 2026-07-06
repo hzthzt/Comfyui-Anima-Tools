@@ -133,7 +133,8 @@
         "signed"
       ],
       "sources": [
-        "data/tags/image-composition/articles.yaml"
+        "data/tags/image-composition/articles.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/articles.yaml"
       ]
     },
     {
@@ -152,7 +153,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/articles.yaml"
+        "data/tags/image-composition/articles.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/articles.yaml"
       ]
     },
     {
@@ -171,7 +173,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/articles.yaml"
+        "data/tags/image-composition/articles.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/articles.yaml"
       ]
     },
     {
@@ -192,7 +195,8 @@
         "watermarked"
       ],
       "sources": [
-        "data/tags/image-composition/articles.yaml"
+        "data/tags/image-composition/articles.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/articles.yaml"
       ]
     },
     {
@@ -211,7 +215,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -232,7 +237,8 @@
         "xmas"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -251,7 +257,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -270,7 +277,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -289,7 +297,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -308,7 +317,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -329,7 +339,8 @@
         "scenary"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -352,7 +363,8 @@
         "magical circles"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -374,7 +386,8 @@
         "outdoor"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -393,7 +406,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -417,7 +431,8 @@
         "sci fi"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -436,7 +451,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -458,7 +474,8 @@
         "transparent png"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -481,7 +498,8 @@
         "valentines day"
       ],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -500,7 +518,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/background.yaml"
+        "data/tags/image-composition/background.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/background.yaml"
       ]
     },
     {
@@ -523,7 +542,8 @@
       ],
       "sources": [
         "manual",
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -544,7 +564,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -582,7 +603,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "manual"
+        "manual",
+        "danbooru-diffusion-prompt-builder:data/tags/human/directions.yaml"
       ]
     },
     {
@@ -618,9 +640,12 @@
         "camera-shot"
       ],
       "booruType": "general",
-      "aliases": [],
+      "aliases": [
+        "bust"
+      ],
       "sources": [
-        "manual"
+        "manual",
+        "danbooru-diffusion-prompt-builder:data/tags/human/directions.yaml"
       ]
     },
     {
@@ -641,7 +666,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -662,7 +688,8 @@
         "censor bars"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -681,7 +708,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -700,7 +728,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -722,7 +751,8 @@
         "censor"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -741,7 +771,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -760,7 +791,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -779,7 +811,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -798,7 +831,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -819,7 +853,8 @@
         "convenient censorship"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -840,7 +875,8 @@
         "unnecessary censorship"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -859,7 +895,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -880,7 +917,8 @@
         "hair on breasts"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -899,7 +937,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -918,7 +957,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -937,7 +977,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -958,7 +999,8 @@
         "eye censor"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -977,7 +1019,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1000,7 +1043,8 @@
         "pixel censor"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1019,7 +1063,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1038,7 +1083,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1057,7 +1103,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1076,7 +1123,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1095,7 +1143,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1114,7 +1163,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1135,7 +1185,8 @@
         "pointless censorship"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1156,7 +1207,8 @@
         "convenient bath steam"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1177,7 +1229,8 @@
         "convenient tail"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1196,7 +1249,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1217,7 +1271,8 @@
         "uncensoring"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1238,7 +1293,8 @@
         "censor wings"
       ],
       "sources": [
-        "data/tags/image-composition/censorship.yaml"
+        "data/tags/image-composition/censorship.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/censorship.yaml"
       ]
     },
     {
@@ -1257,7 +1313,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1276,7 +1333,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1295,7 +1353,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1314,7 +1373,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1333,7 +1393,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1352,7 +1413,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1371,7 +1433,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1390,7 +1453,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1409,7 +1473,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1428,7 +1493,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1447,7 +1513,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1466,7 +1533,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1485,7 +1553,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1506,7 +1575,8 @@
         "gray theme"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1528,7 +1598,8 @@
         "grayscale"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1547,7 +1618,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1566,7 +1638,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1585,7 +1658,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1606,7 +1680,8 @@
         "restricted palette"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1627,7 +1702,8 @@
         "monochromatic"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1648,7 +1724,8 @@
         "muted colors"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1667,7 +1744,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1686,7 +1764,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1707,7 +1786,8 @@
         "pale colors"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1728,7 +1808,8 @@
         "partially monochrome"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1747,7 +1828,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1766,7 +1848,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1785,7 +1868,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1806,7 +1890,8 @@
         "rainbows"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1825,7 +1910,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1844,7 +1930,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1863,7 +1950,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1884,7 +1972,8 @@
         "spot colors"
       ],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1903,7 +1992,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1922,7 +2012,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/color.yaml"
+        "data/tags/image-composition/color.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/color.yaml"
       ]
     },
     {
@@ -1941,7 +2032,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -1964,7 +2056,8 @@
         "windowbox"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -1987,7 +2080,8 @@
         "boob chart"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2006,7 +2100,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2025,7 +2120,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2044,7 +2140,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2063,7 +2160,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2082,7 +2180,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2101,7 +2200,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2122,7 +2222,8 @@
         "fading borders"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2141,7 +2242,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2160,7 +2262,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2181,7 +2284,8 @@
         "frame"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2200,7 +2304,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2221,7 +2326,8 @@
         "eyes out of frame"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2240,7 +2346,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2262,7 +2369,8 @@
         "letter boxed"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2284,7 +2392,8 @@
         "line up"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2303,7 +2412,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2322,7 +2432,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2341,7 +2452,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2360,7 +2472,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2379,7 +2492,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2402,7 +2516,8 @@
         "cropped background"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2421,7 +2536,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2440,7 +2556,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2461,7 +2578,8 @@
         "pillarbox"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2480,7 +2598,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2499,7 +2618,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2520,7 +2640,8 @@
         "character sheet"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2541,7 +2662,8 @@
         "relationship chart"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2560,7 +2682,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2579,7 +2702,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2598,7 +2722,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2617,7 +2742,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2636,7 +2762,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2657,7 +2784,8 @@
         "symmetrical"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2676,7 +2804,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2697,7 +2826,8 @@
         "crop marks"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2718,7 +2848,8 @@
         "camera frame"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2739,7 +2870,8 @@
         "zoomlayer"
       ],
       "sources": [
-        "data/tags/image-composition/composition.yaml"
+        "data/tags/image-composition/composition.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/composition.yaml"
       ]
     },
     {
@@ -2758,7 +2890,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2779,7 +2912,8 @@
         "backlit"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2798,7 +2932,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2817,7 +2952,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2838,7 +2974,8 @@
         "blurred"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2857,7 +2994,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2878,7 +3016,8 @@
         "caustic lighting"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2897,7 +3036,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2916,7 +3056,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2935,7 +3076,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2955,7 +3097,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2976,7 +3119,8 @@
         "focus blur"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -2995,7 +3139,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3014,7 +3159,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3052,7 +3198,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3071,7 +3218,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3093,7 +3241,8 @@
         "grainy"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3112,7 +3261,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3131,7 +3281,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3150,7 +3301,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3169,7 +3321,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3188,7 +3341,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3210,7 +3364,8 @@
         "jpg artifacts"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3231,7 +3386,8 @@
         "lensflare"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3250,7 +3406,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3269,7 +3426,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3288,7 +3446,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3307,7 +3466,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3326,7 +3486,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3345,7 +3506,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3364,7 +3526,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3383,7 +3546,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3421,7 +3585,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3440,7 +3605,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3481,7 +3647,8 @@
         "sparkling"
       ],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3500,7 +3667,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3519,7 +3687,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3538,7 +3707,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/effects.yaml"
+        "data/tags/image-composition/effects.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/effects.yaml"
       ]
     },
     {
@@ -3559,7 +3729,8 @@
         "1panel"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3578,7 +3749,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3600,7 +3772,8 @@
         "3dcg"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3619,7 +3792,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3640,7 +3814,8 @@
         "4coma"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3659,7 +3834,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3682,7 +3858,8 @@
         "disc cover"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3703,7 +3880,8 @@
         "animation"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3724,7 +3902,8 @@
         "gif"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3743,7 +3922,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3764,7 +3944,8 @@
         "screencap"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3783,7 +3964,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3802,7 +3984,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3821,7 +4004,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3840,7 +4024,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3859,7 +4044,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3878,7 +4064,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3897,7 +4084,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3918,7 +4106,8 @@
         "checkerboard"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3940,7 +4129,8 @@
         "manga"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3962,7 +4152,8 @@
         "corrupted video"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -3983,7 +4174,8 @@
         "front cover"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4004,7 +4196,8 @@
         "book cover"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4023,7 +4216,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4042,7 +4236,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4061,7 +4256,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4080,7 +4276,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4099,7 +4296,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4121,7 +4319,8 @@
         "group"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4140,7 +4339,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4159,7 +4359,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4180,7 +4381,8 @@
         "fakeshot"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4199,7 +4401,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4221,7 +4424,8 @@
         "game asset"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4240,7 +4444,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4259,7 +4464,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4278,7 +4484,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4297,7 +4504,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4316,7 +4524,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4335,7 +4544,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4356,7 +4566,8 @@
         "left-to-right"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4377,7 +4588,8 @@
         "line art"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4396,7 +4608,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4415,7 +4628,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4434,7 +4648,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4453,7 +4668,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4474,7 +4690,8 @@
         "low res"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4493,7 +4710,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4512,7 +4730,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4531,7 +4750,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4550,7 +4770,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4572,7 +4793,8 @@
         "lineless"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4593,7 +4815,8 @@
         "non-repeating gif"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4612,7 +4835,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4631,7 +4855,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4650,7 +4875,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4669,7 +4895,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4688,7 +4915,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4709,7 +4937,8 @@
         "original character"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4731,7 +4960,8 @@
         "outlined"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4750,7 +4980,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4771,7 +5002,8 @@
         "paper cut-out"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4790,7 +5022,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4809,7 +5042,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4828,7 +5062,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4847,7 +5082,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4866,7 +5102,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4885,7 +5122,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4904,7 +5142,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4925,7 +5164,8 @@
         "revised"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4944,7 +5184,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4963,7 +5204,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -4982,7 +5224,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5001,7 +5244,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5020,7 +5264,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5039,7 +5284,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5058,7 +5304,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5077,7 +5324,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5096,7 +5344,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5115,7 +5364,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5138,7 +5388,8 @@
         "vector"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5161,7 +5412,8 @@
         "videos"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5182,7 +5434,8 @@
         "game cover"
       ],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5201,7 +5454,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5220,7 +5474,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5239,7 +5494,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5258,7 +5514,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5277,7 +5534,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5296,7 +5554,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5315,7 +5574,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5334,7 +5594,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5353,7 +5614,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5372,7 +5634,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5391,7 +5654,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5410,7 +5674,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5429,7 +5694,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5448,7 +5714,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5467,7 +5734,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5490,7 +5758,8 @@
         "aerial view"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5511,7 +5780,8 @@
         "viewed from behind"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5534,7 +5804,8 @@
         "viewed from below"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5553,7 +5824,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5576,7 +5848,8 @@
         "viewed from side"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5595,7 +5868,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5614,7 +5888,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5633,7 +5908,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5652,7 +5928,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5673,7 +5950,8 @@
         "male pov"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5692,7 +5970,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5711,7 +5990,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5730,7 +6010,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5751,7 +6032,8 @@
         "upsidedown"
       ],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5770,7 +6052,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/perspective.yaml"
+        "data/tags/image-composition/perspective.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/perspective.yaml"
       ]
     },
     {
@@ -5791,7 +6074,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5810,7 +6094,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/human/quality.yaml"
+        "data/tags/human/quality.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/human/quality.yaml"
       ]
     },
     {
@@ -5829,7 +6114,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/human/quality.yaml"
+        "data/tags/human/quality.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/human/quality.yaml"
       ]
     },
     {
@@ -5850,7 +6136,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5890,7 +6177,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/human/quality.yaml"
+        "data/tags/human/quality.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/human/quality.yaml"
       ]
     },
     {
@@ -5911,7 +6199,8 @@
         "missing fingers"
       ],
       "sources": [
-        "data/tags/human/quality.yaml"
+        "data/tags/human/quality.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/human/quality.yaml"
       ]
     },
     {
@@ -5955,7 +6244,8 @@
       ],
       "sources": [
         "manual",
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5976,7 +6266,8 @@
       "aliases": [],
       "sources": [
         "manual",
-        "data/tags/image-composition/format.yaml"
+        "data/tags/image-composition/format.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/format.yaml"
       ]
     },
     {
@@ -5995,7 +6286,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/human/quality.yaml"
+        "data/tags/human/quality.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/human/quality.yaml"
       ]
     },
     {
@@ -6017,7 +6309,8 @@
         "anal sex"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6039,7 +6332,8 @@
         "fingering asshole"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6058,7 +6352,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6081,7 +6376,8 @@
         "rimjob"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6105,7 +6401,8 @@
         "butt hole"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6128,7 +6425,8 @@
         "fleshlight"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6147,7 +6445,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6166,7 +6465,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6187,7 +6487,8 @@
         "writing on body"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6212,7 +6513,8 @@
         "sucking nipples"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6234,7 +6536,8 @@
         "hotdogging"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6253,7 +6556,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6272,7 +6576,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6291,7 +6596,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6310,7 +6616,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6331,7 +6638,8 @@
         "clit"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6352,7 +6660,8 @@
         "clit piercing"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6371,7 +6680,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6390,7 +6700,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6409,7 +6720,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6430,7 +6742,8 @@
         "condoms"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6449,7 +6762,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6468,7 +6782,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6487,7 +6802,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6506,7 +6822,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6529,7 +6846,8 @@
         "cumshot"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6548,7 +6866,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6567,7 +6886,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6586,7 +6906,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6608,7 +6929,8 @@
         "semen on hair"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6629,7 +6951,8 @@
         "pussy lick"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6648,7 +6971,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6669,7 +6993,8 @@
         "doggy style"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6688,7 +7013,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6707,7 +7033,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6728,7 +7055,8 @@
         "egg vibrators"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6749,7 +7077,8 @@
         "ejaculation between breasts"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6770,7 +7099,8 @@
         "erect clit"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6789,7 +7119,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6808,7 +7139,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6827,7 +7159,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6848,7 +7181,8 @@
         "cum on face"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6867,7 +7201,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6888,7 +7223,8 @@
         "squirting (sex)"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6907,7 +7243,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6926,7 +7263,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6947,7 +7285,8 @@
         "no ass"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6968,7 +7307,8 @@
         "ashikoki"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -6993,7 +7333,8 @@
         "gang bang"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7014,7 +7355,8 @@
         "gape"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7033,7 +7375,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7054,7 +7397,8 @@
         "cum drinking"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7073,7 +7417,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7096,7 +7441,8 @@
         "groupsex"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7115,7 +7461,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7134,7 +7481,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7156,7 +7504,8 @@
         "tekoki"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7175,7 +7524,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7196,7 +7546,8 @@
         "need to pee"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7217,7 +7568,8 @@
         "wand vibrator"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7239,7 +7591,8 @@
         "big ass"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7258,7 +7611,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7277,7 +7631,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7300,7 +7655,8 @@
         "milking"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7319,7 +7675,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7340,7 +7697,8 @@
         "legs lock"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7362,7 +7720,8 @@
         "masturbating"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7383,7 +7742,8 @@
         "missionary position"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7402,7 +7762,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7421,7 +7782,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7440,7 +7802,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7464,7 +7827,8 @@
         "novagina"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7485,7 +7849,8 @@
         "fellatio"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7504,7 +7869,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7523,7 +7889,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7546,7 +7913,8 @@
         "tit fuck"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7565,7 +7933,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7584,7 +7953,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7603,7 +7973,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7624,7 +7995,8 @@
         "watersports"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7648,7 +8020,8 @@
         "dick"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7667,7 +8040,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7688,7 +8062,8 @@
         "taint"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7710,7 +8085,8 @@
         "hairy pussy"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7729,7 +8105,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7748,7 +8125,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7770,7 +8148,8 @@
         "vulva"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7792,7 +8171,8 @@
         "vaginal juices"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7811,7 +8191,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7832,7 +8213,8 @@
         "pussy juice string"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7851,7 +8233,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7954,7 +8337,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7973,7 +8357,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -7995,7 +8380,8 @@
         "fuck"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8014,7 +8400,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8033,7 +8420,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8054,7 +8442,8 @@
         "balls"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8079,7 +8468,8 @@
         "straddle penis"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8098,7 +8488,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8119,7 +8510,8 @@
         "scissoring"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8138,7 +8530,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8157,7 +8550,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8176,7 +8570,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8195,7 +8590,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8219,7 +8615,8 @@
         "liquid between thighs"
       ],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8238,7 +8635,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t1.yaml"
+        "data/tags/restricted/r18-t1.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t1.yaml"
       ]
     },
     {
@@ -8257,7 +8655,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8278,7 +8677,8 @@
         "analbeads"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8297,7 +8697,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8316,7 +8717,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8337,7 +8739,8 @@
         "butt plug tail"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8356,7 +8759,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8375,7 +8779,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8396,7 +8801,8 @@
         "beastiality"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8415,7 +8821,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8434,7 +8841,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8455,7 +8863,8 @@
         "tied up (sexual)"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8477,7 +8886,8 @@
         "arms tied"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8502,7 +8912,8 @@
         "hands tied"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8523,7 +8934,8 @@
         "camel toe"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8545,7 +8957,8 @@
         "cleavegag"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8566,7 +8979,8 @@
         "penis ring"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8587,7 +9001,8 @@
         "crotchrope"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8606,7 +9021,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8625,7 +9041,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8644,7 +9061,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8663,7 +9081,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8682,7 +9101,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8701,7 +9121,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8720,7 +9141,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8739,7 +9161,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8761,7 +9184,8 @@
         "dickgirl"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8780,7 +9204,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8799,7 +9224,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8822,7 +9248,8 @@
         "fondle"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8841,7 +9268,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8860,7 +9288,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8879,7 +9308,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8901,7 +9331,8 @@
         "huge insertion"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8922,7 +9353,8 @@
         "brainwashing"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8944,7 +9376,8 @@
         "molester"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8963,7 +9396,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -8982,7 +9416,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9004,7 +9439,8 @@
         "bellybutton piercing"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9026,7 +9462,8 @@
         "nipple piercings"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9047,7 +9484,8 @@
         "nipple pain"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9068,7 +9506,8 @@
         "serving food on female"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9090,7 +9529,8 @@
         "pantygag"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9109,7 +9549,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9128,7 +9569,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9150,7 +9592,8 @@
         "pierced"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9171,7 +9614,8 @@
         "stocks"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9190,7 +9634,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9209,7 +9654,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9230,7 +9676,8 @@
         "ropes"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9252,7 +9699,8 @@
         "rope bondage"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9271,7 +9719,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9292,7 +9741,8 @@
         "red butt"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9313,7 +9763,8 @@
         "spread bar"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9332,7 +9783,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9353,7 +9805,8 @@
         "suspended"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9372,7 +9825,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9391,7 +9845,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9410,7 +9865,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9429,7 +9885,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9448,7 +9905,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9467,7 +9925,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9488,7 +9947,8 @@
         "vibrators"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9507,7 +9967,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9526,7 +9987,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9545,7 +10007,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9566,7 +10029,8 @@
         "voyeur"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9587,7 +10051,8 @@
         "large hips"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9606,7 +10071,8 @@
       "booruType": "restricted",
       "aliases": [],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9627,7 +10093,8 @@
         "xray"
       ],
       "sources": [
-        "data/tags/restricted/r18-t2.yaml"
+        "data/tags/restricted/r18-t2.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/restricted/r18-t2.yaml"
       ]
     },
     {
@@ -9646,7 +10113,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9667,7 +10135,8 @@
         "acrylic paint"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9686,7 +10155,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9705,7 +10175,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9724,7 +10195,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9743,7 +10215,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9765,7 +10238,8 @@
         "mucha style"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9786,7 +10260,8 @@
         "ballpoint pen"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9805,7 +10280,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9824,7 +10300,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9843,7 +10320,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9862,7 +10340,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9881,7 +10360,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9900,7 +10380,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9919,7 +10400,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9938,7 +10420,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9957,7 +10440,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9976,7 +10460,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -9995,7 +10480,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10017,7 +10503,8 @@
         "coloured pencil (medium)"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10036,7 +10523,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10055,7 +10543,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10074,7 +10563,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10093,7 +10583,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10112,7 +10603,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10133,7 +10625,8 @@
         "dakimakura"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10152,7 +10645,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10171,7 +10665,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10190,7 +10685,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10209,7 +10705,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10228,7 +10725,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10247,7 +10745,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10268,7 +10767,8 @@
         "flat colors"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10289,7 +10789,8 @@
         "4th wall"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10308,7 +10809,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10327,7 +10829,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10346,7 +10849,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10367,7 +10871,8 @@
         "gouache"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10386,7 +10891,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10407,7 +10913,8 @@
         "pencil sketch"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10426,7 +10933,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10445,7 +10953,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10464,7 +10973,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10483,7 +10993,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10502,7 +11013,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10521,7 +11033,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10542,7 +11055,8 @@
         "copics"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10563,7 +11077,8 @@
         "millipen"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10582,7 +11097,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10601,7 +11117,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10624,7 +11141,8 @@
         "fountain pen (medium)"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10643,7 +11161,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10664,7 +11183,8 @@
         "oil painting"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10685,7 +11205,8 @@
         "paint (medium)"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10704,7 +11225,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10723,7 +11245,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10742,7 +11265,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10761,7 +11285,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10780,7 +11305,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10799,7 +11325,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10818,7 +11345,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10839,7 +11367,8 @@
         "oldschool"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10861,7 +11390,8 @@
         "rough"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10880,7 +11410,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10899,7 +11430,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10918,7 +11450,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10937,7 +11470,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10956,7 +11490,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10975,7 +11510,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -10996,7 +11532,8 @@
         "handdrawn"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11017,7 +11554,8 @@
         "ukiyoe"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11039,7 +11577,8 @@
         "wip"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11058,7 +11597,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11077,7 +11617,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11099,7 +11640,8 @@
         "watercolour"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11120,7 +11662,8 @@
         "watercolour pencil"
       ],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     },
     {
@@ -11139,7 +11682,8 @@
       "booruType": "general",
       "aliases": [],
       "sources": [
-        "data/tags/image-composition/style.yaml"
+        "data/tags/image-composition/style.yaml",
+        "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
       ]
     }
   ]

@@ -82,7 +82,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "open \\m/"
+      ]
     },
     {
       "tag": "\\m/",
@@ -130,7 +132,10 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "adjusting sunglasses",
+        "adjusting glasses"
+      ]
     },
     {
       "tag": "adjusting glasses",
@@ -178,7 +183,11 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "adjusting thighhigh",
+        "adjusting pantyhose",
+        "adjusting thighhighs"
+      ]
     },
     {
       "tag": "adjusting panties",
@@ -322,7 +331,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "finger quotes"
+      ]
     },
     {
       "tag": "akanbe",
@@ -338,7 +349,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eyelid pull"
+      ]
     },
     {
       "tag": "akimbo",
@@ -370,7 +383,11 @@
         "lying-prone"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands and knees",
+        "all-fours",
+        "on all fours"
+      ]
     },
     {
       "tag": "all-fours",
@@ -434,7 +451,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "arm hold",
+        "grabbing arm"
+      ]
     },
     {
       "tag": "arm held back",
@@ -482,7 +502,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hugging arm"
+      ]
     },
     {
       "tag": "arm raised",
@@ -530,7 +552,11 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "arm raised",
+        "raised arm",
+        "one arm up"
+      ]
     },
     {
       "tag": "armpit",
@@ -578,7 +604,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "armpit"
+      ]
     },
     {
       "tag": "arms above",
@@ -626,7 +654,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "neck hug"
+      ]
     },
     {
       "tag": "arms at sides",
@@ -674,7 +704,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands behind back",
+        "arms behind"
+      ]
     },
     {
       "tag": "arms behind head",
@@ -690,7 +723,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands behind head"
+      ]
     },
     {
       "tag": "arms crossed",
@@ -754,7 +789,13 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "raised arms",
+        "arms above",
+        "arms raised",
+        "arms above head",
+        "hands above head"
+      ]
     },
     {
       "tag": "ass-up head-down",
@@ -818,7 +859,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "balance"
+      ]
     },
     {
       "tag": "ball caress",
@@ -898,7 +941,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "beckon"
+      ]
     },
     {
       "tag": "belly grab",
@@ -914,7 +959,9 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tummy grab"
+      ]
     },
     {
       "tag": "bend over",
@@ -962,7 +1009,11 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bent-over",
+        "bending over",
+        "bend over"
+      ]
     },
     {
       "tag": "bent-over",
@@ -1010,7 +1061,9 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bikini down"
+      ]
     },
     {
       "tag": "bowing",
@@ -1122,7 +1175,9 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "butterfly pose"
+      ]
     },
     {
       "tag": "caramel dansen",
@@ -1154,7 +1209,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "caramel dansen"
+      ]
     },
     {
       "tag": "caressing testicles",
@@ -1170,7 +1227,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fondling testicles",
+        "ball caress"
+      ]
     },
     {
       "tag": "carry me",
@@ -1186,7 +1246,9 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pick me up"
+      ]
     },
     {
       "tag": "carrying over shoulder",
@@ -1362,7 +1424,11 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "clenched fist",
+        "fist",
+        "closed fist"
+      ]
     },
     {
       "tag": "clenched hands",
@@ -1378,7 +1444,11 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fists",
+        "closed fists",
+        "clenched fists"
+      ]
     },
     {
       "tag": "closed fist",
@@ -1554,7 +1624,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "folded arms",
+        "arms folded"
+      ]
     },
     {
       "tag": "crossed fingers",
@@ -1586,7 +1659,11 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "crossed legs (sitting)",
+        "crossed legs (standing)",
+        "crossed legs (lying)"
+      ]
     },
     {
       "tag": "crossed legs (lying)",
@@ -1730,7 +1807,10 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cuddle",
+        "snuggle"
+      ]
     },
     {
       "tag": "cunnilingus gesture",
@@ -1778,7 +1858,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cupped hands"
+      ]
     },
     {
       "tag": "curtsey",
@@ -1794,7 +1876,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "curtsy",
+        "curtsie"
+      ]
     },
     {
       "tag": "curtsie",
@@ -1906,7 +1991,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "double peace"
+      ]
     },
     {
       "tag": "double wield",
@@ -2034,7 +2121,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "dual wield",
+        "double wield"
+      ]
     },
     {
       "tag": "dulya",
@@ -2226,7 +2316,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fidget"
+      ]
     },
     {
       "tag": "fig gesture",
@@ -2258,7 +2350,12 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand fig",
+        "fig gesture",
+        "dulya",
+        "mano fico"
+      ]
     },
     {
       "tag": "fighting stance",
@@ -2274,7 +2371,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "battle stance"
+      ]
     },
     {
       "tag": "figure four sitting",
@@ -2338,7 +2437,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "finger camera"
+      ]
     },
     {
       "tag": "finger gun",
@@ -2482,7 +2583,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "brofist",
+        "fistbump"
+      ]
     },
     {
       "tag": "fist in hand",
@@ -2642,7 +2746,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fox hand sign"
+      ]
     },
     {
       "tag": "full scorpion",
@@ -2722,7 +2828,9 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "grab"
+      ]
     },
     {
       "tag": "grabbing another's hair",
@@ -2738,7 +2846,10 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pulling another's hair",
+        "hair pull"
+      ]
     },
     {
       "tag": "grabbing arm",
@@ -2866,7 +2977,9 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair twirl"
+      ]
     },
     {
       "tag": "hand between legs",
@@ -2882,7 +2995,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands between legs"
+      ]
     },
     {
       "tag": "hand fig",
@@ -2962,7 +3077,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "finger in panties"
+      ]
     },
     {
       "tag": "hand in pocket",
@@ -3042,7 +3159,9 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "finger to another's chin"
+      ]
     },
     {
       "tag": "hand on another's face",
@@ -3266,7 +3385,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand on hat"
+      ]
     },
     {
       "tag": "hand on hip",
@@ -3282,7 +3403,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand on waist"
+      ]
     },
     {
       "tag": "hand on knee",
@@ -3330,7 +3453,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand on ass"
+      ]
     },
     {
       "tag": "hand on own belly",
@@ -3362,7 +3487,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand to cheek",
+        "hand on cheek"
+      ]
     },
     {
       "tag": "hand on own chest",
@@ -3378,7 +3506,11 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand to chest",
+        "hand to own chest",
+        "hand on chest"
+      ]
     },
     {
       "tag": "hand on own face",
@@ -3394,7 +3526,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand to face",
+        "hand on face"
+      ]
     },
     {
       "tag": "hand on own forehead",
@@ -3442,7 +3577,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand on knee"
+      ]
     },
     {
       "tag": "hand on own neck",
@@ -3490,7 +3627,11 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand on belly",
+        "hand on own belly",
+        "hand on stomach"
+      ]
     },
     {
       "tag": "hand on stomach",
@@ -3650,7 +3791,13 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand to mouth",
+        "hands to mouth",
+        "hands to own mouth",
+        "hand to lip",
+        "hand on lips"
+      ]
     },
     {
       "tag": "handholding",
@@ -3890,7 +4037,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands on waist",
+        "akimbo"
+      ]
     },
     {
       "tag": "hands on knees",
@@ -3922,7 +4072,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands on face",
+        "hands to face"
+      ]
     },
     {
       "tag": "hands on own knees",
@@ -3938,7 +4091,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands on knees"
+      ]
     },
     {
       "tag": "hands on waist",
@@ -4050,7 +4205,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "standing on hands"
+      ]
     },
     {
       "tag": "hat tip",
@@ -4114,7 +4271,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chin rest"
+      ]
     },
     {
       "tag": "head tilt",
@@ -4226,7 +4385,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "heart tails"
+      ]
     },
     {
       "tag": "heart tail duo",
@@ -4274,7 +4435,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "highfive"
+      ]
     },
     {
       "tag": "highfive",
@@ -4322,7 +4485,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hold",
+        "holding object"
+      ]
     },
     {
       "tag": "holding another's hand",
@@ -4386,7 +4552,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "holding glasses",
+        "holding sunglasses"
+      ]
     },
     {
       "tag": "holding flower",
@@ -4434,7 +4603,11 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "handholding",
+        "hand holding",
+        "holding another's hand"
+      ]
     },
     {
       "tag": "holding object",
@@ -4578,7 +4751,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "horn pose"
+      ]
     },
     {
       "tag": "hugging arm",
@@ -4642,7 +4817,12 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "leg hug",
+        "knee hug",
+        "hugging legs",
+        "hugging knees"
+      ]
     },
     {
       "tag": "humpbacked",
@@ -4690,7 +4870,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "raised finger",
+        "finger raised"
+      ]
     },
     {
       "tag": "indian style",
@@ -4706,7 +4889,9 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "agura"
+      ]
     },
     {
       "tag": "inward v",
@@ -4754,7 +4939,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "jump"
+      ]
     },
     {
       "tag": "kamina pose",
@@ -4850,7 +5037,9 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "on knees"
+      ]
     },
     {
       "tag": "kneeling on one leg",
@@ -4898,7 +5087,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "knees on chest",
+        "knees-on-chest"
+      ]
     },
     {
       "tag": "knees-on-chest",
@@ -4930,7 +5122,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand seal"
+      ]
     },
     {
       "tag": "laying",
@@ -5058,7 +5252,11 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "raised leg",
+        "leg raise",
+        "leg raised"
+      ]
     },
     {
       "tag": "leg raise",
@@ -5106,7 +5304,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "one leg raised"
+      ]
     },
     {
       "tag": "legs apart",
@@ -5234,7 +5434,11 @@
         "lying-prone"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying down",
+        "laying down",
+        "laying"
+      ]
     },
     {
       "tag": "lying down",
@@ -5330,7 +5534,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "the finger",
+        "flipping off"
+      ]
     },
     {
       "tag": "middle w",
@@ -5362,7 +5569,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ear cleaner"
+      ]
     },
     {
       "tag": "money gesture",
@@ -5458,7 +5667,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "neck bite"
+      ]
     },
     {
       "tag": "neck hug",
@@ -5506,7 +5717,11 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "necktie pull",
+        "tiegrab",
+        "tie grab"
+      ]
     },
     {
       "tag": "necktie pull",
@@ -5586,7 +5801,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ok"
+      ]
     },
     {
       "tag": "on all fours",
@@ -5618,7 +5835,10 @@
         "lying-prone"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying on back",
+        "supine"
+      ]
     },
     {
       "tag": "on belly",
@@ -5730,7 +5950,9 @@
         "lying-prone"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying on side"
+      ]
     },
     {
       "tag": "on stomach",
@@ -5746,7 +5968,12 @@
         "lying-prone"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lying on stomach",
+        "prone",
+        "on belly",
+        "on front"
+      ]
     },
     {
       "tag": "one arm up",
@@ -5778,7 +6005,9 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "kneeling on one leg"
+      ]
     },
     {
       "tag": "one leg raised",
@@ -5938,7 +6167,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "outstretched hands",
+        "hands outstretched"
+      ]
     },
     {
       "tag": "outstretched hands",
@@ -5986,7 +6218,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "clasped hands",
+        "hands clasped"
+      ]
     },
     {
       "tag": "own hands together",
@@ -6002,7 +6237,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hands together"
+      ]
     },
     {
       "tag": "palm",
@@ -6066,7 +6303,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cat pose",
+        "dog pose"
+      ]
     },
     {
       "tag": "peace sign",
@@ -6146,7 +6386,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "raised pinky",
+        "extended pinky"
+      ]
     },
     {
       "tag": "pinky swear",
@@ -6210,7 +6453,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pov pointing"
+      ]
     },
     {
       "tag": "pointing down",
@@ -6290,7 +6535,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pointing skyward",
+        "pointing to the sky"
+      ]
     },
     {
       "tag": "pov pointing",
@@ -6370,7 +6618,9 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bridal carry"
+      ]
     },
     {
       "tag": "prone",
@@ -6402,7 +6652,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "orz"
+      ]
     },
     {
       "tag": "pulling another's hair",
@@ -6482,7 +6734,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "air punch"
+      ]
     },
     {
       "tag": "raised leg",
@@ -6546,7 +6800,9 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "reach"
+      ]
     },
     {
       "tag": "recline",
@@ -6578,7 +6834,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "recline"
+      ]
     },
     {
       "tag": "roman salute",
@@ -6626,7 +6884,11 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eye rub",
+        "wiping eyes",
+        "rubbing eye"
+      ]
     },
     {
       "tag": "run",
@@ -6658,7 +6920,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "run"
+      ]
     },
     {
       "tag": "salute",
@@ -6690,7 +6954,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "disco pose"
+      ]
     },
     {
       "tag": "scorpion pose",
@@ -6722,7 +6988,9 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sitting on knees"
+      ]
     },
     {
       "tag": "shading eyes",
@@ -6786,7 +7054,10 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mouth to mouth feeding",
+        "mouth-to-mouth feeding"
+      ]
     },
     {
       "tag": "sheet grab",
@@ -6802,7 +7073,9 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "grabbing sheet"
+      ]
     },
     {
       "tag": "shh",
@@ -6850,7 +7123,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "girls are praying"
+      ]
     },
     {
       "tag": "shrugging",
@@ -6898,7 +7173,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shh",
+        "shush"
+      ]
     },
     {
       "tag": "sit",
@@ -6930,7 +7208,10 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sit",
+        "sitting down"
+      ]
     },
     {
       "tag": "sitting down",
@@ -7010,7 +7291,9 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sitting in lap"
+      ]
     },
     {
       "tag": "sitting on person",
@@ -7026,7 +7309,9 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sitting on"
+      ]
     },
     {
       "tag": "skirt lift",
@@ -7042,7 +7327,11 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "skirtlift",
+        "skirt up",
+        "lifting skirt"
+      ]
     },
     {
       "tag": "skirt pull",
@@ -7106,7 +7395,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "throat-slitting gesture",
+        "cutthroat gesture"
+      ]
     },
     {
       "tag": "slouching",
@@ -7170,7 +7462,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "splits"
+      ]
     },
     {
       "tag": "splits",
@@ -7250,7 +7544,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "open legs",
+        "spread leg"
+      ]
     },
     {
       "tag": "squat",
@@ -7282,7 +7579,12 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "squat",
+        "crouched",
+        "crouch",
+        "crouching"
+      ]
     },
     {
       "tag": "standing",
@@ -7346,7 +7648,11 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "on one foot",
+        "standing on one foot",
+        "on one leg"
+      ]
     },
     {
       "tag": "standing split",
@@ -7410,7 +7716,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "straddle"
+      ]
     },
     {
       "tag": "straight-arm salute",
@@ -7426,7 +7734,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "roman salute",
+        "nazi salute"
+      ]
     },
     {
       "tag": "stretch",
@@ -7458,7 +7769,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "stretch"
+      ]
     },
     {
       "tag": "strip",
@@ -7522,7 +7835,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chin stroking",
+        "stroking chin"
+      ]
     },
     {
       "tag": "superhero landing",
@@ -7538,7 +7854,9 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "three-point landing"
+      ]
     },
     {
       "tag": "supine",
@@ -7570,7 +7888,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "on phone"
+      ]
     },
     {
       "tag": "the finger",
@@ -7634,7 +7954,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "thigh straddle"
+      ]
     },
     {
       "tag": "three-point landing",
@@ -7778,7 +8100,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ass-up head-down",
+        "face down ass up"
+      ]
     },
     {
       "tag": "tsuki ni kawatte oshioki yo",
@@ -7794,7 +8119,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "in the name of the moon"
+      ]
     },
     {
       "tag": "tummy grab",
@@ -7906,7 +8233,11 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "undress",
+        "stripping",
+        "strip"
+      ]
     },
     {
       "tag": "upright straddle",
@@ -7938,7 +8269,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "v sign",
+        "peace sign"
+      ]
     },
     {
       "tag": "v over eye",
@@ -8146,7 +8480,12 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "w sitting",
+        "w-sitting",
+        "w-legs",
+        "w legs"
+      ]
     },
     {
       "tag": "watson cross",
@@ -8194,7 +8533,9 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "wave"
+      ]
     },
     {
       "tag": "wiping eyes",
@@ -8242,7 +8583,9 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "yawn"
+      ]
     },
     {
       "tag": "yoga",

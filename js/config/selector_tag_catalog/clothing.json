@@ -3629,7 +3629,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pet collar"
+      ]
     },
     {
       "tag": "animal ear headphones",
@@ -3702,7 +3704,12 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ankle bracelets",
+        "ankle bracelet",
+        "leg bracelet",
+        "anklets"
+      ]
     },
     {
       "tag": "apron",
@@ -3971,7 +3978,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "armbands",
+        "arm band"
+      ]
     },
     {
       "tag": "armguard:1.2)",
@@ -4007,7 +4017,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "arm bracelets",
+        "armlets"
+      ]
     },
     {
       "tag": "armor",
@@ -4102,7 +4115,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "armoured dress"
+      ]
     },
     {
       "tag": "armored gloves",
@@ -4191,7 +4206,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cravat"
+      ]
     },
     {
       "tag": "ass cutout",
@@ -4331,7 +4348,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ballet leotard",
+        "gymnast leotard"
+      ]
     },
     {
       "tag": "babydoll",
@@ -4404,7 +4424,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "open back",
+        "backless"
+      ]
     },
     {
       "tag": "backpack",
@@ -4422,7 +4445,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ranset",
+        "back pack"
+      ]
     },
     {
       "tag": "bag",
@@ -4487,7 +4513,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ballet shoes",
+        "pointe shoes"
+      ]
     },
     {
       "tag": "bandaged arm",
@@ -4503,7 +4532,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bandaged arms"
+      ]
     },
     {
       "tag": "bandaged hand",
@@ -4603,7 +4634,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bandage"
+      ]
     },
     {
       "tag": "bandaid on arm",
@@ -4710,7 +4743,11 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bandaid on nipples",
+        "bandaids on nipple",
+        "bandaid on nipple"
+      ]
     },
     {
       "tag": "bandeau",
@@ -4762,7 +4799,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bangles"
+      ]
     },
     {
       "tag": "banner",
@@ -4795,7 +4834,9 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bar code"
+      ]
     },
     {
       "tag": "barcode on leg",
@@ -4945,7 +4986,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bare shoulder"
+      ]
     },
     {
       "tag": "bare thighs",
@@ -4983,7 +5026,11 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bare feet",
+        "bare foot",
+        "barefeet"
+      ]
     },
     {
       "tag": "bartender",
@@ -5069,7 +5116,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "batwing"
+      ]
     },
     {
       "tag": "bead necklace",
@@ -5190,7 +5239,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bells"
+      ]
     },
     {
       "tag": "belly chain",
@@ -5206,7 +5257,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "waist chain"
+      ]
     },
     {
       "tag": "belt",
@@ -5227,7 +5280,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "belts"
+      ]
     },
     {
       "tag": "belt buckle",
@@ -5366,7 +5421,11 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "spats",
+        "spandex shorts",
+        "biker shorts"
+      ]
     },
     {
       "tag": "biker clothes",
@@ -5398,7 +5457,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "biker suit",
+        "bike suit"
+      ]
     },
     {
       "tag": "bikini",
@@ -7672,7 +7734,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "blindfolded"
+      ]
     },
     {
       "tag": "blood",
@@ -8680,7 +8744,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "blush sticker"
+      ]
     },
     {
       "tag": "body armor",
@@ -8750,7 +8816,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "body suit"
+      ]
     },
     {
       "tag": "bodysuit under clothes",
@@ -8853,7 +8921,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "boot",
+        "naked boots"
+      ]
     },
     {
       "tag": "bottle",
@@ -8889,7 +8960,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bottom less"
+      ]
     },
     {
       "tag": "bow",
@@ -8908,7 +8981,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bows"
+      ]
     },
     {
       "tag": "bow \\(weapon\\)",
@@ -8941,7 +9016,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "panty bow"
+      ]
     },
     {
       "tag": "bow shoes",
@@ -8977,7 +9054,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bow tie",
+        "neck bow"
+      ]
     },
     {
       "tag": "bra visible through clothes",
@@ -9015,7 +9095,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bracelets"
+      ]
     },
     {
       "tag": "bracket",
@@ -9052,7 +9134,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "braids",
+        "braided hair",
+        "hair braid"
+      ]
     },
     {
       "tag": "breast curtain",
@@ -9071,7 +9157,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "breast veil"
+      ]
     },
     {
       "tag": "breast curtains",
@@ -9127,7 +9215,11 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chestplate",
+        "breast plate",
+        "chest plate"
+      ]
     },
     {
       "tag": "breasts",
@@ -9143,7 +9235,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "boobs",
+        "tits",
+        "breast"
+      ]
     },
     {
       "tag": "breasts bandages",
@@ -9300,7 +9396,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "broach"
+      ]
     },
     {
       "tag": "brown belt",
@@ -9825,7 +9923,11 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "running briefs",
+        "bum huggers",
+        "bun huggers"
+      ]
     },
     {
       "tag": "bustier",
@@ -9948,7 +10050,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "camel toe"
+      ]
     },
     {
       "tag": "camisole",
@@ -10057,7 +10161,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "capris",
+        "cropped pants"
+      ]
     },
     {
       "tag": "cardigan",
@@ -10173,7 +10280,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "catgirl"
+      ]
     },
     {
       "tag": "cat hood",
@@ -10205,7 +10314,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cat keyhole bra"
+      ]
     },
     {
       "tag": "celtic:1.1)",
@@ -10258,7 +10369,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "absolute cleavage"
+      ]
     },
     {
       "tag": "chain",
@@ -10403,7 +10516,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cheergirl"
+      ]
     },
     {
       "tag": "chef hat",
@@ -10491,7 +10606,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "chest gem"
+      ]
     },
     {
       "tag": "chest tattoo",
@@ -10546,7 +10663,12 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cheongsam",
+        "qipao",
+        "chinadress",
+        "chinese dress"
+      ]
     },
     {
       "tag": "chinese clothes",
@@ -10916,7 +11038,12 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tit window",
+        "cleavage window",
+        "heart cleavage cutout",
+        "boob window"
+      ]
     },
     {
       "tag": "cleavage slip",
@@ -11214,7 +11341,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "clavicle",
+        "collarbones"
+      ]
     },
     {
       "tag": "collared dress",
@@ -11251,7 +11381,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "collared blouse"
+      ]
     },
     {
       "tag": "collared white shirt",
@@ -11518,7 +11650,12 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "perky nipples",
+        "erect nipple",
+        "erect nipples",
+        "erect nipples under clothes"
+      ]
     },
     {
       "tag": "cow ears",
@@ -11895,7 +12032,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "x-shaped choker"
+      ]
     },
     {
       "tag": "cross-laced clothes",
@@ -12156,7 +12295,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "cuff"
+      ]
     },
     {
       "tag": "cutout above navel",
@@ -12306,7 +12447,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "daggers"
+      ]
     },
     {
       "tag": "daoist priest",
@@ -12523,7 +12666,11 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "demon girls",
+        "succubus",
+        "demongirl"
+      ]
     },
     {
       "tag": "demon horns",
@@ -12540,7 +12687,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "devil horns"
+      ]
     },
     {
       "tag": "demon tail",
@@ -12558,7 +12707,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "devil tail"
+      ]
     },
     {
       "tag": "demon wings",
@@ -12575,7 +12726,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "devil wings"
+      ]
     },
     {
       "tag": "denim",
@@ -12613,7 +12766,11 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "daisy dukes",
+        "jean shorts",
+        "daisydukes"
+      ]
     },
     {
       "tag": "detachable sleeves",
@@ -12671,7 +12828,11 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "armsleeves",
+        "naked sleeves",
+        "detached sleeve"
+      ]
     },
     {
       "tag": "detective",
@@ -12820,7 +12981,13 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "twin bun",
+        "buns",
+        "twin buns",
+        "hair buns",
+        "double buns"
+      ]
     },
     {
       "tag": "double-breasted",
@@ -12893,7 +13060,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "one-piece dress"
+      ]
     },
     {
       "tag": "dress lift",
@@ -13002,7 +13171,11 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ear ring",
+        "ear rings",
+        "earring"
+      ]
     },
     {
       "tag": "earset",
@@ -13072,7 +13245,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "opera gloves",
+        "long gloves"
+      ]
     },
     {
       "tag": "elbow pads",
@@ -13090,7 +13266,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "elbow pad"
+      ]
     },
     {
       "tag": "elbows gloves",
@@ -13297,7 +13475,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "evening dress"
+      ]
     },
     {
       "tag": "exorcism",
@@ -13398,7 +13578,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eye lashes"
+      ]
     },
     {
       "tag": "eyepatch",
@@ -13416,7 +13598,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "eye patch"
+      ]
     },
     {
       "tag": "eyepatch bikini",
@@ -13451,7 +13635,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "glasses on head",
+        "sunglasses on head"
+      ]
     },
     {
       "tag": "face mask",
@@ -13636,7 +13823,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "boa"
+      ]
     },
     {
       "tag": "feather hair ornament",
@@ -13653,7 +13842,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair feathers",
+        "feather in hair",
+        "hair feather"
+      ]
     },
     {
       "tag": "feather hair ornaments",
@@ -13740,7 +13933,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "fingerless glove"
+      ]
     },
     {
       "tag": "fingerless gloves habit",
@@ -13942,7 +14137,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "floral pattern",
+        "flower print"
+      ]
     },
     {
       "tag": "floral print hanfu",
@@ -14056,7 +14254,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flowers"
+      ]
     },
     {
       "tag": "flower over eye",
@@ -14193,7 +14393,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "forehead gem"
+      ]
     },
     {
       "tag": "forehead protector",
@@ -14430,7 +14632,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "frilly dress",
+        "ruffled dress"
+      ]
     },
     {
       "tag": "frilled gloves",
@@ -14695,7 +14900,12 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "frill",
+        "ruffles",
+        "frilly",
+        "frilled"
+      ]
     },
     {
       "tag": "frills:1.1)",
@@ -15215,7 +15425,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "garterbelt"
+      ]
     },
     {
       "tag": "garter straps",
@@ -15237,7 +15449,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "garter strap"
+      ]
     },
     {
       "tag": "gas mask",
@@ -15255,7 +15469,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gas-mask"
+      ]
     },
     {
       "tag": "gas mask around neck",
@@ -15376,7 +15592,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ghosts"
+      ]
     },
     {
       "tag": "glass high heels",
@@ -15462,7 +15680,11 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "megane",
+        "meganekko",
+        "meganeko"
+      ]
     },
     {
       "tag": "gloves",
@@ -15483,7 +15705,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "glove"
+      ]
     },
     {
       "tag": "glowing",
@@ -15655,7 +15879,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "goggle on head"
+      ]
     },
     {
       "tag": "gold armor",
@@ -16014,7 +16240,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "goth"
+      ]
     },
     {
       "tag": "gothic dress",
@@ -16047,7 +16275,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gothloli"
+      ]
     },
     {
       "tag": "gothic lolita style",
@@ -16441,7 +16671,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gray dress"
+      ]
     },
     {
       "tag": "grey footwear",
@@ -16604,7 +16836,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "firearm",
+        "guns"
+      ]
     },
     {
       "tag": "gunfire",
@@ -16637,7 +16872,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "gym clothes"
+      ]
     },
     {
       "tag": "habit",
@@ -16740,7 +16977,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair bobble",
+        "ball braids"
+      ]
     },
     {
       "tag": "hair bow",
@@ -16761,7 +17001,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair bows"
+      ]
     },
     {
       "tag": "hair bun",
@@ -16781,7 +17023,11 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hairbun",
+        "bun",
+        "single hair bun"
+      ]
     },
     {
       "tag": "hair clips",
@@ -16817,7 +17063,11 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "flower hair ornament",
+        "flower in hair",
+        "hair flowers"
+      ]
     },
     {
       "tag": "hair ornament",
@@ -16834,7 +17084,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair ornaments",
+        "hair accessory",
+        "hair accessories"
+      ]
     },
     {
       "tag": "hair ornaments",
@@ -16871,7 +17125,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair ribbons"
+      ]
     },
     {
       "tag": "hair ring",
@@ -16904,7 +17160,11 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair loop",
+        "hair loops",
+        "hair ring"
+      ]
     },
     {
       "tag": "hair scrunchie",
@@ -16991,7 +17251,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair band"
+      ]
     },
     {
       "tag": "hairclip",
@@ -17012,7 +17274,12 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair clip",
+        "hair clips",
+        "hairclips",
+        "barrette"
+      ]
     },
     {
       "tag": "hairpin",
@@ -17029,7 +17296,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hair pin",
+        "hairpins"
+      ]
     },
     {
       "tag": "hakama",
@@ -17084,7 +17354,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "short gloves"
+      ]
     },
     {
       "tag": "half square glasses",
@@ -17174,7 +17446,11 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "halter",
+        "halter top",
+        "haltertop"
+      ]
     },
     {
       "tag": "hand bag",
@@ -17243,7 +17519,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hand gun",
+        "pistol"
+      ]
     },
     {
       "tag": "hanfu",
@@ -17297,7 +17576,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "harem clothes"
+      ]
     },
     {
       "tag": "harness",
@@ -17513,7 +17794,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "headphone"
+      ]
     },
     {
       "tag": "headpiece",
@@ -17713,7 +17996,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "heel boots"
+      ]
     },
     {
       "tag": "high heel sandals",
@@ -17750,7 +18035,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "heels"
+      ]
     },
     {
       "tag": "high slit silk evening gown",
@@ -18039,7 +18326,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hold",
+        "holding object"
+      ]
     },
     {
       "tag": "holding (huge:1.1) scythe \\(weapon\\)",
@@ -19012,7 +19302,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hoop earring"
+      ]
     },
     {
       "tag": "hoop earrings jackal ears",
@@ -19350,7 +19642,11 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "wafuku",
+        "traditional japanese clothes",
+        "japanese clothing"
+      ]
     },
     {
       "tag": "japanese kimono style outfit",
@@ -19610,7 +19906,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "kneehigh boots",
+        "kneeboots"
+      ]
     },
     {
       "tag": "knee pads",
@@ -19665,7 +19964,11 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "kneehigh socks",
+        "kneesocks",
+        "knee socks"
+      ]
     },
     {
       "tag": "knight",
@@ -20686,7 +20989,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "legwarmers"
+      ]
     },
     {
       "tag": "legs armor",
@@ -20933,7 +21238,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lolita"
+      ]
     },
     {
       "tag": "lolita hairband",
@@ -20951,7 +21258,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "lolita headband"
+      ]
     },
     {
       "tag": "long cape",
@@ -21158,7 +21467,9 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "long sleeve"
+      ]
     },
     {
       "tag": "long sleeves with intricate patterns",
@@ -21316,7 +21627,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "low leg panties",
+        "low-leg panties"
+      ]
     },
     {
       "tag": "lowleg pantyhose",
@@ -21524,7 +21838,13 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "maid costume",
+        "maids",
+        "maid outfit",
+        "maid uniform",
+        "maid dress"
+      ]
     },
     {
       "tag": "maid apron",
@@ -21584,7 +21904,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "maid headband",
+        "maid cachusha"
+      ]
     },
     {
       "tag": "maid headwear",
@@ -21618,7 +21941,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "make-up",
+        "make up"
+      ]
     },
     {
       "tag": "makeup flower",
@@ -21770,7 +22096,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "masks"
+      ]
     },
     {
       "tag": "matte skin",
@@ -21820,7 +22148,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "weapongirl",
+        "mechamusume"
+      ]
     },
     {
       "tag": "mecha shoes",
@@ -22140,7 +22471,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "microbikini"
+      ]
     },
     {
       "tag": "micro bodycon",
@@ -22307,7 +22640,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shrine maiden"
+      ]
     },
     {
       "tag": "military beret",
@@ -22433,7 +22768,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mini skirt",
+        "short skirt"
+      ]
     },
     {
       "tag": "mismatched bikini",
@@ -22640,7 +22978,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nude apron",
+        "hadaka apron"
+      ]
     },
     {
       "tag": "naked bandage",
@@ -22674,7 +23015,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nude cape"
+      ]
     },
     {
       "tag": "naked cloak",
@@ -22814,7 +23157,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nude ribbon"
+      ]
     },
     {
       "tag": "naked see-through tape",
@@ -22850,7 +23195,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nude shirt"
+      ]
     },
     {
       "tag": "naked suspender",
@@ -22958,7 +23305,10 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bellybutton",
+        "belly button"
+      ]
     },
     {
       "tag": "navel cutout",
@@ -22993,7 +23343,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "navel ring",
+        "bellybutton piercing"
+      ]
     },
     {
       "tag": "neck bell",
@@ -23010,7 +23363,13 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bell collar",
+        "collar bell",
+        "bellcollar",
+        "bell choker",
+        "neckbell"
+      ]
     },
     {
       "tag": "neck ribbon",
@@ -23107,7 +23466,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tie",
+        "neck tie"
+      ]
     },
     {
       "tag": "necktie between breasts",
@@ -23247,7 +23609,13 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nighty",
+        "night gown",
+        "nightie",
+        "nightdress",
+        "night dress"
+      ]
     },
     {
       "tag": "ninja",
@@ -23263,7 +23631,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "kunoichi"
+      ]
     },
     {
       "tag": "no bra",
@@ -23338,7 +23708,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nopan"
+      ]
     },
     {
       "tag": "no shoes",
@@ -23397,7 +23769,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "naked"
+      ]
     },
     {
       "tag": "number tattoo",
@@ -23454,7 +23828,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nurse outfit",
+        "nurse uniform"
+      ]
     },
     {
       "tag": "nurse cap",
@@ -23474,7 +23851,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "nurse hat"
+      ]
     },
     {
       "tag": "o-ring",
@@ -23623,7 +24002,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "off shoulders",
+        "off-shoulder"
+      ]
     },
     {
       "tag": "off shoulder coat",
@@ -23849,7 +24231,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "one-piece"
+      ]
     },
     {
       "tag": "onmyoji elements",
@@ -23921,7 +24305,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "open clothing"
+      ]
     },
     {
       "tag": "open coat",
@@ -24050,7 +24436,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "open yukata"
+      ]
     },
     {
       "tag": "open shirt",
@@ -24440,7 +24828,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pantsu"
+      ]
     },
     {
       "tag": "pants",
@@ -24480,7 +24870,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tights"
+      ]
     },
     {
       "tag": "pantyhose under shorts",
@@ -25476,7 +25868,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tartan skirt"
+      ]
     },
     {
       "tag": "planted mechanical ears",
@@ -25755,7 +26149,13 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pointed ears",
+        "pointy ear",
+        "elf ears",
+        "elven ears",
+        "long ears"
+      ]
     },
     {
       "tag": "pointy footwear",
@@ -25847,7 +26247,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "police-woman",
+        "police woman"
+      ]
     },
     {
       "tag": "pom pom \\(cheerleading\\)",
@@ -25917,7 +26320,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "pony tail",
+        "long ponytail"
+      ]
     },
     {
       "tag": "poppy \\(flower\\) head flower",
@@ -26652,7 +27058,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bunny ears"
+      ]
     },
     {
       "tag": "rabbit hood",
@@ -26688,7 +27096,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "racequeen"
+      ]
     },
     {
       "tag": "racing coat",
@@ -27366,7 +27776,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "red lipstick"
+      ]
     },
     {
       "tag": "red nails",
@@ -28020,7 +28432,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ribbons"
+      ]
     },
     {
       "tag": "ribbon trim",
@@ -28174,7 +28588,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "robes"
+      ]
     },
     {
       "tag": "roman style high heels:1.1)",
@@ -28350,7 +28766,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sailor cap"
+      ]
     },
     {
       "tag": "sailor shirt",
@@ -28404,7 +28822,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "santa suit",
+        "santa outfit"
+      ]
     },
     {
       "tag": "santa hat",
@@ -28422,7 +28843,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "stocking cap",
+        "christmas hat"
+      ]
     },
     {
       "tag": "sarashi",
@@ -28438,7 +28862,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bandage bra",
+        "bandagebra"
+      ]
     },
     {
       "tag": "sash",
@@ -28510,7 +28937,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "muffler"
+      ]
     },
     {
       "tag": "scarf covered mouth",
@@ -28578,7 +29007,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sukumizu",
+        "school swimsuits"
+      ]
     },
     {
       "tag": "school uniform",
@@ -28597,7 +29029,12 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "seifuku",
+        "school uniforms",
+        "schoolgirl",
+        "school girl"
+      ]
     },
     {
       "tag": "science fiction",
@@ -28614,7 +29051,12 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "scifi",
+        "sci-fi",
+        "futuristic",
+        "sci fi"
+      ]
     },
     {
       "tag": "screw",
@@ -28685,7 +29127,12 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "seethrough",
+        "transparent clothing",
+        "sheer clothes",
+        "sheer clothing"
+      ]
     },
     {
       "tag": "see-through blue jacket",
@@ -29253,7 +29700,10 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ropebondage",
+        "rope bondage"
+      ]
     },
     {
       "tag": "shield",
@@ -29427,7 +29877,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "mini dress",
+        "minidress"
+      ]
     },
     {
       "tag": "short jeans",
@@ -29480,7 +29933,11 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "hot pants",
+        "booty shorts",
+        "hotpants"
+      ]
     },
     {
       "tag": "short skirt",
@@ -29555,7 +30012,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "short pants"
+      ]
     },
     {
       "tag": "shoulder",
@@ -29831,7 +30290,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "leg slit"
+      ]
     },
     {
       "tag": "side tie",
@@ -29923,7 +30384,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "himopan"
+      ]
     },
     {
       "tag": "sideboob",
@@ -29944,7 +30407,11 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "side boobs",
+        "side boob",
+        "sideboobs"
+      ]
     },
     {
       "tag": "sideless",
@@ -30015,7 +30482,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "payot",
+        "forelocks"
+      ]
     },
     {
       "tag": "silk cape",
@@ -30597,7 +31067,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sleeves past wrist"
+      ]
     },
     {
       "tag": "sleeves rolled up",
@@ -30666,7 +31138,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "sling bikini",
+        "slingbikini",
+        "sling swimsuit"
+      ]
     },
     {
       "tag": "smile",
@@ -30683,7 +31159,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "smiling",
+        ":)",
+        ":}"
+      ]
     },
     {
       "tag": "smile teeth",
@@ -30786,7 +31266,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "naked socks",
+        "sock"
+      ]
     },
     {
       "tag": "soles",
@@ -31295,7 +31778,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "stripes"
+      ]
     },
     {
       "tag": "striped bikini",
@@ -31516,7 +32001,9 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "shades"
+      ]
     },
     {
       "tag": "sunglasses on head",
@@ -31656,7 +32143,12 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "swimsuits",
+        "swim suit",
+        "bathing suit",
+        "mizugi"
+      ]
     },
     {
       "tag": "swimsuit maid outfit",
@@ -31711,7 +32203,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "swords"
+      ]
     },
     {
       "tag": "tabi",
@@ -31903,7 +32397,9 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "tattoos"
+      ]
     },
     {
       "tag": "taut dress",
@@ -32077,7 +32573,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "thighboots",
+        "thighhigh boots"
+      ]
     },
     {
       "tag": "thigh cutout",
@@ -32244,7 +32743,12 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "thighhighs only",
+        "stockings",
+        "naked thighhighs",
+        "stocking"
+      ]
     },
     {
       "tag": "thighhighs over pantyhose",
@@ -32296,7 +32800,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "thigh"
+      ]
     },
     {
       "tag": "thong",
@@ -32316,7 +32822,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "thong panties"
+      ]
     },
     {
       "tag": "thrusters",
@@ -32601,7 +33109,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "top less",
+        "topless (female)"
+      ]
     },
     {
       "tag": "torn clothes",
@@ -32620,7 +33131,11 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "ripped clothing",
+        "torn clothing",
+        "ripped clothes"
+      ]
     },
     {
       "tag": "torn dress",
@@ -33089,7 +33604,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "turtle neck"
+      ]
     },
     {
       "tag": "turtleneck leotard",
@@ -33305,7 +33822,9 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "wedding kimono"
+      ]
     },
     {
       "tag": "unbuttoned top",
@@ -33378,7 +33897,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "under boob",
+        "underbreast"
+      ]
     },
     {
       "tag": "underboob cutout",
@@ -33481,7 +34003,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "uniforms"
+      ]
     },
     {
       "tag": "untied ribbon",
@@ -33568,7 +34092,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "bust"
+      ]
     },
     {
       "tag": "usekh collar",
@@ -33600,7 +34126,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "indoor shoes (japanese)"
+      ]
     },
     {
       "tag": "vambraces",
@@ -33636,7 +34164,9 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "vampyr"
+      ]
     },
     {
       "tag": "veil",
@@ -33932,7 +34462,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "half apron"
+      ]
     },
     {
       "tag": "waist bag",
@@ -35987,7 +36519,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "wing"
+      ]
     },
     {
       "tag": "wings \\(blurred\\)",
@@ -36052,7 +36586,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "witch costume",
+        "sorceress"
+      ]
     },
     {
       "tag": "witch hat",
@@ -36072,7 +36609,9 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "witches hat"
+      ]
     },
     {
       "tag": "wizard",
@@ -36125,7 +36664,9 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "coyote ears"
+      ]
     },
     {
       "tag": "woven gold",
@@ -36161,7 +36702,12 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "detached cuffs",
+        "wristcuff",
+        "wrist cuff",
+        "wristcuffs"
+      ]
     },
     {
       "tag": "wrist guards",
@@ -36567,7 +37113,12 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "yinyang",
+        "ying yang",
+        "yin-yang",
+        "ying-yang"
+      ]
     },
     {
       "tag": "yin yang print",
@@ -36617,7 +37168,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [
+        "absolute territory",
+        "zettai ryouki"
+      ]
     },
     {
       "tag": "zipper",
