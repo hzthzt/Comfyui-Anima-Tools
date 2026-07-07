@@ -1803,7 +1803,7 @@ def get_favorites_path():
     os.makedirs(user_dir, exist_ok=True)
     return os.path.join(user_dir, "anima_tools_favorites.json")
 
-FAVORITE_SECTIONS = ["artist", "character", "lora", "clothing", "background", "pose"]
+FAVORITE_SECTIONS = ["artist", "character", "lora", "clothing", "background", "pose", "prompt"]
 
 def get_default_tag_groups():
     return [{"id": "default", "name": "默认 Tag", "isSystem": True}]
@@ -1841,6 +1841,12 @@ def get_default_favorites_data():
             "tagItems": []
         },
         "pose": {
+            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
+            "items": [],
+            "tagGroups": get_default_tag_groups(),
+            "tagItems": []
+        },
+        "prompt": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
             "items": [],
             "tagGroups": get_default_tag_groups(),

@@ -259,8 +259,87 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     }
 
     function openTextInputModal(titleText, placeholder, defaultValue, onSubmit) {
-        const value = window.prompt(`${titleText}\n${placeholder}`, defaultValue || "");
-        if (value !== null) onSubmit?.(value);
+        const dialog = createEl("div");
+        dialog.style.cssText = `
+            position: fixed;
+            inset: 0;
+            z-index: 100000;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+
+        const content = createEl("div");
+        content.style.cssText = `
+            width: 90%;
+            max-width: 400px;
+            background: #1c1c1e;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        `;
+
+        const titleNode = createEl("div", null, titleText);
+        titleNode.style.cssText = "font-size:16px;font-weight:700;color:#fff;";
+
+        const input = createEl("input");
+        input.type = "text";
+        input.value = defaultValue || "";
+        input.placeholder = placeholder || "";
+        input.style.cssText = `
+            background: #2c2c2e;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        `;
+
+        const buttons = createEl("div");
+        buttons.style.cssText = "display:flex;justify-content:flex-end;gap:12px;margin-top:8px;";
+
+        const cancel = createEl("button", null, t("Cancel"));
+        cancel.type = "button";
+        cancel.style.cssText = "background:transparent;border:none;color:#9ca3af;padding:8px 16px;cursor:pointer;font-size:14px;";
+        cancel.onclick = () => dialog.remove();
+
+        const confirm = createEl("button", null, t("OK"));
+        confirm.type = "button";
+        confirm.style.cssText = `background:${THEME.accent};border:none;color:#fff;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;`;
+        confirm.onclick = async () => {
+            const value = input.value.trim();
+            if (!value) return;
+            confirm.disabled = true;
+            const prevText = confirm.innerText;
+            confirm.innerText = t("Saving...");
+            const shouldClose = await onSubmit?.(value);
+            confirm.disabled = false;
+            confirm.innerText = prevText;
+            if (shouldClose !== false) dialog.remove();
+        };
+
+        input.onkeydown = event => {
+            if (event.key === "Enter") confirm.click();
+            if (event.key === "Escape") dialog.remove();
+        };
+
+        buttons.appendChild(cancel);
+        buttons.appendChild(confirm);
+        content.appendChild(titleNode);
+        content.appendChild(input);
+        content.appendChild(buttons);
+        dialog.appendChild(content);
+        document.body.appendChild(dialog);
+        input.focus();
+        input.select();
     }
 
     function showToast(text) {

@@ -80,6 +80,17 @@ def main():
     assert merged["pose"]["groups"][0]["id"] == "default"
     assert merged["pose"]["items"] == []
 
+    merged_prompt = nodes.merge_favorites_data({}, {
+        "prompt": {
+            "tagItems": [
+                {"tag": "sparkle aura", "groupIds": ["default"], "isCustom": True}
+            ],
+        }
+    })
+    assert merged_prompt["prompt"]["tagItems"] == [
+        {"tag": "sparkle aura", "groupIds": ["default"], "isCustom": True}
+    ]
+
     existing = nodes.normalize_favorites_data({
         "artist": {
             "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
