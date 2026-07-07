@@ -18,8 +18,8 @@
     {
       "id": "camera-shot",
       "label": {
-        "en": "Camera & Shot",
-        "zh": "镜头"
+        "en": "Shot Size",
+        "zh": "景别"
       },
       "booruType": "general"
     },
@@ -34,8 +34,8 @@
     {
       "id": "background",
       "label": {
-        "en": "Background Composition",
-        "zh": "背景构图"
+        "en": "Background & Scene",
+        "zh": "背景/场景"
       },
       "booruType": "general"
     },
@@ -58,8 +58,8 @@
     {
       "id": "composition",
       "label": {
-        "en": "Composition",
-        "zh": "构图"
+        "en": "Composition & Layout",
+        "zh": "构图/版式"
       },
       "booruType": "general"
     },
@@ -82,8 +82,8 @@
     {
       "id": "perspective",
       "label": {
-        "en": "Perspective & Camera",
-        "zh": "视角与镜头"
+        "en": "Viewpoint & Perspective",
+        "zh": "视角/透视"
       },
       "booruType": "general"
     },
@@ -565,8 +565,7 @@
         "zh": "特写"
       },
       "categoryIds": [
-        "camera-shot",
-        "perspective"
+        "camera-shot"
       ],
       "booruType": "general",
       "aliases": [
@@ -589,8 +588,7 @@
         "zh": "牛仔镜头"
       },
       "categoryIds": [
-        "camera-shot",
-        "perspective"
+        "camera-shot"
       ],
       "booruType": "general",
       "aliases": [],
@@ -691,8 +689,7 @@
         "zh": "广角远景"
       },
       "categoryIds": [
-        "camera-shot",
-        "perspective"
+        "camera-shot"
       ],
       "booruType": "general",
       "aliases": [],
