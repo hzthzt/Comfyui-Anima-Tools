@@ -96,6 +96,14 @@
       "booruType": "general"
     },
     {
+      "id": "expression",
+      "label": {
+        "en": "Expressions",
+        "zh": "表情"
+      },
+      "booruType": "general"
+    },
+    {
       "id": "r18-t1",
       "label": {
         "en": "Restricted R18 T1",
@@ -11684,6 +11692,5834 @@
       "sources": [
         "data/tags/image-composition/style.yaml",
         "danbooru-diffusion-prompt-builder:data/tags/image-composition/style.yaml"
+      ]
+    },
+    {
+      "tag": "makeup",
+      "label": {
+        "en": "makeup",
+        "zh": "浓装"
+      },
+      "meaning": {
+        "en": "makeup",
+        "zh": "浓装"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "make-up",
+        "make up"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "food on face",
+      "label": {
+        "en": "food on face",
+        "zh": "食物在脸上"
+      },
+      "meaning": {
+        "en": "food on face",
+        "zh": "食物在脸上"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "food on cheek"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "smelling",
+      "label": {
+        "en": "smelling",
+        "zh": "闻"
+      },
+      "meaning": {
+        "en": "smelling",
+        "zh": "闻"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sniffing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "nosebleed",
+      "label": {
+        "en": "nosebleed",
+        "zh": "鼻血"
+      },
+      "meaning": {
+        "en": "nosebleed",
+        "zh": "鼻血"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "nose bleed",
+        "blood from nose",
+        "bloody nose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "lips",
+      "label": {
+        "en": "lips",
+        "zh": "嘴唇"
+      },
+      "meaning": {
+        "en": "lips",
+        "zh": "嘴唇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "clenched teeth",
+      "label": {
+        "en": "clenched teeth",
+        "zh": "咬牙"
+      },
+      "meaning": {
+        "en": "clenched teeth",
+        "zh": "咬牙"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "gritted teeth",
+        "gritting teeth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "open mouth",
+      "label": {
+        "en": "open mouth",
+        "zh": "张口"
+      },
+      "meaning": {
+        "en": "open mouth",
+        "zh": "张口"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "pout",
+      "label": {
+        "en": "pout",
+        "zh": "努嘴"
+      },
+      "meaning": {
+        "en": "pout",
+        "zh": "努嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sigh",
+      "label": {
+        "en": "sigh",
+        "zh": "叹气"
+      },
+      "meaning": {
+        "en": "sigh",
+        "zh": "叹气"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sighing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "smile",
+      "label": {
+        "en": "smile",
+        "zh": "微笑"
+      },
+      "meaning": {
+        "en": "smile",
+        "zh": "微笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "smiling",
+        ":)",
+        ":}"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "light smile",
+      "label": {
+        "en": "light smile",
+        "zh": "浅笑"
+      },
+      "meaning": {
+        "en": "light smile",
+        "zh": "浅笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "faint smile"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "grin",
+      "label": {
+        "en": "grin",
+        "zh": "露齿而笑"
+      },
+      "meaning": {
+        "en": "grin",
+        "zh": "露齿而笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "evil smile",
+      "label": {
+        "en": "evil smile",
+        "zh": "坏笑"
+      },
+      "meaning": {
+        "en": "evil smile",
+        "zh": "坏笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "evil grin"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "angry",
+      "label": {
+        "en": "angry",
+        "zh": "生气的"
+      },
+      "meaning": {
+        "en": "angry",
+        "zh": "生气的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "mad",
+        "anger"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "annoyed",
+      "label": {
+        "en": "annoyed",
+        "zh": "苦恼的"
+      },
+      "meaning": {
+        "en": "annoyed",
+        "zh": "苦恼的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "irritated"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "crazy",
+      "label": {
+        "en": "crazy",
+        "zh": "疯狂的"
+      },
+      "meaning": {
+        "en": "crazy",
+        "zh": "疯狂的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "insane",
+        "yangire"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "shy",
+      "label": {
+        "en": "shy",
+        "zh": "害羞的"
+      },
+      "meaning": {
+        "en": "shy",
+        "zh": "害羞的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "embarrassed",
+      "label": {
+        "en": "embarrassed",
+        "zh": "尴尬的"
+      },
+      "meaning": {
+        "en": "embarrassed",
+        "zh": "尴尬的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "embarrassing",
+        "embarrassment"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "blush",
+      "label": {
+        "en": "blush",
+        "zh": "脸红的"
+      },
+      "meaning": {
+        "en": "blush",
+        "zh": "脸红的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "blushing",
+        "flush",
+        "flushed"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sleepy",
+      "label": {
+        "en": "sleepy",
+        "zh": "困乏的"
+      },
+      "meaning": {
+        "en": "sleepy",
+        "zh": "困乏的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sad",
+      "label": {
+        "en": "sad",
+        "zh": "悲伤的"
+      },
+      "meaning": {
+        "en": "sad",
+        "zh": "悲伤的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sadness"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "drunk",
+      "label": {
+        "en": "drunk",
+        "zh": "喝醉的"
+      },
+      "meaning": {
+        "en": "drunk",
+        "zh": "喝醉的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "frown",
+      "label": {
+        "en": "frown",
+        "zh": "皱眉/蹙额"
+      },
+      "meaning": {
+        "en": "frown",
+        "zh": "皱眉/蹙额"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":(",
+        "frowning",
+        ":{"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "ahegao",
+      "label": {
+        "en": "ahegao",
+        "zh": "阿嘿颜"
+      },
+      "meaning": {
+        "en": "ahegao",
+        "zh": "阿嘿颜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "naughty face",
+      "label": {
+        "en": "naughty face",
+        "zh": "下流的表情"
+      },
+      "meaning": {
+        "en": "naughty face",
+        "zh": "下流的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "naughty smile"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "endured face",
+      "label": {
+        "en": "endured face",
+        "zh": "忍耐的表情"
+      },
+      "meaning": {
+        "en": "endured face",
+        "zh": "忍耐的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "fangs",
+      "label": {
+        "en": "fangs",
+        "zh": "尖牙"
+      },
+      "meaning": {
+        "en": "fangs",
+        "zh": "尖牙"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tongue",
+      "label": {
+        "en": "tongue",
+        "zh": "舌头"
+      },
+      "meaning": {
+        "en": "tongue",
+        "zh": "舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "tongues"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "no nose",
+      "label": {
+        "en": "no nose",
+        "zh": "没有鼻子"
+      },
+      "meaning": {
+        "en": "no nose",
+        "zh": "没有鼻子"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "saliva",
+      "label": {
+        "en": "saliva",
+        "zh": "唾液"
+      },
+      "meaning": {
+        "en": "saliva",
+        "zh": "唾液"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "drool",
+        "spit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "facial hair",
+      "label": {
+        "en": "facial hair",
+        "zh": "胡子"
+      },
+      "meaning": {
+        "en": "facial hair",
+        "zh": "胡子"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "fingersmile",
+      "label": {
+        "en": "fingersmile",
+        "zh": "用手指做出笑脸"
+      },
+      "meaning": {
+        "en": "fingersmile",
+        "zh": "用手指做出笑脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "finger smile"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "mouth hold",
+      "label": {
+        "en": "mouth hold",
+        "zh": "嘴咬住"
+      },
+      "meaning": {
+        "en": "mouth hold",
+        "zh": "嘴咬住"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "parted lips",
+      "label": {
+        "en": "parted lips",
+        "zh": "嘴唇微张"
+      },
+      "meaning": {
+        "en": "parted lips",
+        "zh": "嘴唇微张"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "closed mouth",
+      "label": {
+        "en": "closed mouth",
+        "zh": "闭嘴"
+      },
+      "meaning": {
+        "en": "closed mouth",
+        "zh": "闭嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tongue out",
+      "label": {
+        "en": "tongue out",
+        "zh": "吐舌头"
+      },
+      "meaning": {
+        "en": "tongue out",
+        "zh": "吐舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "licking lips",
+      "label": {
+        "en": "licking lips",
+        "zh": "舔嘴唇"
+      },
+      "meaning": {
+        "en": "licking lips",
+        "zh": "舔嘴唇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "lip licking"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "pain",
+      "label": {
+        "en": "pain",
+        "zh": "疼痛"
+      },
+      "meaning": {
+        "en": "pain",
+        "zh": "疼痛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "ouch"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "crying",
+      "label": {
+        "en": "crying",
+        "zh": "哭"
+      },
+      "meaning": {
+        "en": "crying",
+        "zh": "哭"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cry"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "fume",
+      "label": {
+        "en": "fume",
+        "zh": "气得冒烟(漫画)"
+      },
+      "meaning": {
+        "en": "fume",
+        "zh": "气得冒烟(漫画)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "grimace",
+      "label": {
+        "en": "grimace",
+        "zh": "(因痛苦、厌恶等)做怪相"
+      },
+      "meaning": {
+        "en": "grimace",
+        "zh": "(因痛苦、厌恶等)做怪相"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "screaming",
+      "label": {
+        "en": "screaming",
+        "zh": "尖叫/大声喊"
+      },
+      "meaning": {
+        "en": "screaming",
+        "zh": "尖叫/大声喊"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "scream"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "v-shaped eyebrows",
+      "label": {
+        "en": "v-shaped eyebrows",
+        "zh": "眉毛皱成V形(表高傲或愤怒)"
+      },
+      "meaning": {
+        "en": "v-shaped eyebrows",
+        "zh": "眉毛皱成V形(表高傲或愤怒)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "scared",
+      "label": {
+        "en": "scared",
+        "zh": "害怕的"
+      },
+      "meaning": {
+        "en": "scared",
+        "zh": "害怕的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "fear",
+        "afraid"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "scowl",
+      "label": {
+        "en": "scowl",
+        "zh": "怒视/嫌弃/不满"
+      },
+      "meaning": {
+        "en": "scowl",
+        "zh": "怒视/嫌弃/不满"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "serious",
+      "label": {
+        "en": "serious",
+        "zh": "严肃的"
+      },
+      "meaning": {
+        "en": "serious",
+        "zh": "严肃的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "stern"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tearing up",
+      "label": {
+        "en": "tearing up",
+        "zh": "要哭的表情"
+      },
+      "meaning": {
+        "en": "tearing up",
+        "zh": "要哭的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "bored",
+      "label": {
+        "en": "bored",
+        "zh": "无聊的"
+      },
+      "meaning": {
+        "en": "bored",
+        "zh": "无聊的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "gloom (expression)",
+      "label": {
+        "en": "gloom (expression)",
+        "zh": "消沉(表情)"
+      },
+      "meaning": {
+        "en": "gloom (expression)",
+        "zh": "消沉(表情)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "gloomy"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "jealous",
+      "label": {
+        "en": "jealous",
+        "zh": "嫉妒的"
+      },
+      "meaning": {
+        "en": "jealous",
+        "zh": "嫉妒的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "jealousy"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "jitome",
+      "label": {
+        "en": "jitome",
+        "zh": "轻蔑的眼神"
+      },
+      "meaning": {
+        "en": "jitome",
+        "zh": "轻蔑的眼神"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "flat gaze"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "nervous",
+      "label": {
+        "en": "nervous",
+        "zh": "不安的"
+      },
+      "meaning": {
+        "en": "nervous",
+        "zh": "不安的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "nervous smile",
+      "label": {
+        "en": "nervous smile",
+        "zh": "不安地微笑"
+      },
+      "meaning": {
+        "en": "nervous smile",
+        "zh": "不安地微笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "shaded",
+      "label": {
+        "en": "shaded",
+        "zh": "阴沉脸"
+      },
+      "meaning": {
+        "en": "shaded",
+        "zh": "阴沉脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "turn pale",
+      "label": {
+        "en": "turn pale",
+        "zh": "脸色苍白"
+      },
+      "meaning": {
+        "en": "turn pale",
+        "zh": "脸色苍白"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pale face"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "expressionless",
+      "label": {
+        "en": "expressionless",
+        "zh": "无口"
+      },
+      "meaning": {
+        "en": "expressionless",
+        "zh": "无口"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "emotionless",
+        "neutral expression",
+        "unexpressive"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "expressions",
+      "label": {
+        "en": "expressions",
+        "zh": "表情"
+      },
+      "meaning": {
+        "en": "expressions",
+        "zh": "表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "facial expressions"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "unconscious",
+      "label": {
+        "en": "unconscious",
+        "zh": "失神"
+      },
+      "meaning": {
+        "en": "unconscious",
+        "zh": "失神"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "bright pupils",
+      "label": {
+        "en": "bright pupils",
+        "zh": "明亮的瞳孔"
+      },
+      "meaning": {
+        "en": "bright pupils",
+        "zh": "明亮的瞳孔"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "ear blush",
+      "label": {
+        "en": "ear blush",
+        "zh": "耳红"
+      },
+      "meaning": {
+        "en": "ear blush",
+        "zh": "耳红"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "holding breath",
+      "label": {
+        "en": "holding breath",
+        "zh": "憋气"
+      },
+      "meaning": {
+        "en": "holding breath",
+        "zh": "憋气"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "puckered lips",
+      "label": {
+        "en": "puckered lips",
+        "zh": "撅起的嘴唇"
+      },
+      "meaning": {
+        "en": "puckered lips",
+        "zh": "撅起的嘴唇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "seductive smile",
+      "label": {
+        "en": "seductive smile",
+        "zh": "诱人的微笑"
+      },
+      "meaning": {
+        "en": "seductive smile",
+        "zh": "诱人的微笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "smiley",
+      "label": {
+        "en": "smiley",
+        "zh": "笑脸"
+      },
+      "meaning": {
+        "en": "smiley",
+        "zh": "笑脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "smirk",
+      "label": {
+        "en": "smirk",
+        "zh": "傻笑/得意的笑"
+      },
+      "meaning": {
+        "en": "smirk",
+        "zh": "傻笑/得意的笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "doyagao",
+      "label": {
+        "en": "doyagao",
+        "zh": "得意脸"
+      },
+      "meaning": {
+        "en": "doyagao",
+        "zh": "得意脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "doya-gao"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "flustered",
+      "label": {
+        "en": "flustered",
+        "zh": "慌乱的"
+      },
+      "meaning": {
+        "en": "flustered",
+        "zh": "慌乱的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "full blush",
+      "label": {
+        "en": "full blush",
+        "zh": "整张脸泛红"
+      },
+      "meaning": {
+        "en": "full blush",
+        "zh": "整张脸泛红"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "heart in eye",
+      "label": {
+        "en": "heart in eye",
+        "zh": "眼里冒爱心"
+      },
+      "meaning": {
+        "en": "heart in eye",
+        "zh": "眼里冒爱心"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "heavy breathing",
+      "label": {
+        "en": "heavy breathing",
+        "zh": "喘粗气"
+      },
+      "meaning": {
+        "en": "heavy breathing",
+        "zh": "喘粗气"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panting"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "moaning",
+      "label": {
+        "en": "moaning",
+        "zh": "呻吟"
+      },
+      "meaning": {
+        "en": "moaning",
+        "zh": "呻吟"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "moan"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "smug",
+      "label": {
+        "en": "smug",
+        "zh": "得意脸"
+      },
+      "meaning": {
+        "en": "smug",
+        "zh": "得意脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "spit take",
+      "label": {
+        "en": "spit take",
+        "zh": "惊讶或无语到喷了"
+      },
+      "meaning": {
+        "en": "spit take",
+        "zh": "惊讶或无语到喷了"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "surprised",
+      "label": {
+        "en": "surprised",
+        "zh": "惊讶"
+      },
+      "meaning": {
+        "en": "surprised",
+        "zh": "惊讶"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "shocked",
+        "shock",
+        "surprise",
+        "startled"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tsundere",
+      "label": {
+        "en": "tsundere",
+        "zh": "傲娇"
+      },
+      "meaning": {
+        "en": "tsundere",
+        "zh": "傲娇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "drooling",
+      "label": {
+        "en": "drooling",
+        "zh": "流口水"
+      },
+      "meaning": {
+        "en": "drooling",
+        "zh": "流口水"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "torogao",
+      "label": {
+        "en": "torogao",
+        "zh": "淫荡的表情"
+      },
+      "meaning": {
+        "en": "torogao",
+        "zh": "淫荡的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "glint",
+      "label": {
+        "en": "glint",
+        "zh": "眼中闪现强烈的情感"
+      },
+      "meaning": {
+        "en": "glint",
+        "zh": "眼中闪现强烈的情感"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "happy",
+      "label": {
+        "en": "happy",
+        "zh": "快乐/幸福"
+      },
+      "meaning": {
+        "en": "happy",
+        "zh": "快乐/幸福"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "laughing",
+      "label": {
+        "en": "laughing",
+        "zh": "在笑的"
+      },
+      "meaning": {
+        "en": "laughing",
+        "zh": "在笑的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "laugh"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "naughty",
+      "label": {
+        "en": "naughty",
+        "zh": "下流的表情"
+      },
+      "meaning": {
+        "en": "naughty",
+        "zh": "下流的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "troll",
+      "label": {
+        "en": "troll",
+        "zh": "嚣张脸"
+      },
+      "meaning": {
+        "en": "troll",
+        "zh": "嚣张脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "yandere",
+      "label": {
+        "en": "yandere",
+        "zh": "病娇"
+      },
+      "meaning": {
+        "en": "yandere",
+        "zh": "病娇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "saliva trail",
+      "label": {
+        "en": "saliva trail",
+        "zh": "唾液拉丝"
+      },
+      "meaning": {
+        "en": "saliva trail",
+        "zh": "唾液拉丝"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "saliva string"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "red lips",
+      "label": {
+        "en": "red lips",
+        "zh": "朱唇"
+      },
+      "meaning": {
+        "en": "red lips",
+        "zh": "朱唇"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "red lipstick"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "skin fang",
+      "label": {
+        "en": "skin fang",
+        "zh": "把嘴的一部分画成虎牙状"
+      },
+      "meaning": {
+        "en": "skin fang",
+        "zh": "把嘴的一部分画成虎牙状"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "flesh fang"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "upper teeth",
+      "label": {
+        "en": "upper teeth",
+        "zh": "露出上排牙齿"
+      },
+      "meaning": {
+        "en": "upper teeth",
+        "zh": "露出上排牙齿"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "fang",
+      "label": {
+        "en": "fang",
+        "zh": "虎牙"
+      },
+      "meaning": {
+        "en": "fang",
+        "zh": "虎牙"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "fang out",
+      "label": {
+        "en": "fang out",
+        "zh": "露出虎牙/露出尖牙"
+      },
+      "meaning": {
+        "en": "fang out",
+        "zh": "露出虎牙/露出尖牙"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "long tongue",
+      "label": {
+        "en": "long tongue",
+        "zh": "长舌头"
+      },
+      "meaning": {
+        "en": "long tongue",
+        "zh": "长舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "forehead",
+      "label": {
+        "en": "forehead",
+        "zh": "额头"
+      },
+      "meaning": {
+        "en": "forehead",
+        "zh": "额头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "light blush",
+      "label": {
+        "en": "light blush",
+        "zh": "淡淡的腮红"
+      },
+      "meaning": {
+        "en": "light blush",
+        "zh": "淡淡的腮红"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cheek-to-cheek",
+      "label": {
+        "en": "cheek-to-cheek",
+        "zh": "脸贴脸"
+      },
+      "meaning": {
+        "en": "cheek-to-cheek",
+        "zh": "脸贴脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cheek bulge",
+      "label": {
+        "en": "cheek bulge",
+        "zh": "鼓着腮帮"
+      },
+      "meaning": {
+        "en": "cheek bulge",
+        "zh": "鼓着腮帮"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bulging cheeks"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cheek pinching",
+      "label": {
+        "en": "cheek pinching",
+        "zh": "捏脸颊"
+      },
+      "meaning": {
+        "en": "cheek pinching",
+        "zh": "捏脸颊"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cheek pinch",
+        "pinching cheeks"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cheek poking",
+      "label": {
+        "en": "cheek poking",
+        "zh": "戳脸颊"
+      },
+      "meaning": {
+        "en": "cheek poking",
+        "zh": "戳脸颊"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cheek poke",
+        "poking cheeks"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cheek pull",
+      "label": {
+        "en": "cheek pull",
+        "zh": "扯脸颊"
+      },
+      "meaning": {
+        "en": "cheek pull",
+        "zh": "扯脸颊"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cheek tug"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "chin grab",
+      "label": {
+        "en": "chin grab",
+        "zh": "抬下巴"
+      },
+      "meaning": {
+        "en": "chin grab",
+        "zh": "抬下巴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "covering eyes",
+      "label": {
+        "en": "covering eyes",
+        "zh": "遮住眼睛"
+      },
+      "meaning": {
+        "en": "covering eyes",
+        "zh": "遮住眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hands over eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "covering",
+      "label": {
+        "en": "covering",
+        "zh": "挡住脸"
+      },
+      "meaning": {
+        "en": "covering",
+        "zh": "挡住脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "covering mouth",
+      "label": {
+        "en": "covering mouth",
+        "zh": "挡住嘴巴"
+      },
+      "meaning": {
+        "en": "covering mouth",
+        "zh": "挡住嘴巴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hiding mouth",
+        "hands over mouth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "face-to-face",
+      "label": {
+        "en": "face-to-face",
+        "zh": "脸贴脸"
+      },
+      "meaning": {
+        "en": "face-to-face",
+        "zh": "脸贴脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "facing another",
+      "label": {
+        "en": "facing another",
+        "zh": "二人面对面(脸贴得很近)"
+      },
+      "meaning": {
+        "en": "facing another",
+        "zh": "二人面对面(脸贴得很近)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "forehead-to-forehead",
+      "label": {
+        "en": "forehead-to-forehead",
+        "zh": "额头贴额头"
+      },
+      "meaning": {
+        "en": "forehead-to-forehead",
+        "zh": "额头贴额头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "teeth",
+      "label": {
+        "en": "teeth",
+        "zh": "牙"
+      },
+      "meaning": {
+        "en": "teeth",
+        "zh": "牙"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bared teeth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "excited",
+      "label": {
+        "en": "excited",
+        "zh": "兴奋"
+      },
+      "meaning": {
+        "en": "excited",
+        "zh": "兴奋"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "nose blush",
+      "label": {
+        "en": "nose blush",
+        "zh": "害羞"
+      },
+      "meaning": {
+        "en": "nose blush",
+        "zh": "害羞"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "expressionless eyes",
+      "label": {
+        "en": "expressionless eyes",
+        "zh": "失神"
+      },
+      "meaning": {
+        "en": "expressionless eyes",
+        "zh": "失神"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "wide eyed",
+      "label": {
+        "en": "wide eyed",
+        "zh": "睁大眼睛"
+      },
+      "meaning": {
+        "en": "wide eyed",
+        "zh": "睁大眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ">:(",
+      "label": {
+        "en": ">:(",
+        "zh": "愤怒"
+      },
+      "meaning": {
+        "en": ">:(",
+        "zh": "愤怒"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ">:)",
+      "label": {
+        "en": ">:)",
+        "zh": "嘲笑"
+      },
+      "meaning": {
+        "en": ">:)",
+        "zh": "嘲笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":o",
+      "label": {
+        "en": ":o",
+        "zh": "惊讶"
+      },
+      "meaning": {
+        "en": ":o",
+        "zh": "惊讶"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":0"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":q",
+      "label": {
+        "en": ":q",
+        "zh": "右上吐舌头"
+      },
+      "meaning": {
+        "en": ":q",
+        "zh": "右上吐舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":9"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":p",
+      "label": {
+        "en": ":p",
+        "zh": "右下吐舌头"
+      },
+      "meaning": {
+        "en": ":p",
+        "zh": "右下吐舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":b"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":d",
+      "label": {
+        "en": ":d",
+        "zh": "咧嘴笑"
+      },
+      "meaning": {
+        "en": ":d",
+        "zh": "咧嘴笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";d",
+      "label": {
+        "en": ";d",
+        "zh": "单眼咧嘴笑"
+      },
+      "meaning": {
+        "en": ";d",
+        "zh": "单眼咧嘴笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":3",
+      "label": {
+        "en": ":3",
+        "zh": "猫嘴"
+      },
+      "meaning": {
+        "en": ":3",
+        "zh": "猫嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "lipstick",
+      "label": {
+        "en": "lipstick",
+        "zh": "口红/唇膏"
+      },
+      "meaning": {
+        "en": "lipstick",
+        "zh": "口红/唇膏"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "covering face",
+      "label": {
+        "en": "covering face",
+        "zh": "挡住脸"
+      },
+      "meaning": {
+        "en": "covering face",
+        "zh": "挡住脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hiding face"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "black eyes",
+      "label": {
+        "en": "black eyes",
+        "zh": "黑眼"
+      },
+      "meaning": {
+        "en": "black eyes",
+        "zh": "黑眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "blue eyes",
+      "label": {
+        "en": "blue eyes",
+        "zh": "蓝眼"
+      },
+      "meaning": {
+        "en": "blue eyes",
+        "zh": "蓝眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "brown eyes",
+      "label": {
+        "en": "brown eyes",
+        "zh": "棕眼"
+      },
+      "meaning": {
+        "en": "brown eyes",
+        "zh": "棕眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "green eyes",
+      "label": {
+        "en": "green eyes",
+        "zh": "绿眼"
+      },
+      "meaning": {
+        "en": "green eyes",
+        "zh": "绿眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "grey eyes",
+      "label": {
+        "en": "grey eyes",
+        "zh": "灰眼"
+      },
+      "meaning": {
+        "en": "grey eyes",
+        "zh": "灰眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "silver eyes",
+        "gray eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "heart-shaped pupils",
+      "label": {
+        "en": "heart-shaped pupils",
+        "zh": "爱心形瞳孔"
+      },
+      "meaning": {
+        "en": "heart-shaped pupils",
+        "zh": "爱心形瞳孔"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "heterochromia",
+      "label": {
+        "en": "heterochromia",
+        "zh": "异色瞳"
+      },
+      "meaning": {
+        "en": "heterochromia",
+        "zh": "异色瞳"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "odd eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "purple eyes",
+      "label": {
+        "en": "purple eyes",
+        "zh": "紫眼"
+      },
+      "meaning": {
+        "en": "purple eyes",
+        "zh": "紫眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "red eyes",
+      "label": {
+        "en": "red eyes",
+        "zh": "红眼"
+      },
+      "meaning": {
+        "en": "red eyes",
+        "zh": "红眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "red eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "slit pupils",
+      "label": {
+        "en": "slit pupils",
+        "zh": "竖瞳孔/猫眼"
+      },
+      "meaning": {
+        "en": "slit pupils",
+        "zh": "竖瞳孔/猫眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cat eyes",
+        "snake eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "white eyes",
+      "label": {
+        "en": "white eyes",
+        "zh": "白眼"
+      },
+      "meaning": {
+        "en": "white eyes",
+        "zh": "白眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "yellow eyes",
+      "label": {
+        "en": "yellow eyes",
+        "zh": "金眼"
+      },
+      "meaning": {
+        "en": "yellow eyes",
+        "zh": "金眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tareme",
+      "label": {
+        "en": "tareme",
+        "zh": "下垂的眼睛"
+      },
+      "meaning": {
+        "en": "tareme",
+        "zh": "下垂的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sanpaku",
+      "label": {
+        "en": "sanpaku",
+        "zh": "三白眼"
+      },
+      "meaning": {
+        "en": "sanpaku",
+        "zh": "三白眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "upturned eyes",
+      "label": {
+        "en": "upturned eyes",
+        "zh": "上翘的眼睛"
+      },
+      "meaning": {
+        "en": "upturned eyes",
+        "zh": "上翘的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "wide-eyed",
+      "label": {
+        "en": "wide-eyed",
+        "zh": "睁开眼睛"
+      },
+      "meaning": {
+        "en": "wide-eyed",
+        "zh": "睁开眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "eyes wide",
+        "wide eyes",
+        "shocked eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "ringed eyes",
+      "label": {
+        "en": "ringed eyes",
+        "zh": "眼圈"
+      },
+      "meaning": {
+        "en": "ringed eyes",
+        "zh": "眼圈"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "rolling eyes",
+      "label": {
+        "en": "rolling eyes",
+        "zh": "眼睛抬头"
+      },
+      "meaning": {
+        "en": "rolling eyes",
+        "zh": "眼睛抬头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "rolleyes",
+        "rolled eyes",
+        "eye roll"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "crazy eyes",
+      "label": {
+        "en": "crazy eyes",
+        "zh": "疯狂的眼睛"
+      },
+      "meaning": {
+        "en": "crazy eyes",
+        "zh": "疯狂的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "raised eyebrows",
+      "label": {
+        "en": "raised eyebrows",
+        "zh": "挑眉"
+      },
+      "meaning": {
+        "en": "raised eyebrows",
+        "zh": "挑眉"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "furrowed brow",
+      "label": {
+        "en": "furrowed brow",
+        "zh": "下眉毛"
+      },
+      "meaning": {
+        "en": "furrowed brow",
+        "zh": "下眉毛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "furrowed eyebrows"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "dashed eyes",
+      "label": {
+        "en": "dashed eyes",
+        "zh": "黑眼圈中的水平线"
+      },
+      "meaning": {
+        "en": "dashed eyes",
+        "zh": "黑眼圈中的水平线"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "dash eyes",
+        "line in eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "multicolored eyes",
+      "label": {
+        "en": "multicolored eyes",
+        "zh": "多色的黑眼睛"
+      },
+      "meaning": {
+        "en": "multicolored eyes",
+        "zh": "多色的黑眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "mismatched pupils",
+      "label": {
+        "en": "mismatched pupils",
+        "zh": "左右眼颜色不同"
+      },
+      "meaning": {
+        "en": "mismatched pupils",
+        "zh": "左右眼颜色不同"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "asymmetrical pupils"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "mismatched sclera",
+      "label": {
+        "en": "mismatched sclera",
+        "zh": "左右眼不同颜色的眼白"
+      },
+      "meaning": {
+        "en": "mismatched sclera",
+        "zh": "左右眼不同颜色的眼白"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "no pupils",
+      "label": {
+        "en": "no pupils",
+        "zh": "没有眼睛"
+      },
+      "meaning": {
+        "en": "no pupils",
+        "zh": "没有眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "empty eyes",
+      "label": {
+        "en": "empty eyes",
+        "zh": "眼睛没有亮点"
+      },
+      "meaning": {
+        "en": "empty eyes",
+        "zh": "眼睛没有亮点"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "dead eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "blank eyes",
+      "label": {
+        "en": "blank eyes",
+        "zh": "白眼球"
+      },
+      "meaning": {
+        "en": "blank eyes",
+        "zh": "白眼球"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "dilated pupils",
+      "label": {
+        "en": "dilated pupils",
+        "zh": "瞳孔扩张"
+      },
+      "meaning": {
+        "en": "dilated pupils",
+        "zh": "瞳孔扩张"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "hollow eyes",
+      "label": {
+        "en": "hollow eyes",
+        "zh": "漆黑的眼睛"
+      },
+      "meaning": {
+        "en": "hollow eyes",
+        "zh": "漆黑的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "constricted pupils",
+      "label": {
+        "en": "constricted pupils",
+        "zh": "瞳孔收缩"
+      },
+      "meaning": {
+        "en": "constricted pupils",
+        "zh": "瞳孔收缩"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "contracted pupils",
+        "shrunk pupils",
+        "shrunk eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "symbol-shaped pupils",
+      "label": {
+        "en": "symbol-shaped pupils",
+        "zh": "符号眼"
+      },
+      "meaning": {
+        "en": "symbol-shaped pupils",
+        "zh": "符号眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "star-shaped pupils",
+      "label": {
+        "en": "star-shaped pupils",
+        "zh": "星形眼睛"
+      },
+      "meaning": {
+        "en": "star-shaped pupils",
+        "zh": "星形眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "x-shaped pupils",
+      "label": {
+        "en": "x-shaped pupils",
+        "zh": "X 形眼睛"
+      },
+      "meaning": {
+        "en": "x-shaped pupils",
+        "zh": "X 形眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "button eyes",
+      "label": {
+        "en": "button eyes",
+        "zh": "纽扣眼"
+      },
+      "meaning": {
+        "en": "button eyes",
+        "zh": "纽扣眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eye reflection",
+      "label": {
+        "en": "eye reflection",
+        "zh": "眼睛反射"
+      },
+      "meaning": {
+        "en": "eye reflection",
+        "zh": "眼睛反射"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "closed eyes",
+      "label": {
+        "en": "closed eyes",
+        "zh": "闭上眼睛"
+      },
+      "meaning": {
+        "en": "closed eyes",
+        "zh": "闭上眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "one eye closed",
+      "label": {
+        "en": "one eye closed",
+        "zh": "一只眼睛闭着"
+      },
+      "meaning": {
+        "en": "one eye closed",
+        "zh": "一只眼睛闭着"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "wink"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "half-closed eyes",
+      "label": {
+        "en": "half-closed eyes",
+        "zh": "眼睛半闭"
+      },
+      "meaning": {
+        "en": "half-closed eyes",
+        "zh": "眼睛半闭"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "half closed eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyes closed",
+      "label": {
+        "en": "eyes closed",
+        "zh": "闭眼"
+      },
+      "meaning": {
+        "en": "eyes closed",
+        "zh": "闭眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "wince",
+      "label": {
+        "en": "wince",
+        "zh": "闭一只眼"
+      },
+      "meaning": {
+        "en": "wince",
+        "zh": "闭一只眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cringe"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tsurime",
+      "label": {
+        "en": "tsurime",
+        "zh": "吊眼角"
+      },
+      "meaning": {
+        "en": "tsurime",
+        "zh": "吊眼角"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyeball",
+      "label": {
+        "en": "eyeball",
+        "zh": "盯着看"
+      },
+      "meaning": {
+        "en": "eyeball",
+        "zh": "盯着看"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "eyeballs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tears",
+      "label": {
+        "en": "tears",
+        "zh": "眼泪"
+      },
+      "meaning": {
+        "en": "tears",
+        "zh": "眼泪"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "tear"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "gradient eyes",
+      "label": {
+        "en": "gradient eyes",
+        "zh": "渐变瞳色"
+      },
+      "meaning": {
+        "en": "gradient eyes",
+        "zh": "渐变瞳色"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "aqua eyes",
+      "label": {
+        "en": "aqua eyes",
+        "zh": "吐舌鬼脸"
+      },
+      "meaning": {
+        "en": "aqua eyes",
+        "zh": "吐舌鬼脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "crying with eyes open",
+      "label": {
+        "en": "crying with eyes open",
+        "zh": "睁着眼落泪"
+      },
+      "meaning": {
+        "en": "crying with eyes open",
+        "zh": "睁着眼落泪"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "glowing eyes",
+      "label": {
+        "en": "glowing eyes",
+        "zh": "发光的双眼"
+      },
+      "meaning": {
+        "en": "glowing eyes",
+        "zh": "发光的双眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "half-closed eye",
+      "label": {
+        "en": "half-closed eye",
+        "zh": "半闭的眼睛(单眼)"
+      },
+      "meaning": {
+        "en": "half-closed eye",
+        "zh": "半闭的眼睛(单眼)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "half closed eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "happy tears",
+      "label": {
+        "en": "happy tears",
+        "zh": "开心的眼泪"
+      },
+      "meaning": {
+        "en": "happy tears",
+        "zh": "开心的眼泪"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sparkling eyes",
+      "label": {
+        "en": "sparkling eyes",
+        "zh": "星星眼"
+      },
+      "meaning": {
+        "en": "sparkling eyes",
+        "zh": "星星眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sparkle eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "glaring",
+      "label": {
+        "en": "glaring",
+        "zh": "轻蔑/怒视"
+      },
+      "meaning": {
+        "en": "glaring",
+        "zh": "轻蔑/怒视"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "glare"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "streaming tears",
+      "label": {
+        "en": "streaming tears",
+        "zh": "流泪"
+      },
+      "meaning": {
+        "en": "streaming tears",
+        "zh": "流泪"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyebrows behind hair",
+      "label": {
+        "en": "eyebrows behind hair",
+        "zh": "挡在头发下的眉毛"
+      },
+      "meaning": {
+        "en": "eyebrows behind hair",
+        "zh": "挡在头发下的眉毛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyebrows visible through hair",
+      "label": {
+        "en": "eyebrows visible through hair",
+        "zh": "透过头发可以看到的眉毛"
+      },
+      "meaning": {
+        "en": "eyebrows visible through hair",
+        "zh": "透过头发可以看到的眉毛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyelashes",
+      "label": {
+        "en": "eyelashes",
+        "zh": "睫毛"
+      },
+      "meaning": {
+        "en": "eyelashes",
+        "zh": "睫毛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "eye lashes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyeliner",
+      "label": {
+        "en": "eyeliner",
+        "zh": "眼线"
+      },
+      "meaning": {
+        "en": "eyeliner",
+        "zh": "眼线"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "eyes visible through hair",
+      "label": {
+        "en": "eyes visible through hair",
+        "zh": "透过头发可以看到的眼睛"
+      },
+      "meaning": {
+        "en": "eyes visible through hair",
+        "zh": "透过头发可以看到的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "eye through hair"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "anger vein",
+      "label": {
+        "en": "anger vein",
+        "zh": "青筋"
+      },
+      "meaning": {
+        "en": "anger vein",
+        "zh": "青筋"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "anger mark"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "blush stickers",
+      "label": {
+        "en": "blush stickers",
+        "zh": "表情贴纸"
+      },
+      "meaning": {
+        "en": "blush stickers",
+        "zh": "表情贴纸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "blush sticker"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "full-face blush",
+      "label": {
+        "en": "full-face blush",
+        "zh": "整张脸泛红"
+      },
+      "meaning": {
+        "en": "full-face blush",
+        "zh": "整张脸泛红"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "confused",
+      "label": {
+        "en": "confused",
+        "zh": "疑惑"
+      },
+      "meaning": {
+        "en": "confused",
+        "zh": "疑惑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "determined",
+      "label": {
+        "en": "determined",
+        "zh": "有决心的"
+      },
+      "meaning": {
+        "en": "determined",
+        "zh": "有决心的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "disappointed",
+      "label": {
+        "en": "disappointed",
+        "zh": "失望的"
+      },
+      "meaning": {
+        "en": "disappointed",
+        "zh": "失望的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "disdain",
+      "label": {
+        "en": "disdain",
+        "zh": "蔑视"
+      },
+      "meaning": {
+        "en": "disdain",
+        "zh": "蔑视"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "disgust",
+      "label": {
+        "en": "disgust",
+        "zh": "恶心"
+      },
+      "meaning": {
+        "en": "disgust",
+        "zh": "恶心"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "disgusted"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "despair",
+      "label": {
+        "en": "despair",
+        "zh": "绝望"
+      },
+      "meaning": {
+        "en": "despair",
+        "zh": "绝望"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "envy",
+      "label": {
+        "en": "envy",
+        "zh": "嫉妒"
+      },
+      "meaning": {
+        "en": "envy",
+        "zh": "嫉妒"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "evil",
+      "label": {
+        "en": "evil",
+        "zh": "邪恶"
+      },
+      "meaning": {
+        "en": "evil",
+        "zh": "邪恶"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "facepalm",
+      "label": {
+        "en": "facepalm",
+        "zh": "以手掩面"
+      },
+      "meaning": {
+        "en": "facepalm",
+        "zh": "以手掩面"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "frustrated",
+      "label": {
+        "en": "frustrated",
+        "zh": "沮丧"
+      },
+      "meaning": {
+        "en": "frustrated",
+        "zh": "沮丧"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "guilt",
+      "label": {
+        "en": "guilt",
+        "zh": "有罪的"
+      },
+      "meaning": {
+        "en": "guilt",
+        "zh": "有罪的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "kubrick stare",
+      "label": {
+        "en": "kubrick stare",
+        "zh": "库布里克凝视"
+      },
+      "meaning": {
+        "en": "kubrick stare",
+        "zh": "库布里克凝视"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "lonely",
+      "label": {
+        "en": "lonely",
+        "zh": "孤独的"
+      },
+      "meaning": {
+        "en": "lonely",
+        "zh": "孤独的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "raised eyebrow",
+      "label": {
+        "en": "raised eyebrow",
+        "zh": "扬起的眉毛"
+      },
+      "meaning": {
+        "en": "raised eyebrow",
+        "zh": "扬起的眉毛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "rape face",
+      "label": {
+        "en": "rape face",
+        "zh": "一副要强奸人的表情"
+      },
+      "meaning": {
+        "en": "rape face",
+        "zh": "一副要强奸人的表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "rapeface"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "depressed",
+      "label": {
+        "en": "depressed",
+        "zh": "压抑的/郁闷的"
+      },
+      "meaning": {
+        "en": "depressed",
+        "zh": "压抑的/郁闷的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "panicking",
+      "label": {
+        "en": "panicking",
+        "zh": "恐慌的"
+      },
+      "meaning": {
+        "en": "panicking",
+        "zh": "恐慌的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panic"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "worried",
+      "label": {
+        "en": "worried",
+        "zh": "担忧的"
+      },
+      "meaning": {
+        "en": "worried",
+        "zh": "担忧的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "concerned"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "tired",
+      "label": {
+        "en": "tired",
+        "zh": "累"
+      },
+      "meaning": {
+        "en": "tired",
+        "zh": "累"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sulking",
+      "label": {
+        "en": "sulking",
+        "zh": "闷闷不乐"
+      },
+      "meaning": {
+        "en": "sulking",
+        "zh": "闷闷不乐"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "thinking",
+      "label": {
+        "en": "thinking",
+        "zh": "思考"
+      },
+      "meaning": {
+        "en": "thinking",
+        "zh": "思考"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "pensive",
+      "label": {
+        "en": "pensive",
+        "zh": "沉思的"
+      },
+      "meaning": {
+        "en": "pensive",
+        "zh": "沉思的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "upset",
+      "label": {
+        "en": "upset",
+        "zh": "气愤"
+      },
+      "meaning": {
+        "en": "upset",
+        "zh": "气愤"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "crazy smile",
+      "label": {
+        "en": "crazy smile",
+        "zh": "疯狂地笑"
+      },
+      "meaning": {
+        "en": "crazy smile",
+        "zh": "疯狂地笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "forced smile",
+      "label": {
+        "en": "forced smile",
+        "zh": "强迫笑"
+      },
+      "meaning": {
+        "en": "forced smile",
+        "zh": "强迫笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "glasgow smile",
+      "label": {
+        "en": "glasgow smile",
+        "zh": "格拉斯哥微笑"
+      },
+      "meaning": {
+        "en": "glasgow smile",
+        "zh": "格拉斯哥微笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sad smile",
+      "label": {
+        "en": "sad smile",
+        "zh": "苦笑"
+      },
+      "meaning": {
+        "en": "sad smile",
+        "zh": "苦笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "stifled laugh",
+      "label": {
+        "en": "stifled laugh",
+        "zh": "憋笑"
+      },
+      "meaning": {
+        "en": "stifled laugh",
+        "zh": "憋笑"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "^^^",
+      "label": {
+        "en": "^^^",
+        "zh": "惊讶的"
+      },
+      "meaning": {
+        "en": "^^^",
+        "zh": "惊讶的"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "color drain",
+      "label": {
+        "en": "color drain",
+        "zh": "惊讶到掉色"
+      },
+      "meaning": {
+        "en": "color drain",
+        "zh": "惊讶到掉色"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "horrified",
+      "label": {
+        "en": "horrified",
+        "zh": "恐惧表情"
+      },
+      "meaning": {
+        "en": "horrified",
+        "zh": "恐惧表情"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "horror (expression)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sobbing",
+      "label": {
+        "en": "sobbing",
+        "zh": "啜泣"
+      },
+      "meaning": {
+        "en": "sobbing",
+        "zh": "啜泣"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "trembling",
+      "label": {
+        "en": "trembling",
+        "zh": "颤抖"
+      },
+      "meaning": {
+        "en": "trembling",
+        "zh": "颤抖"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "tremble",
+        "shiver",
+        "shivering"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "wavy mouth",
+      "label": {
+        "en": "wavy mouth",
+        "zh": "薯片嘴型"
+      },
+      "meaning": {
+        "en": "wavy mouth",
+        "zh": "薯片嘴型"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";)",
+      "label": {
+        "en": ";)",
+        "zh": ";)"
+      },
+      "meaning": {
+        "en": ";)",
+        "zh": ";)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "d:",
+      "label": {
+        "en": "d:",
+        "zh": "d:"
+      },
+      "meaning": {
+        "en": "d:",
+        "zh": "d:"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";3",
+      "label": {
+        "en": ";3",
+        "zh": ";3"
+      },
+      "meaning": {
+        "en": ";3",
+        "zh": ";3"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "3:",
+      "label": {
+        "en": "3:",
+        "zh": "斜嘴"
+      },
+      "meaning": {
+        "en": "3:",
+        "zh": "斜嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "uwu",
+      "label": {
+        "en": "uwu",
+        "zh": "猫脸"
+      },
+      "meaning": {
+        "en": "uwu",
+        "zh": "猫脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";p",
+      "label": {
+        "en": ";p",
+        "zh": ";p"
+      },
+      "meaning": {
+        "en": ";p",
+        "zh": ";p"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";q",
+      "label": {
+        "en": ";q",
+        "zh": ";q"
+      },
+      "meaning": {
+        "en": ";q",
+        "zh": ";q"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":t",
+      "label": {
+        "en": ":t",
+        "zh": ":t"
+      },
+      "meaning": {
+        "en": ":t",
+        "zh": ":t"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":i",
+      "label": {
+        "en": ":i",
+        "zh": ":i"
+      },
+      "meaning": {
+        "en": ":i",
+        "zh": ":i"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":/",
+      "label": {
+        "en": ":/",
+        "zh": "斜嘴"
+      },
+      "meaning": {
+        "en": ":/",
+        "zh": "斜嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":\\"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":|",
+      "label": {
+        "en": ":|",
+        "zh": "无语"
+      },
+      "meaning": {
+        "en": ":|",
+        "zh": "无语"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":x",
+      "label": {
+        "en": ":x",
+        "zh": ":x"
+      },
+      "meaning": {
+        "en": ":x",
+        "zh": ":x"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":c",
+      "label": {
+        "en": ":c",
+        "zh": "伤心"
+      },
+      "meaning": {
+        "en": ":c",
+        "zh": "伤心"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "c:",
+      "label": {
+        "en": "c:",
+        "zh": "c:"
+      },
+      "meaning": {
+        "en": "c:",
+        "zh": "c:"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":<",
+      "label": {
+        "en": ":<",
+        "zh": ":<"
+      },
+      "meaning": {
+        "en": ":<",
+        "zh": ":<"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";<",
+      "label": {
+        "en": ";<",
+        "zh": ";<"
+      },
+      "meaning": {
+        "en": ";<",
+        "zh": ";<"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":<>",
+      "label": {
+        "en": ":<>",
+        "zh": "张大嘴"
+      },
+      "meaning": {
+        "en": ":<>",
+        "zh": "张大嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":>",
+      "label": {
+        "en": ":>",
+        "zh": ":>"
+      },
+      "meaning": {
+        "en": ":>",
+        "zh": ":>"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ":>=",
+      "label": {
+        "en": ":>=",
+        "zh": ":>="
+      },
+      "meaning": {
+        "en": ":>=",
+        "zh": ":>="
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "vacuum fellatio",
+        "blowjob face"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ";o",
+      "label": {
+        "en": ";o",
+        "zh": ";o"
+      },
+      "meaning": {
+        "en": ";o",
+        "zh": ";o"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "o3o",
+      "label": {
+        "en": "o3o",
+        "zh": "o3o"
+      },
+      "meaning": {
+        "en": "o3o",
+        "zh": "o3o"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ".3."
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "(-3-)",
+      "label": {
+        "en": "(-3-)",
+        "zh": "嘟嘴"
+      },
+      "meaning": {
+        "en": "(-3-)",
+        "zh": "嘟嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ">3<",
+      "label": {
+        "en": ">3<",
+        "zh": "亲嘴"
+      },
+      "meaning": {
+        "en": ">3<",
+        "zh": "亲嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "o o",
+      "label": {
+        "en": "o o",
+        "zh": "发呆"
+      },
+      "meaning": {
+        "en": "o o",
+        "zh": "发呆"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "0 0",
+      "label": {
+        "en": "0 0",
+        "zh": "0_0"
+      },
+      "meaning": {
+        "en": "0 0",
+        "zh": "0_0"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "| |",
+      "label": {
+        "en": "| |",
+        "zh": "|_|"
+      },
+      "meaning": {
+        "en": "| |",
+        "zh": "|_|"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ". .",
+      "label": {
+        "en": ". .",
+        "zh": "._."
+      },
+      "meaning": {
+        "en": ". .",
+        "zh": "._."
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "solid circle eyes",
+      "label": {
+        "en": "solid circle eyes",
+        "zh": "实心圆眼睛"
+      },
+      "meaning": {
+        "en": "solid circle eyes",
+        "zh": "实心圆眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "heart-shaped eyes",
+      "label": {
+        "en": "heart-shaped eyes",
+        "zh": "心形眼"
+      },
+      "meaning": {
+        "en": "heart-shaped eyes",
+        "zh": "心形眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "heart eyes",
+        "heart eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "^ ^",
+      "label": {
+        "en": "^ ^",
+        "zh": "^_^"
+      },
+      "meaning": {
+        "en": "^ ^",
+        "zh": "^_^"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "^o^",
+      "label": {
+        "en": "^o^",
+        "zh": "^o^"
+      },
+      "meaning": {
+        "en": "^o^",
+        "zh": "^o^"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "\\(^o^)/",
+      "label": {
+        "en": "\\(^o^)/",
+        "zh": "\\(^o^)/"
+      },
+      "meaning": {
+        "en": "\\(^o^)/",
+        "zh": "\\(^o^)/"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "owata"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "^q^",
+      "label": {
+        "en": "^q^",
+        "zh": "^q^"
+      },
+      "meaning": {
+        "en": "^q^",
+        "zh": "^q^"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "> <",
+      "label": {
+        "en": "> <",
+        "zh": ">_<"
+      },
+      "meaning": {
+        "en": "> <",
+        "zh": ">_<"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "xd",
+      "label": {
+        "en": "xd",
+        "zh": "XD"
+      },
+      "meaning": {
+        "en": "xd",
+        "zh": "XD"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "x3",
+      "label": {
+        "en": "x3",
+        "zh": "X3"
+      },
+      "meaning": {
+        "en": "x3",
+        "zh": "X3"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": ">o<",
+      "label": {
+        "en": ">o<",
+        "zh": ">o<"
+      },
+      "meaning": {
+        "en": ">o<",
+        "zh": ">o<"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "> @",
+      "label": {
+        "en": "> @",
+        "zh": ">_@"
+      },
+      "meaning": {
+        "en": "> @",
+        "zh": ">_@"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "+ -",
+      "label": {
+        "en": "+ -",
+        "zh": "+_-"
+      },
+      "meaning": {
+        "en": "+ -",
+        "zh": "+_-"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "= =",
+      "label": {
+        "en": "= =",
+        "zh": "=_="
+      },
+      "meaning": {
+        "en": "= =",
+        "zh": "=_="
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "=^=",
+      "label": {
+        "en": "=^=",
+        "zh": "=^="
+      },
+      "meaning": {
+        "en": "=^=",
+        "zh": "=^="
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "=v=",
+      "label": {
+        "en": "=v=",
+        "zh": "=v="
+      },
+      "meaning": {
+        "en": "=v=",
+        "zh": "=v="
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "<o> <o>",
+      "label": {
+        "en": "<o> <o>",
+        "zh": "<o>_<o>"
+      },
+      "meaning": {
+        "en": "<o> <o>",
+        "zh": "<o>_<o>"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "<|> <|>",
+      "label": {
+        "en": "<|> <|>",
+        "zh": "<|>_<|>"
+      },
+      "meaning": {
+        "en": "<|> <|>",
+        "zh": "<|>_<|>"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cross-eyed",
+      "label": {
+        "en": "cross-eyed",
+        "zh": "斗鸡眼"
+      },
+      "meaning": {
+        "en": "cross-eyed",
+        "zh": "斗鸡眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "crossed eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "dot mouth",
+      "label": {
+        "en": "dot mouth",
+        "zh": "小圆点嘴"
+      },
+      "meaning": {
+        "en": "dot mouth",
+        "zh": "小圆点嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "dot nose",
+      "label": {
+        "en": "dot nose",
+        "zh": "小圆点鼻"
+      },
+      "meaning": {
+        "en": "dot nose",
+        "zh": "小圆点鼻"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "mouth drool",
+      "label": {
+        "en": "mouth drool",
+        "zh": "嘴角画着口水滴形状的缺口"
+      },
+      "meaning": {
+        "en": "mouth drool",
+        "zh": "嘴角画着口水滴形状的缺口"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "no mouth",
+      "label": {
+        "en": "no mouth",
+        "zh": "没画出嘴"
+      },
+      "meaning": {
+        "en": "no mouth",
+        "zh": "没画出嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "rectangular mouth",
+      "label": {
+        "en": "rectangular mouth",
+        "zh": "方形嘴"
+      },
+      "meaning": {
+        "en": "rectangular mouth",
+        "zh": "方形嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        ":[]"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "sideways mouth",
+      "label": {
+        "en": "sideways mouth",
+        "zh": "把嘴画在侧脸"
+      },
+      "meaning": {
+        "en": "sideways mouth",
+        "zh": "把嘴画在侧脸"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "side mouth",
+        "cheek mouth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "split mouth",
+      "label": {
+        "en": "split mouth",
+        "zh": "裂开的嘴"
+      },
+      "meaning": {
+        "en": "split mouth",
+        "zh": "裂开的嘴"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "disconnected mouth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "orange eyes",
+      "label": {
+        "en": "orange eyes",
+        "zh": "橙色的眼镜"
+      },
+      "meaning": {
+        "en": "orange eyes",
+        "zh": "橙色的眼镜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "pink eyes",
+      "label": {
+        "en": "pink eyes",
+        "zh": "粉红色的眼睛"
+      },
+      "meaning": {
+        "en": "pink eyes",
+        "zh": "粉红色的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "amber eyes",
+      "label": {
+        "en": "amber eyes",
+        "zh": "琥珀色眼"
+      },
+      "meaning": {
+        "en": "amber eyes",
+        "zh": "琥珀色眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "@ @",
+      "label": {
+        "en": "@ @",
+        "zh": "晕眼"
+      },
+      "meaning": {
+        "en": "@ @",
+        "zh": "晕眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "spiral eyes",
+        "al bhed eyes",
+        "swirly eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "pac-man eyes",
+      "label": {
+        "en": "pac-man eyes",
+        "zh": "吃豆人形眼"
+      },
+      "meaning": {
+        "en": "pac-man eyes",
+        "zh": "吃豆人形眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pacman eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "horizontal pupils",
+      "label": {
+        "en": "horizontal pupils",
+        "zh": "一字型瞳孔/蛙眼"
+      },
+      "meaning": {
+        "en": "horizontal pupils",
+        "zh": "一字型瞳孔/蛙眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "goat eyes",
+        "frog eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "+ +",
+      "label": {
+        "en": "+ +",
+        "zh": "加号型眼"
+      },
+      "meaning": {
+        "en": "+ +",
+        "zh": "加号型眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "star eyes",
+        "starry eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "diamond-shaped pupils",
+      "label": {
+        "en": "diamond-shaped pupils",
+        "zh": "钻石形瞳孔"
+      },
+      "meaning": {
+        "en": "diamond-shaped pupils",
+        "zh": "钻石形瞳孔"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "flower-shaped pupils",
+      "label": {
+        "en": "flower-shaped pupils",
+        "zh": "花形瞳孔"
+      },
+      "meaning": {
+        "en": "flower-shaped pupils",
+        "zh": "花形瞳孔"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "blue sclera",
+      "label": {
+        "en": "blue sclera",
+        "zh": "蓝色巩膜"
+      },
+      "meaning": {
+        "en": "blue sclera",
+        "zh": "蓝色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "black sclera",
+      "label": {
+        "en": "black sclera",
+        "zh": "黑色巩膜"
+      },
+      "meaning": {
+        "en": "black sclera",
+        "zh": "黑色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "bloodshot eyes",
+      "label": {
+        "en": "bloodshot eyes",
+        "zh": "布满血丝的眼睛"
+      },
+      "meaning": {
+        "en": "bloodshot eyes",
+        "zh": "布满血丝的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bloodshot eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "green sclera",
+      "label": {
+        "en": "green sclera",
+        "zh": "绿色巩膜"
+      },
+      "meaning": {
+        "en": "green sclera",
+        "zh": "绿色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "no sclera",
+      "label": {
+        "en": "no sclera",
+        "zh": "无色巩膜"
+      },
+      "meaning": {
+        "en": "no sclera",
+        "zh": "无色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "orange sclera",
+      "label": {
+        "en": "orange sclera",
+        "zh": "橙色巩膜"
+      },
+      "meaning": {
+        "en": "orange sclera",
+        "zh": "橙色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "red sclera",
+      "label": {
+        "en": "red sclera",
+        "zh": "红色巩膜"
+      },
+      "meaning": {
+        "en": "red sclera",
+        "zh": "红色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "yellow sclera",
+      "label": {
+        "en": "yellow sclera",
+        "zh": "黄色巩膜"
+      },
+      "meaning": {
+        "en": "yellow sclera",
+        "zh": "黄色巩膜"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "bags under eyes",
+      "label": {
+        "en": "bags under eyes",
+        "zh": "眼袋"
+      },
+      "meaning": {
+        "en": "bags under eyes",
+        "zh": "眼袋"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "eye circles",
+        "eyebags",
+        "dark circles"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "aegyo sal",
+      "label": {
+        "en": "aegyo sal",
+        "zh": "眼袋"
+      },
+      "meaning": {
+        "en": "aegyo sal",
+        "zh": "眼袋"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "bruised eye",
+      "label": {
+        "en": "bruised eye",
+        "zh": "瘀伤的眼睛"
+      },
+      "meaning": {
+        "en": "bruised eye",
+        "zh": "瘀伤的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "black eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "flaming eyes",
+      "label": {
+        "en": "flaming eyes",
+        "zh": "燃烧的眼睛"
+      },
+      "meaning": {
+        "en": "flaming eyes",
+        "zh": "燃烧的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "burning eyes",
+        "fiery eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "glowing eye",
+      "label": {
+        "en": "glowing eye",
+        "zh": "发光的眼睛(单眼)"
+      },
+      "meaning": {
+        "en": "glowing eye",
+        "zh": "发光的眼睛(单眼)"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "mako eyes",
+      "label": {
+        "en": "mako eyes",
+        "zh": "魔眼"
+      },
+      "meaning": {
+        "en": "mako eyes",
+        "zh": "魔眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "amphibian eyes",
+      "label": {
+        "en": "amphibian eyes",
+        "zh": "两栖动物的眼睛"
+      },
+      "meaning": {
+        "en": "amphibian eyes",
+        "zh": "两栖动物的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "cephalopod eyes",
+      "label": {
+        "en": "cephalopod eyes",
+        "zh": "头足类动物的眼睛"
+      },
+      "meaning": {
+        "en": "cephalopod eyes",
+        "zh": "头足类动物的眼睛"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "octopus eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "compound eyes",
+      "label": {
+        "en": "compound eyes",
+        "zh": "复合眼"
+      },
+      "meaning": {
+        "en": "compound eyes",
+        "zh": "复合眼"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "insect eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "oral invitation",
+      "label": {
+        "en": "oral invitation",
+        "zh": "迎接射精而伸出舌头"
+      },
+      "meaning": {
+        "en": "oral invitation",
+        "zh": "迎接射精而伸出舌头"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
+      ]
+    },
+    {
+      "tag": "flower in mouth",
+      "label": {
+        "en": "flower in mouth",
+        "zh": "花在嘴里"
+      },
+      "meaning": {
+        "en": "flower in mouth",
+        "zh": "花在嘴里"
+      },
+      "categoryIds": [
+        "expression"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:data/tags/human/face.yaml"
       ]
     }
   ]
