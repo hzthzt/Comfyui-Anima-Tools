@@ -57,6 +57,14 @@
         "zh": ""
       },
       "booruType": "general"
+    },
+    {
+      "id": "shoes-socks",
+      "label": {
+        "en": "Shoes & Socks",
+        "zh": "鞋袜"
+      },
+      "booruType": "general"
     }
   ],
   "tags": [
@@ -3610,10 +3618,14 @@
         "zh": "天使之翼"
       },
       "categoryIds": [
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "animal collar",
@@ -3709,6 +3721,9 @@
         "ankle bracelet",
         "leg bracelet",
         "anklets"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -3729,7 +3744,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "aqua feather hair ornament",
@@ -3981,6 +3999,9 @@
       "aliases": [
         "armbands",
         "arm band"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4014,12 +4035,16 @@
         "dress-gown",
         "revealing",
         "swimsuit-lingerie",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "arm bracelets",
         "armlets"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4117,6 +4142,9 @@
       "booruType": "general",
       "aliases": [
         "armoured dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -4313,10 +4341,14 @@
         "uniform-suit",
         "fantasy-cosplay",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "asymmetrical sleeves",
@@ -4345,12 +4377,16 @@
         "zh": "运动紧身衣"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "ballet leotard",
         "gymnast leotard"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -4366,10 +4402,14 @@
       "categoryIds": [
         "revealing",
         "swimsuit-lingerie",
-        "uncategorized"
+        "uncategorized",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "back cutout",
@@ -4427,6 +4467,9 @@
       "aliases": [
         "open back",
         "backless"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -4510,12 +4553,16 @@
         "zh": "芭蕾舞鞋"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "ballet shoes",
         "pointe shoes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -4529,11 +4576,15 @@
         "zh": "缠着绷带的手臂"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "bandaged arms"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4581,10 +4632,14 @@
       "categoryIds": [
         "uniform-suit",
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "bandaged leg:1.2)",
@@ -4631,11 +4686,15 @@
       "categoryIds": [
         "uniform-suit",
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "bandage"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4765,7 +4824,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bandged wrist",
@@ -4801,6 +4863,9 @@
       "booruType": "general",
       "aliases": [
         "bangles"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4831,11 +4896,15 @@
         "zh": "条形码"
       },
       "categoryIds": [
-        "uncategorized"
+        "uncategorized",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "bar code"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -4928,7 +4997,10 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "bare pectorals",
@@ -4988,6 +5060,9 @@
       "booruType": "general",
       "aliases": [
         "bare shoulder"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -5030,6 +5105,9 @@
         "bare feet",
         "bare foot",
         "barefeet"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -5113,11 +5191,15 @@
         "zh": "蝙蝠翅膀"
       },
       "categoryIds": [
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "batwing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -5254,11 +5336,15 @@
         "zh": "腹链"
       },
       "categoryIds": [
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "waist chain"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -5282,6 +5368,9 @@
       "booruType": "general",
       "aliases": [
         "belts"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -5425,6 +5514,9 @@
         "spats",
         "spandex shorts",
         "biker shorts"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -5438,10 +5530,14 @@
         "zh": "摩托车手服装"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bikesuit",
@@ -5460,6 +5556,9 @@
       "aliases": [
         "biker suit",
         "bike suit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -5478,7 +5577,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bikini armor",
@@ -5496,7 +5598,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bikini skirt",
@@ -5514,7 +5619,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bikini top",
@@ -5531,7 +5639,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "bikini under clothes",
@@ -5549,7 +5660,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bishop",
@@ -6075,7 +6189,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "black elastic band",
@@ -6690,10 +6807,14 @@
         "uniform-suit",
         "casual-daily",
         "dress-gown",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "black leotard",
@@ -7527,10 +7648,14 @@
         "swimsuit-lingerie",
         "casual-daily",
         "fantasy-cosplay",
-        "uniform-suit"
+        "uniform-suit",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "black thighhight",
@@ -7836,7 +7961,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "blue and white thighhigh",
@@ -8031,7 +8159,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "blue dress flower",
@@ -8778,10 +8909,14 @@
         "zh": "连体袜"
       },
       "categoryIds": [
-        "revealing"
+        "revealing",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "bodystocking under clothes",
@@ -8818,6 +8953,9 @@
       "booruType": "general",
       "aliases": [
         "body suit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -8836,7 +8974,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bodysuitskin tight",
@@ -8886,7 +9027,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "bonnet",
@@ -8918,12 +9062,16 @@
         "uniform-suit",
         "casual-daily",
         "swimsuit-lingerie",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "boot",
         "naked boots"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -8962,6 +9110,9 @@
       "booruType": "general",
       "aliases": [
         "bottom less"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -8983,6 +9134,9 @@
       "booruType": "general",
       "aliases": [
         "bows"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -9018,6 +9172,9 @@
       "booruType": "general",
       "aliases": [
         "panty bow"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -9097,6 +9254,9 @@
       "booruType": "general",
       "aliases": [
         "bracelets"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -9920,13 +10080,17 @@
         "zh": "布鲁马"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "running briefs",
         "bum huggers",
         "bun huggers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -10070,7 +10234,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "camouflage",
@@ -10124,7 +10291,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "capelet",
@@ -10141,10 +10311,14 @@
         "casual-daily",
         "revealing",
         "swimsuit-lingerie",
-        "uniform-suit"
+        "uniform-suit",
+        "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "capri pants",
@@ -10158,12 +10332,16 @@
       },
       "categoryIds": [
         "dress-gown",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "capris",
         "cropped pants"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -10181,7 +10359,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "carrying large black suitcase",
@@ -10229,10 +10410,14 @@
         "zh": "猫剪"
       },
       "categoryIds": [
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "cat ear panties",
@@ -10248,7 +10433,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "cat ear thighhighs",
@@ -10316,6 +10504,9 @@
       "booruType": "general",
       "aliases": [
         "cat keyhole bra"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -10348,7 +10539,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "center opening",
@@ -10371,6 +10565,9 @@
       "booruType": "general",
       "aliases": [
         "absolute cleavage"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -10499,7 +10696,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "cheerleader",
@@ -10668,6 +10868,9 @@
         "qipao",
         "chinadress",
         "chinese dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -10682,10 +10885,14 @@
       },
       "categoryIds": [
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "chinese clothes:1.15)",
@@ -11109,10 +11316,14 @@
       "categoryIds": [
         "fantasy-cosplay",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "close-fitting dress",
@@ -11249,7 +11460,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "coat on shoulder",
@@ -11300,7 +11514,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "collar",
@@ -11344,6 +11561,9 @@
       "aliases": [
         "clavicle",
         "collarbones"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -11363,7 +11583,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "collared shirt",
@@ -11383,6 +11606,9 @@
       "booruType": "general",
       "aliases": [
         "collared blouse"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -11489,7 +11715,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "complex costume design. elegant style",
@@ -11543,7 +11772,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "covered eyes",
@@ -11827,7 +12059,10 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "crop racing suit",
@@ -11865,7 +12100,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "crop top overhang",
@@ -11940,7 +12178,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "cropped sweater",
@@ -12709,6 +12950,9 @@
       "booruType": "general",
       "aliases": [
         "devil tail"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -12723,11 +12967,15 @@
       },
       "categoryIds": [
         "fantasy-cosplay",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "devil wings"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -12770,6 +13018,9 @@
         "daisy dukes",
         "jean shorts",
         "daisydukes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -12832,6 +13083,9 @@
         "armsleeves",
         "naked sleeves",
         "detached sleeve"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -12895,10 +13149,14 @@
       },
       "categoryIds": [
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "diving mask on head",
@@ -13062,6 +13320,9 @@
       "booruType": "general",
       "aliases": [
         "one-piece dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -13114,7 +13375,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "duffel coat",
@@ -13130,7 +13394,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "duster",
@@ -13248,6 +13515,9 @@
       "aliases": [
         "opera gloves",
         "long gloves"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -13477,6 +13747,9 @@
       "booruType": "general",
       "aliases": [
         "evening dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -13617,7 +13890,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "eyewear on head",
@@ -13935,6 +14211,9 @@
       "booruType": "general",
       "aliases": [
         "fingerless glove"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -14444,7 +14723,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "formal dress",
@@ -14635,6 +14917,9 @@
       "aliases": [
         "frilly dress",
         "ruffled dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -14704,10 +14989,14 @@
       },
       "categoryIds": [
         "uniform-suit",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "frilled leotard",
@@ -14905,6 +15194,9 @@
         "ruffles",
         "frilly",
         "frilled"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -14974,7 +15266,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "frontless outfit",
@@ -15092,7 +15387,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "funeral veil",
@@ -15330,10 +15628,14 @@
       "categoryIds": [
         "fantasy-cosplay",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "g-string",
@@ -15348,10 +15650,14 @@
       "categoryIds": [
         "dress-gown",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "gainsboro coat",
@@ -15422,11 +15728,15 @@
         "swimsuit-lingerie",
         "revealing",
         "uniform-suit",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "garterbelt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -15446,11 +15756,15 @@
         "swimsuit-lingerie",
         "uniform-suit",
         "uncategorized",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "garter strap"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -15707,6 +16021,9 @@
       "booruType": "general",
       "aliases": [
         "glove"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -16237,11 +16554,15 @@
         "zh": "哥特式"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "goth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -16397,7 +16718,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "greco-roman clothes",
@@ -16464,7 +16788,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "green fire",
@@ -16673,6 +17000,9 @@
       "booruType": "general",
       "aliases": [
         "gray dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -16874,6 +17204,9 @@
       "booruType": "general",
       "aliases": [
         "gym clothes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -17315,10 +17648,14 @@
         "fantasy-cosplay",
         "revealing",
         "swimsuit-lingerie",
-        "dress-gown"
+        "dress-gown",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "hakama skirt",
@@ -17337,7 +17674,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "half gloves",
@@ -17351,11 +17691,15 @@
       },
       "categoryIds": [
         "swimsuit-lingerie",
-        "uniform-suit"
+        "uniform-suit",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "short gloves"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -17541,7 +17885,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "hanfu:1.1)",
@@ -17578,6 +17925,9 @@
       "booruType": "general",
       "aliases": [
         "harem clothes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -17598,7 +17948,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "hat",
@@ -17919,7 +18272,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "helmet",
@@ -17993,11 +18349,15 @@
         "revealing",
         "casual-daily",
         "fantasy-cosplay",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "heel boots"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -18032,11 +18392,15 @@
         "revealing",
         "uniform-suit",
         "fantasy-cosplay",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "heels"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -18101,10 +18465,14 @@
       },
       "categoryIds": [
         "casual-daily",
-        "uniform-suit"
+        "uniform-suit",
+        "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "high-waisted bottoms",
@@ -18158,7 +18526,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "highleg leotard",
@@ -18179,7 +18550,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "highleg panties",
@@ -18198,7 +18572,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "highleg swimsuit",
@@ -19249,7 +19626,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "hooded kimono",
@@ -19282,7 +19662,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "hoop earrings",
@@ -19639,13 +20022,17 @@
         "revealing",
         "dress-gown",
         "fantasy-cosplay",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "wafuku",
         "traditional japanese clothes",
         "japanese clothing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -19849,10 +20236,14 @@
         "zh": "和服"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "kimono dress",
@@ -19885,7 +20276,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "knee boots",
@@ -19903,12 +20297,16 @@
         "fantasy-cosplay",
         "uniform-suit",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "kneehigh boots",
         "kneeboots"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -19961,13 +20359,17 @@
         "revealing",
         "swimsuit-lingerie",
         "uniform-suit",
-        "dress-gown"
+        "dress-gown",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "kneehigh socks",
         "kneesocks",
         "knee socks"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -20039,7 +20441,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "lace and accessories",
@@ -20244,10 +20649,14 @@
       },
       "categoryIds": [
         "casual-daily",
-        "dress-gown"
+        "dress-gown",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "lace-trimmed thighhighs",
@@ -20368,10 +20777,14 @@
         "swimsuit-lingerie",
         "uniform-suit",
         "fantasy-cosplay",
-        "uncategorized"
+        "uncategorized",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "latex bodysuit",
@@ -20459,7 +20872,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "latex gloves",
@@ -20475,10 +20891,14 @@
         "uniform-suit",
         "revealing",
         "uncategorized",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "latex shorts",
@@ -20698,7 +21118,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "layered skirt",
@@ -20713,10 +21136,14 @@
       "categoryIds": [
         "casual-daily",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "layered with a denim vest",
@@ -20953,7 +21380,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "leg ribbon",
@@ -20986,11 +21416,15 @@
         "uniform-suit",
         "dress-gown",
         "revealing",
-        "casual-daily"
+        "casual-daily",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "legwarmers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -21029,7 +21463,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "leotard top",
@@ -21133,7 +21570,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "lipstick",
@@ -21185,7 +21625,10 @@
         "uncategorized"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "loafers",
@@ -21200,10 +21643,14 @@
       "categoryIds": [
         "uniform-suit",
         "casual-daily",
-        "dress-gown"
+        "dress-gown",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "loincloth",
@@ -21235,11 +21682,15 @@
       },
       "categoryIds": [
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "lolita"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -21296,7 +21747,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "long dress:1.2)",
@@ -21469,6 +21923,9 @@
       "booruType": "general",
       "aliases": [
         "long sleeve"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -21573,10 +22030,14 @@
         "uniform-suit",
         "casual-daily",
         "dress-gown",
-        "revealing"
+        "revealing",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "lop rabbit ears",
@@ -21630,6 +22091,9 @@
       "aliases": [
         "low leg panties",
         "low-leg panties"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -21735,7 +22199,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "magazine \\(weapon\\)",
@@ -21884,7 +22351,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "maid headdress",
@@ -22042,10 +22512,14 @@
       "categoryIds": [
         "dress-gown",
         "uniform-suit",
-        "casual-daily"
+        "casual-daily",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "mascara",
@@ -22473,6 +22947,9 @@
       "booruType": "general",
       "aliases": [
         "microbikini"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -22526,7 +23003,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "micro shorts",
@@ -22600,7 +23080,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "midriff",
@@ -22621,7 +23104,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "miko",
@@ -22711,7 +23197,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "mini skirt",
@@ -22771,6 +23260,9 @@
       "aliases": [
         "mini skirt",
         "short skirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -22802,10 +23294,14 @@
       "categoryIds": [
         "casual-daily",
         "revealing",
-        "dress-gown"
+        "dress-gown",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "monk shoes",
@@ -22981,6 +23477,9 @@
       "aliases": [
         "nude apron",
         "hadaka apron"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -23017,6 +23516,9 @@
       "booruType": "general",
       "aliases": [
         "nude cape"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -23159,6 +23661,9 @@
       "booruType": "general",
       "aliases": [
         "nude ribbon"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -23197,6 +23702,9 @@
       "booruType": "general",
       "aliases": [
         "nude shirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -23308,6 +23816,9 @@
       "aliases": [
         "bellybutton",
         "belly button"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -23615,6 +24126,9 @@
         "nightie",
         "nightdress",
         "night dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -23710,6 +24224,9 @@
       "booruType": "general",
       "aliases": [
         "nopan"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -23771,6 +24288,9 @@
       "booruType": "general",
       "aliases": [
         "naked"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -23788,7 +24308,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "nun",
@@ -23979,10 +24502,14 @@
       "categoryIds": [
         "uniform-suit",
         "dress-gown",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "off shoulder",
@@ -24005,6 +24532,9 @@
       "aliases": [
         "off shoulders",
         "off-shoulder"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -24233,6 +24763,9 @@
       "booruType": "general",
       "aliases": [
         "one-piece"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -24307,6 +24840,9 @@
       "booruType": "general",
       "aliases": [
         "open clothing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -24433,11 +24969,15 @@
         "zh": "敞开式和服"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "revealing"
       ],
       "booruType": "general",
       "aliases": [
         "open yukata"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -24710,7 +25250,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "oversized sleeves",
@@ -24830,6 +25373,9 @@
       "booruType": "general",
       "aliases": [
         "pantsu"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -24867,11 +25413,15 @@
         "fantasy-cosplay",
         "swimsuit-lingerie",
         "uniform-suit",
-        "revealing"
+        "revealing",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "tights"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -24906,10 +25456,14 @@
         "casual-daily",
         "swimsuit-lingerie",
         "dress-gown",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "partial fingerless gloves",
@@ -25243,7 +25797,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "pencil skirt",
@@ -25262,7 +25819,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "pendant",
@@ -25470,7 +26030,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "pink frills",
@@ -25740,10 +26303,14 @@
         "zh": "粉红色高跟鞋"
       },
       "categoryIds": [
-        "casual-daily"
+        "casual-daily",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "pink visor cap",
@@ -25849,7 +26416,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "plaid skirt",
@@ -25865,11 +26435,15 @@
         "uniform-suit",
         "casual-daily",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "dress-gown"
       ],
       "booruType": "general",
       "aliases": [
         "tartan skirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -26063,7 +26637,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "plugsuit",
@@ -26230,7 +26807,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "policewoman",
@@ -26673,7 +27253,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "purple energy power",
@@ -27520,7 +28103,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "red flower",
@@ -28305,7 +28891,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "reverse bunnysuit:1.2)",
@@ -28466,10 +29055,14 @@
       "categoryIds": [
         "revealing",
         "swimsuit-lingerie",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "ribbon-trimmed sleeves",
@@ -28585,11 +29178,15 @@
       },
       "categoryIds": [
         "casual-daily",
-        "dress-gown"
+        "dress-gown",
+        "fantasy-cosplay"
       ],
       "booruType": "general",
       "aliases": [
         "robes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -28712,7 +29309,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "sailor choker",
@@ -28785,7 +29385,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "sandals",
@@ -28825,6 +29428,9 @@
       "aliases": [
         "santa suit",
         "santa outfit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -29010,6 +29616,9 @@
       "aliases": [
         "sukumizu",
         "school swimsuits"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -29034,6 +29643,9 @@
         "school uniforms",
         "schoolgirl",
         "school girl"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -29132,6 +29744,9 @@
         "transparent clothing",
         "sheer clothes",
         "sheer clothing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -29560,7 +30175,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "sharp fingernails",
@@ -29880,6 +30498,9 @@
       "aliases": [
         "mini dress",
         "minidress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -29910,10 +30531,14 @@
         "zh": "短和服"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "short shorts",
@@ -29937,6 +30562,9 @@
         "hot pants",
         "booty shorts",
         "hotpants"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -30014,6 +30642,9 @@
       "booruType": "general",
       "aliases": [
         "short pants"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -30287,11 +30918,15 @@
       "categoryIds": [
         "dress-gown",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "leg slit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -30386,6 +31021,9 @@
       "booruType": "general",
       "aliases": [
         "himopan"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -30880,7 +31518,10 @@
         "dress-gown"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "skull hair ornament",
@@ -30990,7 +31631,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "sleeveless shirt",
@@ -31046,7 +31690,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "sleeves past wrists",
@@ -31069,6 +31716,9 @@
       "booruType": "general",
       "aliases": [
         "sleeves past wrist"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -31142,6 +31792,9 @@
         "sling bikini",
         "slingbikini",
         "sling swimsuit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -31263,12 +31916,16 @@
         "uniform-suit",
         "dress-gown",
         "revealing",
-        "casual-daily"
+        "casual-daily",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "naked socks",
         "sock"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -31586,10 +32243,14 @@
         "zh": "马镫袜"
       },
       "categoryIds": [
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "stitched arm",
@@ -31695,7 +32356,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "strapless leotard",
@@ -31726,10 +32390,14 @@
       },
       "categoryIds": [
         "dress-gown",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "straw hat",
@@ -31780,6 +32448,9 @@
       "booruType": "general",
       "aliases": [
         "stripes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -31893,10 +32564,14 @@
         "casual-daily",
         "uniform-suit",
         "dress-gown",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "striped_legwear",
@@ -31911,10 +32586,14 @@
       "categoryIds": [
         "casual-daily",
         "dress-gown",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "stud earrings",
@@ -31981,7 +32660,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "sunglasses",
@@ -32148,6 +32830,9 @@
         "swim suit",
         "bathing suit",
         "mizugi"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -32219,10 +32904,14 @@
       },
       "categoryIds": [
         "dress-gown",
-        "uniform-suit"
+        "uniform-suit",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "tablet pc",
@@ -32417,7 +33106,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "taut pants",
@@ -32570,12 +33262,16 @@
         "fantasy-cosplay",
         "revealing",
         "uniform-suit",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "thighboots",
         "thighhigh boots"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -32610,7 +33306,10 @@
         "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "thigh garter",
@@ -32740,7 +33439,8 @@
         "uniform-suit",
         "casual-daily",
         "fantasy-cosplay",
-        "uncategorized"
+        "uncategorized",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
@@ -32748,6 +33448,9 @@
         "stockings",
         "naked thighhighs",
         "stocking"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -32765,7 +33468,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "thighlet",
@@ -32797,11 +33503,15 @@
       },
       "categoryIds": [
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "thigh"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -32824,6 +33534,9 @@
       "booruType": "general",
       "aliases": [
         "thong panties"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -32966,10 +33679,14 @@
       },
       "categoryIds": [
         "casual-daily",
-        "dress-gown"
+        "dress-gown",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "toeless footwear",
@@ -33000,10 +33717,14 @@
       "categoryIds": [
         "casual-daily",
         "dress-gown",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "toes",
@@ -33018,10 +33739,14 @@
       "categoryIds": [
         "dress-gown",
         "revealing",
-        "swimsuit-lingerie"
+        "swimsuit-lingerie",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "toes:1.3)",
@@ -33106,12 +33831,16 @@
       "categoryIds": [
         "revealing",
         "uniform-suit",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "top less",
         "topless (female)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -33135,6 +33864,9 @@
         "ripped clothing",
         "torn clothing",
         "ripped clothes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -33153,7 +33885,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "torn gloves",
@@ -33238,10 +33973,14 @@
       "categoryIds": [
         "swimsuit-lingerie",
         "dress-gown",
-        "revealing"
+        "revealing",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "totenkopf",
@@ -33653,10 +34392,14 @@
         "zh": "裙裙"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "casual-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "tuxedo",
@@ -33757,7 +34500,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "two-tone jacket",
@@ -33819,11 +34565,15 @@
         "zh": "和服"
       },
       "categoryIds": [
-        "dress-gown"
+        "dress-gown",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "wedding kimono"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -34005,6 +34755,9 @@
       "booruType": "general",
       "aliases": [
         "uniforms"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -34123,11 +34876,15 @@
         "zh": "室内鞋"
       },
       "categoryIds": [
-        "uniform-suit"
+        "uniform-suit",
+        "shoes-socks"
       ],
       "booruType": "general",
       "aliases": [
         "indoor shoes (japanese)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
       ]
     },
     {
@@ -34335,7 +35092,10 @@
         "swimsuit-lingerie"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "vibrating elements",
@@ -34422,7 +35182,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
     },
     {
       "tag": "visor cap",
@@ -34464,6 +35227,9 @@
       "booruType": "general",
       "aliases": [
         "half apron"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
       ]
     },
     {
@@ -34705,7 +35471,10 @@
         "revealing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "whistle around neck",
@@ -35167,7 +35936,10 @@
         "uniform-suit"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
     },
     {
       "tag": "white elbow gloves",
@@ -35713,7 +36485,10 @@
         "fantasy-cosplay"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
     },
     {
       "tag": "white pants",
@@ -36271,10 +37046,14 @@
         "revealing",
         "swimsuit-lingerie",
         "uniform-suit",
-        "fantasy-cosplay"
+        "fantasy-cosplay",
+        "shoes-socks"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     },
     {
       "tag": "white thighhihgs",
@@ -36516,11 +37295,15 @@
         "uniform-suit",
         "dress-gown",
         "fantasy-cosplay",
-        "revealing"
+        "revealing",
+        "casual-daily"
       ],
       "booruType": "general",
       "aliases": [
         "wing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -36707,6 +37490,9 @@
         "wristcuff",
         "wrist cuff",
         "wristcuffs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
       ]
     },
     {
@@ -37171,6 +37957,9 @@
       "aliases": [
         "absolute territory",
         "zettai ryouki"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
       ]
     },
     {
@@ -37223,6 +38012,5054 @@
       ],
       "booruType": "general",
       "aliases": []
+    },
+    {
+      "tag": "business suit",
+      "label": {
+        "en": "business suit",
+        "zh": "职场制服"
+      },
+      "meaning": {
+        "en": "business suit",
+        "zh": "职场制服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "pajamas",
+      "label": {
+        "en": "pajamas",
+        "zh": "睡衣"
+      },
+      "meaning": {
+        "en": "pajamas",
+        "zh": "睡衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pyjamas",
+        "pajama",
+        "pyjama"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "santa",
+      "label": {
+        "en": "santa",
+        "zh": "圣诞装"
+      },
+      "meaning": {
+        "en": "santa",
+        "zh": "圣诞装"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "side-tie bikini",
+      "label": {
+        "en": "side-tie bikini",
+        "zh": "系带式比基尼"
+      },
+      "meaning": {
+        "en": "side-tie bikini",
+        "zh": "系带式比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "underwear",
+      "label": {
+        "en": "underwear",
+        "zh": "内衣"
+      },
+      "meaning": {
+        "en": "underwear",
+        "zh": "内衣"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "undergarments"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "yukata",
+      "label": {
+        "en": "yukata",
+        "zh": "浴衣"
+      },
+      "meaning": {
+        "en": "yukata",
+        "zh": "浴衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "western",
+      "label": {
+        "en": "western",
+        "zh": "西部风格"
+      },
+      "meaning": {
+        "en": "western",
+        "zh": "西部风格"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "naked overalls",
+      "label": {
+        "en": "naked overalls",
+        "zh": "裸体工作服"
+      },
+      "meaning": {
+        "en": "naked overalls",
+        "zh": "裸体工作服"
+      },
+      "categoryIds": [
+        "revealing"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "nude overalls"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "tartan",
+      "label": {
+        "en": "tartan",
+        "zh": "格子花纹"
+      },
+      "meaning": {
+        "en": "tartan",
+        "zh": "格子花纹"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "polka dot",
+      "label": {
+        "en": "polka dot",
+        "zh": "点状花纹"
+      },
+      "meaning": {
+        "en": "polka dot",
+        "zh": "点状花纹"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "polka dots",
+        "polka-dot"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "clothes down",
+      "label": {
+        "en": "clothes down",
+        "zh": "褪下衣物"
+      },
+      "meaning": {
+        "en": "clothes down",
+        "zh": "褪下衣物"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "clothing down"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "suspender skirt",
+      "label": {
+        "en": "suspender skirt",
+        "zh": "吊带裙"
+      },
+      "meaning": {
+        "en": "suspender skirt",
+        "zh": "吊带裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "kimono skirt",
+      "label": {
+        "en": "kimono skirt",
+        "zh": "和服裙"
+      },
+      "meaning": {
+        "en": "kimono skirt",
+        "zh": "和服裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "pleated dress",
+      "label": {
+        "en": "pleated dress",
+        "zh": "百褶连衣裙"
+      },
+      "meaning": {
+        "en": "pleated dress",
+        "zh": "百褶连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sailor dress",
+      "label": {
+        "en": "sailor dress",
+        "zh": "水手服款裙子"
+      },
+      "meaning": {
+        "en": "sailor dress",
+        "zh": "水手服款裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "strapless dress",
+      "label": {
+        "en": "strapless dress",
+        "zh": "无肩带连衣裙"
+      },
+      "meaning": {
+        "en": "strapless dress",
+        "zh": "无肩带连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "shoulderless dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sundress",
+      "label": {
+        "en": "sundress",
+        "zh": "太阳裙/背心裙"
+      },
+      "meaning": {
+        "en": "sundress",
+        "zh": "太阳裙/背心裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "summerdress",
+        "summer dress",
+        "sun dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sheath dress",
+      "label": {
+        "en": "sheath dress",
+        "zh": "包臀裙"
+      },
+      "meaning": {
+        "en": "sheath dress",
+        "zh": "包臀裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "pettiskirt",
+      "label": {
+        "en": "pettiskirt",
+        "zh": "蓬蓬裙"
+      },
+      "meaning": {
+        "en": "pettiskirt",
+        "zh": "蓬蓬裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "off-shoulder dress",
+      "label": {
+        "en": "off-shoulder dress",
+        "zh": "露肩连衣裙"
+      },
+      "meaning": {
+        "en": "off-shoulder dress",
+        "zh": "露肩连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "organza lace",
+      "label": {
+        "en": "organza lace",
+        "zh": "透明硬纱/蕾丝花边"
+      },
+      "meaning": {
+        "en": "organza lace",
+        "zh": "透明硬纱/蕾丝花边"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "bikini aside",
+      "label": {
+        "en": "bikini aside",
+        "zh": "从三点剥开的比基尼"
+      },
+      "meaning": {
+        "en": "bikini aside",
+        "zh": "从三点剥开的比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "bikini lift",
+      "label": {
+        "en": "bikini lift",
+        "zh": "往上剥开的比基尼"
+      },
+      "meaning": {
+        "en": "bikini lift",
+        "zh": "往上剥开的比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "bow bikini",
+      "label": {
+        "en": "bow bikini",
+        "zh": "带蝴蝶结的比基尼"
+      },
+      "meaning": {
+        "en": "bow bikini",
+        "zh": "带蝴蝶结的比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "front-tie bikini",
+      "label": {
+        "en": "front-tie bikini",
+        "zh": "从正面打结的比基尼"
+      },
+      "meaning": {
+        "en": "front-tie bikini",
+        "zh": "从正面打结的比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "layered bikini",
+      "label": {
+        "en": "layered bikini",
+        "zh": "分层比基尼"
+      },
+      "meaning": {
+        "en": "layered bikini",
+        "zh": "分层比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "lowleg bikini",
+      "label": {
+        "en": "lowleg bikini",
+        "zh": "低腰比基尼"
+      },
+      "meaning": {
+        "en": "lowleg bikini",
+        "zh": "低腰比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "multi-strapped bikini",
+      "label": {
+        "en": "multi-strapped bikini",
+        "zh": "细带款比基尼"
+      },
+      "meaning": {
+        "en": "multi-strapped bikini",
+        "zh": "细带款比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "shell bikini",
+      "label": {
+        "en": "shell bikini",
+        "zh": "贝壳比基尼"
+      },
+      "meaning": {
+        "en": "shell bikini",
+        "zh": "贝壳比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "seashell bra",
+        "seashell bikini",
+        "shell bra"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sports bikini",
+      "label": {
+        "en": "sports bikini",
+        "zh": "运动比基尼"
+      },
+      "meaning": {
+        "en": "sports bikini",
+        "zh": "运动比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "thong bikini",
+      "label": {
+        "en": "thong bikini",
+        "zh": "丁字式比基尼"
+      },
+      "meaning": {
+        "en": "thong bikini",
+        "zh": "丁字式比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "untied bikini",
+      "label": {
+        "en": "untied bikini",
+        "zh": "解开的比基尼"
+      },
+      "meaning": {
+        "en": "untied bikini",
+        "zh": "解开的比基尼"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "backless dress",
+      "label": {
+        "en": "backless dress",
+        "zh": "露背连衣裙"
+      },
+      "meaning": {
+        "en": "backless dress",
+        "zh": "露背连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "open back dress",
+        "open-back dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "baseball uniform",
+      "label": {
+        "en": "baseball uniform",
+        "zh": "棒球服"
+      },
+      "meaning": {
+        "en": "baseball uniform",
+        "zh": "棒球服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "casual one-piece swimsuit",
+      "label": {
+        "en": "casual one-piece swimsuit",
+        "zh": "连体泳衣"
+      },
+      "meaning": {
+        "en": "casual one-piece swimsuit",
+        "zh": "连体泳衣"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "competition school swimsuit",
+      "label": {
+        "en": "competition school swimsuit",
+        "zh": "竞泳死库水"
+      },
+      "meaning": {
+        "en": "competition school swimsuit",
+        "zh": "竞泳死库水"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "dougi",
+      "label": {
+        "en": "dougi",
+        "zh": "武道服"
+      },
+      "meaning": {
+        "en": "dougi",
+        "zh": "武道服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "gi"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "front zipper swimsuit",
+      "label": {
+        "en": "front zipper swimsuit",
+        "zh": "拉链在正面的泳衣"
+      },
+      "meaning": {
+        "en": "front zipper swimsuit",
+        "zh": "拉链在正面的泳衣"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "gown",
+      "label": {
+        "en": "gown",
+        "zh": "女裙/女长服/女礼服"
+      },
+      "meaning": {
+        "en": "gown",
+        "zh": "女裙/女长服/女礼服"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "halter dress",
+      "label": {
+        "en": "halter dress",
+        "zh": "绕颈裙/衬衣式连衣裙/露背吊带裙"
+      },
+      "meaning": {
+        "en": "halter dress",
+        "zh": "绕颈裙/衬衣式连衣裙/露背吊带裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "impossible bodysuit",
+      "label": {
+        "en": "impossible bodysuit",
+        "zh": "人体彩绘般的紧身衣"
+      },
+      "meaning": {
+        "en": "impossible bodysuit",
+        "zh": "人体彩绘般的紧身衣"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "letterman jacket",
+      "label": {
+        "en": "letterman jacket",
+        "zh": "棒球服"
+      },
+      "meaning": {
+        "en": "letterman jacket",
+        "zh": "棒球服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "varsity jacket"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "living clothes",
+      "label": {
+        "en": "living clothes",
+        "zh": "活体衣服"
+      },
+      "meaning": {
+        "en": "living clothes",
+        "zh": "活体衣服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "loungewear",
+      "label": {
+        "en": "loungewear",
+        "zh": "休闲服"
+      },
+      "meaning": {
+        "en": "loungewear",
+        "zh": "休闲服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "meiji schoolgirl uniform",
+      "label": {
+        "en": "meiji schoolgirl uniform",
+        "zh": "明治年间女学生制服"
+      },
+      "meaning": {
+        "en": "meiji schoolgirl uniform",
+        "zh": "明治年间女学生制服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "playboy bunny leotard",
+      "label": {
+        "en": "playboy bunny leotard",
+        "zh": "兔女郎连身衣"
+      },
+      "meaning": {
+        "en": "playboy bunny leotard",
+        "zh": "兔女郎连身衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sailor",
+      "label": {
+        "en": "sailor",
+        "zh": "水手服"
+      },
+      "meaning": {
+        "en": "sailor",
+        "zh": "水手服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sailor uniform",
+        "sailor suit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sailor senshi uniform",
+      "label": {
+        "en": "sailor senshi uniform",
+        "zh": "美少女战士制服"
+      },
+      "meaning": {
+        "en": "sailor senshi uniform",
+        "zh": "美少女战士制服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "stile uniform",
+      "label": {
+        "en": "stile uniform",
+        "zh": "女侍从的制服"
+      },
+      "meaning": {
+        "en": "stile uniform",
+        "zh": "女侍从的制服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "straitjacket",
+      "label": {
+        "en": "straitjacket",
+        "zh": "拘束服"
+      },
+      "meaning": {
+        "en": "straitjacket",
+        "zh": "拘束服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "straightjacket",
+        "straight jacket"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "varia suit",
+      "label": {
+        "en": "varia suit",
+        "zh": "强化服"
+      },
+      "meaning": {
+        "en": "varia suit",
+        "zh": "强化服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "virgin killer outfit",
+      "label": {
+        "en": "virgin killer outfit",
+        "zh": "处男杀手服"
+      },
+      "meaning": {
+        "en": "virgin killer outfit",
+        "zh": "处男杀手服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "volleyball uniform",
+      "label": {
+        "en": "volleyball uniform",
+        "zh": "排球服"
+      },
+      "meaning": {
+        "en": "volleyball uniform",
+        "zh": "排球服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "cute & girly (idolmaster)",
+      "label": {
+        "en": "cute & girly (idolmaster)",
+        "zh": "Cute & Girly (偶像大师)"
+      },
+      "meaning": {
+        "en": "cute & girly (idolmaster)",
+        "zh": "Cute & Girly (偶像大师)"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "crinoline",
+      "label": {
+        "en": "crinoline",
+        "zh": "裙撑/裙架"
+      },
+      "meaning": {
+        "en": "crinoline",
+        "zh": "裙撑/裙架"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "dress flip",
+      "label": {
+        "en": "dress flip",
+        "zh": "飘起的裙子"
+      },
+      "meaning": {
+        "en": "dress flip",
+        "zh": "飘起的裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "dress grab",
+      "label": {
+        "en": "dress grab",
+        "zh": "抓住裙子"
+      },
+      "meaning": {
+        "en": "dress grab",
+        "zh": "抓住裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "skirt basket",
+      "label": {
+        "en": "skirt basket",
+        "zh": "裙子篮兜"
+      },
+      "meaning": {
+        "en": "skirt basket",
+        "zh": "裙子篮兜"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "skirt carry",
+        "dress basket",
+        "dress carry"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "wet dress",
+      "label": {
+        "en": "wet dress",
+        "zh": "潮湿的衣服"
+      },
+      "meaning": {
+        "en": "wet dress",
+        "zh": "潮湿的衣服"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "aqua dress",
+      "label": {
+        "en": "aqua dress",
+        "zh": "水色连衣裙"
+      },
+      "meaning": {
+        "en": "aqua dress",
+        "zh": "水色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "brown dress",
+      "label": {
+        "en": "brown dress",
+        "zh": "棕色连衣裙"
+      },
+      "meaning": {
+        "en": "brown dress",
+        "zh": "棕色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "orange dress",
+      "label": {
+        "en": "orange dress",
+        "zh": "橙色连衣裙"
+      },
+      "meaning": {
+        "en": "orange dress",
+        "zh": "橙色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sepia dress",
+      "label": {
+        "en": "sepia dress",
+        "zh": "红棕色连衣裙"
+      },
+      "meaning": {
+        "en": "sepia dress",
+        "zh": "红棕色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "yellow dress",
+      "label": {
+        "en": "yellow dress",
+        "zh": "黄色连衣裙"
+      },
+      "meaning": {
+        "en": "yellow dress",
+        "zh": "黄色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "multicolored dress",
+      "label": {
+        "en": "multicolored dress",
+        "zh": "多色连衣裙"
+      },
+      "meaning": {
+        "en": "multicolored dress",
+        "zh": "多色连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "argyle dress",
+      "label": {
+        "en": "argyle dress",
+        "zh": "钻石图案的裙子"
+      },
+      "meaning": {
+        "en": "argyle dress",
+        "zh": "钻石图案的裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "checkered dress",
+      "label": {
+        "en": "checkered dress",
+        "zh": "方格花纹连衣裙"
+      },
+      "meaning": {
+        "en": "checkered dress",
+        "zh": "方格花纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "flag dress",
+      "label": {
+        "en": "flag dress",
+        "zh": "国旗连衣裙"
+      },
+      "meaning": {
+        "en": "flag dress",
+        "zh": "国旗连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "polka dot dress",
+      "label": {
+        "en": "polka dot dress",
+        "zh": "圆点花纹连衣裙"
+      },
+      "meaning": {
+        "en": "polka dot dress",
+        "zh": "圆点花纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "polka-dot dress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "print dress",
+      "label": {
+        "en": "print dress",
+        "zh": "印花裙子"
+      },
+      "meaning": {
+        "en": "print dress",
+        "zh": "印花裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "striped dress",
+      "label": {
+        "en": "striped dress",
+        "zh": "条纹连衣裙"
+      },
+      "meaning": {
+        "en": "striped dress",
+        "zh": "条纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "vertical-striped dress",
+      "label": {
+        "en": "vertical-striped dress",
+        "zh": "垂直条纹连衣裙"
+      },
+      "meaning": {
+        "en": "vertical-striped dress",
+        "zh": "垂直条纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "pinstripe dress",
+      "label": {
+        "en": "pinstripe dress",
+        "zh": "细条纹连衣裙"
+      },
+      "meaning": {
+        "en": "pinstripe dress",
+        "zh": "细条纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "fur-trimmed dress",
+      "label": {
+        "en": "fur-trimmed dress",
+        "zh": "毛边连衣裙"
+      },
+      "meaning": {
+        "en": "fur-trimmed dress",
+        "zh": "毛边连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "half-dress",
+      "label": {
+        "en": "half-dress",
+        "zh": "半开裙"
+      },
+      "meaning": {
+        "en": "half-dress",
+        "zh": "半开裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "highleg dress",
+      "label": {
+        "en": "highleg dress",
+        "zh": "高叉长裙"
+      },
+      "meaning": {
+        "en": "highleg dress",
+        "zh": "高叉长裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "high-low skirt",
+      "label": {
+        "en": "high-low skirt",
+        "zh": "高低裙"
+      },
+      "meaning": {
+        "en": "high-low skirt",
+        "zh": "高低裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "short front long back skirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "hobble dress",
+      "label": {
+        "en": "hobble dress",
+        "zh": "乳胶连衣裙"
+      },
+      "meaning": {
+        "en": "hobble dress",
+        "zh": "乳胶连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "impossible dress",
+      "label": {
+        "en": "impossible dress",
+        "zh": "不切实际的连衣裙"
+      },
+      "meaning": {
+        "en": "impossible dress",
+        "zh": "不切实际的连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "lace-trimmed dress",
+      "label": {
+        "en": "lace-trimmed dress",
+        "zh": "蕾丝连衣裙"
+      },
+      "meaning": {
+        "en": "lace-trimmed dress",
+        "zh": "蕾丝连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "ribbed dress",
+      "label": {
+        "en": "ribbed dress",
+        "zh": "罗纹连衣裙"
+      },
+      "meaning": {
+        "en": "ribbed dress",
+        "zh": "罗纹连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "ribbon-trimmed dress",
+      "label": {
+        "en": "ribbon-trimmed dress",
+        "zh": "色带装饰的连衣裙"
+      },
+      "meaning": {
+        "en": "ribbon-trimmed dress",
+        "zh": "色带装饰的连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "see-through dress",
+      "label": {
+        "en": "see-through dress",
+        "zh": "透明连衣裙"
+      },
+      "meaning": {
+        "en": "see-through dress",
+        "zh": "透明连衣裙"
+      },
+      "categoryIds": [
+        "revealing"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "cake dress",
+      "label": {
+        "en": "cake dress",
+        "zh": "形似蛋糕的连衣裙"
+      },
+      "meaning": {
+        "en": "cake dress",
+        "zh": "形似蛋糕的连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "coat dress",
+      "label": {
+        "en": "coat dress",
+        "zh": "外套连衣裙"
+      },
+      "meaning": {
+        "en": "coat dress",
+        "zh": "外套连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "denim dress",
+      "label": {
+        "en": "denim dress",
+        "zh": "牛仔连衣裙"
+      },
+      "meaning": {
+        "en": "denim dress",
+        "zh": "牛仔连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "mermaid dress",
+      "label": {
+        "en": "mermaid dress",
+        "zh": "鱼尾裙"
+      },
+      "meaning": {
+        "en": "mermaid dress",
+        "zh": "鱼尾裙"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "negligee",
+      "label": {
+        "en": "negligee",
+        "zh": "晨衣"
+      },
+      "meaning": {
+        "en": "negligee",
+        "zh": "晨衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "pinafore dress",
+      "label": {
+        "en": "pinafore dress",
+        "zh": "背心裙/无袖连衣裙"
+      },
+      "meaning": {
+        "en": "pinafore dress",
+        "zh": "背心裙/无袖连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "jumper"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "santa dress",
+      "label": {
+        "en": "santa dress",
+        "zh": "圣诞老人风格的裙子"
+      },
+      "meaning": {
+        "en": "santa dress",
+        "zh": "圣诞老人风格的裙子"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "sweater dress",
+      "label": {
+        "en": "sweater dress",
+        "zh": "毛衣连衣裙"
+      },
+      "meaning": {
+        "en": "sweater dress",
+        "zh": "毛衣连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sweaterdress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "tennis dress",
+      "label": {
+        "en": "tennis dress",
+        "zh": "网球连衣裙"
+      },
+      "meaning": {
+        "en": "tennis dress",
+        "zh": "网球连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "trapeze dress",
+      "label": {
+        "en": "trapeze dress",
+        "zh": "梯形连衣裙"
+      },
+      "meaning": {
+        "en": "trapeze dress",
+        "zh": "梯形连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "tube dress",
+      "label": {
+        "en": "tube dress",
+        "zh": "抹胸连衣裙"
+      },
+      "meaning": {
+        "en": "tube dress",
+        "zh": "抹胸连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "vietnamese dress",
+      "label": {
+        "en": "vietnamese dress",
+        "zh": "越南连衣裙"
+      },
+      "meaning": {
+        "en": "vietnamese dress",
+        "zh": "越南连衣裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "ao dai"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/clothes.yaml"
+      ]
+    },
+    {
+      "tag": "butterfly wings",
+      "label": {
+        "en": "butterfly wings",
+        "zh": "蝴蝶翅膀"
+      },
+      "meaning": {
+        "en": "butterfly wings",
+        "zh": "蝴蝶翅膀"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "black wings",
+      "label": {
+        "en": "black wings",
+        "zh": "黑色之翼"
+      },
+      "meaning": {
+        "en": "black wings",
+        "zh": "黑色之翼"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "dark wings",
+        "black wing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "muscle",
+      "label": {
+        "en": "muscle",
+        "zh": "肌肉"
+      },
+      "meaning": {
+        "en": "muscle",
+        "zh": "肌肉"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "open robe",
+      "label": {
+        "en": "open robe",
+        "zh": "敞开长袍"
+      },
+      "meaning": {
+        "en": "open robe",
+        "zh": "敞开长袍"
+      },
+      "categoryIds": [
+        "revealing"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "detached wings",
+      "label": {
+        "en": "detached wings",
+        "zh": "脱离本体的翅膀"
+      },
+      "meaning": {
+        "en": "detached wings",
+        "zh": "脱离本体的翅膀"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "floating wings"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "dragon wings",
+      "label": {
+        "en": "dragon wings",
+        "zh": "龙翼"
+      },
+      "meaning": {
+        "en": "dragon wings",
+        "zh": "龙翼"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "fairy wings",
+      "label": {
+        "en": "fairy wings",
+        "zh": "妖精的翅膀"
+      },
+      "meaning": {
+        "en": "fairy wings",
+        "zh": "妖精的翅膀"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "whip marks",
+      "label": {
+        "en": "whip marks",
+        "zh": "鞭痕"
+      },
+      "meaning": {
+        "en": "whip marks",
+        "zh": "鞭痕"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "whipmarks"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "badge",
+      "label": {
+        "en": "badge",
+        "zh": "徽章"
+      },
+      "meaning": {
+        "en": "badge",
+        "zh": "徽章"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "badges"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "arm belt",
+      "label": {
+        "en": "arm belt",
+        "zh": "臂环"
+      },
+      "meaning": {
+        "en": "arm belt",
+        "zh": "臂环"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "bandaged hands",
+      "label": {
+        "en": "bandaged hands",
+        "zh": "缠着绷带的手"
+      },
+      "meaning": {
+        "en": "bandaged hands",
+        "zh": "缠着绷带的手"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "bead bracelet",
+      "label": {
+        "en": "bead bracelet",
+        "zh": "珠子手链"
+      },
+      "meaning": {
+        "en": "bead bracelet",
+        "zh": "珠子手链"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "bracer",
+      "label": {
+        "en": "bracer",
+        "zh": "护腕"
+      },
+      "meaning": {
+        "en": "bracer",
+        "zh": "护腕"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bracers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "wristband",
+      "label": {
+        "en": "wristband",
+        "zh": "腕带"
+      },
+      "meaning": {
+        "en": "wristband",
+        "zh": "腕带"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "wrist bands",
+        "wrist band",
+        "wristbands"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "command spell",
+      "label": {
+        "en": "command spell",
+        "zh": "令咒"
+      },
+      "meaning": {
+        "en": "command spell",
+        "zh": "令咒"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "diamond (gemstone)",
+      "label": {
+        "en": "diamond (gemstone)",
+        "zh": "钻石(宝石)"
+      },
+      "meaning": {
+        "en": "diamond (gemstone)",
+        "zh": "钻石(宝石)"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "heart lock (kantai collection)",
+      "label": {
+        "en": "heart lock (kantai collection)",
+        "zh": "舰娘锁(舰C)"
+      },
+      "meaning": {
+        "en": "heart lock (kantai collection)",
+        "zh": "舰娘锁(舰C)"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "heartbeat",
+      "label": {
+        "en": "heartbeat",
+        "zh": "心跳/表现出心动的文字"
+      },
+      "meaning": {
+        "en": "heartbeat",
+        "zh": "心跳/表现出心动的文字"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "mole",
+      "label": {
+        "en": "mole",
+        "zh": "痣"
+      },
+      "meaning": {
+        "en": "mole",
+        "zh": "痣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "beauty mark"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "blazer",
+      "label": {
+        "en": "blazer",
+        "zh": "西装夹克"
+      },
+      "meaning": {
+        "en": "blazer",
+        "zh": "西装夹克"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "suit jacket",
+      "label": {
+        "en": "suit jacket",
+        "zh": "西装外套"
+      },
+      "meaning": {
+        "en": "suit jacket",
+        "zh": "西装外套"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "coattails",
+      "label": {
+        "en": "coattails",
+        "zh": "燕尾"
+      },
+      "meaning": {
+        "en": "coattails",
+        "zh": "燕尾"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "collared jacket",
+      "label": {
+        "en": "collared jacket",
+        "zh": "翻领夹克"
+      },
+      "meaning": {
+        "en": "collared jacket",
+        "zh": "翻领夹克"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hooded cape",
+      "label": {
+        "en": "hooded cape",
+        "zh": "连帽斗篷"
+      },
+      "meaning": {
+        "en": "hooded cape",
+        "zh": "连帽斗篷"
+      },
+      "categoryIds": [
+        "fantasy-cosplay"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hooded cloak",
+      "label": {
+        "en": "hooded cloak",
+        "zh": "连帽披巾"
+      },
+      "meaning": {
+        "en": "hooded cloak",
+        "zh": "连帽披巾"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hooded coat",
+      "label": {
+        "en": "hooded coat",
+        "zh": "连帽外套"
+      },
+      "meaning": {
+        "en": "hooded coat",
+        "zh": "连帽外套"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "kesa",
+      "label": {
+        "en": "kesa",
+        "zh": "袈裟"
+      },
+      "meaning": {
+        "en": "kesa",
+        "zh": "袈裟"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "labcoat",
+      "label": {
+        "en": "labcoat",
+        "zh": "白大褂"
+      },
+      "meaning": {
+        "en": "labcoat",
+        "zh": "白大褂"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "lab coat"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "military jacket",
+      "label": {
+        "en": "military jacket",
+        "zh": "军装夹克"
+      },
+      "meaning": {
+        "en": "military jacket",
+        "zh": "军装夹克"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "pant suit",
+      "label": {
+        "en": "pant suit",
+        "zh": "女性穿着西服"
+      },
+      "meaning": {
+        "en": "pant suit",
+        "zh": "女性穿着西服"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pants suit",
+        "pantsuit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "tailcoat",
+      "label": {
+        "en": "tailcoat",
+        "zh": "燕尾服"
+      },
+      "meaning": {
+        "en": "tailcoat",
+        "zh": "燕尾服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "casual",
+      "label": {
+        "en": "casual",
+        "zh": "私服"
+      },
+      "meaning": {
+        "en": "casual",
+        "zh": "私服"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "heart cutout",
+      "label": {
+        "en": "heart cutout",
+        "zh": "衣服上有心形的开口"
+      },
+      "meaning": {
+        "en": "heart cutout",
+        "zh": "衣服上有心形的开口"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "checkered shirt",
+      "label": {
+        "en": "checkered shirt",
+        "zh": "格子衬衫"
+      },
+      "meaning": {
+        "en": "checkered shirt",
+        "zh": "格子衬衫"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "checkered blouse"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "clothes between breasts",
+      "label": {
+        "en": "clothes between breasts",
+        "zh": "衣服勒在乳沟里"
+      },
+      "meaning": {
+        "en": "clothes between breasts",
+        "zh": "衣服勒在乳沟里"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "clothing between breasts"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "t-shirt",
+      "label": {
+        "en": "t-shirt",
+        "zh": "T 恤"
+      },
+      "meaning": {
+        "en": "t-shirt",
+        "zh": "T 恤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "tshirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "cropped vest",
+      "label": {
+        "en": "cropped vest",
+        "zh": "小款背心"
+      },
+      "meaning": {
+        "en": "cropped vest",
+        "zh": "小款背心"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "faulds",
+      "label": {
+        "en": "faulds",
+        "zh": "腹甲"
+      },
+      "meaning": {
+        "en": "faulds",
+        "zh": "腹甲"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "gathers",
+      "label": {
+        "en": "gathers",
+        "zh": "褶裥(衣物)"
+      },
+      "meaning": {
+        "en": "gathers",
+        "zh": "褶裥(衣物)"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "gym shirt",
+      "label": {
+        "en": "gym shirt",
+        "zh": "体操服(上身)"
+      },
+      "meaning": {
+        "en": "gym shirt",
+        "zh": "体操服(上身)"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "open-chest sweater",
+      "label": {
+        "en": "open-chest sweater",
+        "zh": "胸部开口的毛衣"
+      },
+      "meaning": {
+        "en": "open-chest sweater",
+        "zh": "胸部开口的毛衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "keyhole sweater"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hooded sweater",
+      "label": {
+        "en": "hooded sweater",
+        "zh": "连帽毛衣"
+      },
+      "meaning": {
+        "en": "hooded sweater",
+        "zh": "连帽毛衣"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hooded track jacket",
+      "label": {
+        "en": "hooded track jacket",
+        "zh": "连帽运动夹克"
+      },
+      "meaning": {
+        "en": "hooded track jacket",
+        "zh": "连帽运动夹克"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "jersey",
+      "label": {
+        "en": "jersey",
+        "zh": "运动衫"
+      },
+      "meaning": {
+        "en": "jersey",
+        "zh": "运动衫"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sports jersey",
+        "official jersey"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "lowleg",
+      "label": {
+        "en": "lowleg",
+        "zh": "低胸装"
+      },
+      "meaning": {
+        "en": "lowleg",
+        "zh": "低胸装"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "tank top",
+      "label": {
+        "en": "tank top",
+        "zh": "无袖紧身背心"
+      },
+      "meaning": {
+        "en": "tank top",
+        "zh": "无袖紧身背心"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "tanktop"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "unbuttoned shirt",
+      "label": {
+        "en": "unbuttoned shirt",
+        "zh": "解开纽扣的衬衫"
+      },
+      "meaning": {
+        "en": "unbuttoned shirt",
+        "zh": "解开纽扣的衬衫"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "wet shirt",
+      "label": {
+        "en": "wet shirt",
+        "zh": "湿衬衫"
+      },
+      "meaning": {
+        "en": "wet shirt",
+        "zh": "湿衬衫"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "wet t-shirt",
+        "wet blouse"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "dudou",
+      "label": {
+        "en": "dudou",
+        "zh": "肚兜"
+      },
+      "meaning": {
+        "en": "dudou",
+        "zh": "肚兜"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "du dou"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "bikini top removed",
+      "label": {
+        "en": "bikini top removed",
+        "zh": "脱下比基尼上衣"
+      },
+      "meaning": {
+        "en": "bikini top removed",
+        "zh": "脱下比基尼上衣"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "gloves removed",
+      "label": {
+        "en": "gloves removed",
+        "zh": "脱下手套"
+      },
+      "meaning": {
+        "en": "gloves removed",
+        "zh": "脱下手套"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "glove removed"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "layered sleeves",
+      "label": {
+        "en": "layered sleeves",
+        "zh": "分层的衣袖"
+      },
+      "meaning": {
+        "en": "layered sleeves",
+        "zh": "分层的衣袖"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "sleeves folded up",
+      "label": {
+        "en": "sleeves folded up",
+        "zh": "叠起来的袖子"
+      },
+      "meaning": {
+        "en": "sleeves folded up",
+        "zh": "叠起来的袖子"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "sleeves pushed up",
+      "label": {
+        "en": "sleeves pushed up",
+        "zh": "袖子往上拉起"
+      },
+      "meaning": {
+        "en": "sleeves pushed up",
+        "zh": "袖子往上拉起"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hat flower",
+      "label": {
+        "en": "hat flower",
+        "zh": "花环"
+      },
+      "meaning": {
+        "en": "hat flower",
+        "zh": "花环"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/upperbody.yaml"
+      ]
+    },
+    {
+      "tag": "hips",
+      "label": {
+        "en": "hips",
+        "zh": "臀部"
+      },
+      "meaning": {
+        "en": "hips",
+        "zh": "臀部"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "tail",
+      "label": {
+        "en": "tail",
+        "zh": "尾巴"
+      },
+      "meaning": {
+        "en": "tail",
+        "zh": "尾巴"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "animal tail"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "thick thighs",
+      "label": {
+        "en": "thick thighs",
+        "zh": "粗腿"
+      },
+      "meaning": {
+        "en": "thick thighs",
+        "zh": "粗腿"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "big thighs",
+        "fat thighs",
+        "thunder thighs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "kneepits",
+      "label": {
+        "en": "kneepits",
+        "zh": "膝盖内侧"
+      },
+      "meaning": {
+        "en": "kneepits",
+        "zh": "膝盖内侧"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "kneepit",
+        "knee pit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "foot",
+      "label": {
+        "en": "foot",
+        "zh": "脚"
+      },
+      "meaning": {
+        "en": "foot",
+        "zh": "脚"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bloomers",
+      "label": {
+        "en": "bloomers",
+        "zh": "灯笼裤"
+      },
+      "meaning": {
+        "en": "bloomers",
+        "zh": "灯笼裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "fundoshi",
+      "label": {
+        "en": "fundoshi",
+        "zh": "日式丁字裤"
+      },
+      "meaning": {
+        "en": "fundoshi",
+        "zh": "日式丁字裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "girdling",
+      "label": {
+        "en": "girdling",
+        "zh": "束腰"
+      },
+      "meaning": {
+        "en": "girdling",
+        "zh": "束腰"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "legwear",
+      "label": {
+        "en": "legwear",
+        "zh": "裹腿"
+      },
+      "meaning": {
+        "en": "legwear",
+        "zh": "裹腿"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "pink panties",
+      "label": {
+        "en": "pink panties",
+        "zh": "粉红内裤"
+      },
+      "meaning": {
+        "en": "pink panties",
+        "zh": "粉红内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "striped panties",
+      "label": {
+        "en": "striped panties",
+        "zh": "条纹内裤"
+      },
+      "meaning": {
+        "en": "striped panties",
+        "zh": "条纹内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "stripped panties"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "trefoil",
+      "label": {
+        "en": "trefoil",
+        "zh": "露出三角裤"
+      },
+      "meaning": {
+        "en": "trefoil",
+        "zh": "露出三角裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panty pull",
+      "label": {
+        "en": "panty pull",
+        "zh": "内裤拉下来"
+      },
+      "meaning": {
+        "en": "panty pull",
+        "zh": "内裤拉下来"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panties down",
+        "panties pull",
+        "pantypull",
+        "panty down"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "pantyshot",
+      "label": {
+        "en": "pantyshot",
+        "zh": "内裤走光"
+      },
+      "meaning": {
+        "en": "pantyshot",
+        "zh": "内裤走光"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panty shot",
+        "panchira",
+        "panty flash"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "ankle lace-up",
+      "label": {
+        "en": "ankle lace-up",
+        "zh": "腿部系带"
+      },
+      "meaning": {
+        "en": "ankle lace-up",
+        "zh": "腿部系带"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "butt plug",
+      "label": {
+        "en": "butt plug",
+        "zh": "插入式尾巴"
+      },
+      "meaning": {
+        "en": "butt plug",
+        "zh": "插入式尾巴"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "buttplug",
+        "anal plug"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "diaper",
+      "label": {
+        "en": "diaper",
+        "zh": "尿布"
+      },
+      "meaning": {
+        "en": "diaper",
+        "zh": "尿布"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "leg garter",
+      "label": {
+        "en": "leg garter",
+        "zh": "腿部花边环"
+      },
+      "meaning": {
+        "en": "leg garter",
+        "zh": "腿部花边环"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "dog tail",
+      "label": {
+        "en": "dog tail",
+        "zh": "狗尾巴"
+      },
+      "meaning": {
+        "en": "dog tail",
+        "zh": "狗尾巴"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "african wild dog tail"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "dragon tail",
+      "label": {
+        "en": "dragon tail",
+        "zh": "龙尾"
+      },
+      "meaning": {
+        "en": "dragon tail",
+        "zh": "龙尾"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "fox tail",
+      "label": {
+        "en": "fox tail",
+        "zh": "狐狸尾巴"
+      },
+      "meaning": {
+        "en": "fox tail",
+        "zh": "狐狸尾巴"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "horse tail",
+      "label": {
+        "en": "horse tail",
+        "zh": "马尾"
+      },
+      "meaning": {
+        "en": "horse tail",
+        "zh": "马尾"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bikini bottom",
+      "label": {
+        "en": "bikini bottom",
+        "zh": "比基尼泳裤"
+      },
+      "meaning": {
+        "en": "bikini bottom",
+        "zh": "比基尼泳裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "chaps",
+      "label": {
+        "en": "chaps",
+        "zh": "皮套裤"
+      },
+      "meaning": {
+        "en": "chaps",
+        "zh": "皮套裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "clothes between thighs",
+      "label": {
+        "en": "clothes between thighs",
+        "zh": "衣物挂到大腿之间"
+      },
+      "meaning": {
+        "en": "clothes between thighs",
+        "zh": "衣物挂到大腿之间"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "skirt around one leg",
+      "label": {
+        "en": "skirt around one leg",
+        "zh": "一条腿上挂着短裙"
+      },
+      "meaning": {
+        "en": "skirt around one leg",
+        "zh": "一条腿上挂着短裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "skirt suit",
+      "label": {
+        "en": "skirt suit",
+        "zh": "正装短裙"
+      },
+      "meaning": {
+        "en": "skirt suit",
+        "zh": "正装短裙"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "skirtsuit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "cutoffs",
+      "label": {
+        "en": "cutoffs",
+        "zh": "热裤"
+      },
+      "meaning": {
+        "en": "cutoffs",
+        "zh": "热裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "denim skirt",
+      "label": {
+        "en": "denim skirt",
+        "zh": "牛仔裙"
+      },
+      "meaning": {
+        "en": "denim skirt",
+        "zh": "牛仔裙"
+      },
+      "categoryIds": [
+        "dress-gown"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "jean skirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "gym shorts",
+      "label": {
+        "en": "gym shorts",
+        "zh": "体操短裤"
+      },
+      "meaning": {
+        "en": "gym shorts",
+        "zh": "体操短裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "jeans",
+      "label": {
+        "en": "jeans",
+        "zh": "牛仔裤"
+      },
+      "meaning": {
+        "en": "jeans",
+        "zh": "牛仔裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "blue jeans"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "jumpsuit",
+      "label": {
+        "en": "jumpsuit",
+        "zh": "(尤指女式)连衫裤"
+      },
+      "meaning": {
+        "en": "jumpsuit",
+        "zh": "(尤指女式)连衫裤"
+      },
+      "categoryIds": [
+        "uniform-suit"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "coveralls"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "leotard aside",
+      "label": {
+        "en": "leotard aside",
+        "zh": "把连衣裤裆部剥到一边"
+      },
+      "meaning": {
+        "en": "leotard aside",
+        "zh": "把连衣裤裆部剥到一边"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "leotard pull",
+      "label": {
+        "en": "leotard pull",
+        "zh": "剥开连衣裤"
+      },
+      "meaning": {
+        "en": "leotard pull",
+        "zh": "剥开连衣裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "leotard under clothes",
+      "label": {
+        "en": "leotard under clothes",
+        "zh": "内层穿着连衣裤"
+      },
+      "meaning": {
+        "en": "leotard under clothes",
+        "zh": "内层穿着连衣裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "lowleg pants",
+      "label": {
+        "en": "lowleg pants",
+        "zh": "低腰裤子"
+      },
+      "meaning": {
+        "en": "lowleg pants",
+        "zh": "低腰裤子"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "back-print panties",
+      "label": {
+        "en": "back-print panties",
+        "zh": "背面印花的内裤"
+      },
+      "meaning": {
+        "en": "back-print panties",
+        "zh": "背面印花的内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bear panties",
+      "label": {
+        "en": "bear panties",
+        "zh": "熊印花内裤"
+      },
+      "meaning": {
+        "en": "bear panties",
+        "zh": "熊印花内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "buruma pull",
+      "label": {
+        "en": "buruma pull",
+        "zh": "褪下一部分的内裤"
+      },
+      "meaning": {
+        "en": "buruma pull",
+        "zh": "褪下一部分的内裤"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "burumapull"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "strawberry panties",
+      "label": {
+        "en": "strawberry panties",
+        "zh": "草莓内裤"
+      },
+      "meaning": {
+        "en": "strawberry panties",
+        "zh": "草莓内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panties around one leg",
+      "label": {
+        "en": "panties around one leg",
+        "zh": "一只脚上挂着内裤"
+      },
+      "meaning": {
+        "en": "panties around one leg",
+        "zh": "一只脚上挂着内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panties around leg"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "swimsuit aside",
+      "label": {
+        "en": "swimsuit aside",
+        "zh": "把泳衣的裆部挪到一边"
+      },
+      "meaning": {
+        "en": "swimsuit aside",
+        "zh": "把泳衣的裆部挪到一边"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "crotch plate",
+      "label": {
+        "en": "crotch plate",
+        "zh": "裆部有特别覆盖物"
+      },
+      "meaning": {
+        "en": "crotch plate",
+        "zh": "裆部有特别覆盖物"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "wet panties",
+      "label": {
+        "en": "wet panties",
+        "zh": "湿内裤"
+      },
+      "meaning": {
+        "en": "wet panties",
+        "zh": "湿内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "drenched panties"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "crotchless panties",
+      "label": {
+        "en": "crotchless panties",
+        "zh": "开档内裤"
+      },
+      "meaning": {
+        "en": "crotchless panties",
+        "zh": "开档内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "front-print panties",
+      "label": {
+        "en": "front-print panties",
+        "zh": "正面有图案的内裤"
+      },
+      "meaning": {
+        "en": "front-print panties",
+        "zh": "正面有图案的内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "lace-trimmed panties",
+      "label": {
+        "en": "lace-trimmed panties",
+        "zh": "蕾丝边内裤"
+      },
+      "meaning": {
+        "en": "lace-trimmed panties",
+        "zh": "蕾丝边内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panties aside",
+      "label": {
+        "en": "panties aside",
+        "zh": "内裤挪到一边"
+      },
+      "meaning": {
+        "en": "panties aside",
+        "zh": "内裤挪到一边"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panty aside"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panties under pantyhose",
+      "label": {
+        "en": "panties under pantyhose",
+        "zh": "穿在裤袜里的内裤"
+      },
+      "meaning": {
+        "en": "panties under pantyhose",
+        "zh": "穿在裤袜里的内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panties behind pantyhose",
+        "panties underneath pantyhose",
+        "panties under pantiehose",
+        "panties below pantyhose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "ass",
+      "label": {
+        "en": "ass",
+        "zh": "屁股"
+      },
+      "meaning": {
+        "en": "ass",
+        "zh": "屁股"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "butt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "ass visible through thighs",
+      "label": {
+        "en": "ass visible through thighs",
+        "zh": "正面可见的屁股"
+      },
+      "meaning": {
+        "en": "ass visible through thighs",
+        "zh": "正面可见的屁股"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "butt fangs",
+        "ass fangs",
+        "gluteal fold"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bare hips",
+      "label": {
+        "en": "bare hips",
+        "zh": "裸臀"
+      },
+      "meaning": {
+        "en": "bare hips",
+        "zh": "裸臀"
+      },
+      "categoryIds": [
+        "revealing"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bandaid on leg",
+      "label": {
+        "en": "bandaid on leg",
+        "zh": "腿上的绷带"
+      },
+      "meaning": {
+        "en": "bandaid on leg",
+        "zh": "腿上的绷带"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "mechanical legs",
+      "label": {
+        "en": "mechanical legs",
+        "zh": "机械腿"
+      },
+      "meaning": {
+        "en": "mechanical legs",
+        "zh": "机械腿"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "robotic legs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "leg tattoo",
+      "label": {
+        "en": "leg tattoo",
+        "zh": "腿部纹身"
+      },
+      "meaning": {
+        "en": "leg tattoo",
+        "zh": "腿部纹身"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "thigh tattoo"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "bound legs",
+      "label": {
+        "en": "bound legs",
+        "zh": "绑腿"
+      },
+      "meaning": {
+        "en": "bound legs",
+        "zh": "绑腿"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panty & stocking with garterbelt",
+      "label": {
+        "en": "panty & stocking with garterbelt",
+        "zh": "吊袜带内裤和长袜"
+      },
+      "meaning": {
+        "en": "panty & stocking with garterbelt",
+        "zh": "吊袜带内裤和长袜"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "panty and stocking with garterbelt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "socks over thighhighs",
+      "label": {
+        "en": "socks over thighhighs",
+        "zh": "长筒袜加短袜"
+      },
+      "meaning": {
+        "en": "socks over thighhighs",
+        "zh": "长筒袜加短袜"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "panties over pantyhose",
+      "label": {
+        "en": "panties over pantyhose",
+        "zh": "连裤袜上的内裤"
+      },
+      "meaning": {
+        "en": "panties over pantyhose",
+        "zh": "连裤袜上的内裤"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "pantyhose under swimsuit",
+      "label": {
+        "en": "pantyhose under swimsuit",
+        "zh": "泳衣下连裤袜"
+      },
+      "meaning": {
+        "en": "pantyhose under swimsuit",
+        "zh": "泳衣下连裤袜"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "black garter belt",
+      "label": {
+        "en": "black garter belt",
+        "zh": "黑色吊袜带"
+      },
+      "meaning": {
+        "en": "black garter belt",
+        "zh": "黑色吊袜带"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "neck garter",
+      "label": {
+        "en": "neck garter",
+        "zh": "吊袜带"
+      },
+      "meaning": {
+        "en": "neck garter",
+        "zh": "吊袜带"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "white garter straps",
+      "label": {
+        "en": "white garter straps",
+        "zh": "白色吊袜带"
+      },
+      "meaning": {
+        "en": "white garter straps",
+        "zh": "白色吊袜带"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "black garter straps",
+      "label": {
+        "en": "black garter straps",
+        "zh": "黑色吊袜带"
+      },
+      "meaning": {
+        "en": "black garter straps",
+        "zh": "黑色吊袜带"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "ankle garter",
+      "label": {
+        "en": "ankle garter",
+        "zh": "脚踝吊袜带"
+      },
+      "meaning": {
+        "en": "ankle garter",
+        "zh": "脚踝吊袜带"
+      },
+      "categoryIds": [
+        "swimsuit-lingerie"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "covering crotch",
+      "label": {
+        "en": "covering crotch",
+        "zh": "遮着裆部"
+      },
+      "meaning": {
+        "en": "covering crotch",
+        "zh": "遮着裆部"
+      },
+      "categoryIds": [
+        "casual-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "covering pussy"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/lowerbody.yaml"
+      ]
+    },
+    {
+      "tag": "slippers",
+      "label": {
+        "en": "slippers",
+        "zh": "拖鞋"
+      },
+      "meaning": {
+        "en": "slippers",
+        "zh": "拖鞋"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "slipper"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "striped socks",
+      "label": {
+        "en": "striped socks",
+        "zh": "横条袜"
+      },
+      "meaning": {
+        "en": "striped socks",
+        "zh": "横条袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "striped kneehighs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "ankle socks",
+      "label": {
+        "en": "ankle socks",
+        "zh": "踝袜"
+      },
+      "meaning": {
+        "en": "ankle socks",
+        "zh": "踝袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "back-seamed legwear",
+      "label": {
+        "en": "back-seamed legwear",
+        "zh": "袜缝"
+      },
+      "meaning": {
+        "en": "back-seamed legwear",
+        "zh": "袜缝"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "bobby socks",
+      "label": {
+        "en": "bobby socks",
+        "zh": "美式短袜"
+      },
+      "meaning": {
+        "en": "bobby socks",
+        "zh": "美式短袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "bow legwear",
+      "label": {
+        "en": "bow legwear",
+        "zh": "带蝴蝶结的裤袜"
+      },
+      "meaning": {
+        "en": "bow legwear",
+        "zh": "带蝴蝶结的裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bow thighhighs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "fine fabric emphasis",
+      "label": {
+        "en": "fine fabric emphasis",
+        "zh": "精细的面料感/超还原的丝袜"
+      },
+      "meaning": {
+        "en": "fine fabric emphasis",
+        "zh": "精细的面料感/超还原的丝袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "fishnet legwear",
+      "label": {
+        "en": "fishnet legwear",
+        "zh": "渔网袜"
+      },
+      "meaning": {
+        "en": "fishnet legwear",
+        "zh": "渔网袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "seamed legwear",
+      "label": {
+        "en": "seamed legwear",
+        "zh": "有接缝的裤袜"
+      },
+      "meaning": {
+        "en": "seamed legwear",
+        "zh": "有接缝的裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "leg cutout",
+      "label": {
+        "en": "leg cutout",
+        "zh": "裤袜有开口"
+      },
+      "meaning": {
+        "en": "leg cutout",
+        "zh": "裤袜有开口"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "leggings",
+      "label": {
+        "en": "leggings",
+        "zh": "裤袜"
+      },
+      "meaning": {
+        "en": "leggings",
+        "zh": "裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "garters",
+      "label": {
+        "en": "garters",
+        "zh": "吊带袜"
+      },
+      "meaning": {
+        "en": "garters",
+        "zh": "吊带袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "fishnets",
+      "label": {
+        "en": "fishnets",
+        "zh": "网袜"
+      },
+      "meaning": {
+        "en": "fishnets",
+        "zh": "网袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "fishnet"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "barefoot sandals",
+      "label": {
+        "en": "barefoot sandals",
+        "zh": "裸足凉鞋"
+      },
+      "meaning": {
+        "en": "barefoot sandals",
+        "zh": "裸足凉鞋"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "boots removed",
+      "label": {
+        "en": "boots removed",
+        "zh": "脱下的靴子"
+      },
+      "meaning": {
+        "en": "boots removed",
+        "zh": "脱下的靴子"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "cross-laced footwear",
+      "label": {
+        "en": "cross-laced footwear",
+        "zh": "交叉系带鞋"
+      },
+      "meaning": {
+        "en": "cross-laced footwear",
+        "zh": "交叉系带鞋"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "rudder footwear",
+      "label": {
+        "en": "rudder footwear",
+        "zh": "舰C舰娘专用鞋"
+      },
+      "meaning": {
+        "en": "rudder footwear",
+        "zh": "舰C舰娘专用鞋"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "stiletto heels",
+      "label": {
+        "en": "stiletto heels",
+        "zh": "细跟高跟鞋"
+      },
+      "meaning": {
+        "en": "stiletto heels",
+        "zh": "细跟高跟鞋"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "white legwear",
+      "label": {
+        "en": "white legwear",
+        "zh": "白色裤袜"
+      },
+      "meaning": {
+        "en": "white legwear",
+        "zh": "白色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "torn legwear",
+      "label": {
+        "en": "torn legwear",
+        "zh": "撕裂的裤袜"
+      },
+      "meaning": {
+        "en": "torn legwear",
+        "zh": "撕裂的裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "brown legwear",
+      "label": {
+        "en": "brown legwear",
+        "zh": "棕色裤袜"
+      },
+      "meaning": {
+        "en": "brown legwear",
+        "zh": "棕色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "uneven legwear",
+      "label": {
+        "en": "uneven legwear",
+        "zh": "不均匀的裤腿"
+      },
+      "meaning": {
+        "en": "uneven legwear",
+        "zh": "不均匀的裤腿"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "print legwear",
+      "label": {
+        "en": "print legwear",
+        "zh": "印花裤袜"
+      },
+      "meaning": {
+        "en": "print legwear",
+        "zh": "印花裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "red legwear",
+      "label": {
+        "en": "red legwear",
+        "zh": "红色裤袜"
+      },
+      "meaning": {
+        "en": "red legwear",
+        "zh": "红色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "legwear under shorts",
+      "label": {
+        "en": "legwear under shorts",
+        "zh": "短裤穿在裤袜外面"
+      },
+      "meaning": {
+        "en": "legwear under shorts",
+        "zh": "短裤穿在裤袜外面"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "purple legwear",
+      "label": {
+        "en": "purple legwear",
+        "zh": "紫色裤袜"
+      },
+      "meaning": {
+        "en": "purple legwear",
+        "zh": "紫色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "grey legwear",
+      "label": {
+        "en": "grey legwear",
+        "zh": "灰色裤袜"
+      },
+      "meaning": {
+        "en": "grey legwear",
+        "zh": "灰色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "blue legwear",
+      "label": {
+        "en": "blue legwear",
+        "zh": "蓝色裤袜"
+      },
+      "meaning": {
+        "en": "blue legwear",
+        "zh": "蓝色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "pink legwear",
+      "label": {
+        "en": "pink legwear",
+        "zh": "粉色裤袜"
+      },
+      "meaning": {
+        "en": "pink legwear",
+        "zh": "粉色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "argyle legwear",
+      "label": {
+        "en": "argyle legwear",
+        "zh": "菱形裤腿"
+      },
+      "meaning": {
+        "en": "argyle legwear",
+        "zh": "菱形裤腿"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "american flag legwear",
+      "label": {
+        "en": "american flag legwear",
+        "zh": "星条旗裤袜"
+      },
+      "meaning": {
+        "en": "american flag legwear",
+        "zh": "星条旗裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "green legwear",
+      "label": {
+        "en": "green legwear",
+        "zh": "绿色裤袜"
+      },
+      "meaning": {
+        "en": "green legwear",
+        "zh": "绿色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "vertical-striped legwear",
+      "label": {
+        "en": "vertical-striped legwear",
+        "zh": "竖条纹裤袜"
+      },
+      "meaning": {
+        "en": "vertical-striped legwear",
+        "zh": "竖条纹裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "alternate legwear",
+      "label": {
+        "en": "alternate legwear",
+        "zh": "备用裤袜"
+      },
+      "meaning": {
+        "en": "alternate legwear",
+        "zh": "备用裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "yellow legwear",
+      "label": {
+        "en": "yellow legwear",
+        "zh": "黄色裤袜"
+      },
+      "meaning": {
+        "en": "yellow legwear",
+        "zh": "黄色裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "multicolored legwear",
+      "label": {
+        "en": "multicolored legwear",
+        "zh": "五彩裤袜"
+      },
+      "meaning": {
+        "en": "multicolored legwear",
+        "zh": "五彩裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "ribbed legwear",
+      "label": {
+        "en": "ribbed legwear",
+        "zh": "罗纹裤袜"
+      },
+      "meaning": {
+        "en": "ribbed legwear",
+        "zh": "罗纹裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "see-through legwear",
+      "label": {
+        "en": "see-through legwear",
+        "zh": "透视裤袜"
+      },
+      "meaning": {
+        "en": "see-through legwear",
+        "zh": "透视裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sheer legwear"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "legwear garter",
+      "label": {
+        "en": "legwear garter",
+        "zh": "裤袜吊袜带"
+      },
+      "meaning": {
+        "en": "legwear garter",
+        "zh": "裤袜吊袜带"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "sock garters",
+        "thighhigh garter"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "two-tone legwear",
+      "label": {
+        "en": "two-tone legwear",
+        "zh": "分段裤袜"
+      },
+      "meaning": {
+        "en": "two-tone legwear",
+        "zh": "分段裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
+    },
+    {
+      "tag": "latex legwear",
+      "label": {
+        "en": "latex legwear",
+        "zh": "乳胶裤袜"
+      },
+      "meaning": {
+        "en": "latex legwear",
+        "zh": "乳胶裤袜"
+      },
+      "categoryIds": [
+        "shoes-socks"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/shoesock.yaml"
+      ]
     }
   ]
 }

@@ -79,11 +79,15 @@
         "zh": "手掌贴墙"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "open \\m/"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -97,10 +101,14 @@
         "zh": "6+1 手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "\\n/",
@@ -113,10 +121,14 @@
         "zh": "摇滚手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "adjusting eyewear",
@@ -135,6 +147,9 @@
       "aliases": [
         "adjusting sunglasses",
         "adjusting glasses"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -167,7 +182,10 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "adjusting legwear",
@@ -187,6 +205,9 @@
         "adjusting thighhigh",
         "adjusting pantyhose",
         "adjusting thighhighs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -203,7 +224,10 @@
         "adjusting-dressing"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "adjusting pantyhose",
@@ -299,7 +323,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "air punch",
@@ -328,11 +355,15 @@
         "zh": "引号手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "finger quotes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -351,6 +382,9 @@
       "booruType": "general",
       "aliases": [
         "eyelid pull"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -380,13 +414,17 @@
         "zh": "四肢趴地"
       },
       "categoryIds": [
-        "lying-prone"
+        "lying-prone",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "hands and knees",
         "all-fours",
         "on all fours"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -416,10 +454,14 @@
         "zh": "弓身体"
       },
       "categoryIds": [
-        "lying-prone"
+        "lying-prone",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arm around neck",
@@ -435,7 +477,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arm grab",
@@ -448,12 +493,16 @@
         "zh": "抓住手臂"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "gestures-arms"
       ],
       "booruType": "general",
       "aliases": [
         "arm hold",
         "grabbing arm"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -470,7 +519,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arm hold",
@@ -504,6 +556,9 @@
       "booruType": "general",
       "aliases": [
         "hugging arm"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -536,7 +591,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arm up",
@@ -556,6 +614,9 @@
         "arm raised",
         "raised arm",
         "one arm up"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -588,7 +649,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "armpits",
@@ -606,6 +670,9 @@
       "booruType": "general",
       "aliases": [
         "armpit"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -656,6 +723,9 @@
       "booruType": "general",
       "aliases": [
         "neck hug"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -672,7 +742,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arms behind",
@@ -707,6 +780,9 @@
       "aliases": [
         "hands behind back",
         "arms behind"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -725,6 +801,9 @@
       "booruType": "general",
       "aliases": [
         "hands behind head"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -741,7 +820,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "arms folded",
@@ -795,6 +877,9 @@
         "arms raised",
         "arms above head",
         "hands above head"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -827,7 +912,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "balance",
@@ -856,11 +944,15 @@
         "zh": "(保持)平衡的姿势"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "balance"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -906,10 +998,14 @@
         "zh": "拔刀起手式"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "beckon",
@@ -938,11 +1034,15 @@
         "zh": "招手"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "beckon"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -956,11 +1056,15 @@
         "zh": "捏着肚子"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "tummy grab"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1013,6 +1117,9 @@
         "bent-over",
         "bending over",
         "bend over"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1058,11 +1165,15 @@
         "zh": "扯着比基尼"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "bikini down"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1079,7 +1190,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "bridal carry",
@@ -1124,10 +1238,14 @@
         "zh": "手持辫子"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "bunny pose",
@@ -1143,7 +1261,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "butterfly pose",
@@ -1177,6 +1298,9 @@
       "booruType": "general",
       "aliases": [
         "butterfly pose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1211,6 +1335,9 @@
       "booruType": "general",
       "aliases": [
         "caramel dansen"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1230,6 +1357,9 @@
       "aliases": [
         "fondling testicles",
         "ball caress"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1243,11 +1373,15 @@
         "zh": "抱着我手势"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "props-holding"
       ],
       "booruType": "general",
       "aliases": [
         "pick me up"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1261,10 +1395,14 @@
         "zh": "肩扛"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "carrying under arm",
@@ -1280,7 +1418,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "cat pose",
@@ -1309,10 +1450,14 @@
         "zh": "用胸支撑身体"
       },
       "categoryIds": [
-        "lying-prone"
+        "lying-prone",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "chin rest",
@@ -1376,7 +1521,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "clenched fist",
@@ -1428,6 +1576,9 @@
         "clenched fist",
         "fist",
         "closed fist"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1448,6 +1599,9 @@
         "fists",
         "closed fists",
         "clenched fists"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1493,10 +1647,14 @@
         "zh": "掀起衣物"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "clothes pull",
@@ -1509,10 +1667,14 @@
         "zh": "拉开衣物"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "convenient arm",
@@ -1528,7 +1690,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "convenient head",
@@ -1544,7 +1709,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "convenient leg",
@@ -1560,7 +1728,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "cowering",
@@ -1576,7 +1747,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "crawling",
@@ -1589,10 +1763,14 @@
         "zh": "爬行"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "crossed ankles",
@@ -1608,7 +1786,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "crossed arms",
@@ -1627,6 +1808,9 @@
       "aliases": [
         "folded arms",
         "arms folded"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1643,7 +1827,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "crossed legs",
@@ -1656,13 +1843,17 @@
         "zh": "二郎腿"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "crossed legs (sitting)",
         "crossed legs (standing)",
         "crossed legs (lying)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1775,7 +1966,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "cuddle",
@@ -1804,12 +1998,16 @@
         "zh": "拥抱"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "cuddle",
         "snuggle"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1823,10 +2021,14 @@
         "zh": "舔阴手势"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "cupped hands",
@@ -1860,6 +2062,9 @@
       "booruType": "general",
       "aliases": [
         "cupped hands"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1879,6 +2084,9 @@
       "aliases": [
         "curtsy",
         "curtsie"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -1988,11 +2196,15 @@
         "zh": "双手比 V"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "double peace"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2022,10 +2234,14 @@
         "zh": "掀起裙子"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "dress pull",
@@ -2038,10 +2254,14 @@
         "zh": "剥下裙子露出胸口"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "dress removed",
@@ -2054,10 +2274,14 @@
         "zh": "脱下裙子"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "dress tug",
@@ -2070,10 +2294,14 @@
         "zh": "拉下连衣裙下摆"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "drying hair",
@@ -2086,10 +2314,14 @@
         "zh": "弄干头发"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "dual wield",
@@ -2118,12 +2350,16 @@
         "zh": "双持"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "dual wield",
         "double wield"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2236,7 +2472,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "feeding",
@@ -2249,10 +2488,14 @@
         "zh": "喂食"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "fellatio gesture",
@@ -2265,10 +2508,14 @@
         "zh": "口交手势"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "fetal position",
@@ -2281,10 +2528,14 @@
         "zh": "曲腿至胸"
       },
       "categoryIds": [
-        "lying-prone"
+        "lying-prone",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "fidget",
@@ -2313,11 +2564,15 @@
         "zh": "紧张手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "fidget"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2355,6 +2610,9 @@
         "fig gesture",
         "dulya",
         "mano fico"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2368,11 +2626,15 @@
         "zh": "战斗姿态"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "battle stance"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2389,7 +2651,10 @@
         "sitting-poses"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "finger camera",
@@ -2421,7 +2686,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "finger frame",
@@ -2439,6 +2707,9 @@
       "booruType": "general",
       "aliases": [
         "finger camera"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2455,7 +2726,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "finger heart",
@@ -2471,7 +2745,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "finger in panties",
@@ -2551,7 +2828,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "fist",
@@ -2580,12 +2860,16 @@
         "zh": "碰拳"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "brofist",
         "fistbump"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2602,7 +2886,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "fistbump",
@@ -2650,7 +2937,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "flipping off",
@@ -2682,7 +2972,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "folded arms",
@@ -2748,6 +3041,9 @@
       "booruType": "general",
       "aliases": [
         "fox hand sign"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2764,7 +3060,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "girls are praying",
@@ -2793,10 +3092,14 @@
         "zh": "热情的拥抱/扑上来抱住"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "grab",
@@ -2825,11 +3128,15 @@
         "zh": "抓住/抓着"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "grab"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2849,6 +3156,9 @@
       "aliases": [
         "pulling another's hair",
         "hair pull"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2894,10 +3204,14 @@
         "zh": "把对方的手抓过来摸自己的胸"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hair flip",
@@ -2910,10 +3224,14 @@
         "zh": "拨头发"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hair pull",
@@ -2942,10 +3260,14 @@
         "zh": "撩头发"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hair twirl",
@@ -2974,11 +3296,15 @@
         "zh": "手指卷着头发"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "hair twirl"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -2997,6 +3323,9 @@
       "booruType": "general",
       "aliases": [
         "hands between legs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3029,7 +3358,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand holding",
@@ -3061,7 +3393,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand in panties",
@@ -3079,6 +3414,9 @@
       "booruType": "general",
       "aliases": [
         "finger in panties"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3095,7 +3433,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's",
@@ -3108,10 +3449,14 @@
         "zh": "手接触到对方的脸"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's cheek",
@@ -3124,10 +3469,14 @@
         "zh": "手摸着对方的脸颊"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's chest",
@@ -3140,10 +3489,14 @@
         "zh": "手放在对方的胸前"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's chin",
@@ -3156,11 +3509,15 @@
         "zh": "手托着对方的下巴"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
       "aliases": [
         "finger to another's chin"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3174,10 +3531,14 @@
         "zh": "手接触到对方的脸"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's hand",
@@ -3190,10 +3551,14 @@
         "zh": "手放在对方的手上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's head",
@@ -3206,10 +3571,14 @@
         "zh": "手放在对方的头上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's neck",
@@ -3222,10 +3591,14 @@
         "zh": "手放在他人的脖子上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's shoulder",
@@ -3238,10 +3611,14 @@
         "zh": "手放在对方的肩上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on another's stomach",
@@ -3254,10 +3631,14 @@
         "zh": "手放在对方的肚子上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on ass",
@@ -3337,7 +3718,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on face",
@@ -3387,6 +3771,9 @@
       "booruType": "general",
       "aliases": [
         "hand on hat"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3405,6 +3792,9 @@
       "booruType": "general",
       "aliases": [
         "hand on waist"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3455,6 +3845,9 @@
       "booruType": "general",
       "aliases": [
         "hand on ass"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3490,6 +3883,9 @@
       "aliases": [
         "hand to cheek",
         "hand on cheek"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3510,6 +3906,9 @@
         "hand to chest",
         "hand to own chest",
         "hand on chest"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3529,6 +3928,9 @@
       "aliases": [
         "hand to face",
         "hand on face"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3545,7 +3947,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on own head",
@@ -3561,7 +3966,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on own knee",
@@ -3579,6 +3987,9 @@
       "booruType": "general",
       "aliases": [
         "hand on knee"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3595,7 +4006,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on own shoulder",
@@ -3611,7 +4025,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hand on own stomach",
@@ -3631,6 +4048,9 @@
         "hand on belly",
         "hand on own belly",
         "hand on stomach"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3797,6 +4217,9 @@
         "hands to own mouth",
         "hand to lip",
         "hand on lips"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -3829,7 +4252,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands above head",
@@ -3941,7 +4367,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands on another's breast",
@@ -3954,10 +4383,14 @@
         "zh": "手放在另一人的胸前"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands on another's face",
@@ -3970,10 +4403,14 @@
         "zh": "双手放在别人的脸上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands on ass",
@@ -3989,7 +4426,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands on face",
@@ -4021,7 +4461,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "hands on hips",
@@ -4040,6 +4483,9 @@
       "aliases": [
         "hands on waist",
         "akimbo"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4075,6 +4521,9 @@
       "aliases": [
         "hands on face",
         "hands to face"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4093,6 +4542,9 @@
       "booruType": "general",
       "aliases": [
         "hands on knees"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4202,11 +4654,15 @@
         "zh": "用手倒立"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "gestures-arms"
       ],
       "booruType": "general",
       "aliases": [
         "standing on hands"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4223,7 +4679,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "head back",
@@ -4239,7 +4698,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "head down",
@@ -4255,7 +4717,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "head rest",
@@ -4273,6 +4738,9 @@
       "booruType": "general",
       "aliases": [
         "chin rest"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4289,7 +4757,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "headstand",
@@ -4302,10 +4773,14 @@
         "zh": "用头倒立"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart arms",
@@ -4321,7 +4796,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart hands",
@@ -4337,7 +4815,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart hands duo",
@@ -4350,10 +4831,14 @@
         "zh": "两个人一起用手比心"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart hands trio",
@@ -4366,10 +4851,14 @@
         "zh": "三个人用手比心"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart tail",
@@ -4387,6 +4876,9 @@
       "booruType": "general",
       "aliases": [
         "heart tails"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4403,7 +4895,10 @@
         "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "heart tails",
@@ -4437,6 +4932,9 @@
       "booruType": "general",
       "aliases": [
         "highfive"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4488,6 +4986,9 @@
       "aliases": [
         "hold",
         "holding object"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4520,7 +5021,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding condom",
@@ -4536,7 +5040,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding eyewear",
@@ -4555,6 +5062,9 @@
       "aliases": [
         "holding glasses",
         "holding sunglasses"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4571,7 +5081,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding glasses",
@@ -4600,13 +5113,17 @@
         "zh": "牵手"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "gestures-arms"
       ],
       "booruType": "general",
       "aliases": [
         "handholding",
         "hand holding",
         "holding another's hand"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4639,7 +5156,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding strap",
@@ -4655,7 +5175,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding sunglasses",
@@ -4687,7 +5210,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding underwear",
@@ -4703,7 +5229,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "holding whip",
@@ -4719,7 +5248,10 @@
         "props-holding"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "horn pose",
@@ -4748,11 +5280,15 @@
         "zh": "用手比作角"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "horn pose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4822,6 +5358,9 @@
         "knee hug",
         "hugging legs",
         "hugging knees"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4838,7 +5377,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "in the name of the moon",
@@ -4873,6 +5415,9 @@
       "aliases": [
         "raised finger",
         "finger raised"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4886,11 +5431,15 @@
         "zh": "盘腿"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "agura"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4907,7 +5456,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "jump",
@@ -4941,6 +5493,9 @@
       "booruType": "general",
       "aliases": [
         "jump"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -4957,7 +5512,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "kimono lift",
@@ -4970,10 +5528,14 @@
         "zh": "掀起和服"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "kimono pull",
@@ -4986,10 +5548,14 @@
         "zh": "剥开和服"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "kissing neck",
@@ -5002,10 +5568,14 @@
         "zh": "亲吻脖子"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "knee hug",
@@ -5039,6 +5609,9 @@
       "booruType": "general",
       "aliases": [
         "on knees"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5090,6 +5663,9 @@
       "aliases": [
         "knees on chest",
         "knees-on-chest"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5124,6 +5700,9 @@
       "booruType": "general",
       "aliases": [
         "hand seal"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5172,7 +5751,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "leaning back",
@@ -5188,7 +5770,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "leaning forward",
@@ -5204,7 +5789,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "leaning to the side",
@@ -5220,7 +5808,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "leg hug",
@@ -5249,13 +5840,17 @@
         "zh": "抬一只脚"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "raised leg",
         "leg raise",
         "leg raised"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5306,6 +5901,9 @@
       "booruType": "general",
       "aliases": [
         "one leg raised"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5322,7 +5920,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "legs over head",
@@ -5338,7 +5939,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "legs up",
@@ -5354,7 +5958,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "lifted by another",
@@ -5367,10 +5974,14 @@
         "zh": "被对方掀起衣物"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "duo-interaction"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "lifted by self",
@@ -5383,10 +5994,14 @@
         "zh": "掀起自己的衣物"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "lifting skirt",
@@ -5415,10 +6030,14 @@
         "zh": "结跏趺坐"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "lying",
@@ -5438,6 +6057,9 @@
         "lying down",
         "laying down",
         "laying"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5537,6 +6159,9 @@
       "aliases": [
         "the finger",
         "flipping off"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5553,7 +6178,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "mimikaki",
@@ -5571,6 +6199,9 @@
       "booruType": "general",
       "aliases": [
         "ear cleaner"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5584,10 +6215,14 @@
         "zh": "金钱手势"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "mouth to mouth feeding",
@@ -5669,6 +6304,9 @@
       "booruType": "general",
       "aliases": [
         "neck bite"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5701,7 +6339,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "necktie grab",
@@ -5714,13 +6355,17 @@
         "zh": "抓着领带"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "necktie pull",
         "tiegrab",
         "tie grab"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5753,7 +6398,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "ohikaenasutte",
@@ -5769,7 +6417,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "ok",
@@ -5798,11 +6449,15 @@
         "zh": "OK手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "ok"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5838,6 +6493,9 @@
       "aliases": [
         "lying on back",
         "supine"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5947,11 +6605,15 @@
         "zh": "侧卧"
       },
       "categoryIds": [
-        "lying-prone"
+        "lying-prone",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "lying on side"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -5973,6 +6635,9 @@
         "prone",
         "on belly",
         "on front"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6002,11 +6667,15 @@
         "zh": "单膝跪"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "kneeling on one leg"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6055,7 +6724,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "open hand",
@@ -6071,7 +6743,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "open legs",
@@ -6103,7 +6778,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "orz",
@@ -6135,7 +6813,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "outstretched arms",
@@ -6151,7 +6832,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "outstretched hand",
@@ -6170,6 +6854,9 @@
       "aliases": [
         "outstretched hands",
         "hands outstretched"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6202,7 +6889,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "own hands clasped",
@@ -6221,6 +6911,9 @@
       "aliases": [
         "clasped hands",
         "hands clasped"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6239,6 +6932,9 @@
       "booruType": "general",
       "aliases": [
         "hands together"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6252,10 +6948,14 @@
         "zh": "以手掩面"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "palm-fist greeting",
@@ -6268,10 +6968,14 @@
         "zh": "拱手礼"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "palm-fist tap",
@@ -6284,10 +6988,14 @@
         "zh": "拳头拍手掌/有主意了"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "paw pose",
@@ -6306,6 +7014,9 @@
       "aliases": [
         "cat pose",
         "dog pose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6335,10 +7046,14 @@
         "zh": "插入手势/做爱示意"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pick me up",
@@ -6370,7 +7085,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pinky out",
@@ -6389,6 +7107,9 @@
       "aliases": [
         "raised pinky",
         "extended pinky"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6405,7 +7126,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pointing",
@@ -6421,7 +7145,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pointing at self",
@@ -6437,7 +7164,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pointing at viewer",
@@ -6455,6 +7185,9 @@
       "booruType": "general",
       "aliases": [
         "pov pointing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6471,7 +7204,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pointing forward",
@@ -6487,7 +7223,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "pointing skyward",
@@ -6538,6 +7277,9 @@
       "aliases": [
         "pointing skyward",
         "pointing to the sky"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6567,10 +7309,14 @@
         "zh": "力量手套"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "presenting armpit",
@@ -6583,10 +7329,14 @@
         "zh": "展示腋窝"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "presenting panties",
@@ -6599,10 +7349,14 @@
         "zh": "展示内裤"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "princess carry",
@@ -6615,11 +7369,15 @@
         "zh": "公主抱"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "props-holding"
       ],
       "booruType": "general",
       "aliases": [
         "bridal carry"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6654,6 +7412,9 @@
       "booruType": "general",
       "aliases": [
         "orz"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6731,11 +7492,15 @@
         "zh": "举起的拳头"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "air punch"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6797,11 +7562,15 @@
         "zh": "伸手触及"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "reach"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6836,6 +7605,9 @@
       "booruType": "general",
       "aliases": [
         "recline"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6888,6 +7660,9 @@
         "eye rub",
         "wiping eyes",
         "rubbing eye"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6922,6 +7697,9 @@
       "booruType": "general",
       "aliases": [
         "run"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6935,10 +7713,14 @@
         "zh": "敬礼"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "saturday night fever",
@@ -6956,6 +7738,9 @@
       "booruType": "general",
       "aliases": [
         "disco pose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -6972,7 +7757,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "seiza",
@@ -6990,6 +7778,9 @@
       "booruType": "general",
       "aliases": [
         "sitting on knees"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7006,7 +7797,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "shadow puppet",
@@ -7022,7 +7816,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "shaka sign",
@@ -7038,7 +7835,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "shared food",
@@ -7051,12 +7851,16 @@
         "zh": "共享食物/用嘴递食物"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "mouth to mouth feeding",
         "mouth-to-mouth feeding"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7070,11 +7874,15 @@
         "zh": "抓着床单"
       },
       "categoryIds": [
-        "props-holding"
+        "props-holding",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "grabbing sheet"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7104,10 +7912,14 @@
         "zh": "爽歪歪 (手势)"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "shoujo kitou-chuu",
@@ -7120,11 +7932,15 @@
         "zh": "少女祈祷中"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "girls are praying"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7141,7 +7957,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "shush",
@@ -7170,12 +7989,16 @@
         "zh": "嘘手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "shh",
         "shush"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7211,6 +8034,9 @@
       "aliases": [
         "sit",
         "sitting down"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7288,11 +8114,15 @@
         "zh": "坐在大腿上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "sitting-poses"
       ],
       "booruType": "general",
       "aliases": [
         "sitting in lap"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7306,11 +8136,15 @@
         "zh": "坐在人身上"
       },
       "categoryIds": [
-        "duo-interaction"
+        "duo-interaction",
+        "sitting-poses"
       ],
       "booruType": "general",
       "aliases": [
         "sitting on"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7324,13 +8158,17 @@
         "zh": "掀起裙子"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "skirtlift",
         "skirt up",
         "lifting skirt"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7344,10 +8182,14 @@
         "zh": "拉开裙子"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "skirt up",
@@ -7392,12 +8234,16 @@
         "zh": "割喉手势"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "gestures-arms"
       ],
       "booruType": "general",
       "aliases": [
         "throat-slitting gesture",
         "cutthroat gesture"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7414,7 +8260,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "smelling flower",
@@ -7430,7 +8279,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "snuggle",
@@ -7464,6 +8316,9 @@
       "booruType": "general",
       "aliases": [
         "splits"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7496,7 +8351,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "spread fingers",
@@ -7512,7 +8370,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "spread leg",
@@ -7547,6 +8408,9 @@
       "aliases": [
         "open legs",
         "spread leg"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7584,6 +8448,9 @@
         "crouched",
         "crouch",
         "crouching"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7600,7 +8467,10 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "standing on hands",
@@ -7652,6 +8522,9 @@
         "on one foot",
         "standing on one foot",
         "on one leg"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7668,7 +8541,10 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "steepled fingers",
@@ -7684,7 +8560,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "straddle",
@@ -7718,6 +8597,9 @@
       "booruType": "general",
       "aliases": [
         "straddle"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7737,6 +8619,9 @@
       "aliases": [
         "roman salute",
         "nazi salute"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7771,6 +8656,9 @@
       "booruType": "general",
       "aliases": [
         "stretch"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7838,6 +8726,9 @@
       "aliases": [
         "chin stroking",
         "stroking chin"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7851,11 +8742,15 @@
         "zh": "三点着地"
       },
       "categoryIds": [
-        "standing-dynamic"
+        "standing-dynamic",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "three-point landing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7885,11 +8780,15 @@
         "zh": "打电话"
       },
       "categoryIds": [
-        "daily-miscellaneous"
+        "daily-miscellaneous",
+        "props-holding"
       ],
       "booruType": "general",
       "aliases": [
         "on phone"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -7922,7 +8821,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "thigh straddle",
@@ -7956,6 +8858,9 @@
       "booruType": "general",
       "aliases": [
         "thigh straddle"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8004,7 +8909,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "thumbs down",
@@ -8017,10 +8925,14 @@
         "zh": "大拇指向下"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "thumbs up",
@@ -8033,10 +8945,14 @@
         "zh": "翘大拇指"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "tie grab",
@@ -8084,7 +9000,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "top-down bottom-up",
@@ -8103,6 +9022,9 @@
       "aliases": [
         "ass-up head-down",
         "face down ass up"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8121,6 +9043,9 @@
       "booruType": "general",
       "aliases": [
         "in the name of the moon"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8153,7 +9078,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "two-finger salute",
@@ -8169,7 +9097,10 @@
         "gestures-arms"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "tying",
@@ -8185,7 +9116,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "tying hair",
@@ -8198,10 +9132,14 @@
         "zh": "扎头发"
       },
       "categoryIds": [
-        "adjusting-dressing"
+        "adjusting-dressing",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "undress",
@@ -8237,6 +9175,9 @@
         "undress",
         "stripping",
         "strip"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8253,7 +9194,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "v",
@@ -8266,12 +9210,16 @@
         "zh": "胜利手势"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
         "v sign",
         "peace sign"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8285,10 +9233,14 @@
         "zh": "在眼边比剪刀手"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "v over mouth",
@@ -8301,10 +9253,14 @@
         "zh": "手指比 V 放在手上"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "v sign",
@@ -8336,7 +9292,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "vulcan salute",
@@ -8349,10 +9308,14 @@
         "zh": "瓦肯举手礼"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "w",
@@ -8365,10 +9328,14 @@
         "zh": "手指比 W"
       },
       "categoryIds": [
-        "gestures-arms"
+        "gestures-arms",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "w legs",
@@ -8448,7 +9415,10 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "wallwalking",
@@ -8464,7 +9434,10 @@
         "standing-dynamic"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "wariza",
@@ -8477,7 +9450,8 @@
         "zh": "割坐"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
       "aliases": [
@@ -8485,6 +9459,9 @@
         "w-sitting",
         "w-legs",
         "w legs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8501,7 +9478,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "wave",
@@ -8535,6 +9515,9 @@
       "booruType": "general",
       "aliases": [
         "wave"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8585,6 +9568,9 @@
       "booruType": "general",
       "aliases": [
         "yawn"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
       ]
     },
     {
@@ -8601,7 +9587,10 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "yokozuwari",
@@ -8614,10 +9603,14 @@
         "zh": "侧身坐"
       },
       "categoryIds": [
-        "sitting-poses"
+        "sitting-poses",
+        "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
     },
     {
       "tag": "zombie pose",
@@ -8633,7 +9626,798 @@
         "daily-miscellaneous"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/actions.yaml"
+      ]
+    },
+    {
+      "tag": "facing away",
+      "label": {
+        "en": "facing away",
+        "zh": "背对"
+      },
+      "meaning": {
+        "en": "facing away",
+        "zh": "背对"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "profile",
+      "label": {
+        "en": "profile",
+        "zh": "侧脸"
+      },
+      "meaning": {
+        "en": "profile",
+        "zh": "侧脸"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "in profile"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "straight-on",
+      "label": {
+        "en": "straight-on",
+        "zh": "正脸"
+      },
+      "meaning": {
+        "en": "straight-on",
+        "zh": "正脸"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "full body",
+      "label": {
+        "en": "full body",
+        "zh": "全身"
+      },
+      "meaning": {
+        "en": "full body",
+        "zh": "全身"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "upper body",
+      "label": {
+        "en": "upper body",
+        "zh": "上半身"
+      },
+      "meaning": {
+        "en": "upper body",
+        "zh": "上半身"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "bust"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "lower body",
+      "label": {
+        "en": "lower body",
+        "zh": "下半身"
+      },
+      "meaning": {
+        "en": "lower body",
+        "zh": "下半身"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "cropped torso upper body",
+      "label": {
+        "en": "cropped torso upper body",
+        "zh": "上半身出框"
+      },
+      "meaning": {
+        "en": "cropped torso upper body",
+        "zh": "上半身出框"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "cropped shoulders",
+      "label": {
+        "en": "cropped shoulders",
+        "zh": "肩膀出框"
+      },
+      "meaning": {
+        "en": "cropped shoulders",
+        "zh": "肩膀出框"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "cropped arms",
+      "label": {
+        "en": "cropped arms",
+        "zh": "手臂出框"
+      },
+      "meaning": {
+        "en": "cropped arms",
+        "zh": "手臂出框"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "cropped legs",
+      "label": {
+        "en": "cropped legs",
+        "zh": "腿部出框"
+      },
+      "meaning": {
+        "en": "cropped legs",
+        "zh": "腿部出框"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "cropped torso",
+      "label": {
+        "en": "cropped torso",
+        "zh": "躯干出框"
+      },
+      "meaning": {
+        "en": "cropped torso",
+        "zh": "躯干出框"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "selfiemirror",
+      "label": {
+        "en": "selfiemirror",
+        "zh": "自拍镜"
+      },
+      "meaning": {
+        "en": "selfiemirror",
+        "zh": "自拍镜"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "facing viewer",
+      "label": {
+        "en": "facing viewer",
+        "zh": "面对观众"
+      },
+      "meaning": {
+        "en": "facing viewer",
+        "zh": "面对观众"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking at another",
+      "label": {
+        "en": "looking at another",
+        "zh": "盯着另一人"
+      },
+      "meaning": {
+        "en": "looking at another",
+        "zh": "盯着另一人"
+      },
+      "categoryIds": [
+        "duo-interaction"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking afar",
+      "label": {
+        "en": "looking afar",
+        "zh": "远眺"
+      },
+      "meaning": {
+        "en": "looking afar",
+        "zh": "远眺"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "staring",
+      "label": {
+        "en": "staring",
+        "zh": "盯着看"
+      },
+      "meaning": {
+        "en": "staring",
+        "zh": "盯着看"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "stare"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "eye contact",
+      "label": {
+        "en": "eye contact",
+        "zh": "对视"
+      },
+      "meaning": {
+        "en": "eye contact",
+        "zh": "对视"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "female pov",
+      "label": {
+        "en": "female pov",
+        "zh": "女性视角"
+      },
+      "meaning": {
+        "en": "female pov",
+        "zh": "女性视角"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking at breasts",
+      "label": {
+        "en": "looking at breasts",
+        "zh": "瞄着乳房"
+      },
+      "meaning": {
+        "en": "looking at breasts",
+        "zh": "瞄着乳房"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "staring at breasts"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking at penis",
+      "label": {
+        "en": "looking at penis",
+        "zh": "看着阴茎"
+      },
+      "meaning": {
+        "en": "looking at penis",
+        "zh": "看着阴茎"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking at phone",
+      "label": {
+        "en": "looking at phone",
+        "zh": "看手机"
+      },
+      "meaning": {
+        "en": "looking at phone",
+        "zh": "看手机"
+      },
+      "categoryIds": [
+        "props-holding"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking at viewer",
+      "label": {
+        "en": "looking at viewer",
+        "zh": "看向阅图者"
+      },
+      "meaning": {
+        "en": "looking at viewer",
+        "zh": "看向阅图者"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking away",
+      "label": {
+        "en": "looking away",
+        "zh": "移开视线"
+      },
+      "meaning": {
+        "en": "looking away",
+        "zh": "移开视线"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "averting eyes",
+        "averted eyes"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking back",
+      "label": {
+        "en": "looking back",
+        "zh": "回眸"
+      },
+      "meaning": {
+        "en": "looking back",
+        "zh": "回眸"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "looking over shoulder",
+        "turning"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking down",
+      "label": {
+        "en": "looking down",
+        "zh": "俯视"
+      },
+      "meaning": {
+        "en": "looking down",
+        "zh": "俯视"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking to the side",
+      "label": {
+        "en": "looking to the side",
+        "zh": "看向侧面"
+      },
+      "meaning": {
+        "en": "looking to the side",
+        "zh": "看向侧面"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "looking aside",
+        "looking to side"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "looking up",
+      "label": {
+        "en": "looking up",
+        "zh": "仰视"
+      },
+      "meaning": {
+        "en": "looking up",
+        "zh": "仰视"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "peeping",
+      "label": {
+        "en": "peeping",
+        "zh": "偷窥(强调视角)"
+      },
+      "meaning": {
+        "en": "peeping",
+        "zh": "偷窥(强调视角)"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "spying"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "pov crotch",
+      "label": {
+        "en": "pov crotch",
+        "zh": "看向裤裆的视角"
+      },
+      "meaning": {
+        "en": "pov crotch",
+        "zh": "看向裤裆的视角"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "pov hands",
+      "label": {
+        "en": "pov hands",
+        "zh": "手伸来方向的视角"
+      },
+      "meaning": {
+        "en": "pov hands",
+        "zh": "手伸来方向的视角"
+      },
+      "categoryIds": [
+        "gestures-arms"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hand pov"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "sideways glance",
+      "label": {
+        "en": "sideways glance",
+        "zh": "轻轻向侧面瞥"
+      },
+      "meaning": {
+        "en": "sideways glance",
+        "zh": "轻轻向侧面瞥"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "side glance"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "taking picture",
+      "label": {
+        "en": "taking picture",
+        "zh": "拍照/自拍"
+      },
+      "meaning": {
+        "en": "taking picture",
+        "zh": "拍照/自拍"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "upshirt",
+      "label": {
+        "en": "upshirt",
+        "zh": "从衬衫下方瞥"
+      },
+      "meaning": {
+        "en": "upshirt",
+        "zh": "从衬衫下方瞥"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "upshorts",
+      "label": {
+        "en": "upshorts",
+        "zh": "从裙底瞥"
+      },
+      "meaning": {
+        "en": "upshorts",
+        "zh": "从裙底瞥"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "upskirt",
+      "label": {
+        "en": "upskirt",
+        "zh": "从人的下方往上瞥"
+      },
+      "meaning": {
+        "en": "upskirt",
+        "zh": "从人的下方往上瞥"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "solo focus",
+      "label": {
+        "en": "solo focus",
+        "zh": "单人焦点"
+      },
+      "meaning": {
+        "en": "solo focus",
+        "zh": "单人焦点"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "back focus",
+      "label": {
+        "en": "back focus",
+        "zh": "背景焦点"
+      },
+      "meaning": {
+        "en": "back focus",
+        "zh": "背景焦点"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "ass focus",
+      "label": {
+        "en": "ass focus",
+        "zh": "臀部焦点"
+      },
+      "meaning": {
+        "en": "ass focus",
+        "zh": "臀部焦点"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pov ass"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "foot focus",
+      "label": {
+        "en": "foot focus",
+        "zh": "足部焦点"
+      },
+      "meaning": {
+        "en": "foot focus",
+        "zh": "足部焦点"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "pov feet",
+        "feet focus"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
+    },
+    {
+      "tag": "portrait",
+      "label": {
+        "en": "portrait",
+        "zh": "半身像"
+      },
+      "meaning": {
+        "en": "portrait",
+        "zh": "半身像"
+      },
+      "categoryIds": [
+        "daily-miscellaneous"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:human/directions.yaml"
+      ]
     }
   ]
 }

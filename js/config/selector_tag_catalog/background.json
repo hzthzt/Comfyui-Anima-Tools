@@ -830,7 +830,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "amber color",
@@ -939,10 +942,14 @@
         "zh": "游乐园"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "analog horror atmosphere",
@@ -1343,7 +1350,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "apartment corridor",
@@ -1439,10 +1449,14 @@
         "zh": "水族馆"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "aquatic light caustics",
@@ -1471,10 +1485,14 @@
         "zh": "游戏厅"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "arcade cabinet",
@@ -2376,7 +2394,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "balconies",
@@ -2457,7 +2478,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "bamboo screen",
@@ -2558,7 +2582,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "bar (place)",
@@ -2850,7 +2877,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "bathtub",
@@ -2868,6 +2898,9 @@
       "booruType": "general",
       "aliases": [
         "bath tub"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
       ]
     },
     {
@@ -2933,7 +2966,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "beach umbrella",
@@ -3111,7 +3147,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "beer bottle",
@@ -3254,10 +3293,14 @@
         "zh": "灯泡串"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "bench",
@@ -4289,11 +4332,15 @@
         "zh": "黑玫瑰"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
       "aliases": [
         "black rose (flower)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -5627,7 +5674,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "blue ribbon",
@@ -5673,10 +5723,14 @@
       },
       "categoryIds": [
         "urban-daily",
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "blue screen of death",
@@ -6387,6 +6441,9 @@
       "booruType": "general",
       "aliases": [
         "bouquets"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -6711,7 +6768,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "bridge made of magpies",
@@ -8081,6 +8141,9 @@
       "booruType": "general",
       "aliases": [
         "coffee shop"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -8512,7 +8575,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "capillary",
@@ -8606,12 +8672,16 @@
         "zh": "旋转木马"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "merry-go-round",
         "merry go round"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -8789,7 +8859,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "cat",
@@ -8955,6 +9028,9 @@
       "booruType": "general",
       "aliases": [
         "caves"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -9554,7 +9630,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "chaos and harmony",
@@ -9962,6 +10041,9 @@
         "sakura blossoms",
         "cherry trees",
         "cherry blossom"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -10505,7 +10587,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "church",
@@ -10518,10 +10603,14 @@
         "zh": "教堂"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "churning water",
@@ -10769,7 +10858,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "city background",
@@ -10999,6 +11091,9 @@
       "booruType": "general",
       "aliases": [
         "class room"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
       ]
     },
     {
@@ -11143,7 +11238,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "cliff edge",
@@ -11272,7 +11370,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "close up shot of glass light",
@@ -11436,6 +11537,9 @@
       "booruType": "general",
       "aliases": [
         "clouds"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
       ]
     },
     {
@@ -11499,10 +11603,14 @@
         "zh": "多云"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "cloudy blue sky",
@@ -13035,7 +13143,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "container",
@@ -13084,7 +13195,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "cooking pot",
@@ -13373,10 +13487,14 @@
         "zh": "宇宙"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "couch",
@@ -14137,6 +14255,9 @@
       "aliases": [
         "zebra crossing",
         "pedestrian crossing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -15014,6 +15135,9 @@
         "daisies",
         "aster (flower)",
         "daisy (flower)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -15755,7 +15879,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "daylight",
@@ -16422,7 +16549,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "desk",
@@ -17085,7 +17215,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "dining table",
@@ -17178,10 +17311,14 @@
         "zh": "土路"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "dirty",
@@ -18545,7 +18682,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "dusk blue hour light from outside",
@@ -20655,7 +20795,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "ferris wheel interior",
@@ -20736,7 +20879,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "field of flowers",
@@ -20920,10 +21066,14 @@
         "zh": "火花"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "fire surrounded",
@@ -22339,6 +22489,9 @@
       "aliases": [
         "floral pattern",
         "flower print"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -22376,6 +22529,9 @@
       "booruType": "general",
       "aliases": [
         "flowers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -22425,7 +22581,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "flower growing on body",
@@ -22470,10 +22629,14 @@
         "zh": "萤火虫"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "flower outside",
@@ -23235,6 +23398,9 @@
       "booruType": "general",
       "aliases": [
         "woods"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -23360,10 +23526,14 @@
         "zh": "喷泉"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "fourth wall",
@@ -23936,7 +24106,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "fungal forest",
@@ -24161,7 +24334,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "garter",
@@ -26930,11 +27106,15 @@
         "zh": "墓地"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "cemetery"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -27334,10 +27514,14 @@
         "zh": "温室"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "grey background",
@@ -27668,6 +27852,9 @@
       "booruType": "general",
       "aliases": [
         "gymnasium"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
       ]
     },
     {
@@ -28937,10 +29124,14 @@
       },
       "categoryIds": [
         "fantasy-sci-fi",
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "hillside",
@@ -29330,7 +29521,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "hospital bed",
@@ -29394,7 +29588,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "house",
@@ -29413,6 +29610,9 @@
       "booruType": "general",
       "aliases": [
         "houses"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -29657,6 +29857,9 @@
       "aliases": [
         "hydrangeas",
         "hortensia (flower)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -30158,7 +30361,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "industrial backdrop",
@@ -30338,6 +30544,9 @@
       "aliases": [
         "nurse office",
         "nurse's office"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
       ]
     },
     {
@@ -31481,7 +31690,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "kitchen knife",
@@ -31690,7 +31902,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "lace border",
@@ -31820,7 +32035,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "lamp",
@@ -32509,7 +32727,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "library background",
@@ -32920,10 +33141,14 @@
         "zh": "灯塔"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "lighting",
@@ -33049,10 +33274,14 @@
         "zh": "百合花"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "lily (flower)",
@@ -33088,6 +33317,9 @@
       "booruType": "general",
       "aliases": [
         "suzuran"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -33108,6 +33340,9 @@
         "water lily",
         "lilypads",
         "lilypad"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -33324,7 +33559,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "livingroom",
@@ -33420,7 +33658,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "locomotive",
@@ -33580,7 +33821,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "lotus flower",
@@ -34924,6 +35168,9 @@
       "booruType": "general",
       "aliases": [
         "marketplace"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -35084,7 +35331,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "meat",
@@ -35422,7 +35672,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "messy sofa",
@@ -36560,7 +36813,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "moon background",
@@ -36627,7 +36883,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "moonlight filtering through trees",
@@ -36693,7 +36952,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "morning sun",
@@ -36940,6 +37202,9 @@
       "booruType": "general",
       "aliases": [
         "mountains"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -37817,7 +38082,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "nature landscape",
@@ -38275,7 +38543,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "night city",
@@ -38342,7 +38613,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "night sky filled with nebulae",
@@ -38403,10 +38677,14 @@
         "zh": "夜总会"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "nightstand",
@@ -38715,7 +38993,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "oblique light",
@@ -38751,6 +39032,9 @@
       "booruType": "general",
       "aliases": [
         "sea"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -38833,7 +39117,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "office chair",
@@ -39186,13 +39473,17 @@
         "zh": "温泉"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "hotspring",
         "hot spring",
         "hot springs"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -40218,10 +40509,14 @@
         "zh": "宝塔"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "paint",
@@ -40625,6 +40920,9 @@
       "booruType": "general",
       "aliases": [
         "chinese lantern"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -40834,7 +41132,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "park bench",
@@ -41157,10 +41458,14 @@
         "zh": "小径"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "patio chair",
@@ -41471,6 +41776,9 @@
       "aliases": [
         "flower petals",
         "petal"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -41501,12 +41809,16 @@
       },
       "categoryIds": [
         "urban-daily",
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
       "aliases": [
         "petals on water",
         "rose petal bath"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -41590,6 +41902,9 @@
       "aliases": [
         "phonebooth",
         "telephone booth"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -41852,10 +42167,14 @@
         "zh": "码头"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "pigment pot",
@@ -42587,6 +42906,9 @@
       "booruType": "general",
       "aliases": [
         "plants"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -42816,6 +43138,9 @@
       "booruType": "general",
       "aliases": [
         "plum blossom"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -42993,7 +43318,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "pool",
@@ -43007,11 +43335,15 @@
       },
       "categoryIds": [
         "nature-outdoors",
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "swimming pool"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -43089,10 +43421,14 @@
         "zh": "泳池边"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "pop style",
@@ -43283,11 +43619,15 @@
         "zh": "盆栽"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
       "aliases": [
         "potted plants"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -43450,11 +43790,15 @@
         "zh": "监狱"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "jail"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -43874,10 +44218,14 @@
         "zh": "清心花"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "quasars",
@@ -44052,12 +44400,16 @@
         "zh": "铁路交叉口"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "railway crossing",
         "train crossing"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -44110,6 +44462,9 @@
       "booruType": "general",
       "aliases": [
         "raining"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
       ]
     },
     {
@@ -44384,10 +44739,14 @@
         "zh": "雨天"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "rainy neon street",
@@ -45132,7 +45491,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "red scaffolding",
@@ -46039,11 +46401,15 @@
         "zh": "稻田"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
       "aliases": [
         "rice field"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
       ]
     },
     {
@@ -46271,7 +46637,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "river seine",
@@ -46337,7 +46706,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "road sign",
@@ -46499,7 +46871,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "rolling hills",
@@ -46565,6 +46940,9 @@
       "booruType": "general",
       "aliases": [
         "roof"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -46683,6 +47061,9 @@
       "booruType": "general",
       "aliases": [
         "roses"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -47072,6 +47453,9 @@
       "booruType": "general",
       "aliases": [
         "ruin"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -47117,10 +47501,14 @@
         "zh": "乡下"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "rural japan",
@@ -47768,7 +48156,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "school bag",
@@ -49554,6 +49945,9 @@
       "booruType": "general",
       "aliases": [
         "shooting stars"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
       ]
     },
     {
@@ -49589,6 +49983,9 @@
       "aliases": [
         "shops",
         "store"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -49640,6 +50037,9 @@
       "aliases": [
         "coast",
         "shoreline"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -49707,6 +50107,9 @@
       "booruType": "general",
       "aliases": [
         "jinja"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
       ]
     },
     {
@@ -49886,7 +50289,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "sign",
@@ -50312,7 +50718,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "sky city",
@@ -50373,11 +50782,15 @@
         "zh": "天际线"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
       "aliases": [
         "city skyline"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
       ]
     },
     {
@@ -50392,10 +50805,14 @@
       },
       "categoryIds": [
         "fantasy-sci-fi",
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "skyscraper rooftop",
@@ -51976,6 +52393,9 @@
       "booruType": "general",
       "aliases": [
         "higanbana"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -52800,7 +53220,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
     },
     {
       "tag": "stained concrete walls covered in glitching holographic graffiti",
@@ -53244,6 +53667,9 @@
       "booruType": "general",
       "aliases": [
         "star sky"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
       ]
     },
     {
@@ -53321,10 +53747,14 @@
         "zh": "星星"
       },
       "categoryIds": [
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "stars bursting out",
@@ -54409,6 +54839,9 @@
       "booruType": "general",
       "aliases": [
         "creek"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -54423,10 +54856,14 @@
       },
       "categoryIds": [
         "urban-daily",
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "street food stall glow",
@@ -55222,7 +55659,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "sun rays",
@@ -55322,6 +55762,9 @@
       "booruType": "general",
       "aliases": [
         "sunflowers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -55551,7 +55994,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
     },
     {
       "tag": "sunset glow",
@@ -55649,7 +56095,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "supine",
@@ -56664,10 +57113,14 @@
         "zh": "寺庙"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "temple gates",
@@ -57567,6 +58020,9 @@
       "booruType": "general",
       "aliases": [
         "restroom stall"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
       ]
     },
     {
@@ -57811,10 +58267,14 @@
       },
       "categoryIds": [
         "fantasy-sci-fi",
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "towering cliff",
@@ -57862,7 +58322,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "toy",
@@ -58782,11 +59245,15 @@
         "zh": "郁金香"
       },
       "categoryIds": [
-        "urban-daily"
+        "urban-daily",
+        "nature-outdoors"
       ],
       "booruType": "general",
       "aliases": [
         "tulips"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
       ]
     },
     {
@@ -60921,7 +61388,10 @@
         "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
     },
     {
       "tag": "warm and cool color contrast",
@@ -61374,7 +61844,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "water",
@@ -61392,7 +61865,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "water bottle",
@@ -61797,7 +62273,10 @@
         "fantasy-sci-fi"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
     },
     {
       "tag": "watermelon",
@@ -62159,6 +62638,9 @@
       "aliases": [
         "swamp",
         "marsh"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
       ]
     },
     {
@@ -62240,7 +62722,10 @@
         "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "wheat fields",
@@ -62841,10 +63326,14 @@
       },
       "categoryIds": [
         "urban-daily",
-        "fantasy-sci-fi"
+        "fantasy-sci-fi",
+        "nature-outdoors"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
     },
     {
       "tag": "white sand",
@@ -63886,10 +64375,14 @@
         "zh": "木桥"
       },
       "categoryIds": [
-        "nature-outdoors"
+        "nature-outdoors",
+        "urban-daily"
       ],
       "booruType": "general",
-      "aliases": []
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
     },
     {
       "tag": "wooden bucket",
@@ -64778,6 +65271,4967 @@
       "booruType": "general",
       "aliases": [
         "zoomlayer"
+      ]
+    },
+    {
+      "tag": "rose petals",
+      "label": {
+        "en": "rose petals",
+        "zh": "玫瑰花瓣"
+      },
+      "meaning": {
+        "en": "rose petals",
+        "zh": "玫瑰花瓣"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flowers meadows",
+      "label": {
+        "en": "flowers meadows",
+        "zh": "花田"
+      },
+      "meaning": {
+        "en": "flowers meadows",
+        "zh": "花田"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "alstroemeria (flower)",
+      "label": {
+        "en": "alstroemeria (flower)",
+        "zh": "百合水仙"
+      },
+      "meaning": {
+        "en": "alstroemeria (flower)",
+        "zh": "百合水仙"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "amaryllis (flower)",
+      "label": {
+        "en": "amaryllis (flower)",
+        "zh": "孤挺花"
+      },
+      "meaning": {
+        "en": "amaryllis (flower)",
+        "zh": "孤挺花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "anemone",
+      "label": {
+        "en": "anemone",
+        "zh": "银莲花"
+      },
+      "meaning": {
+        "en": "anemone",
+        "zh": "银莲花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "angel's trumpet",
+      "label": {
+        "en": "angel's trumpet",
+        "zh": "木曼陀罗"
+      },
+      "meaning": {
+        "en": "angel's trumpet",
+        "zh": "木曼陀罗"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "anthurium",
+      "label": {
+        "en": "anthurium",
+        "zh": "花烛"
+      },
+      "meaning": {
+        "en": "anthurium",
+        "zh": "花烛"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "azalea",
+      "label": {
+        "en": "azalea",
+        "zh": "杜鹃花"
+      },
+      "meaning": {
+        "en": "azalea",
+        "zh": "杜鹃花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "baby's-breath",
+      "label": {
+        "en": "baby's-breath",
+        "zh": "石头花"
+      },
+      "meaning": {
+        "en": "baby's-breath",
+        "zh": "石头花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "begonia",
+      "label": {
+        "en": "begonia",
+        "zh": "秋海棠"
+      },
+      "meaning": {
+        "en": "begonia",
+        "zh": "秋海棠"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "chinese bellflower",
+      "label": {
+        "en": "chinese bellflower",
+        "zh": "桔梗"
+      },
+      "meaning": {
+        "en": "chinese bellflower",
+        "zh": "桔梗"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "bird of paradise flower",
+      "label": {
+        "en": "bird of paradise flower",
+        "zh": "鹤望兰"
+      },
+      "meaning": {
+        "en": "bird of paradise flower",
+        "zh": "鹤望兰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "strelitzia (flower)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "black-eyed susan",
+      "label": {
+        "en": "black-eyed susan",
+        "zh": "黑心金光菊"
+      },
+      "meaning": {
+        "en": "black-eyed susan",
+        "zh": "黑心金光菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "bleeding heart",
+      "label": {
+        "en": "bleeding heart",
+        "zh": "荷包牡丹"
+      },
+      "meaning": {
+        "en": "bleeding heart",
+        "zh": "荷包牡丹"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "blueberry blossoms",
+      "label": {
+        "en": "blueberry blossoms",
+        "zh": "蓝莓花"
+      },
+      "meaning": {
+        "en": "blueberry blossoms",
+        "zh": "蓝莓花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "bougainvillea",
+      "label": {
+        "en": "bougainvillea",
+        "zh": "九重葛"
+      },
+      "meaning": {
+        "en": "bougainvillea",
+        "zh": "九重葛"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "calla lily",
+      "label": {
+        "en": "calla lily",
+        "zh": "马蹄莲"
+      },
+      "meaning": {
+        "en": "calla lily",
+        "zh": "马蹄莲"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "camellia",
+      "label": {
+        "en": "camellia",
+        "zh": "山茶花"
+      },
+      "meaning": {
+        "en": "camellia",
+        "zh": "山茶花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "camellia (flower)"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "carnation",
+      "label": {
+        "en": "carnation",
+        "zh": "康乃馨"
+      },
+      "meaning": {
+        "en": "carnation",
+        "zh": "康乃馨"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "red carnation",
+      "label": {
+        "en": "red carnation",
+        "zh": "红色康乃馨"
+      },
+      "meaning": {
+        "en": "red carnation",
+        "zh": "红色康乃馨"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "chamomile",
+      "label": {
+        "en": "chamomile",
+        "zh": "西洋甘菊"
+      },
+      "meaning": {
+        "en": "chamomile",
+        "zh": "西洋甘菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "chinese lantern (plant)",
+      "label": {
+        "en": "chinese lantern (plant)",
+        "zh": "灯笼草"
+      },
+      "meaning": {
+        "en": "chinese lantern (plant)",
+        "zh": "灯笼草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "clivia",
+      "label": {
+        "en": "clivia",
+        "zh": "君子兰"
+      },
+      "meaning": {
+        "en": "clivia",
+        "zh": "君子兰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "clematis",
+      "label": {
+        "en": "clematis",
+        "zh": "铁线莲"
+      },
+      "meaning": {
+        "en": "clematis",
+        "zh": "铁线莲"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "columbine",
+      "label": {
+        "en": "columbine",
+        "zh": "耬斗菜"
+      },
+      "meaning": {
+        "en": "columbine",
+        "zh": "耬斗菜"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "cockscomb (flower)",
+      "label": {
+        "en": "cockscomb (flower)",
+        "zh": "青葙"
+      },
+      "meaning": {
+        "en": "cockscomb (flower)",
+        "zh": "青葙"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "cornflower",
+      "label": {
+        "en": "cornflower",
+        "zh": "矢车菊"
+      },
+      "meaning": {
+        "en": "cornflower",
+        "zh": "矢车菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "crocus",
+      "label": {
+        "en": "crocus",
+        "zh": "番紅花"
+      },
+      "meaning": {
+        "en": "crocus",
+        "zh": "番紅花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "cymbidium",
+      "label": {
+        "en": "cymbidium",
+        "zh": "蕙兰属"
+      },
+      "meaning": {
+        "en": "cymbidium",
+        "zh": "蕙兰属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "daffodil",
+      "label": {
+        "en": "daffodil",
+        "zh": "水仙"
+      },
+      "meaning": {
+        "en": "daffodil",
+        "zh": "水仙"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "daffodils"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dahlia",
+      "label": {
+        "en": "dahlia",
+        "zh": "大丽花"
+      },
+      "meaning": {
+        "en": "dahlia",
+        "zh": "大丽花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dimorphotheca",
+      "label": {
+        "en": "dimorphotheca",
+        "zh": "异果菊"
+      },
+      "meaning": {
+        "en": "dimorphotheca",
+        "zh": "异果菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dandelion",
+      "label": {
+        "en": "dandelion",
+        "zh": "蒲公英"
+      },
+      "meaning": {
+        "en": "dandelion",
+        "zh": "蒲公英"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "dandelions"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dianthus",
+      "label": {
+        "en": "dianthus",
+        "zh": "石竹"
+      },
+      "meaning": {
+        "en": "dianthus",
+        "zh": "石竹"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dipsacaceae",
+      "label": {
+        "en": "dipsacaceae",
+        "zh": "川续断科"
+      },
+      "meaning": {
+        "en": "dipsacaceae",
+        "zh": "川续断科"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "dusty miller",
+      "label": {
+        "en": "dusty miller",
+        "zh": "银叶菊"
+      },
+      "meaning": {
+        "en": "dusty miller",
+        "zh": "银叶菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "edelweiss",
+      "label": {
+        "en": "edelweiss",
+        "zh": "高山火绒草"
+      },
+      "meaning": {
+        "en": "edelweiss",
+        "zh": "高山火绒草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "epiphyllum",
+      "label": {
+        "en": "epiphyllum",
+        "zh": "昙花"
+      },
+      "meaning": {
+        "en": "epiphyllum",
+        "zh": "昙花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "eustoma",
+      "label": {
+        "en": "eustoma",
+        "zh": "洋桔梗"
+      },
+      "meaning": {
+        "en": "eustoma",
+        "zh": "洋桔梗"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flax",
+      "label": {
+        "en": "flax",
+        "zh": "亚麻"
+      },
+      "meaning": {
+        "en": "flax",
+        "zh": "亚麻"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "forget-me-not",
+      "label": {
+        "en": "forget-me-not",
+        "zh": "勿忘草"
+      },
+      "meaning": {
+        "en": "forget-me-not",
+        "zh": "勿忘草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "forsythia",
+      "label": {
+        "en": "forsythia",
+        "zh": "连翘"
+      },
+      "meaning": {
+        "en": "forsythia",
+        "zh": "连翘"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "four o'clock (flower)",
+      "label": {
+        "en": "four o'clock (flower)",
+        "zh": "紫茉莉"
+      },
+      "meaning": {
+        "en": "four o'clock (flower)",
+        "zh": "紫茉莉"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "foxglove",
+      "label": {
+        "en": "foxglove",
+        "zh": "毛地黄"
+      },
+      "meaning": {
+        "en": "foxglove",
+        "zh": "毛地黄"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "freesia",
+      "label": {
+        "en": "freesia",
+        "zh": "小苍兰"
+      },
+      "meaning": {
+        "en": "freesia",
+        "zh": "小苍兰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "fuchsia",
+      "label": {
+        "en": "fuchsia",
+        "zh": "倒挂金钟"
+      },
+      "meaning": {
+        "en": "fuchsia",
+        "zh": "倒挂金钟"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hawthorn (plant)",
+      "label": {
+        "en": "hawthorn (plant)",
+        "zh": "山楂"
+      },
+      "meaning": {
+        "en": "hawthorn (plant)",
+        "zh": "山楂"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hellebore",
+      "label": {
+        "en": "hellebore",
+        "zh": "铁筷子/嚏根草"
+      },
+      "meaning": {
+        "en": "hellebore",
+        "zh": "铁筷子/嚏根草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hibiscus",
+      "label": {
+        "en": "hibiscus",
+        "zh": "扶桑花"
+      },
+      "meaning": {
+        "en": "hibiscus",
+        "zh": "扶桑花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "heliconia",
+      "label": {
+        "en": "heliconia",
+        "zh": "蝎尾蕉"
+      },
+      "meaning": {
+        "en": "heliconia",
+        "zh": "蝎尾蕉"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hollyhock",
+      "label": {
+        "en": "hollyhock",
+        "zh": "蜀葵属"
+      },
+      "meaning": {
+        "en": "hollyhock",
+        "zh": "蜀葵属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hyacinth",
+      "label": {
+        "en": "hyacinth",
+        "zh": "风信子"
+      },
+      "meaning": {
+        "en": "hyacinth",
+        "zh": "风信子"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "genista (flower)",
+      "label": {
+        "en": "genista (flower)",
+        "zh": "染料木属"
+      },
+      "meaning": {
+        "en": "genista (flower)",
+        "zh": "染料木属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gentiana (flower)",
+      "label": {
+        "en": "gentiana (flower)",
+        "zh": "龙胆属"
+      },
+      "meaning": {
+        "en": "gentiana (flower)",
+        "zh": "龙胆属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "geranium",
+      "label": {
+        "en": "geranium",
+        "zh": "天竺葵属"
+      },
+      "meaning": {
+        "en": "geranium",
+        "zh": "天竺葵属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gerbera",
+      "label": {
+        "en": "gerbera",
+        "zh": "大丁草属"
+      },
+      "meaning": {
+        "en": "gerbera",
+        "zh": "大丁草属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gladiolus",
+      "label": {
+        "en": "gladiolus",
+        "zh": "唐菖蒲属"
+      },
+      "meaning": {
+        "en": "gladiolus",
+        "zh": "唐菖蒲属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gloriosa (flower)",
+      "label": {
+        "en": "gloriosa (flower)",
+        "zh": "嘉兰"
+      },
+      "meaning": {
+        "en": "gloriosa (flower)",
+        "zh": "嘉兰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "grass lily",
+      "label": {
+        "en": "grass lily",
+        "zh": "伞花虎眼万年青"
+      },
+      "meaning": {
+        "en": "grass lily",
+        "zh": "伞花虎眼万年青"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "great burnet",
+      "label": {
+        "en": "great burnet",
+        "zh": "地榆"
+      },
+      "meaning": {
+        "en": "great burnet",
+        "zh": "地榆"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "jasmine",
+      "label": {
+        "en": "jasmine",
+        "zh": "素馨属/素英属/茉莉花"
+      },
+      "meaning": {
+        "en": "jasmine",
+        "zh": "素馨属/素英属/茉莉花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "iris",
+      "label": {
+        "en": "iris",
+        "zh": "鸢尾属"
+      },
+      "meaning": {
+        "en": "iris",
+        "zh": "鸢尾属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "kalanchoe",
+      "label": {
+        "en": "kalanchoe",
+        "zh": "长寿花/家乐花/矮生伽蓝菜/圣诞伽蓝菜/寿星花/布洛斯费尔德高凉菜"
+      },
+      "meaning": {
+        "en": "kalanchoe",
+        "zh": "长寿花/家乐花/矮生伽蓝菜/圣诞伽蓝菜/寿星花/布洛斯费尔德高凉菜"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "kerria japonica",
+      "label": {
+        "en": "kerria japonica",
+        "zh": "棣棠花/山吹"
+      },
+      "meaning": {
+        "en": "kerria japonica",
+        "zh": "棣棠花/山吹"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "lantana (flower)",
+      "label": {
+        "en": "lantana (flower)",
+        "zh": "马缨丹属"
+      },
+      "meaning": {
+        "en": "lantana (flower)",
+        "zh": "马缨丹属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "larkspur",
+      "label": {
+        "en": "larkspur",
+        "zh": "翠雀属"
+      },
+      "meaning": {
+        "en": "larkspur",
+        "zh": "翠雀属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "lavender",
+      "label": {
+        "en": "lavender",
+        "zh": "薰衣草"
+      },
+      "meaning": {
+        "en": "lavender",
+        "zh": "薰衣草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "lilac",
+      "label": {
+        "en": "lilac",
+        "zh": "丁香属"
+      },
+      "meaning": {
+        "en": "lilac",
+        "zh": "丁香属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "tiger lily",
+      "label": {
+        "en": "tiger lily",
+        "zh": "卷丹"
+      },
+      "meaning": {
+        "en": "tiger lily",
+        "zh": "卷丹"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "lisianthus (flower)",
+      "label": {
+        "en": "lisianthus (flower)",
+        "zh": "洋桔梗属"
+      },
+      "meaning": {
+        "en": "lisianthus (flower)",
+        "zh": "洋桔梗属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "magnolia",
+      "label": {
+        "en": "magnolia",
+        "zh": "荷花玉兰/洋玉兰/广玉兰"
+      },
+      "meaning": {
+        "en": "magnolia",
+        "zh": "荷花玉兰/洋玉兰/广玉兰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "marigold",
+      "label": {
+        "en": "marigold",
+        "zh": "万寿菊属"
+      },
+      "meaning": {
+        "en": "marigold",
+        "zh": "万寿菊属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "marsh marigold",
+      "label": {
+        "en": "marsh marigold",
+        "zh": "驴蹄草/驴蹄菜/沼泽金盏花/立金花"
+      },
+      "meaning": {
+        "en": "marsh marigold",
+        "zh": "驴蹄草/驴蹄菜/沼泽金盏花/立金花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "mimosa (flower)",
+      "label": {
+        "en": "mimosa (flower)",
+        "zh": "含羞草"
+      },
+      "meaning": {
+        "en": "mimosa (flower)",
+        "zh": "含羞草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "moonflower",
+      "label": {
+        "en": "moonflower",
+        "zh": "月光花/嫦娥奔月/天茄儿/天茄子/夜颜/夕颜"
+      },
+      "meaning": {
+        "en": "moonflower",
+        "zh": "月光花/嫦娥奔月/天茄儿/天茄子/夜颜/夕颜"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gourd blossom",
+      "label": {
+        "en": "gourd blossom",
+        "zh": "葫芦花 (辐射76)"
+      },
+      "meaning": {
+        "en": "gourd blossom",
+        "zh": "葫芦花 (辐射76)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "nemophila",
+      "label": {
+        "en": "nemophila",
+        "zh": "粉蝶花属/喜林草属/幌菊属"
+      },
+      "meaning": {
+        "en": "nemophila",
+        "zh": "粉蝶花属/喜林草属/幌菊属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "nigella",
+      "label": {
+        "en": "nigella",
+        "zh": "黑种草"
+      },
+      "meaning": {
+        "en": "nigella",
+        "zh": "黑种草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "oleander",
+      "label": {
+        "en": "oleander",
+        "zh": "夹竹桃"
+      },
+      "meaning": {
+        "en": "oleander",
+        "zh": "夹竹桃"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "orange blossoms",
+      "label": {
+        "en": "orange blossoms",
+        "zh": "橙花"
+      },
+      "meaning": {
+        "en": "orange blossoms",
+        "zh": "橙花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "orchid",
+      "label": {
+        "en": "orchid",
+        "zh": "兰科/兰花/胡姬花"
+      },
+      "meaning": {
+        "en": "orchid",
+        "zh": "兰科/兰花/胡姬花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "oncidium",
+      "label": {
+        "en": "oncidium",
+        "zh": "文心兰属"
+      },
+      "meaning": {
+        "en": "oncidium",
+        "zh": "文心兰属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "osmanthus",
+      "label": {
+        "en": "osmanthus",
+        "zh": "木樨属/木犀属/桂花属/桂花树属"
+      },
+      "meaning": {
+        "en": "osmanthus",
+        "zh": "木樨属/木犀属/桂花属/桂花树属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gold osmanthus",
+      "label": {
+        "en": "gold osmanthus",
+        "zh": "金木犀"
+      },
+      "meaning": {
+        "en": "gold osmanthus",
+        "zh": "金木犀"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "pansy",
+      "label": {
+        "en": "pansy",
+        "zh": "三色紫罗兰/三色堇"
+      },
+      "meaning": {
+        "en": "pansy",
+        "zh": "三色紫罗兰/三色堇"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "passion flower",
+      "label": {
+        "en": "passion flower",
+        "zh": "西番莲属"
+      },
+      "meaning": {
+        "en": "passion flower",
+        "zh": "西番莲属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "paulownia",
+      "label": {
+        "en": "paulownia",
+        "zh": "毛泡桐"
+      },
+      "meaning": {
+        "en": "paulownia",
+        "zh": "毛泡桐"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "peach blossom",
+      "label": {
+        "en": "peach blossom",
+        "zh": "桃花"
+      },
+      "meaning": {
+        "en": "peach blossom",
+        "zh": "桃花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "pentas (flower)",
+      "label": {
+        "en": "pentas (flower)",
+        "zh": "五星花属/繁星花属"
+      },
+      "meaning": {
+        "en": "pentas (flower)",
+        "zh": "五星花属/繁星花属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "peony",
+      "label": {
+        "en": "peony",
+        "zh": "芍药属"
+      },
+      "meaning": {
+        "en": "peony",
+        "zh": "芍药属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "perennial",
+      "label": {
+        "en": "perennial",
+        "zh": "多年生植物"
+      },
+      "meaning": {
+        "en": "perennial",
+        "zh": "多年生植物"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "periwinkle",
+      "label": {
+        "en": "periwinkle",
+        "zh": "蔓长春花属"
+      },
+      "meaning": {
+        "en": "periwinkle",
+        "zh": "蔓长春花属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "petunia (flower)",
+      "label": {
+        "en": "petunia (flower)",
+        "zh": "碧冬茄属"
+      },
+      "meaning": {
+        "en": "petunia (flower)",
+        "zh": "碧冬茄属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "pieris japonica",
+      "label": {
+        "en": "pieris japonica",
+        "zh": "马醉木"
+      },
+      "meaning": {
+        "en": "pieris japonica",
+        "zh": "马醉木"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "clover",
+      "label": {
+        "en": "clover",
+        "zh": "三叶草"
+      },
+      "meaning": {
+        "en": "clover",
+        "zh": "三叶草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "plumeria",
+      "label": {
+        "en": "plumeria",
+        "zh": "缅栀花"
+      },
+      "meaning": {
+        "en": "plumeria",
+        "zh": "缅栀花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "poinsettia",
+      "label": {
+        "en": "poinsettia",
+        "zh": "一品红/圣诞红/圣诞花"
+      },
+      "meaning": {
+        "en": "poinsettia",
+        "zh": "一品红/圣诞红/圣诞花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "pomegranate flower",
+      "label": {
+        "en": "pomegranate flower",
+        "zh": "石榴花"
+      },
+      "meaning": {
+        "en": "pomegranate flower",
+        "zh": "石榴花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "poppy",
+      "label": {
+        "en": "poppy",
+        "zh": "罂粟"
+      },
+      "meaning": {
+        "en": "poppy",
+        "zh": "罂粟"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "portulaca",
+      "label": {
+        "en": "portulaca",
+        "zh": "马齿苋"
+      },
+      "meaning": {
+        "en": "portulaca",
+        "zh": "马齿苋"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "potato flower",
+      "label": {
+        "en": "potato flower",
+        "zh": "土豆花"
+      },
+      "meaning": {
+        "en": "potato flower",
+        "zh": "土豆花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "potentilla",
+      "label": {
+        "en": "potentilla",
+        "zh": "委陵菜属"
+      },
+      "meaning": {
+        "en": "potentilla",
+        "zh": "委陵菜属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "rafflesia",
+      "label": {
+        "en": "rafflesia",
+        "zh": "大花草属"
+      },
+      "meaning": {
+        "en": "rafflesia",
+        "zh": "大花草属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "ranunculus",
+      "label": {
+        "en": "ranunculus",
+        "zh": "毛茛属"
+      },
+      "meaning": {
+        "en": "ranunculus",
+        "zh": "毛茛属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "buttercup",
+      "label": {
+        "en": "buttercup",
+        "zh": "花毛茛"
+      },
+      "meaning": {
+        "en": "buttercup",
+        "zh": "花毛茛"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "rapeseed blossoms",
+      "label": {
+        "en": "rapeseed blossoms",
+        "zh": "欧洲油菜花"
+      },
+      "meaning": {
+        "en": "rapeseed blossoms",
+        "zh": "欧洲油菜花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "red ginger",
+      "label": {
+        "en": "red ginger",
+        "zh": "红姜花"
+      },
+      "meaning": {
+        "en": "red ginger",
+        "zh": "红姜花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "reimu",
+      "label": {
+        "en": "reimu",
+        "zh": "灵梦花"
+      },
+      "meaning": {
+        "en": "reimu",
+        "zh": "灵梦花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "rhododendron",
+      "label": {
+        "en": "rhododendron",
+        "zh": "杜鹃花属/映山红/满山红/山石榴"
+      },
+      "meaning": {
+        "en": "rhododendron",
+        "zh": "杜鹃花属/映山红/满山红/山石榴"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "brown rose",
+      "label": {
+        "en": "brown rose",
+        "zh": "棕色玫瑰"
+      },
+      "meaning": {
+        "en": "brown rose",
+        "zh": "棕色玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "green rose",
+      "label": {
+        "en": "green rose",
+        "zh": "绿色玫瑰"
+      },
+      "meaning": {
+        "en": "green rose",
+        "zh": "绿色玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "grey rose",
+      "label": {
+        "en": "grey rose",
+        "zh": "灰色玫瑰"
+      },
+      "meaning": {
+        "en": "grey rose",
+        "zh": "灰色玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "gray rose"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "orange rose",
+      "label": {
+        "en": "orange rose",
+        "zh": "橙玫瑰"
+      },
+      "meaning": {
+        "en": "orange rose",
+        "zh": "橙玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "pink rose",
+      "label": {
+        "en": "pink rose",
+        "zh": "粉红玫瑰"
+      },
+      "meaning": {
+        "en": "pink rose",
+        "zh": "粉红玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "purple rose",
+      "label": {
+        "en": "purple rose",
+        "zh": "紫玫瑰"
+      },
+      "meaning": {
+        "en": "purple rose",
+        "zh": "紫玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "yellow rose",
+      "label": {
+        "en": "yellow rose",
+        "zh": "黄玫瑰"
+      },
+      "meaning": {
+        "en": "yellow rose",
+        "zh": "黄玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "multicolored rose",
+      "label": {
+        "en": "multicolored rose",
+        "zh": "多色玫瑰"
+      },
+      "meaning": {
+        "en": "multicolored rose",
+        "zh": "多色玫瑰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "rudbeckia",
+      "label": {
+        "en": "rudbeckia",
+        "zh": "金光菊"
+      },
+      "meaning": {
+        "en": "rudbeckia",
+        "zh": "金光菊"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "snapdragon",
+      "label": {
+        "en": "snapdragon",
+        "zh": "金鱼草"
+      },
+      "meaning": {
+        "en": "snapdragon",
+        "zh": "金鱼草"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "snowdrop",
+      "label": {
+        "en": "snowdrop",
+        "zh": "雪花莲属"
+      },
+      "meaning": {
+        "en": "snowdrop",
+        "zh": "雪花莲属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "spathiphyllum",
+      "label": {
+        "en": "spathiphyllum",
+        "zh": "白鹤芋属"
+      },
+      "meaning": {
+        "en": "spathiphyllum",
+        "zh": "白鹤芋属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "strawberry blossoms",
+      "label": {
+        "en": "strawberry blossoms",
+        "zh": "草莓花"
+      },
+      "meaning": {
+        "en": "strawberry blossoms",
+        "zh": "草莓花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "strawberry blossom"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "thistle",
+      "label": {
+        "en": "thistle",
+        "zh": "蓟属"
+      },
+      "meaning": {
+        "en": "thistle",
+        "zh": "蓟属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "trumpet creeper",
+      "label": {
+        "en": "trumpet creeper",
+        "zh": "厚萼凌霄"
+      },
+      "meaning": {
+        "en": "trumpet creeper",
+        "zh": "厚萼凌霄"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "water lily flower",
+      "label": {
+        "en": "water lily flower",
+        "zh": "睡莲科"
+      },
+      "meaning": {
+        "en": "water lily flower",
+        "zh": "睡莲科"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "wax flower",
+      "label": {
+        "en": "wax flower",
+        "zh": "风蜡花属"
+      },
+      "meaning": {
+        "en": "wax flower",
+        "zh": "风蜡花属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "wisteria",
+      "label": {
+        "en": "wisteria",
+        "zh": "紫藤"
+      },
+      "meaning": {
+        "en": "wisteria",
+        "zh": "紫藤"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "wolfsbane",
+      "label": {
+        "en": "wolfsbane",
+        "zh": "乌头属"
+      },
+      "meaning": {
+        "en": "wolfsbane",
+        "zh": "乌头属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "violet",
+      "label": {
+        "en": "violet",
+        "zh": "堇菜属"
+      },
+      "meaning": {
+        "en": "violet",
+        "zh": "堇菜属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "zinnia",
+      "label": {
+        "en": "zinnia",
+        "zh": "百日菊属"
+      },
+      "meaning": {
+        "en": "zinnia",
+        "zh": "百日菊属"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "black lotus",
+      "label": {
+        "en": "black lotus",
+        "zh": "黑莲花"
+      },
+      "meaning": {
+        "en": "black lotus",
+        "zh": "黑莲花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "glaze lily",
+      "label": {
+        "en": "glaze lily",
+        "zh": "琉璃百合 (原神)"
+      },
+      "meaning": {
+        "en": "glaze lily",
+        "zh": "琉璃百合 (原神)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gracidea",
+      "label": {
+        "en": "gracidea",
+        "zh": "葛拉西蒂亚花 (宝可梦)"
+      },
+      "meaning": {
+        "en": "gracidea",
+        "zh": "葛拉西蒂亚花 (宝可梦)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "ice flower",
+      "label": {
+        "en": "ice flower",
+        "zh": "冰雾花 (原神)"
+      },
+      "meaning": {
+        "en": "ice flower",
+        "zh": "冰雾花 (原神)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "lunar tear",
+      "label": {
+        "en": "lunar tear",
+        "zh": "月之泪 (尼尔)"
+      },
+      "meaning": {
+        "en": "lunar tear",
+        "zh": "月之泪 (尼尔)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "silent princess",
+      "label": {
+        "en": "silent princess",
+        "zh": "静谧公主 (塞尔达)"
+      },
+      "meaning": {
+        "en": "silent princess",
+        "zh": "静谧公主 (塞尔达)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "silk flower",
+      "label": {
+        "en": "silk flower",
+        "zh": "霓裳花 (原神)"
+      },
+      "meaning": {
+        "en": "silk flower",
+        "zh": "霓裳花 (原神)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "sweet flower",
+      "label": {
+        "en": "sweet flower",
+        "zh": "甜甜花 (原神)"
+      },
+      "meaning": {
+        "en": "sweet flower",
+        "zh": "甜甜花 (原神)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "coughing flowers",
+      "label": {
+        "en": "coughing flowers",
+        "zh": "咳出花"
+      },
+      "meaning": {
+        "en": "coughing flowers",
+        "zh": "咳出花"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hanahaki disease",
+        "vomiting flowers"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flower (symbol)",
+      "label": {
+        "en": "flower (symbol)",
+        "zh": "花(符号)"
+      },
+      "meaning": {
+        "en": "flower (symbol)",
+        "zh": "花(符号)"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flower bed",
+      "label": {
+        "en": "flower bed",
+        "zh": "花床"
+      },
+      "meaning": {
+        "en": "flower bed",
+        "zh": "花床"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flower bracelet",
+      "label": {
+        "en": "flower bracelet",
+        "zh": "花手镯"
+      },
+      "meaning": {
+        "en": "flower bracelet",
+        "zh": "花手镯"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "flower trim",
+      "label": {
+        "en": "flower trim",
+        "zh": "花饰"
+      },
+      "meaning": {
+        "en": "flower trim",
+        "zh": "花饰"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "hanafuda",
+      "label": {
+        "en": "hanafuda",
+        "zh": "花札"
+      },
+      "meaning": {
+        "en": "hanafuda",
+        "zh": "花札"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "gardening",
+      "label": {
+        "en": "gardening",
+        "zh": "园艺"
+      },
+      "meaning": {
+        "en": "gardening",
+        "zh": "园艺"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "on flower",
+      "label": {
+        "en": "on flower",
+        "zh": "在花上"
+      },
+      "meaning": {
+        "en": "on flower",
+        "zh": "在花上"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "wreath",
+      "label": {
+        "en": "wreath",
+        "zh": "花环"
+      },
+      "meaning": {
+        "en": "wreath",
+        "zh": "花环"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/flowers.yaml"
+      ]
+    },
+    {
+      "tag": "sunburst background",
+      "label": {
+        "en": "sunburst background",
+        "zh": "旭日纹背景"
+      },
+      "meaning": {
+        "en": "sunburst background",
+        "zh": "旭日纹背景"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "beautiful detailed sky",
+      "label": {
+        "en": "beautiful detailed sky",
+        "zh": "漂亮的天空"
+      },
+      "meaning": {
+        "en": "beautiful detailed sky",
+        "zh": "漂亮的天空"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "in spring",
+      "label": {
+        "en": "in spring",
+        "zh": "春"
+      },
+      "meaning": {
+        "en": "in spring",
+        "zh": "春"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "in summer",
+      "label": {
+        "en": "in summer",
+        "zh": "夏"
+      },
+      "meaning": {
+        "en": "in summer",
+        "zh": "夏"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "in autumn",
+      "label": {
+        "en": "in autumn",
+        "zh": "秋"
+      },
+      "meaning": {
+        "en": "in autumn",
+        "zh": "秋"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "in winter",
+      "label": {
+        "en": "in winter",
+        "zh": "冬"
+      },
+      "meaning": {
+        "en": "in winter",
+        "zh": "冬"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "in the rain",
+      "label": {
+        "en": "in the rain",
+        "zh": "雨中"
+      },
+      "meaning": {
+        "en": "in the rain",
+        "zh": "雨中"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/sky.yaml"
+      ]
+    },
+    {
+      "tag": "glacier",
+      "label": {
+        "en": "glacier",
+        "zh": "冰川"
+      },
+      "meaning": {
+        "en": "glacier",
+        "zh": "冰川"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "hill",
+      "label": {
+        "en": "hill",
+        "zh": "山丘"
+      },
+      "meaning": {
+        "en": "hill",
+        "zh": "山丘"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "hills"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "island",
+      "label": {
+        "en": "island",
+        "zh": "岛"
+      },
+      "meaning": {
+        "en": "island",
+        "zh": "岛"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "floating island",
+      "label": {
+        "en": "floating island",
+        "zh": "浮岛"
+      },
+      "meaning": {
+        "en": "floating island",
+        "zh": "浮岛"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "jungle",
+      "label": {
+        "en": "jungle",
+        "zh": "丛林"
+      },
+      "meaning": {
+        "en": "jungle",
+        "zh": "丛林"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "volcano",
+      "label": {
+        "en": "volcano",
+        "zh": "火山"
+      },
+      "meaning": {
+        "en": "volcano",
+        "zh": "火山"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "playground",
+      "label": {
+        "en": "playground",
+        "zh": "游乐场"
+      },
+      "meaning": {
+        "en": "playground",
+        "zh": "游乐场"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "parking lot",
+      "label": {
+        "en": "parking lot",
+        "zh": "停车场"
+      },
+      "meaning": {
+        "en": "parking lot",
+        "zh": "停车场"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "plain",
+      "label": {
+        "en": "plain",
+        "zh": "平原"
+      },
+      "meaning": {
+        "en": "plain",
+        "zh": "平原"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "savannah",
+      "label": {
+        "en": "savannah",
+        "zh": "稀树草原"
+      },
+      "meaning": {
+        "en": "savannah",
+        "zh": "稀树草原"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "geyser",
+      "label": {
+        "en": "geyser",
+        "zh": "喷泉"
+      },
+      "meaning": {
+        "en": "geyser",
+        "zh": "喷泉"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "ocean bottom",
+      "label": {
+        "en": "ocean bottom",
+        "zh": "海底"
+      },
+      "meaning": {
+        "en": "ocean bottom",
+        "zh": "海底"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:natural/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "airport",
+      "label": {
+        "en": "airport",
+        "zh": "飞机场"
+      },
+      "meaning": {
+        "en": "airport",
+        "zh": "飞机场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "control tower",
+      "label": {
+        "en": "control tower",
+        "zh": "控制塔"
+      },
+      "meaning": {
+        "en": "control tower",
+        "zh": "控制塔"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "hangar",
+      "label": {
+        "en": "hangar",
+        "zh": "机库"
+      },
+      "meaning": {
+        "en": "hangar",
+        "zh": "机库"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "izakaya",
+      "label": {
+        "en": "izakaya",
+        "zh": "居酒屋"
+      },
+      "meaning": {
+        "en": "izakaya",
+        "zh": "居酒屋"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "tavern",
+      "label": {
+        "en": "tavern",
+        "zh": "酒馆"
+      },
+      "meaning": {
+        "en": "tavern",
+        "zh": "酒馆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "barn",
+      "label": {
+        "en": "barn",
+        "zh": "谷仓"
+      },
+      "meaning": {
+        "en": "barn",
+        "zh": "谷仓"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "bunker",
+      "label": {
+        "en": "bunker",
+        "zh": "掩体/地堡"
+      },
+      "meaning": {
+        "en": "bunker",
+        "zh": "掩体/地堡"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "bus stop",
+      "label": {
+        "en": "bus stop",
+        "zh": "公交车站"
+      },
+      "meaning": {
+        "en": "bus stop",
+        "zh": "公交车站"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "busstop"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "bowling alley",
+      "label": {
+        "en": "bowling alley",
+        "zh": "保龄球馆"
+      },
+      "meaning": {
+        "en": "bowling alley",
+        "zh": "保龄球馆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "casino",
+      "label": {
+        "en": "casino",
+        "zh": "赌场"
+      },
+      "meaning": {
+        "en": "casino",
+        "zh": "赌场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "floating castle",
+      "label": {
+        "en": "floating castle",
+        "zh": "浮动城堡"
+      },
+      "meaning": {
+        "en": "floating castle",
+        "zh": "浮动城堡"
+      },
+      "categoryIds": [
+        "fantasy-sci-fi"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "convention",
+      "label": {
+        "en": "convention",
+        "zh": "售卖现场"
+      },
+      "meaning": {
+        "en": "convention",
+        "zh": "售卖现场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "garage",
+      "label": {
+        "en": "garage",
+        "zh": "车库"
+      },
+      "meaning": {
+        "en": "garage",
+        "zh": "车库"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "gas station",
+      "label": {
+        "en": "gas station",
+        "zh": "加油站"
+      },
+      "meaning": {
+        "en": "gas station",
+        "zh": "加油站"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "gazebo",
+      "label": {
+        "en": "gazebo",
+        "zh": "凉亭"
+      },
+      "meaning": {
+        "en": "gazebo",
+        "zh": "凉亭"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "hotel",
+      "label": {
+        "en": "hotel",
+        "zh": "酒店"
+      },
+      "meaning": {
+        "en": "hotel",
+        "zh": "酒店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "hut",
+      "label": {
+        "en": "hut",
+        "zh": "小屋"
+      },
+      "meaning": {
+        "en": "hut",
+        "zh": "小屋"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "factory",
+      "label": {
+        "en": "factory",
+        "zh": "工厂"
+      },
+      "meaning": {
+        "en": "factory",
+        "zh": "工厂"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "refinery",
+      "label": {
+        "en": "refinery",
+        "zh": "精炼厂"
+      },
+      "meaning": {
+        "en": "refinery",
+        "zh": "精炼厂"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "powerplant",
+      "label": {
+        "en": "powerplant",
+        "zh": "发电厂"
+      },
+      "meaning": {
+        "en": "powerplant",
+        "zh": "发电厂"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "nuclear powerplant",
+      "label": {
+        "en": "nuclear powerplant",
+        "zh": "核电厂"
+      },
+      "meaning": {
+        "en": "nuclear powerplant",
+        "zh": "核电厂"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "cooling tower",
+      "label": {
+        "en": "cooling tower",
+        "zh": "冷却塔"
+      },
+      "meaning": {
+        "en": "cooling tower",
+        "zh": "冷却塔"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "mall",
+      "label": {
+        "en": "mall",
+        "zh": "购物中心"
+      },
+      "meaning": {
+        "en": "mall",
+        "zh": "购物中心"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "megastructure",
+      "label": {
+        "en": "megastructure",
+        "zh": "巨型结构"
+      },
+      "meaning": {
+        "en": "megastructure",
+        "zh": "巨型结构"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "space elevator",
+      "label": {
+        "en": "space elevator",
+        "zh": "轨道电梯"
+      },
+      "meaning": {
+        "en": "space elevator",
+        "zh": "轨道电梯"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "orbital elevator"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "military base",
+      "label": {
+        "en": "military base",
+        "zh": "军事基地"
+      },
+      "meaning": {
+        "en": "military base",
+        "zh": "军事基地"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "mosque",
+      "label": {
+        "en": "mosque",
+        "zh": "清真寺"
+      },
+      "meaning": {
+        "en": "mosque",
+        "zh": "清真寺"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "museum",
+      "label": {
+        "en": "museum",
+        "zh": "博物馆"
+      },
+      "meaning": {
+        "en": "museum",
+        "zh": "博物馆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "art gallery",
+      "label": {
+        "en": "art gallery",
+        "zh": "美术馆"
+      },
+      "meaning": {
+        "en": "art gallery",
+        "zh": "美术馆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "observatory",
+      "label": {
+        "en": "observatory",
+        "zh": "天文台"
+      },
+      "meaning": {
+        "en": "observatory",
+        "zh": "天文台"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "planetarium",
+      "label": {
+        "en": "planetarium",
+        "zh": "天文馆"
+      },
+      "meaning": {
+        "en": "planetarium",
+        "zh": "天文馆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "restaurant",
+      "label": {
+        "en": "restaurant",
+        "zh": "餐厅"
+      },
+      "meaning": {
+        "en": "restaurant",
+        "zh": "餐厅"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "skating rink",
+      "label": {
+        "en": "skating rink",
+        "zh": "滑冰场"
+      },
+      "meaning": {
+        "en": "skating rink",
+        "zh": "滑冰场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "shack",
+      "label": {
+        "en": "shack",
+        "zh": "小屋"
+      },
+      "meaning": {
+        "en": "shack",
+        "zh": "小屋"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "bookstore",
+      "label": {
+        "en": "bookstore",
+        "zh": "书店"
+      },
+      "meaning": {
+        "en": "bookstore",
+        "zh": "书店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "flower shop",
+      "label": {
+        "en": "flower shop",
+        "zh": "花店"
+      },
+      "meaning": {
+        "en": "flower shop",
+        "zh": "花店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "pharmacy",
+      "label": {
+        "en": "pharmacy",
+        "zh": "药店"
+      },
+      "meaning": {
+        "en": "pharmacy",
+        "zh": "药店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "salon",
+      "label": {
+        "en": "salon",
+        "zh": "沙龙"
+      },
+      "meaning": {
+        "en": "salon",
+        "zh": "沙龙"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "sex shop",
+      "label": {
+        "en": "sex shop",
+        "zh": "性用品店"
+      },
+      "meaning": {
+        "en": "sex shop",
+        "zh": "性用品店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "weapon shop",
+      "label": {
+        "en": "weapon shop",
+        "zh": "武器商店"
+      },
+      "meaning": {
+        "en": "weapon shop",
+        "zh": "武器商店"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "stadium",
+      "label": {
+        "en": "stadium",
+        "zh": "体育场"
+      },
+      "meaning": {
+        "en": "stadium",
+        "zh": "体育场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "arena",
+      "label": {
+        "en": "arena",
+        "zh": "竞技场"
+      },
+      "meaning": {
+        "en": "arena",
+        "zh": "竞技场"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "stilt house",
+      "label": {
+        "en": "stilt house",
+        "zh": "高跷屋"
+      },
+      "meaning": {
+        "en": "stilt house",
+        "zh": "高跷屋"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "theater",
+      "label": {
+        "en": "theater",
+        "zh": "剧院"
+      },
+      "meaning": {
+        "en": "theater",
+        "zh": "剧院"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "amphitheater",
+      "label": {
+        "en": "amphitheater",
+        "zh": "音乐剧院"
+      },
+      "meaning": {
+        "en": "amphitheater",
+        "zh": "音乐剧院"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "movie theater",
+      "label": {
+        "en": "movie theater",
+        "zh": "电影院"
+      },
+      "meaning": {
+        "en": "movie theater",
+        "zh": "电影院"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "cinema"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "bell tower",
+      "label": {
+        "en": "bell tower",
+        "zh": "钟楼"
+      },
+      "meaning": {
+        "en": "bell tower",
+        "zh": "钟楼"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "guard tower",
+      "label": {
+        "en": "guard tower",
+        "zh": "守卫塔"
+      },
+      "meaning": {
+        "en": "guard tower",
+        "zh": "守卫塔"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "minaret",
+      "label": {
+        "en": "minaret",
+        "zh": "宣礼塔"
+      },
+      "meaning": {
+        "en": "minaret",
+        "zh": "宣礼塔"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "train station",
+      "label": {
+        "en": "train station",
+        "zh": "火车站"
+      },
+      "meaning": {
+        "en": "train station",
+        "zh": "火车站"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "treehouse",
+      "label": {
+        "en": "treehouse",
+        "zh": "树屋"
+      },
+      "meaning": {
+        "en": "treehouse",
+        "zh": "树屋"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "windmill",
+      "label": {
+        "en": "windmill",
+        "zh": "风车"
+      },
+      "meaning": {
+        "en": "windmill",
+        "zh": "风车"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "windmills"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/buildings.yaml"
+      ]
+    },
+    {
+      "tag": "shower",
+      "label": {
+        "en": "shower",
+        "zh": "淋浴"
+      },
+      "meaning": {
+        "en": "shower",
+        "zh": "淋浴"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "otaku room",
+      "label": {
+        "en": "otaku room",
+        "zh": "御宅房"
+      },
+      "meaning": {
+        "en": "otaku room",
+        "zh": "御宅房"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "otakuroom"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "cafeteria",
+      "label": {
+        "en": "cafeteria",
+        "zh": "自助餐厅"
+      },
+      "meaning": {
+        "en": "cafeteria",
+        "zh": "自助餐厅"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "clubroom",
+      "label": {
+        "en": "clubroom",
+        "zh": "社团活动室"
+      },
+      "meaning": {
+        "en": "clubroom",
+        "zh": "社团活动室"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "conservatory",
+      "label": {
+        "en": "conservatory",
+        "zh": "温室"
+      },
+      "meaning": {
+        "en": "conservatory",
+        "zh": "温室"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "courtroom",
+      "label": {
+        "en": "courtroom",
+        "zh": "法庭"
+      },
+      "meaning": {
+        "en": "courtroom",
+        "zh": "法庭"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "dressing room",
+      "label": {
+        "en": "dressing room",
+        "zh": "更衣室"
+      },
+      "meaning": {
+        "en": "dressing room",
+        "zh": "更衣室"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "dungeon",
+      "label": {
+        "en": "dungeon",
+        "zh": "地牢"
+      },
+      "meaning": {
+        "en": "dungeon",
+        "zh": "地牢"
+      },
+      "categoryIds": [
+        "fantasy-sci-fi"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "prison cell",
+      "label": {
+        "en": "prison cell",
+        "zh": "牢房"
+      },
+      "meaning": {
+        "en": "prison cell",
+        "zh": "牢房"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "jail cell"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "fitting room",
+      "label": {
+        "en": "fitting room",
+        "zh": "试衣间"
+      },
+      "meaning": {
+        "en": "fitting room",
+        "zh": "试衣间"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "gym storeroom",
+      "label": {
+        "en": "gym storeroom",
+        "zh": "体育器材库房"
+      },
+      "meaning": {
+        "en": "gym storeroom",
+        "zh": "体育器材库房"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "gym storage room",
+        "gym equipment shed"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "cubicle",
+      "label": {
+        "en": "cubicle",
+        "zh": "隔间"
+      },
+      "meaning": {
+        "en": "cubicle",
+        "zh": "隔间"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "staff room",
+      "label": {
+        "en": "staff room",
+        "zh": "职员休息室"
+      },
+      "meaning": {
+        "en": "staff room",
+        "zh": "职员休息室"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "storage room",
+      "label": {
+        "en": "storage room",
+        "zh": "储存室"
+      },
+      "meaning": {
+        "en": "storage room",
+        "zh": "储存室"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "armory",
+      "label": {
+        "en": "armory",
+        "zh": "军械库"
+      },
+      "meaning": {
+        "en": "armory",
+        "zh": "军械库"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "closet",
+      "label": {
+        "en": "closet",
+        "zh": "壁橱"
+      },
+      "meaning": {
+        "en": "closet",
+        "zh": "壁橱"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "workshop",
+      "label": {
+        "en": "workshop",
+        "zh": "创意工坊"
+      },
+      "meaning": {
+        "en": "workshop",
+        "zh": "创意工坊"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/indoors.yaml"
+      ]
+    },
+    {
+      "tag": "airfield",
+      "label": {
+        "en": "airfield",
+        "zh": "飞机场"
+      },
+      "meaning": {
+        "en": "airfield",
+        "zh": "飞机场"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "runway",
+      "label": {
+        "en": "runway",
+        "zh": "跑道"
+      },
+      "meaning": {
+        "en": "runway",
+        "zh": "跑道"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "aqueduct",
+      "label": {
+        "en": "aqueduct",
+        "zh": "渡槽"
+      },
+      "meaning": {
+        "en": "aqueduct",
+        "zh": "渡槽"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "rope bridge",
+      "label": {
+        "en": "rope bridge",
+        "zh": "绳桥"
+      },
+      "meaning": {
+        "en": "rope bridge",
+        "zh": "绳桥"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "canal",
+      "label": {
+        "en": "canal",
+        "zh": "运河"
+      },
+      "meaning": {
+        "en": "canal",
+        "zh": "运河"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "floating city",
+      "label": {
+        "en": "floating city",
+        "zh": "浮动城堡"
+      },
+      "meaning": {
+        "en": "floating city",
+        "zh": "浮动城堡"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "village",
+      "label": {
+        "en": "village",
+        "zh": "村庄"
+      },
+      "meaning": {
+        "en": "village",
+        "zh": "村庄"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "dam",
+      "label": {
+        "en": "dam",
+        "zh": "大坝"
+      },
+      "meaning": {
+        "en": "dam",
+        "zh": "大坝"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "dock",
+      "label": {
+        "en": "dock",
+        "zh": "码头"
+      },
+      "meaning": {
+        "en": "dock",
+        "zh": "码头"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "drydock",
+      "label": {
+        "en": "drydock",
+        "zh": "旱坞"
+      },
+      "meaning": {
+        "en": "drydock",
+        "zh": "旱坞"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "shipyard",
+      "label": {
+        "en": "shipyard",
+        "zh": "船厂"
+      },
+      "meaning": {
+        "en": "shipyard",
+        "zh": "船厂"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "jetty",
+      "label": {
+        "en": "jetty",
+        "zh": "码头/栈桥"
+      },
+      "meaning": {
+        "en": "jetty",
+        "zh": "码头/栈桥"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "harbor",
+      "label": {
+        "en": "harbor",
+        "zh": "港口"
+      },
+      "meaning": {
+        "en": "harbor",
+        "zh": "港口"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "harbour"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "market stall",
+      "label": {
+        "en": "market stall",
+        "zh": "市场摊位"
+      },
+      "meaning": {
+        "en": "market stall",
+        "zh": "市场摊位"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "waterpark",
+      "label": {
+        "en": "waterpark",
+        "zh": "水上乐园"
+      },
+      "meaning": {
+        "en": "waterpark",
+        "zh": "水上乐园"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "railroad tracks",
+      "label": {
+        "en": "railroad tracks",
+        "zh": "铁轨"
+      },
+      "meaning": {
+        "en": "railroad tracks",
+        "zh": "铁轨"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "train tracks",
+        "railway tracks",
+        "railroad"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "stone walkway",
+      "label": {
+        "en": "stone walkway",
+        "zh": "石制人行道"
+      },
+      "meaning": {
+        "en": "stone walkway",
+        "zh": "石制人行道"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "soccer field",
+      "label": {
+        "en": "soccer field",
+        "zh": "足球场"
+      },
+      "meaning": {
+        "en": "soccer field",
+        "zh": "足球场"
+      },
+      "categoryIds": [
+        "nature-outdoors"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "running track",
+      "label": {
+        "en": "running track",
+        "zh": "运行轨道"
+      },
+      "meaning": {
+        "en": "running track",
+        "zh": "运行轨道"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "trench",
+      "label": {
+        "en": "trench",
+        "zh": "战壕"
+      },
+      "meaning": {
+        "en": "trench",
+        "zh": "战壕"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [
+        "trenches"
+      ],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "tunnel",
+      "label": {
+        "en": "tunnel",
+        "zh": "隧道"
+      },
+      "meaning": {
+        "en": "tunnel",
+        "zh": "隧道"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "well",
+      "label": {
+        "en": "well",
+        "zh": "出色地"
+      },
+      "meaning": {
+        "en": "well",
+        "zh": "出色地"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "zoo",
+      "label": {
+        "en": "zoo",
+        "zh": "动物园"
+      },
+      "meaning": {
+        "en": "zoo",
+        "zh": "动物园"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/outdoors.yaml"
+      ]
+    },
+    {
+      "tag": "fences",
+      "label": {
+        "en": "fences",
+        "zh": "栏杆"
+      },
+      "meaning": {
+        "en": "fences",
+        "zh": "栏杆"
+      },
+      "categoryIds": [
+        "urban-daily"
+      ],
+      "booruType": "general",
+      "aliases": [],
+      "sources": [
+        "danbooru-diffusion-prompt-builder:humanities/cities.yaml"
       ]
     }
   ]
