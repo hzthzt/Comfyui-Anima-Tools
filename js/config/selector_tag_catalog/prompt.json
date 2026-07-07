@@ -1167,7 +1167,8 @@
         "zh": "关键部位在画面外"
       },
       "categoryIds": [
-        "censorship"
+        "censorship",
+        "composition"
       ],
       "booruType": "general",
       "aliases": [],
@@ -2560,7 +2561,7 @@
         "zh": "部分水下拍摄"
       },
       "categoryIds": [
-        "composition"
+        "perspective"
       ],
       "booruType": "general",
       "aliases": [],
@@ -2870,7 +2871,8 @@
         "zh": "相机取景框"
       },
       "categoryIds": [
-        "composition"
+        "composition",
+        "perspective"
       ],
       "booruType": "general",
       "aliases": [
@@ -10694,7 +10696,8 @@
         "zh": "角色的多表情展示"
       },
       "categoryIds": [
-        "style"
+        "style",
+        "composition"
       ],
       "booruType": "general",
       "aliases": [],
