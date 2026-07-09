@@ -1622,18 +1622,25 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         memoBtn.style.display = (item.isCustom || isFavorite) ? "flex" : "none";
         memoBtn.onclick = (event) => {
             event.stopPropagation();
+            if (item.isCustom) {
+                openCustomItemCreateModal(async (titleValue, contentValue) => {
+                    item.nickname = titleValue;
+                    item.customContent = contentValue;
+                    if (!(await saveFavorites())) return false;
+                    renderSidebar();
+                    triggerFilter();
+                    return true;
+                }, item.customContent || "", item.nickname || item.name || "", t("Save"));
+                return;
+            }
             openTextInputModal(t("Edit Nickname / Note"), t("Enter a nickname or descriptive note..."), nickname, async value => {
-                if (item.isCustom) {
-                    item.nickname = value;
+                let fav = favoriteMap.get(String(item.id));
+                if (!fav) {
+                    fav = { id: item.id, name: item.name, nickname: value, groupIds: ["default"], isCustom: false };
+                    favoriteMap.set(String(item.id), fav);
+                    favoriteSet.add(String(item.id));
                 } else {
-                    let fav = favoriteMap.get(String(item.id));
-                    if (!fav) {
-                        fav = { id: item.id, name: item.name, nickname: value, groupIds: ["default"], isCustom: false };
-                        favoriteMap.set(String(item.id), fav);
-                        favoriteSet.add(String(item.id));
-                    } else {
-                        fav.nickname = value;
-                    }
+                    fav.nickname = value;
                 }
                 await saveFavorites();
                 renderSidebar();
@@ -1837,13 +1844,14 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         };
     }
 
-    function openCustomItemCreateModal(callback, defaultContent = "") {
+    function openCustomItemCreateModal(callback, defaultContent = "", defaultTitle = "", confirmText = t("Create")) {
         const dialog = createModalShell(460);
         const content = dialog.firstChild;
-        const titleNode = createEl("div", null, t("Create Custom Item"));
+        const titleNode = createEl("div", null, defaultTitle ? t("Edit Custom Item") : t("Create Custom Item"));
         titleNode.style.cssText = "font-size:16px;font-weight:800;color:#fff;";
         const titleInput = createEl("input", "anima-background-input");
         titleInput.type = "text";
+        titleInput.value = defaultTitle || "";
         titleInput.placeholder = t("Item Title (e.g. My Style A)...");
         const contentInput = createEl("textarea", "anima-background-input");
         contentInput.placeholder = t("Enter prompt tags (e.g. masterpiece, highly detailed)...");
@@ -1858,7 +1866,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
                 return false;
             }
             return await callback(titleValue, contentValue);
-        }, t("Create"));
+        }, confirmText);
         content.appendChild(titleNode);
         content.appendChild(titleInput);
         content.appendChild(contentInput);

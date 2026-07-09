@@ -139,6 +139,30 @@ test("selectors initialize tag favorites with the unified label key", async () =
   }
 });
 
+test("card selector custom item edit updates title and prompt content", async () => {
+  const selectorFiles = [
+    "js/anima_artist_selector.js",
+    "js/anima_character_selector.js",
+    "js/anima_pose_selector.js",
+    "js/anima_background_selector.js",
+    "js/anima_clothing_selector.js",
+  ];
+
+  for (const file of selectorFiles) {
+    const source = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
+    assert.match(
+      source,
+      /if\s*\(\s*item\.isCustom\s*\)\s*\{[\s\S]*?openCustomItemCreateModal\s*\([\s\S]*?item\.nickname\s*=[\s\S]*?item\.customContent\s*=/,
+      `${file} should edit both the custom title and prompt content`,
+    );
+    assert.match(
+      source,
+      /openCustomItemCreateModal\s*\([\s\S]*?item\.customContent\s*\|\|\s*""/,
+      `${file} should prefill the custom edit modal with the existing prompt content`,
+    );
+  }
+});
+
 test("prompt tag selector uses the shared tag library without image card data", async () => {
   const source = await readFile(new URL("../js/anima_prompt_tag_selector.js", import.meta.url), "utf8");
 

@@ -219,7 +219,12 @@ function formatCharacterDisplayName(item) {
         .join(" ");
 }
 
-export function createCharacterCustomItemModal({ defaultContent = "", onSubmit } = {}) {
+export function createCharacterCustomItemModal({
+    defaultContent = "",
+    defaultTitle = "",
+    confirmText = t("Create"),
+    onSubmit,
+} = {}) {
     const dialog = document.createElement("div");
     dialog.style.cssText = `
         position: fixed;
@@ -251,11 +256,12 @@ export function createCharacterCustomItemModal({ defaultContent = "", onSubmit }
     `;
 
     const title = document.createElement("div");
-    title.innerText = t("Create Custom Item");
+    title.innerText = defaultTitle ? t("Edit Custom Item") : t("Create Custom Item");
     title.style.cssText = "font-size: 16px; font-weight: 700; color: #ffffff;";
 
     const titleInput = document.createElement("input");
     titleInput.type = "text";
+    titleInput.value = defaultTitle || "";
     titleInput.placeholder = t("Item Title (e.g. My Style A)...");
     titleInput.style.cssText = `
         background: #2c2c2e;
@@ -292,7 +298,7 @@ export function createCharacterCustomItemModal({ defaultContent = "", onSubmit }
     cancel.onclick = () => dialog.remove();
 
     const confirm = document.createElement("button");
-    confirm.innerText = t("Create");
+    confirm.innerText = confirmText;
     confirm.style.cssText = "background: #db2777; border: none; color: #ffffff; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;";
     confirm.onclick = async () => {
         const titleVal = titleInput.value.trim();
@@ -720,9 +726,11 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         input.focus();
     }
 
-    function openCustomItemCreateModal(callback, defaultContent = "") {
+    function openCustomItemCreateModal(callback, defaultContent = "", defaultTitle = "", confirmText = t("Create")) {
         const dialog = createCharacterCustomItemModal({
             defaultContent,
+            defaultTitle,
+            confirmText,
             onSubmit: callback,
         });
         document.body.appendChild(dialog);
@@ -2848,18 +2856,25 @@ async function openCharacterSelectorModal(node, tagsWidget) {
             };
             memoBtn.onclick = (e) => {
                 e.stopPropagation();
+                if (item.isCustom) {
+                    openCustomItemCreateModal(async (title, content) => {
+                        item.nickname = title;
+                        item.customContent = content;
+                        if (!(await saveFavorites())) return false;
+                        renderSidebar();
+                        triggerFilter();
+                        return true;
+                    }, item.customContent || "", item.nickname || item.name || "", t("Save"));
+                    return;
+                }
                 openMemoEditModal(item, (newMemo) => {
-                    if (item.isCustom) {
-                        item.nickname = newMemo;
+                    let fav = favoriteMap.get(item.name);
+                    if (!fav) {
+                        fav = { name: item.name, nickname: newMemo, groupIds: ["default"], isCustom: false };
+                        favoriteMap.set(item.name, fav);
+                        favoriteSet.add(item.name);
                     } else {
-                        let fav = favoriteMap.get(item.name);
-                        if (!fav) {
-                            fav = { name: item.name, nickname: newMemo, groupIds: ["default"], isCustom: false };
-                            favoriteMap.set(item.name, fav);
-                            favoriteSet.add(item.name);
-                        } else {
-                            fav.nickname = newMemo;
-                        }
+                        fav.nickname = newMemo;
                     }
                     saveFavorites();
                     renderSidebar();
