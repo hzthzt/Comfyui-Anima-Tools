@@ -1444,6 +1444,7 @@ import time
 import urllib.parse
 import urllib.request
 from io import BytesIO
+from .favorites_store import FavoritesRevisionConflict, FavoritesSectionStore
 try:
     from PIL import Image
 except ImportError:
@@ -1791,7 +1792,7 @@ def _install_anima_prompt_composer_queue_resolver():
 
 _install_anima_prompt_composer_queue_resolver()
 
-def get_favorites_path():
+def get_favorites_directory():
     try:
         user_dir = folder_paths.get_user_directory()
     except AttributeError:
@@ -1799,128 +1800,20 @@ def get_favorites_path():
         user_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "user"))
         if not os.path.exists(user_dir):
             user_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "user"))
-    
-    os.makedirs(user_dir, exist_ok=True)
-    return os.path.join(user_dir, "anima_tools_favorites.json")
+    return os.path.join(user_dir, "anima_tools", "favorites")
 
-FAVORITE_SECTIONS = ["artist", "character", "lora", "clothing", "background", "pose", "prompt"]
 
-def get_default_tag_groups():
-    return [{"id": "default", "name": "默认 Tag", "isSystem": True}]
+favorites_store = FavoritesSectionStore(get_favorites_directory())
 
-def get_default_favorites_data():
-    return {
-        "artist": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "character": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "lora": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "clothing": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "background": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "pose": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        },
-        "prompt": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": get_default_tag_groups(),
-            "tagItems": []
-        }
-    }
 
-def normalize_favorites_data(data):
-    default_data = get_default_favorites_data()
-    if not isinstance(data, dict):
-        data = {}
-    normalized = {}
-    for key in FAVORITE_SECTIONS:
-        section = data.get(key)
-        if not isinstance(section, dict):
-            section = {}
-        groups = section.get("groups")
-        if not isinstance(groups, list):
-            groups = default_data[key]["groups"].copy()
-        elif not any(isinstance(g, dict) and g.get("id") == "default" for g in groups):
-            groups = [default_data[key]["groups"][0], *groups]
-        items = section.get("items")
-        if not isinstance(items, list):
-            items = []
-        tag_groups = section.get("tagGroups")
-        if not isinstance(tag_groups, list):
-            tag_groups = default_data[key]["tagGroups"].copy()
-        elif not any(isinstance(g, dict) and g.get("id") == "default" for g in tag_groups):
-            tag_groups = [default_data[key]["tagGroups"][0], *tag_groups]
-        tag_items = section.get("tagItems")
-        if not isinstance(tag_items, list):
-            tag_items = []
-        normalized[key] = {
-            "groups": groups,
-            "items": items,
-            "tagGroups": tag_groups,
-            "tagItems": tag_items,
-        }
-    return normalized
-
-def load_favorites_data():
-    path = get_favorites_path()
-    if not os.path.exists(path):
-        return get_default_favorites_data()
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            content = f.read().strip()
-        if not content:
-            return get_default_favorites_data()
-        return normalize_favorites_data(json.loads(content))
-    except Exception as e:
-        print(f"[Anima Tools] Error reading favorites: {e}")
-        return get_default_favorites_data()
-
-def merge_favorites_data(existing, incoming):
-    merged = normalize_favorites_data(existing)
-    if not isinstance(incoming, dict):
-        raise ValueError("Favorites payload must be a JSON object")
-    for key in FAVORITE_SECTIONS:
-        if key in incoming:
-            section = incoming.get(key)
-            if not isinstance(section, dict):
-                raise ValueError(f"Favorites section '{key}' must be an object")
-            normalized_section = normalize_favorites_data({key: section})[key]
-            for field in ("groups", "items", "tagGroups", "tagItems"):
-                if field in section:
-                    merged[key][field] = normalized_section[field]
-    return merged
-
-@PromptServer.instance.routes.get("/anima-tools/favorites")
+@PromptServer.instance.routes.get("/anima-tools/favorites/{section}")
 async def get_favorites_api(request):
-    return web.json_response(load_favorites_data())
+    try:
+        return web.json_response(favorites_store.load(request.match_info["section"]))
+    except ValueError as error:
+        return web.json_response({"success": False, "error": str(error)}, status=400)
 
-@PromptServer.instance.routes.post("/anima-tools/favorites")
+@PromptServer.instance.routes.post("/anima-tools/favorites/{section}")
 async def save_favorites_api(request):
     try:
         raw_body = await request.text()
@@ -1933,23 +1826,24 @@ async def save_favorites_api(request):
                 {"success": False, "error": f"Invalid favorites payload: {decode_error}"},
                 status=400,
             )
-        path = get_favorites_path()
-        data = merge_favorites_data(load_favorites_data(), body)
-        if os.path.exists(path):
-            backup_path = path + ".bak"
-            try:
-                with open(path, "r", encoding="utf-8") as src, open(backup_path, "w", encoding="utf-8") as dst:
-                    dst.write(src.read())
-            except Exception as backup_error:
-                print(f"[Anima Tools] Warning: failed to backup favorites: {backup_error}")
-        
-        # 原子写入：先写入 .tmp 文件再覆盖
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-            
-        os.replace(tmp_path, path)
-        return web.json_response({"success": True, "path": path})
+        if not isinstance(body, dict):
+            return web.json_response({"success": False, "error": "Favorites payload must be a JSON object"}, status=400)
+        if "revision" not in body or "favorites" not in body:
+            return web.json_response({"success": False, "error": "Favorites payload requires revision and favorites"}, status=400)
+        try:
+            saved = favorites_store.save(
+                request.match_info["section"],
+                body["revision"],
+                body["favorites"],
+            )
+        except FavoritesRevisionConflict as conflict:
+            return web.json_response(
+                {"success": False, "error": "revision_conflict", "current": conflict.current},
+                status=409,
+            )
+        except ValueError as error:
+            return web.json_response({"success": False, "error": str(error)}, status=400)
+        return web.json_response(saved)
     except Exception as e:
         print(f"[Anima Tools] Error saving favorites: {e}")
         return web.json_response({"success": False, "error": str(e)}, status=500)

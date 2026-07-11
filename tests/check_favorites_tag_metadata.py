@@ -1,27 +1,37 @@
+import asyncio
 import importlib.util
+import json
 import sys
+import tempfile
 import types
 from pathlib import Path
 
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
 def load_nodes_module():
-    root = Path(__file__).resolve().parents[1]
     package = types.ModuleType("Comfyui_Anima_Tools")
-    package.__path__ = [str(root)]
+    package.__path__ = [str(ROOT)]
     sys.modules["Comfyui_Anima_Tools"] = package
 
-    server_module = types.ModuleType("server")
-
     class Routes:
-        def get(self, _path):
+        def __init__(self):
+            self.paths = []
+
+        def get(self, path):
+            self.paths.append(("GET", path))
             return lambda func: func
 
-        def post(self, _path):
+        def post(self, path):
+            self.paths.append(("POST", path))
             return lambda func: func
 
+    routes = Routes()
+    server_module = types.ModuleType("server")
     server_module.PromptServer = types.SimpleNamespace(
         instance=types.SimpleNamespace(
-            routes=Routes(),
+            routes=routes,
             add_on_prompt_handler=lambda _handler: None,
         )
     )
@@ -36,86 +46,85 @@ def load_nodes_module():
     sys.modules["aiohttp"] = aiohttp_module
 
     folder_paths_module = types.ModuleType("folder_paths")
-    folder_paths_module.get_user_directory = lambda: str(root / ".tmp-user")
+    folder_paths_module.get_user_directory = lambda: str(ROOT / ".tmp-user")
     sys.modules["folder_paths"] = folder_paths_module
 
-    spec = importlib.util.spec_from_file_location("Comfyui_Anima_Tools.nodes", root / "nodes.py")
+    spec = importlib.util.spec_from_file_location("Comfyui_Anima_Tools.nodes", ROOT / "nodes.py")
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
-    return module
+    return module, routes
+
+
+class Request:
+    def __init__(self, section, payload=None):
+        self.match_info = {"section": section}
+        self._payload = payload
+
+    async def text(self):
+        return self._payload or ""
 
 
 def main():
-    nodes = load_nodes_module()
+    nodes, routes = load_nodes_module()
+    assert ("GET", "/anima-tools/favorites/{section}") in routes.paths
+    assert ("POST", "/anima-tools/favorites/{section}") in routes.paths
 
-    normalized = nodes.normalize_favorites_data({
-        "background": {
-            "groups": [{"id": "default", "name": "Cards", "isSystem": True}],
-            "items": [{"id": "bg_1", "groupIds": ["default"]}],
-        }
-    })
-    assert normalized["background"]["groups"][0]["name"] == "Cards"
-    assert normalized["background"]["items"] == [{"id": "bg_1", "groupIds": ["default"]}]
-    assert normalized["background"]["tagGroups"] == [
-        {"id": "default", "name": "默认 Tag", "isSystem": True}
-    ]
-    assert normalized["background"]["tagItems"] == []
-
-    merged = nodes.merge_favorites_data({}, {
-        "pose": {
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        store = nodes.FavoritesSectionStore(temporary_directory)
+        favorites = {
             "tagGroups": [
                 {"id": "default", "name": "默认 Tag", "isSystem": True},
                 {"id": "group_pose_tags", "name": "Pose Tags", "isSystem": False},
             ],
             "tagItems": [
-                {"tag": "standing", "labelZh": "站立", "groupIds": ["group_pose_tags"], "sourceCount": 3}
+                {
+                    "tag": "standing",
+                    "labelZh": "站立",
+                    "groupIds": ["group_pose_tags"],
+                    "sourceCount": 3,
+                }
             ],
         }
-    })
-    assert merged["pose"]["tagGroups"][1]["name"] == "Pose Tags"
-    assert merged["pose"]["tagItems"] == [
-        {"tag": "standing", "labelZh": "站立", "groupIds": ["group_pose_tags"], "sourceCount": 3}
-    ]
-    assert merged["pose"]["groups"][0]["id"] == "default"
-    assert merged["pose"]["items"] == []
-
-    merged_prompt = nodes.merge_favorites_data({}, {
-        "prompt": {
-            "tagItems": [
-                {"tag": "sparkle aura", "groupIds": ["default"], "isCustom": True}
-            ],
-        }
-    })
-    assert merged_prompt["prompt"]["tagItems"] == [
-        {"tag": "sparkle aura", "groupIds": ["default"], "isCustom": True}
-    ]
-
-    existing = nodes.normalize_favorites_data({
-        "artist": {
-            "groups": [{"id": "default", "name": "默认收藏", "isSystem": True}],
-            "items": [],
-            "tagGroups": [
-                {"id": "default", "name": "默认 Tag", "isSystem": True},
-                {"id": "group_artist_tags", "name": "Artist Tags", "isSystem": False},
-            ],
-            "tagItems": [
-                {"tag": "@foo", "labelZh": "Foo", "groupIds": ["group_artist_tags"], "sourceCount": 7}
-            ],
-        }
-    })
-    merged_legacy_payload = nodes.merge_favorites_data(existing, {
-        "artist": {
-            "groups": [{"id": "default", "name": "Updated Cards", "isSystem": True}],
-            "items": [{"id": "artist_1", "groupIds": ["default"]}],
-        }
-    })
-    assert merged_legacy_payload["artist"]["groups"][0]["name"] == "Updated Cards"
-    assert merged_legacy_payload["artist"]["items"] == [{"id": "artist_1", "groupIds": ["default"]}]
-    assert merged_legacy_payload["artist"]["tagGroups"][1]["name"] == "Artist Tags"
-    assert merged_legacy_payload["artist"]["tagItems"] == [
-        {"tag": "@foo", "labelZh": "Foo", "groupIds": ["group_artist_tags"], "sourceCount": 7}
-    ]
+        previous_store = nodes.favorites_store
+        nodes.favorites_store = store
+        try:
+            saved, status = asyncio.run(nodes.save_favorites_api(Request(
+                "pose",
+                json.dumps({"revision": 1, "favorites": favorites}, ensure_ascii=False),
+            )))
+            assert status == 200
+            assert saved["favorites"] == {
+                "groups": [],
+                "items": [],
+                "tagGroups": [
+                    {"id": "default", "name": "默认 Tag", "isSystem": True},
+                    {"id": "group_pose_tags", "name": "Pose Tags", "isSystem": False},
+                ],
+                "tagItems": [
+                    {
+                        "tag": "standing",
+                        "labelZh": "站立",
+                        "groupIds": ["group_pose_tags"],
+                        "sourceCount": 3,
+                    }
+                ],
+            }
+            loaded, status = asyncio.run(nodes.get_favorites_api(Request("pose")))
+            assert status == 200
+            assert loaded == saved
+            conflict, status = asyncio.run(nodes.save_favorites_api(Request(
+                "pose",
+                json.dumps({"revision": 1, "favorites": favorites}, ensure_ascii=False),
+            )))
+            assert status == 409
+            assert conflict == {
+                "success": False,
+                "error": "revision_conflict",
+                "current": saved,
+            }
+        finally:
+            nodes.favorites_store = previous_store
 
 
 if __name__ == "__main__":
