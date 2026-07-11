@@ -101,6 +101,8 @@ test("mutate preserves the pre-save snapshot after a normal save failure", async
 
   await store.load();
   const before = store.getSnapshot();
+  const notifications = [];
+  const unsubscribe = store.subscribe(snapshot => notifications.push(snapshot));
 
   await assert.rejects(
     store.mutate(draft => {
@@ -110,6 +112,8 @@ test("mutate preserves the pre-save snapshot after a normal save failure", async
   );
 
   assert.deepEqual(store.getSnapshot(), before);
+  assert.deepEqual(notifications, [before]);
+  unsubscribe();
 });
 
 test("a 409 replaces local state, notifies subscribers, and throws FavoritesConflictError", async () => {

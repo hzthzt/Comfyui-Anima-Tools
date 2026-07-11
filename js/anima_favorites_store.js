@@ -87,26 +87,33 @@ class FavoritesStore {
 
     async applyMutation(mutator) {
         const before = this.getSnapshot();
-        const draft = clone(before.favorites);
-        await mutator(draft);
+        try {
+            const draft = clone(before.favorites);
+            await mutator(draft);
 
-        const response = await this.fetchImpl(this.url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ revision: before.revision, favorites: draft }),
-        });
+            const response = await this.fetchImpl(this.url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ revision: before.revision, favorites: draft }),
+            });
 
-        if (response.status === 409) {
-            const conflict = await response.json();
-            this.snapshot = normalizeSnapshot(this.section, conflict.current);
+            if (response.status === 409) {
+                const conflict = await response.json();
+                this.snapshot = normalizeSnapshot(this.section, conflict.current);
+                this.notify();
+                throw new FavoritesConflictError(this.snapshot);
+            }
+            if (!response.ok) throw await responseError(response);
+
+            this.snapshot = normalizeSnapshot(this.section, await response.json());
             this.notify();
-            throw new FavoritesConflictError(this.snapshot);
+            return this.getSnapshot();
+        } catch (error) {
+            if (error instanceof FavoritesConflictError) throw error;
+            this.snapshot = before;
+            this.notify();
+            throw error;
         }
-        if (!response.ok) throw await responseError(response);
-
-        this.snapshot = normalizeSnapshot(this.section, await response.json());
-        this.notify();
-        return this.getSnapshot();
     }
 
     notify() {
