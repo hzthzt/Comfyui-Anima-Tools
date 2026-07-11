@@ -17,6 +17,10 @@ FAVORITE_SECTIONS = (
 _FAVORITE_FIELDS = ("groups", "items", "tagGroups", "tagItems")
 
 
+def is_valid_revision(revision):
+    return isinstance(revision, int) and not isinstance(revision, bool) and revision > 0
+
+
 class FavoritesRevisionConflict(Exception):
     def __init__(self, current):
         self.current = current
@@ -36,6 +40,8 @@ class FavoritesSectionStore:
 
     def save(self, section, expected_revision, favorites):
         self._validate_section(section)
+        if not is_valid_revision(expected_revision):
+            raise ValueError("Favorites revision must be a positive integer")
         with self._section_locks[section]:
             current = self._read(section)
             if expected_revision != current["revision"]:

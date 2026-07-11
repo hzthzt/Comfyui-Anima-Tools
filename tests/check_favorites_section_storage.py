@@ -57,6 +57,15 @@ def main():
             raise AssertionError("Invalid favorite sections must be rejected")
         assert list(root.iterdir()) == []
 
+        for revision in (True, 1.0, 0, -1):
+            try:
+                store.save("artist", revision, favorites_with_group("invalid-revision"))
+            except ValueError:
+                pass
+            else:
+                raise AssertionError(f"Revision {revision!r} must be rejected")
+        assert store.load("artist") == envelope("artist")
+
         artist_saved = store.save("artist", 1, favorites_with_group("artist-group"))
         assert artist_saved == envelope("artist", 2, favorites_with_group("artist-group"))
         assert json.loads((root / "artist.json").read_text(encoding="utf-8")) == artist_saved

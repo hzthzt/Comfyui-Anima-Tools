@@ -1444,7 +1444,7 @@ import time
 import urllib.parse
 import urllib.request
 from io import BytesIO
-from .favorites_store import FavoritesRevisionConflict, FavoritesSectionStore
+from .favorites_store import FavoritesRevisionConflict, FavoritesSectionStore, is_valid_revision
 try:
     from PIL import Image
 except ImportError:
@@ -1830,6 +1830,8 @@ async def save_favorites_api(request):
             return web.json_response({"success": False, "error": "Favorites payload must be a JSON object"}, status=400)
         if "revision" not in body or "favorites" not in body:
             return web.json_response({"success": False, "error": "Favorites payload requires revision and favorites"}, status=400)
+        if not is_valid_revision(body["revision"]):
+            return web.json_response({"success": False, "error": "Favorites revision must be a positive integer"}, status=400)
         try:
             saved = favorites_store.save(
                 request.match_info["section"],
