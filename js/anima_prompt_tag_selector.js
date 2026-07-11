@@ -5,7 +5,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSidebarSection, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
-import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
+import { FavoritesConflictError, applyFavoritesOperation, createFavoritesOperation, getFavoritesStore } from "./anima_favorites_store.js";
 
 const PROMPT_TAG_SELECTOR_NODES = new Set([
     "AnimaPromptTagSelector",
@@ -84,24 +84,21 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     async function saveFavorites() {
-        const requestedFavorites = JSON.parse(JSON.stringify({
+        const favoritesOperation = createFavoritesOperation(favoritesStore.getSnapshot().favorites, {
             groups: favoritesConfig.groups,
             items: favoritesConfig.items,
             tagGroups: tagFavorites.tagGroups,
             tagItems: tagFavorites.tagItems,
-        }));
+        });
         try {
             await favoritesStore.mutate(draft => {
-                draft.groups = requestedFavorites.groups;
-                draft.items = requestedFavorites.items;
-                draft.tagGroups = requestedFavorites.tagGroups;
-                draft.tagItems = requestedFavorites.tagItems;
+                applyFavoritesOperation(draft, favoritesOperation);
             });
             return true;
         } catch (e) {
             if (e instanceof FavoritesConflictError) {
                 alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
-                return true;
+                return false;
             }
             console.error("[Anima Tools] Failed to save prompt tag favorites", e);
             alert(t("Failed to save favorites"));

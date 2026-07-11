@@ -2,7 +2,7 @@ import { app } from "../../scripts/app.js";
 import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded, clearImageLoadedCache } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
-import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
+import { FavoritesConflictError, applyFavoritesOperation, createFavoritesOperation, getFavoritesStore } from "./anima_favorites_store.js";
 
 app.registerExtension({
     name: "AnimaMultiLoraLoader.extension",
@@ -3600,12 +3600,12 @@ async function openLoraSelectorModal(node) {
 
     // --- Toggle Favorite Star ---
     async function toggleFavorite(model, favBtnElement) {
-        const requestedFavorites = JSON.parse(JSON.stringify(favoritesConfig));
-        const index = requestedFavorites.items.findIndex(item => String(item.id) === String(model.id));
+        const nextItems = JSON.parse(JSON.stringify(favoritesConfig.items));
+        const index = nextItems.findIndex(item => String(item.id) === String(model.id));
         if (index !== -1) {
-            requestedFavorites.items.splice(index, 1);
+            nextItems.splice(index, 1);
         } else {
-            requestedFavorites.items.push({
+            nextItems.push({
                 id: model.id,
                 name: model.name,
                 creator: model.creator,
@@ -3613,13 +3613,16 @@ async function openLoraSelectorModal(node) {
                 description: model.description,
             });
         }
+        const favoritesOperation = createFavoritesOperation(favoritesStore.getSnapshot().favorites, {
+            groups: favoritesConfig.groups,
+            items: nextItems,
+            tagGroups: favoritesConfig.tagGroups,
+            tagItems: favoritesConfig.tagItems,
+        });
 
         try {
             await favoritesStore.mutate(draft => {
-                draft.groups = requestedFavorites.groups;
-                draft.items = requestedFavorites.items;
-                draft.tagGroups = requestedFavorites.tagGroups;
-                draft.tagItems = requestedFavorites.tagItems;
+                applyFavoritesOperation(draft, favoritesOperation);
             });
         } catch (e) {
             if (e instanceof FavoritesConflictError) {
@@ -3627,10 +3630,11 @@ async function openLoraSelectorModal(node) {
             } else {
                 console.error("Failed to save favorites to server", e);
             }
-            return;
+            return false;
         }
 
         refreshFavoritesView();
+        return true;
     }
 
     // --- Settings Modal ---

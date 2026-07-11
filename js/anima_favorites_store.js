@@ -1,8 +1,68 @@
 const FAVORITES_BASE_URL = "/anima-tools/favorites";
 const stores = new Map();
+const FAVORITE_COLLECTIONS = ["groups", "items", "tagGroups", "tagItems"];
 
 function clone(value) {
     return JSON.parse(JSON.stringify(value));
+}
+
+function favoriteCollectionItems(favorites, field) {
+    return Array.isArray(favorites?.[field]) ? favorites[field] : [];
+}
+
+function favoriteItemKey(field, item, index) {
+    const value = field === "tagItems" ? item?.tag : item?.id ?? item?.name;
+    return value ? String(value) : `${field}:${index}:${JSON.stringify(item)}`;
+}
+
+export function createFavoritesOperation(baseFavorites, requestedFavorites) {
+    const collections = {};
+    FAVORITE_COLLECTIONS.forEach(field => {
+        const baseItems = favoriteCollectionItems(baseFavorites, field);
+        const requestedItems = favoriteCollectionItems(requestedFavorites, field);
+        const baseByKey = new Map(baseItems.map((item, index) => [favoriteItemKey(field, item, index), item]));
+        const requestedKeys = new Set();
+        const upserts = [];
+
+        requestedItems.forEach((item, index) => {
+            const key = favoriteItemKey(field, item, index);
+            requestedKeys.add(key);
+            if (JSON.stringify(baseByKey.get(key)) !== JSON.stringify(item)) {
+                upserts.push({ key, item: clone(item) });
+            }
+        });
+
+        collections[field] = {
+            upserts,
+            deletes: baseItems
+                .map((item, index) => favoriteItemKey(field, item, index))
+                .filter(key => !requestedKeys.has(key)),
+        };
+    });
+    return clone({ collections });
+}
+
+export function applyFavoritesOperation(draft, operation) {
+    FAVORITE_COLLECTIONS.forEach(field => {
+        const changes = operation?.collections?.[field];
+        if (!changes) return;
+
+        const deletedKeys = new Set(changes.deletes || []);
+        const upsertsByKey = new Map((changes.upserts || []).map(change => [change.key, change.item]));
+        const seenKeys = new Set();
+        const nextItems = favoriteCollectionItems(draft, field)
+            .filter((item, index) => !deletedKeys.has(favoriteItemKey(field, item, index)))
+            .map((item, index) => {
+                const key = favoriteItemKey(field, item, index);
+                seenKeys.add(key);
+                return upsertsByKey.has(key) ? clone(upsertsByKey.get(key)) : item;
+            });
+
+        (changes.upserts || []).forEach(({ key, item }) => {
+            if (!seenKeys.has(key)) nextItems.push(clone(item));
+        });
+        draft[field] = nextItems;
+    });
 }
 
 function createEmptySnapshot(section) {
@@ -130,10 +190,9 @@ class FavoritesStore {
     }
 
     notify() {
-        const snapshot = this.getSnapshot();
         this.subscribers.forEach(listener => {
             try {
-                listener(snapshot);
+                listener(this.getSnapshot());
             } catch (_) {}
         });
     }

@@ -8,7 +8,7 @@ import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./an
 import { createPromptTagsHeaderAction } from "./anima_selector_card_overlay.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
-import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
+import { FavoritesConflictError, applyFavoritesOperation, createFavoritesOperation, getFavoritesStore } from "./anima_favorites_store.js";
 import "./pose_data.js";
 
 const POSE_SELECTOR_NODES = new Set([
@@ -222,24 +222,21 @@ async function openPoseSelectorModal(node, tagsWidget) {
         });
 
         favoriteItems = nextItems;
-        const requestedFavorites = JSON.parse(JSON.stringify({
+        const favoritesOperation = createFavoritesOperation(favoritesStore.getSnapshot().favorites, {
             groups,
             items: favoriteItems,
             tagGroups: tagFavorites.tagGroups,
             tagItems: tagFavorites.tagItems,
-        }));
+        });
         try {
             await favoritesStore.mutate(draft => {
-                draft.groups = requestedFavorites.groups;
-                draft.items = requestedFavorites.items;
-                draft.tagGroups = requestedFavorites.tagGroups;
-                draft.tagItems = requestedFavorites.tagItems;
+                applyFavoritesOperation(draft, favoritesOperation);
             });
             return true;
         } catch (e) {
             if (e instanceof FavoritesConflictError) {
                 alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
-                return true;
+                return false;
             }
             console.error("[Anima Tools] Failed to save pose favorites", e);
             alert(t("Failed to save favorites"));

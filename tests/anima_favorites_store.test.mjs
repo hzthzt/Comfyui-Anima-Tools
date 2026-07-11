@@ -179,8 +179,8 @@ test("a failed mutation cannot restore over a newer load", async () => {
   assert.deepEqual(store.getSnapshot(), current);
 });
 
-test("queued mutations send separately captured modal favorite snapshots", async () => {
-  const { getFavoritesStore } = await loadStore("queued-modal-snapshots");
+test("queued favorite add operations merge independently captured user intent", async () => {
+  const { applyFavoritesOperation, createFavoritesOperation, getFavoritesStore } = await loadStore("queued-modal-operations");
   const requests = [];
   let revision = 1;
   const fetchImpl = async (_url, options = {}) => {
@@ -191,21 +191,23 @@ test("queued mutations send separately captured modal favorite snapshots", async
     return response(200, envelope("prompt", revision, body.favorites));
   };
   const store = getFavoritesStore("prompt", { fetchImpl });
-  const requestedA = { groups: [], items: [{ id: "a" }], tagGroups: [], tagItems: [] };
-  const requestedB = { groups: [], items: [{ id: "b" }], tagGroups: [], tagItems: [] };
 
   await store.load();
-  const first = store.mutate(draft => Object.assign(draft, JSON.parse(JSON.stringify(requestedA))));
-  const second = store.mutate(draft => Object.assign(draft, JSON.parse(JSON.stringify(requestedB))));
+  const base = store.getSnapshot().favorites;
+  const addA = createFavoritesOperation(base, { ...base, items: [{ id: "a" }] });
+  const addB = createFavoritesOperation(base, { ...base, items: [{ id: "b" }] });
+  const first = store.mutate(draft => applyFavoritesOperation(draft, addA));
+  const second = store.mutate(draft => applyFavoritesOperation(draft, addB));
   await Promise.all([first, second]);
 
   assert.deepEqual(requests.map(request => request.favorites.items), [
     [{ id: "a" }],
-    [{ id: "b" }],
+    [{ id: "a" }, { id: "b" }],
   ]);
+  assert.deepEqual(store.getSnapshot().favorites.items, [{ id: "a" }, { id: "b" }]);
 });
 
-test("selectors capture favorite requests before queuing mutations", async () => {
+test("selectors queue favorite operation deltas and keep conflict dialogs open", async () => {
   const selectorFiles = [
     "anima_artist_selector.js",
     "anima_character_selector.js",
@@ -218,9 +220,35 @@ test("selectors capture favorite requests before queuing mutations", async () =>
 
   for (const file of selectorFiles) {
     const source = await readFile(new URL(`../js/${file}`, import.meta.url), "utf8");
-    assert.match(source, /const requestedFavorites = JSON\.parse\(JSON\.stringify\(/, `${file} should capture a local favorite snapshot`);
-    assert.match(source, /favoritesStore\.mutate\(draft => \{[\s\S]*?requestedFavorites/, `${file} should mutate from the captured snapshot`);
+    assert.doesNotMatch(source, /requestedFavorites/, `${file} should not replace favorites from a stale full snapshot`);
+    assert.match(source, /createFavoritesOperation/, `${file} should create an action-time favorite delta`);
+    assert.match(source, /applyFavoritesOperation\(draft, favoritesOperation\)/, `${file} should apply the captured delta to the queued draft`);
+    assert.match(source, /if \(e instanceof FavoritesConflictError\) \{[\s\S]*?return false;/, `${file} should keep conflict dialogs open`);
   }
+});
+
+test("each subscriber receives an isolated snapshot payload", async () => {
+  const { getFavoritesStore } = await loadStore("subscriber-payload-isolation");
+  const saved = envelope("pose", 2, { items: [{ id: "saved" }] });
+  const fetchImpl = async (_url, options = {}) => {
+    if (options.method === "POST") return response(200, saved);
+    return response(200, envelope("pose", 1));
+  };
+  const store = getFavoritesStore("pose", { fetchImpl });
+  const received = [];
+
+  await store.load();
+  store.subscribe(snapshot => {
+    snapshot.favorites.items.push({ id: "mutated-listener" });
+  });
+  store.subscribe(snapshot => received.push(snapshot));
+
+  await store.mutate(draft => {
+    draft.items.push({ id: "saved" });
+  });
+
+  assert.deepEqual(received, [saved]);
+  assert.deepEqual(store.getSnapshot(), saved);
 });
 
 test("mutate preserves the pre-save snapshot after a normal save failure", async () => {
