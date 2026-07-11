@@ -84,10 +84,18 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     async function saveFavorites() {
+        const requestedFavorites = JSON.parse(JSON.stringify({
+            groups: favoritesConfig.groups,
+            items: favoritesConfig.items,
+            tagGroups: tagFavorites.tagGroups,
+            tagItems: tagFavorites.tagItems,
+        }));
         try {
             await favoritesStore.mutate(draft => {
-                draft.tagGroups = tagFavorites.tagGroups;
-                draft.tagItems = tagFavorites.tagItems;
+                draft.groups = requestedFavorites.groups;
+                draft.items = requestedFavorites.items;
+                draft.tagGroups = requestedFavorites.tagGroups;
+                draft.tagItems = requestedFavorites.tagItems;
             });
             return true;
         } catch (e) {

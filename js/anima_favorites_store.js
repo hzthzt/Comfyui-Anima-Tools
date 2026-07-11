@@ -54,6 +54,7 @@ class FavoritesStore {
         this.section = section;
         this.fetchImpl = fetchImpl;
         this.snapshot = createEmptySnapshot(section);
+        this.snapshotGeneration = 0;
         this.subscribers = new Set();
         this.pendingMutation = Promise.resolve();
     }
@@ -72,9 +73,16 @@ class FavoritesStore {
     }
 
     async load() {
+        const loadGeneration = this.snapshotGeneration;
         const response = await this.fetchImpl(this.url);
         if (!response.ok) throw await responseError(response);
-        this.snapshot = normalizeSnapshot(this.section, await response.json());
+        const loadedSnapshot = normalizeSnapshot(this.section, await response.json());
+        const hasNewerSnapshot = loadedSnapshot.revision < this.snapshot.revision
+            || (loadedSnapshot.revision === this.snapshot.revision && this.snapshotGeneration !== loadGeneration);
+        if (hasNewerSnapshot) return this.getSnapshot();
+
+        this.snapshot = loadedSnapshot;
+        this.snapshotGeneration += 1;
         this.notify();
         return this.getSnapshot();
     }
@@ -87,6 +95,7 @@ class FavoritesStore {
 
     async applyMutation(mutator) {
         const before = this.getSnapshot();
+        const beforeGeneration = this.snapshotGeneration;
         try {
             const draft = clone(before.favorites);
             await mutator(draft);
@@ -100,18 +109,22 @@ class FavoritesStore {
             if (response.status === 409) {
                 const conflict = await response.json();
                 this.snapshot = normalizeSnapshot(this.section, conflict.current);
+                this.snapshotGeneration += 1;
                 this.notify();
                 throw new FavoritesConflictError(this.snapshot);
             }
             if (!response.ok) throw await responseError(response);
 
             this.snapshot = normalizeSnapshot(this.section, await response.json());
+            this.snapshotGeneration += 1;
             this.notify();
             return this.getSnapshot();
         } catch (error) {
             if (error instanceof FavoritesConflictError) throw error;
-            this.snapshot = before;
-            this.notify();
+            if (this.snapshotGeneration === beforeGeneration) {
+                this.snapshot = before;
+                this.notify();
+            }
             throw error;
         }
     }

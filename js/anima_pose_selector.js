@@ -222,12 +222,18 @@ async function openPoseSelectorModal(node, tagsWidget) {
         });
 
         favoriteItems = nextItems;
+        const requestedFavorites = JSON.parse(JSON.stringify({
+            groups,
+            items: favoriteItems,
+            tagGroups: tagFavorites.tagGroups,
+            tagItems: tagFavorites.tagItems,
+        }));
         try {
             await favoritesStore.mutate(draft => {
-                draft.groups = groups;
-                draft.items = favoriteItems;
-                draft.tagGroups = tagFavorites.tagGroups;
-                draft.tagItems = tagFavorites.tagItems;
+                draft.groups = requestedFavorites.groups;
+                draft.items = requestedFavorites.items;
+                draft.tagGroups = requestedFavorites.tagGroups;
+                draft.tagItems = requestedFavorites.tagItems;
             });
             return true;
         } catch (e) {

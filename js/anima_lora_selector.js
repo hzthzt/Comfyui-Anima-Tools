@@ -3600,20 +3600,26 @@ async function openLoraSelectorModal(node) {
 
     // --- Toggle Favorite Star ---
     async function toggleFavorite(model, favBtnElement) {
+        const requestedFavorites = JSON.parse(JSON.stringify(favoritesConfig));
+        const index = requestedFavorites.items.findIndex(item => String(item.id) === String(model.id));
+        if (index !== -1) {
+            requestedFavorites.items.splice(index, 1);
+        } else {
+            requestedFavorites.items.push({
+                id: model.id,
+                name: model.name,
+                creator: model.creator,
+                modelVersions: model.modelVersions,
+                description: model.description,
+            });
+        }
+
         try {
             await favoritesStore.mutate(draft => {
-                const index = draft.items.findIndex(item => String(item.id) === String(model.id));
-                if (index !== -1) {
-                    draft.items.splice(index, 1);
-                    return;
-                }
-                draft.items.push({
-                    id: model.id,
-                    name: model.name,
-                    creator: model.creator,
-                    modelVersions: model.modelVersions,
-                    description: model.description,
-                });
+                draft.groups = requestedFavorites.groups;
+                draft.items = requestedFavorites.items;
+                draft.tagGroups = requestedFavorites.tagGroups;
+                draft.tagItems = requestedFavorites.tagItems;
             });
         } catch (e) {
             if (e instanceof FavoritesConflictError) {

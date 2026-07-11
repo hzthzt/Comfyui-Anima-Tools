@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 
 function envelope(section, revision, favorites = {}) {
   return {
@@ -27,6 +28,16 @@ function response(status, payload) {
       return JSON.stringify(payload);
     },
   };
+}
+
+function deferred() {
+  let resolve;
+  let reject;
+  const promise = new Promise((resolvePromise, rejectPromise) => {
+    resolve = resolvePromise;
+    reject = rejectPromise;
+  });
+  return { promise, resolve, reject };
 }
 
 async function loadStore(caseName) {
@@ -114,6 +125,102 @@ test("a throwing subscriber cannot roll back a successful save or block later su
   assert.deepEqual(result, saved);
   assert.deepEqual(store.getSnapshot(), saved);
   assert.deepEqual(received, [saved]);
+});
+
+test("a stale load cannot overwrite a later successful mutation", async () => {
+  const { getFavoritesStore } = await loadStore("stale-load-after-save");
+  const staleLoad = deferred();
+  const saved = envelope("artist", 2, { items: [{ id: "saved" }] });
+  const fetchImpl = async (_url, options = {}) => {
+    if (options.method === "POST") return response(200, saved);
+    return staleLoad.promise;
+  };
+  const store = getFavoritesStore("artist", { fetchImpl });
+
+  const pendingLoad = store.load();
+  await store.mutate(draft => {
+    draft.items.push({ id: "saved" });
+  });
+  staleLoad.resolve(response(200, envelope("artist", 1, { items: [{ id: "stale" }] })));
+
+  assert.deepEqual(await pendingLoad, saved);
+  assert.deepEqual(store.getSnapshot(), saved);
+});
+
+test("a failed mutation cannot restore over a newer load", async () => {
+  const { getFavoritesStore } = await loadStore("failed-mutation-after-load");
+  const postStarted = deferred();
+  const pendingPost = deferred();
+  const newerLoad = deferred();
+  let loadCount = 0;
+  const fetchImpl = async (_url, options = {}) => {
+    if (options.method === "POST") {
+      postStarted.resolve();
+      return pendingPost.promise;
+    }
+    loadCount += 1;
+    if (loadCount === 1) return response(200, envelope("background", 1, { items: [{ id: "before" }] }));
+    return newerLoad.promise;
+  };
+  const store = getFavoritesStore("background", { fetchImpl });
+
+  await store.load();
+  const pendingMutation = store.mutate(draft => {
+    draft.items.push({ id: "failed" });
+  });
+  await postStarted.promise;
+  const pendingLoad = store.load();
+  const current = envelope("background", 2, { items: [{ id: "newer" }] });
+  newerLoad.resolve(response(200, current));
+  await pendingLoad;
+  pendingPost.reject(new Error("network failed"));
+
+  await assert.rejects(pendingMutation, /network failed/);
+  assert.deepEqual(store.getSnapshot(), current);
+});
+
+test("queued mutations send separately captured modal favorite snapshots", async () => {
+  const { getFavoritesStore } = await loadStore("queued-modal-snapshots");
+  const requests = [];
+  let revision = 1;
+  const fetchImpl = async (_url, options = {}) => {
+    if (options.method !== "POST") return response(200, envelope("prompt", revision));
+    const body = JSON.parse(options.body);
+    requests.push(body);
+    revision += 1;
+    return response(200, envelope("prompt", revision, body.favorites));
+  };
+  const store = getFavoritesStore("prompt", { fetchImpl });
+  const requestedA = { groups: [], items: [{ id: "a" }], tagGroups: [], tagItems: [] };
+  const requestedB = { groups: [], items: [{ id: "b" }], tagGroups: [], tagItems: [] };
+
+  await store.load();
+  const first = store.mutate(draft => Object.assign(draft, JSON.parse(JSON.stringify(requestedA))));
+  const second = store.mutate(draft => Object.assign(draft, JSON.parse(JSON.stringify(requestedB))));
+  await Promise.all([first, second]);
+
+  assert.deepEqual(requests.map(request => request.favorites.items), [
+    [{ id: "a" }],
+    [{ id: "b" }],
+  ]);
+});
+
+test("selectors capture favorite requests before queuing mutations", async () => {
+  const selectorFiles = [
+    "anima_artist_selector.js",
+    "anima_character_selector.js",
+    "anima_clothing_selector.js",
+    "anima_background_selector.js",
+    "anima_pose_selector.js",
+    "anima_prompt_tag_selector.js",
+    "anima_lora_selector.js",
+  ];
+
+  for (const file of selectorFiles) {
+    const source = await readFile(new URL(`../js/${file}`, import.meta.url), "utf8");
+    assert.match(source, /const requestedFavorites = JSON\.parse\(JSON\.stringify\(/, `${file} should capture a local favorite snapshot`);
+    assert.match(source, /favoritesStore\.mutate\(draft => \{[\s\S]*?requestedFavorites/, `${file} should mutate from the captured snapshot`);
+  }
 });
 
 test("mutate preserves the pre-save snapshot after a normal save failure", async () => {
