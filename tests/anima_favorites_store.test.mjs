@@ -91,6 +91,31 @@ test("mutate saves only its section and consumes the returned revision", async (
   ]);
 });
 
+test("a throwing subscriber cannot roll back a successful save or block later subscribers", async () => {
+  const { getFavoritesStore } = await loadStore("subscriber-fault-isolation");
+  const saved = envelope("artist", 2, { items: [{ id: "saved" }] });
+  const fetchImpl = async (_url, options = {}) => {
+    if (options.method === "POST") return response(200, saved);
+    return response(200, envelope("artist", 1));
+  };
+  const store = getFavoritesStore("artist", { fetchImpl });
+  const received = [];
+
+  await store.load();
+  store.subscribe(() => {
+    throw new Error("subscriber failed");
+  });
+  store.subscribe(snapshot => received.push(snapshot));
+
+  const result = await store.mutate(draft => {
+    draft.items.push({ id: "saved" });
+  });
+
+  assert.deepEqual(result, saved);
+  assert.deepEqual(store.getSnapshot(), saved);
+  assert.deepEqual(received, [saved]);
+});
+
 test("mutate preserves the pre-save snapshot after a normal save failure", async () => {
   const { getFavoritesStore } = await loadStore("restore-on-failure");
   const fetchImpl = async (_url, options = {}) => {

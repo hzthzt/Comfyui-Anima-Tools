@@ -118,7 +118,11 @@ class FavoritesStore {
 
     notify() {
         const snapshot = this.getSnapshot();
-        this.subscribers.forEach(listener => listener(snapshot));
+        this.subscribers.forEach(listener => {
+            try {
+                listener(snapshot);
+            } catch (_) {}
+        });
     }
 }
 
