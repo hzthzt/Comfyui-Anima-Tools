@@ -5,6 +5,7 @@ import { addSelectorActionRow, installSelectorExecutionSync } from "./anima_sele
 import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSidebarSection, ensureSelectorTagFavorites } from "./anima_selector_tag_library.js";
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, isTaggedAnimaNode } from "./anima_tag_editor.js";
+import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
 
 const PROMPT_TAG_SELECTOR_NODES = new Set([
     "AnimaPromptTagSelector",
@@ -63,41 +64,37 @@ function createEl(tag, className, text) {
 }
 
 async function openPromptTagSelectorModal(node, tagsWidget) {
-    let favoritesConfig = {
-        prompt: {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: [],
-        }
-    };
-
+    const favoritesStore = getFavoritesStore("prompt");
     try {
-        const response = await fetch("/anima-tools/favorites");
-        if (response.ok) favoritesConfig = await response.json();
+        await favoritesStore.load();
     } catch (e) {
         console.error("[Anima Tools] Failed to load prompt tag favorites", e);
     }
+    const favoritesConfig = favoritesStore.getSnapshot().favorites;
+    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    let refreshFavoritesView = () => {};
 
-    if (!favoritesConfig.prompt) {
-        favoritesConfig.prompt = {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: [],
-        };
+    function rebuildFavorites(snapshot) {
+        Object.keys(favoritesConfig).forEach(key => delete favoritesConfig[key]);
+        Object.assign(favoritesConfig, snapshot.favorites);
+        ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+        refreshFavoritesView();
     }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.prompt, t("Favorite Tags"));
+
+    const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     async function saveFavorites() {
-        favoritesConfig.prompt.tagGroups = tagFavorites.tagGroups;
-        favoritesConfig.prompt.tagItems = tagFavorites.tagItems;
-
         try {
-            const response = await fetch("/anima-tools/favorites", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(favoritesConfig),
+            await favoritesStore.mutate(draft => {
+                draft.tagGroups = tagFavorites.tagGroups;
+                draft.tagItems = tagFavorites.tagItems;
             });
-            if (!response.ok) throw new Error(await response.text());
             return true;
         } catch (e) {
+            if (e instanceof FavoritesConflictError) {
+                alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
+                return true;
+            }
             console.error("[Anima Tools] Failed to save prompt tag favorites", e);
             alert(t("Failed to save favorites"));
             return false;
@@ -190,6 +187,7 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     `;
 
     function closeModal() {
+        unsubscribeFavorites();
         overlay.remove();
         styleSheet.remove();
     }
@@ -443,6 +441,10 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     }
 
     searchInput.addEventListener("input", () => selectorTagView.setQuery(searchInput.value));
+    refreshFavoritesView = () => {
+        renderSidebar();
+        selectorTagView.setFilter(activeTagFilter);
+    };
     renderSidebar();
     selectorTagView.setFilter(activeTagFilter);
     selectorTagView.setVisible(true);

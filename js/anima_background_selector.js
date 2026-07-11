@@ -8,6 +8,7 @@ import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./an
 import { createPromptTagsHeaderAction } from "./anima_selector_card_overlay.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getNextCategorizedCardFilters, getOrderedCardCollectionGroups, normalizeCategorizedCardFilters, shouldApplyCardCategoryFilters, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
+import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
 import "./background_data.js";
 
 const BACKGROUND_SELECTOR_NODES = new Set([
@@ -118,40 +119,25 @@ function createEl(tag, className, text) {
 async function openBackgroundSelectorModal(node, tagsWidget) {
     const backgroundData = Array.isArray(window.backgroundData) ? window.backgroundData : [];
 
-    let favoritesConfig = {
-        background: {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: [],
-        }
-    };
-
+    const favoritesStore = getFavoritesStore("background");
     try {
-        const response = await fetch("/anima-tools/favorites");
-        if (response.ok) {
-            favoritesConfig = await response.json();
-        }
+        await favoritesStore.load();
     } catch (e) {
         console.error("[Anima Tools] Failed to load background favorites", e);
     }
+    let favoritesConfig = favoritesStore.getSnapshot().favorites;
+    let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
 
-    if (!favoritesConfig.background) {
-        favoritesConfig.background = {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: [],
-        };
-    }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.background, t("Favorite Tags"));
-
-    let groups = Array.isArray(favoritesConfig.background.groups) && favoritesConfig.background.groups.length
-        ? favoritesConfig.background.groups
+    let groups = Array.isArray(favoritesConfig.groups) && favoritesConfig.groups.length
+        ? favoritesConfig.groups
         : [{ id: "default", name: t("My Favorites"), isSystem: true }];
     if (!groups.some(group => group.id === "default")) {
         groups = [{ id: "default", name: t("My Favorites"), isSystem: true }, ...groups];
     }
 
-    let favoriteItems = Array.isArray(favoritesConfig.background.items) ? favoritesConfig.background.items : [];
-    const favoriteMap = new Map();
-    const favoriteSet = new Set();
+    let favoriteItems = Array.isArray(favoritesConfig.items) ? favoritesConfig.items : [];
+    let favoriteMap = new Map();
+    let favoriteSet = new Set();
 
     favoriteItems.forEach(item => {
         if (item.isCustom) {
@@ -163,6 +149,32 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
             if (Array.isArray(item.groupIds) && item.groupIds.length > 0) favoriteSet.add(key);
         }
     });
+    let refreshFavoritesView = () => {};
+
+    function rebuildFavorites(snapshot) {
+        Object.keys(favoritesConfig).forEach(key => delete favoritesConfig[key]);
+        Object.assign(favoritesConfig, snapshot.favorites);
+        tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+        groups = Array.isArray(favoritesConfig.groups) && favoritesConfig.groups.length
+            ? favoritesConfig.groups
+            : [{ id: "default", name: t("My Favorites"), isSystem: true }];
+        if (!groups.some(group => group.id === "default")) {
+            groups = [{ id: "default", name: t("My Favorites"), isSystem: true }, ...groups];
+        }
+        favoriteItems = Array.isArray(favoritesConfig.items) ? favoritesConfig.items : [];
+        favoriteMap = new Map();
+        favoriteSet = new Set();
+        favoriteItems.forEach(item => {
+            if (item.isCustom) return;
+            const key = String(item.id || item.name || "");
+            if (!key) return;
+            favoriteMap.set(key, item);
+            if (Array.isArray(item.groupIds) && item.groupIds.length > 0) favoriteSet.add(key);
+        });
+        refreshFavoritesView();
+    }
+
+    const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     const SORT_STORAGE_KEY = "anima-background-selector-active-sort";
     const PAGE_STORAGE_KEY = "anima-background-selector-active-page";
@@ -206,20 +218,19 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         });
 
         favoriteItems = nextItems;
-        favoritesConfig.background.groups = groups;
-        favoritesConfig.background.items = favoriteItems;
-        favoritesConfig.background.tagGroups = tagFavorites.tagGroups;
-        favoritesConfig.background.tagItems = tagFavorites.tagItems;
-
         try {
-            const response = await fetch("/anima-tools/favorites", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(favoritesConfig),
+            await favoritesStore.mutate(draft => {
+                draft.groups = groups;
+                draft.items = favoriteItems;
+                draft.tagGroups = tagFavorites.tagGroups;
+                draft.tagItems = tagFavorites.tagItems;
             });
-            if (!response.ok) throw new Error(await response.text());
             return true;
         } catch (e) {
+            if (e instanceof FavoritesConflictError) {
+                alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
+                return true;
+            }
             console.error("[Anima Tools] Failed to save background favorites", e);
             alert(t("Failed to save favorites"));
             return false;
@@ -1931,6 +1942,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     }
 
     function closeModal() {
+        unsubscribeFavorites();
         imageObserver.disconnect();
         document.getElementById("anima-background-group-popover")?.remove();
         overlay.remove();
@@ -1994,6 +2006,10 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
     }
 
+    refreshFavoritesView = () => {
+        renderSidebar();
+        triggerFilter();
+    };
     renderSidebar();
     updateViewToggle();
     triggerFilter();

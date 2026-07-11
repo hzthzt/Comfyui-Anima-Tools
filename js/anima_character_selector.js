@@ -8,6 +8,7 @@ import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./an
 import { createPromptTagsHeaderAction } from "./anima_selector_card_overlay.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
+import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
 import "./character_data.js";
 
 const CHARACTER_SELECTOR_NODES = new Set([
@@ -332,31 +333,16 @@ export function createCharacterCustomItemModal({
 }
 
 async function openCharacterSelectorModal(node, tagsWidget) {
-    // 加载后端持久化配置
-    let favoritesConfig = {
-        character: {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: []
-        }
-    };
+    const favoritesStore = getFavoritesStore("character");
     try {
-        const response = await fetch("/anima-tools/favorites");
-        if (response.ok) {
-            favoritesConfig = await response.json();
-        }
+        await favoritesStore.load();
     } catch (e) {
         console.error("Failed to load favorites", e);
     }
-    if (!favoritesConfig.character) {
-        favoritesConfig.character = {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: []
-        };
-    }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.character, t("Favorite Tags"));
-    
-    let groups = favoritesConfig.character.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
-    let favoriteItems = favoritesConfig.character.items || [];
+    let favoritesConfig = favoritesStore.getSnapshot().favorites;
+    let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    let groups = favoritesConfig.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
+    let favoriteItems = favoritesConfig.items || [];
     let favoriteMap = new Map();
     favoriteItems.forEach(fi => {
         if (!fi.isCustom) {
@@ -364,6 +350,23 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         }
     });
     let favoriteSet = new Set(favoriteItems.filter(fi => !fi.isCustom).map(fi => fi.name));
+    let refreshFavoritesView = () => {};
+
+    function rebuildFavorites(snapshot) {
+        Object.keys(favoritesConfig).forEach(key => delete favoritesConfig[key]);
+        Object.assign(favoritesConfig, snapshot.favorites);
+        tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+        groups = favoritesConfig.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
+        favoriteItems = favoritesConfig.items || [];
+        favoriteMap = new Map();
+        favoriteItems.forEach(fi => {
+            if (!fi.isCustom) favoriteMap.set(fi.name, fi);
+        });
+        favoriteSet = new Set(favoriteItems.filter(fi => !fi.isCustom).map(fi => fi.name));
+        refreshFavoritesView();
+    }
+
+    const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     // 记忆排序、页数、侧边栏分类和滚动位置配置
     const SORT_STORAGE_KEY = "anima-char-selector-active-sort";
@@ -428,22 +431,19 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         });
         
         favoriteItems = nextItems;
-        favoritesConfig.character.groups = groups;
-        favoritesConfig.character.items = favoriteItems;
-        favoritesConfig.character.tagGroups = tagFavorites.tagGroups;
-        favoritesConfig.character.tagItems = tagFavorites.tagItems;
-        
         try {
-            const response = await fetch("/anima-tools/favorites", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(favoritesConfig)
+            await favoritesStore.mutate(draft => {
+                draft.groups = groups;
+                draft.items = favoriteItems;
+                draft.tagGroups = tagFavorites.tagGroups;
+                draft.tagItems = tagFavorites.tagItems;
             });
-            if (!response.ok) {
-                throw new Error(await response.text());
-            }
             return true;
         } catch (e) {
+            if (e instanceof FavoritesConflictError) {
+                alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
+                return true;
+            }
             console.error("Failed to save favorites", e);
             alert(t("Failed to save favorites"));
             return false;
@@ -3123,10 +3123,16 @@ async function openCharacterSelectorModal(node, tagsWidget) {
 
     // 隐藏/关闭弹窗
     function closeModal() {
+        unsubscribeFavorites();
         hideCharacterTagsTooltip();
         charImageObserver.disconnect();
         modalOverlay.remove();
     }
+
+    refreshFavoritesView = () => {
+        renderSidebar();
+        triggerFilter();
+    };
 
     // 初始化渲染侧边栏和数据流
     renderSidebar();

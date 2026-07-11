@@ -7,6 +7,7 @@ import { buildSelectorTagSidebarEntries, createSelectorTagView, createTagGroupSi
 import { createConfiguredCatalogProvider, resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
 import { applySelectorTagsToWidget, createSelectorTagManager, createSelectorTagManagerFooter, ensureTagEditor, getActiveSelectorTagText, isTaggedAnimaNode } from "./anima_tag_editor.js";
 import { getOrderedCardCollectionGroups, shouldShowCustomItemCreateCard } from "./anima_card_filter_helpers.js";
+import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
 
 const ARTIST_SELECTOR_NODES = new Set([
     "AnimaArtistTagSelector",
@@ -82,31 +83,16 @@ async function openArtistSelectorModal(node, tagsWidget) {
             .filter(t => t.length > 0)
     );
 
-    // 加载后端持久化配置
-    let favoritesConfig = {
-        artist: {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: []
-        }
-    };
+    const favoritesStore = getFavoritesStore("artist");
     try {
-        const response = await fetch("/anima-tools/favorites");
-        if (response.ok) {
-            favoritesConfig = await response.json();
-        }
+        await favoritesStore.load();
     } catch (e) {
         console.error("Failed to load favorites", e);
     }
-    if (!favoritesConfig.artist) {
-        favoritesConfig.artist = {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: []
-        };
-    }
-    const tagFavorites = ensureSelectorTagFavorites(favoritesConfig.artist, t("Favorite Tags"));
-    
-    let groups = favoritesConfig.artist.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
-    let favoriteItems = favoritesConfig.artist.items || [];
+    let favoritesConfig = favoritesStore.getSnapshot().favorites;
+    let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    let groups = favoritesConfig.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
+    let favoriteItems = favoritesConfig.items || [];
     let favoriteMap = new Map();
     favoriteItems.forEach(fi => {
         if (!fi.isCustom) {
@@ -114,6 +100,23 @@ async function openArtistSelectorModal(node, tagsWidget) {
         }
     });
     let favoriteSet = new Set(favoriteItems.filter(fi => !fi.isCustom).map(fi => fi.name));
+    let refreshFavoritesView = () => {};
+
+    function rebuildFavorites(snapshot) {
+        Object.keys(favoritesConfig).forEach(key => delete favoritesConfig[key]);
+        Object.assign(favoritesConfig, snapshot.favorites);
+        tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+        groups = favoritesConfig.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
+        favoriteItems = favoritesConfig.items || [];
+        favoriteMap = new Map();
+        favoriteItems.forEach(fi => {
+            if (!fi.isCustom) favoriteMap.set(fi.name, fi);
+        });
+        favoriteSet = new Set(favoriteItems.filter(fi => !fi.isCustom).map(fi => fi.name));
+        refreshFavoritesView();
+    }
+
+    const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     // 匹配已经勾选的自定义项
     favoriteItems.forEach(fi => {
@@ -152,22 +155,19 @@ async function openArtistSelectorModal(node, tagsWidget) {
         });
         
         favoriteItems = nextItems;
-        favoritesConfig.artist.groups = groups;
-        favoritesConfig.artist.items = favoriteItems;
-        favoritesConfig.artist.tagGroups = tagFavorites.tagGroups;
-        favoritesConfig.artist.tagItems = tagFavorites.tagItems;
-        
         try {
-            const response = await fetch("/anima-tools/favorites", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(favoritesConfig)
+            await favoritesStore.mutate(draft => {
+                draft.groups = groups;
+                draft.items = favoriteItems;
+                draft.tagGroups = tagFavorites.tagGroups;
+                draft.tagItems = tagFavorites.tagItems;
             });
-            if (!response.ok) {
-                throw new Error(await response.text());
-            }
             return true;
         } catch (e) {
+            if (e instanceof FavoritesConflictError) {
+                alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
+                return true;
+            }
             console.error("Failed to save favorites", e);
             alert(t("Failed to save favorites"));
             return false;
@@ -2485,10 +2485,16 @@ async function openArtistSelectorModal(node, tagsWidget) {
 
     // 关闭弹窗
     function closeModal() {
+        unsubscribeFavorites();
         artistImageObserver.disconnect();
         modalOverlay.remove();
         styleSheet.remove();
     }
+
+    refreshFavoritesView = () => {
+        renderSidebar();
+        triggerFilter();
+    };
 
     // 首次初始化渲染侧边栏和数据流
     renderSidebar();

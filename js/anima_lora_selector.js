@@ -2,6 +2,7 @@ import { app } from "../../scripts/app.js";
 import { t } from "./i18n.js";
 import { markImageLoaded, isImageLoaded, clearImageLoadedCache } from "./anima_image_utils.js";
 import { createPromoLinks } from "./anima_promo_links.js";
+import { FavoritesConflictError, getFavoritesStore } from "./anima_favorites_store.js";
 
 app.registerExtension({
     name: "AnimaMultiLoraLoader.extension",
@@ -365,7 +366,6 @@ function updateJsonValue(node) {
 let globalLoraConfig = null;
 let globalLocalLoras = null;
 let globalLoraManifest = null;
-let globalFavorites = null;
 const LORA_MANIFEST_WIDTH = 320;
 const LORA_MANIFEST_CACHE_KEY = "loraManifest:v1:320";
 
@@ -627,13 +627,8 @@ async function openLoraSelectorModal(node) {
     let activeDownloads = {};
     let config = { custom_lora_dir: "", civitai_api_key: "" };
     
-    // Favorites config
-    let favoritesConfig = {
-        lora: {
-            groups: [{ id: "default", name: t("My Favorites"), isSystem: true }],
-            items: []
-        }
-    };
+    const favoritesStore = getFavoritesStore("lora");
+    const favoritesConfig = favoritesStore.getSnapshot().favorites;
 
     let query = "";
     let cursor = "";
@@ -658,6 +653,22 @@ async function openLoraSelectorModal(node) {
     const startedDownloadTaskIds = new Set();
     const modelDetailCache = new Map();
     const modelDetailFetches = new Map();
+
+    function refreshFavoritesView() {
+        if (currentCategory === "favorites") {
+            renderFavoritesOnly();
+        } else if (!isSearching && searchResults.length > 0) {
+            renderGrid();
+        }
+    }
+
+    function rebuildFavorites(snapshot) {
+        Object.keys(favoritesConfig).forEach(key => delete favoritesConfig[key]);
+        Object.assign(favoritesConfig, snapshot.favorites);
+        refreshFavoritesView();
+    }
+
+    const unsubscribeFavorites = favoritesStore.subscribe(rebuildFavorites);
 
     function getManifestSignature(manifestData) {
         const items = Array.isArray(manifestData?.items) ? manifestData.items : [];
@@ -2004,11 +2015,9 @@ async function openLoraSelectorModal(node) {
                     if (Array.isArray(data)) globalLocalLoras = data;
                 }));
             }
-            if (!globalFavorites) {
-                promises.push(fetch("/anima-tools/favorites").then(r => r.ok ? r.json() : null).then(data => {
-                    if (data) globalFavorites = data;
-                }));
-            }
+            promises.push(favoritesStore.load().catch(e => {
+                console.error("[Anima Tools] Failed to load LoRA favorites", e);
+            }));
             promises.push(fetch("/anima-tools/lora/download-status").then(r => r.ok ? r.json() : null).then(data => {
                 if (data) activeDownloads = data;
             }));
@@ -2020,9 +2029,6 @@ async function openLoraSelectorModal(node) {
             if (globalLoraConfig) config = globalLoraConfig;
             if (globalLoraManifest) applyManifest(globalLoraManifest);
             else if (globalLocalLoras) localLoras = globalLocalLoras;
-            if (globalFavorites && globalFavorites.lora) {
-                favoritesConfig.lora = globalFavorites.lora;
-            }
         } catch (e) {
             console.error("[Anima Tools] Failed to initialize data", e);
         }
@@ -2046,6 +2052,7 @@ async function openLoraSelectorModal(node) {
 
     // Close Handler
     function closeModal() {
+        unsubscribeFavorites();
         if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
         if (pollInterval) clearInterval(pollInterval);
         resetPreviewObserver();
@@ -2297,7 +2304,7 @@ async function openLoraSelectorModal(node) {
             const favBtn = document.createElement("div");
             favBtn.className = "anima-lora-favorite-btn";
             favBtn.style.zIndex = "8";
-            const isFav = favoritesConfig.lora.items.some(item => String(item.id) === String(model.id));
+            const isFav = favoritesConfig.items.some(item => String(item.id) === String(model.id));
             if (isFav) {
                 favBtn.classList.add("active");
                 favBtn.innerHTML = "★";
@@ -3426,7 +3433,7 @@ async function openLoraSelectorModal(node) {
     function renderFavoritesOnly() {
         gridContainer.innerHTML = "";
         
-        let filteredFavs = favoritesConfig.lora.items.filter(model => {
+        let filteredFavs = favoritesConfig.items.filter(model => {
             const q = query.toLowerCase();
             return !q || model.name.toLowerCase().includes(q) || (model.creator && model.creator.username.toLowerCase().includes(q));
         });
@@ -3591,54 +3598,33 @@ async function openLoraSelectorModal(node) {
         }
     }
 
-    // --- Save Favorites to Server ---
-    async function saveFavorites() {
-        try {
-            const favResp = await fetch("/anima-tools/favorites");
-            let fullFavs = {};
-            if (favResp.ok) fullFavs = await favResp.json();
-            
-            fullFavs.lora = favoritesConfig.lora;
-            
-            const saveResp = await fetch("/anima-tools/favorites", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(fullFavs)
-            });
-            if (!saveResp.ok) {
-                throw new Error(await saveResp.text());
-            }
-        } catch (e) {
-            console.error("Failed to save favorites to server", e);
-        }
-    }
-
     // --- Toggle Favorite Star ---
     async function toggleFavorite(model, favBtnElement) {
-        const items = favoritesConfig.lora.items;
-        const index = items.findIndex(item => String(item.id) === String(model.id));
-        
-        if (index !== -1) {
-            items.splice(index, 1);
-            favBtnElement.classList.remove("active");
-            favBtnElement.innerHTML = "☆";
-        } else {
-            items.push({
-                id: model.id,
-                name: model.name,
-                creator: model.creator,
-                modelVersions: model.modelVersions,
-                description: model.description
+        try {
+            await favoritesStore.mutate(draft => {
+                const index = draft.items.findIndex(item => String(item.id) === String(model.id));
+                if (index !== -1) {
+                    draft.items.splice(index, 1);
+                    return;
+                }
+                draft.items.push({
+                    id: model.id,
+                    name: model.name,
+                    creator: model.creator,
+                    modelVersions: model.modelVersions,
+                    description: model.description,
+                });
             });
-            favBtnElement.classList.add("active");
-            favBtnElement.innerHTML = "★";
+        } catch (e) {
+            if (e instanceof FavoritesConflictError) {
+                alert(t("Favorites changed elsewhere. Latest favorites were loaded."));
+            } else {
+                console.error("Failed to save favorites to server", e);
+            }
+            return;
         }
-        
-        await saveFavorites();
-        
-        if (currentCategory === "favorites") {
-            renderFavoritesOnly();
-        }
+
+        refreshFavoritesView();
     }
 
     // --- Settings Modal ---
