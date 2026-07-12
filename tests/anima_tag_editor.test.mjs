@@ -124,6 +124,48 @@ test("createSelectorTagManager supports double-click enable disable without butt
   assert.equal(widget.value, "alpha, beta, ");
 });
 
+test("createSelectorTagManager toggles tag favorites from chip stars", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=chip-favorites");
+  const { createDefaultTagFavorites } = await import("../js/anima_selector_tag_library.js?case=chip-favorites");
+  const { node, widget } = createNodeAndWidget("alpha, custom tag, ");
+  const tagFavorites = createDefaultTagFavorites();
+  let saves = 0;
+  const manager = createSelectorTagManager(node, widget, {
+    label: "Selected Tags",
+    tagFavorites,
+    catalogProvider: () => [{ tag: "alpha", labelZh: "阿尔法" }],
+    saveTagFavorites: async () => { saves += 1; },
+  });
+  document.body.appendChild(manager.element);
+
+  const stars = Array.from(manager.element.querySelectorAll('[data-tag-favorite-toggle="true"]'));
+  assert.equal(stars.length, 2);
+  assert.deepEqual(stars.map(button => button.textContent), ["☆", "☆"]);
+  assert.equal(manager.element.querySelector(".anima-tag-chip-primary").textContent, "alpha");
+  assert.equal(manager.element.querySelector(".anima-tag-chip-zh").textContent, "阿尔法");
+
+  clickLikeBrowser(stars[0]);
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.deepEqual(tagFavorites.tagItems[0], {
+    tag: "alpha",
+    labelZh: "阿尔法",
+    groupIds: ["default"],
+  });
+  assert.equal(stars[0].textContent, "★");
+
+  clickLikeBrowser(stars[1]);
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(tagFavorites.tagItems[1].isCustom, true);
+  assert.equal(stars[1].textContent, "★");
+
+  clickLikeBrowser(stars[0]);
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(tagFavorites.tagItems.some(item => item.tag === "alpha"), false);
+  assert.equal(stars[0].textContent, "☆");
+  assert.equal(saves, 3);
+});
+
 test("widget text input treats consecutive edits as one tag modification", async () => {
   installDom();
   const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=text-edit");
@@ -230,7 +272,7 @@ test("ensureTagEditor clears selected tags when history is empty", async () => {
     return domWidget;
   };
 
-  ensureTagEditor(node, widget, { label: "Prompt Tags" });
+  ensureTagEditor(node, widget, { label: "Prompt Tags", favoriteSection: false });
   assert.ok(editorRoot);
   document.body.appendChild(editorRoot);
 
@@ -241,6 +283,65 @@ test("ensureTagEditor clears selected tags when history is empty", async () => {
   assert.equal(widget.value, "");
   assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags, []);
   assert.match(editorRoot.textContent, /No tags yet/);
+});
+
+test("ensureTagEditor shows persistent favorite stars on node tags", async () => {
+  installDom();
+  const { ensureTagEditor } = await import("../js/anima_tag_editor.js?case=node-favorites");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+  let editorRoot = null;
+  let snapshot = {
+    revision: 1,
+    favorites: { groups: [], items: [], tagGroups: [], tagItems: [] },
+  };
+  const listeners = new Set();
+  const favoritesStore = {
+    getSnapshot: () => structuredClone(snapshot),
+    subscribe(listener) {
+      listeners.add(listener);
+      return () => listeners.delete(listener);
+    },
+    async load() {
+      listeners.forEach(listener => listener(structuredClone(snapshot)));
+      return structuredClone(snapshot);
+    },
+    async mutate(mutator) {
+      const draft = structuredClone(snapshot.favorites);
+      await mutator(draft);
+      snapshot = { revision: snapshot.revision + 1, favorites: draft };
+      listeners.forEach(listener => listener(structuredClone(snapshot)));
+      return structuredClone(snapshot);
+    },
+  };
+  node.addDOMWidget = function (_name, _type, element, options = {}) {
+    editorRoot = element;
+    const domWidget = { element, inputEl: element, container: element, ...options };
+    this.widgets.push(domWidget);
+    return domWidget;
+  };
+
+  ensureTagEditor(node, widget, {
+    label: "Artist Tags",
+    favoritesStore,
+    catalogProvider: () => [{ tag: "alpha", labelZh: "阿尔法" }],
+  });
+  await new Promise(resolve => setTimeout(resolve, 0));
+  document.body.appendChild(editorRoot);
+
+  let stars = Array.from(editorRoot.querySelectorAll('[data-tag-favorite-toggle="true"]'));
+  assert.deepEqual(stars.map(button => button.textContent), ["☆", "☆"]);
+  assert.equal(editorRoot.querySelector(".anima-tag-chip-primary").textContent, "alpha");
+  assert.equal(editorRoot.querySelector(".anima-tag-chip-zh").textContent, "阿尔法");
+
+  clickLikeBrowser(stars[0]);
+  await new Promise(resolve => setTimeout(resolve, 0));
+  stars = Array.from(editorRoot.querySelectorAll('[data-tag-favorite-toggle="true"]'));
+  assert.equal(stars[0].textContent, "★");
+  assert.deepEqual(snapshot.favorites.tagItems, [{
+    tag: "alpha",
+    labelZh: "阿尔法",
+    groupIds: ["default"],
+  }]);
 });
 
 test("createSelectorTagManager appends manual input as a tag", async () => {

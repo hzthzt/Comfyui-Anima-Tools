@@ -1424,9 +1424,16 @@ async function openArtistSelectorModal(node, tagsWidget) {
     }
 
     const footerButtons = createSelectorTagManagerFooter(12);
+    let selectorTagManager = null;
 
     if (isTaggedAnimaNode(node)) {
-        footerButtons.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        selectorTagManager = createSelectorTagManager(node, tagsWidget, {
+            label: t("Selected Tags"),
+            tagFavorites,
+            catalogProvider: getArtistTagCatalog,
+            saveTagFavorites: saveFavorites,
+        });
+        footerButtons.appendChild(selectorTagManager.element);
         footer.appendChild(footerButtons);
         modalContainer.appendChild(footer);
     }
@@ -2495,6 +2502,7 @@ async function openArtistSelectorModal(node, tagsWidget) {
     }
 
     refreshFavoritesView = () => {
+        selectorTagManager?.render();
         renderSidebar();
         triggerFilter();
     };

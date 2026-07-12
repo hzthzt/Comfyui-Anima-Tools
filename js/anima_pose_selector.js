@@ -1079,9 +1079,16 @@ async function openPoseSelectorModal(node, tagsWidget) {
     `;
 
     const footerBtns = createSelectorTagManagerFooter(10);
+    let selectorTagManager = null;
 
     if (isTaggedAnimaNode(node)) {
-        footerBtns.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        selectorTagManager = createSelectorTagManager(node, tagsWidget, {
+            label: t("Selected Tags"),
+            tagFavorites,
+            catalogProvider: getTagCatalog,
+            saveTagFavorites: saveFavorites,
+        });
+        footerBtns.appendChild(selectorTagManager.element);
         footer.appendChild(footerBtns);
         container.appendChild(footer);
     }
@@ -2022,6 +2029,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     }
 
     refreshFavoritesView = () => {
+        selectorTagManager?.render();
         renderSidebar();
         triggerFilter();
     };

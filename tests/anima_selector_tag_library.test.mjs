@@ -300,7 +300,7 @@ test("createSelectorTagView renders bilingual meaning without source usage count
   assert.doesNotMatch(view.element.textContent, /99/);
 });
 
-test("createSelectorTagView keeps Chinese off the tag title and uses fixed tag row size", async () => {
+test("createSelectorTagView shows Chinese below the English tag and uses fixed tag row size", async () => {
   installDom();
   const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-title-size");
   const view = createSelectorTagView({
@@ -320,8 +320,9 @@ test("createSelectorTagView keeps Chinese off the tag title and uses fixed tag r
 
   const row = view.element.querySelector("[data-selector-tag='blue eyes']");
   const title = row.querySelector(".anima-selector-tag-main");
+  const chinese = row.querySelector(".anima-selector-tag-zh");
   assert.equal(title.textContent, "blue eyes");
-  assert.doesNotMatch(title.textContent, /蓝色眼睛/);
+  assert.equal(chinese.textContent, "蓝色眼睛");
   assert.match(row.style.cssText, /height:\s*64px/i);
   assert.match(row.style.cssText, /min-height:\s*64px/i);
   assert.match(row.style.cssText, /max-height:\s*64px/i);

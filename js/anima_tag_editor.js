@@ -1,4 +1,19 @@
 import { t } from "./i18n.js";
+import {
+    createSelectorTagFavoriteFromText,
+    ensureSelectorTagFavorites,
+    getSelectorTagLabelParts,
+    getSelectorTagFavorite,
+    normalizeSelectorTagKey,
+    toggleSelectorTagFavorite,
+} from "./anima_selector_tag_library.js";
+import { resolveSelectorTagCatalog } from "./anima_selector_tag_catalog_config.js";
+import {
+    applyFavoritesOperation,
+    createFavoritesOperation,
+    FavoritesConflictError,
+    getFavoritesStore,
+} from "./anima_favorites_store.js";
 
 export const TAG_STATE_PROPERTY = "anima_prompt_tag_state";
 const DEFAULT_HISTORY_LIMIT = 20;
@@ -482,7 +497,7 @@ function getEditorHeight(field, width = 340) {
     const columns = Math.max(1, Math.floor((Math.max(260, width) - 28) / 116));
     const rows = Math.ceil(chipCount / columns);
     const historyRows = field.history.length > 0 ? Math.min(2, Math.ceil(field.history.length / columns)) : 0;
-    return 116 + rows * 30 + historyRows * 26;
+    return 116 + rows * 44 + historyRows * 26;
 }
 
 function measureEditorHeight(root, field, width = 340) {
@@ -603,6 +618,7 @@ export function ensureTagEditor(node, widgetOrName, config = {}) {
         updateSize: () => updateEditorSize(node, fieldName, widget, root),
     };
     node._animaTagEditors[fieldName] = editor;
+    connectNodeTagFavorites(editor, config, fieldName);
     if (typeof ResizeObserver !== "undefined") {
         editor.resizeObserver = new ResizeObserver(() => editor.updateSize?.());
         editor.resizeObserver.observe(root);
@@ -613,6 +629,59 @@ export function ensureTagEditor(node, widgetOrName, config = {}) {
     editor.render();
     syncField(node, fieldName, widget);
     return domWidget;
+}
+
+const TAG_FAVORITE_SECTION_BY_FIELD = Object.freeze({
+    artist_tags: "artist",
+    character_tags: "character",
+    clothing_tags: "clothing",
+    background_tags: "background",
+    pose_tags: "pose",
+    prompt_tags: "prompt",
+});
+
+function connectNodeTagFavorites(editor, config, fieldName) {
+    const section = config.favoriteSection ?? TAG_FAVORITE_SECTION_BY_FIELD[fieldName];
+    if (!section || config.tagFavorites) return;
+
+    const store = config.favoritesStore || getFavoritesStore(section);
+    let favoritesConfig = null;
+    const applySnapshot = snapshot => {
+        favoritesConfig = snapshot.favorites;
+        config.tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+        editor.render();
+    };
+    editor.unsubscribeFavorites = store.subscribe(applySnapshot);
+    if (typeof config.catalogProvider !== "function") {
+        let catalog = [];
+        config.catalogProvider = () => catalog;
+        resolveSelectorTagCatalog(section).then(nextCatalog => {
+            catalog = nextCatalog;
+            editor.render();
+        }).catch(error => {
+            console.warn(`[Anima Tools] Failed to load ${section} tag labels`, error);
+        });
+    }
+    config.saveTagFavorites = async () => {
+        if (!favoritesConfig) return false;
+        const favoritesOperation = createFavoritesOperation(store.getSnapshot().favorites, favoritesConfig);
+        try {
+            await store.mutate(draft => applyFavoritesOperation(draft, favoritesOperation));
+            return true;
+        } catch (error) {
+            if (error instanceof FavoritesConflictError) {
+                globalThis.alert?.(t("Favorites changed elsewhere. Latest favorites were loaded."));
+                return false;
+            }
+            console.error(`[Anima Tools] Failed to save ${section} tag favorites`, error);
+            globalThis.alert?.(t("Failed to save favorites"));
+            return false;
+        }
+    };
+
+    store.load().catch(error => {
+        console.error(`[Anima Tools] Failed to load ${section} tag favorites`, error);
+    });
 }
 
 function stopNodeDrag(event) {
@@ -687,7 +756,7 @@ function showChipDropIndicator(dragContext, chip, insertAfter) {
     indicator.style.display = "block";
 }
 
-function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}, dragContext = {}) {
+function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}, dragContext = {}, chipOptions = {}) {
     const chip = document.createElement("span");
     chip.draggable = true;
     chip.title = t("Drag Tag to Reorder");
@@ -696,8 +765,8 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         align-items: center;
         gap: 5px;
         max-width: 100%;
-        height: 24px;
-        padding: 0 7px;
+        min-height: 38px;
+        padding: 3px 7px;
         box-sizing: border-box;
         border-radius: 7px;
         border: 1px solid ${disabled ? "rgba(156,163,175,0.22)" : "rgba(14,165,233,0.38)"};
@@ -709,10 +778,71 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         user-select: none;
     `;
 
+    const tagValue = tagText(tag);
+    const catalog = typeof chipOptions.catalogProvider === "function"
+        ? chipOptions.catalogProvider()
+        : chipOptions.catalog || [];
+    const catalogItem = catalog.find(item => normalizeSelectorTagKey(item?.tag) === normalizeSelectorTagKey(tagValue));
+    const labels = getSelectorTagLabelParts(catalogItem, tagValue);
     const label = document.createElement("span");
-    label.textContent = tag.text;
-    label.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;";
+    label.title = [labels.primary, labels.secondary].filter(Boolean).join("\n");
+    label.style.cssText = "display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.15;";
+    const primary = document.createElement("span");
+    primary.className = "anima-tag-chip-primary";
+    primary.textContent = labels.primary;
+    primary.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;";
+    label.appendChild(primary);
+    if (labels.secondary) {
+        const secondary = document.createElement("span");
+        secondary.className = "anima-tag-chip-zh";
+        secondary.textContent = labels.secondary;
+        secondary.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;color:#94a3b8;font-size:10px;";
+        label.appendChild(secondary);
+    }
     chip.appendChild(label);
+
+    if (chipOptions.tagFavorites) {
+        const groupId = chipOptions.favoriteGroupId || "default";
+        const favorite = iconButton("", "", "#facc15");
+        favorite.dataset.tagFavoriteToggle = "true";
+        favorite.style.fontSize = "14px";
+        favorite.style.padding = "0";
+
+        const updateFavorite = () => {
+            const info = getSelectorTagFavorite(chipOptions.tagFavorites, tagText(tag));
+            const active = Boolean(info?.groupIds?.includes(groupId));
+            favorite.textContent = active ? "★" : "☆";
+            favorite.title = t(active ? "Unfavorite Tag" : "Favorite Tag");
+            favorite.setAttribute("aria-pressed", String(active));
+        };
+        updateFavorite();
+
+        favorite.addEventListener("click", async event => {
+            stopNodeDrag(event);
+            if (favorite.disabled) return;
+
+            const text = tagText(tag);
+            const info = getSelectorTagFavorite(chipOptions.tagFavorites, text);
+            if (info?.groupIds?.includes(groupId)) {
+                toggleSelectorTagFavorite(chipOptions.tagFavorites, { tag: text }, groupId);
+            } else {
+                const catalog = typeof chipOptions.catalogProvider === "function"
+                    ? chipOptions.catalogProvider()
+                    : chipOptions.catalog || [];
+                createSelectorTagFavoriteFromText(chipOptions.tagFavorites, catalog, text, groupId);
+            }
+            updateFavorite();
+            favorite.disabled = true;
+            try {
+                await chipOptions.saveTagFavorites?.();
+                chipOptions.onTagFavoritesChanged?.();
+            } finally {
+                favorite.disabled = false;
+                updateFavorite();
+            }
+        });
+        chip.appendChild(favorite);
+    }
 
     chip.addEventListener("dragstart", event => {
         if (event.target?.closest?.("button")) {
@@ -825,7 +955,16 @@ function renderTagEditor(node, widget, fieldName, root, config) {
     const chips = document.createElement("div");
     chips.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:6px;min-height:26px;margin-bottom:7px;";
     const dragContext = createChipDragContext(chips);
-    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, {}, dragContext)));
+    field.tags.forEach(tag => chips.appendChild(createChip(
+        node,
+        widget,
+        fieldName,
+        tag,
+        tag.enabled === false,
+        {},
+        dragContext,
+        config,
+    )));
     if (field.tags.length === 0) {
         const empty = document.createElement("span");
         empty.textContent = t("No tags yet");
@@ -1061,7 +1200,16 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     const chips = document.createElement("div");
     chips.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:6px;min-height:26px;width:100%;box-sizing:border-box;";
     const dragContext = createChipDragContext(chips);
-    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, { notify: false }, dragContext)));
+    field.tags.forEach(tag => chips.appendChild(createChip(
+        node,
+        widget,
+        fieldName,
+        tag,
+        tag.enabled === false,
+        { notify: false },
+        dragContext,
+        config,
+    )));
     if (field.tags.length === 0) {
         const empty = document.createElement("span");
         empty.textContent = t("No tags yet");

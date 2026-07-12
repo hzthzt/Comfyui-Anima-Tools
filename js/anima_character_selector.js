@@ -1841,9 +1841,16 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     `;
 
     const footerButtons = createSelectorTagManagerFooter(12);
+    let selectorTagManager = null;
 
     if (isTaggedAnimaNode(node)) {
-        footerButtons.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        selectorTagManager = createSelectorTagManager(node, tagsWidget, {
+            label: t("Selected Tags"),
+            tagFavorites,
+            catalogProvider: getCharacterTagCatalog,
+            saveTagFavorites: saveFavorites,
+        });
+        footerButtons.appendChild(selectorTagManager.element);
         footer.appendChild(footerButtons);
         modalContainer.appendChild(footer);
     }
@@ -3133,6 +3140,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     }
 
     refreshFavoritesView = () => {
+        selectorTagManager?.render();
         renderSidebar();
         triggerFilter();
     };

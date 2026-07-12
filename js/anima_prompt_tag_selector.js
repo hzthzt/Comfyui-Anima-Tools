@@ -398,6 +398,7 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
     container.appendChild(body);
 
     const footerBtns = createSelectorTagManagerFooter(10);
+    let selectorTagManager = null;
     if (isTaggedAnimaNode(node)) {
         const footer = createEl("div");
         footer.style.cssText = `
@@ -405,7 +406,13 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
             border-top: 1px solid rgba(255,255,255,0.06);
             background: rgba(18,18,24,0.68);
         `;
-        footerBtns.appendChild(createSelectorTagManager(node, tagsWidget, { label: t("Selected Tags") }).element);
+        selectorTagManager = createSelectorTagManager(node, tagsWidget, {
+            label: t("Selected Tags"),
+            tagFavorites,
+            catalogProvider: getTagCatalog,
+            saveTagFavorites: saveFavorites,
+        });
+        footerBtns.appendChild(selectorTagManager.element);
         footer.appendChild(footerBtns);
         container.appendChild(footer);
     }
@@ -447,6 +454,7 @@ async function openPromptTagSelectorModal(node, tagsWidget) {
 
     searchInput.addEventListener("input", () => selectorTagView.setQuery(searchInput.value));
     refreshFavoritesView = () => {
+        selectorTagManager?.render();
         renderSidebar();
         selectorTagView.setFilter(activeTagFilter);
     };

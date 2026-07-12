@@ -29,6 +29,15 @@ export function normalizeSelectorTagKey(value) {
     return String(value || "").replace(/^_raw_:/, "").trim().toLowerCase();
 }
 
+export function getSelectorTagLabelParts(item, fallback = "") {
+    const tag = String(item?.tag || fallback || "").trim();
+    const labelZh = String(item?.labelZh || "").trim();
+    return {
+        primary: tag || labelZh,
+        secondary: tag && normalizeSelectorTagKey(tag) !== normalizeSelectorTagKey(labelZh) ? labelZh : "",
+    };
+}
+
 export function createDefaultTagFavorites(defaultName = "Favorite Tags") {
     return {
         tagGroups: [{ id: "default", name: defaultName, isSystem: true }],
@@ -692,14 +701,16 @@ export function createSelectorTagView(options) {
         `;
         const text = document.createElement("span");
         text.style.cssText = "min-width:0;display:flex;flex-direction:column;gap:3px;";
+        const labels = getSelectorTagLabelParts(item);
         const main = document.createElement("span");
         main.className = "anima-selector-tag-main";
-        main.textContent = item.tag;
-        main.title = main.textContent;
+        main.textContent = labels.primary;
+        main.title = [labels.primary, labels.secondary, formatSelectorTagMeaning(item)].filter(Boolean).join("\n");
         main.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:800;";
         const sub = document.createElement("span");
-        sub.textContent = formatSelectorTagMeaning(item);
-        sub.style.cssText = "color:#94a3b8;font-size:11px;";
+        sub.className = "anima-selector-tag-zh";
+        sub.textContent = labels.secondary || formatSelectorTagMeaning(item);
+        sub.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#94a3b8;font-size:11px;";
         text.appendChild(main);
         if (sub.textContent) text.appendChild(sub);
 
