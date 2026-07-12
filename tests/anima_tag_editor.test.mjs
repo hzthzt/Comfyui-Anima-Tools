@@ -81,6 +81,28 @@ test("createSelectorTagManager supports double-click enable disable without butt
   assert.equal(widget.value, "alpha, beta, ");
 });
 
+test("widget text input treats consecutive edits as one tag modification", async () => {
+  installDom();
+  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=text-edit");
+  const { node, widget } = createNodeAndWidget("alpha, beta, ");
+  widget.inputEl = document.createElement("textarea");
+  widget.inputEl.value = widget.value;
+
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  for (const value of ["alpha, bet, ", "alpha, bett, ", "alpha, better, "]) {
+    widget.value = value;
+    widget.inputEl.value = value;
+    widget.inputEl.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+
+  assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags, [
+    { text: "alpha", enabled: true, source: "legacy" },
+    { text: "better", enabled: true, source: "text" },
+  ]);
+});
+
 test("createSelectorTagManager keeps full width when empty", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=empty-width");

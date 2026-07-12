@@ -246,6 +246,70 @@ function applyIncomingTags(field, incomingTags, mode, source) {
     field.tags = uniqueTags([...incoming, ...disabledPrevious]);
 }
 
+function reconcileTextTags(field, incomingTags) {
+    const incoming = uniqueTags(incomingTags.map(text => ({
+        text,
+        enabled: true,
+        source: "text",
+    })));
+    const active = field.tags.filter(tag => tag?.enabled !== false);
+    const disabled = field.tags.filter(tag => tag?.enabled === false);
+    const oldKeys = active.map(tag => normalizeTagKey(tagText(tag)));
+    const newKeys = incoming.map(tag => normalizeTagKey(tag.text));
+
+    // Match unchanged tags first, then treat paired gaps as edits at the same position.
+    const lengths = Array.from({ length: active.length + 1 }, () => Array(incoming.length + 1).fill(0));
+    for (let oldIndex = active.length - 1; oldIndex >= 0; oldIndex -= 1) {
+        for (let newIndex = incoming.length - 1; newIndex >= 0; newIndex -= 1) {
+            lengths[oldIndex][newIndex] = oldKeys[oldIndex] === newKeys[newIndex]
+                ? lengths[oldIndex + 1][newIndex + 1] + 1
+                : Math.max(lengths[oldIndex + 1][newIndex], lengths[oldIndex][newIndex + 1]);
+        }
+    }
+
+    const matches = [];
+    let oldIndex = 0;
+    let newIndex = 0;
+    while (oldIndex < active.length && newIndex < incoming.length) {
+        if (oldKeys[oldIndex] === newKeys[newIndex]) {
+            matches.push([oldIndex, newIndex]);
+            oldIndex += 1;
+            newIndex += 1;
+        } else if (lengths[oldIndex + 1][newIndex] >= lengths[oldIndex][newIndex + 1]) {
+            oldIndex += 1;
+        } else {
+            newIndex += 1;
+        }
+    }
+
+    const enabled = [];
+    const removed = [];
+    let oldCursor = 0;
+    let newCursor = 0;
+    const reconcileGap = (oldEnd, newEnd) => {
+        const editCount = Math.min(oldEnd - oldCursor, newEnd - newCursor);
+        for (let offset = 0; offset < editCount; offset += 1) {
+            enabled.push({
+                ...active[oldCursor + offset],
+                text: incoming[newCursor + offset].text,
+                enabled: true,
+                source: "text",
+            });
+        }
+        enabled.push(...incoming.slice(newCursor + editCount, newEnd));
+        removed.push(...active.slice(oldCursor + editCount, oldEnd).map(tag => ({ ...tag, enabled: false })));
+    };
+
+    for (const [matchedOld, matchedNew] of matches) {
+        reconcileGap(matchedOld, matchedNew);
+        enabled.push({ ...active[matchedOld], text: incoming[matchedNew].text, enabled: true });
+        oldCursor = matchedOld + 1;
+        newCursor = matchedNew + 1;
+    }
+    reconcileGap(active.length, incoming.length);
+    field.tags = uniqueTags([...enabled, ...disabled, ...removed]);
+}
+
 function mergeSelectorManagerTags(field, incomingTags, source) {
     const incoming = uniqueTags(incomingTags.map(text => ({
         text,
@@ -301,7 +365,7 @@ function appendSelectorManagerTags(field, incomingTags, source) {
 function syncFieldFromWidget(node, fieldName, widget) {
     if (!node || !widget || widget.__animaTagSyncingText) return;
     const field = getTagFieldState(node, fieldName, widget);
-    applyIncomingTags(field, splitTagText(widget.value), "replace", "text");
+    reconcileTextTags(field, splitTagText(widget.value));
     refreshEditor(node, fieldName);
     refreshSelectorManagers(node, fieldName);
     refreshNode(node);
