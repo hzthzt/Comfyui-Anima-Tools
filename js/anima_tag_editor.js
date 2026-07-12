@@ -653,8 +653,44 @@ function iconButton(label, title, color = "#d1d5db") {
     return button;
 }
 
-function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}) {
+function createChipDragContext(container) {
+    const indicator = document.createElement("div");
+    indicator.className = "anima-tag-drop-indicator";
+    indicator.style.cssText = `
+        position: absolute;
+        display: none;
+        width: 2px;
+        height: 24px;
+        border-radius: 1px;
+        background: #38bdf8;
+        pointer-events: none;
+        z-index: 1;
+    `;
+    container.appendChild(indicator);
+    return { container, indicator };
+}
+
+function clearChipDropIndicator(dragContext) {
+    if (dragContext?.indicator) dragContext.indicator.style.display = "none";
+}
+
+function showChipDropIndicator(dragContext, chip, insertAfter) {
+    const { container, indicator } = dragContext;
+    if (!container || !indicator) return;
+    const chipRect = chip.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const gap = Number.parseFloat(window.getComputedStyle(container).columnGap) || 0;
+    const boundary = insertAfter ? chipRect.right + gap / 2 : chipRect.left - gap / 2;
+    indicator.style.left = `${boundary - containerRect.left + container.scrollLeft - 1}px`;
+    indicator.style.top = `${chipRect.top - containerRect.top + container.scrollTop}px`;
+    indicator.style.height = `${chipRect.height || 24}px`;
+    indicator.style.display = "block";
+}
+
+function createChip(node, widget, fieldName, tag, disabled = false, syncOptions = {}, dragContext = {}) {
     const chip = document.createElement("span");
+    chip.draggable = true;
+    chip.title = t("Drag Tag to Reorder");
     chip.style.cssText = `
         display: inline-flex;
         align-items: center;
@@ -669,12 +705,76 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         color: ${disabled ? "#9ca3af" : "#e0f2fe"};
         text-decoration: ${disabled ? "line-through" : "none"};
         overflow: hidden;
+        cursor: grab;
+        user-select: none;
     `;
 
     const label = document.createElement("span");
     label.textContent = tag.text;
     label.style.cssText = "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;";
     chip.appendChild(label);
+
+    chip.addEventListener("dragstart", event => {
+        if (event.target?.closest?.("button")) {
+            event.preventDefault();
+            return;
+        }
+        event.stopPropagation();
+        dragContext.draggedTag = tag;
+        dragContext.dropChip = null;
+        chip.style.opacity = "0.5";
+        chip.style.cursor = "grabbing";
+        if (event.dataTransfer) {
+            event.dataTransfer.effectAllowed = "move";
+            event.dataTransfer.setData("text/plain", tagText(tag));
+        }
+    });
+
+    chip.addEventListener("dragover", event => {
+        if (!dragContext.draggedTag || dragContext.draggedTag === tag) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (event.dataTransfer) event.dataTransfer.dropEffect = "move";
+        const rect = chip.getBoundingClientRect();
+        const insertAfter = event.clientX >= rect.left + rect.width / 2;
+        dragContext.dropChip = chip;
+        dragContext.insertAfter = insertAfter;
+        showChipDropIndicator(dragContext, chip, insertAfter);
+    });
+
+    chip.addEventListener("dragleave", event => {
+        event.stopPropagation();
+        if (dragContext.dropChip !== chip) return;
+        clearChipDropIndicator(dragContext);
+        dragContext.dropChip = null;
+    });
+
+    chip.addEventListener("drop", event => {
+        if (!dragContext.draggedTag || dragContext.draggedTag === tag) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const field = getTagFieldState(node, fieldName, widget);
+        const fromIndex = field.tags.indexOf(dragContext.draggedTag);
+        const targetIndex = field.tags.indexOf(tag);
+        if (fromIndex < 0 || targetIndex < 0) return;
+        const [movedTag] = field.tags.splice(fromIndex, 1);
+        const adjustedTarget = field.tags.indexOf(tag);
+        const insertionIndex = adjustedTarget + (dragContext.insertAfter ? 1 : 0);
+        field.tags.splice(insertionIndex, 0, movedTag);
+        dragContext.draggedTag = null;
+        clearChipDropIndicator(dragContext);
+        dragContext.dropChip = null;
+        syncField(node, fieldName, widget, syncOptions);
+    });
+
+    chip.addEventListener("dragend", event => {
+        event.stopPropagation();
+        chip.style.opacity = "";
+        chip.style.cursor = "grab";
+        clearChipDropIndicator(dragContext);
+        dragContext.draggedTag = null;
+        dragContext.dropChip = null;
+    });
 
     chip.addEventListener("dblclick", event => {
         if (event.target?.closest?.("button")) return;
@@ -723,8 +823,9 @@ function renderTagEditor(node, widget, fieldName, root, config) {
     root.appendChild(header);
 
     const chips = document.createElement("div");
-    chips.style.cssText = "display:flex;flex-wrap:wrap;gap:6px;min-height:26px;margin-bottom:7px;";
-    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false)));
+    chips.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:6px;min-height:26px;margin-bottom:7px;";
+    const dragContext = createChipDragContext(chips);
+    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, {}, dragContext)));
     if (field.tags.length === 0) {
         const empty = document.createElement("span");
         empty.textContent = t("No tags yet");
@@ -958,8 +1059,9 @@ function renderSelectorTagManager(node, widget, fieldName, root, config = {}) {
     root.appendChild(header);
 
     const chips = document.createElement("div");
-    chips.style.cssText = "display:flex;flex-wrap:wrap;gap:6px;min-height:26px;width:100%;box-sizing:border-box;";
-    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, { notify: false })));
+    chips.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:6px;min-height:26px;width:100%;box-sizing:border-box;";
+    const dragContext = createChipDragContext(chips);
+    field.tags.forEach(tag => chips.appendChild(createChip(node, widget, fieldName, tag, tag.enabled === false, { notify: false }, dragContext)));
     if (field.tags.length === 0) {
         const empty = document.createElement("span");
         empty.textContent = t("No tags yet");

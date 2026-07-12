@@ -48,6 +48,49 @@ function clickLikeBrowser(element) {
   }
 }
 
+function dispatchDrag(element, type, dataTransfer, clientX = 0) {
+  const event = new window.Event(type, { bubbles: true, cancelable: true });
+  Object.defineProperties(event, {
+    dataTransfer: { value: dataTransfer },
+    clientX: { value: clientX },
+  });
+  element.dispatchEvent(event);
+  return event;
+}
+
+test("createSelectorTagManager reorders tags by dragging chips", async () => {
+  installDom();
+  const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=drag-reorder");
+  const { node, widget } = createNodeAndWidget("alpha, beta, gamma, ");
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const chips = Array.from(manager.element.querySelectorAll('span[draggable="true"]'));
+  assert.equal(chips.length, 3);
+  assert.equal(chips[0].title, "Drag to reorder tag");
+  const dataTransfer = {
+    effectAllowed: "",
+    dropEffect: "",
+    setData() {},
+  };
+
+  dispatchDrag(chips[0], "dragstart", dataTransfer);
+  const dragOver = dispatchDrag(chips[1], "dragover", dataTransfer, 1);
+  assert.equal(dragOver.defaultPrevented, true);
+  const indicator = manager.element.querySelector(".anima-tag-drop-indicator");
+  assert.ok(indicator);
+  assert.equal(indicator.style.display, "block");
+  assert.equal(chips[1].style.boxShadow, "");
+  dispatchDrag(chips[1], "drop", dataTransfer, 1);
+
+  assert.equal(widget.value, "beta, alpha, gamma, ");
+  assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags.map(tag => tag.text), [
+    "beta",
+    "alpha",
+    "gamma",
+  ]);
+});
+
 test("createSelectorTagManager supports double-click enable disable without buttons", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=disable");
