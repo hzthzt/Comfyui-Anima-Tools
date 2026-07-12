@@ -213,6 +213,12 @@ const TRANSLATIONS = {
     "Selector Apply Mode": "Selector apply mode",
     "Composition Preview": "Composition Preview",
     "Character": "Character",
+    "Create Favorite Tag": "Create Favorite Tag",
+    "Edit Custom Tag": "Edit Custom Tag",
+    "Enter favorite tag...": "Enter favorite tag...",
+    "Enter Chinese name (optional)...": "Enter Chinese name (optional)...",
+    "Chinese Name": "Chinese Name",
+    "Tag": "Tag",
   },
   zh: {
     "Open Artist Selector": "打开画师选择器",
@@ -426,6 +432,12 @@ const TRANSLATIONS = {
     "Selector Apply Mode": "选择器应用模式",
     "Composition Preview": "构图预览",
     "Character": "角色",
+    "Create Favorite Tag": "新建自定义 Tag",
+    "Edit Custom Tag": "编辑自定义 Tag",
+    "Enter favorite tag...": "输入 Tag...",
+    "Enter Chinese name (optional)...": "输入中文名称（可选）...",
+    "Chinese Name": "中文名称",
+    "Tag": "Tag",
   }
 };
 

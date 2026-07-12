@@ -276,7 +276,7 @@ export function toggleSelectorTagFavorite(tagFavorites, catalogItem, groupId = "
     return item;
 }
 
-export function createSelectorTagFavoriteFromText(tagFavorites, catalog = [], text, groupId = "default") {
+export function createSelectorTagFavoriteFromText(tagFavorites, catalog = [], text, groupId = "default", labelZh = "") {
     ensureSelectorTagFavorites(tagFavorites);
     const clean = String(text || "").trim();
     const key = tagFavoriteKey(clean);
@@ -293,6 +293,7 @@ export function createSelectorTagFavoriteFromText(tagFavorites, catalog = [], te
             }
             : {
                 tag: clean,
+                ...(String(labelZh || "").trim() ? { labelZh: String(labelZh).trim() } : {}),
                 groupIds: [],
                 isCustom: true,
             };
@@ -305,6 +306,29 @@ export function createSelectorTagFavoriteFromText(tagFavorites, catalog = [], te
 
     item.groupIds = Array.isArray(item.groupIds) ? item.groupIds : [];
     if (!item.groupIds.includes(groupId)) item.groupIds.push(groupId);
+    return item;
+}
+
+export function updateCustomSelectorTagFavorite(tagFavorites, catalog = [], currentTag, values = {}) {
+    const favorites = ensureSelectorTagFavorites(tagFavorites);
+    const item = getSelectorTagFavorite(favorites, currentTag);
+    const tag = String(values.tag || "").trim();
+    const key = tagFavoriteKey(tag);
+    if (!item?.isCustom || !key) return null;
+
+    const currentKey = tagFavoriteKey(currentTag);
+    const conflictsWithFavorite = favorites.tagItems.some(existing => (
+        existing !== item && tagFavoriteKey(existing?.tag) === key
+    ));
+    const conflictsWithCatalog = (catalog || []).some(existing => (
+        tagFavoriteKey(existing?.tag) === key && key !== currentKey
+    ));
+    if (conflictsWithFavorite || conflictsWithCatalog) return null;
+
+    item.tag = tag;
+    const labelZh = String(values.labelZh || "").trim();
+    if (labelZh) item.labelZh = labelZh;
+    else delete item.labelZh;
     return item;
 }
 
@@ -754,6 +778,33 @@ export function createSelectorTagView(options) {
 
         const actions = document.createElement("span");
         actions.style.cssText = "display:flex;align-items:center;gap:6px;flex:0 0 auto;";
+        if (item.isCustom) {
+            const edit = document.createElement("span");
+            edit.textContent = "✎";
+            edit.title = t("Edit Custom Tag");
+            edit.dataset.tagAction = "edit";
+            edit.style.cssText = "font-size:15px;color:#cbd5e1;flex:0 0 auto;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,0.06);";
+            edit.onclick = event => {
+                event.stopPropagation();
+                requestTagInput(options, {
+                    title: t("Edit Custom Tag"),
+                    tagPlaceholder: t("Enter favorite tag..."),
+                    labelZhPlaceholder: t("Enter Chinese name (optional)..."),
+                    tag: item.tag,
+                    labelZh: item.labelZh || "",
+                    t,
+                    onSubmit: async values => {
+                        const updated = updateCustomSelectorTagFavorite(favorites, catalog(), item.tag, values);
+                        if (!updated) return false;
+                        await save();
+                        render();
+                        options.onTagFavoritesChanged?.();
+                        return true;
+                    },
+                });
+            };
+            actions.appendChild(edit);
+        }
         actions.appendChild(groupButton);
         actions.appendChild(favorite);
 
@@ -769,13 +820,22 @@ export function createSelectorTagView(options) {
         render();
     };
     createTagBtn.onclick = async () => {
-        requestTextInput(options, {
+        requestTagInput(options, {
             title: t("Create Favorite Tag"),
-            placeholder: t("Enter favorite tag..."),
-            defaultValue: "",
-            onSubmit: async tagText => {
+            tagPlaceholder: t("Enter favorite tag..."),
+            labelZhPlaceholder: t("Enter Chinese name (optional)..."),
+            tag: "",
+            labelZh: "",
+            t,
+            onSubmit: async values => {
                 const target = targetGroupId();
-                const created = createSelectorTagFavoriteFromText(tagFavorites(), catalog(), tagText, target);
+                const created = createSelectorTagFavoriteFromText(
+                    tagFavorites(),
+                    catalog(),
+                    values.tag,
+                    target,
+                    values.labelZh,
+                );
                 if (!created) return false;
                 state.filterType = "group";
                 state.groupId = target;
@@ -871,6 +931,101 @@ function requestTextInput(options = {}, request = {}) {
             onSubmit: submit,
         });
     }
+}
+
+function requestTagInput(options = {}, request = {}) {
+    if (options.requestTagInput) {
+        options.requestTagInput(request);
+        return;
+    }
+
+    const t = request.t || (value => value);
+    const dialog = document.createElement("div");
+    dialog.className = "anima-selector-tag-editor-dialog";
+    dialog.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 1000000;
+        background: rgba(0,0,0,0.62);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    const form = document.createElement("div");
+    form.style.cssText = `
+        width: min(420px, calc(100vw - 32px));
+        background: #1c1c1e;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 12px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        box-shadow: 0 18px 45px rgba(0,0,0,0.52);
+        box-sizing: border-box;
+    `;
+    const title = document.createElement("div");
+    title.textContent = request.title || "";
+    title.style.cssText = "font-size:16px;font-weight:800;color:#fff;";
+
+    const createField = (labelText, value, placeholder, field) => {
+        const label = document.createElement("label");
+        label.style.cssText = "display:flex;flex-direction:column;gap:6px;color:#cbd5e1;font-size:12px;font-weight:700;";
+        label.appendChild(document.createTextNode(labelText));
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = value || "";
+        input.placeholder = placeholder || "";
+        input.dataset.tagEditorField = field;
+        input.style.cssText = `${controlStyle()} width:100%;font-size:14px;`;
+        label.appendChild(input);
+        form.appendChild(label);
+        return input;
+    };
+
+    form.appendChild(title);
+    const tagInput = createField(t("Tag"), request.tag, request.tagPlaceholder, "tag");
+    const labelZhInput = createField(t("Chinese Name"), request.labelZh, request.labelZhPlaceholder, "labelZh");
+    const buttons = document.createElement("div");
+    buttons.style.cssText = "display:flex;justify-content:flex-end;gap:10px;margin-top:4px;";
+    const cancel = document.createElement("button");
+    cancel.type = "button";
+    cancel.textContent = t("Cancel");
+    cancel.style.cssText = buttonStyle("#9ca3af");
+    cancel.onclick = () => dialog.remove();
+    const confirm = document.createElement("button");
+    confirm.type = "button";
+    confirm.textContent = t("Save");
+    confirm.style.cssText = `${buttonStyle("#fff")} background:#0b8ce9;`;
+    confirm.onclick = async () => {
+        const tag = tagInput.value.trim();
+        if (!tag) return;
+        confirm.disabled = true;
+        cancel.disabled = true;
+        const shouldClose = await request.onSubmit?.({ tag, labelZh: labelZhInput.value.trim() });
+        if (shouldClose !== false) {
+            dialog.remove();
+            return;
+        }
+        confirm.disabled = false;
+        cancel.disabled = false;
+    };
+    buttons.appendChild(cancel);
+    buttons.appendChild(confirm);
+    form.appendChild(buttons);
+    dialog.appendChild(form);
+    dialog.onclick = event => {
+        if (event.target === dialog) dialog.remove();
+    };
+    dialog.onkeydown = event => {
+        if (event.key === "Escape") dialog.remove();
+        if (event.key === "Enter") confirm.click();
+    };
+    document.body.appendChild(dialog);
+    tagInput.focus();
+    tagInput.select();
 }
 
 function openSelectorTagGroupSelectPopover(options = {}) {

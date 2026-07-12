@@ -428,15 +428,11 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   };
   let saveCount = 0;
   const applied = [];
-  let request = null;
   const view = createSelectorTagView({
     section: "character",
     tagFavorites,
     catalogProvider: () => [{ tag: "blue eyes", labelZh: "蓝色眼睛" }],
     applyTag: tag => applied.push(tag),
-    requestTextInput: nextRequest => {
-      request = nextRequest;
-    },
     saveTagFavorites: async () => {
       saveCount += 1;
     },
@@ -448,15 +444,17 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   const createButton = Array.from(view.element.querySelectorAll("button")).find(button => button.title === "Create Favorite Tag");
   assert.ok(createButton);
   createButton.click();
-  assert.equal(request.title, "Create Favorite Tag");
-  assert.equal(request.placeholder, "Enter favorite tag...");
-  assert.equal(request.defaultValue, "");
-  await request.onSubmit("sparkle aura");
+  const editor = document.querySelector(".anima-selector-tag-editor-dialog");
+  assert.ok(editor);
+  editor.querySelector('[data-tag-editor-field="tag"]').value = "sparkle aura";
+  editor.querySelector('[data-tag-editor-field="labelZh"]').value = "闪耀光环";
+  Array.from(editor.querySelectorAll("button")).find(button => button.textContent === "Save").click();
   await new Promise(resolve => setTimeout(resolve, 0));
 
   assert.equal(saveCount, 1);
   assert.deepEqual(tagFavorites.tagItems, [{
     tag: "sparkle aura",
+    labelZh: "闪耀光环",
     groupIds: ["tag_group_mood"],
     isCustom: true,
   }]);
@@ -465,6 +463,52 @@ test("createSelectorTagView can create and render a custom favorite tag in the a
   assert.ok(row);
   row.click();
   assert.deepEqual(applied, ["sparkle aura"]);
+});
+
+test("createSelectorTagView edits the tag and Chinese name of a custom favorite", async () => {
+  installDom();
+  const { createSelectorTagView } = await import("../js/anima_selector_tag_library.js?case=view-edit-custom");
+  const tagFavorites = {
+    tagGroups: [{ id: "default", name: "Default Tags", isSystem: true }],
+    tagItems: [{
+      tag: "sparkle aura",
+      labelZh: "闪耀光环",
+      groupIds: ["default"],
+      isCustom: true,
+    }],
+  };
+  let saveCount = 0;
+  const view = createSelectorTagView({
+    tagFavorites,
+    catalogProvider: () => [],
+    saveTagFavorites: async () => { saveCount += 1; },
+    t: value => value,
+  });
+
+  document.body.appendChild(view.element);
+  view.setFilter({ type: "group", groupId: "default" });
+  const row = view.element.querySelector('[data-selector-tag="sparkle aura"]');
+  row.querySelector('[data-tag-action="edit"]').click();
+
+  const editor = document.querySelector(".anima-selector-tag-editor-dialog");
+  const tagInput = editor.querySelector('[data-tag-editor-field="tag"]');
+  const labelZhInput = editor.querySelector('[data-tag-editor-field="labelZh"]');
+  assert.equal(tagInput.value, "sparkle aura");
+  assert.equal(labelZhInput.value, "闪耀光环");
+  tagInput.value = "radiant aura";
+  labelZhInput.value = "璀璨光环";
+  Array.from(editor.querySelectorAll("button")).find(button => button.textContent === "Save").click();
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  assert.equal(saveCount, 1);
+  assert.deepEqual(tagFavorites.tagItems, [{
+    tag: "radiant aura",
+    labelZh: "璀璨光环",
+    groupIds: ["default"],
+    isCustom: true,
+  }]);
+  assert.equal(view.element.querySelector('[data-selector-tag="sparkle aura"]'), null);
+  assert.equal(view.element.querySelector('[data-selector-tag="radiant aura"] .anima-selector-tag-zh').textContent, "璀璨光环");
 });
 
 test("createSelectorTagView manages favorite tag groups with a checkbox popover", async () => {
