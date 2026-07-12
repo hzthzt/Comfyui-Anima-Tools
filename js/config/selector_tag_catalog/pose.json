@@ -156,11 +156,11 @@
       "tag": "adjusting glasses",
       "label": {
         "en": "adjusting glasses",
-        "zh": ""
+        "zh": "扶眼镜"
       },
       "meaning": {
         "en": "adjusting glasses",
-        "zh": ""
+        "zh": "扶眼镜"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -233,11 +233,11 @@
       "tag": "adjusting pantyhose",
       "label": {
         "en": "adjusting pantyhose",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "meaning": {
         "en": "adjusting pantyhose",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -249,11 +249,11 @@
       "tag": "adjusting sunglasses",
       "label": {
         "en": "adjusting sunglasses",
-        "zh": ""
+        "zh": "扶眼镜"
       },
       "meaning": {
         "en": "adjusting sunglasses",
-        "zh": ""
+        "zh": "扶眼镜"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -265,11 +265,11 @@
       "tag": "adjusting thighhigh",
       "label": {
         "en": "adjusting thighhigh",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "meaning": {
         "en": "adjusting thighhigh",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -281,11 +281,11 @@
       "tag": "adjusting thighhighs",
       "label": {
         "en": "adjusting thighhighs",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "meaning": {
         "en": "adjusting thighhighs",
-        "zh": ""
+        "zh": "整理裤袜"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -297,11 +297,11 @@
       "tag": "agura",
       "label": {
         "en": "agura",
-        "zh": ""
+        "zh": "盘腿"
       },
       "meaning": {
         "en": "agura",
-        "zh": ""
+        "zh": "盘腿"
       },
       "categoryIds": [
         "sitting-poses"
@@ -332,11 +332,11 @@
       "tag": "air punch",
       "label": {
         "en": "air punch",
-        "zh": ""
+        "zh": "举起的拳头"
       },
       "meaning": {
         "en": "air punch",
-        "zh": ""
+        "zh": "举起的拳头"
       },
       "categoryIds": [
         "gestures-arms"
@@ -391,11 +391,11 @@
       "tag": "akimbo",
       "label": {
         "en": "akimbo",
-        "zh": ""
+        "zh": "双手叉腰"
       },
       "meaning": {
         "en": "akimbo",
-        "zh": ""
+        "zh": "双手叉腰"
       },
       "categoryIds": [
         "gestures-arms"
@@ -431,11 +431,11 @@
       "tag": "all-fours",
       "label": {
         "en": "all-fours",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "meaning": {
         "en": "all-fours",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "categoryIds": [
         "lying-prone"
@@ -528,11 +528,11 @@
       "tag": "arm hold",
       "label": {
         "en": "arm hold",
-        "zh": ""
+        "zh": "抓住手臂"
       },
       "meaning": {
         "en": "arm hold",
-        "zh": ""
+        "zh": "抓住手臂"
       },
       "categoryIds": [
         "props-holding"
@@ -565,11 +565,11 @@
       "tag": "arm raised",
       "label": {
         "en": "arm raised",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "meaning": {
         "en": "arm raised",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -623,11 +623,11 @@
       "tag": "armpit",
       "label": {
         "en": "armpit",
-        "zh": ""
+        "zh": "举手露腋"
       },
       "meaning": {
         "en": "armpit",
-        "zh": ""
+        "zh": "举手露腋"
       },
       "categoryIds": [
         "gestures-arms"
@@ -679,11 +679,11 @@
       "tag": "arms above",
       "label": {
         "en": "arms above",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "meaning": {
         "en": "arms above",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -695,11 +695,11 @@
       "tag": "arms above head",
       "label": {
         "en": "arms above head",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "meaning": {
         "en": "arms above head",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -751,11 +751,11 @@
       "tag": "arms behind",
       "label": {
         "en": "arms behind",
-        "zh": ""
+        "zh": "手放在身后"
       },
       "meaning": {
         "en": "arms behind",
-        "zh": ""
+        "zh": "手放在身后"
       },
       "categoryIds": [
         "gestures-arms"
@@ -829,11 +829,11 @@
       "tag": "arms folded",
       "label": {
         "en": "arms folded",
-        "zh": ""
+        "zh": "交叉双臂"
       },
       "meaning": {
         "en": "arms folded",
-        "zh": ""
+        "zh": "交叉双臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -845,11 +845,11 @@
       "tag": "arms raised",
       "label": {
         "en": "arms raised",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "meaning": {
         "en": "arms raised",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -886,11 +886,11 @@
       "tag": "ass-up head-down",
       "label": {
         "en": "ass-up head-down",
-        "zh": ""
+        "zh": "趴着翘臀"
       },
       "meaning": {
         "en": "ass-up head-down",
-        "zh": ""
+        "zh": "趴着翘臀"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -921,11 +921,11 @@
       "tag": "balance",
       "label": {
         "en": "balance",
-        "zh": ""
+        "zh": "(保持)平衡的姿势"
       },
       "meaning": {
         "en": "balance",
-        "zh": ""
+        "zh": "(保持)平衡的姿势"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -959,11 +959,11 @@
       "tag": "ball caress",
       "label": {
         "en": "ball caress",
-        "zh": ""
+        "zh": "爱抚睾丸"
       },
       "meaning": {
         "en": "ball caress",
-        "zh": ""
+        "zh": "爱抚睾丸"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -975,11 +975,11 @@
       "tag": "battle stance",
       "label": {
         "en": "battle stance",
-        "zh": ""
+        "zh": "战斗姿态"
       },
       "meaning": {
         "en": "battle stance",
-        "zh": ""
+        "zh": "战斗姿态"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -1011,11 +1011,11 @@
       "tag": "beckon",
       "label": {
         "en": "beckon",
-        "zh": ""
+        "zh": "招手"
       },
       "meaning": {
         "en": "beckon",
-        "zh": ""
+        "zh": "招手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1071,11 +1071,11 @@
       "tag": "bend over",
       "label": {
         "en": "bend over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "meaning": {
         "en": "bend over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1087,11 +1087,11 @@
       "tag": "bending over",
       "label": {
         "en": "bending over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "meaning": {
         "en": "bending over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1126,11 +1126,11 @@
       "tag": "bent-over",
       "label": {
         "en": "bent-over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "meaning": {
         "en": "bent-over",
-        "zh": ""
+        "zh": "翘臀姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1142,11 +1142,11 @@
       "tag": "bikini down",
       "label": {
         "en": "bikini down",
-        "zh": ""
+        "zh": "扯着比基尼"
       },
       "meaning": {
         "en": "bikini down",
-        "zh": ""
+        "zh": "扯着比基尼"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -1199,11 +1199,11 @@
       "tag": "bridal carry",
       "label": {
         "en": "bridal carry",
-        "zh": ""
+        "zh": "公主抱"
       },
       "meaning": {
         "en": "bridal carry",
-        "zh": ""
+        "zh": "公主抱"
       },
       "categoryIds": [
         "duo-interaction"
@@ -1215,11 +1215,11 @@
       "tag": "brofist",
       "label": {
         "en": "brofist",
-        "zh": ""
+        "zh": "碰拳"
       },
       "meaning": {
         "en": "brofist",
-        "zh": ""
+        "zh": "碰拳"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1270,11 +1270,11 @@
       "tag": "butterfly pose",
       "label": {
         "en": "butterfly pose",
-        "zh": ""
+        "zh": "蝴蝶坐"
       },
       "meaning": {
         "en": "butterfly pose",
-        "zh": ""
+        "zh": "蝴蝶坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1307,11 +1307,11 @@
       "tag": "caramel dansen",
       "label": {
         "en": "caramel dansen",
-        "zh": ""
+        "zh": "焦糖舞"
       },
       "meaning": {
         "en": "caramel dansen",
-        "zh": ""
+        "zh": "焦糖舞"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1427,11 +1427,11 @@
       "tag": "cat pose",
       "label": {
         "en": "cat pose",
-        "zh": ""
+        "zh": "爪子姿势"
       },
       "meaning": {
         "en": "cat pose",
-        "zh": ""
+        "zh": "爪子姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1463,11 +1463,11 @@
       "tag": "chin rest",
       "label": {
         "en": "chin rest",
-        "zh": ""
+        "zh": "枕着头/托着头"
       },
       "meaning": {
         "en": "chin rest",
-        "zh": ""
+        "zh": "枕着头/托着头"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1479,11 +1479,11 @@
       "tag": "chin stroking",
       "label": {
         "en": "chin stroking",
-        "zh": ""
+        "zh": "扶颏冥想"
       },
       "meaning": {
         "en": "chin stroking",
-        "zh": ""
+        "zh": "扶颏冥想"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -1495,11 +1495,11 @@
       "tag": "clasped hands",
       "label": {
         "en": "clasped hands",
-        "zh": ""
+        "zh": "握住自己的双手"
       },
       "meaning": {
         "en": "clasped hands",
-        "zh": ""
+        "zh": "握住自己的双手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1530,11 +1530,11 @@
       "tag": "clenched fist",
       "label": {
         "en": "clenched fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "meaning": {
         "en": "clenched fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1546,11 +1546,11 @@
       "tag": "clenched fists",
       "label": {
         "en": "clenched fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "meaning": {
         "en": "clenched fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1608,11 +1608,11 @@
       "tag": "closed fist",
       "label": {
         "en": "closed fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "meaning": {
         "en": "closed fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1624,11 +1624,11 @@
       "tag": "closed fists",
       "label": {
         "en": "closed fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "meaning": {
         "en": "closed fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -1860,11 +1860,11 @@
       "tag": "crossed legs (lying)",
       "label": {
         "en": "crossed legs (lying)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "meaning": {
         "en": "crossed legs (lying)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1876,11 +1876,11 @@
       "tag": "crossed legs (sitting)",
       "label": {
         "en": "crossed legs (sitting)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "meaning": {
         "en": "crossed legs (sitting)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1892,11 +1892,11 @@
       "tag": "crossed legs (standing)",
       "label": {
         "en": "crossed legs (standing)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "meaning": {
         "en": "crossed legs (standing)",
-        "zh": ""
+        "zh": "二郎腿"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1908,11 +1908,11 @@
       "tag": "crouch",
       "label": {
         "en": "crouch",
-        "zh": ""
+        "zh": "蹲下"
       },
       "meaning": {
         "en": "crouch",
-        "zh": ""
+        "zh": "蹲下"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1924,11 +1924,11 @@
       "tag": "crouched",
       "label": {
         "en": "crouched",
-        "zh": ""
+        "zh": "蹲下"
       },
       "meaning": {
         "en": "crouched",
-        "zh": ""
+        "zh": "蹲下"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1940,11 +1940,11 @@
       "tag": "crouching",
       "label": {
         "en": "crouching",
-        "zh": ""
+        "zh": "蹲下"
       },
       "meaning": {
         "en": "crouching",
-        "zh": ""
+        "zh": "蹲下"
       },
       "categoryIds": [
         "sitting-poses"
@@ -1975,11 +1975,11 @@
       "tag": "cuddle",
       "label": {
         "en": "cuddle",
-        "zh": ""
+        "zh": "拥抱"
       },
       "meaning": {
         "en": "cuddle",
-        "zh": ""
+        "zh": "拥抱"
       },
       "categoryIds": [
         "duo-interaction"
@@ -2034,11 +2034,11 @@
       "tag": "cupped hands",
       "label": {
         "en": "cupped hands",
-        "zh": ""
+        "zh": "用手比作杯子"
       },
       "meaning": {
         "en": "cupped hands",
-        "zh": ""
+        "zh": "用手比作杯子"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2093,11 +2093,11 @@
       "tag": "curtsie",
       "label": {
         "en": "curtsie",
-        "zh": ""
+        "zh": "(女子的)屈膝礼"
       },
       "meaning": {
         "en": "curtsie",
-        "zh": ""
+        "zh": "(女子的)屈膝礼"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2109,11 +2109,11 @@
       "tag": "curtsy",
       "label": {
         "en": "curtsy",
-        "zh": ""
+        "zh": "(女子的)屈膝礼"
       },
       "meaning": {
         "en": "curtsy",
-        "zh": ""
+        "zh": "(女子的)屈膝礼"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2125,11 +2125,11 @@
       "tag": "cutthroat gesture",
       "label": {
         "en": "cutthroat gesture",
-        "zh": ""
+        "zh": "割喉手势"
       },
       "meaning": {
         "en": "cutthroat gesture",
-        "zh": ""
+        "zh": "割喉手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2141,11 +2141,11 @@
       "tag": "disco pose",
       "label": {
         "en": "disco pose",
-        "zh": ""
+        "zh": "叉腰向上指 (舞蹈)"
       },
       "meaning": {
         "en": "disco pose",
-        "zh": ""
+        "zh": "叉腰向上指 (舞蹈)"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2157,11 +2157,11 @@
       "tag": "dog pose",
       "label": {
         "en": "dog pose",
-        "zh": ""
+        "zh": "爪子姿势"
       },
       "meaning": {
         "en": "dog pose",
-        "zh": ""
+        "zh": "爪子姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2173,11 +2173,11 @@
       "tag": "double peace",
       "label": {
         "en": "double peace",
-        "zh": ""
+        "zh": "双手比 V"
       },
       "meaning": {
         "en": "double peace",
-        "zh": ""
+        "zh": "双手比 V"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2211,11 +2211,11 @@
       "tag": "double wield",
       "label": {
         "en": "double wield",
-        "zh": ""
+        "zh": "双持"
       },
       "meaning": {
         "en": "double wield",
-        "zh": ""
+        "zh": "双持"
       },
       "categoryIds": [
         "props-holding"
@@ -2327,11 +2327,11 @@
       "tag": "dual wield",
       "label": {
         "en": "dual wield",
-        "zh": ""
+        "zh": "双持"
       },
       "meaning": {
         "en": "dual wield",
-        "zh": ""
+        "zh": "双持"
       },
       "categoryIds": [
         "props-holding"
@@ -2366,11 +2366,11 @@
       "tag": "dulya",
       "label": {
         "en": "dulya",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "meaning": {
         "en": "dulya",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2382,11 +2382,11 @@
       "tag": "ear cleaner",
       "label": {
         "en": "ear cleaner",
-        "zh": ""
+        "zh": "采耳"
       },
       "meaning": {
         "en": "ear cleaner",
-        "zh": ""
+        "zh": "采耳"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2398,11 +2398,11 @@
       "tag": "extended pinky",
       "label": {
         "en": "extended pinky",
-        "zh": ""
+        "zh": "伸出小拇指"
       },
       "meaning": {
         "en": "extended pinky",
-        "zh": ""
+        "zh": "伸出小拇指"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2414,11 +2414,11 @@
       "tag": "eye rub",
       "label": {
         "en": "eye rub",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "meaning": {
         "en": "eye rub",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2430,11 +2430,11 @@
       "tag": "eyelid pull",
       "label": {
         "en": "eyelid pull",
-        "zh": ""
+        "zh": "拉下眼睑的鬼脸"
       },
       "meaning": {
         "en": "eyelid pull",
-        "zh": ""
+        "zh": "拉下眼睑的鬼脸"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2446,11 +2446,11 @@
       "tag": "face down ass up",
       "label": {
         "en": "face down ass up",
-        "zh": ""
+        "zh": "趴着翘臀"
       },
       "meaning": {
         "en": "face down ass up",
-        "zh": ""
+        "zh": "趴着翘臀"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2541,11 +2541,11 @@
       "tag": "fidget",
       "label": {
         "en": "fidget",
-        "zh": ""
+        "zh": "紧张手势"
       },
       "meaning": {
         "en": "fidget",
-        "zh": ""
+        "zh": "紧张手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2579,11 +2579,11 @@
       "tag": "fig gesture",
       "label": {
         "en": "fig gesture",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "meaning": {
         "en": "fig gesture",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -2660,11 +2660,11 @@
       "tag": "finger camera",
       "label": {
         "en": "finger camera",
-        "zh": ""
+        "zh": "用手指作相框"
       },
       "meaning": {
         "en": "finger camera",
-        "zh": ""
+        "zh": "用手指作相框"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2754,11 +2754,11 @@
       "tag": "finger in panties",
       "label": {
         "en": "finger in panties",
-        "zh": ""
+        "zh": "手伸进内裤里"
       },
       "meaning": {
         "en": "finger in panties",
-        "zh": ""
+        "zh": "手伸进内裤里"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2770,11 +2770,11 @@
       "tag": "finger quotes",
       "label": {
         "en": "finger quotes",
-        "zh": ""
+        "zh": "引号手势"
       },
       "meaning": {
         "en": "finger quotes",
-        "zh": ""
+        "zh": "引号手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2786,11 +2786,11 @@
       "tag": "finger raised",
       "label": {
         "en": "finger raised",
-        "zh": ""
+        "zh": "食指抬起"
       },
       "meaning": {
         "en": "finger raised",
-        "zh": ""
+        "zh": "食指抬起"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2802,11 +2802,11 @@
       "tag": "finger to another's chin",
       "label": {
         "en": "finger to another's chin",
-        "zh": ""
+        "zh": "手托着对方的下巴"
       },
       "meaning": {
         "en": "finger to another's chin",
-        "zh": ""
+        "zh": "手托着对方的下巴"
       },
       "categoryIds": [
         "duo-interaction"
@@ -2837,11 +2837,11 @@
       "tag": "fist",
       "label": {
         "en": "fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "meaning": {
         "en": "fist",
-        "zh": ""
+        "zh": "握紧的手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2895,11 +2895,11 @@
       "tag": "fistbump",
       "label": {
         "en": "fistbump",
-        "zh": ""
+        "zh": "碰拳"
       },
       "meaning": {
         "en": "fistbump",
-        "zh": ""
+        "zh": "碰拳"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2911,11 +2911,11 @@
       "tag": "fists",
       "label": {
         "en": "fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "meaning": {
         "en": "fists",
-        "zh": ""
+        "zh": "紧握的双手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2946,11 +2946,11 @@
       "tag": "flipping off",
       "label": {
         "en": "flipping off",
-        "zh": ""
+        "zh": "比出中指"
       },
       "meaning": {
         "en": "flipping off",
-        "zh": ""
+        "zh": "比出中指"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2981,11 +2981,11 @@
       "tag": "folded arms",
       "label": {
         "en": "folded arms",
-        "zh": ""
+        "zh": "交叉双臂"
       },
       "meaning": {
         "en": "folded arms",
-        "zh": ""
+        "zh": "交叉双臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -2997,11 +2997,11 @@
       "tag": "fondling testicles",
       "label": {
         "en": "fondling testicles",
-        "zh": ""
+        "zh": "爱抚睾丸"
       },
       "meaning": {
         "en": "fondling testicles",
-        "zh": ""
+        "zh": "爱抚睾丸"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -3013,11 +3013,11 @@
       "tag": "fox hand sign",
       "label": {
         "en": "fox hand sign",
-        "zh": ""
+        "zh": "狐狸手势"
       },
       "meaning": {
         "en": "fox hand sign",
-        "zh": ""
+        "zh": "狐狸手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -3069,11 +3069,11 @@
       "tag": "girls are praying",
       "label": {
         "en": "girls are praying",
-        "zh": ""
+        "zh": "少女祈祷中"
       },
       "meaning": {
         "en": "girls are praying",
-        "zh": ""
+        "zh": "少女祈祷中"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3105,11 +3105,11 @@
       "tag": "grab",
       "label": {
         "en": "grab",
-        "zh": ""
+        "zh": "抓住/抓着"
       },
       "meaning": {
         "en": "grab",
-        "zh": ""
+        "zh": "抓住/抓着"
       },
       "categoryIds": [
         "props-holding"
@@ -3165,11 +3165,11 @@
       "tag": "grabbing arm",
       "label": {
         "en": "grabbing arm",
-        "zh": ""
+        "zh": "抓住手臂"
       },
       "meaning": {
         "en": "grabbing arm",
-        "zh": ""
+        "zh": "抓住手臂"
       },
       "categoryIds": [
         "props-holding"
@@ -3181,11 +3181,11 @@
       "tag": "grabbing sheet",
       "label": {
         "en": "grabbing sheet",
-        "zh": ""
+        "zh": "抓着床单"
       },
       "meaning": {
         "en": "grabbing sheet",
-        "zh": ""
+        "zh": "抓着床单"
       },
       "categoryIds": [
         "props-holding"
@@ -3237,11 +3237,11 @@
       "tag": "hair pull",
       "label": {
         "en": "hair pull",
-        "zh": ""
+        "zh": "抓着对方的头发"
       },
       "meaning": {
         "en": "hair pull",
-        "zh": ""
+        "zh": "抓着对方的头发"
       },
       "categoryIds": [
         "duo-interaction"
@@ -3273,11 +3273,11 @@
       "tag": "hair twirl",
       "label": {
         "en": "hair twirl",
-        "zh": ""
+        "zh": "手指卷着头发"
       },
       "meaning": {
         "en": "hair twirl",
-        "zh": ""
+        "zh": "手指卷着头发"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -3332,11 +3332,11 @@
       "tag": "hand fig",
       "label": {
         "en": "hand fig",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "meaning": {
         "en": "hand fig",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -3367,11 +3367,11 @@
       "tag": "hand holding",
       "label": {
         "en": "hand holding",
-        "zh": ""
+        "zh": "牵手"
       },
       "meaning": {
         "en": "hand holding",
-        "zh": ""
+        "zh": "牵手"
       },
       "categoryIds": [
         "props-holding"
@@ -3644,11 +3644,11 @@
       "tag": "hand on ass",
       "label": {
         "en": "hand on ass",
-        "zh": ""
+        "zh": "把手放在自己的臀部"
       },
       "meaning": {
         "en": "hand on ass",
-        "zh": ""
+        "zh": "把手放在自己的臀部"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3660,11 +3660,11 @@
       "tag": "hand on belly",
       "label": {
         "en": "hand on belly",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "meaning": {
         "en": "hand on belly",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3676,11 +3676,11 @@
       "tag": "hand on cheek",
       "label": {
         "en": "hand on cheek",
-        "zh": ""
+        "zh": "把手放在自己的脸颊上"
       },
       "meaning": {
         "en": "hand on cheek",
-        "zh": ""
+        "zh": "把手放在自己的脸颊上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3692,11 +3692,11 @@
       "tag": "hand on chest",
       "label": {
         "en": "hand on chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "meaning": {
         "en": "hand on chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3727,11 +3727,11 @@
       "tag": "hand on face",
       "label": {
         "en": "hand on face",
-        "zh": ""
+        "zh": "把手放在自己脸上"
       },
       "meaning": {
         "en": "hand on face",
-        "zh": ""
+        "zh": "把手放在自己脸上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3743,11 +3743,11 @@
       "tag": "hand on hat",
       "label": {
         "en": "hand on hat",
-        "zh": ""
+        "zh": "手触碰帽子"
       },
       "meaning": {
         "en": "hand on hat",
-        "zh": ""
+        "zh": "手触碰帽子"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3801,11 +3801,11 @@
       "tag": "hand on knee",
       "label": {
         "en": "hand on knee",
-        "zh": ""
+        "zh": "手放在自己的膝盖上"
       },
       "meaning": {
         "en": "hand on knee",
-        "zh": ""
+        "zh": "手放在自己的膝盖上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3817,11 +3817,11 @@
       "tag": "hand on lips",
       "label": {
         "en": "hand on lips",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "meaning": {
         "en": "hand on lips",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "categoryIds": [
         "gestures-arms"
@@ -3854,11 +3854,11 @@
       "tag": "hand on own belly",
       "label": {
         "en": "hand on own belly",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "meaning": {
         "en": "hand on own belly",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4057,11 +4057,11 @@
       "tag": "hand on stomach",
       "label": {
         "en": "hand on stomach",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "meaning": {
         "en": "hand on stomach",
-        "zh": ""
+        "zh": "把手放在自己的肚子上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4073,11 +4073,11 @@
       "tag": "hand on waist",
       "label": {
         "en": "hand on waist",
-        "zh": ""
+        "zh": "单手插腰"
       },
       "meaning": {
         "en": "hand on waist",
-        "zh": ""
+        "zh": "单手插腰"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4089,11 +4089,11 @@
       "tag": "hand seal",
       "label": {
         "en": "hand seal",
-        "zh": ""
+        "zh": "九字印"
       },
       "meaning": {
         "en": "hand seal",
-        "zh": ""
+        "zh": "九字印"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -4105,11 +4105,11 @@
       "tag": "hand to cheek",
       "label": {
         "en": "hand to cheek",
-        "zh": ""
+        "zh": "把手放在自己的脸颊上"
       },
       "meaning": {
         "en": "hand to cheek",
-        "zh": ""
+        "zh": "把手放在自己的脸颊上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4121,11 +4121,11 @@
       "tag": "hand to chest",
       "label": {
         "en": "hand to chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "meaning": {
         "en": "hand to chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4137,11 +4137,11 @@
       "tag": "hand to face",
       "label": {
         "en": "hand to face",
-        "zh": ""
+        "zh": "把手放在自己脸上"
       },
       "meaning": {
         "en": "hand to face",
-        "zh": ""
+        "zh": "把手放在自己脸上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4153,11 +4153,11 @@
       "tag": "hand to lip",
       "label": {
         "en": "hand to lip",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "meaning": {
         "en": "hand to lip",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4169,11 +4169,11 @@
       "tag": "hand to mouth",
       "label": {
         "en": "hand to mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "meaning": {
         "en": "hand to mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4185,11 +4185,11 @@
       "tag": "hand to own chest",
       "label": {
         "en": "hand to own chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "meaning": {
         "en": "hand to own chest",
-        "zh": ""
+        "zh": "把手放在自己的胸口"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4226,11 +4226,11 @@
       "tag": "handholding",
       "label": {
         "en": "handholding",
-        "zh": ""
+        "zh": "牵手"
       },
       "meaning": {
         "en": "handholding",
-        "zh": ""
+        "zh": "牵手"
       },
       "categoryIds": [
         "props-holding"
@@ -4261,11 +4261,11 @@
       "tag": "hands above head",
       "label": {
         "en": "hands above head",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "meaning": {
         "en": "hands above head",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4277,11 +4277,11 @@
       "tag": "hands and knees",
       "label": {
         "en": "hands and knees",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "meaning": {
         "en": "hands and knees",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "categoryIds": [
         "lying-prone"
@@ -4293,11 +4293,11 @@
       "tag": "hands behind back",
       "label": {
         "en": "hands behind back",
-        "zh": ""
+        "zh": "手放在身后"
       },
       "meaning": {
         "en": "hands behind back",
-        "zh": ""
+        "zh": "手放在身后"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4309,11 +4309,11 @@
       "tag": "hands behind head",
       "label": {
         "en": "hands behind head",
-        "zh": ""
+        "zh": "手臂放头后"
       },
       "meaning": {
         "en": "hands behind head",
-        "zh": ""
+        "zh": "手臂放头后"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4325,11 +4325,11 @@
       "tag": "hands between legs",
       "label": {
         "en": "hands between legs",
-        "zh": ""
+        "zh": "手放在两腿之间"
       },
       "meaning": {
         "en": "hands between legs",
-        "zh": ""
+        "zh": "手放在两腿之间"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4341,11 +4341,11 @@
       "tag": "hands clasped",
       "label": {
         "en": "hands clasped",
-        "zh": ""
+        "zh": "握住自己的双手"
       },
       "meaning": {
         "en": "hands clasped",
-        "zh": ""
+        "zh": "握住自己的双手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4435,11 +4435,11 @@
       "tag": "hands on face",
       "label": {
         "en": "hands on face",
-        "zh": ""
+        "zh": "双手放在自己的脸上"
       },
       "meaning": {
         "en": "hands on face",
-        "zh": ""
+        "zh": "双手放在自己的脸上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4492,11 +4492,11 @@
       "tag": "hands on knees",
       "label": {
         "en": "hands on knees",
-        "zh": ""
+        "zh": "双手放在自己的膝盖上"
       },
       "meaning": {
         "en": "hands on knees",
-        "zh": ""
+        "zh": "双手放在自己的膝盖上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4551,11 +4551,11 @@
       "tag": "hands on waist",
       "label": {
         "en": "hands on waist",
-        "zh": ""
+        "zh": "双手叉腰"
       },
       "meaning": {
         "en": "hands on waist",
-        "zh": ""
+        "zh": "双手叉腰"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4567,11 +4567,11 @@
       "tag": "hands outstretched",
       "label": {
         "en": "hands outstretched",
-        "zh": ""
+        "zh": "伸出手"
       },
       "meaning": {
         "en": "hands outstretched",
-        "zh": ""
+        "zh": "伸出手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4583,11 +4583,11 @@
       "tag": "hands to face",
       "label": {
         "en": "hands to face",
-        "zh": ""
+        "zh": "双手放在自己的脸上"
       },
       "meaning": {
         "en": "hands to face",
-        "zh": ""
+        "zh": "双手放在自己的脸上"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4599,11 +4599,11 @@
       "tag": "hands to mouth",
       "label": {
         "en": "hands to mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "meaning": {
         "en": "hands to mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4615,11 +4615,11 @@
       "tag": "hands to own mouth",
       "label": {
         "en": "hands to own mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "meaning": {
         "en": "hands to own mouth",
-        "zh": ""
+        "zh": "手朝向自己嘴"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4631,11 +4631,11 @@
       "tag": "hands together",
       "label": {
         "en": "hands together",
-        "zh": ""
+        "zh": "双手合十"
       },
       "meaning": {
         "en": "hands together",
-        "zh": ""
+        "zh": "双手合十"
       },
       "categoryIds": [
         "gestures-arms"
@@ -4904,11 +4904,11 @@
       "tag": "heart tails",
       "label": {
         "en": "heart tails",
-        "zh": ""
+        "zh": "心形尾巴/心形尾尖/尾巴摆出心形"
       },
       "meaning": {
         "en": "heart tails",
-        "zh": ""
+        "zh": "心形尾巴/心形尾尖/尾巴摆出心形"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -4941,11 +4941,11 @@
       "tag": "highfive",
       "label": {
         "en": "highfive",
-        "zh": ""
+        "zh": "击掌庆祝"
       },
       "meaning": {
         "en": "highfive",
-        "zh": ""
+        "zh": "击掌庆祝"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -4957,11 +4957,11 @@
       "tag": "hold",
       "label": {
         "en": "hold",
-        "zh": ""
+        "zh": "拿着"
       },
       "meaning": {
         "en": "hold",
-        "zh": ""
+        "zh": "拿着"
       },
       "categoryIds": [
         "props-holding"
@@ -4995,11 +4995,11 @@
       "tag": "holding another's hand",
       "label": {
         "en": "holding another's hand",
-        "zh": ""
+        "zh": "牵手"
       },
       "meaning": {
         "en": "holding another's hand",
-        "zh": ""
+        "zh": "牵手"
       },
       "categoryIds": [
         "props-holding"
@@ -5090,11 +5090,11 @@
       "tag": "holding glasses",
       "label": {
         "en": "holding glasses",
-        "zh": ""
+        "zh": "拿着眼镜/正在摘眼镜"
       },
       "meaning": {
         "en": "holding glasses",
-        "zh": ""
+        "zh": "拿着眼镜/正在摘眼镜"
       },
       "categoryIds": [
         "props-holding"
@@ -5130,11 +5130,11 @@
       "tag": "holding object",
       "label": {
         "en": "holding object",
-        "zh": ""
+        "zh": "拿着"
       },
       "meaning": {
         "en": "holding object",
-        "zh": ""
+        "zh": "拿着"
       },
       "categoryIds": [
         "props-holding"
@@ -5184,11 +5184,11 @@
       "tag": "holding sunglasses",
       "label": {
         "en": "holding sunglasses",
-        "zh": ""
+        "zh": "拿着眼镜/正在摘眼镜"
       },
       "meaning": {
         "en": "holding sunglasses",
-        "zh": ""
+        "zh": "拿着眼镜/正在摘眼镜"
       },
       "categoryIds": [
         "props-holding"
@@ -5257,11 +5257,11 @@
       "tag": "horn pose",
       "label": {
         "en": "horn pose",
-        "zh": ""
+        "zh": "用手比作角"
       },
       "meaning": {
         "en": "horn pose",
-        "zh": ""
+        "zh": "用手比作角"
       },
       "categoryIds": [
         "gestures-arms"
@@ -5295,11 +5295,11 @@
       "tag": "hugging arm",
       "label": {
         "en": "hugging arm",
-        "zh": ""
+        "zh": "挽手"
       },
       "meaning": {
         "en": "hugging arm",
-        "zh": ""
+        "zh": "挽手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -5311,11 +5311,11 @@
       "tag": "hugging knees",
       "label": {
         "en": "hugging knees",
-        "zh": ""
+        "zh": "抱腿"
       },
       "meaning": {
         "en": "hugging knees",
-        "zh": ""
+        "zh": "抱腿"
       },
       "categoryIds": [
         "duo-interaction"
@@ -5327,11 +5327,11 @@
       "tag": "hugging legs",
       "label": {
         "en": "hugging legs",
-        "zh": ""
+        "zh": "抱腿"
       },
       "meaning": {
         "en": "hugging legs",
-        "zh": ""
+        "zh": "抱腿"
       },
       "categoryIds": [
         "duo-interaction"
@@ -5386,11 +5386,11 @@
       "tag": "in the name of the moon",
       "label": {
         "en": "in the name of the moon",
-        "zh": ""
+        "zh": "代表月亮消灭你"
       },
       "meaning": {
         "en": "in the name of the moon",
-        "zh": ""
+        "zh": "代表月亮消灭你"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -5465,11 +5465,11 @@
       "tag": "jump",
       "label": {
         "en": "jump",
-        "zh": ""
+        "zh": "跳跃"
       },
       "meaning": {
         "en": "jump",
-        "zh": ""
+        "zh": "跳跃"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -5581,11 +5581,11 @@
       "tag": "knee hug",
       "label": {
         "en": "knee hug",
-        "zh": ""
+        "zh": "抱腿"
       },
       "meaning": {
         "en": "knee hug",
-        "zh": ""
+        "zh": "抱腿"
       },
       "categoryIds": [
         "duo-interaction"
@@ -5618,11 +5618,11 @@
       "tag": "kneeling on one leg",
       "label": {
         "en": "kneeling on one leg",
-        "zh": ""
+        "zh": "单膝跪"
       },
       "meaning": {
         "en": "kneeling on one leg",
-        "zh": ""
+        "zh": "单膝跪"
       },
       "categoryIds": [
         "sitting-poses"
@@ -5634,11 +5634,11 @@
       "tag": "knees on chest",
       "label": {
         "en": "knees on chest",
-        "zh": ""
+        "zh": "膝盖顶到胸部"
       },
       "meaning": {
         "en": "knees on chest",
-        "zh": ""
+        "zh": "膝盖顶到胸部"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -5672,11 +5672,11 @@
       "tag": "knees-on-chest",
       "label": {
         "en": "knees-on-chest",
-        "zh": ""
+        "zh": "膝盖顶到胸部"
       },
       "meaning": {
         "en": "knees-on-chest",
-        "zh": ""
+        "zh": "膝盖顶到胸部"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -5709,11 +5709,11 @@
       "tag": "laying",
       "label": {
         "en": "laying",
-        "zh": ""
+        "zh": "躺着"
       },
       "meaning": {
         "en": "laying",
-        "zh": ""
+        "zh": "躺着"
       },
       "categoryIds": [
         "lying-prone"
@@ -5725,11 +5725,11 @@
       "tag": "laying down",
       "label": {
         "en": "laying down",
-        "zh": ""
+        "zh": "躺着"
       },
       "meaning": {
         "en": "laying down",
-        "zh": ""
+        "zh": "躺着"
       },
       "categoryIds": [
         "lying-prone"
@@ -5817,11 +5817,11 @@
       "tag": "leg hug",
       "label": {
         "en": "leg hug",
-        "zh": ""
+        "zh": "抱腿"
       },
       "meaning": {
         "en": "leg hug",
-        "zh": ""
+        "zh": "抱腿"
       },
       "categoryIds": [
         "duo-interaction"
@@ -5857,11 +5857,11 @@
       "tag": "leg raise",
       "label": {
         "en": "leg raise",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "meaning": {
         "en": "leg raise",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -5873,11 +5873,11 @@
       "tag": "leg raised",
       "label": {
         "en": "leg raised",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "meaning": {
         "en": "leg raised",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -6007,11 +6007,11 @@
       "tag": "lifting skirt",
       "label": {
         "en": "lifting skirt",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "meaning": {
         "en": "lifting skirt",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -6066,11 +6066,11 @@
       "tag": "lying down",
       "label": {
         "en": "lying down",
-        "zh": ""
+        "zh": "躺着"
       },
       "meaning": {
         "en": "lying down",
-        "zh": ""
+        "zh": "躺着"
       },
       "categoryIds": [
         "lying-prone"
@@ -6082,11 +6082,11 @@
       "tag": "lying on back",
       "label": {
         "en": "lying on back",
-        "zh": ""
+        "zh": "仰躺"
       },
       "meaning": {
         "en": "lying on back",
-        "zh": ""
+        "zh": "仰躺"
       },
       "categoryIds": [
         "lying-prone"
@@ -6098,11 +6098,11 @@
       "tag": "lying on side",
       "label": {
         "en": "lying on side",
-        "zh": ""
+        "zh": "侧卧"
       },
       "meaning": {
         "en": "lying on side",
-        "zh": ""
+        "zh": "侧卧"
       },
       "categoryIds": [
         "lying-prone"
@@ -6114,11 +6114,11 @@
       "tag": "lying on stomach",
       "label": {
         "en": "lying on stomach",
-        "zh": ""
+        "zh": "趴着"
       },
       "meaning": {
         "en": "lying on stomach",
-        "zh": ""
+        "zh": "趴着"
       },
       "categoryIds": [
         "lying-prone"
@@ -6130,11 +6130,11 @@
       "tag": "mano fico",
       "label": {
         "en": "mano fico",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "meaning": {
         "en": "mano fico",
-        "zh": ""
+        "zh": "Fig 手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6228,11 +6228,11 @@
       "tag": "mouth to mouth feeding",
       "label": {
         "en": "mouth to mouth feeding",
-        "zh": ""
+        "zh": "共享食物/用嘴递食物"
       },
       "meaning": {
         "en": "mouth to mouth feeding",
-        "zh": ""
+        "zh": "共享食物/用嘴递食物"
       },
       "categoryIds": [
         "duo-interaction"
@@ -6244,11 +6244,11 @@
       "tag": "mouth-to-mouth feeding",
       "label": {
         "en": "mouth-to-mouth feeding",
-        "zh": ""
+        "zh": "共享食物/用嘴递食物"
       },
       "meaning": {
         "en": "mouth-to-mouth feeding",
-        "zh": ""
+        "zh": "共享食物/用嘴递食物"
       },
       "categoryIds": [
         "duo-interaction"
@@ -6260,11 +6260,11 @@
       "tag": "nazi salute",
       "label": {
         "en": "nazi salute",
-        "zh": ""
+        "zh": "直臂敬礼/纳粹式敬礼"
       },
       "meaning": {
         "en": "nazi salute",
-        "zh": ""
+        "zh": "直臂敬礼/纳粹式敬礼"
       },
       "categoryIds": [
         "gestures-arms"
@@ -6276,11 +6276,11 @@
       "tag": "neck bite",
       "label": {
         "en": "neck bite",
-        "zh": ""
+        "zh": "咬脖子"
       },
       "meaning": {
         "en": "neck bite",
-        "zh": ""
+        "zh": "咬脖子"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6313,11 +6313,11 @@
       "tag": "neck hug",
       "label": {
         "en": "neck hug",
-        "zh": ""
+        "zh": "双手搂着脖子"
       },
       "meaning": {
         "en": "neck hug",
-        "zh": ""
+        "zh": "双手搂着脖子"
       },
       "categoryIds": [
         "gestures-arms"
@@ -6372,11 +6372,11 @@
       "tag": "necktie pull",
       "label": {
         "en": "necktie pull",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "meaning": {
         "en": "necktie pull",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "categoryIds": [
         "props-holding"
@@ -6426,11 +6426,11 @@
       "tag": "ok",
       "label": {
         "en": "ok",
-        "zh": ""
+        "zh": "OK手势"
       },
       "meaning": {
         "en": "ok",
-        "zh": ""
+        "zh": "OK手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -6464,11 +6464,11 @@
       "tag": "on all fours",
       "label": {
         "en": "on all fours",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "meaning": {
         "en": "on all fours",
-        "zh": ""
+        "zh": "四肢趴地"
       },
       "categoryIds": [
         "lying-prone"
@@ -6502,11 +6502,11 @@
       "tag": "on belly",
       "label": {
         "en": "on belly",
-        "zh": ""
+        "zh": "趴着"
       },
       "meaning": {
         "en": "on belly",
-        "zh": ""
+        "zh": "趴着"
       },
       "categoryIds": [
         "lying-prone"
@@ -6518,11 +6518,11 @@
       "tag": "on front",
       "label": {
         "en": "on front",
-        "zh": ""
+        "zh": "趴着"
       },
       "meaning": {
         "en": "on front",
-        "zh": ""
+        "zh": "趴着"
       },
       "categoryIds": [
         "lying-prone"
@@ -6534,11 +6534,11 @@
       "tag": "on knees",
       "label": {
         "en": "on knees",
-        "zh": ""
+        "zh": "下跪"
       },
       "meaning": {
         "en": "on knees",
-        "zh": ""
+        "zh": "下跪"
       },
       "categoryIds": [
         "sitting-poses"
@@ -6550,11 +6550,11 @@
       "tag": "on one foot",
       "label": {
         "en": "on one foot",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "meaning": {
         "en": "on one foot",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -6566,11 +6566,11 @@
       "tag": "on one leg",
       "label": {
         "en": "on one leg",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "meaning": {
         "en": "on one leg",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -6582,11 +6582,11 @@
       "tag": "on phone",
       "label": {
         "en": "on phone",
-        "zh": ""
+        "zh": "打电话"
       },
       "meaning": {
         "en": "on phone",
-        "zh": ""
+        "zh": "打电话"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6644,11 +6644,11 @@
       "tag": "one arm up",
       "label": {
         "en": "one arm up",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "meaning": {
         "en": "one arm up",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -6682,11 +6682,11 @@
       "tag": "one leg raised",
       "label": {
         "en": "one leg raised",
-        "zh": ""
+        "zh": "抬起腿"
       },
       "meaning": {
         "en": "one leg raised",
-        "zh": ""
+        "zh": "抬起腿"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6698,11 +6698,11 @@
       "tag": "open \\m/",
       "label": {
         "en": "open \\m/",
-        "zh": ""
+        "zh": "手掌贴墙"
       },
       "meaning": {
         "en": "open \\m/",
-        "zh": ""
+        "zh": "手掌贴墙"
       },
       "categoryIds": [
         "gestures-arms"
@@ -6752,11 +6752,11 @@
       "tag": "open legs",
       "label": {
         "en": "open legs",
-        "zh": ""
+        "zh": "张腿"
       },
       "meaning": {
         "en": "open legs",
-        "zh": ""
+        "zh": "张腿"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6787,11 +6787,11 @@
       "tag": "orz",
       "label": {
         "en": "orz",
-        "zh": ""
+        "zh": "失意体前屈/Orz"
       },
       "meaning": {
         "en": "orz",
-        "zh": ""
+        "zh": "失意体前屈/Orz"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -6863,11 +6863,11 @@
       "tag": "outstretched hands",
       "label": {
         "en": "outstretched hands",
-        "zh": ""
+        "zh": "伸出手"
       },
       "meaning": {
         "en": "outstretched hands",
-        "zh": ""
+        "zh": "伸出手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7023,11 +7023,11 @@
       "tag": "peace sign",
       "label": {
         "en": "peace sign",
-        "zh": ""
+        "zh": "胜利手势"
       },
       "meaning": {
         "en": "peace sign",
-        "zh": ""
+        "zh": "胜利手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7059,11 +7059,11 @@
       "tag": "pick me up",
       "label": {
         "en": "pick me up",
-        "zh": ""
+        "zh": "抱着我手势"
       },
       "meaning": {
         "en": "pick me up",
-        "zh": ""
+        "zh": "抱着我手势"
       },
       "categoryIds": [
         "duo-interaction"
@@ -7232,11 +7232,11 @@
       "tag": "pointing skyward",
       "label": {
         "en": "pointing skyward",
-        "zh": ""
+        "zh": "向上指"
       },
       "meaning": {
         "en": "pointing skyward",
-        "zh": ""
+        "zh": "向上指"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7248,11 +7248,11 @@
       "tag": "pointing to the sky",
       "label": {
         "en": "pointing to the sky",
-        "zh": ""
+        "zh": "向上指"
       },
       "meaning": {
         "en": "pointing to the sky",
-        "zh": ""
+        "zh": "向上指"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7286,11 +7286,11 @@
       "tag": "pov pointing",
       "label": {
         "en": "pov pointing",
-        "zh": ""
+        "zh": "指向看图的人"
       },
       "meaning": {
         "en": "pov pointing",
-        "zh": ""
+        "zh": "指向看图的人"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7384,11 +7384,11 @@
       "tag": "prone",
       "label": {
         "en": "prone",
-        "zh": ""
+        "zh": "趴着"
       },
       "meaning": {
         "en": "prone",
-        "zh": ""
+        "zh": "趴着"
       },
       "categoryIds": [
         "lying-prone"
@@ -7421,11 +7421,11 @@
       "tag": "pulling another's hair",
       "label": {
         "en": "pulling another's hair",
-        "zh": ""
+        "zh": "抓着对方的头发"
       },
       "meaning": {
         "en": "pulling another's hair",
-        "zh": ""
+        "zh": "抓着对方的头发"
       },
       "categoryIds": [
         "duo-interaction"
@@ -7437,11 +7437,11 @@
       "tag": "raised arm",
       "label": {
         "en": "raised arm",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "meaning": {
         "en": "raised arm",
-        "zh": ""
+        "zh": "单抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7453,11 +7453,11 @@
       "tag": "raised arms",
       "label": {
         "en": "raised arms",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "meaning": {
         "en": "raised arms",
-        "zh": ""
+        "zh": "双抬臂"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7469,11 +7469,11 @@
       "tag": "raised finger",
       "label": {
         "en": "raised finger",
-        "zh": ""
+        "zh": "食指抬起"
       },
       "meaning": {
         "en": "raised finger",
-        "zh": ""
+        "zh": "食指抬起"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7507,11 +7507,11 @@
       "tag": "raised leg",
       "label": {
         "en": "raised leg",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "meaning": {
         "en": "raised leg",
-        "zh": ""
+        "zh": "抬一只脚"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -7523,11 +7523,11 @@
       "tag": "raised pinky",
       "label": {
         "en": "raised pinky",
-        "zh": ""
+        "zh": "伸出小拇指"
       },
       "meaning": {
         "en": "raised pinky",
-        "zh": ""
+        "zh": "伸出小拇指"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -7539,11 +7539,11 @@
       "tag": "reach",
       "label": {
         "en": "reach",
-        "zh": ""
+        "zh": "伸手触及"
       },
       "meaning": {
         "en": "reach",
-        "zh": ""
+        "zh": "伸手触及"
       },
       "categoryIds": [
         "props-holding"
@@ -7577,11 +7577,11 @@
       "tag": "recline",
       "label": {
         "en": "recline",
-        "zh": ""
+        "zh": "斜倒斜躺姿势"
       },
       "meaning": {
         "en": "recline",
-        "zh": ""
+        "zh": "斜倒斜躺姿势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -7614,11 +7614,11 @@
       "tag": "roman salute",
       "label": {
         "en": "roman salute",
-        "zh": ""
+        "zh": "直臂敬礼/纳粹式敬礼"
       },
       "meaning": {
         "en": "roman salute",
-        "zh": ""
+        "zh": "直臂敬礼/纳粹式敬礼"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7630,11 +7630,11 @@
       "tag": "rubbing eye",
       "label": {
         "en": "rubbing eye",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "meaning": {
         "en": "rubbing eye",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -7669,11 +7669,11 @@
       "tag": "run",
       "label": {
         "en": "run",
-        "zh": ""
+        "zh": "奔跑"
       },
       "meaning": {
         "en": "run",
-        "zh": ""
+        "zh": "奔跑"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -7889,11 +7889,11 @@
       "tag": "shh",
       "label": {
         "en": "shh",
-        "zh": ""
+        "zh": "嘘手势"
       },
       "meaning": {
         "en": "shh",
-        "zh": ""
+        "zh": "嘘手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -7966,11 +7966,11 @@
       "tag": "shush",
       "label": {
         "en": "shush",
-        "zh": ""
+        "zh": "嘘手势"
       },
       "meaning": {
         "en": "shush",
-        "zh": ""
+        "zh": "嘘手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -8005,11 +8005,11 @@
       "tag": "sit",
       "label": {
         "en": "sit",
-        "zh": ""
+        "zh": "坐着"
       },
       "meaning": {
         "en": "sit",
-        "zh": ""
+        "zh": "坐着"
       },
       "categoryIds": [
         "sitting-poses"
@@ -8043,11 +8043,11 @@
       "tag": "sitting down",
       "label": {
         "en": "sitting down",
-        "zh": ""
+        "zh": "坐着"
       },
       "meaning": {
         "en": "sitting down",
-        "zh": ""
+        "zh": "坐着"
       },
       "categoryIds": [
         "sitting-poses"
@@ -8059,11 +8059,11 @@
       "tag": "sitting in lap",
       "label": {
         "en": "sitting in lap",
-        "zh": ""
+        "zh": "坐在大腿上"
       },
       "meaning": {
         "en": "sitting in lap",
-        "zh": ""
+        "zh": "坐在大腿上"
       },
       "categoryIds": [
         "duo-interaction"
@@ -8075,11 +8075,11 @@
       "tag": "sitting on",
       "label": {
         "en": "sitting on",
-        "zh": ""
+        "zh": "坐在人身上"
       },
       "meaning": {
         "en": "sitting on",
-        "zh": ""
+        "zh": "坐在人身上"
       },
       "categoryIds": [
         "duo-interaction"
@@ -8091,11 +8091,11 @@
       "tag": "sitting on knees",
       "label": {
         "en": "sitting on knees",
-        "zh": ""
+        "zh": "正坐"
       },
       "meaning": {
         "en": "sitting on knees",
-        "zh": ""
+        "zh": "正坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -8195,11 +8195,11 @@
       "tag": "skirt up",
       "label": {
         "en": "skirt up",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "meaning": {
         "en": "skirt up",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -8211,11 +8211,11 @@
       "tag": "skirtlift",
       "label": {
         "en": "skirtlift",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "meaning": {
         "en": "skirtlift",
-        "zh": ""
+        "zh": "掀起裙子"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -8288,11 +8288,11 @@
       "tag": "snuggle",
       "label": {
         "en": "snuggle",
-        "zh": ""
+        "zh": "拥抱"
       },
       "meaning": {
         "en": "snuggle",
-        "zh": ""
+        "zh": "拥抱"
       },
       "categoryIds": [
         "duo-interaction"
@@ -8325,11 +8325,11 @@
       "tag": "splits",
       "label": {
         "en": "splits",
-        "zh": ""
+        "zh": "分开"
       },
       "meaning": {
         "en": "splits",
-        "zh": ""
+        "zh": "分开"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8379,11 +8379,11 @@
       "tag": "spread leg",
       "label": {
         "en": "spread leg",
-        "zh": ""
+        "zh": "张腿"
       },
       "meaning": {
         "en": "spread leg",
-        "zh": ""
+        "zh": "张腿"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8417,11 +8417,11 @@
       "tag": "squat",
       "label": {
         "en": "squat",
-        "zh": ""
+        "zh": "蹲下"
       },
       "meaning": {
         "en": "squat",
-        "zh": ""
+        "zh": "蹲下"
       },
       "categoryIds": [
         "sitting-poses"
@@ -8476,11 +8476,11 @@
       "tag": "standing on hands",
       "label": {
         "en": "standing on hands",
-        "zh": ""
+        "zh": "用手倒立"
       },
       "meaning": {
         "en": "standing on hands",
-        "zh": ""
+        "zh": "用手倒立"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -8492,11 +8492,11 @@
       "tag": "standing on one foot",
       "label": {
         "en": "standing on one foot",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "meaning": {
         "en": "standing on one foot",
-        "zh": ""
+        "zh": "单腿站立"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -8569,11 +8569,11 @@
       "tag": "straddle",
       "label": {
         "en": "straddle",
-        "zh": ""
+        "zh": "跨坐"
       },
       "meaning": {
         "en": "straddle",
-        "zh": ""
+        "zh": "跨坐"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8628,11 +8628,11 @@
       "tag": "stretch",
       "label": {
         "en": "stretch",
-        "zh": ""
+        "zh": "伸懒腰"
       },
       "meaning": {
         "en": "stretch",
-        "zh": ""
+        "zh": "伸懒腰"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8665,11 +8665,11 @@
       "tag": "strip",
       "label": {
         "en": "strip",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "meaning": {
         "en": "strip",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -8681,11 +8681,11 @@
       "tag": "stripping",
       "label": {
         "en": "stripping",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "meaning": {
         "en": "stripping",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -8697,11 +8697,11 @@
       "tag": "stroking chin",
       "label": {
         "en": "stroking chin",
-        "zh": ""
+        "zh": "扶颏冥想"
       },
       "meaning": {
         "en": "stroking chin",
-        "zh": ""
+        "zh": "扶颏冥想"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8757,11 +8757,11 @@
       "tag": "supine",
       "label": {
         "en": "supine",
-        "zh": ""
+        "zh": "仰躺"
       },
       "meaning": {
         "en": "supine",
-        "zh": ""
+        "zh": "仰躺"
       },
       "categoryIds": [
         "lying-prone"
@@ -8795,11 +8795,11 @@
       "tag": "the finger",
       "label": {
         "en": "the finger",
-        "zh": ""
+        "zh": "比出中指"
       },
       "meaning": {
         "en": "the finger",
-        "zh": ""
+        "zh": "比出中指"
       },
       "categoryIds": [
         "gestures-arms"
@@ -8830,11 +8830,11 @@
       "tag": "thigh straddle",
       "label": {
         "en": "thigh straddle",
-        "zh": ""
+        "zh": "大腿跨骑"
       },
       "meaning": {
         "en": "thigh straddle",
-        "zh": ""
+        "zh": "大腿跨骑"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8867,11 +8867,11 @@
       "tag": "three-point landing",
       "label": {
         "en": "three-point landing",
-        "zh": ""
+        "zh": "三点着地"
       },
       "meaning": {
         "en": "three-point landing",
-        "zh": ""
+        "zh": "三点着地"
       },
       "categoryIds": [
         "standing-dynamic"
@@ -8883,11 +8883,11 @@
       "tag": "throat-slitting gesture",
       "label": {
         "en": "throat-slitting gesture",
-        "zh": ""
+        "zh": "割喉手势"
       },
       "meaning": {
         "en": "throat-slitting gesture",
-        "zh": ""
+        "zh": "割喉手势"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -8958,11 +8958,11 @@
       "tag": "tie grab",
       "label": {
         "en": "tie grab",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "meaning": {
         "en": "tie grab",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "categoryIds": [
         "props-holding"
@@ -8974,11 +8974,11 @@
       "tag": "tiegrab",
       "label": {
         "en": "tiegrab",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "meaning": {
         "en": "tiegrab",
-        "zh": ""
+        "zh": "抓着领带"
       },
       "categoryIds": [
         "props-holding"
@@ -9052,11 +9052,11 @@
       "tag": "tummy grab",
       "label": {
         "en": "tummy grab",
-        "zh": ""
+        "zh": "捏着肚子"
       },
       "meaning": {
         "en": "tummy grab",
-        "zh": ""
+        "zh": "捏着肚子"
       },
       "categoryIds": [
         "props-holding"
@@ -9145,11 +9145,11 @@
       "tag": "undress",
       "label": {
         "en": "undress",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "meaning": {
         "en": "undress",
-        "zh": ""
+        "zh": "脱衣服中"
       },
       "categoryIds": [
         "adjusting-dressing"
@@ -9266,11 +9266,11 @@
       "tag": "v sign",
       "label": {
         "en": "v sign",
-        "zh": ""
+        "zh": "胜利手势"
       },
       "meaning": {
         "en": "v sign",
-        "zh": ""
+        "zh": "胜利手势"
       },
       "categoryIds": [
         "gestures-arms"
@@ -9341,11 +9341,11 @@
       "tag": "w legs",
       "label": {
         "en": "w legs",
-        "zh": ""
+        "zh": "割坐"
       },
       "meaning": {
         "en": "w legs",
-        "zh": ""
+        "zh": "割坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -9357,11 +9357,11 @@
       "tag": "w sitting",
       "label": {
         "en": "w sitting",
-        "zh": ""
+        "zh": "割坐"
       },
       "meaning": {
         "en": "w sitting",
-        "zh": ""
+        "zh": "割坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -9373,11 +9373,11 @@
       "tag": "w-legs",
       "label": {
         "en": "w-legs",
-        "zh": ""
+        "zh": "割坐"
       },
       "meaning": {
         "en": "w-legs",
-        "zh": ""
+        "zh": "割坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -9389,11 +9389,11 @@
       "tag": "w-sitting",
       "label": {
         "en": "w-sitting",
-        "zh": ""
+        "zh": "割坐"
       },
       "meaning": {
         "en": "w-sitting",
-        "zh": ""
+        "zh": "割坐"
       },
       "categoryIds": [
         "sitting-poses"
@@ -9487,11 +9487,11 @@
       "tag": "wave",
       "label": {
         "en": "wave",
-        "zh": ""
+        "zh": "招手"
       },
       "meaning": {
         "en": "wave",
-        "zh": ""
+        "zh": "招手"
       },
       "categoryIds": [
         "gestures-arms"
@@ -9524,11 +9524,11 @@
       "tag": "wiping eyes",
       "label": {
         "en": "wiping eyes",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "meaning": {
         "en": "wiping eyes",
-        "zh": ""
+        "zh": "揉眼睛"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -9540,11 +9540,11 @@
       "tag": "yawn",
       "label": {
         "en": "yawn",
-        "zh": ""
+        "zh": "打哈欠"
       },
       "meaning": {
         "en": "yawn",
-        "zh": ""
+        "zh": "打哈欠"
       },
       "categoryIds": [
         "daily-miscellaneous"
@@ -10418,6 +10418,49 @@
       "sources": [
         "danbooru-diffusion-prompt-builder:human/directions.yaml"
       ]
-    }
+    },
+    { "tag": "cooking", "label": { "en": "cooking", "zh": "烹饪" }, "meaning": { "en": "preparing food by cooking", "zh": "正在烹饪或准备食物" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "reading", "label": { "en": "reading", "zh": "阅读" }, "meaning": { "en": "reading a book, document, or other text", "zh": "正在阅读书籍、文件或其他文字内容" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": ["reading a book"] },
+    { "tag": "drinking", "label": { "en": "drinking", "zh": "喝饮料" }, "meaning": { "en": "drinking from a cup, bottle, or other container", "zh": "正在用杯子、瓶子或其他容器喝饮料" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "eating", "label": { "en": "eating", "zh": "进食" }, "meaning": { "en": "eating food", "zh": "正在吃东西" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "using phone", "label": { "en": "using phone", "zh": "使用手机" }, "meaning": { "en": "actively operating a mobile phone", "zh": "正在操作或使用手机" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": ["using a phone", "using cellphone"] },
+    { "tag": "taking a selfie", "label": { "en": "taking a selfie", "zh": "自拍" }, "meaning": { "en": "holding a camera or phone to photograph oneself", "zh": "举起相机或手机给自己拍照" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": ["taking selfie"] },
+    { "tag": "typing", "label": { "en": "typing", "zh": "打字" }, "meaning": { "en": "typing on a keyboard or device", "zh": "正在键盘或设备上输入文字" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "working", "label": { "en": "working", "zh": "工作中" }, "meaning": { "en": "performing work-related activity", "zh": "正在进行工作相关活动" }, "categoryIds": ["daily-miscellaneous"], "booruType": "general", "aliases": ["at work"] },
+    { "tag": "commuting", "label": { "en": "commuting", "zh": "通勤" }, "meaning": { "en": "traveling between home and work or school", "zh": "正在住宅与工作地点或学校之间通勤" }, "categoryIds": ["daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "sleeping", "label": { "en": "sleeping", "zh": "睡觉" }, "meaning": { "en": "asleep in a resting pose", "zh": "处于睡眠状态和休息姿势" }, "categoryIds": ["lying-prone", "daily-miscellaneous"], "booruType": "general", "aliases": ["asleep"] },
+    { "tag": "talking", "label": { "en": "talking", "zh": "说话" }, "meaning": { "en": "speaking to another person or the viewer", "zh": "正在对他人或画面外对象说话" }, "categoryIds": ["daily-miscellaneous", "duo-interaction"], "booruType": "general", "aliases": ["speaking"] },
+    { "tag": "driving", "label": { "en": "driving", "zh": "驾驶" }, "meaning": { "en": "operating a car or another vehicle", "zh": "正在驾驶汽车或其他交通工具" }, "categoryIds": ["daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "opening a door", "label": { "en": "opening a door", "zh": "开门" }, "meaning": { "en": "reaching for and opening a door", "zh": "伸手将门打开" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": ["opening door"] },
+    { "tag": "opening a window", "label": { "en": "opening a window", "zh": "开窗" }, "meaning": { "en": "reaching for and opening a window", "zh": "伸手将窗户打开" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": ["opening window"] },
+    { "tag": "pouring water", "label": { "en": "pouring water", "zh": "倒水" }, "meaning": { "en": "pouring water from one container into another", "zh": "将水从一个容器倒入另一个容器" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "writing", "label": { "en": "writing", "zh": "书写" }, "meaning": { "en": "writing with a pen, pencil, or similar tool", "zh": "正在使用笔等工具书写" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "washing vegetables", "label": { "en": "washing vegetables", "zh": "清洗蔬菜" }, "meaning": { "en": "washing vegetables under water", "zh": "正在用水清洗蔬菜" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "carrying groceries", "label": { "en": "carrying groceries", "zh": "提着购物袋" }, "meaning": { "en": "carrying bags of groceries or daily supplies", "zh": "提着装有食品或日用品的购物袋" }, "categoryIds": ["daily-miscellaneous", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "serving food", "label": { "en": "serving food", "zh": "端上食物" }, "meaning": { "en": "placing or presenting prepared food for others", "zh": "将准备好的食物端给他人" }, "categoryIds": ["daily-miscellaneous", "props-holding", "duo-interaction"], "booruType": "general", "aliases": [] },
+    { "tag": "tying shoelaces", "label": { "en": "tying shoelaces", "zh": "系鞋带" }, "meaning": { "en": "bending down or sitting while tying shoelaces", "zh": "弯腰或坐着系紧鞋带" }, "categoryIds": ["adjusting-dressing", "daily-miscellaneous"], "booruType": "general", "aliases": ["tying shoes"] },
+    { "tag": "brushing hair", "label": { "en": "brushing hair", "zh": "梳头" }, "meaning": { "en": "combing or brushing one's hair", "zh": "正在用梳子或发刷整理头发" }, "categoryIds": ["adjusting-dressing", "props-holding"], "booruType": "general", "aliases": ["combing hair"] },
+    { "tag": "applying makeup", "label": { "en": "applying makeup", "zh": "化妆" }, "meaning": { "en": "putting cosmetics on the face", "zh": "正在面部涂抹化妆品" }, "categoryIds": ["adjusting-dressing", "props-holding"], "booruType": "general", "aliases": ["putting on makeup"] },
+    { "tag": "petting an animal", "label": { "en": "petting an animal", "zh": "抚摸动物" }, "meaning": { "en": "gently touching or stroking an animal", "zh": "轻柔地触摸或抚摸动物" }, "categoryIds": ["daily-miscellaneous", "gestures-arms"], "booruType": "general", "aliases": ["petting animal"] },
+    { "tag": "having a conversation", "label": { "en": "having a conversation", "zh": "交谈" }, "meaning": { "en": "two or more people actively conversing", "zh": "两人或多人正在相互交谈" }, "categoryIds": ["duo-interaction", "daily-miscellaneous"], "booruType": "general", "aliases": ["conversation"] },
+    { "tag": "group photo", "label": { "en": "group photo", "zh": "集体合照" }, "meaning": { "en": "multiple people posing together for a photograph", "zh": "多人一起面向镜头摆姿势合照" }, "categoryIds": ["duo-interaction", "daily-miscellaneous"], "booruType": "general", "aliases": ["group portrait"] },
+    { "tag": "family portrait", "label": { "en": "family portrait", "zh": "家庭合照" }, "meaning": { "en": "family members posing together for a portrait", "zh": "家庭成员一起摆姿势拍摄合照" }, "categoryIds": ["duo-interaction", "daily-miscellaneous"], "booruType": "general", "aliases": ["family photo"] },
+    { "tag": "friends together", "label": { "en": "friends together", "zh": "朋友相聚" }, "meaning": { "en": "friends spending time or posing together", "zh": "朋友们一起活动或合影" }, "categoryIds": ["duo-interaction", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "hugging", "label": { "en": "hugging", "zh": "拥抱" }, "meaning": { "en": "wrapping the arms around another person", "zh": "用手臂环抱另一人物" }, "categoryIds": ["duo-interaction", "gestures-arms"], "booruType": "general", "aliases": ["hug"] },
+    { "tag": "whispering", "label": { "en": "whispering", "zh": "耳语" }, "meaning": { "en": "speaking quietly near another person's ear", "zh": "靠近另一人物耳边轻声说话" }, "categoryIds": ["duo-interaction", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "dynamic battle pose", "label": { "en": "dynamic battle pose", "zh": "动态战斗姿势" }, "meaning": { "en": "an energetic combat-ready body pose", "zh": "充满动势并准备战斗的身体姿势" }, "categoryIds": ["standing-dynamic", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "drawing a sword", "label": { "en": "drawing a sword", "zh": "拔剑" }, "meaning": { "en": "pulling a sword out of its sheath", "zh": "将剑从剑鞘中拔出" }, "categoryIds": ["standing-dynamic", "props-holding"], "booruType": "general", "aliases": ["unsheathing sword"] },
+    { "tag": "casting a spell", "label": { "en": "casting a spell", "zh": "施放法术" }, "meaning": { "en": "using a gesture or focus to perform magic", "zh": "通过手势或媒介施展魔法" }, "categoryIds": ["standing-dynamic", "gestures-arms"], "booruType": "general", "aliases": ["spell casting"] },
+    { "tag": "dodging an attack", "label": { "en": "dodging an attack", "zh": "闪避攻击" }, "meaning": { "en": "moving the body to evade an incoming attack", "zh": "移动身体躲避迎面而来的攻击" }, "categoryIds": ["standing-dynamic"], "booruType": "general", "aliases": ["dodging attack"] },
+    { "tag": "blocking with a shield", "label": { "en": "blocking with a shield", "zh": "举盾格挡" }, "meaning": { "en": "raising a shield to stop an incoming attack", "zh": "举起盾牌抵挡迎面而来的攻击" }, "categoryIds": ["standing-dynamic", "props-holding"], "booruType": "general", "aliases": ["shield block"] },
+    { "tag": "mid-air attack", "label": { "en": "mid-air attack", "zh": "空中攻击" }, "meaning": { "en": "performing an attack while airborne", "zh": "在腾空状态下发动攻击" }, "categoryIds": ["standing-dynamic"], "booruType": "general", "aliases": ["aerial attack"] },
+    { "tag": "reaching out a hand", "label": { "en": "reaching out a hand", "zh": "伸出手" }, "meaning": { "en": "extending one hand toward a person or object", "zh": "朝人物或物体方向伸出一只手" }, "categoryIds": ["gestures-arms", "duo-interaction"], "booruType": "general", "aliases": ["reaching out hand"] },
+    { "tag": "holding an injured companion", "label": { "en": "holding an injured companion", "zh": "扶抱受伤同伴" }, "meaning": { "en": "supporting an injured companion in one's arms", "zh": "用手臂支撑或抱住受伤的同伴" }, "categoryIds": ["duo-interaction", "props-holding"], "booruType": "general", "aliases": [] },
+    { "tag": "standing among ruins", "label": { "en": "standing among ruins", "zh": "站在废墟中" }, "meaning": { "en": "standing still while surrounded by ruins", "zh": "静立在废墟环境之中" }, "categoryIds": ["standing-dynamic", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "walking through falling snow", "label": { "en": "walking through falling snow", "zh": "在落雪中行走" }, "meaning": { "en": "walking while snow falls around the subject", "zh": "在雪花飘落的环境中行走" }, "categoryIds": ["standing-dynamic", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "touching a glowing artifact", "label": { "en": "touching a glowing artifact", "zh": "触摸发光遗物" }, "meaning": { "en": "reaching toward and touching a luminous artifact", "zh": "伸手触碰正在发光的神秘遗物" }, "categoryIds": ["props-holding", "gestures-arms"], "booruType": "general", "aliases": [] },
+    { "tag": "sitting on a throne", "label": { "en": "sitting on a throne", "zh": "坐在王座上" }, "meaning": { "en": "seated in a commanding pose on a throne", "zh": "以威严姿势坐在王座上" }, "categoryIds": ["sitting-poses", "daily-miscellaneous"], "booruType": "general", "aliases": [] },
+    { "tag": "raising a weapon", "label": { "en": "raising a weapon", "zh": "举起武器" }, "meaning": { "en": "lifting a weapon upward in preparation or triumph", "zh": "准备战斗或庆祝时向上举起武器" }, "categoryIds": ["gestures-arms", "props-holding", "standing-dynamic"], "booruType": "general", "aliases": [] },
+    { "tag": "confronting an enemy", "label": { "en": "confronting an enemy", "zh": "与敌人对峙" }, "meaning": { "en": "facing an opponent in a tense standoff", "zh": "与对手面对面进行紧张对峙" }, "categoryIds": ["duo-interaction", "standing-dynamic"], "booruType": "general", "aliases": [] }
   ]
 }
