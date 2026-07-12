@@ -803,6 +803,62 @@
       }
     }
   },
+  "AnimaMultiCharacterComposer": {
+    "display_name": "Anima Multi Character Composer",
+    "description": "Compose hybrid Anima prompts for two to four characters. Shared content uses tags, while each character receives a position-aware English description to reduce attribute confusion.",
+    "inputs": {
+      "character_count": {
+        "name": "Character Count",
+        "tooltip": "Enable two, three, or four character slots. Values in temporarily hidden slots are preserved."
+      },
+      "layout": {
+        "name": "Layout Preset",
+        "tooltip": "Choose a spatial layout compatible with the current character count.",
+        "values": {
+          "two_side_by_side": "Two: Side by Side",
+          "two_facing": "Two: Facing Each Other",
+          "two_depth": "Two: Foreground / Background",
+          "three_row": "Three: Horizontal Row",
+          "three_triangle": "Three: Triangle",
+          "three_center_focus": "Three: Center Focus",
+          "four_row": "Four: Horizontal Row",
+          "four_two_rows": "Four: Two Rows",
+          "four_cluster": "Four: Compact Group"
+        }
+      },
+      "global_tags": {
+        "name": "Global Tags",
+        "tooltip": "Optional quality, style, artist, or other shared Danbooru tags. Empty by default; the node never adds implicit tags."
+      },
+      "character_1_gender": { "name": "Character 1 Gender", "tooltip": "Used to generate the cast count tags.", "values": { "female": "Female", "male": "Male", "other": "Other" } },
+      "character_1_prompt": { "name": "Character 1 Prompt", "tooltip": "Character name, role, and intrinsic appearance, such as 'Hatsune Miku, with long turquoise twin-tails'. Required." },
+      "character_1_clothing": { "name": "Character 1 Clothing Prompt", "tooltip": "A separate clothing description for this character, such as 'a white dress'. Optional." },
+      "character_1_pose": { "name": "Character 1 Pose Prompt", "tooltip": "A separate pose, action, and expression description, such as 'standing, waving, smiling'. Optional." },
+      "character_2_gender": { "name": "Character 2 Gender", "tooltip": "Used to generate the cast count tags.", "values": { "female": "Female", "male": "Male", "other": "Other" } },
+      "character_2_prompt": { "name": "Character 2 Prompt", "tooltip": "Character name, role, and intrinsic appearance. Required." },
+      "character_2_clothing": { "name": "Character 2 Clothing Prompt", "tooltip": "A separate clothing description for this character. Optional." },
+      "character_2_pose": { "name": "Character 2 Pose Prompt", "tooltip": "A separate pose, action, and expression description. Optional." },
+      "character_3_gender": { "name": "Character 3 Gender", "tooltip": "Used for cast count tags in three- or four-character mode.", "values": { "female": "Female", "male": "Male", "other": "Other" } },
+      "character_3_prompt": { "name": "Character 3 Prompt", "tooltip": "Character name, role, and intrinsic appearance required in three- or four-character mode." },
+      "character_3_clothing": { "name": "Character 3 Clothing Prompt", "tooltip": "A separate clothing description for this character. Optional." },
+      "character_3_pose": { "name": "Character 3 Pose Prompt", "tooltip": "A separate pose, action, and expression description. Optional." },
+      "character_4_gender": { "name": "Character 4 Gender", "tooltip": "Used for cast count tags in four-character mode.", "values": { "female": "Female", "male": "Male", "other": "Other" } },
+      "character_4_prompt": { "name": "Character 4 Prompt", "tooltip": "Character name, role, and intrinsic appearance required in four-character mode." },
+      "character_4_clothing": { "name": "Character 4 Clothing Prompt", "tooltip": "A separate clothing description for this character. Optional." },
+      "character_4_pose": { "name": "Character 4 Pose Prompt", "tooltip": "A separate pose, action, and expression description. Optional." },
+      "interaction": {
+        "name": "Interaction",
+        "tooltip": "Optional English phrase appended after 'The characters are', such as 'holding hands and looking at each other'."
+      },
+      "scene": {
+        "name": "Scene",
+        "tooltip": "Optional English scene description appended after 'The scene is'."
+      }
+    },
+    "outputs": {
+      "0": { "name": "Positive Prompt" }
+    }
+  },
   "AnimaMultiLoraLoader": {
     "display_name": "Anima Multi LoRA Loader",
     "description": "Select, download, preview, and apply multiple Anima LoRA models with cached local thumbnails.",

@@ -803,6 +803,62 @@
       }
     }
   },
+  "AnimaMultiCharacterComposer": {
+    "display_name": "Anima 多人构图提示词",
+    "description": "为 Anima 生成 2 至 4 人的混合式构图提示词。公共部分使用标签，角色部分使用带空间位置的英文描述，以降低多人属性混淆。",
+    "inputs": {
+      "character_count": {
+        "name": "角色数量",
+        "tooltip": "启用 2、3 或 4 个角色槽。减少人数时，隐藏槽位中的内容仍会保留。"
+      },
+      "layout": {
+        "name": "构图预设",
+        "tooltip": "选择与当前人数匹配的空间布局。",
+        "values": {
+          "two_side_by_side": "双人左右并排",
+          "two_facing": "双人面对面",
+          "two_depth": "双人前景 / 背景",
+          "three_row": "三人横向排列",
+          "three_triangle": "三人三角构图",
+          "three_center_focus": "三人中心突出",
+          "four_row": "四人横向排列",
+          "four_two_rows": "四人前后两排",
+          "four_cluster": "四人紧凑群像"
+        }
+      },
+      "global_tags": {
+        "name": "公共标签",
+        "tooltip": "可选的质量、风格、画师或其他公共 Danbooru 标签。默认留空，节点不会隐式添加任何标签。"
+      },
+      "character_1_gender": { "name": "角色 1 性别", "tooltip": "用于自动生成人数性别标签。", "values": { "female": "女性", "male": "男性", "other": "其他" } },
+      "character_1_prompt": { "name": "角色 1 提示词", "tooltip": "角色名称、身份和固有外观，例如 'Hatsune Miku, with long turquoise twin-tails'。不能为空。" },
+      "character_1_clothing": { "name": "角色 1 服装提示词", "tooltip": "该角色独立的服装描述，例如 'a white dress'。可留空。" },
+      "character_1_pose": { "name": "角色 1 姿态提示词", "tooltip": "该角色独立的姿势、动作和表情，例如 'standing, waving, smiling'。可留空。" },
+      "character_2_gender": { "name": "角色 2 性别", "tooltip": "用于自动生成人数性别标签。", "values": { "female": "女性", "male": "男性", "other": "其他" } },
+      "character_2_prompt": { "name": "角色 2 提示词", "tooltip": "角色名称、身份和固有外观。不能为空。" },
+      "character_2_clothing": { "name": "角色 2 服装提示词", "tooltip": "该角色独立的服装描述。可留空。" },
+      "character_2_pose": { "name": "角色 2 姿态提示词", "tooltip": "该角色独立的姿势、动作和表情。可留空。" },
+      "character_3_gender": { "name": "角色 3 性别", "tooltip": "三人或四人模式下用于生成人数性别标签。", "values": { "female": "女性", "male": "男性", "other": "其他" } },
+      "character_3_prompt": { "name": "角色 3 提示词", "tooltip": "三人或四人模式下必填的角色名称、身份和固有外观。" },
+      "character_3_clothing": { "name": "角色 3 服装提示词", "tooltip": "该角色独立的服装描述。可留空。" },
+      "character_3_pose": { "name": "角色 3 姿态提示词", "tooltip": "该角色独立的姿势、动作和表情。可留空。" },
+      "character_4_gender": { "name": "角色 4 性别", "tooltip": "四人模式下用于生成人数性别标签。", "values": { "female": "女性", "male": "男性", "other": "其他" } },
+      "character_4_prompt": { "name": "角色 4 提示词", "tooltip": "四人模式下必填的角色名称、身份和固有外观。" },
+      "character_4_clothing": { "name": "角色 4 服装提示词", "tooltip": "该角色独立的服装描述。可留空。" },
+      "character_4_pose": { "name": "角色 4 姿态提示词", "tooltip": "该角色独立的姿势、动作和表情。可留空。" },
+      "interaction": {
+        "name": "人物互动",
+        "tooltip": "可选英文短语，将接在 'The characters are' 后，例如 'holding hands and looking at each other'。"
+      },
+      "scene": {
+        "name": "场景",
+        "tooltip": "可选英文场景描述，将接在 'The scene is' 后。"
+      }
+    },
+    "outputs": {
+      "0": { "name": "正向提示词" }
+    }
+  },
   "AnimaMultiLoraLoader": {
     "display_name": "Anima 多 LoRA 加载器",
     "description": "通过带缓存的视觉面板选择、下载、预览并批量应用多个 Anima LoRA 模型。",

@@ -209,6 +209,8 @@ const TRANSLATIONS = {
     "Replace": "Replace",
     "Append": "Append",
     "Selector Apply Mode": "Selector apply mode",
+    "Composition Preview": "Composition Preview",
+    "Character": "Character",
   },
   zh: {
     "Open Artist Selector": "打开画师选择器",
@@ -418,6 +420,8 @@ const TRANSLATIONS = {
     "Replace": "覆盖",
     "Append": "新增",
     "Selector Apply Mode": "选择器应用模式",
+    "Composition Preview": "构图预览",
+    "Character": "角色",
   }
 };
 

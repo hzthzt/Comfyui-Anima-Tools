@@ -1234,6 +1234,167 @@ class AnimaPromptComposer:
 
         return {"ui": {"anima_prompt_composer": [selected], "resolved_prompt": [text]}, "result": (text,)}
 
+
+class AnimaMultiCharacterComposer:
+    LAYOUTS = {
+        2: {
+            "two_side_by_side": (
+                "A two-character composition with both characters standing side by side",
+                ("On the left", "On the right"),
+            ),
+            "two_facing": (
+                "A two-character composition with the characters facing each other",
+                ("On the left", "On the right"),
+            ),
+            "two_depth": (
+                "A two-character composition with one character in the foreground and one in the background",
+                ("In the foreground", "In the background"),
+            ),
+        },
+        3: {
+            "three_row": (
+                "A three-character composition arranged in a horizontal row",
+                ("On the left", "In the center", "On the right"),
+            ),
+            "three_triangle": (
+                "A three-character triangular composition with one character forward and two behind",
+                ("In the back left", "In the foreground center", "In the back right"),
+            ),
+            "three_center_focus": (
+                "A three-character composition emphasizing the central character",
+                ("On the left", "In the center as the focal character", "On the right"),
+            ),
+        },
+        4: {
+            "four_row": (
+                "A four-character composition arranged in a horizontal row",
+                ("On the far left", "On the center left", "On the center right", "On the far right"),
+            ),
+            "four_two_rows": (
+                "A four-character composition arranged in two balanced rows",
+                ("In the front left", "In the front right", "In the back left", "In the back right"),
+            ),
+            "four_cluster": (
+                "A compact four-character group composition",
+                ("On the left", "In the center left", "In the center right", "On the right"),
+            ),
+        },
+    }
+    GENDER_TAGS = {
+        "female": "girl",
+        "male": "boy",
+        "other": "other",
+    }
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        layouts = [layout for group in cls.LAYOUTS.values() for layout in group]
+        required = {
+            "character_count": ("INT", {"default": 2, "min": 2, "max": 4, "step": 1}),
+            "layout": (layouts, {"default": "two_side_by_side"}),
+            "global_tags": ("STRING", {"multiline": True, "default": ""}),
+        }
+        for index in range(1, 5):
+            required[f"character_{index}_gender"] = (
+                ["female", "male", "other"],
+                {"default": "female"},
+            )
+            required[f"character_{index}_prompt"] = (
+                "STRING",
+                {"multiline": True, "default": ""},
+            )
+            required[f"character_{index}_clothing"] = (
+                "STRING",
+                {"multiline": True, "default": ""},
+            )
+            required[f"character_{index}_pose"] = (
+                "STRING",
+                {"multiline": True, "default": ""},
+            )
+        required["interaction"] = ("STRING", {"multiline": True, "default": ""})
+        required["scene"] = ("STRING", {"multiline": True, "default": ""})
+        return {"required": required}
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("positive_prompt",)
+    FUNCTION = "compose_prompt"
+    CATEGORY = "AnimaArt"
+
+    @staticmethod
+    def _clean_fragment(value):
+        return " ".join(str(value or "").split()).strip(" ,.;")
+
+    @classmethod
+    def _gender_tags(cls, genders):
+        counts = {key: 0 for key in cls.GENDER_TAGS}
+        for gender in genders:
+            if gender not in counts:
+                raise ValueError(f"Unsupported character gender: {gender}")
+            counts[gender] += 1
+
+        tags = []
+        for gender in ("female", "male", "other"):
+            count = counts[gender]
+            if not count:
+                continue
+            noun = cls.GENDER_TAGS[gender]
+            suffix = "" if count == 1 else "s"
+            tags.append(f"{count}{noun}{suffix}")
+        return tags
+
+    @staticmethod
+    def _sentence(prefix, value):
+        fragment = AnimaMultiCharacterComposer._clean_fragment(value)
+        return f"{prefix} {fragment}." if fragment else ""
+
+    @classmethod
+    def _character_sentence(cls, position, character):
+        parts = [f"{position} is {character['prompt']}"]
+        clothing = character["clothing"]
+        if clothing:
+            clothing_clause = clothing if clothing.lower().startswith(("wearing ", "dressed in ")) else f"wearing {clothing}"
+            parts.append(clothing_clause)
+        if character["pose"]:
+            parts.append(character["pose"])
+        return f"{', '.join(parts)}."
+
+    def compose_prompt(self, character_count, layout, global_tags, interaction, scene, **kwargs):
+        character_count = int(character_count)
+        if character_count not in self.LAYOUTS:
+            raise ValueError("Character count must be between 2 and 4.")
+        if layout not in self.LAYOUTS[character_count]:
+            raise ValueError(f"Layout '{layout}' is not valid for {character_count} characters.")
+
+        characters = []
+        for index in range(1, character_count + 1):
+            character_prompt = self._clean_fragment(kwargs.get(f"character_{index}_prompt"))
+            if not character_prompt:
+                raise ValueError(f"Character slot {index} requires a character prompt.")
+            characters.append({
+                "gender": kwargs.get(f"character_{index}_gender", "female"),
+                "prompt": character_prompt,
+                "clothing": self._clean_fragment(kwargs.get(f"character_{index}_clothing")),
+                "pose": self._clean_fragment(kwargs.get(f"character_{index}_pose")),
+            })
+
+        global_tokens = _anima_tag_widget_tokens(global_tags)
+        tag_prefix = [*global_tokens, *self._gender_tags([item["gender"] for item in characters])]
+        prompt_parts = [f"{', '.join(tag_prefix)}."]
+
+        layout_text, positions = self.LAYOUTS[character_count][layout]
+        prompt_parts.append(f"{layout_text}.")
+        for character, position in zip(characters, positions):
+            prompt_parts.append(self._character_sentence(position, character))
+
+        interaction_sentence = self._sentence("The characters are", interaction)
+        if interaction_sentence:
+            prompt_parts.append(interaction_sentence)
+        scene_sentence = self._sentence("The scene is", scene)
+        if scene_sentence:
+            prompt_parts.append(scene_sentence)
+        return (" ".join(prompt_parts),)
+
+
 class AnimaMultiLoraLoader:
     @classmethod
     def INPUT_TYPES(cls):
@@ -1396,6 +1557,7 @@ NODE_CLASS_MAPPINGS = {
     "AnimaPromptPlusTagged": AnimaPromptPlusTagged,
     "AnimaPromptComposer": AnimaPromptComposer,
     "AnimaPromptComposerTagged": AnimaPromptComposerTagged,
+    "AnimaMultiCharacterComposer": AnimaMultiCharacterComposer,
     "AnimaMultiLoraLoader": AnimaMultiLoraLoader
 }
 
@@ -1428,6 +1590,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AnimaPromptPlusTagged": "Anima Prompt Plus (Tagged)",
     "AnimaPromptComposer": "Anima Prompt Random Draw",
     "AnimaPromptComposerTagged": "Anima Prompt Random Draw (Tagged)",
+    "AnimaMultiCharacterComposer": "Anima Multi Character Composer",
     "AnimaMultiLoraLoader": "Anima Multi LoRA Loader"
 }
 

@@ -193,7 +193,25 @@
 *   `resolved_prompt` (String): 保存最近一次随机结果文本；Tagged 变体会把启用标签同步回该文本框。
 *   输出为单个 `STRING`，顺序固定为 **画师 -> 角色 -> 服装 -> 背景 -> 姿势**。
 
-### 6. 🧩 Anima Multi LoRA Loader (多 LoRA 加载器)
+### 6. 👥 Anima Multi Character Composer (多人构图提示词)
+*   支持 2 至 4 个角色，并按人数提供左右并排、面对面、前后景、三角构图、中心突出、两排群像等布局预设。
+*   每个角色槽包含性别、角色提示词、服装提示词和姿态提示词；角色提示词必填，服装与姿态可以留空，节点自动生成 `2girls`、`1girl, 1boy` 等人数标签。
+*   输出采用 Anima 官方建议的混合写法：公共 Danbooru 标签在前，随后用带左、右、前景、背景等位置的英文句子逐人绑定外观、服装和动作。
+*   `global_tags` 默认为空，节点不会自动加入质量、分数、安全级别或画师标签。
+*   `interaction` 与 `scene` 可选，用于补充人物互动和环境。输出为单个 `STRING`，可直接连接 `CLIP Text Encode`。
+*   纯文本构图可以降低角色属性混淆，但不等同于区域 Conditioning 或蒙版，不能保证完全消除串色和站位漂移。
+
+示例输出：
+
+```text
+1girl, 1boy. A two-character composition with both characters standing side by side. On the left is Character A, with long blue hair, wearing a white dress. On the right is Character B, with short black hair, wearing a dark jacket. The characters are holding hands. The scene is a city street at night.
+```
+
+上例中角色 A 的三个独立输入分别可以是：角色提示词 `Character A, with long blue hair`、服装提示词 `a white dress`、姿态提示词 `standing`。
+
+提示词结构参考 [Anima 官方模型卡](https://huggingface.co/circlestone-labs/Anima/blob/main/README.md)：多人提示时应在角色名称后补充基础外观描述，避免只罗列多个角色名称。
+
+### 7. 🧩 Anima Multi LoRA Loader (多 LoRA 加载器)
 *   `model`: ComfyUI 标准模型输入。
 *   `lora_list_json` (String): 前端 LoRA 选择器维护的 LoRA 列表，包含文件名、启用状态与模型强度。
 *   前端面板支持本地 LoRA 预览、Civitai 搜索、下载进度、收藏、持久缩略图缓存与快速二次打开。
@@ -213,6 +231,7 @@ Anima-Tools/
 │   ├── anima_character_selector.js  # 角色图鉴选择器前端核心属性检索与交互面板
 │   ├── anima_clothing_selector.js   # 服装提示词选择器前端核心面板交互逻辑
 │   ├── anima_prompt_composer.js     # 画师、角色、服装随机整合节点预览逻辑
+│   ├── anima_multi_character_composer.js # 多人构图布局预览与动态角色槽
 │   ├── anima_lora_selector.js       # 多 LoRA 搜索、下载、本地预览与缓存面板
 │   ├── anima_image_utils.js         # 共享图片加载缓存工具
 │   ├── anima_promo_links.js         # GitHub 与爱发电跳转入口共享组件
