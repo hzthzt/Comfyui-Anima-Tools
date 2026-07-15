@@ -341,6 +341,7 @@ async function openCharacterSelectorModal(node, tagsWidget) {
     }
     let favoritesConfig = favoritesStore.getSnapshot().favorites;
     let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("character"));
     let groups = favoritesConfig.groups || [{ id: "default", name: t("My Favorites"), isSystem: true }];
     let favoriteItems = favoritesConfig.items || [];
     let favoriteMap = new Map();
@@ -2502,7 +2503,6 @@ async function openCharacterSelectorModal(node, tagsWidget) {
         listContainer.scrollTop = 0; 
     }
 
-    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("character"));
     let activeTagFilter = { type: "group", groupId: "all" };
 
     function getCharacterTagCatalog() {

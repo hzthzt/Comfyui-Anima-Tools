@@ -131,6 +131,7 @@ async function openPoseSelectorModal(node, tagsWidget) {
     }
     let favoritesConfig = favoritesStore.getSnapshot().favorites;
     let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("pose"));
 
     let groups = Array.isArray(favoritesConfig.groups) && favoritesConfig.groups.length
         ? favoritesConfig.groups
@@ -1105,7 +1106,6 @@ async function openPoseSelectorModal(node, tagsWidget) {
         triggerFilter();
     }, 140));
 
-    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("pose"));
     let activeTagFilter = { type: "group", groupId: "all" };
 
     function getTagCatalog() {

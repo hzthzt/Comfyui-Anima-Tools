@@ -129,6 +129,7 @@ async function openClothingSelectorModal(node, tagsWidget) {
     }
     let favoritesConfig = favoritesStore.getSnapshot().favorites;
     let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("clothing"));
 
     let groups = Array.isArray(favoritesConfig.groups) && favoritesConfig.groups.length
         ? favoritesConfig.groups
@@ -1103,7 +1104,6 @@ async function openClothingSelectorModal(node, tagsWidget) {
         triggerFilter();
     }, 140));
 
-    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("clothing"));
     let activeTagFilter = { type: "group", groupId: "all" };
 
     function getTagCatalog() {

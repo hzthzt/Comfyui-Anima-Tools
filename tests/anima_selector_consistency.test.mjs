@@ -139,6 +139,30 @@ test("selectors initialize tag favorites with the unified label key", async () =
   }
 });
 
+test("card selectors initialize tag catalogs before rendering tagged managers", async () => {
+  const selectorSections = {
+    character: "js/anima_character_selector.js",
+    clothing: "js/anima_clothing_selector.js",
+    pose: "js/anima_pose_selector.js",
+    background: "js/anima_background_selector.js",
+  };
+
+  for (const [section, file] of Object.entries(selectorSections)) {
+    const source = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
+    const catalogIndex = source.indexOf(
+      `createConfiguredCatalogProvider(await resolveSelectorTagCatalog("${section}"))`,
+    );
+    const managerIndex = source.indexOf("selectorTagManager = createSelectorTagManager(");
+
+    assert.notEqual(catalogIndex, -1, `${file} should initialize its configured tag catalog`);
+    assert.notEqual(managerIndex, -1, `${file} should create its tagged selector manager`);
+    assert.ok(
+      catalogIndex < managerIndex,
+      `${file} must initialize its tag catalog before the manager renders existing tags`,
+    );
+  }
+});
+
 test("card selector custom item edit updates title and prompt content", async () => {
   const selectorFiles = [
     "js/anima_artist_selector.js",

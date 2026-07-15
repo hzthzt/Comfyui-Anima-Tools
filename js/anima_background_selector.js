@@ -127,6 +127,7 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
     }
     let favoritesConfig = favoritesStore.getSnapshot().favorites;
     let tagFavorites = ensureSelectorTagFavorites(favoritesConfig, t("Favorite Tags"));
+    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("background"));
 
     let groups = Array.isArray(favoritesConfig.groups) && favoritesConfig.groups.length
         ? favoritesConfig.groups
@@ -1101,7 +1102,6 @@ async function openBackgroundSelectorModal(node, tagsWidget) {
         triggerFilter();
     }, 140));
 
-    const tagCatalogProvider = createConfiguredCatalogProvider(await resolveSelectorTagCatalog("background"));
     let activeTagFilter = { type: "group", groupId: "all" };
 
     function getTagCatalog() {
