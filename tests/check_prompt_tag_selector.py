@@ -95,6 +95,46 @@ def main():
     assert selector_result["result"] == ("wide shot, rating explicit, masterpiece, ",)
     assert selector_result["ui"]["anima_selector_tags"][0]["prompt_tags"] == "wide shot, _raw_:rating explicit"
 
+    weighted_result = nodes.AnimaPromptTagSelector().process_tags(
+        "{{wide shot, dutch angle}}, [[soft focus]]",
+        "override",
+    )
+    assert weighted_result["result"] == ("{{wide shot, dutch angle}}, [[soft focus]], ",)
+
+    weighted_artist_result = nodes.AnimaArtistTagSelector().process_tags(
+        "{{foo artist, bar artist}}, [[baz artist]]",
+        "override",
+    )
+    assert weighted_artist_result["result"] == ("{{@foo artist, @bar artist}}, [[@baz artist]], ",)
+
+    weighted_plus_result = nodes.AnimaPromptPlus().compose_prompt(
+        quality_prompt="",
+        artist_tags="{{foo artist}}",
+        character_tags="",
+        clothing_tags="",
+        pose_tags="",
+        background_tags="",
+        extra_prompt="",
+    )
+    assert weighted_plus_result["result"] == ("{{@foo artist}}, ",)
+
+    workflow_node = {
+        "properties": {
+            nodes.TAG_STATE_PROPERTY: {
+                "version": 1,
+                "fields": {
+                    "prompt_tags": {
+                        "tags": [{"text": "{{wide shot}}", "enabled": True, "source": "manual"}],
+                        "history": [],
+                    }
+                },
+            }
+        }
+    }
+    nodes._set_selector_tag_state_from_random(workflow_node, "prompt_tags", "wide shot, soft focus, ")
+    random_tags = workflow_node["properties"][nodes.TAG_STATE_PROPERTY]["fields"]["prompt_tags"]["tags"]
+    assert [tag["text"] for tag in random_tags] == ["wide shot", "soft focus"]
+
     prompt_random_text, selected = nodes._selector_random_text(nodes.AnimaPromptComposer(), "prompt")
     assert prompt_random_text
     assert prompt_random_text.endswith(", ")

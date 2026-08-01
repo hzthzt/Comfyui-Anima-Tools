@@ -8,6 +8,86 @@ def _anima_selector_tags_result(tags, text):
     }
     return {"ui": {"anima_selector_tags": [payload]}, "result": (text,)}
 
+def _anima_split_prompt_text(value):
+    parts = []
+    stack = []
+    closing = {"{": "}", "[": "]", "(": ")"}
+    current = []
+    quote = ""
+    escaped = False
+
+    def flush():
+        clean = "".join(current).strip()
+        if clean:
+            parts.append(clean)
+        current.clear()
+
+    for character in str(value or ""):
+        if escaped:
+            current.append(character)
+            escaped = False
+            continue
+        if character == "\\":
+            current.append(character)
+            escaped = True
+            continue
+        if quote:
+            current.append(character)
+            if character == quote:
+                quote = ""
+            continue
+        if character in ('"', "'"):
+            current.append(character)
+            quote = character
+            continue
+        if character in closing:
+            stack.append(closing[character])
+            current.append(character)
+            continue
+        if stack and stack[-1] == character:
+            stack.pop()
+            current.append(character)
+            continue
+        if character in (",", "\r", "\n") and not stack:
+            flush()
+            continue
+        current.append(character)
+
+    flush()
+    return parts
+
+def _anima_artist_prompt_tag(value):
+    tag = str(value or "").strip()
+    if tag.startswith("_raw_:"):
+        return tag[6:].strip()
+
+    closing = {"{": "}", "[": "]"}
+    wrappers = []
+    while len(tag) >= 2 and tag[0] in closing and tag[-1] == closing[tag[0]]:
+        wrappers.append(tag[0])
+        tag = tag[1:-1].strip()
+
+    if wrappers:
+        inner_tags = [
+            _anima_artist_prompt_tag(part)
+            for part in _anima_split_prompt_text(tag)
+        ]
+        inner = ", ".join(part for part in inner_tags if part)
+        if not inner:
+            return ""
+        prefix = "".join(wrappers)
+        suffix = "".join(closing[wrapper] for wrapper in reversed(wrappers))
+        return f"{prefix}{inner}{suffix}"
+
+    if tag.startswith("@"):
+        tag = tag[1:].strip()
+    elif tag.lower().startswith("by "):
+        tag = tag[3:].strip()
+    if not tag:
+        return ""
+
+    return f"@{tag}"
+
 def _anima_tag_widget_tokens(value):
     import json
 
@@ -54,8 +134,7 @@ def _anima_tag_widget_tokens(value):
         except Exception:
             pass
 
-    normalized = text.replace("\r", ",").replace("\n", ",")
-    return [part.strip() for part in normalized.split(",") if part.strip()]
+    return _anima_split_prompt_text(text)
 
 class AnimaArtistTagSelector:
     @classmethod
@@ -78,16 +157,9 @@ class AnimaArtistTagSelector:
         tags_list = _anima_tag_widget_tokens(artist_tags)
         processed_tags = []
         for tag in tags_list:
-            if tag.startswith("_raw_:"):
-                processed_tags.append(tag[6:])
-                continue
-            clean_tag = tag
-            if clean_tag.startswith("@"):
-                clean_tag = clean_tag[1:].strip()
-            elif clean_tag.lower().startswith("by "):
-                clean_tag = clean_tag[3:].strip()
-            if clean_tag:
-                processed_tags.append(f"@{clean_tag}")
+            processed_tag = _anima_artist_prompt_tag(tag)
+            if processed_tag:
+                processed_tags.append(processed_tag)
         joined_artists = ", ".join(processed_tags)
 
         # 结合外部 prompt
@@ -138,17 +210,9 @@ class AnimaArtistTagSelectorPlus:
         processed_tags = []
         
         for tag in tags_list:
-            if tag.startswith("_raw_:"):
-                processed_tags.append(tag[6:])
-                continue
-            clean_tag = tag
-            if clean_tag.startswith("@"):
-                clean_tag = clean_tag[1:].strip()
-            elif clean_tag.lower().startswith("by "):
-                clean_tag = clean_tag[3:].strip()
-            
-            if clean_tag:
-                processed_tags.append(f"@{clean_tag}")
+            processed_tag = _anima_artist_prompt_tag(tag)
+            if processed_tag:
+                processed_tags.append(processed_tag)
         
         joined_artists = ", ".join(processed_tags)
         # 🌟 只要有画师，尾部必带逗号与空格，保证输出框及默认状态下的绝对完美隔开
@@ -714,15 +778,10 @@ class AnimaPromptPlus:
 
     def _artist_tokens(self, value):
         tokens = []
-        for tag in self._split_prompt_tokens(value):
-            if tag.startswith("@"):
-                clean = tag[1:].strip()
-            elif tag.lower().startswith("by "):
-                clean = tag[3:].strip()
-            else:
-                clean = tag.strip()
-            if clean:
-                tokens.append(f"@{clean}")
+        for tag in _anima_tag_widget_tokens(value):
+            processed_tag = _anima_artist_prompt_tag(tag)
+            if processed_tag:
+                tokens.append(processed_tag)
         return tokens
 
     def compose_prompt(
@@ -1750,7 +1809,13 @@ def _split_selector_text(value):
     return _anima_tag_widget_tokens(value)
 
 def _normalize_tag_key(value):
-    return str(value or "").replace("_raw_:", "", 1).strip().lower()
+    text = str(value or "").strip()
+    if text.startswith("_raw_:"):
+        text = text[6:].strip()
+    closing = {"{": "}", "[": "]"}
+    while len(text) >= 2 and text[0] in closing and text[-1] == closing[text[0]]:
+        text = text[1:-1].strip()
+    return text.lower()
 
 def _selector_tag_field_state(workflow_node, input_name):
     if not isinstance(workflow_node, dict):

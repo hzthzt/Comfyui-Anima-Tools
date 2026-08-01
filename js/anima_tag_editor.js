@@ -20,10 +20,96 @@ const DEFAULT_HISTORY_LIMIT = 20;
 const DEFAULT_APPLY_MODE = "replace";
 
 function normalizeTagKey(value) {
-    return String(value || "")
+    return parseTagStrength(value).text
         .replace(/^_raw_:/, "")
         .trim()
         .toLowerCase();
+}
+
+export function parseTagStrength(value) {
+    let text = String(value || "").trim();
+    const rawPrefix = text.startsWith("_raw_:") ? "_raw_:" : "";
+    if (rawPrefix) text = text.slice(rawPrefix.length).trim();
+
+    let strength = 0;
+    while (text.length >= 2) {
+        const first = text[0];
+        const last = text[text.length - 1];
+        if (first === "{" && last === "}") {
+            strength += 1;
+        } else if (first === "[" && last === "]") {
+            strength -= 1;
+        } else {
+            break;
+        }
+        text = text.slice(1, -1).trim();
+    }
+
+    return { text, strength, rawPrefix };
+}
+
+export function formatTagStrength(value, strength) {
+    const parsed = parseTagStrength(value);
+    const level = Math.trunc(Number(strength) || 0);
+    if (!parsed.text) return String(value || "").trim();
+    if (level > 0) return `${parsed.rawPrefix}${"{".repeat(level)}${parsed.text}${"}".repeat(level)}`;
+    if (level < 0) return `${parsed.rawPrefix}${"[".repeat(-level)}${parsed.text}${"]".repeat(-level)}`;
+    return `${parsed.rawPrefix}${parsed.text}`;
+}
+
+function splitPromptTokens(value) {
+    const parts = [];
+    const stack = [];
+    const closing = { "{": "}", "[": "]", "(": ")" };
+    let current = "";
+    let quote = "";
+    let escaped = false;
+
+    const flush = () => {
+        const clean = current.trim();
+        if (clean) parts.push(clean);
+        current = "";
+    };
+
+    for (const character of String(value || "")) {
+        if (escaped) {
+            current += character;
+            escaped = false;
+            continue;
+        }
+        if (character === "\\") {
+            current += character;
+            escaped = true;
+            continue;
+        }
+        if (quote) {
+            current += character;
+            if (character === quote) quote = "";
+            continue;
+        }
+        if (character === '"' || character === "'") {
+            current += character;
+            quote = character;
+            continue;
+        }
+        if (closing[character]) {
+            stack.push(closing[character]);
+            current += character;
+            continue;
+        }
+        if (stack.at(-1) === character) {
+            stack.pop();
+            current += character;
+            continue;
+        }
+        if ((character === "," || character === "\r" || character === "\n") && stack.length === 0) {
+            flush();
+            continue;
+        }
+        current += character;
+    }
+    flush();
+    return parts;
 }
 
 export function splitTagText(value) {
@@ -41,16 +127,10 @@ export function splitTagText(value) {
             const tags = tagsFromState(payload);
             if (tags !== null || hasTagState(payload)) return tags || [];
             if (typeof payload?._resolved_prompt === "string") return splitTagText(payload._resolved_prompt);
-            return [];
         } catch (_) {}
     }
 
-    return text
-        .replace(/\r/g, ",")
-        .replace(/\n/g, ",")
-        .split(",")
-        .map(part => part.trim())
-        .filter(Boolean);
+    return splitPromptTokens(text);
 }
 
 function hasTagState(value) {
@@ -127,6 +207,21 @@ function tagText(tag) {
         return String(tag.text ?? tag.tag ?? tag.value ?? tag.name ?? "").trim();
     }
     return String(tag || "").trim();
+}
+
+function tagBaseText(tag) {
+    return parseTagStrength(tagText(tag)).text.replace(/^_raw_:/, "").trim();
+}
+
+function preserveExistingStrength(text, existingByKey) {
+    const existing = existingByKey.get(normalizeTagKey(text));
+    if (!existing || parseTagStrength(text).strength !== 0) return text;
+    return tagText(existing);
+}
+
+function existingTagsByKey(field) {
+    const candidates = [...field.history].reverse().concat(field.tags);
+    return new Map(candidates.map(tag => [normalizeTagKey(tagText(tag)), tag]));
 }
 
 function uniqueTags(tags) {
@@ -326,8 +421,9 @@ function reconcileTextTags(field, incomingTags) {
 }
 
 function mergeSelectorManagerTags(field, incomingTags, source) {
+    const existingByKey = existingTagsByKey(field);
     const incoming = uniqueTags(incomingTags.map(text => ({
-        text,
+        text: preserveExistingStrength(text, existingByKey),
         enabled: true,
         source,
     })));
@@ -355,8 +451,9 @@ function mergeSelectorManagerTags(field, incomingTags, source) {
 }
 
 function appendSelectorManagerTags(field, incomingTags, source) {
+    const existingByKey = existingTagsByKey(field);
     const incoming = uniqueTags(incomingTags.map(text => ({
-        text,
+        text: preserveExistingStrength(text, existingByKey),
         enabled: true,
         source,
     })));
@@ -470,13 +567,15 @@ export function applySelectorTagsToWidget(node, widgetOrName, value, options = {
     const fieldName = options.fieldName || widget.name;
     const field = getTagFieldState(node, fieldName, widget);
     const incomingTags = splitTagText(value);
+    const existingByKey = existingTagsByKey(field);
+    const preservedIncomingTags = incomingTags.map(text => preserveExistingStrength(text, existingByKey));
     removeHistoryKeys(field, new Set(incomingTags.map(text => normalizeTagKey(text)).filter(Boolean)));
     const mode = options.mode || field.applyMode || DEFAULT_APPLY_MODE;
     const source = options.source || "selector";
     if (mode === "append") {
-        applyIncomingTags(field, incomingTags, "append", source);
+        applyIncomingTags(field, preservedIncomingTags, "append", source);
     } else {
-        field.tags = uniqueTags(incomingTags.map(text => ({
+        field.tags = uniqueTags(preservedIncomingTags.map(text => ({
             text,
             enabled: true,
             source,
@@ -779,13 +878,20 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
     `;
 
     const tagValue = tagText(tag);
+    chip.dataset.tagKey = normalizeTagKey(tagValue);
+    const parsedStrength = parseTagStrength(tagValue);
+    const baseTagValue = tagBaseText(tag);
     const catalog = typeof chipOptions.catalogProvider === "function"
         ? chipOptions.catalogProvider()
         : chipOptions.catalog || [];
-    const catalogItem = catalog.find(item => normalizeSelectorTagKey(item?.tag) === normalizeSelectorTagKey(tagValue));
-    const labels = getSelectorTagLabelParts(catalogItem, tagValue);
+    const catalogItem = catalog.find(item => normalizeSelectorTagKey(item?.tag) === normalizeSelectorTagKey(baseTagValue));
+    const labels = getSelectorTagLabelParts(catalogItem, baseTagValue);
     const label = document.createElement("span");
-    label.title = [labels.primary, labels.secondary].filter(Boolean).join("\n");
+    label.title = [
+        labels.primary,
+        labels.secondary,
+        parsedStrength.strength ? t("Prompt Strength: {level}", { level: parsedStrength.strength }) : "",
+    ].filter(Boolean).join("\n");
     label.style.cssText = "display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.15;";
     const primary = document.createElement("span");
     primary.className = "anima-tag-chip-primary";
@@ -801,6 +907,16 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
     }
     chip.appendChild(label);
 
+    if (parsedStrength.strength) {
+        const strength = document.createElement("span");
+        strength.className = "anima-tag-chip-strength";
+        strength.dataset.tagStrength = String(parsedStrength.strength);
+        strength.textContent = parsedStrength.strength > 0 ? `+${parsedStrength.strength}` : String(parsedStrength.strength);
+        strength.title = t("Prompt Strength: {level}", { level: parsedStrength.strength });
+        strength.style.cssText = "flex:0 0 auto;color:#fbbf24;font-size:10px;font-weight:800;";
+        chip.appendChild(strength);
+    }
+
     if (chipOptions.tagFavorites) {
         const groupId = chipOptions.favoriteGroupId || "default";
         const favorite = iconButton("", "", "#facc15");
@@ -809,7 +925,7 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         favorite.style.padding = "0";
 
         const updateFavorite = () => {
-            const info = getSelectorTagFavorite(chipOptions.tagFavorites, tagText(tag));
+            const info = getSelectorTagFavorite(chipOptions.tagFavorites, baseTagValue);
             const active = Boolean(info?.groupIds?.includes(groupId));
             favorite.textContent = active ? "★" : "☆";
             favorite.title = t(active ? "Unfavorite Tag" : "Favorite Tag");
@@ -821,7 +937,7 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
             stopNodeDrag(event);
             if (favorite.disabled) return;
 
-            const text = tagText(tag);
+            const text = baseTagValue;
             const info = getSelectorTagFavorite(chipOptions.tagFavorites, text);
             if (info?.groupIds?.includes(groupId)) {
                 toggleSelectorTagFavorite(chipOptions.tagFavorites, { tag: text }, groupId);
@@ -843,6 +959,39 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
         });
         chip.appendChild(favorite);
     }
+
+    const adjustStrength = (delta, action) => {
+        const current = parseTagStrength(tagText(tag));
+        if (!current.text) return;
+        const focusRoot = chip.parentElement?.parentElement;
+        const tagKey = normalizeTagKey(tagText(tag));
+        tag.text = formatTagStrength(tagText(tag), current.strength + delta);
+        syncField(node, fieldName, widget, syncOptions);
+        requestAnimationFrame(() => {
+            const matchingChip = Array.from(focusRoot?.querySelectorAll('span[draggable="true"]') || [])
+                .find(item => item.dataset.tagKey === tagKey);
+            matchingChip?.querySelector(`[data-tag-strength-action="${action}"]`)?.focus();
+        });
+    };
+    const decreaseStrength = iconButton("-", t("Decrease Prompt Strength"));
+    decreaseStrength.dataset.tagStrengthAction = "decrease";
+    decreaseStrength.setAttribute("aria-label", t("Decrease Prompt Strength"));
+    decreaseStrength.style.fontSize = "14px";
+    decreaseStrength.addEventListener("click", event => {
+        stopNodeDrag(event);
+        adjustStrength(-1, "decrease");
+    });
+    chip.appendChild(decreaseStrength);
+
+    const increaseStrength = iconButton("+", t("Increase Prompt Strength"));
+    increaseStrength.dataset.tagStrengthAction = "increase";
+    increaseStrength.setAttribute("aria-label", t("Increase Prompt Strength"));
+    increaseStrength.style.fontSize = "14px";
+    increaseStrength.addEventListener("click", event => {
+        stopNodeDrag(event);
+        adjustStrength(1, "increase");
+    });
+    chip.appendChild(increaseStrength);
 
     chip.addEventListener("dragstart", event => {
         if (event.target?.closest?.("button")) {

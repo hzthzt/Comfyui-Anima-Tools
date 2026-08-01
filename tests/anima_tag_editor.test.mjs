@@ -58,6 +58,54 @@ function dispatchDrag(element, type, dataTransfer, clientX = 0) {
   return event;
 }
 
+test("tag strength helpers recognize repeated braces and brackets", async () => {
+  const { formatTagStrength, parseTagStrength, splitTagText } = await import("../js/anima_tag_editor.js?case=strength-helpers");
+
+  assert.deepEqual(parseTagStrength("{{ alpha }}"), { text: "alpha", strength: 2, rawPrefix: "" });
+  assert.deepEqual(parseTagStrength("[[beta]]"), { text: "beta", strength: -2, rawPrefix: "" });
+  assert.deepEqual(parseTagStrength("_raw_:{gamma}"), { text: "gamma", strength: 1, rawPrefix: "_raw_:" });
+  assert.equal(formatTagStrength("{{alpha}}", 3), "{{{alpha}}}");
+  assert.equal(formatTagStrength("[[beta]]", -1), "[beta]");
+  assert.equal(formatTagStrength("_raw_:{gamma}", 0), "_raw_:gamma");
+  assert.deepEqual(splitTagText("{{alpha, beta}}, [gamma], delta"), ["{{alpha, beta}}", "[gamma]", "delta"]);
+});
+
+test("createSelectorTagManager adjusts prompt strength repeatedly", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=strength-buttons");
+  const { node, widget } = createNodeAndWidget("alpha, [beta], ");
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  let alphaChip = Array.from(manager.element.querySelectorAll('span[draggable="true"]'))[0];
+  alphaChip.querySelector('[data-tag-strength-action="increase"]').focus();
+  alphaChip.querySelector('[data-tag-strength-action="increase"]').click();
+  assert.equal(document.activeElement.dataset.tagStrengthAction, "increase");
+  alphaChip = Array.from(manager.element.querySelectorAll('span[draggable="true"]'))[0];
+  alphaChip.querySelector('[data-tag-strength-action="increase"]').click();
+  assert.equal(widget.value, "{{alpha}}, [beta], ");
+  assert.equal(manager.element.querySelector('[data-tag-strength="2"]').textContent, "+2");
+
+  alphaChip = Array.from(manager.element.querySelectorAll('span[draggable="true"]'))[0];
+  alphaChip.querySelector('[data-tag-strength-action="decrease"]').click();
+  alphaChip = Array.from(manager.element.querySelectorAll('span[draggable="true"]'))[0];
+  alphaChip.querySelector('[data-tag-strength-action="decrease"]').click();
+  alphaChip = Array.from(manager.element.querySelectorAll('span[draggable="true"]'))[0];
+  alphaChip.querySelector('[data-tag-strength-action="decrease"]').click();
+  assert.equal(widget.value, "[alpha], [beta], ");
+});
+
+test("selector updates preserve existing prompt strength for the same tag", async () => {
+  installDom();
+  const { applySelectorTagsToWidget, createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=strength-preserve");
+  const { node, widget } = createNodeAndWidget("{{alpha}}, beta, ");
+
+  createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  applySelectorTagsToWidget(node, widget, "alpha, gamma, ", { source: "selector" });
+
+  assert.equal(widget.value, "{{alpha}}, gamma, ");
+});
+
 test("createSelectorTagManager reorders tags by dragging chips", async () => {
   installDom();
   const { createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=drag-reorder");
@@ -435,7 +483,7 @@ test("writeSelectorTagsToWidget keeps manual selector manager tags on confirm", 
 test("writeSelectorTagsToWidget restores a history tag when it is selected again", async () => {
   installDom();
   const { createSelectorTagManager, writeSelectorTagsToWidget } = await import("../js/anima_tag_editor.js?case=confirm-history-reselect");
-  const { node, widget } = createNodeAndWidget("alpha, ");
+  const { node, widget } = createNodeAndWidget("{{alpha}}, ");
 
   const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
   document.body.appendChild(manager.element);
@@ -446,9 +494,13 @@ test("writeSelectorTagsToWidget restores a history tag when it is selected again
   assert.equal(widget.value, "");
   assert.match(manager.element.textContent, /History/);
 
+  const appendButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Append");
+  assert.ok(appendButton);
+  clickLikeBrowser(appendButton);
+
   writeSelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
 
-  assert.equal(widget.value, "alpha, ");
+  assert.equal(widget.value, "{{alpha}}, ");
 });
 
 test("applySelectorTagsToWidget replaces tags in replace mode", async () => {
@@ -487,7 +539,7 @@ test("applySelectorTagsToWidget appends tags in append mode", async () => {
 test("applySelectorTagsToWidget restores a history tag selected directly", async () => {
   installDom();
   const { createSelectorTagManager, applySelectorTagsToWidget, getTagFieldState } = await import("../js/anima_tag_editor.js?case=selector-tag-click-history");
-  const { node, widget } = createNodeAndWidget("alpha, ");
+  const { node, widget } = createNodeAndWidget("{{alpha}}, ");
 
   const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
   document.body.appendChild(manager.element);
@@ -500,7 +552,7 @@ test("applySelectorTagsToWidget restores a history tag selected directly", async
 
   applySelectorTagsToWidget(node, widget, "alpha, ", { source: "selector" });
 
-  assert.equal(widget.value, "alpha, ");
+  assert.equal(widget.value, "{{alpha}}, ");
   assert.equal(getTagFieldState(node, "artist_tags", widget).history.length, 0);
 });
 
