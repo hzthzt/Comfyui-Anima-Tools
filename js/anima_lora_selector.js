@@ -138,11 +138,11 @@ function normalizeLoraEntry(lora) {
     };
 }
 
-function normalizeLoraList(loras) {
+export function normalizeLoraList(loras) {
     return (Array.isArray(loras) ? loras : []).map(normalizeLoraEntry).filter(Boolean);
 }
 
-function parseLoraJsonValue(value) {
+export function parseLoraJsonValue(value) {
     if (typeof value !== "string" || !value.trim().startsWith("[")) return null;
     try {
         const parsed = JSON.parse(value);
@@ -186,6 +186,10 @@ function getAdaptiveLoraName(name, nodeWidth) {
 
 function getDeleteWidgetName(name, nodeWidth) {
     return `×  ${getAdaptiveLoraName(name, nodeWidth)}`;
+}
+
+function getEnabledWidgetName(index) {
+    return t("Enable LoRA") + "\u200B".repeat(index);
 }
 
 function updateLoraWidgetLabels(node) {
@@ -279,6 +283,17 @@ function syncLoraWidgets(node, loras) {
             }
             node._dynamicWidgets.push(delBtn);
 
+            const enabledToggle = node.addWidget("toggle", getEnabledWidgetName(i), lora.enabled !== false, (val) => {
+                const enabled = Boolean(val);
+                setLoraEnabled(node, lora.name, enabled);
+                enabledToggle.value = enabled;
+            });
+            enabledToggle.__animaWidgetType = "lora_enabled";
+            enabledToggle.__animaLoraName = lora.name;
+            enabledToggle.serialize = false;
+            enabledToggle.computedHeight = 20;
+            node._dynamicWidgets.push(enabledToggle);
+
             // Use zero-width space (\u200B) repeat sequence as unique suffix to prevent LiteGraph merge,
             // so that the rendered name has absolutely no extra bracket explanation, looking clean.
             const modelWidgetName = "   Strength" + "\u200B".repeat(i);
@@ -360,6 +375,16 @@ function updateJsonValue(node) {
         node._loraData = normalizeLoraList(node._loraData || []);
         jsonWidget.value = JSON.stringify(node._loraData);
     }
+}
+
+export function setLoraEnabled(node, loraName, enabled) {
+    const currentLora = node?._loraData?.find(item => item.name === loraName);
+    if (!currentLora) return false;
+
+    currentLora.enabled = Boolean(enabled);
+    updateJsonValue(node);
+    node.setDirtyCanvas?.(true, true);
+    return true;
 }
 
 // Global caching variables
