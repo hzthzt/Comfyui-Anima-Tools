@@ -70,6 +70,75 @@ test("tag strength helpers recognize repeated braces and brackets", async () => 
   assert.deepEqual(splitTagText("{{alpha, beta}}, [gamma], delta"), ["{{alpha, beta}}", "[gamma]", "delta"]);
 });
 
+test("createSelectorTagManager recognizes and adjusts numeric tag weights", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=numeric-weight");
+  const { node, widget } = createNodeAndWidget("(harvin:1.2),");
+  const manager = createSelectorTagManager(node, widget, {
+    label: "Selected Tags",
+    catalogProvider: () => [{ tag: "harvin", labelZh: "矮人族（碧蓝幻想）" }],
+  });
+  document.body.appendChild(manager.element);
+
+  assert.equal(manager.element.querySelector(".anima-tag-chip-primary").textContent, "harvin");
+  assert.equal(manager.element.querySelector(".anima-tag-chip-zh").textContent, "矮人族（碧蓝幻想）");
+  assert.equal(manager.element.querySelector('[data-tag-strength="1.2"]').textContent, "1.2");
+  assert.equal(widget.value, "(harvin:1.2),");
+
+  let chip = manager.element.querySelector('span[draggable="true"]');
+  chip.querySelector('[data-tag-strength-action="increase"]').click();
+  assert.equal(widget.value, "(harvin:1.3), ");
+
+  chip = manager.element.querySelector('span[draggable="true"]');
+  chip.querySelector('[data-tag-strength-action="decrease"]').click();
+  chip = manager.element.querySelector('span[draggable="true"]');
+  chip.querySelector('[data-tag-strength-action="decrease"]').click();
+  assert.equal(widget.value, "(harvin:1.1), ");
+});
+
+test("selector append preserves numeric weight without duplicating the base tag", async () => {
+  installDom();
+  const { applySelectorTagsToWidget, createSelectorTagManager, getTagFieldState } = await import("../js/anima_tag_editor.js?case=numeric-weight-preserve");
+  const { node, widget } = createNodeAndWidget("(harvin:1.2), ");
+  const manager = createSelectorTagManager(node, widget, { label: "Selected Tags" });
+  document.body.appendChild(manager.element);
+
+  const appendButton = Array.from(manager.element.querySelectorAll("button")).find(button => button.textContent === "Append");
+  assert.ok(appendButton);
+  clickLikeBrowser(appendButton);
+  applySelectorTagsToWidget(node, widget, "harvin, beta, ", { source: "selector" });
+
+  assert.equal(widget.value, "(harvin:1.2), beta, ");
+  assert.deepEqual(getTagFieldState(node, "artist_tags", widget).tags.map(tag => tag.text), [
+    "(harvin:1.2)",
+    "beta",
+  ]);
+});
+
+test("numeric weight recognition leaves ordinary and invalid parentheses unchanged", async () => {
+  installDom();
+  const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=numeric-weight-invalid");
+  const { node, widget } = createNodeAndWidget("harusame (kancolle), (harvin:heavy), ");
+  const manager = createSelectorTagManager(node, widget, {
+    label: "Selected Tags",
+    catalogProvider: () => [
+      { tag: "harusame (kancolle)", labelZh: "春雨" },
+      { tag: "harvin", labelZh: "矮人族（碧蓝幻想）" },
+    ],
+  });
+  document.body.appendChild(manager.element);
+
+  assert.deepEqual(
+    Array.from(manager.element.querySelectorAll(".anima-tag-chip-primary"), element => element.textContent),
+    ["harusame (kancolle)", "(harvin:heavy)"],
+  );
+  assert.deepEqual(
+    Array.from(manager.element.querySelectorAll(".anima-tag-chip-zh"), element => element.textContent),
+    ["春雨"],
+  );
+  assert.equal(manager.element.querySelector(".anima-tag-chip-strength"), null);
+});
+
 test("createSelectorTagManager adjusts prompt strength repeatedly", async () => {
   installDom();
   const { createSelectorTagManager } = await import("../js/anima_tag_editor.js?case=strength-buttons");

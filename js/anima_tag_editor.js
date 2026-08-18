@@ -20,10 +20,36 @@ const DEFAULT_HISTORY_LIMIT = 20;
 const DEFAULT_APPLY_MODE = "replace";
 
 function normalizeTagKey(value) {
-    return parseTagStrength(value).text
+    return parseTagPresentation(value).text
         .replace(/^_raw_:/, "")
         .trim()
         .toLowerCase();
+}
+
+function parseNumericTagWeight(value) {
+    let text = String(value || "").trim();
+    const rawPrefix = text.startsWith("_raw_:") ? "_raw_:" : "";
+    if (rawPrefix) text = text.slice(rawPrefix.length).trim();
+
+    const match = text.match(/^\(([\s\S]+):\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))\)$/);
+    if (!match) return null;
+
+    const tagText = match[1].trim();
+    const numericWeight = Number(match[2]);
+    if (!tagText || !Number.isFinite(numericWeight)) return null;
+    return { text: tagText, numericWeight, rawPrefix };
+}
+
+function parseTagPresentation(value) {
+    const numeric = parseNumericTagWeight(value);
+    if (numeric) return { ...numeric, strength: 0 };
+    return { ...parseTagStrength(value), numericWeight: null };
+}
+
+function formatNumericTagWeight(parsed, weight) {
+    const rounded = Number(Number(weight).toFixed(12));
+    const normalized = Object.is(rounded, -0) ? 0 : rounded;
+    return `${parsed.rawPrefix}(${parsed.text}:${normalized})`;
 }
 
 export function parseTagStrength(value) {
@@ -210,12 +236,13 @@ function tagText(tag) {
 }
 
 function tagBaseText(tag) {
-    return parseTagStrength(tagText(tag)).text.replace(/^_raw_:/, "").trim();
+    return parseTagPresentation(tagText(tag)).text.replace(/^_raw_:/, "").trim();
 }
 
 function preserveExistingStrength(text, existingByKey) {
     const existing = existingByKey.get(normalizeTagKey(text));
-    if (!existing || parseTagStrength(text).strength !== 0) return text;
+    const parsed = parseTagPresentation(text);
+    if (!existing || parsed.strength !== 0 || parsed.numericWeight !== null) return text;
     return tagText(existing);
 }
 
@@ -879,7 +906,15 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
 
     const tagValue = tagText(tag);
     chip.dataset.tagKey = normalizeTagKey(tagValue);
-    const parsedStrength = parseTagStrength(tagValue);
+    const parsedStrength = parseTagPresentation(tagValue);
+    const hasNumericWeight = parsedStrength.numericWeight !== null;
+    const hasStrength = hasNumericWeight || parsedStrength.strength !== 0;
+    const strengthLevel = hasNumericWeight ? parsedStrength.numericWeight : parsedStrength.strength;
+    const displayedStrength = hasNumericWeight
+        ? String(parsedStrength.numericWeight)
+        : parsedStrength.strength
+            ? (parsedStrength.strength > 0 ? `+${parsedStrength.strength}` : String(parsedStrength.strength))
+            : "";
     const baseTagValue = tagBaseText(tag);
     const catalog = typeof chipOptions.catalogProvider === "function"
         ? chipOptions.catalogProvider()
@@ -890,7 +925,7 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
     label.title = [
         labels.primary,
         labels.secondary,
-        parsedStrength.strength ? t("Prompt Strength: {level}", { level: parsedStrength.strength }) : "",
+        hasStrength ? t("Prompt Strength: {level}", { level: strengthLevel }) : "",
     ].filter(Boolean).join("\n");
     label.style.cssText = "display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.15;";
     const primary = document.createElement("span");
@@ -907,12 +942,12 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
     }
     chip.appendChild(label);
 
-    if (parsedStrength.strength) {
+    if (hasStrength) {
         const strength = document.createElement("span");
         strength.className = "anima-tag-chip-strength";
-        strength.dataset.tagStrength = String(parsedStrength.strength);
-        strength.textContent = parsedStrength.strength > 0 ? `+${parsedStrength.strength}` : String(parsedStrength.strength);
-        strength.title = t("Prompt Strength: {level}", { level: parsedStrength.strength });
+        strength.dataset.tagStrength = String(strengthLevel);
+        strength.textContent = displayedStrength;
+        strength.title = t("Prompt Strength: {level}", { level: strengthLevel });
         strength.style.cssText = "flex:0 0 auto;color:#fbbf24;font-size:10px;font-weight:800;";
         chip.appendChild(strength);
     }
@@ -961,11 +996,13 @@ function createChip(node, widget, fieldName, tag, disabled = false, syncOptions 
     }
 
     const adjustStrength = (delta, action) => {
-        const current = parseTagStrength(tagText(tag));
+        const current = parseTagPresentation(tagText(tag));
         if (!current.text) return;
         const focusRoot = chip.parentElement?.parentElement;
         const tagKey = normalizeTagKey(tagText(tag));
-        tag.text = formatTagStrength(tagText(tag), current.strength + delta);
+        tag.text = current.numericWeight !== null
+            ? formatNumericTagWeight(current, current.numericWeight + (delta * 0.1))
+            : formatTagStrength(tagText(tag), current.strength + delta);
         syncField(node, fieldName, widget, syncOptions);
         requestAnimationFrame(() => {
             const matchingChip = Array.from(focusRoot?.querySelectorAll('span[draggable="true"]') || [])
